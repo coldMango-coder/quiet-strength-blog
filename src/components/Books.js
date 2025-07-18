@@ -1,40 +1,51 @@
 import React from 'react';
 
-const booksData = [
-  {
-    imgSrc: "https://placehold.co/300x450/a78bfa/ffffff?text=Quiet+Confidence",
-    title: "Quiet Confidence: Navigating an Extroverted World",
-    description: "A step-by-step guide to building authentic self-esteem and thriving in any social or professional setting.",
-    price: "$9.99",
-    link: "#"
-  },
-  {
-    imgSrc: "https://placehold.co/300x450/818cf8/ffffff?text=Financial+Freedom",
-    title: "Financial Freedom for the Introverted Woman",
-    description: "Learn to manage, invest, and grow your wealth in a way that aligns with your personality and values.",
-    price: "$12.99",
-    link: "#"
-  },
-  {
-    imgSrc: "https://placehold.co/300x450/c084fc/ffffff?text=Recharge+Playbook",
-    title: "The Introvert's Recharge Playbook",
-    description: "Discover personalized strategies to manage your energy, prevent burnout, and create a balanced life.",
-    price: "$7.99",
-    link: "#"
-  }
-];
+import Seo from './Seo';
 
-const BookCard = ({ imgSrc, title, description, price, onNavigate, ctaText }) => (
-  <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300">
-    <img src={imgSrc} alt={`Book cover for ${title}`} className="w-full h-64 object-cover" />
-    <div className="p-6 flex flex-col flex-grow">
-      <h3 className="text-xl font-bold text-slate-800 mb-2">{title}</h3>
-      <p className="text-slate-600 mb-4 flex-grow">{description}</p>
-      <div className="flex justify-between items-center mt-4">
-        <span className="text-2xl font-bold text-indigo-600">{price}</span>
-        <button onClick={onNavigate} className="bg-indigo-600 text-white font-bold py-2 px-4 rounded-full hover:bg-indigo-700 transition duration-300">
-          {ctaText}
-        </button>
+const BookCard = ({ imgSrc, title, description, price, onNavigate, ctaText, slug, isExternal }) => (
+  <div className="bg-white rounded-lg shadow-md flex flex-col hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 w-full max-w-md mx-auto">
+    <Seo
+      type="book"
+      title={title}
+      description={description}
+      path={`/books/${slug}`}
+      book={{
+        title: title,
+        authorName: 'Marica Šinko',
+        isbn: '978-3-16-148410-0', // Example ISBN
+        offers: {
+          '@type': 'Offer',
+          price: price.replace('$', ''),
+          priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
+        },
+      }}
+    />
+    <img src={imgSrc} alt={`Book cover for ${title}`} className="w-full h-[500px] object-contain" loading="lazy" decoding="async" />
+    <div className="flex flex-col flex-grow p-8">
+      <h3 className="text-xl md:text-2xl font-bold text-brand-dark mb-2">{title}</h3>
+      <p className="text-brand-primary mb-4 flex-grow leading-relaxed">{description}</p>
+
+      {/* Footer sticks to bottom */}
+      <div className="flex items-center justify-between gap-4 mt-auto flex-wrap">
+        <span className="text-2xl md:text-3xl font-bold text-brand-dark">{price}</span>
+        {isExternal ? (
+          <a
+            href={onNavigate}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-brand-emphasis text-white font-semibold w-full sm:w-auto max-w-full py-2 px-4 md:px-6 rounded-full hover:bg-opacity-90 transition duration-300 text-center"
+          >
+            {ctaText}
+          </a>
+        ) : (
+          <button
+            onClick={onNavigate}
+            className="bg-brand-emphasis text-white font-semibold w-full sm:w-auto max-w-full py-2 px-4 md:px-6 rounded-full hover:bg-opacity-90 transition duration-300 text-center"
+          >
+            {ctaText}
+          </button>
+        )}
       </div>
     </div>
   </div>
@@ -43,41 +54,37 @@ const BookCard = ({ imgSrc, title, description, price, onNavigate, ctaText }) =>
 const Books = ({ onNavigate }) => {
   const booksData = [
     {
-      imgSrc: "https://placehold.co/300x450/a78bfa/ffffff?text=Quiet+Confidence",
-      title: "Quiet Confidence: Navigating an Extroverted World",
-      description: "A step-by-step guide to building authentic self-esteem and thriving in any social or professional setting.",
+      imgSrc: "/images/61KKDJafZ2L._SL1499_.jpg",
+      title: "The Art of Saying No: A Guide for People-Pleasers on the Brink of Burnout",
+      description: "\"The Art of Saying No\" is more than just a guide—it's a compassionate and practical roadmap to reclaiming your life. For too long, the compulsive need for approval has dictated your decisions, drained your energy, and left you feeling resentful and depleted. This book provides the tools to break free from the \"disease to please\" and build a life based on your own terms.",
       price: "$9.99",
-      onNavigate: () => onNavigate('book-quiet-confidence'),
-      ctaText: "Find My Strength"
+      slug: "art-of-saying-no",
+      onNavigate: "https://www.amazon.com/dp/B0FHZL4Q5G",
+      ctaText: "Buy Now",
+      isExternal: true
     },
     {
-      imgSrc: "https://placehold.co/300x450/818cf8/ffffff?text=Financial+Freedom",
-      title: "Financial Freedom for the Introverted Woman",
-      description: "Learn to manage, invest, and grow your wealth in a way that aligns with your personality and values.",
+      imgSrc: "/images/61TQwybDU9L._SL1499_.jpg",
+      title: "The Quiet Confidence Blueprint: An Introverted Woman's Uncensored Guide to Owning Her Power",
+      description: "Are you an introverted woman tired of feeling overlooked, drained by social demands, or battling imposter syndrome? This raw, actionable guide reveals how to transform your quiet nature into an unshakeable source of confidence, set powerful boundaries, and claim your authentic strength without becoming someone you're not. Discover self-esteem for introverts, energy mastery, and thriving as a quiet leader in an extroverted world.",
       price: "$12.99",
-      onNavigate: () => {}, // Placeholder for future book page
-      ctaText: "Take Control"
+      slug: "quiet-confidence-blueprint",
+      onNavigate: "https://www.amazon.com/dp/B0FHX2YTVX",
+      ctaText: "Buy Now",
+      isExternal: true
     },
-    {
-      imgSrc: "https://placehold.co/300x450/c084fc/ffffff?text=Recharge+Playbook",
-      title: "The Introvert's Recharge Playbook",
-      description: "Discover personalized strategies to manage your energy, prevent burnout, and create a balanced life.",
-      price: "$7.99",
-      onNavigate: () => {}, // Placeholder for future book page
-      ctaText: "Reclaim My Energy"
-    }
   ];
 
   return (
-    <section id="books" className="py-20 bg-gray-100">
+    <section id="books" className="py-24 bg-brand-light">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800">My Books & Exclusive Resources</h2>
-          <p className="text-slate-600 text-lg mt-4 max-w-2xl mx-auto">
+        <div className="text-left mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-brand-dark">My Books & Exclusive Resources</h2>
+          <p className="text-brand-primary text-lg mt-4 max-w-2xl">
             Dive deeper with these comprehensive e-books, designed to give you the tools and confidence to thrive.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {booksData.map((book, index) => (
             <BookCard key={index} {...book} />
           ))}

@@ -7,6 +7,11 @@ const Newsletter = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'generate_lead',
+        'lead_type': 'homepage_guide'
+      });
       console.log(`Email submitted: ${email}`);
       setMessage(`Thank you for subscribing!`);
       setEmail('');
@@ -18,30 +23,30 @@ const Newsletter = () => {
   };
 
   return (
-    <section id="newsletter" className="py-20 bg-gradient-to-r from-purple-600 to-indigo-500">
+    <section id="newsletter" className="py-32 bg-brand-dark">
       <div className="container mx-auto px-6 text-center text-white">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Get Your Free Guide to Setting Boundaries</h2>
-        <p className="text-indigo-100 max-w-2xl mx-auto mb-8">
+        <h2 className="text-5xl md:text-6xl font-bold mb-6">Get Your Free Guide to Setting Boundaries</h2>
+        <p className="text-brand-secondary text-xl max-w-3xl mx-auto mb-12">
           Enter your email to receive your free copy of "The 5-Minute Guide to Setting Boundaries" and join the Quiet Strength community for weekly, introvert-friendly self-help tips.
         </p>
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-          <div className="flex flex-col sm:flex-row gap-4">
+        <form onSubmit={handleSubmit} className="max-w-xl mx-auto">
+          <div className="flex flex-col sm:flex-row gap-6">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email address"
-              className="w-full px-4 py-3 rounded-full text-slate-800 focus:outline-none focus:ring-2 focus:ring-white"
+              className="w-full px-6 py-4 rounded-full text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-emphasis"
               required
             />
             <button
               type="submit"
-              className="bg-white text-purple-600 font-bold py-3 px-8 rounded-full hover:bg-indigo-100 transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+              className="bg-brand-emphasis text-white font-bold py-4 px-10 rounded-full hover:bg-opacity-90 transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
             >
               Send Me The Guide
             </button>
           </div>
-          {message && <p className="mt-4 text-white">{message}</p>}
+          {message && <p className="mt-6 text-white">{message}</p>}
         </form>
       </div>
     </section>

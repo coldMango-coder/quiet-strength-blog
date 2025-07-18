@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx eslint:*)",
+      "Bash(node:*)",
+      "Bash(taskkill:*)",
+      "Bash(set PORT=3001)",
+      "Bash(npm start)",
+      "Bash(npx react-scripts:*)",
+      "Bash(npx serve:*)",
+      "Bash(npm run build:*)",
+      "Bash(grep:*)"
+    ],
+    "deny": []
+  }
+}

@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Footer = () => {
+const Footer = ({ onNavigate }) => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer id="contact" className="bg-slate-800 text-white pt-16 pb-8">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center md:text-left">
           <div>
             <h3 className="text-xl font-bold mb-4">Quiet Strength</h3>
             <p className="text-slate-400">Empowering introverted women to thrive.</p>
@@ -14,10 +14,30 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
-              <a href="#about" className="text-slate-400 hover:text-white">About</a>
-              <a href="#themes" className="text-slate-400 hover:text-white">Themes</a>
-              <a href="#blog" className="text-slate-400 hover:text-white">Blog</a>
-              <a href="#books" className="text-slate-400 hover:text-white">Books</a>
+              <button 
+                onClick={() => onNavigate && onNavigate('about')} 
+                className="text-slate-400 hover:text-white text-left"
+              >
+                About
+              </button>
+              <button 
+                onClick={() => onNavigate && onNavigate('themes')} 
+                className="text-slate-400 hover:text-white text-left"
+              >
+                Themes
+              </button>
+              <button 
+                onClick={() => onNavigate && onNavigate('blog')} 
+                className="text-slate-400 hover:text-white text-left"
+              >
+                Blog
+              </button>
+              <button 
+                onClick={() => onNavigate && onNavigate('books')} 
+                className="text-slate-400 hover:text-white text-left"
+              >
+                Books
+              </button>
             </nav>
           </div>
           <div>

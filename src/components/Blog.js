@@ -8,28 +8,51 @@ const Blog = ({ onNavigate }) => {
   const recentPosts = sortedBlogPosts.slice(1, 4);
 
   return (
-    <section id="blog" className="py-20 bg-white">
+    <section id="blog" className="py-24 bg-brand-light">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-800">Latest Insights & Articles</h2>
+        <div className="text-left mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">Latest Insights & Articles</h2>
         </div>
 
         {/* Featured Article */}
-        <div className="bg-gray-100 rounded-lg shadow-lg p-8 mb-12 flex flex-col md:flex-row items-center">
-          <div className="md:w-1/3 mb-8 md:mb-0 md:pr-8">
-            <img src={latestPost.image} alt={latestPost.title} className="rounded-lg shadow-md"/>
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16 flex flex-col lg:flex-row items-stretch">
+          <div className="lg:w-2/5 xl:w-1/3 mb-8 lg:mb-0 lg:pr-8 xl:pr-12 flex-shrink-0">
+            <img 
+              src={latestPost.image} 
+              alt={`Featured article: ${latestPost.title} - self-help guide for introverted women`} 
+              width="400" 
+              height="250" 
+              loading="lazy"
+              className="rounded-lg shadow-md w-full h-auto object-cover"
+              style={{ maxHeight: '300px' }}
+            />
           </div>
-          <div className="md:w-2/3">
-            <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">{latestPost.title}</h3>
-            <p className="text-slate-600 mb-6">{latestPost.description}</p>
-            <button onClick={() => onNavigate('blog', null, latestPost.slug)} className="bg-indigo-600 text-white font-bold py-3 px-6 rounded-full hover:bg-indigo-700 transition duration-300">
-              Read the Full Article
+          <div className="lg:w-3/5 xl:w-2/3 flex flex-col justify-center">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-brand-dark mb-4 leading-tight">
+              {latestPost.title}
+            </h3>
+            <p className="text-brand-primary mb-6 text-base sm:text-lg xl:text-xl leading-relaxed">
+              {latestPost.description}
+            </p>
+            <div className="flex items-center gap-4 mb-6">
+              <span className="text-xs sm:text-sm text-brand-primary font-medium">
+                {latestPost.readTime}
+              </span>
+              <span className="text-xs sm:text-sm text-brand-primary">
+                {latestPost.category}
+              </span>
+            </div>
+            <button 
+              onClick={() => onNavigate('blog', null, latestPost.slug)} 
+              className="text-brand-emphasis font-semibold hover:underline text-base sm:text-lg self-start"
+            >
+              Read the Full Article &rarr;
             </button>
           </div>
         </div>
 
         {/* Recent Posts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {recentPosts.map((post) => (
             <BlogCard
               key={post.slug}
@@ -39,8 +62,9 @@ const Blog = ({ onNavigate }) => {
           ))}
         </div>
 
+
         <div className="text-center">
-          <button onClick={() => onNavigate('blog')} className="bg-slate-800 text-white font-bold py-3 px-8 rounded-full hover:bg-slate-900 transition duration-300">
+          <button onClick={() => onNavigate('blog')} className="bg-brand-dark text-white font-bold py-4 px-10 rounded-full hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
             View All Articles
           </button>
         </div>

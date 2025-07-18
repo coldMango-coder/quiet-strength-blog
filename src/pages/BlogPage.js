@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { sortedBlogPosts } from '../blogData';
+import { sortedBlogPosts, categories } from '../blogData';
 import BlogCard from '../components/BlogCard';
 import Seo from '../components/Seo';
 
-const BlogPage = ({ onBack, category, slug }) => {
+const BlogPage = ({ onBack, category, slug, onNavigate }) => {
   const [selectedPostSlug, setSelectedPostSlug] = useState(slug);
+  const [selectedCategory, setSelectedCategory] = useState(category);
 
   const handleReadMore = (slug) => {
     setSelectedPostSlug(slug);
@@ -12,6 +13,12 @@ const BlogPage = ({ onBack, category, slug }) => {
   };
 
   const handleBackToList = () => {
+    setSelectedPostSlug(null);
+    window.scrollTo(0, 0);
+  };
+
+  const handleCategoryChange = (newCategory) => {
+    setSelectedCategory(newCategory);
     setSelectedPostSlug(null);
     window.scrollTo(0, 0);
   };
@@ -34,25 +41,57 @@ const BlogPage = ({ onBack, category, slug }) => {
             image: postToRender.image,
           }}
         />
-        <PostComponent onBack={onBack} />
+        <PostComponent onBack={onBack} onNavigate={onNavigate} />
       </>
     );
   }
 
-  const filteredPosts = category ? sortedBlogPosts.filter(p => p.category === category) : sortedBlogPosts;
+  const filteredPosts = selectedCategory ? sortedBlogPosts.filter(p => p.category === selectedCategory) : sortedBlogPosts;
 
   return (
     <div className="bg-white">
       <Seo
-        title={category || 'Blog'}
-        description={`Read all blog posts${category ? ` in the ${category} category` : ''}.`}
-        path={category ? `/blog/${category}` : '/blog'}
+        title={selectedCategory || 'Blog'}
+        description={`Read all blog posts${selectedCategory ? ` in the ${selectedCategory} category` : ''}.`}
+        path={selectedCategory ? `/blog/${selectedCategory}` : '/blog'}
+        breadcrumbs={[
+          { name: 'Home', item: '/' },
+          { name: 'Blog', item: '/blog' },
+          ...(selectedCategory ? [{ name: selectedCategory, item: `/blog/${selectedCategory}` }] : []),
+        ]}
       />
       <div className="container mx-auto px-6 py-12">
         <button onClick={onBack} className="text-indigo-600 hover:text-indigo-800 font-semibold mb-8">&larr; Back to Home</button>
-        <h2 className="text-4xl font-bold text-center mb-12 text-slate-800">{category || 'From the Blog'}</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-slate-800">{selectedCategory || 'From the Blog'}</h2>
         
-        {!category && (
+        {/* Category Navigation */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <button
+            onClick={() => handleCategoryChange(null)}
+            className={`px-6 py-3 rounded-full font-semibold transition-colors ${
+              !selectedCategory 
+                ? 'bg-brand-dark text-white' 
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            }`}
+          >
+            All Articles
+          </button>
+          {Object.values(categories).map((categoryName) => (
+            <button
+              key={categoryName}
+              onClick={() => handleCategoryChange(categoryName)}
+              className={`px-6 py-3 rounded-full font-semibold transition-colors ${
+                selectedCategory === categoryName 
+                  ? 'bg-brand-dark text-white' 
+                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+              }`}
+            >
+              {categoryName}
+            </button>
+          ))}
+        </div>
+        
+        {!selectedCategory && (
           <section className="mb-16">
             <h3 className="text-2xl font-bold text-slate-800 mb-6">Latest Post</h3>
             <div className="flex justify-center">
@@ -65,7 +104,7 @@ const BlogPage = ({ onBack, category, slug }) => {
         )}
 
         <section>
-          <h3 className="text-2xl font-bold text-slate-800 mb-6">{category ? 'Posts' : 'All Posts'}</h3>
+          <h3 className="text-2xl font-bold text-slate-800 mb-6">{selectedCategory ? 'Posts' : 'All Posts'}</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post) => (
               <BlogCard
