@@ -4,6 +4,7 @@ import BlogPostProductivity from './pages/BlogPostProductivity';
 import BlogPostSayingNo from './components/BlogPostSayingNo';
 import BlogPostSayingNoWithoutGuilt from './components/BlogPostSayingNoWithoutGuilt';
 import BlogPostRelationshipSigns from './pages/BlogPostRelationshipSigns';
+import BlogPostSocialBattery from './pages/BlogPostSocialBattery';
 
 export const categories = {
   INTROVERSION_PERSONALITY: 'Introversion & Personality',
@@ -14,6 +15,16 @@ export const categories = {
 };
 
 export const blogPosts = [
+  {
+    slug: 'introvert-social-battery-drained-recovery-methods',
+    title: 'Introvert Social Battery Drained: 9 Proven Recovery Methods That Actually Work in 2025',
+    description: 'Discover 9 proven ways to recharge when your social battery is drained. Expert-backed recovery methods for introverts in 2025. Learn effective strategies now.',
+    date: '2025-07-20',
+    category: categories.INTROVERSION_PERSONALITY,
+    component: BlogPostSocialBattery,
+    image: '/images/SereneTeaMoment.jpg',
+    readTime: '12 min read',
+  },
   {
     slug: 'how-to-know-if-you-deserve-better-relationship-introvert-woman-guide',
     title: 'How to Know if You Deserve Better in Your Relationship: 7 Clear Signs Every Introvert Woman Must Recognize in 2025',
