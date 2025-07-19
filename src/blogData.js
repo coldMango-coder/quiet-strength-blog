@@ -3,6 +3,7 @@ import BlogPostConfidence from './pages/BlogPostConfidence';
 import BlogPostProductivity from './pages/BlogPostProductivity';
 import BlogPostSayingNo from './components/BlogPostSayingNo';
 import BlogPostSayingNoWithoutGuilt from './components/BlogPostSayingNoWithoutGuilt';
+import BlogPostRelationshipSigns from './pages/BlogPostRelationshipSigns';
 
 export const categories = {
   INTROVERSION_PERSONALITY: 'Introversion & Personality',
@@ -13,6 +14,16 @@ export const categories = {
 };
 
 export const blogPosts = [
+  {
+    slug: 'how-to-know-if-you-deserve-better-relationship-introvert-woman-guide',
+    title: 'How to Know if You Deserve Better in Your Relationship: 7 Clear Signs Every Introvert Woman Must Recognize in 2025',
+    description: 'Discover 7 proven signs that show you deserve better in your relationship as an introvert woman. Learn to recognize your worth and make empowered decisions in 2025.',
+    date: '2025-07-19',
+    category: categories.RELATIONSHIPS_DATING,
+    component: BlogPostRelationshipSigns,
+    image: '/images/contemplativeserenity.jpg',
+    readTime: '7 min read',
+  },
   {
     slug: 'how-to-say-no-without-guilt',
     title: 'How to Say No Without Guilt: Real-Life Scripts for Work, Family & Friends',

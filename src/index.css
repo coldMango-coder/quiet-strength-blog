@@ -124,6 +124,11 @@ input, textarea {
     margin-bottom: 24px !important;
     padding-left: 24px !important;
   }
+
+  .article-container li {
+    font-size: 18px !important;
+    line-height: 1.58 !important;
+  }
   
   .article-container blockquote {
     font-size: 20px !important;
@@ -174,6 +179,11 @@ input, textarea {
     line-height: 1.6 !important;
     margin-bottom: 20px !important;
     padding-left: 20px !important;
+  }
+
+  .article-container li {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
   }
   
   .article-container blockquote {
@@ -351,6 +361,7 @@ a:hover .nav-icon {
   padding: 0 !important;
   line-height: 1.5 !important;
   color: var(--body-text) !important;
+  font-size: 21px !important;
 }
 
 .article-container li:last-child {
@@ -625,6 +636,7 @@ mark:focus,
   margin: 0 0 12px 0 !important;
   line-height: 1.5 !important;
   color: rgba(41, 41, 41, 1) !important;
+  font-size: 21px !important;
 }
 
 /* Blog Section Typography */
@@ -811,6 +823,7 @@ mark:focus,
   margin: 0 0 12px 0 !important;
   line-height: 1.5 !important;
   color: rgba(41, 41, 41, 1) !important;
+  font-size: 21px !important;
 }
 
 /* ─────────────────────────────────────────────
