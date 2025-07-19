@@ -21,7 +21,7 @@
     "analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
     "lighthouse": "lhci autorun",
     "seo-check": "echo 'Running SEO analysis...' && npm run build",
-    "postbuild": "next-sitemap"  
+    "postbuild": "node generate-sitemap.js"  
   },
   "eslintConfig": {
     "extends": [

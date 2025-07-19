@@ -11,7 +11,7 @@ const Blog = ({ onNavigate }) => {
     <section id="blog" className="py-24 bg-brand-light">
       <div className="container mx-auto px-6">
         <div className="text-left mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">Latest Insights & Articles</h2>
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark">Latest Insights & Articles</h2>
         </div>
 
         {/* Featured Article */}
