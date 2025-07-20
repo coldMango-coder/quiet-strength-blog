@@ -15,36 +15,36 @@ const Blog = ({ onNavigate }) => {
         </div>
 
         {/* Featured Article */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-16 flex flex-col lg:flex-row items-stretch min-w-0">
-          <div className="lg:w-2/5 xl:w-1/3 mb-8 lg:mb-0 lg:pr-8 xl:pr-12 flex-shrink-0">
+        <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 mb-16 flex flex-col lg:flex-row items-stretch min-w-0 max-w-full overflow-hidden">
+          <div className="lg:w-2/5 xl:w-1/3 mb-6 lg:mb-0 lg:pr-6 xl:pr-12 flex-shrink-0 min-w-0">
             <img 
               src={latestPost.image} 
               alt={`Featured article: ${latestPost.title} - self-help guide for introverted women`} 
               width="400" 
               height="250" 
               loading="lazy"
-              className="rounded-lg shadow-md w-full h-auto object-cover"
+              className="rounded-lg shadow-md w-full h-auto object-cover max-w-full"
               style={{ maxHeight: '300px' }}
             />
           </div>
-          <div className="lg:w-3/5 xl:w-2/3 flex flex-col justify-center min-w-0">
-            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-brand-dark mb-4 leading-tight overflow-wrap-break-word">
+          <div className="lg:w-3/5 xl:w-2/3 flex flex-col justify-center min-w-0 max-w-full">
+            <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-brand-dark mb-4 leading-tight break-words max-w-full">
               {latestPost.title}
             </h3>
-            <p className="text-brand-primary mb-6 text-base sm:text-lg xl:text-xl leading-relaxed overflow-wrap-break-word">
+            <p className="text-brand-primary mb-6 text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed break-words max-w-full">
               {latestPost.description}
             </p>
-            <div className="flex items-center gap-4 mb-6 min-w-0">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-6 min-w-0">
               <span className="text-xs sm:text-sm text-brand-primary font-medium flex-shrink-0">
                 {latestPost.readTime}
               </span>
-              <span className="text-xs sm:text-sm text-brand-primary truncate">
+              <span className="text-xs sm:text-sm text-brand-primary break-words">
                 {latestPost.category}
               </span>
             </div>
             <button 
               onClick={() => onNavigate('blog', null, latestPost.slug)} 
-              className="text-brand-emphasis font-semibold hover:underline text-base sm:text-lg self-start"
+              className="text-brand-emphasis font-semibold hover:underline text-sm sm:text-base lg:text-lg self-start break-words"
             >
               Read the Full Article &rarr;
             </button>

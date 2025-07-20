@@ -1168,3 +1168,75 @@ mark:focus,
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
+
+/* Mobile overflow prevention */
+@media (max-width: 768px) {
+  .container {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
+  #blog .bg-white {
+    max-width: 100%;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  #blog article {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  #blog h3, #blog h2, #blog p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  #blog .bg-white {
+    padding: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  #blog h3 {
+    font-size: 1.125rem !important;
+    line-height: 1.3 !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  #blog p {
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Grid cards responsive */
+  .grid {
+    gap: 1rem;
+  }
+  
+  article {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
