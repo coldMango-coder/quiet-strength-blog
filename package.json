@@ -21,8 +21,7 @@
     "eject": "react-scripts eject",
     "analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
     "lighthouse": "lhci autorun",
-    "seo-check": "echo 'Running SEO analysis...' && npm run build",
-    "postbuild": "cra-sitemap --hostname=https://trueallyguide.com"
+    "seo-check": "echo 'Running SEO analysis...' && npm run build"
   },
   "eslintConfig": {
     "extends": [
