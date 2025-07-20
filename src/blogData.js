@@ -5,6 +5,7 @@ import BlogPostSayingNo from './components/BlogPostSayingNo';
 import BlogPostSayingNoWithoutGuilt from './components/BlogPostSayingNoWithoutGuilt';
 import BlogPostRelationshipSigns from './pages/BlogPostRelationshipSigns';
 import BlogPostSocialBattery from './pages/BlogPostSocialBattery';
+import BlogPostIntentionalDating from './pages/BlogPostIntentionalDating';
 
 export const categories = {
   INTROVERSION_PERSONALITY: 'Introversion & Personality',
@@ -15,6 +16,16 @@ export const categories = {
 };
 
 export const blogPosts = [
+  {
+    slug: 'intentional-dating-2025-guide',
+    title: 'Intentional Dating 2025: How to Date Purposefully (7 Proven Steps)',
+    description: 'Learn how to date purposefully in 2025 with our complete guide to intentional dating. Discover 7 proven steps that actually work for meaningful relationships.',
+    date: '2025-07-21',
+    category: categories.RELATIONSHIPS_DATING,
+    component: BlogPostIntentionalDating,
+    image: '/images/CozyCaffeConversation.jpg',
+    readTime: '18 min read',
+  },
   {
     slug: 'introvert-social-battery-drained-recovery-methods',
     title: 'Introvert Social Battery Drained: 9 Proven Recovery Methods That Actually Work in 2025',
