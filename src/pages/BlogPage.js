@@ -47,8 +47,12 @@ const BlogPage = ({ onBack, category, slug, onNavigate }) => {
     );
   }
 
-  const filteredPosts = selectedCategory ? sortedBlogPosts.filter(p => p.category === selectedCategory) : sortedBlogPosts;
-  const canonicalUrl = `https://www.trueallyguide.com/blog/${postData.slug}`;
+  const filteredPosts = selectedCategory
+   ? sortedBlogPosts.filter(p => p.category === selectedCategory)
+   : sortedBlogPosts;
+  const canonicalUrl = selectedCategory
+  ? `https://www.trueallyguide.com/blog/${selectedCategory}`
+  : 'https://www.trueallyguide.com/blog';
   return (
     <>
     <Helmet>
