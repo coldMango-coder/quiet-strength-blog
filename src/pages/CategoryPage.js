@@ -51,7 +51,9 @@ const CategoryPage = ({ onBack, categoryName, onNavigate }) => {
     };
     return descriptions[category] || 'Explore articles in this category to enhance your personal growth journey.';
   };
-  const canonicalUrl = `https://www.trueallyguide.com/blog/${postData.slug}`;
+  const canonicalUrl = category
+  ? `https://www.trueallyguide.com/blog/${category}`
+  : 'https://www.trueallyguide.com/blog';
   return (
     <>
     <Helmet>
