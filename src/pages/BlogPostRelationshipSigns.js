@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
@@ -8,7 +9,12 @@ import Seo from '../components/Seo';
 
 const BlogPostRelationshipSigns = ({ onBack, onNavigate }) => {
   const postData = sortedBlogPosts.find(post => post.slug === 'how-to-know-if-you-deserve-better-relationship-introvert-woman-guide');
+  const canonicalUrl = `https://www.trueallyguide.com/blog/${postData.slug}`;
   return (
+    <>
+    <Helmet>
+      <link rel="canonical" href={canonicalUrl} />
+    </Helmet>
     <div className="bg-brand-light">
       <Seo
         title="How to Know if You Deserve Better in Your Relationship: 7 Clear Signs Every Introvert Woman Must Recognize in 2025"
@@ -378,6 +384,7 @@ const BlogPostRelationshipSigns = ({ onBack, onNavigate }) => {
         </article>
       </div>
     </div>
+    </>
   );
 };
 

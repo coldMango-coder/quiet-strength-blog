@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { sortedBlogPosts, categories } from '../blogData';
 import BlogCard from '../components/BlogCard';
 import Seo from '../components/Seo';
@@ -50,8 +51,12 @@ const CategoryPage = ({ onBack, categoryName, onNavigate }) => {
     };
     return descriptions[category] || 'Explore articles in this category to enhance your personal growth journey.';
   };
-
+  const canonicalUrl = `https://www.trueallyguide.com/blog/${postData.slug}`;
   return (
+    <>
+    <Helmet>
+      <link rel="canonical" href={canonicalUrl} />
+    </Helmet>
     <div className="bg-white min-h-screen">
       <Seo
         title={`${categoryName} - Blog Category`}
@@ -134,6 +139,7 @@ const CategoryPage = ({ onBack, categoryName, onNavigate }) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

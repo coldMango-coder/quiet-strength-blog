@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { sortedBlogPosts, categories } from '../blogData';
 import BlogCard from '../components/BlogCard';
 import Seo from '../components/Seo';
@@ -47,8 +48,12 @@ const BlogPage = ({ onBack, category, slug, onNavigate }) => {
   }
 
   const filteredPosts = selectedCategory ? sortedBlogPosts.filter(p => p.category === selectedCategory) : sortedBlogPosts;
-
+  const canonicalUrl = `https://www.trueallyguide.com/blog/${postData.slug}`;
   return (
+    <>
+    <Helmet>
+      <link rel="canonical" href={canonicalUrl} />
+    </Helmet>
     <div className="bg-white">
       <Seo
         title={selectedCategory || 'Blog'}
@@ -117,6 +122,7 @@ const BlogPage = ({ onBack, category, slug, onNavigate }) => {
         </section>
       </div>
     </div>
+    </>
   );
 };
 

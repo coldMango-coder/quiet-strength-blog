@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
@@ -7,7 +8,12 @@ import AuthorBio from '../components/AuthorBio';
 
 const BlogPostSocialBattery = ({ onBack, onNavigate }) => {
   const postData = sortedBlogPosts.find(post => post.slug === 'introvert-social-battery-drained-recovery-methods');
+  const canonicalUrl = `https://www.trueallyguide.com/blog/${postData.slug}`;
   return (
+    <>
+    <Helmet>
+      <link rel="canonical" href={canonicalUrl} />
+    </Helmet>
     <div className="bg-brand-light">
       <div className="container mx-auto px-6 py-16">
         <button onClick={onBack} className="text-brand-emphasis hover:underline font-semibold mb-12">&larr; Back to Home</button>
@@ -410,6 +416,7 @@ const BlogPostSocialBattery = ({ onBack, onNavigate }) => {
         </article>
       </div>
     </div>
+    </>
   );
 };
 
