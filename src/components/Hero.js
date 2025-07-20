@@ -43,13 +43,13 @@ const Hero = ({ onNavigate }) => {
               
               <div className="space-y-6 lg:space-y-8">
                 {sortedBlogPosts.slice(0, 3).map((post, index) => (
-                  <div key={post.slug} className={`flex items-start group cursor-pointer p-3 lg:p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200 ${index === 0 ? 'bg-gradient-to-r from-brand-secondary/30 to-transparent border-l-4 border-brand-emphasis' : ''}`} onClick={() => onNavigate('blog', null, post.slug)}>
+                  <div key={post.slug} className={`flex items-start group cursor-pointer p-3 lg:p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200 min-w-0 ${index === 0 ? 'bg-gradient-to-r from-brand-secondary/30 to-transparent border-l-4 border-brand-emphasis' : ''}`} onClick={() => onNavigate('blog', null, post.slug)}>
                     <img 
                       src={post.image} 
                       alt={post.title}
                       className={`rounded-lg object-cover flex-shrink-0 shadow-sm ${index === 0 ? 'w-40 h-40 lg:w-48 lg:h-48' : 'w-32 h-32 lg:w-40 lg:h-40'}`}
                     />
-                    <div className={`flex-1 ${index === 0 ? 'ml-6 lg:ml-8' : 'ml-4 lg:ml-6'}`}>
+                    <div className={`flex-1 min-w-0 ${index === 0 ? 'ml-6 lg:ml-8' : 'ml-4 lg:ml-6'}`}>
                       {index === 0 && (
                         <div className="flex items-center mb-2">
                           <span className="bg-brand-emphasis text-white text-xs font-bold px-2 py-1 rounded-full mr-2">
@@ -57,17 +57,17 @@ const Hero = ({ onNavigate }) => {
                           </span>
                         </div>
                       )}
-                      <h4 className={`font-bold text-brand-dark group-hover:text-brand-emphasis transition-colors mb-2 leading-tight ${index === 0 ? 'text-lg lg:text-xl xl:text-2xl' : 'text-base lg:text-lg'}`}>
+                      <h4 className={`font-bold text-brand-dark group-hover:text-brand-emphasis transition-colors mb-2 leading-tight overflow-wrap-break-word ${index === 0 ? 'text-lg lg:text-xl xl:text-2xl' : 'text-base lg:text-lg'}`}>
                         {post.title}
                       </h4>
-                      <p className={`text-brand-primary mb-3 leading-relaxed ${index === 0 ? 'text-sm lg:text-base' : 'text-xs lg:text-sm'}`}>
+                      <p className={`text-brand-primary mb-3 leading-relaxed overflow-wrap-break-word ${index === 0 ? 'text-sm lg:text-base' : 'text-xs lg:text-sm'}`}>
                         {post.description}
                       </p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs text-brand-primary bg-brand-secondary px-2 lg:px-3 py-1 rounded-full font-medium">
+                      <div className="flex items-center justify-between min-w-0">
+                        <span className="text-xs text-brand-primary bg-brand-secondary px-2 lg:px-3 py-1 rounded-full font-medium truncate max-w-32 lg:max-w-40">
                           {post.category}
                         </span>
-                        <time className="text-xs text-gray-500 font-medium">
+                        <time className="text-xs text-gray-500 font-medium flex-shrink-0 ml-2">
                           {new Date(post.date).toLocaleDateString('en-US', { 
                             month: 'short', 
                             day: 'numeric' 

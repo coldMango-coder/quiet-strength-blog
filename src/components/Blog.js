@@ -15,7 +15,7 @@ const Blog = ({ onNavigate }) => {
         </div>
 
         {/* Featured Article */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-16 flex flex-col lg:flex-row items-stretch">
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16 flex flex-col lg:flex-row items-stretch min-w-0">
           <div className="lg:w-2/5 xl:w-1/3 mb-8 lg:mb-0 lg:pr-8 xl:pr-12 flex-shrink-0">
             <img 
               src={latestPost.image} 
@@ -27,18 +27,18 @@ const Blog = ({ onNavigate }) => {
               style={{ maxHeight: '300px' }}
             />
           </div>
-          <div className="lg:w-3/5 xl:w-2/3 flex flex-col justify-center">
-            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-brand-dark mb-4 leading-tight">
+          <div className="lg:w-3/5 xl:w-2/3 flex flex-col justify-center min-w-0">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-brand-dark mb-4 leading-tight overflow-wrap-break-word">
               {latestPost.title}
             </h3>
-            <p className="text-brand-primary mb-6 text-base sm:text-lg xl:text-xl leading-relaxed">
+            <p className="text-brand-primary mb-6 text-base sm:text-lg xl:text-xl leading-relaxed overflow-wrap-break-word">
               {latestPost.description}
             </p>
-            <div className="flex items-center gap-4 mb-6">
-              <span className="text-xs sm:text-sm text-brand-primary font-medium">
+            <div className="flex items-center gap-4 mb-6 min-w-0">
+              <span className="text-xs sm:text-sm text-brand-primary font-medium flex-shrink-0">
                 {latestPost.readTime}
               </span>
-              <span className="text-xs sm:text-sm text-brand-primary">
+              <span className="text-xs sm:text-sm text-brand-primary truncate">
                 {latestPost.category}
               </span>
             </div>
