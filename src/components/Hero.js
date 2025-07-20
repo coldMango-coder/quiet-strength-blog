@@ -28,14 +28,14 @@ const Hero = ({ onNavigate }) => {
               </a>
             </div>
           </div>
-          <div className="w-full max-w-2xl">
+          <div className="w-full max-w-2xl min-w-0">
             {/* Latest Insights & Articles Section */}
-            <div className="bg-white rounded-xl shadow-xl p-6 lg:p-8 border border-gray-100 min-h-fit">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl lg:text-2xl font-bold text-brand-dark">Latest Insights</h3>
+            <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 lg:p-8 border border-gray-100 min-h-fit min-w-0">
+              <div className="flex items-center justify-between mb-4 sm:mb-6 min-w-0">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-brand-dark flex-shrink-0">Latest Insights</h3>
                 <button 
                   onClick={() => onNavigate('blog')}
-                  className="text-brand-emphasis text-sm font-semibold hover:underline hover:text-brand-dark transition-colors"
+                  className="text-brand-emphasis text-xs sm:text-sm font-semibold hover:underline hover:text-brand-dark transition-colors flex-shrink-0 ml-2"
                 >
                   View All →
                 </button>
@@ -43,13 +43,13 @@ const Hero = ({ onNavigate }) => {
               
               <div className="space-y-6 lg:space-y-8">
                 {sortedBlogPosts.slice(0, 3).map((post, index) => (
-                  <div key={post.slug} className={`flex items-start group cursor-pointer p-3 lg:p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200 min-w-0 ${index === 0 ? 'bg-gradient-to-r from-brand-secondary/30 to-transparent border-l-4 border-brand-emphasis' : ''}`} onClick={() => onNavigate('blog', null, post.slug)}>
+                  <div key={post.slug} className={`flex items-start group cursor-pointer p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200 min-w-0 ${index === 0 ? 'bg-gradient-to-r from-brand-secondary/30 to-transparent border-l-4 border-brand-emphasis' : ''}`} onClick={() => onNavigate('blog', null, post.slug)}>
                     <img 
                       src={post.image} 
                       alt={post.title}
-                      className={`rounded-lg object-cover flex-shrink-0 shadow-sm ${index === 0 ? 'w-40 h-40 lg:w-48 lg:h-48' : 'w-32 h-32 lg:w-40 lg:h-40'}`}
+                      className={`rounded-lg object-cover flex-shrink-0 shadow-sm ${index === 0 ? 'w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48' : 'w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40'}`}
                     />
-                    <div className={`flex-1 min-w-0 ${index === 0 ? 'ml-6 lg:ml-8' : 'ml-4 lg:ml-6'}`}>
+                    <div className={`flex-1 min-w-0 ${index === 0 ? 'ml-3 sm:ml-4 md:ml-6 lg:ml-8' : 'ml-2 sm:ml-3 md:ml-4 lg:ml-6'}`}>
                       {index === 0 && (
                         <div className="flex items-center mb-2">
                           <span className="bg-brand-emphasis text-white text-xs font-bold px-2 py-1 rounded-full mr-2">
@@ -57,17 +57,17 @@ const Hero = ({ onNavigate }) => {
                           </span>
                         </div>
                       )}
-                      <h4 className={`font-bold text-brand-dark group-hover:text-brand-emphasis transition-colors mb-2 leading-tight overflow-wrap-break-word ${index === 0 ? 'text-lg lg:text-xl xl:text-2xl' : 'text-base lg:text-lg'}`}>
+                      <h4 className={`font-bold text-brand-dark group-hover:text-brand-emphasis transition-colors mb-2 leading-tight overflow-wrap-break-word ${index === 0 ? 'text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl' : 'text-xs sm:text-sm md:text-base lg:text-lg'}`}>
                         {post.title}
                       </h4>
-                      <p className={`text-brand-primary mb-3 leading-relaxed overflow-wrap-break-word ${index === 0 ? 'text-sm lg:text-base' : 'text-xs lg:text-sm'}`}>
+                      <p className={`text-brand-primary mb-3 leading-relaxed overflow-wrap-break-word ${index === 0 ? 'text-xs sm:text-sm lg:text-base' : 'text-xs lg:text-sm'}`}>
                         {post.description}
                       </p>
                       <div className="flex items-center justify-between min-w-0">
-                        <span className="text-xs text-brand-primary bg-brand-secondary px-2 lg:px-3 py-1 rounded-full font-medium truncate max-w-32 lg:max-w-40">
+                        <span className="text-xs text-brand-primary bg-brand-secondary px-1 sm:px-2 lg:px-3 py-1 rounded-full font-medium truncate max-w-20 sm:max-w-32 lg:max-w-40">
                           {post.category}
                         </span>
-                        <time className="text-xs text-gray-500 font-medium flex-shrink-0 ml-2">
+                        <time className="text-xs text-gray-500 font-medium flex-shrink-0 ml-1 sm:ml-2">
                           {new Date(post.date).toLocaleDateString('en-US', { 
                             month: 'short', 
                             day: 'numeric' 
