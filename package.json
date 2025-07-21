@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "node scripts/generate-sitemap.js",
+    "postbuild": "next-sitemap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
