@@ -6,6 +6,7 @@ import BlogPostSayingNoWithoutGuilt from './components/BlogPostSayingNoWithoutGu
 import BlogPostRelationshipSigns from './pages/BlogPostRelationshipSigns';
 import BlogPostSocialBattery from './pages/BlogPostSocialBattery';
 import BlogPostIntentionalDating from './pages/BlogPostIntentionalDating';
+import BlogPostMeetings from './pages/BlogPostMeetings';
 
 export const categories = {
   INTROVERSION_PERSONALITY: 'Introversion & Personality',
@@ -16,6 +17,16 @@ export const categories = {
 };
 
 export const blogPosts = [
+  {
+    slug: 'how-to-speak-up-in-meetings-introvert-strategies-2025',
+    title: 'How to Speak Up in Meetings as an Introvert: 9 Proven Strategies That Actually Work in 2025',
+    description: 'Learn how to speak up in meetings as introvert with 9 proven strategies. Discover confidence-building techniques, preparation methods, and communication tips that help introverted professionals thrive in workplace meetings without changing who you are.',
+    date: '2025-07-22',
+    category: categories.CAREER_WORKPLACE,
+    component: BlogPostMeetings,
+    image: '/images/Meeting.jpg',
+    readTime: '15 min read',
+  },
   {
     slug: 'intentional-dating-2025-guide',
     title: 'Intentional Dating 2025: How to Date Purposefully (7 Proven Steps)',
