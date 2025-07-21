@@ -468,8 +468,97 @@ A structured blog template has been created to ensure consistency and SEO optimi
 
 The recent addition of the "How to Say No Without Guilt" article demonstrates the full implementation of this template with comprehensive content, practical value, and technical excellence.
 
+## Recent Updates (July 20-21, 2025) 🆕
+
+### Session 4: SEO & Build Optimization
+
+#### Major Technical Improvements
+
+##### 1. **Sitemap System Overhaul**
+**Problem**: Old manual sitemap generation system using custom `generate-sitemap.js` script
+**Solution**: Migration to `next-sitemap` for automated sitemap generation
+- **Removed Files**:
+  - `generate-sitemap.js` (custom script)
+  - `public/sitemap.xml` (static sitemap with placeholder domains)
+- **Updated Build Process**: 
+  - Changed `postbuild` script from `node scripts/generate-sitemap.js` to `next-sitemap`
+  - Automated sitemap generation during build process
+  - Dynamic sitemap creation based on actual site structure
+
+##### 2. **Canonical URL Fixes for SEO**
+**Problem**: Incorrect canonical URL generation in category and blog pages affecting SEO
+**Solutions Implemented**:
+
+**CategoryPage.js Fixes**:
+```javascript
+// Before (incorrect)
+const canonicalUrl = category
+  ? `https://www.trueallyguide.com/blog/${category}`
+  : 'https://www.trueallyguide.com/blog';
+
+// After (correct)
+const canonicalUrl = categoryName
+  ? `https://www.trueallyguide.com/category/${categoryName
+      .toLowerCase()
+      .replace(/\s+/g, '-')}`
+  : 'https://www.trueallyguide.com/blog';
+```
+
+**BlogPage.js Fixes**:
+```javascript
+// Before (static, incorrect)
+const canonicalUrl = `https://www.trueallyguide.com/blog/${postData.slug}`;
+
+// After (dynamic, category-aware)
+const canonicalUrl = selectedCategory
+  ? `https://www.trueallyguide.com/blog/${selectedCategory}`
+  : 'https://www.trueallyguide.com/blog';
+```
+
+##### 3. **Git Repository Cleanup**
+**Problem**: node_modules accidentally committed causing Vercel deployment issues (exit-126)
+**Solution**: 
+- Updated `.gitignore` to properly exclude node_modules
+- Cleaned repository of node_modules entries
+- Fixed Vercel deployment issues
+
+#### Technical Implementation Details (Session 4)
+
+##### **SEO Improvements**:
+- **Canonical URLs**: Now correctly reflect the actual page structure
+- **Category URLs**: Properly formatted with lowercase and hyphens
+- **Blog URLs**: Dynamic based on selected category or default blog page
+- **Sitemap Generation**: Automated via next-sitemap package
+
+##### **Build Process Enhancement**:
+- **Automated Sitemap**: No more manual sitemap maintenance
+- **Clean Deployments**: Fixed Vercel exit-126 errors
+- **Better Git Hygiene**: Proper .gitignore configuration
+
+#### File Updates Summary (Session 4)
+```
+❌ REMOVED: generate-sitemap.js (replaced with next-sitemap)
+❌ REMOVED: public/sitemap.xml (now auto-generated)
+✅ UPDATED: package.json (postbuild script change)
+✅ UPDATED: .gitignore (node_modules exclusion)
+✅ UPDATED: src/pages/CategoryPage.js (canonical URL fix)
+✅ UPDATED: src/pages/BlogPage.js (canonical URL fix)
+```
+
+#### SEO Impact (Session 4)
+- **Better Search Engine Understanding**: Correct canonical URLs prevent duplicate content issues
+- **Improved Category Structure**: Category URLs follow SEO best practices
+- **Dynamic Sitemap**: Always up-to-date sitemap for search engine crawling
+- **Clean Repository**: Faster deployments and better development workflow
+
+### Build & Deployment Improvements
+- **Vercel Compatibility**: Fixed exit-126 errors that were preventing deployments
+- **Automated Sitemap**: Sitemap now generated automatically during build
+- **SEO Compliance**: Canonical URLs properly formatted for search engines
+- **Repository Hygiene**: Clean git history without unnecessary node_modules commits
+
 ---
 
-*Last Updated: July 19, 2025*
+*Last Updated: July 21, 2025*
 *Project: Quiet Strength Blog Website*
-*Status: Production Ready with Recent Enhancements*
+*Status: Production Ready with SEO & Build Optimizations*

@@ -238,6 +238,72 @@ This document details all the SEO, performance, and content updates made to the 
 
 This optimization provides a solid foundation for your blog's SEO performance. Regular content updates, monitoring Core Web Vitals, and staying current with SEO best practices will ensure continued success.
 
-**Last Updated:** January 16, 2025  
+## Recent SEO & Technical Updates (July 20-21, 2025) 🆕
+
+### Critical SEO Improvements
+
+#### 1. **Canonical URL Optimization**
+**Files Updated:** `src/pages/CategoryPage.js`, `src/pages/BlogPage.js`
+- **Fixed** incorrect canonical URL generation that was causing SEO issues
+- **CategoryPage URLs**: Now properly formatted as `/category/{category-name}` instead of `/blog/{category}`
+- **BlogPage URLs**: Dynamic canonical URLs based on selected category or default blog page
+- **SEO Impact**: Prevents duplicate content penalties and improves search engine understanding
+
+#### 2. **Automated Sitemap Generation**
+**Files Updated:** `package.json` (postbuild script), **Removed:** `generate-sitemap.js`, `public/sitemap.xml`
+- **Replaced** manual sitemap generation with automated `next-sitemap` package
+- **Dynamic Generation**: Sitemap now automatically reflects current site structure
+- **Build Integration**: Sitemap generated during every build process
+- **SEO Benefit**: Always up-to-date sitemap for search engine crawlers
+
+#### 3. **Repository & Deployment Optimization** 
+**Files Updated:** `.gitignore`
+- **Fixed** Vercel deployment issues (exit-126 errors) caused by committed node_modules
+- **Cleaned** git repository of unnecessary files
+- **Improved** build performance and deployment reliability
+
+### Technical SEO Enhancements
+
+#### Canonical URL Structure Improvements:
+```javascript
+// CategoryPage - Before
+const canonicalUrl = category
+  ? `https://www.trueallyguide.com/blog/${category}`
+  : 'https://www.trueallyguide.com/blog';
+
+// CategoryPage - After (SEO Optimized)
+const canonicalUrl = categoryName
+  ? `https://www.trueallyguide.com/category/${categoryName
+      .toLowerCase()
+      .replace(/\s+/g, '-')}`
+  : 'https://www.trueallyguide.com/blog';
+```
+
+#### Build Process Optimization:
+```json
+// package.json - Before
+"postbuild": "node scripts/generate-sitemap.js"
+
+// package.json - After (Automated)
+"postbuild": "next-sitemap"
+```
+
+### Performance & SEO Impact
+
+#### Immediate Improvements:
+- **Better Google Indexing**: Correct canonical URLs prevent duplicate content issues
+- **Improved Site Architecture**: Category URLs follow SEO best practices
+- **Faster Deployments**: Clean repository without node_modules overhead
+- **Automated SEO**: Dynamic sitemap generation without manual maintenance
+
+#### Long-term Benefits:
+- **Search Ranking Improvement**: Proper URL structure supports better SEO
+- **Development Efficiency**: Automated build processes reduce manual work
+- **Site Reliability**: Fixed deployment issues ensure consistent availability
+
+---
+
+**Last Updated:** July 21, 2025  
 **Optimized By:** Claude Code Assistant  
-**Website:** Quiet Strength Blog by Marica Šinko
+**Website:** Quiet Strength Blog by Marica Šinko  
+**Latest Updates:** SEO URL optimization, automated sitemap generation, deployment fixes
