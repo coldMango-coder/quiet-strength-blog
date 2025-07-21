@@ -75,7 +75,7 @@ const BlogPostMeetings = ({ onBack, onNavigate }) => {
             </p>
             <div className="my-8">
               <img src="/images/Meeting.jpg" alt="Confident introvert woman speaking up during business meeting with diverse colleagues listening attentively around conference table" className="rounded-lg shadow-md" />
-              <p className="text-sm text-gray-600 mt-2 text-center italic">A confident introvert speaking up during a business meeting, demonstrating that introverts can effectively contribute to workplace discussions while staying true to their communication style.</p>
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Confident introvert woman speaking up during business meeting with diverse colleagues listening attentively around conference table</p>
             </div>
             
             <h3>The Introvert Brain in Meetings</h3>
@@ -114,7 +114,7 @@ const BlogPostMeetings = ({ onBack, onNavigate }) => {
             
             <div className="my-8">
               <img src="/images/BuildingStrategy.jpg" alt="Professional preparing meeting notes and agenda on desk with laptop showing introvert meeting preparation strategies and planning techniques" className="rounded-lg shadow-md" />
-              <p className="text-sm text-gray-600 mt-2 text-center italic">Strategic meeting preparation is an introvert's secret weapon - reviewing agendas, preparing key points, and developing thoughtful responses in advance leads to more confident participation.</p>
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Professional preparing meeting notes and agenda on desk with laptop showing introvert meeting preparation strategies and planning techniques</p>
             </div>
             
             <StyledList 
@@ -183,7 +183,7 @@ const BlogPostMeetings = ({ onBack, onNavigate }) => {
             
             <div className="my-8">
               <img src="/images/strategic-questions.png" alt="An introvert asking thoughtful questions in a meeting setting" className="rounded-lg shadow-md" />
-              <p className="text-sm text-gray-600 mt-2 text-center italic">Strategic questioning is an introvert's superpower - well-crafted questions demonstrate engagement, show thoughtfulness, and often carry more weight than bold statements.</p>
+              <p className="text-sm text-gray-600 mt-3 text-center italic">An introvert asking thoughtful questions in a meeting setting</p>
             </div>
             
             <h3>Types of Strategic Questions</h3>
@@ -236,7 +236,7 @@ const BlogPostMeetings = ({ onBack, onNavigate }) => {
             
             <div className="my-8">
               <img src="/images/ConfidentOfficemeeting.jpg" alt="Professional introvert demonstrating confident body language and posture while speaking up in workplace meeting environment" className="rounded-lg shadow-md" />
-              <p className="text-sm text-gray-600 mt-2 text-center italic">Body language speaks before words do - maintaining confident posture, appropriate eye contact, and open positioning signals that you have valuable contributions to share.</p>
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Professional introvert demonstrating confident body language and posture while speaking up in workplace meeting environment</p>
             </div>
             
             <h3>Pre-Speaking Positioning</h3>
