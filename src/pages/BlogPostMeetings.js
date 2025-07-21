@@ -234,10 +234,6 @@ const BlogPostMeetings = ({ onBack, onNavigate }) => {
               Your physical presence speaks before you do. For introverts learning how to speak up in meetings, confident body language is crucial because it signals that you have something valuable to contribute.
             </p>
             
-            <div className="my-8">
-              <img src="/images/ConfidentOfficemeeting.jpg" alt="Professional introvert demonstrating confident body language and posture while speaking up in workplace meeting environment" className="rounded-lg shadow-md" />
-              <p className="text-sm text-gray-600 mt-3 text-center italic">Professional introvert demonstrating confident body language and posture while speaking up in workplace meeting environment</p>
-            </div>
             
             <h3>Pre-Speaking Positioning</h3>
             <StyledList 
