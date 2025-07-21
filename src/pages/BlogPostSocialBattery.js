@@ -61,14 +61,17 @@ const BlogPostSocialBattery = ({ onBack, onNavigate }) => {
               Do you feel completely exhausted after a day of meetings, social events, or even casual conversations? If you're an introvert whose social battery is drained, you're experiencing one of the most common challenges faced by 25-40% of the population. That overwhelming feeling of mental fatigue isn't weakness—it's your brain's natural response to overstimulation.
             </p>
             
-            <img 
-              src="/images/SereneTeaMoment.jpg" 
-              alt="Introvert recovering from social battery drain in peaceful home environment with tea and natural lighting" 
-              className="rounded-lg shadow-md my-8" 
-              loading="lazy"
-              width="600"
-              height="400"
-            />
+            <div className="my-8">
+              <img 
+                src="/images/SereneTeaMoment.jpg" 
+                alt="Introvert recovering from social battery drain in peaceful home environment with tea and natural lighting" 
+                className="rounded-lg shadow-md" 
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Introvert recovering from social battery drain in peaceful home environment with tea and natural lighting</p>
+            </div>
             
             <p>
               According to recent neuroscience research from 2024, introverts' brains process social interactions differently than extroverts, requiring significantly more energy to engage in social situations. Dr. Jennifer Grimes from Stanford University's Psychology Department found that introverts need an average of 2-4 hours of solitude to fully recharge after intense social interactions.
@@ -155,14 +158,17 @@ const BlogPostSocialBattery = ({ onBack, onNavigate }) => {
             ]} />
             <p>Block recovery time in your calendar immediately after scheduling social commitments. Treat this time as non-negotiable.</p>
             
-            <img 
-              src="/images/EnergyRenewalTheme.jpg" 
-              alt="Visual representation of social battery recharging for introverts with glowing energy meter in peaceful setting" 
-              className="rounded-lg shadow-md my-8" 
-              loading="lazy"
-              width="600"
-              height="400"
-            />
+            <div className="my-8">
+              <img 
+                src="/images/EnergyRenewalTheme.jpg" 
+                alt="Visual representation of social battery recharging for introverts with glowing energy meter in peaceful setting" 
+                className="rounded-lg shadow-md" 
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Visual representation of social battery recharging for introverts with glowing energy meter in peaceful setting</p>
+            </div>
             
             <h3>Creating Your Perfect Solitude Environment</h3>
             <p>Your recovery space should engage your parasympathetic nervous system. Research indicates that certain environmental factors accelerate social battery recharging:</p>
@@ -326,14 +332,17 @@ const BlogPostSocialBattery = ({ onBack, onNavigate }) => {
             <h3>Step 2: Design Your Personal Recovery Kit</h3>
             <p>Create both physical and digital resources:</p>
             
-            <img 
-              src="/images/PeacfulReadingSanctuary.jpg" 
-              alt="Introvert practicing solitude recovery method by reading with headphones in quiet natural setting" 
-              className="rounded-lg shadow-md my-8" 
-              loading="lazy"
-              width="600"
-              height="400"
-            />
+            <div className="my-8">
+              <img 
+                src="/images/PeacfulReadingSanctuary.jpg" 
+                alt="Introvert practicing solitude recovery method by reading with headphones in quiet natural setting" 
+                className="rounded-lg shadow-md" 
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Introvert practicing solitude recovery method by reading with headphones in quiet natural setting</p>
+            </div>
             
             <h4>Physical Kit:</h4>
             <StyledList items={[
