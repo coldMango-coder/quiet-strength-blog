@@ -42,7 +42,7 @@ const BlogPage = ({ onBack, category, slug, onNavigate }) => {
             image: postToRender.image,
           }}
         />
-        <PostComponent onBack={onBack} onNavigate={onNavigate} />
+        <PostComponent onBack={onBack} onBackToList={handleBackToList} onNavigate={onNavigate} />
       </>
     );
   }

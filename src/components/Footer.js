@@ -43,7 +43,7 @@ const Footer = ({ onNavigate }) => {
           <div>
             <h3 className="text-xl font-bold mb-4">Legal</h3>
             <nav className="flex flex-col space-y-2">
-              <a href="#" className="text-slate-400 hover:text-white">Privacy Policy</a>
+              <button className="text-slate-400 hover:text-white text-left">Privacy Policy</button>
             </nav>
           </div>
         </div>
