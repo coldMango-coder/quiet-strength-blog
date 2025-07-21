@@ -31,7 +31,10 @@ const TestimonialCard = ({ quote, author, title, avatar }) => (
       description={quote}
       path={`/testimonials/${author.toLowerCase().replace(' ', '-')}`}
     />
-    <img src={avatar} alt={author} className="w-40 h-40 rounded-full mb-6" />
+    <div className="mb-6">
+      <img src={avatar} alt={author} className="w-40 h-40 rounded-full" />
+      <p className="text-sm text-gray-600 mt-3 text-center italic">{author}</p>
+    </div>
     <blockquote className="text-slate-600 italic mb-6">
       <p>"{quote}"</p>
     </blockquote>

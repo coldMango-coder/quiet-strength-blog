@@ -64,7 +64,10 @@ const BlogPostConfidence = ({ onBack, onNavigate }) => {
             <p>
               Authentic confidence isn't about being the loudest person in the room; it's a deep-seated belief in your own worth and abilities. For introverts, this is built on a different foundation than extroverted confidence. It's rooted in preparation, deep thought, and a strong inner world.
             </p>
-            <img src="/images/image1.png" alt="An introverted woman reflecting on her inner strengths to build authentic confidence." className="rounded-lg shadow-md my-8" />
+            <div className="my-8">
+              <img src="/images/image1.png" alt="An introverted woman reflecting on her inner strengths to build authentic confidence." className="rounded-lg shadow-md" />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">An introverted woman reflecting on her inner strengths to build authentic confidence.</p>
+            </div>
             <p>
               Your introverted traits are not obstacles to confidence; they are the very tools you'll use to build it:
             </p>
@@ -82,7 +85,10 @@ const BlogPostConfidence = ({ onBack, onNavigate }) => {
           <section id="section-2" className="mb-16 scroll-mt-24">
             <h2>2. Actionable Strategies to Cultivate Self-Esteem</h2>
             <p>Building confidence is an active process. It requires consistent practice and self-compassion. Here are strategies tailored for the introverted woman.</p>
-            <img src="/images/image2.png" alt="A woman journaling as a self-reflection tool to build confidence." className="rounded-lg shadow-md my-8" />
+            <div className="my-8">
+              <img src="/images/image2.png" alt="A woman journaling as a self-reflection tool to build confidence." className="rounded-lg shadow-md" />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">A woman journaling as a self-reflection tool to build confidence.</p>
+            </div>
             <h3>2.1. The "Small Wins" Log</h3>
             <p>Self-doubt often makes us forget our accomplishments. Keep a daily log of "small wins"—tasks you completed, challenges you met, or positive feedback you received. This creates a tangible record of your competence that you can review when doubt creeps in.</p>
             
@@ -100,7 +106,10 @@ const BlogPostConfidence = ({ onBack, onNavigate }) => {
           <section id="section-3" className="mb-16 scroll-mt-24">
             <h2>3. Projecting Quiet Confidence in an Extroverted World</h2>
             <p>Once you've started building your inner foundation, you can learn to project that confidence outwardly in a way that feels authentic to you.</p>
-            <img src="/images/image3.png" alt="A woman demonstrating quiet confidence with calm and assertive posture." className="rounded-lg shadow-md my-8" />
+            <div className="my-8">
+              <img src="/images/image3.png" alt="A woman demonstrating quiet confidence with calm and assertive posture." className="rounded-lg shadow-md" />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">A woman demonstrating quiet confidence with calm and assertive posture.</p>
+            </div>
             <h3>3.1. Master Your Body Language</h3>
             <p>Your posture and presence speak volumes before you even say a word. Stand tall, keep your shoulders back, make deliberate eye contact (it doesn't have to be constant), and offer a firm handshake. This non-verbal communication signals self-assurance.</p>
 

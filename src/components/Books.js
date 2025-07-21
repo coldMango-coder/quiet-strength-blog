@@ -21,7 +21,10 @@ const BookCard = ({ imgSrc, title, description, price, onNavigate, ctaText, slug
         },
       }}
     />
-    <img src={imgSrc} alt={`Book cover for ${title}`} className="w-full h-[500px] object-contain" loading="lazy" decoding="async" />
+    <div>
+      <img src={imgSrc} alt={`Book cover for ${title}`} className="w-full h-[500px] object-contain" loading="lazy" decoding="async" />
+      <p className="text-sm text-gray-600 mt-3 text-center italic px-4">Book cover for {title}</p>
+    </div>
     <div className="flex flex-col flex-grow p-8">
       <h3 className="text-xl md:text-2xl font-bold text-brand-dark mb-2">{title}</h3>
       <p className="text-brand-primary mb-4 flex-grow leading-relaxed">{description}</p>

@@ -65,7 +65,10 @@ const BlogPostProductivity = ({ onBack, onNavigate }) => {
             <p>
               Understanding your energy is the first step to optimizing it. Unlike extroverts who gain energy from social interaction, introverts expend energy in highly stimulating environments. Our brains are wired differently. Research, including work by Dr. Marti Olsen Laney, suggests introverts have a higher baseline level of cortical arousal, meaning we are more sensitive to external stimuli like noise, interruptions, and social demands.
             </p>
-            <img src="/images/image1.png" alt="A diagram illustrating an introvert's energy cycle, depleting in busy environments and recharging in solitude." className="rounded-lg shadow-md my-8" />
+            <div className="my-8">
+              <img src="/images/image1.png" alt="A diagram illustrating an introvert's energy cycle, depleting in busy environments and recharging in solitude." className="rounded-lg shadow-md" />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">A diagram illustrating an introvert's energy cycle, depleting in busy environments and recharging in solitude.</p>
+            </div>
             <StyledBlockquote>
               This isn't a weakness; it's a strategic advantage when managed correctly. Your "social battery" is a finite resource. Protecting it is the most important productivity hack you will ever learn.
             </StyledBlockquote>
@@ -74,7 +77,10 @@ const BlogPostProductivity = ({ onBack, onNavigate }) => {
           <section id="section-2" className="mb-16 scroll-mt-24">
             <h2>2. Core Strategies for Introvert-Friendly Productivity</h2>
             <p>Forget the generic advice. These strategies are designed to align with your natural strengths.</p>
-            <img src="/images/image2.png" alt="A woman using a planner for time-blocking, a key productivity strategy for introverts." className="rounded-lg shadow-md my-8" />
+            <div className="my-8">
+              <img src="/images/image2.png" alt="A woman using a planner for time-blocking, a key productivity strategy for introverts." className="rounded-lg shadow-md" />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">A woman using a planner for time-blocking, a key productivity strategy for introverts.</p>
+            </div>
             <h3>2.1. Time-Blocking & The "Deep Work" Ritual</h3>
             <p>Your ability to focus deeply is your superpower. Protect it fiercely. Instead of a scattered to-do list, use time-blocking. Schedule 60-90 minute blocks of "deep work" into your calendar for your most important tasks. Treat these appointments as non-negotiable. Turn off notifications, close unnecessary tabs, and signal to colleagues that you are unavailable.</p>
             
@@ -92,7 +98,10 @@ const BlogPostProductivity = ({ onBack, onNavigate }) => {
           <section id="section-3" className="mb-16 scroll-mt-24">
             <h2>3. Navigating an Extroverted Workplace</h2>
             <p>Even with the best personal system, you still have to work with others. Here’s how to protect your energy and productivity in a typical office environment.</p>
-            <img src="/images/image3.png" alt="An introverted woman wearing headphones to create a focus bubble in a busy office." className="rounded-lg shadow-md my-8" />
+            <div className="my-8">
+              <img src="/images/image3.png" alt="An introverted woman wearing headphones to create a focus bubble in a busy office." className="rounded-lg shadow-md" />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">An introverted woman wearing headphones to create a focus bubble in a busy office.</p>
+            </div>
             <StyledList items={[
               "Create Your Focus Bubble: In an open-plan office, noise-cancelling headphones are non-negotiable.",
               "Prepare for Meetings: Ask for an agenda beforehand, review it, and jot down your key thoughts or questions.",
