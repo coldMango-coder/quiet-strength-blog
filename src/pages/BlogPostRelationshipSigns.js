@@ -109,14 +109,17 @@ const BlogPostRelationshipSigns = ({ onBack, onNavigate }) => {
               "Doubt your instincts when something feels wrong"
             ]} />
 
-            <img 
-              src="/images/contemplativeserenity.jpg" 
-              alt="Thoughtful introvert woman sitting by window with coffee cup contemplating whether she deserves better in her relationship, representing self-reflection and personal worth" 
-              className="rounded-lg shadow-md my-8" 
-              loading="lazy"
-              width="600"
-              height="400"
-            />
+            <div className="my-8">
+              <img 
+                src="/images/contemplativeserenity.jpg" 
+                alt="Thoughtful introvert woman sitting by window with coffee cup contemplating whether she deserves better in her relationship, representing self-reflection and personal worth" 
+                className="rounded-lg shadow-md" 
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Thoughtful introvert woman sitting by window with coffee cup contemplating whether she deserves better in her relationship, representing self-reflection and personal worth</p>
+            </div>
 
             <h3>Why Your Introvert Needs Are Valid and Important</h3>
             <p>
@@ -267,14 +270,17 @@ const BlogPostRelationshipSigns = ({ onBack, onNavigate }) => {
             <h3>Practice Self-Advocacy</h3>
             <p>Start small by advocating for your needs in low-stakes situations, then build up to more important conversations. The more you practice honoring your own needs, the easier it becomes.</p>
             
-            <img 
-              src="/images/WritingJorunal.png" 
-              alt="Woman journaling and practicing self-reflection in cozy reading nook, symbolizing introvert woman understanding her relationship needs and personal worth" 
-              className="rounded-lg shadow-md my-8" 
-              loading="lazy"
-              width="600"
-              height="400"
-            />
+            <div className="my-8">
+              <img 
+                src="/images/WritingJorunal.png" 
+                alt="Woman journaling and practicing self-reflection in cozy reading nook, symbolizing introvert woman understanding her relationship needs and personal worth" 
+                className="rounded-lg shadow-md" 
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Woman journaling and practicing self-reflection in cozy reading nook, symbolizing introvert woman understanding her relationship needs and personal worth</p>
+            </div>
           </section>
 
           <section id="relationship-standards" className="mb-16 scroll-mt-24">
@@ -361,14 +367,17 @@ const BlogPostRelationshipSigns = ({ onBack, onNavigate }) => {
               Remember: You're not asking for too much. You're asking for what every person deserves—love, understanding, and respect for who they truly are.
             </p>
             
-            <img 
-              src="/images/ConfidentWoman.png" 
-              alt="Confident introvert woman standing on balcony looking toward future horizons, representing empowerment to demand better relationships and recognize self-worth" 
-              className="rounded-lg shadow-md my-8" 
-              loading="lazy"
-              width="600"
-              height="400"
-            />
+            <div className="my-8">
+              <img 
+                src="/images/ConfidentWoman.png" 
+                alt="Confident introvert woman standing on balcony looking toward future horizons, representing empowerment to demand better relationships and recognize self-worth" 
+                className="rounded-lg shadow-md" 
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Confident introvert woman standing on balcony looking toward future horizons, representing empowerment to demand better relationships and recognize self-worth</p>
+            </div>
           </section>
 
           <AuthorBio />

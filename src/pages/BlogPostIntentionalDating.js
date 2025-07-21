@@ -77,14 +77,17 @@ const BlogPostIntentionalDating = ({ onBack, onNavigate }) => {
               Are you tired of endless swiping, meaningless dates, and relationships that go nowhere? In 2025, more singles are discovering the power of intentional dating – a revolutionary approach that transforms your dating life from chaotic to purposeful.
             </p>
             
-            <img 
-              src="/images/CozyCaffeConversation.jpg" 
-              alt="Young couple having intentional dating conversation at coffee shop, discussing relationship goals purposefully" 
-              className="rounded-lg shadow-md my-8" 
-              loading="lazy"
-              width="600"
-              height="400"
-            />
+            <div className="my-8">
+              <img 
+                src="/images/CozyCaffeConversation.jpg" 
+                alt="Young couple having intentional dating conversation at coffee shop, discussing relationship goals purposefully" 
+                className="rounded-lg shadow-md" 
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Young couple having intentional dating conversation at coffee shop, discussing relationship goals purposefully</p>
+            </div>
             
             <p>
               Recent studies show that 78% of people feel overwhelmed by modern dating apps, yet those who practice intentional dating are 3x more likely to find lasting relationships. If you're ready to stop wasting time on incompatible matches and start building meaningful connections, this comprehensive guide will show you exactly how to date purposefully in today's fast-paced world.
@@ -193,14 +196,17 @@ const BlogPostIntentionalDating = ({ onBack, onNavigate }) => {
               "Personal growth commitment and emotional maturity levels"
             ]} />
             
-            <img 
-              src="/images/JournalingRelationshipGoals.jpg" 
-              alt="Person writing intentional dating goals and values in journal for purposeful dating in 2025" 
-              className="rounded-lg shadow-md my-8" 
-              loading="lazy"
-              width="600"
-              height="400"
-            />
+            <div className="my-8">
+              <img 
+                src="/images/JournalingRelationshipGoals.jpg" 
+                alt="Person writing intentional dating goals and values in journal for purposeful dating in 2025" 
+                className="rounded-lg shadow-md" 
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Person writing intentional dating goals and values in journal for purposeful dating in 2025</p>
+            </div>
             
             <h3>Step 3: Create Your Ideal Partner Profile</h3>
             <p>Based on your self-assessment and relationship vision, develop a comprehensive profile of your ideal partner. This isn't a rigid checklist but a guiding framework for decision-making.</p>
@@ -436,14 +442,17 @@ const BlogPostIntentionalDating = ({ onBack, onNavigate }) => {
               "Share books, movies, or music that have influenced you"
             ]} />
             
-            <img 
-              src="/images/GoldenHourStroll.jpg" 
-              alt="Couple building authentic connection through mindful communication during intentional dating walk" 
-              className="rounded-lg shadow-md my-8" 
-              loading="lazy"
-              width="600"
-              height="400"
-            />
+            <div className="my-8">
+              <img 
+                src="/images/GoldenHourStroll.jpg" 
+                alt="Couple building authentic connection through mindful communication during intentional dating walk" 
+                className="rounded-lg shadow-md" 
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Couple building authentic connection through mindful communication during intentional dating walk</p>
+            </div>
           </section>
 
           <section id="red-flags-avoid" className="mb-16 scroll-mt-24">
