@@ -312,7 +312,6 @@ const BlogPostMeetings = ({ onBack, onNavigate }) => {
               One of the most effective strategies for introverts is building relationships and gathering support before the meeting even begins. This pre-meeting networking reduces anxiety and creates natural opportunities to contribute.
             </p>
             
-            <img src="/images/building-alliances.png" alt="Professional networking and one-on-one conversations before meetings" className="rounded-lg shadow-md my-8" />
             
             <h3>The Pre-Meeting Conversation Strategy</h3>
             <p>Schedule 15-minute conversations with key meeting participants to:</p>
@@ -377,7 +376,6 @@ const BlogPostMeetings = ({ onBack, onNavigate }) => {
               Building confidence to speak up in meetings as an introvert is a gradual process. These progressive techniques help you develop your skills systematically while respecting your natural communication style.
             </p>
             
-            <img src="/images/confidence-building.png" alt="A professional woman growing in confidence through progressive meeting participation" className="rounded-lg shadow-md my-8" />
             
             <h3>The Graduated Exposure Method</h3>
             
