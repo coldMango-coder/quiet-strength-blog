@@ -73,7 +73,10 @@ const BlogPostMeetings = ({ onBack, onNavigate }) => {
             <p>
               Before diving into solutions, it's crucial to understand why meetings can be particularly challenging for introverts. This isn't about being shy or lacking confidence – it's about fundamental differences in how introverts process information and communicate.
             </p>
-            <img src="/images/Meeting.jpg" alt="Confident introvert woman speaking up during business meeting with diverse colleagues listening attentively around conference table" className="rounded-lg shadow-md my-8" />
+            <div className="my-8">
+              <img src="/images/Meeting.jpg" alt="Confident introvert woman speaking up during business meeting with diverse colleagues listening attentively around conference table" className="rounded-lg shadow-md" />
+              <p className="text-sm text-gray-600 mt-2 text-center italic">A confident introvert speaking up during a business meeting, demonstrating that introverts can effectively contribute to workplace discussions while staying true to their communication style.</p>
+            </div>
             
             <h3>The Introvert Brain in Meetings</h3>
             <p>
@@ -109,7 +112,10 @@ const BlogPostMeetings = ({ onBack, onNavigate }) => {
               Whenever possible, review the meeting agenda 24 hours in advance. This gives your brain time to process the topics and develop thoughtful responses.
             </p>
             
-            <img src="/images/BuildingStrategy.jpg" alt="Professional preparing meeting notes and agenda on desk with laptop showing introvert meeting preparation strategies and planning techniques" className="rounded-lg shadow-md my-8" />
+            <div className="my-8">
+              <img src="/images/BuildingStrategy.jpg" alt="Professional preparing meeting notes and agenda on desk with laptop showing introvert meeting preparation strategies and planning techniques" className="rounded-lg shadow-md" />
+              <p className="text-sm text-gray-600 mt-2 text-center italic">Strategic meeting preparation is an introvert's secret weapon - reviewing agendas, preparing key points, and developing thoughtful responses in advance leads to more confident participation.</p>
+            </div>
             
             <StyledList 
               title="Agenda Analysis (15 minutes):"
@@ -175,7 +181,10 @@ const BlogPostMeetings = ({ onBack, onNavigate }) => {
               Questions are an introvert's secret weapon in meetings. They're easier to prepare in advance, demonstrate thoughtfulness, and often carry more weight than statements. Plus, asking questions feels more natural for many introverts than making bold declarations.
             </p>
             
-            <img src="/images/strategic-questions.png" alt="An introvert asking thoughtful questions in a meeting setting" className="rounded-lg shadow-md my-8" />
+            <div className="my-8">
+              <img src="/images/strategic-questions.png" alt="An introvert asking thoughtful questions in a meeting setting" className="rounded-lg shadow-md" />
+              <p className="text-sm text-gray-600 mt-2 text-center italic">Strategic questioning is an introvert's superpower - well-crafted questions demonstrate engagement, show thoughtfulness, and often carry more weight than bold statements.</p>
+            </div>
             
             <h3>Types of Strategic Questions</h3>
             
@@ -225,7 +234,10 @@ const BlogPostMeetings = ({ onBack, onNavigate }) => {
               Your physical presence speaks before you do. For introverts learning how to speak up in meetings, confident body language is crucial because it signals that you have something valuable to contribute.
             </p>
             
-            <img src="/images/ConfidentOfficemeeting.jpg" alt="Professional introvert demonstrating confident body language and posture while speaking up in workplace meeting environment" className="rounded-lg shadow-md my-8" />
+            <div className="my-8">
+              <img src="/images/ConfidentOfficemeeting.jpg" alt="Professional introvert demonstrating confident body language and posture while speaking up in workplace meeting environment" className="rounded-lg shadow-md" />
+              <p className="text-sm text-gray-600 mt-2 text-center italic">Body language speaks before words do - maintaining confident posture, appropriate eye contact, and open positioning signals that you have valuable contributions to share.</p>
+            </div>
             
             <h3>Pre-Speaking Positioning</h3>
             <StyledList 
