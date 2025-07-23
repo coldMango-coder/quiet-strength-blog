@@ -1,5 +1,8 @@
 {
-  "buildCommand": "npx react-scripts build && npx next-sitemap",
-  "framework": null,
-  "installCommand": "npm ci"
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
