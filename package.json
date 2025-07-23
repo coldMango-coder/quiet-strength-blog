@@ -16,11 +16,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npx react-scripts start",
+    "build": "CI=false npx react-scripts build",
     "postbuild": "node scripts/generate-sitemap.js",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "test": "npx react-scripts test",
+    "eject": "npx react-scripts eject",
     "analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
     "lighthouse": "lhci autorun",
     "seo-check": "echo 'Running SEO analysis...' && npm run build",
