@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
@@ -7,9 +8,9 @@ import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
 import Seo from '../components/Seo';
 
-const BlogPostRelationshipSigns = ({ onBack, onNavigate }) => {
+const BlogPostRelationshipSigns = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'how-to-know-if-you-deserve-better-relationship-introvert-woman-guide');
-  const canonicalUrl = `https://www.trueallyguide.com/blog/${postData.slug}`;
+  const canonicalUrl = `https://trueallyguide.com/blog/${postData.slug}`;
   return (
     <>
     <Helmet>
@@ -35,9 +36,9 @@ const BlogPostRelationshipSigns = ({ onBack, onNavigate }) => {
       />
 
       <div className="container mx-auto px-6 py-16">
-        <button onClick={onBack} className="text-brand-emphasis hover:underline font-semibold mb-12">
+        <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">
           &larr; Back to Home
-        </button>
+        </Link>
         
         <article className="article-container mx-auto max-w-[720px]">
           <header className="mb-16 text-left">

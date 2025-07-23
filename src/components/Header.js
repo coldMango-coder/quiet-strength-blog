@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { categories } from '../blogData';
 
-const Header = ({ onNavigate, activePage }) => {
+const Header = () => {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -54,7 +56,7 @@ const Header = ({ onNavigate, activePage }) => {
       <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'h-[92px] bg-[#C65616] shadow-lg' : 'h-[128px] bg-[#B44416]'}`}>
         <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
         <div className="container mx-auto px-6 flex justify-between items-center h-full">
-          <button onClick={() => onNavigate('home')} className="focus:outline-none">
+          <Link to="/" className="focus:outline-none">
             <div className={`modern-logo transition-all duration-300 ${isScrolled ? 'h-12' : 'h-16'} rounded-full overflow-hidden`}>
               <img 
                 src="/images/logo.png" 
@@ -62,7 +64,7 @@ const Header = ({ onNavigate, activePage }) => {
                 className="w-full h-full object-cover"
               />
             </div>
-          </button>
+          </Link>
           <nav className="hidden lg:flex items-center gap-11">
             {navLinks.map(link => (
               <div
@@ -86,7 +88,7 @@ const Header = ({ onNavigate, activePage }) => {
                         {Object.values(categories).map((categoryName) => (
                           <button
                             key={categoryName}
-                            onClick={() => onNavigate('category', categoryName)}
+                            onClick={() => window.location.href = `/category/${encodeURIComponent(categoryName)}`}
                             className="w-full text-left px-4 py-3 text-gray-700 hover:bg-brand-light hover:text-brand-emphasis transition-colors duration-200"
                           >
                             {categoryName}
@@ -96,19 +98,24 @@ const Header = ({ onNavigate, activePage }) => {
                     </div>
                   </div>
                 ) : (
-                  <a
-                    href={`#${link.page}`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      onNavigate(link.page);
-                    }}
-                    className={`relative text-white font-semibold hover:text-[#FFECD8] transition-all duration-300 group transform hover:-translate-y-0.5 ${isScrolled ? 'text-xl py-3' : 'text-2xl py-4'} ${activePage.page === link.page ? 'active' : ''}`}
-                    aria-current={activePage.page === link.page ? 'page' : undefined}
+                  <Link
+                    to={link.page === 'blog' ? '/blog' : `/#${link.page}`}
+                    onClick={link.page !== 'blog' ? (e) => {
+                      if (location.pathname === '/') {
+                        e.preventDefault();
+                        const element = document.getElementById(link.page);
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }
+                    } : undefined}
+                    className={`relative text-white font-semibold hover:text-[#FFECD8] transition-all duration-300 group transform hover:-translate-y-0.5 ${isScrolled ? 'text-xl py-3' : 'text-2xl py-4'} ${location.pathname.includes(link.page) ? 'active' : ''}`}
+                    aria-current={location.pathname.includes(link.page) ? 'page' : undefined}
                   >
                     {link.icon}
                     <span>{link.name}</span>
                     <span className="absolute left-0 -bottom-2 w-full h-[3px] bg-[#FFECD8] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left group-[.active]:scale-x-100"></span>
-                  </a>
+                  </Link>
                 )}
               </div>
             ))}
@@ -147,7 +154,7 @@ const Header = ({ onNavigate, activePage }) => {
                         <button
                           key={categoryName}
                           onClick={() => {
-                            onNavigate('category', categoryName);
+                            window.location.href = `/category/${encodeURIComponent(categoryName)}`;
                             setIsOpen(false);
                           }}
                           className="block text-lg text-brand-primary hover:text-brand-emphasis transition-colors duration-300"
@@ -158,17 +165,22 @@ const Header = ({ onNavigate, activePage }) => {
                     </div>
                   </div>
                 ) : (
-                  <a
-                    href={`#${link.page}`}
+                  <Link
+                    to={link.page === 'blog' ? '/blog' : `/#${link.page}`}
                     onClick={(e) => {
-                      e.preventDefault();
-                      onNavigate(link.page);
+                      if (link.page !== 'blog' && location.pathname === '/') {
+                        e.preventDefault();
+                        const element = document.getElementById(link.page);
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }
                       setIsOpen(false);
                     }}
                     className="text-2xl text-brand-dark font-semibold hover:text-brand-emphasis transition-colors duration-300"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 )}
               </div>
             ))}

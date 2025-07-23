@@ -1,9 +1,9 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { sortedBlogPosts } from '../blogData';
 import BlogCard from './BlogCard';
 
-const Blog = ({ onNavigate }) => {
+const Blog = () => {
   const latestPost = sortedBlogPosts[0];
   const recentPosts = sortedBlogPosts.slice(1, 4);
 
@@ -42,12 +42,12 @@ const Blog = ({ onNavigate }) => {
                 {latestPost.category}
               </span>
             </div>
-            <button 
-              onClick={() => onNavigate('blog', null, latestPost.slug)} 
+            <Link 
+              to={`/blog/${latestPost.slug}`}
               className="text-brand-emphasis font-semibold hover:underline text-sm sm:text-base lg:text-lg self-start break-words"
             >
               Read the Full Article &rarr;
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -57,16 +57,16 @@ const Blog = ({ onNavigate }) => {
             <BlogCard
               key={post.slug}
               post={post}
-              onReadMore={() => onNavigate('blog', null, post.slug)}
+              linkTo={`/blog/${post.slug}`}
             />
           ))}
         </div>
 
 
         <div className="text-center">
-          <button onClick={() => onNavigate('blog')} className="bg-brand-dark text-white font-bold py-4 px-10 rounded-full hover:bg-opacity-90 transition duration-300 transform hover:scale-105">
+          <Link to="/blog" className="bg-brand-dark text-white font-bold py-4 px-10 rounded-full hover:bg-opacity-90 transition duration-300 transform hover:scale-105 inline-block">
             View All Articles
-          </button>
+          </Link>
         </div>
       </div>
     </section>

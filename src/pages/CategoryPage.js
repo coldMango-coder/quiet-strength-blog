@@ -1,45 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { sortedBlogPosts, categories } from '../blogData';
 import BlogCard from '../components/BlogCard';
 import Seo from '../components/Seo';
 
-const CategoryPage = ({ onBack, categoryName, onNavigate }) => {
-  const [selectedPostSlug, setSelectedPostSlug] = useState(null);
-
-  const handleReadMore = (slug) => {
-    setSelectedPostSlug(slug);
-    window.scrollTo(0, 0);
-  };
-
-  const handleBackToCategory = () => {
-    setSelectedPostSlug(null);
-    window.scrollTo(0, 0);
-  };
-
-  const filteredPosts = sortedBlogPosts.filter(post => post.category === categoryName);
-  const postToRender = sortedBlogPosts.find(p => p.slug === selectedPostSlug);
-
-  if (postToRender) {
-    const PostComponent = postToRender.component;
-    return (
-      <>
-        <Seo
-          title={postToRender.title}
-          description={postToRender.description}
-          type="article"
-          path={`/blog/${postToRender.slug}`}
-          article={{
-            title: postToRender.title,
-            authorName: 'Marica Šinko',
-            datePublished: postToRender.date,
-            image: postToRender.image,
-          }}
-        />
-        <PostComponent onBack={handleBackToCategory} />
-      </>
-    );
-  }
+const CategoryPage = () => {
+  const { categoryName } = useParams();
+  const decodedCategoryName = decodeURIComponent(categoryName);
+  
+  const filteredPosts = sortedBlogPosts.filter(post => post.category === decodedCategoryName);
 
   const getCategoryDescription = (category) => {
     const descriptions = {
@@ -51,11 +21,9 @@ const CategoryPage = ({ onBack, categoryName, onNavigate }) => {
     };
     return descriptions[category] || 'Explore articles in this category to enhance your personal growth journey.';
   };
-  const canonicalUrl = categoryName
-  ? `https://www.trueallyguide.com/category/${categoryName
-      .toLowerCase()
-      .replace(/\s+/g, '-')}`
-  : 'https://www.trueallyguide.com/blog';
+  const canonicalUrl = decodedCategoryName
+    ? `https://trueallyguide.com/category/${encodeURIComponent(decodedCategoryName)}`
+    : 'https://trueallyguide.com/blog';
   return (
     <>
     <Helmet>
@@ -63,29 +31,29 @@ const CategoryPage = ({ onBack, categoryName, onNavigate }) => {
     </Helmet>
     <div className="bg-white min-h-screen">
       <Seo
-        title={`${categoryName} - Blog Category`}
-        description={`Explore all articles in the ${categoryName} category. ${getCategoryDescription(categoryName)}`}
-        path={`/category/${categoryName.toLowerCase().replace(/\s+/g, '-')}`}
+        title={`${decodedCategoryName} - Blog Category`}
+        description={`Explore all articles in the ${decodedCategoryName} category. ${getCategoryDescription(decodedCategoryName)}`}
+        path={`/category/${encodeURIComponent(decodedCategoryName)}`}
         breadcrumbs={[
           { name: 'Home', item: '/' },
           { name: 'Categories', item: '/categories' },
-          { name: categoryName, item: `/category/${categoryName.toLowerCase().replace(/\s+/g, '-')}` },
+          { name: decodedCategoryName, item: `/category/${encodeURIComponent(decodedCategoryName)}` },
         ]}
       />
       
       <div className="container mx-auto px-6 py-12">
-        <button onClick={onBack} className="text-brand-emphasis hover:text-brand-dark font-semibold mb-8 flex items-center gap-2">
+        <Link to="/" className="text-brand-emphasis hover:text-brand-dark font-semibold mb-8 flex items-center gap-2">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
           </svg>
           Back to Home
-        </button>
+        </Link>
         
         {/* Category Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-dark mb-6">{categoryName}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-brand-dark mb-6">{decodedCategoryName}</h1>
           <p className="text-xl text-brand-primary max-w-3xl mx-auto leading-relaxed">
-            {getCategoryDescription(categoryName)}
+            {getCategoryDescription(decodedCategoryName)}
           </p>
           <div className="mt-8 flex justify-center">
             <div className="bg-brand-light px-6 py-3 rounded-full">
@@ -104,7 +72,7 @@ const CategoryPage = ({ onBack, categoryName, onNavigate }) => {
                 <BlogCard
                   key={post.slug}
                   post={post}
-                  onReadMore={() => handleReadMore(post.slug)}
+                  linkTo={`/blog/${post.slug}`}
                 />
               ))}
             </div>
@@ -116,12 +84,12 @@ const CategoryPage = ({ onBack, categoryName, onNavigate }) => {
               <p className="text-brand-primary mb-6">
                 We're working on adding more content to this category. Check back soon!
               </p>
-              <button 
-                onClick={() => onNavigate('blog')} 
-                className="bg-brand-emphasis text-white font-semibold py-3 px-6 rounded-full hover:bg-opacity-90 transition-colors"
+              <Link 
+                to="/blog"
+                className="bg-brand-emphasis text-white font-semibold py-3 px-6 rounded-full hover:bg-opacity-90 transition-colors inline-block"
               >
                 Browse All Articles
-              </button>
+              </Link>
             </div>
           </div>
         )}
@@ -130,14 +98,14 @@ const CategoryPage = ({ onBack, categoryName, onNavigate }) => {
         <div className="mt-20 pt-12 border-t border-gray-200">
           <h3 className="text-2xl font-bold text-brand-dark mb-8 text-center">Explore Other Categories</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {Object.values(categories).filter(cat => cat !== categoryName).map((otherCategory) => (
-              <button
+            {Object.values(categories).filter(cat => cat !== decodedCategoryName).map((otherCategory) => (
+              <Link
                 key={otherCategory}
-                onClick={() => onNavigate('category', otherCategory)}
-                className="px-6 py-3 rounded-full font-semibold bg-gray-100 text-brand-dark hover:bg-brand-light hover:text-brand-emphasis transition-colors"
+                to={`/category/${encodeURIComponent(otherCategory)}`}
+                className="px-6 py-3 rounded-full font-semibold bg-gray-100 text-brand-dark hover:bg-brand-light hover:text-brand-emphasis transition-colors inline-block"
               >
                 {otherCategory}
-              </button>
+              </Link>
             ))}
           </div>
         </div>

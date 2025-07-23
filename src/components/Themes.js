@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { categories } from '../blogData';
 
@@ -34,15 +34,8 @@ const themeDescriptions = {
     [categories.WOMENS_WELLNESS]: "Comprehensive wellness approaches tailored for introverted women, focusing on mental health, self-care, and maintaining energy balance."
 }
 
-const themeSlugs = {
-  [categories.INTROVERSION_PERSONALITY]: "introversion-personality",
-  [categories.RELATIONSHIPS_DATING]: "relationships-dating", 
-  [categories.CAREER_WORKPLACE]: "career-workplace",
-  [categories.SELF_DEVELOPMENT]: "self-development",
-  [categories.WOMENS_WELLNESS]: "womens-wellness",
-}
 
-const ThemeCard = ({ icon, title, description, onNavigate }) => (
+const ThemeCard = ({ icon, title, description, categoryName }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -58,11 +51,11 @@ const ThemeCard = ({ icon, title, description, onNavigate }) => (
     </motion.div>
     <h3 className="text-xl font-bold text-brand-dark mb-2" aria-label={title}>{title}</h3>
     <p className="text-slate-600 flex-grow">{description}</p>
-    <button onClick={onNavigate} className="mt-4 text-brand-emphasis hover:underline font-semibold">Explore More &rarr;</button>
+    <Link to={`/category/${encodeURIComponent(categoryName)}`} className="mt-4 text-brand-emphasis hover:underline font-semibold">Explore More &rarr;</Link>
   </motion.div>
 );
 
-const Themes = ({ onNavigate }) => {
+const Themes = () => {
   return (
     <section id="themes" className="py-24 bg-brand-light">
       <div className="container mx-auto px-6">
@@ -76,7 +69,7 @@ const Themes = ({ onNavigate }) => {
               icon={themeIcons[category]}
               title={category}
               description={themeDescriptions[category]}
-              onNavigate={() => onNavigate('blog', themeSlugs[category])}
+              categoryName={category}
             />
           ))}
         </div>

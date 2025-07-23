@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Footer = ({ onNavigate }) => {
+const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -14,30 +15,30 @@ const Footer = ({ onNavigate }) => {
           <div>
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
-              <button 
-                onClick={() => onNavigate && onNavigate('about')} 
+              <Link 
+                to="/#about"
                 className="text-slate-400 hover:text-white text-left"
               >
                 About
-              </button>
-              <button 
-                onClick={() => onNavigate && onNavigate('themes')} 
+              </Link>
+              <Link 
+                to="/#themes"
                 className="text-slate-400 hover:text-white text-left"
               >
                 Themes
-              </button>
-              <button 
-                onClick={() => onNavigate && onNavigate('blog')} 
+              </Link>
+              <Link 
+                to="/blog"
                 className="text-slate-400 hover:text-white text-left"
               >
                 Blog
-              </button>
-              <button 
-                onClick={() => onNavigate && onNavigate('books')} 
+              </Link>
+              <Link 
+                to="/#books"
                 className="text-slate-400 hover:text-white text-left"
               >
                 Books
-              </button>
+              </Link>
             </nav>
           </div>
           <div>

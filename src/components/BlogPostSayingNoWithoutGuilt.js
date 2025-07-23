@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import StyledBlockquote from './StyledBlockquote';
 import KeyTakeawayBox from './KeyTakeawayBox';
 import StyledList from './StyledList';
 import Seo from './Seo';
 import AuthorBio from './AuthorBio';
 
-const BlogPostSayingNoWithoutGuilt = ({ onBack, onNavigate }) => {
+const BlogPostSayingNoWithoutGuilt = () => {
   return (
     <div className="bg-brand-light">
       {/* SEO COMPONENT - CRITICAL FOR GOOGLE RANKING */}
@@ -28,9 +29,9 @@ const BlogPostSayingNoWithoutGuilt = ({ onBack, onNavigate }) => {
       />
 
       <div className="container mx-auto px-6 py-16">
-        <button onClick={onBack} className="text-brand-emphasis hover:underline font-semibold mb-12">
+        <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">
           &larr; Back to Home
-        </button>
+        </Link>
         
         <article className="article-container mx-auto max-w-[720px]">
           {/* HEADER SECTION - SEO CRITICAL */}

@@ -1,14 +1,15 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
 
-const BlogPostSocialBattery = ({ onBack, onNavigate }) => {
+const BlogPostSocialBattery = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'introvert-social-battery-drained-recovery-methods');
-  const canonicalUrl = `https://www.trueallyguide.com/blog/${postData.slug}`;
+  const canonicalUrl = `https://trueallyguide.com/blog/${postData.slug}`;
   return (
     <>
     <Helmet>
@@ -16,7 +17,7 @@ const BlogPostSocialBattery = ({ onBack, onNavigate }) => {
     </Helmet>
     <div className="bg-brand-light">
       <div className="container mx-auto px-6 py-16">
-        <button onClick={onBack} className="text-brand-emphasis hover:underline font-semibold mb-12">&larr; Back to Home</button>
+        <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">&larr; Back to Home</Link>
         
         <article className="article-container mx-auto max-w-[720px]">
           <header className="mb-16 text-left">

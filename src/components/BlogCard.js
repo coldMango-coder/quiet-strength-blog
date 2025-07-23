@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const BlogCard = ({ post, onReadMore }) => {
+const BlogCard = ({ post, onReadMore, linkTo }) => {
   const { title, description, category, image, datePublished, readingTime, slug } = post;
 
   return (
@@ -43,20 +44,30 @@ const BlogCard = ({ post, onReadMore }) => {
           )}
         </div>
         
-        <button
-          onClick={onReadMore}
-          className="font-semibold text-brand-emphasis hover:underline text-left self-start mt-auto"
-          aria-label={`Read full article: ${title}`}
-        >
-          Read More &rarr;
-        </button>
+        {linkTo ? (
+          <Link
+            to={linkTo}
+            className="font-semibold text-brand-emphasis hover:underline text-left self-start mt-auto"
+            aria-label={`Read full article: ${title}`}
+          >
+            Read More &rarr;
+          </Link>
+        ) : (
+          <button
+            onClick={onReadMore}
+            className="font-semibold text-brand-emphasis hover:underline text-left self-start mt-auto"
+            aria-label={`Read full article: ${title}`}
+          >
+            Read More &rarr;
+          </button>
+        )}
         
         {/* Hidden schema markup */}
         <div className="sr-only">
           <span itemProp="author" itemScope itemType="https://schema.org/Person">
             <span itemProp="name">Marica Šinko</span>
           </span>
-          <meta itemProp="url" content={`https://quietstrength.com/blog/${slug}`} />
+          <meta itemProp="url" content={`https://trueallyguide.com/blog/${slug}`} />
         </div>
       </div>
     </article>

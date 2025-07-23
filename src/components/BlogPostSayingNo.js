@@ -1,16 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import StyledBlockquote from './StyledBlockquote';
 import KeyTakeawayBox from './KeyTakeawayBox';
 import StyledList from './StyledList';
 import { sortedBlogPosts } from '../blogData';
 import AuthorBio from './AuthorBio';
 
-const BlogPostSayingNo = ({ onBack, onNavigate }) => {
+const BlogPostSayingNo = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'art-of-saying-no');
   return (
     <div className="bg-brand-light">
       <div className="container mx-auto px-6 py-16">
-        <button onClick={onBack} className="text-brand-emphasis hover:underline font-semibold mb-12">&larr; Back to Home</button>
+        <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">&larr; Back to Home</Link>
         
         <article className="article-container mx-auto max-w-[720px]">
           <header className="mb-16 text-left">

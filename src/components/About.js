@@ -1,7 +1,7 @@
 import React from 'react';
 import Seo from './Seo';
 
-const About = ({ onNavigate }) => {
+const About = () => {
   return (
     <section id="about" className="py-32 bg-white">
       <Seo

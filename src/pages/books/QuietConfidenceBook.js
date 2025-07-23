@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Seo from '../../components/Seo';
 
-const QuietConfidenceBook = ({ onBack }) => {
+const QuietConfidenceBook = () => {
   return (
     <>
       <Seo
@@ -16,7 +17,7 @@ const QuietConfidenceBook = ({ onBack }) => {
       />
       <div className="bg-white">
         <div className="container mx-auto px-6 py-12">
-          <button onClick={onBack} className="text-indigo-600 hover:text-indigo-800 font-semibold mb-8">&larr; Back to Home</button>
+          <Link to="/" className="text-indigo-600 hover:text-indigo-800 font-semibold mb-8">&larr; Back to Home</Link>
           <h1 className="text-4xl font-bold text-center mb-12 text-slate-800">Quiet Confidence: The Book</h1>
           <p className="text-center text-lg text-slate-600 max-w-3xl mx-auto">
             This is the dedicated sales page for the "Quiet Confidence" book. You can add a detailed description, chapter breakdowns, testimonials, and a "Buy Now" button here.
