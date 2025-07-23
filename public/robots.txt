@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://trueallyguide.com/sitemap.xml
 
 # Block access to admin areas
 Disallow: /admin/
@@ -14,6 +14,7 @@ Allow: /blog/
 Allow: /books/
 Allow: /about/
 Allow: /themes/
+Allow: /category/
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
