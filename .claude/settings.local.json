@@ -22,7 +22,12 @@
       "Bash(npm ls:*)",
       "Bash(rm:*)",
       "Bash(npm audit:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(mv:*)",
+      "Bash(ls:*)",
+      "Bash(dig:*)",
+      "Bash(nslookup:*)",
+      "Bash(curl:*)"
     ],
     "deny": []
   }
