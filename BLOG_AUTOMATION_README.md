@@ -4,6 +4,10 @@ Your blog now has a complete automation system for creating, managing, and publi
 
 ## 🎯 What's New (Updated July 24, 2025)
 
+✅ **RSS & Atom Feed Automation** - Automatically generates and updates RSS/Atom feeds  
+✅ **Enhanced Sitemap Automation** - Blog posts automatically added to sitemap.xml  
+✅ **Multi-Feed Support** - Creates both RSS 2.0 and Atom 1.0 feeds  
+✅ **Feed URL Routing** - Proper Content-Type headers for all feed formats  
 ✅ **Production Deployment Success** - All Vercel deployment issues resolved  
 ✅ **Custom Build System** - Bypasses permission errors with custom build.js script  
 ✅ **Image Serving Fixed** - All images now load correctly on trueallyguide.com  
@@ -98,6 +102,8 @@ All blog posts now follow the SEO-friendly structure:
 - **Individual Posts**: `https://trueallyguide.com/blog/{slug}`
 - **Categories**: `https://trueallyguide.com/category/{category-name}`
 - **Sitemap**: `https://trueallyguide.com/sitemap.xml`
+- **RSS Feed**: `https://trueallyguide.com/rss.xml`
+- **Atom Feed**: `https://trueallyguide.com/atom.xml`
 
 ## ✅ What Each Blog Post Includes
 
@@ -116,10 +122,11 @@ author: "Marica Šinko"
 keywords: ["keyword1", "keyword2", "keyword3"]
 ```
 
-## 🗺️ Sitemap Management
+## 🗺️ Sitemap & Feed Management
 
-The sitemap is now dynamic and updates automatically:
+The sitemap and RSS/Atom feeds are now fully automated:
 
+### Sitemap Updates
 ```bash
 # Generate sitemap from all markdown files
 node scripts/generate-sitemap-dynamic.js
@@ -133,6 +140,31 @@ Current sitemap includes:
 - Blog listing page (priority 0.9)  
 - 4 category pages (priority 0.8)
 - 5 blog posts (priority 0.7)
+
+### RSS & Atom Feed Updates
+```bash
+# Generate feeds from existing blog posts
+node scripts/generate-feeds-from-existing.js
+
+# Test feed validity (RSS)
+curl -I https://trueallyguide.com/rss.xml
+
+# Test feed validity (Atom)  
+curl -I https://trueallyguide.com/atom.xml
+```
+
+**Automatic Feed Updates**: Every new blog post created with `create-blog-post.js` automatically:
+- ✅ Adds entry to RSS feed (`/rss.xml`)
+- ✅ Adds entry to Atom feed (`/atom.xml`) 
+- ✅ Updates sitemap.xml
+- ✅ Sets proper Content-Type headers
+- ✅ Maintains chronological order (newest first)
+
+**Feed Features**:
+- **RSS 2.0**: Standard RSS format with channel metadata
+- **Atom 1.0**: Modern feed format with full entry content
+- **Auto-discovery**: Proper `<link>` tags for feed readers
+- **Validation**: All feeds validate against standards
 
 ## 🎨 Content Guidelines
 

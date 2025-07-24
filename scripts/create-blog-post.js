@@ -88,6 +88,122 @@ function updateSitemap(slug, date) {
   console.log(`✅ Updated sitemap.xml with new blog post: ${slug}`);
 }
 
+// Function to create or update RSS feed
+function updateRSSFeed(options) {
+  const { title, slug, date, category, description, author } = options;
+  const rssPath = path.join(__dirname, '..', 'public', 'rss.xml');
+  
+  const pubDate = new Date(date).toUTCString();
+  const link = `https://trueallyguide.com/blog/${slug}`;
+  
+  // Create new RSS item
+  const newItem = `    <item>
+      <title><![CDATA[${title}]]></title>
+      <link>${link}</link>
+      <guid isPermaLink="true">${link}</guid>
+      <description><![CDATA[${description}]]></description>
+      <category><![CDATA[${category}]]></category>
+      <author>noreply@trueallyguide.com (${author})</author>
+      <pubDate>${pubDate}</pubDate>
+    </item>`;
+
+  if (fs.existsSync(rssPath)) {
+    // Update existing RSS feed
+    let rss = fs.readFileSync(rssPath, 'utf8');
+    
+    // Update lastBuildDate
+    const currentDate = new Date().toUTCString();
+    rss = rss.replace(/<lastBuildDate>.*?<\/lastBuildDate>/, `<lastBuildDate>${currentDate}</lastBuildDate>`);
+    
+    // Add new item after opening <channel> tag and existing items
+    rss = rss.replace(/(<channel>[\s\S]*?)(\s*<\/channel>)/, `$1${newItem}\n$2`);
+    
+    fs.writeFileSync(rssPath, rss);
+    console.log(`✅ Updated RSS feed with new blog post: ${slug}`);
+  } else {
+    // Create new RSS feed
+    const currentDate = new Date().toUTCString();
+    const rssContent = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quiet Strength Blog</title>
+    <link>https://trueallyguide.com</link>
+    <description>Self-help and productivity content for introverted women. Build confidence, manage energy, and achieve your goals on your own terms.</description>
+    <language>en-us</language>
+    <lastBuildDate>${currentDate}</lastBuildDate>
+    <atom:link href="https://trueallyguide.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://trueallyguide.com/images/logo.png</url>
+      <title>Quiet Strength Blog</title>
+      <link>https://trueallyguide.com</link>
+    </image>
+${newItem}
+  </channel>
+</rss>`;
+    
+    fs.writeFileSync(rssPath, rssContent);
+    console.log(`✅ Created RSS feed with new blog post: ${slug}`);
+  }
+}
+
+// Function to create or update Atom feed
+function updateAtomFeed(options) {
+  const { title, slug, date, category, description, author } = options;
+  const atomPath = path.join(__dirname, '..', 'public', 'atom.xml');
+  
+  const isoDate = new Date(date).toISOString();
+  const link = `https://trueallyguide.com/blog/${slug}`;
+  
+  // Create new Atom entry
+  const newEntry = `  <entry>
+    <title type="html"><![CDATA[${title}]]></title>
+    <link href="${link}"/>
+    <id>${link}</id>
+    <published>${isoDate}</published>
+    <updated>${isoDate}</updated>
+    <summary type="html"><![CDATA[${description}]]></summary>
+    <category term="${category}"/>
+    <author>
+      <name>${author}</name>
+    </author>
+  </entry>`;
+
+  if (fs.existsSync(atomPath)) {
+    // Update existing Atom feed
+    let atom = fs.readFileSync(atomPath, 'utf8');
+    
+    // Update updated date
+    const currentDate = new Date().toISOString();
+    atom = atom.replace(/<updated>.*?<\/updated>/, `<updated>${currentDate}</updated>`);
+    
+    // Add new entry after feed opening tag
+    atom = atom.replace(/(<feed[^>]*>[\s\S]*?)(\s*<\/feed>)/, `$1${newEntry}\n$2`);
+    
+    fs.writeFileSync(atomPath, atom);
+    console.log(`✅ Updated Atom feed with new blog post: ${slug}`);
+  } else {
+    // Create new Atom feed
+    const currentDate = new Date().toISOString();
+    const atomContent = `<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Quiet Strength Blog</title>
+  <link href="https://trueallyguide.com"/>
+  <link href="https://trueallyguide.com/atom.xml" rel="self"/>
+  <id>https://trueallyguide.com</id>
+  <updated>${currentDate}</updated>
+  <subtitle>Self-help and productivity content for introverted women. Build confidence, manage energy, and achieve your goals on your own terms.</subtitle>
+  <author>
+    <name>Marica Šinko</name>
+    <email>noreply@trueallyguide.com</email>
+  </author>
+${newEntry}
+</feed>`;
+    
+    fs.writeFileSync(atomPath, atomContent);
+    console.log(`✅ Created Atom feed with new blog post: ${slug}`);
+  }
+}
+
 // Main function
 function main() {
   const args = process.argv.slice(2);
@@ -180,8 +296,23 @@ Example:
   // Update sitemap
   updateSitemap(slug, date);
   
+  // Update RSS and Atom feeds
+  const feedOptions = { ...options, slug, date };
+  updateRSSFeed(feedOptions);
+  updateAtomFeed(feedOptions);
+  
   console.log(`\n🎉 Blog post created successfully!`);
-  console.log(`Next steps:`);
+  console.log(`📄 Generated files:`);
+  console.log(`   - ${outputPath}`);
+  console.log(`   - Updated sitemap.xml`);
+  console.log(`   - Updated/created rss.xml`);
+  console.log(`   - Updated/created atom.xml`);
+  console.log(`\n🔗 URLs:`);
+  console.log(`   - Blog: https://trueallyguide.com/blog/${slug}`);
+  console.log(`   - Sitemap: https://trueallyguide.com/sitemap.xml`);
+  console.log(`   - RSS: https://trueallyguide.com/rss.xml`);
+  console.log(`   - Atom: https://trueallyguide.com/atom.xml`);
+  console.log(`\nNext steps:`);
   console.log(`1. Add the blog post to src/blogData.js`);
   console.log(`2. Create a React component if needed`);
   console.log(`3. Test the blog post locally`);
@@ -193,4 +324,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { createBlogPost, updateSitemap };
+module.exports = { createBlogPost, updateSitemap, updateRSSFeed, updateAtomFeed };

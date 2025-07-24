@@ -24,6 +24,20 @@
       "dest": "/sitemap.xml"
     },
     {
+      "src": "/rss.xml",
+      "headers": {
+        "content-type": "application/rss+xml"
+      },
+      "dest": "/rss.xml"
+    },
+    {
+      "src": "/atom.xml",
+      "headers": {
+        "content-type": "application/atom+xml"
+      },
+      "dest": "/atom.xml"
+    },
+    {
       "src": "/images/(.*)",
       "dest": "/images/$1"
     },
