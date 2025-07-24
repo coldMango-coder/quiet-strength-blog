@@ -27,7 +27,7 @@ const BlogPostToxicRelationship = () => {
           title: "How to Love Yourself After a Toxic Relationship: 8 Proven Steps That Actually Work in 2025",
           authorName: "Marica Šinko",
           datePublished: "2025-07-24",
-          image: "/images/20250725_0024_Empowered at Sunrise_simple_compose_01k0z8k7d3epzb0zj9encvqjsm.jpg"
+          image: "/images/woman-embracing-self-love-freedom-toxic-relationship-recovery-mountain-peak-sunrise-new-beginnings-personal-growth.jpg"
         }}
         breadcrumbs={[
           { name: "Home", item: "/" },
@@ -86,7 +86,7 @@ const BlogPostToxicRelationship = () => {
 
             <div className="my-8">
               <img 
-                src="/images/20250725_0024_Empowered at Sunrise_simple_compose_01k0z8k7d3epzb0zj9encvqjsm.jpg" 
+                src="/images/woman-embracing-self-love-freedom-toxic-relationship-recovery-mountain-peak-sunrise-new-beginnings-personal-growth.jpg" 
                 alt="Woman embracing self-love and freedom after toxic relationship recovery, standing confidently on mountain peak at sunrise representing new beginnings and personal growth" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -245,7 +245,7 @@ const BlogPostToxicRelationship = () => {
 
             <div className="my-8">
               <img 
-                src="/images/20250725_0027_Gentle Self-Care Sanctuary_simple_compose_01k0z8pjw6fjxbxkmnp0xr4pcj.jpg" 
+                src="/images/woman-practicing-daily-self-care-meditation-mindfulness-exercises-healing-self-love-toxic-relationship.jpg" 
                 alt="Woman practicing daily self-care meditation and mindfulness exercises for healing and self-love after ending toxic relationship" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -308,7 +308,7 @@ const BlogPostToxicRelationship = () => {
 
             <div className="my-8">
               <img 
-                src="/images/20250725_0031_Supportive Women's Circle_simple_compose_01k0z8z67sf3dbttsj13v6xt6a.jpg" 
+                src="/images/diverse-group-women-supportive-therapy-friendship-circle-toxic-relationship-recovery-healthy-support-networks-healing.jpg" 
                 alt="Diverse group of women in supportive therapy or friendship circle discussing toxic relationship recovery and building healthy support networks for healing" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"

@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0f1041a7.css",
-    "main.js": "/static/js/main.8f069b6f.js",
+    "main.js": "/static/js/main.60089d3c.js",
     "static/js/206.e806b24f.chunk.js": "/static/js/206.e806b24f.chunk.js",
     "static/media/marica-sinko-author-photo.jpg": "/static/media/marica-sinko-author-photo.a1c6b27567b739e5601b.jpg",
     "static/media/paper-texture-background.png": "/static/media/paper-texture-background.6f813294c3699e1f9221.png",
@@ -9,6 +9,6 @@
   },
   "entrypoints": [
     "static/css/main.0f1041a7.css",
-    "static/js/main.8f069b6f.js"
+    "static/js/main.60089d3c.js"
   ]
 }

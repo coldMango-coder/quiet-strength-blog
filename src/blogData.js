@@ -25,7 +25,7 @@ export const blogPosts = [
     date: '2025-07-24',
     category: categories.RELATIONSHIPS_DATING,
     component: BlogPostToxicRelationship,
-    image: '/images/20250725_0024_Empowered at Sunrise_simple_compose_01k0z8k7d3epzb0zj9encvqjsm.jpg',
+    image: '/images/woman-embracing-self-love-freedom-toxic-relationship-recovery-mountain-peak-sunrise-new-beginnings-personal-growth.jpg',
     readTime: '8 min read',
   },
   {
