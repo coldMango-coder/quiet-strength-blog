@@ -25,9 +25,9 @@ build.on('close', (code) => {
     }
     
     // Run sitemap generation after build
-    console.log('Running sitemap generation...');
+    console.log('Running dynamic sitemap generation...');
     const sitemap = spawn('node', [
-        path.join(__dirname, 'scripts', 'generate-sitemap.js')
+        path.join(__dirname, 'scripts', 'generate-sitemap-dynamic.js')
     ], {
         stdio: 'inherit'
     });
@@ -35,6 +35,20 @@ build.on('close', (code) => {
     sitemap.on('close', (sitemapCode) => {
         if (sitemapCode !== 0) {
             console.error(`Sitemap generation exited with code ${sitemapCode}`);
+        } else {
+            // Copy sitemap from public to build directory to ensure it's in the deployment
+            const fs = require('fs');
+            const publicSitemap = path.join(__dirname, 'public', 'sitemap.xml');
+            const buildSitemap = path.join(__dirname, 'build', 'sitemap.xml');
+            
+            try {
+                if (fs.existsSync(publicSitemap)) {
+                    fs.copyFileSync(publicSitemap, buildSitemap);
+                    console.log('Sitemap copied to build directory');
+                }
+            } catch (err) {
+                console.error('Error copying sitemap to build:', err);
+            }
         }
         process.exit(sitemapCode);
     });

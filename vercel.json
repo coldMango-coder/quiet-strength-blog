@@ -18,6 +18,9 @@
     },
     {
       "src": "/sitemap.xml",
+      "headers": {
+        "content-type": "application/xml"
+      },
       "dest": "/sitemap.xml"
     },
     {
