@@ -83,7 +83,7 @@ const BlogPostSayingNoWithoutGuilt = () => {
           {/* MAIN ARTICLE IMAGE */}
           <section className="mb-16">
             <img 
-              src="/images/sayingNowithoutGuiltimage.png" 
+              src="/images/confident-boundary-setting-professional.png" 
               alt="Woman confidently saying no in a professional setting, demonstrating healthy boundary setting without guilt or anxiety" 
               className="w-full rounded-lg shadow-lg mb-6" 
               loading="lazy"

@@ -1,5 +1,5 @@
 import React from 'react';
-import avatar from '../assets/authorImage.jpg';   // 🔄  adjust path if your photo lives elsewhere
+import avatar from '../assets/marica-sinko-author-photo.jpg';   // 🔄  adjust path if your photo lives elsewhere
 
 export default function AuthorBio() {
   return (

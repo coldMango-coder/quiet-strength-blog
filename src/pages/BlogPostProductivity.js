@@ -67,7 +67,7 @@ const BlogPostProductivity = () => {
               Understanding your energy is the first step to optimizing it. Unlike extroverts who gain energy from social interaction, introverts expend energy in highly stimulating environments. Our brains are wired differently. Research, including work by Dr. Marti Olsen Laney, suggests introverts have a higher baseline level of cortical arousal, meaning we are more sensitive to external stimuli like noise, interruptions, and social demands.
             </p>
             <div className="my-8">
-              <img src="/images/image1.png" alt="A diagram illustrating an introvert's energy cycle, depleting in busy environments and recharging in solitude." className="rounded-lg shadow-md" />
+              <img src="/images/overwhelmed-introvert-burnout-signs.png" alt="A diagram illustrating an introvert's energy cycle, depleting in busy environments and recharging in solitude." className="rounded-lg shadow-md" />
               <p className="text-sm text-gray-600 mt-3 text-center italic">A diagram illustrating an introvert's energy cycle, depleting in busy environments and recharging in solitude.</p>
             </div>
             <StyledBlockquote>
@@ -79,7 +79,7 @@ const BlogPostProductivity = () => {
             <h2>2. Core Strategies for Introvert-Friendly Productivity</h2>
             <p>Forget the generic advice. These strategies are designed to align with your natural strengths.</p>
             <div className="my-8">
-              <img src="/images/image2.png" alt="A woman using a planner for time-blocking, a key productivity strategy for introverts." className="rounded-lg shadow-md" />
+              <img src="/images/woman-mindfulness-burnout-prevention.png" alt="A woman using a planner for time-blocking, a key productivity strategy for introverts." className="rounded-lg shadow-md" />
               <p className="text-sm text-gray-600 mt-3 text-center italic">A woman using a planner for time-blocking, a key productivity strategy for introverts.</p>
             </div>
             <h3>2.1. Time-Blocking & The "Deep Work" Ritual</h3>
@@ -100,7 +100,7 @@ const BlogPostProductivity = () => {
             <h2>3. Navigating an Extroverted Workplace</h2>
             <p>Even with the best personal system, you still have to work with others. Here’s how to protect your energy and productivity in a typical office environment.</p>
             <div className="my-8">
-              <img src="/images/image3.png" alt="An introverted woman wearing headphones to create a focus bubble in a busy office." className="rounded-lg shadow-md" />
+              <img src="/images/supportive-women-community-collaboration.png" alt="An introverted woman wearing headphones to create a focus bubble in a busy office." className="rounded-lg shadow-md" />
               <p className="text-sm text-gray-600 mt-3 text-center italic">An introverted woman wearing headphones to create a focus bubble in a busy office.</p>
             </div>
             <StyledList items={[

@@ -57,7 +57,7 @@ const BookCard = ({ imgSrc, title, description, price, ctaText, slug, isExternal
 const Books = () => {
   const booksData = [
     {
-      imgSrc: "/images/61KKDJafZ2L._SL1499_.jpg",
+      imgSrc: "/images/art-of-saying-no-book-cover.jpg",
       title: "The Art of Saying No: A Guide for People-Pleasers on the Brink of Burnout",
       description: "\"The Art of Saying No\" is more than just a guide—it's a compassionate and practical roadmap to reclaiming your life. For too long, the compulsive need for approval has dictated your decisions, drained your energy, and left you feeling resentful and depleted. This book provides the tools to break free from the \"disease to please\" and build a life based on your own terms.",
       price: "$9.99",
@@ -67,7 +67,7 @@ const Books = () => {
       isExternal: true
     },
     {
-      imgSrc: "/images/61TQwybDU9L._SL1499_.jpg",
+      imgSrc: "/images/quiet-confidence-blueprint-book-cover.jpg",
       title: "The Quiet Confidence Blueprint: An Introverted Woman's Uncensored Guide to Owning Her Power",
       description: "Are you an introverted woman tired of feeling overlooked, drained by social demands, or battling imposter syndrome? This raw, actionable guide reveals how to transform your quiet nature into an unshakeable source of confidence, set powerful boundaries, and claim your authentic strength without becoming someone you're not. Discover self-esteem for introverts, energy mastery, and thriving as a quiet leader in an extroverted world.",
       price: "$12.99",

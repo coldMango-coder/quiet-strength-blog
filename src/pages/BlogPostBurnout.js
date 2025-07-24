@@ -66,7 +66,7 @@ const BlogPostBurnout = () => {
               Before you can prevent burnout, you must recognize its precursors. For professional women, these signs often manifest uniquely due to the pressure to maintain composure.
             </p>
             <div className="my-8">
-              <img src="/images/image1.png" alt="An introverted woman feeling overwhelmed, illustrating the signs of burnout." className="rounded-lg shadow-md" />
+              <img src="/images/overwhelmed-introvert-burnout-signs.png" alt="An introverted woman feeling overwhelmed, illustrating the signs of burnout." className="rounded-lg shadow-md" />
               <p className="text-sm text-gray-600 mt-3 text-center italic">An introverted woman feeling overwhelmed, illustrating the signs of burnout.</p>
             </div>
             <StyledList items={[
@@ -86,7 +86,7 @@ const BlogPostBurnout = () => {
             <h2>2. Proactive Prevention Strategies: Building Your Burnout Shield</h2>
             <p>Prevention is always better than cure. These strategies are powerful buffers against the pressures of professional life.</p>
             <div className="my-8">
-              <img src="/images/image2.png" alt="A woman practicing mindfulness, a key strategy for burnout prevention." className="rounded-lg shadow-md" />
+              <img src="/images/woman-mindfulness-burnout-prevention.png" alt="A woman practicing mindfulness, a key strategy for burnout prevention." className="rounded-lg shadow-md" />
               <p className="text-sm text-gray-600 mt-3 text-center italic">A woman practicing mindfulness, a key strategy for burnout prevention.</p>
             </div>
             <h3>2.1. Mastering Boundaries: Your Non-Negotiable Peace Treaty</h3>
@@ -107,7 +107,7 @@ const BlogPostBurnout = () => {
             <h2>3. Long-Term Strategies for an Unbreakable Career & Well-being</h2>
             <p>To build a truly sustainable career, consider these deeper, systemic shifts.</p>
             <div className="my-8">
-              <img src="/images/image3.png" alt="A supportive group of women collaborating, demonstrating the importance of community in preventing burnout." className="rounded-lg shadow-md" />
+              <img src="/images/supportive-women-community-collaboration.png" alt="A supportive group of women collaborating, demonstrating the importance of community in preventing burnout." className="rounded-lg shadow-md" />
               <p className="text-sm text-gray-600 mt-3 text-center italic">A supportive group of women collaborating, demonstrating the importance of community in preventing burnout.</p>
             </div>
             <p>Continuously learning new skills can reignite passion. Advocating for systemic change, like fairer workload distribution and a culture of psychological safety, is also crucial. Finally, never hesitate to seek professional support through therapy, coaching, or mentorship. Reputable organizations like the American Psychological Association (APA) offer excellent resources.</p>

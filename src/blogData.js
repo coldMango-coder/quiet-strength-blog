@@ -24,7 +24,7 @@ export const blogPosts = [
     date: '2025-07-22',
     category: categories.CAREER_WORKPLACE,
     component: BlogPostMeetings,
-    image: '/images/Meeting.jpg',
+    image: '/images/confident-introvert-business-meeting.jpg',
     readTime: '15 min read',
   },
   {
@@ -34,7 +34,7 @@ export const blogPosts = [
     date: '2025-07-21',
     category: categories.RELATIONSHIPS_DATING,
     component: BlogPostIntentionalDating,
-    image: '/images/CozyCaffeConversation.jpg',
+    image: '/images/intentional-dating-coffee-conversation.jpg',
     readTime: '18 min read',
   },
   {
@@ -44,7 +44,7 @@ export const blogPosts = [
     date: '2025-07-20',
     category: categories.INTROVERSION_PERSONALITY,
     component: BlogPostSocialBattery,
-    image: '/images/SereneTeaMoment.jpg',
+    image: '/images/introvert-social-battery-recovery-tea.jpg',
     readTime: '12 min read',
   },
   {
@@ -54,7 +54,7 @@ export const blogPosts = [
     date: '2025-07-19',
     category: categories.RELATIONSHIPS_DATING,
     component: BlogPostRelationshipSigns,
-    image: '/images/contemplativeserenity.jpg',
+    image: '/images/thoughtful-woman-relationship-reflection.jpg',
     readTime: '7 min read',
   },
   {
@@ -64,7 +64,7 @@ export const blogPosts = [
     date: '2025-07-18',
     category: categories.RELATIONSHIPS_DATING,
     component: BlogPostSayingNoWithoutGuilt,
-    image: '/images/sayingNowithoutGuiltimage.png',
+    image: '/images/confident-boundary-setting-professional.png',
     readTime: '12 min read',
   },
   {
@@ -74,7 +74,7 @@ export const blogPosts = [
     date: '2025-07-14',
     category: categories.SELF_DEVELOPMENT,
     component: BlogPostSayingNo,
-    image: '/images/image4.png',
+    image: '/images/stressed-woman-people-pleasing-burnout.png',
     readTime: '6 min read',
   },
   {
@@ -84,7 +84,7 @@ export const blogPosts = [
     date: '2025-07-12',
     category: categories.CAREER_WORKPLACE,
     component: BlogPostBurnout,
-    image: '/images/image1.png',
+    image: '/images/overwhelmed-introvert-burnout-signs.png',
     readTime: '8 min read',
   },
   {
@@ -94,7 +94,7 @@ export const blogPosts = [
     date: '2025-07-10',
     category: categories.INTROVERSION_PERSONALITY,
     component: BlogPostConfidence,
-    image: '/images/image1.png',
+    image: '/images/overwhelmed-introvert-burnout-signs.png',
     readTime: '7 min read',
   },
   {
@@ -104,7 +104,7 @@ export const blogPosts = [
     date: '2025-07-08',
     category: categories.INTROVERSION_PERSONALITY,
     component: BlogPostProductivity,
-    image: '/images/image1.png',
+    image: '/images/overwhelmed-introvert-burnout-signs.png',
     readTime: '5 min read',
   },
 ];

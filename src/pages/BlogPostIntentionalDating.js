@@ -80,7 +80,7 @@ const BlogPostIntentionalDating = () => {
             
             <div className="my-8">
               <img 
-                src="/images/CozyCaffeConversation.jpg" 
+                src="/images/intentional-dating-coffee-conversation.jpg" 
                 alt="Young couple having intentional dating conversation at coffee shop, discussing relationship goals purposefully" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -199,7 +199,7 @@ const BlogPostIntentionalDating = () => {
             
             <div className="my-8">
               <img 
-                src="/images/JournalingRelationshipGoals.jpg" 
+                src="/images/journaling-relationship-goals-dating.jpg" 
                 alt="Person writing intentional dating goals and values in journal for purposeful dating in 2025" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -445,7 +445,7 @@ const BlogPostIntentionalDating = () => {
             
             <div className="my-8">
               <img 
-                src="/images/GoldenHourStroll.jpg" 
+                src="/images/couple-authentic-connection-walk.jpg" 
                 alt="Couple building authentic connection through mindful communication during intentional dating walk" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
