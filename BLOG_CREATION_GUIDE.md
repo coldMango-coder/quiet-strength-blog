@@ -173,6 +173,30 @@ Optimize images for web:
 - **Size**: Optimize for web (typically under 100KB)
 - **Dimensions**: 1200x630px for social sharing
 - **Alt text**: Include descriptive alt text for accessibility
+- **Professional Naming**: Use SEO-optimized, descriptive filenames following our professional naming system
+
+#### Professional Image Naming System
+Follow these guidelines for all new images:
+
+**🎯 Naming Convention:**
+- **Descriptive Names**: Filename should describe the image content
+- **Kebab-Case Format**: Use hyphens instead of spaces (e.g., `confident-woman-business-meeting.jpg`)
+- **SEO-Friendly**: Google-optimized naming for better search discoverability
+- **Alt-Text Aligned**: Filename should match the alt text description
+
+**✅ Examples:**
+```
+❌ BAD: image1.png, photo.jpg, IMG_001.jpg
+✅ GOOD: confident-introvert-business-meeting.jpg
+✅ GOOD: woman-journaling-self-reflection.png
+✅ GOOD: social-battery-recharging-visual.jpg
+```
+
+**📸 Benefits:**
+- **SEO Boost**: Search engines understand image content from filename
+- **Better Organization**: Easy identification of images by descriptive names
+- **Improved Accessibility**: Screen readers benefit from meaningful filenames
+- **Professional Standards**: Follows Google's image SEO best practices
 
 ## 🔧 Troubleshooting
 
