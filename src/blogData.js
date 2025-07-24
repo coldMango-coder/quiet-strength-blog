@@ -7,6 +7,7 @@ import BlogPostRelationshipSigns from './pages/BlogPostRelationshipSigns';
 import BlogPostSocialBattery from './pages/BlogPostSocialBattery';
 import BlogPostIntentionalDating from './pages/BlogPostIntentionalDating';
 import BlogPostMeetings from './pages/BlogPostMeetings';
+import BlogPostToxicRelationship from './pages/BlogPostToxicRelationship';
 
 export const categories = {
   INTROVERSION_PERSONALITY: 'Introversion & Personality',
@@ -17,6 +18,16 @@ export const categories = {
 };
 
 export const blogPosts = [
+  {
+    slug: 'how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025',
+    title: 'How to Love Yourself After a Toxic Relationship: 8 Proven Steps That Actually Work in 2025',
+    description: 'Learn how to love yourself after a toxic relationship with expert-backed strategies. Discover 8 proven steps to rebuild self-worth and find inner peace in 2025.',
+    date: '2025-07-24',
+    category: categories.RELATIONSHIPS_DATING,
+    component: BlogPostToxicRelationship,
+    image: '/images/confident-woman-future-empowerment.png',
+    readTime: '8 min read',
+  },
   {
     slug: 'how-to-speak-up-in-meetings-introvert-strategies-2025',
     title: 'How to Speak Up in Meetings as an Introvert: 9 Proven Strategies That Actually Work in 2025',
