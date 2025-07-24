@@ -25,7 +25,7 @@ export const blogPosts = [
     date: '2025-07-24',
     category: categories.RELATIONSHIPS_DATING,
     component: BlogPostToxicRelationship,
-    image: '/images/confident-woman-future-empowerment.png',
+    image: '/images/20250725_0024_Empowered at Sunrise_simple_compose_01k0z8k7d3epzb0zj9encvqjsm.jpg',
     readTime: '8 min read',
   },
   {

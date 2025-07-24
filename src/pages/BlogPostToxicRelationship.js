@@ -27,7 +27,7 @@ const BlogPostToxicRelationship = () => {
           title: "How to Love Yourself After a Toxic Relationship: 8 Proven Steps That Actually Work in 2025",
           authorName: "Marica Šinko",
           datePublished: "2025-07-24",
-          image: "/images/confident-woman-future-empowerment.png"
+          image: "/images/20250725_0024_Empowered at Sunrise_simple_compose_01k0z8k7d3epzb0zj9encvqjsm.jpg"
         }}
         breadcrumbs={[
           { name: "Home", item: "/" },
@@ -84,6 +84,18 @@ const BlogPostToxicRelationship = () => {
               ]} />
             </KeyTakeawayBox>
 
+            <div className="my-8">
+              <img 
+                src="/images/20250725_0024_Empowered at Sunrise_simple_compose_01k0z8k7d3epzb0zj9encvqjsm.jpg" 
+                alt="Woman embracing self-love and freedom after toxic relationship recovery, standing confidently on mountain peak at sunrise representing new beginnings and personal growth" 
+                className="rounded-lg shadow-md" 
+                loading="lazy"
+                width="600" 
+                height="400"
+              />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Woman embracing self-love and freedom after toxic relationship recovery, standing confidently on mountain peak at sunrise representing new beginnings and personal growth</p>
+            </div>
+
             <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Understanding the Impact of Toxic Relationships</h2>
             
             <p className="text-lg text-brand-dark mb-6">
@@ -126,18 +138,6 @@ const BlogPostToxicRelationship = () => {
               "Self-advocacy: Standing up for your needs and boundaries",
               "Self-forgiveness: Releasing shame and guilt about past decisions"
             ]} />
-
-            <div className="my-8">
-              <img 
-                src="/images/confident-woman-future-empowerment.png" 
-                alt="Confident woman standing on balcony looking toward future horizons, representing empowerment to demand better relationships and recognize self-worth" 
-                className="rounded-lg shadow-md" 
-                loading="lazy"
-                width="600" 
-                height="400"
-              />
-              <p className="text-sm text-gray-600 mt-3 text-center italic">Confident woman standing on balcony looking toward future horizons, representing empowerment to demand better relationships and recognize self-worth</p>
-            </div>
 
             <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Step 1: Acknowledge and Accept Your Experience</h2>
             
@@ -243,6 +243,18 @@ const BlogPostToxicRelationship = () => {
               "Mindfulness practice: Develop present-moment awareness through meditation or deep breathing"
             ]} />
 
+            <div className="my-8">
+              <img 
+                src="/images/20250725_0027_Gentle Self-Care Sanctuary_simple_compose_01k0z8pjw6fjxbxkmnp0xr4pcj.jpg" 
+                alt="Woman practicing daily self-care meditation and mindfulness exercises for healing and self-love after ending toxic relationship" 
+                className="rounded-lg shadow-md" 
+                loading="lazy"
+                width="600" 
+                height="400"
+              />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Woman practicing daily self-care meditation and mindfulness exercises for healing and self-love after ending toxic relationship</p>
+            </div>
+
             <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Step 6: Challenge Negative Self-Talk</h2>
             
             <p className="text-lg text-brand-dark mb-6">
@@ -293,6 +305,18 @@ const BlogPostToxicRelationship = () => {
               "Try new activities: Meet like-minded people through classes, volunteering, or hobbies",
               "Consider professional help: Therapists specializing in trauma and relationship recovery"
             ]} />
+
+            <div className="my-8">
+              <img 
+                src="/images/20250725_0031_Supportive Women's Circle_simple_compose_01k0z8z67sf3dbttsj13v6xt6a.jpg" 
+                alt="Diverse group of women in supportive therapy or friendship circle discussing toxic relationship recovery and building healthy support networks for healing" 
+                className="rounded-lg shadow-md" 
+                loading="lazy"
+                width="600" 
+                height="400"
+              />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Diverse group of women in supportive therapy or friendship circle discussing toxic relationship recovery and building healthy support networks for healing</p>
+            </div>
 
             <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Professional Help and Resources</h2>
             
