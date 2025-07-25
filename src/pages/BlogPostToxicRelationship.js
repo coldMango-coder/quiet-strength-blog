@@ -53,11 +53,31 @@ const BlogPostToxicRelationship = () => {
               <span className="text-gray-400">•</span>
               <span>8 min read</span>
             </div>
+            <p className="text-brand-primary text-sm mt-2">
+              Mental Wellness Coach & Advocate for Introverted Women
+            </p>
           </header>
+
+          <section className="bg-white p-8 rounded-lg mb-16 shadow-md text-base">
+            <h3 className="text-2xl font-bold text-brand-dark mb-4">Table of Contents</h3>
+            <ul className="space-y-3 toc-list">
+              <li><a href="#understanding-impact" className="text-brand-emphasis hover:underline">1. Understanding the Impact of Toxic Relationships</a></li>
+              <li><a href="#importance-self-love" className="text-brand-emphasis hover:underline">2. Why Self-Love is Critical for Recovery</a></li>
+              <li><a href="#step-1-acknowledge" className="text-brand-emphasis hover:underline">3. Step 1: Acknowledge and Accept Your Experience</a></li>
+              <li><a href="#step-2-self-compassion" className="text-brand-emphasis hover:underline">4. Step 2: Practice Self-Compassion Daily</a></li>
+              <li><a href="#step-3-rebuild-identity" className="text-brand-emphasis hover:underline">5. Step 3: Rebuild Your Identity</a></li>
+              <li><a href="#step-4-boundaries" className="text-brand-emphasis hover:underline">6. Step 4: Set Healthy Boundaries</a></li>
+              <li><a href="#step-5-self-care" className="text-brand-emphasis hover:underline">7. Step 5: Develop New Self-Care Routines</a></li>
+              <li><a href="#step-6-negative-talk" className="text-brand-emphasis hover:underline">8. Step 6: Challenge Negative Self-Talk</a></li>
+              <li><a href="#step-7-values-goals" className="text-brand-emphasis hover:underline">9. Step 7: Reconnect with Your Values and Goals</a></li>
+              <li><a href="#step-8-support-network" className="text-brand-emphasis hover:underline">10. Step 8: Build a Support Network</a></li>
+              <li><a href="#professional-help" className="text-brand-emphasis hover:underline">11. Professional Help and Resources</a></li>
+            </ul>
+          </section>
 
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-brand-dark mb-8">
-              Have you ever looked in the mirror after a toxic relationship and wondered who you've become? If you're struggling with how to love yourself after a toxic relationship, you're not alone. Research from the National Intimate Partner and Sexual Violence Survey shows that 1 in 4 women and 1 in 10 men experience intimate partner violence, with emotional abuse being even more common.
+              Have you ever looked in the mirror after a toxic relationship and wondered who you've become? If you're struggling with how to love yourself after a toxic relationship, you're not alone. Research from the <a href="https://www.cdc.gov/violenceprevention/intimatepartnerviolence/fastfact.html" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">CDC's National Intimate Partner and Sexual Violence Survey</a> shows that 1 in 4 women and 1 in 10 men experience intimate partner violence, with emotional abuse being even more common.
             </p>
 
             <p className="text-lg text-brand-dark mb-8">
@@ -96,7 +116,7 @@ const BlogPostToxicRelationship = () => {
               <p className="text-sm text-gray-600 mt-3 text-center italic">Woman embracing self-love and freedom after toxic relationship recovery, standing confidently on mountain peak at sunrise representing new beginnings and personal growth</p>
             </div>
 
-            <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Understanding the Impact of Toxic Relationships</h2>
+            <h2 id="understanding-impact" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Understanding the Impact of Toxic Relationships</h2>
             
             <p className="text-lg text-brand-dark mb-6">
               Before diving into how to love yourself after a toxic relationship, it's crucial to understand what you've been through. Toxic relationships don't just end—they leave lasting psychological impacts that can affect every aspect of your life.
@@ -105,7 +125,7 @@ const BlogPostToxicRelationship = () => {
             <h3 className="text-2xl font-bold text-brand-dark mt-12 mb-6">The Psychological Aftermath</h3>
             
             <p className="text-lg text-brand-dark mb-6">
-              Dr. Stephanie Sarkis, a psychotherapist specializing in narcissistic abuse recovery, explains that toxic relationships create what's known as "complex trauma." Unlike single-incident trauma, complex trauma develops from prolonged exposure to controlling, manipulative, or abusive behavior.
+              Dr. Stephanie Sarkis, a <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4578899/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">psychotherapist specializing in trauma recovery</a>, explains that toxic relationships create what's known as "complex trauma." Unlike single-incident trauma, complex trauma develops from prolonged exposure to controlling, manipulative, or abusive behavior.
             </p>
 
             <p className="text-lg text-brand-dark mb-4">Common psychological effects include:</p>
@@ -119,10 +139,10 @@ const BlogPostToxicRelationship = () => {
             ]} />
 
             <StyledBlockquote>
-              Recent neuroscience research shows that toxic relationships actually change brain patterns, particularly in areas responsible for self-perception and emotional regulation. However, the brain's neuroplasticity means these changes aren't permanent. With intentional effort and the right strategies, you can literally rewire your brain to support self-love and healthy relationships.
+              Recent <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5328289/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">neuroscience research</a> shows that toxic relationships actually change brain patterns, particularly in areas responsible for self-perception and emotional regulation. However, the brain's neuroplasticity means these changes aren't permanent. With intentional effort and the right strategies, you can literally rewire your brain to support self-love and healthy relationships.
             </StyledBlockquote>
 
-            <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Why Self-Love is Critical for Recovery</h2>
+            <h2 id="importance-self-love" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Why Self-Love is Critical for Recovery</h2>
             
             <p className="text-lg text-brand-dark mb-6">
               Learning how to love yourself after a toxic relationship isn't just about feeling better—it's about breaking the cycle that may have led you into the toxic relationship in the first place. Self-love acts as your internal compass, helping you recognize red flags, maintain boundaries, and make choices that honor your worth.
@@ -139,7 +159,7 @@ const BlogPostToxicRelationship = () => {
               "Self-forgiveness: Releasing shame and guilt about past decisions"
             ]} />
 
-            <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Step 1: Acknowledge and Accept Your Experience</h2>
+            <h2 id="step-1-acknowledge" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Step 1: Acknowledge and Accept Your Experience</h2>
             
             <p className="text-lg text-brand-dark mb-6">
               The first step in learning how to love yourself after a toxic relationship is honest acknowledgment. This means recognizing what happened to you without minimizing the experience or taking blame for another person's toxic behavior.
@@ -161,13 +181,13 @@ const BlogPostToxicRelationship = () => {
             <h3 className="text-2xl font-bold text-brand-dark mt-12 mb-6">Release Self-Blame</h3>
             
             <p className="text-lg text-brand-dark mb-6">
-              According to the National Center for PTSD, self-blame is one of the most common obstacles to recovery from relationship trauma. Remember that toxic behavior is about the perpetrator's issues, not your shortcomings. You cannot love someone into treating you well, and staying in a toxic relationship doesn't make you weak—it makes you human.
+              According to the <a href="https://www.ptsd.va.gov/understand/related/intimate_partner_violence.asp" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">National Center for PTSD</a>, self-blame is one of the most common obstacles to recovery from relationship trauma. Remember that toxic behavior is about the perpetrator's issues, not your shortcomings. You cannot love someone into treating you well, and staying in a toxic relationship doesn't make you weak—it makes you human.
             </p>
 
-            <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Step 2: Practice Self-Compassion Daily</h2>
+            <h2 id="step-2-self-compassion" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Step 2: Practice Self-Compassion Daily</h2>
             
             <p className="text-lg text-brand-dark mb-6">
-              Dr. Kristin Neff's research on self-compassion shows that people who practice self-compassion recover from trauma more quickly and completely than those who practice self-criticism. Self-compassion involves treating yourself with the same kindness you'd offer a friend going through a difficult time.
+              <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4106279/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Dr. Kristin Neff's research</a> on self-compassion shows that people who practice self-compassion recover from trauma more quickly and completely than those who practice self-criticism. Self-compassion involves treating yourself with the same kindness you'd offer a friend going through a difficult time.
             </p>
 
             <KeyTakeawayBox>
@@ -186,7 +206,7 @@ const BlogPostToxicRelationship = () => {
               "Self-compassion breaks: When struggling, place your hand on your heart and practice self-kindness"
             ]} />
 
-            <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Step 3: Rebuild Your Identity</h2>
+            <h2 id="step-3-rebuild-identity" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Step 3: Rebuild Your Identity</h2>
             
             <p className="text-lg text-brand-dark mb-6">
               Toxic relationships often involve losing yourself in someone else's wants, needs, and opinions. Rebuilding your identity is essential for learning how to love yourself after a toxic relationship.
@@ -202,7 +222,7 @@ const BlogPostToxicRelationship = () => {
               "Journal about your values: What's truly important to you, separate from anyone else's opinions?"
             ]} />
 
-            <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Step 4: Set Healthy Boundaries</h2>
+            <h2 id="step-4-boundaries" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Step 4: Set Healthy Boundaries</h2>
             
             <p className="text-lg text-brand-dark mb-6">
               Learning to set and maintain healthy boundaries is crucial for self-love and preventing future toxic relationships. Boundaries aren't walls—they're guidelines that help you honor your needs and values.
@@ -221,7 +241,7 @@ const BlogPostToxicRelationship = () => {
               Practice these boundary-setting phrases: "I'm not comfortable discussing that topic," "I need some time to think about that," "I understand you're upset, but I won't accept being spoken to that way," and "I'm not available to help with that right now."
             </StyledBlockquote>
 
-            <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Step 5: Develop New Self-Care Routines</h2>
+            <h2 id="step-5-self-care" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Step 5: Develop New Self-Care Routines</h2>
             
             <p className="text-lg text-brand-dark mb-6">
               Self-care isn't selfish—it's essential for learning how to love yourself after a toxic relationship. During toxic relationships, your needs likely took a backseat to managing someone else's emotions and demands.
@@ -255,7 +275,7 @@ const BlogPostToxicRelationship = () => {
               <p className="text-sm text-gray-600 mt-3 text-center italic">Woman practicing daily self-care meditation and mindfulness exercises for healing and self-love after ending toxic relationship</p>
             </div>
 
-            <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Step 6: Challenge Negative Self-Talk</h2>
+            <h2 id="step-6-negative-talk" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Step 6: Challenge Negative Self-Talk</h2>
             
             <p className="text-lg text-brand-dark mb-6">
               The voice of a toxic partner often becomes internalized, creating persistent negative self-talk that undermines self-love. Learning to identify and challenge these thoughts is essential for recovery.
@@ -270,7 +290,7 @@ const BlogPostToxicRelationship = () => {
               ]} />
             </KeyTakeawayBox>
 
-            <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Step 7: Reconnect with Your Values and Goals</h2>
+            <h2 id="step-7-values-goals" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Step 7: Reconnect with Your Values and Goals</h2>
             
             <p className="text-lg text-brand-dark mb-6">
               Toxic relationships often involve abandoning your own goals and values to accommodate someone else's agenda. Reconnecting with what's truly important to you is essential for rebuilding self-love and direction.
@@ -292,7 +312,7 @@ const BlogPostToxicRelationship = () => {
               "Consider dating when you feel ready"
             ]} />
 
-            <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Step 8: Build a Support Network</h2>
+            <h2 id="step-8-support-network" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Step 8: Build a Support Network</h2>
             
             <p className="text-lg text-brand-dark mb-6">
               Isolation is common during and after toxic relationships. Building a strong support network is crucial for learning how to love yourself and maintaining your progress.
@@ -318,14 +338,14 @@ const BlogPostToxicRelationship = () => {
               <p className="text-sm text-gray-600 mt-3 text-center italic">Diverse group of women in supportive therapy or friendship circle discussing toxic relationship recovery and building healthy support networks for healing</p>
             </div>
 
-            <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Professional Help and Resources</h2>
+            <h2 id="professional-help" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Professional Help and Resources</h2>
             
             <p className="text-lg text-brand-dark mb-6">
               While self-help strategies are valuable, professional support can significantly accelerate your healing journey. Consider seeking help if you're experiencing persistent depression or anxiety, difficulty functioning in daily life, or inability to form new relationships after significant time.
             </p>
 
             <StyledBlockquote>
-              If you're in immediate danger or having suicidal thoughts, contact the National Suicide Prevention Lifeline (988) or the National Domestic Violence Hotline (1-800-799-7233).
+              If you're in immediate danger or having suicidal thoughts, contact the <a href="https://988lifeline.org/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">National Suicide Prevention Lifeline (988)</a> or the <a href="https://www.thehotline.org/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">National Domestic Violence Hotline (1-800-799-7233)</a>.
             </StyledBlockquote>
 
             <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Your Journey to Self-Love Starts Today</h2>
@@ -361,6 +381,10 @@ const BlogPostToxicRelationship = () => {
         </article>
 
         <AuthorBio />
+
+        <section className="mt-16 text-center text-sm text-brand-primary">
+          <p><strong>Disclaimer:</strong> The content on this website is for informational purposes only and is not a substitute for professional medical, psychological, or financial advice. Always seek the advice of a qualified professional with any questions you may have regarding a medical or mental health condition.</p>
+        </section>
       </div>
     </div>
     </>
