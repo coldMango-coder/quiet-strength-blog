@@ -77,7 +77,7 @@ const BlogPostToxicRelationship = () => {
 
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-brand-dark mb-8">
-              Have you ever looked in the mirror after a toxic relationship and wondered who you've become? If you're struggling with how to love yourself after a toxic relationship, you're not alone. Research from the <a href="https://www.cdc.gov/violenceprevention/intimatepartnerviolence/fastfact.html" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">CDC's National Intimate Partner and Sexual Violence Survey</a> shows that 1 in 4 women and 1 in 10 men experience intimate partner violence, with emotional abuse being even more common.
+              Have you ever looked in the mirror after a toxic relationship and wondered who you've become? If you're struggling with how to love yourself after a toxic relationship, you're not alone. Research from the <a href="https://www.cdc.gov/violenceprevention/datasources/nisvs/summaryreports.html" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">CDC's National Intimate Partner and Sexual Violence Survey</a> shows that 1 in 4 women and 1 in 10 men experience intimate partner violence, with emotional abuse being even more common.
             </p>
 
             <p className="text-lg text-brand-dark mb-8">
