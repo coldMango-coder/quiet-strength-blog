@@ -181,7 +181,7 @@ const BlogPostToxicRelationship = () => {
             <h3 className="text-2xl font-bold text-brand-dark mt-12 mb-6">Release Self-Blame</h3>
             
             <p className="text-lg text-brand-dark mb-6">
-              According to the <a href="https://www.ptsd.va.gov/understand/related/intimate_partner_violence.asp" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">National Center for PTSD</a>, self-blame is one of the most common obstacles to recovery from relationship trauma. Remember that toxic behavior is about the perpetrator's issues, not your shortcomings. You cannot love someone into treating you well, and staying in a toxic relationship doesn't make you weak—it makes you human.
+              According to the <a href="https://www.ptsd.va.gov/understand/types/domestic_violence.asp" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">National Center for PTSD</a>, self-blame is one of the most common obstacles to recovery from relationship trauma. Remember that toxic behavior is about the perpetrator's issues, not your shortcomings. You cannot love someone into treating you well, and staying in a toxic relationship doesn't make you weak—it makes you human.
             </p>
 
             <h2 id="step-2-self-compassion" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Step 2: Practice Self-Compassion Daily</h2>
