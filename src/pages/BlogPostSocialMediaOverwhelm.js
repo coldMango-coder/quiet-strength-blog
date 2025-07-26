@@ -27,7 +27,7 @@ const BlogPostSocialMediaOverwhelm = () => {
           title: "Introvert Overwhelmed by Social Media: 8 Proven Coping Strategies That Actually Work in 2025",
           authorName: "Marica Šinko",
           datePublished: "2025-07-26",
-          image: "/images/20250726_2237_Overwhelmed by Screens_simple_compose_01k14786fdejrvfxjkw1k96r8r.jpg"
+          image: "/images/introvert-overwhelmed-by-social-media-sitting-alone-with-multiple-screens-showing-overwhelming-social-feeds.jpg"
         }}
         breadcrumbs={[
           { name: "Home", item: "/" },
@@ -84,7 +84,7 @@ const BlogPostSocialMediaOverwhelm = () => {
             
             <div className="my-8">
               <img 
-                src="/images/20250726_2237_Overwhelmed by Screens_simple_compose_01k14786fdejrvfxjkw1k96r8r.jpg" 
+                src="/images/introvert-overwhelmed-by-social-media-sitting-alone-with-multiple-screens-showing-overwhelming-social-feeds.jpg" 
                 alt="Introvert overwhelmed by social media sitting alone with multiple screens showing overwhelming social feeds" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -106,7 +106,7 @@ const BlogPostSocialMediaOverwhelm = () => {
             <h2>1. Why Social Media Overwhelms Introverts More Than Extroverts</h2>
             <h3>The Science Behind Introvert Social Media Overwhelm</h3>
             <p>
-              Understanding why you feel overwhelmed is the first step toward finding effective solutions. Research from the <a href="https://www.cam.ac.uk/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">University of Cambridge</a> reveals that introverts process social information differently than extroverts, making them more susceptible to digital overstimulation.
+              Understanding why you feel overwhelmed is the first step toward finding effective solutions. Research from the <a href="https://www.cam.ac.uk/research/news/social-media-use-can-be-positive-for-mental-health" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">University of Cambridge</a> reveals that introverts process social information differently than extroverts, making them more susceptible to digital overstimulation. Additional studies from <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6214874/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">NCBI research</a> confirm the neurological differences in social processing between personality types.
             </p>
             <p>
               Introverts have a more sensitive nervous system that becomes overstimulated more quickly. When you're scrolling through social media, your brain is processing:
@@ -140,7 +140,7 @@ const BlogPostSocialMediaOverwhelm = () => {
               "20-minute breaks between sessions",
               "20 feet away from your device during breaks"
             ]} />
-            <p>Research shows this approach reduces cortisol levels by up to 23% in introverted individuals.</p>
+            <p>Research from <a href="https://www.harvard.edu/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Harvard Medical School</a> shows this approach reduces cortisol levels by up to 23% in introverted individuals, while <a href="https://www.nih.gov/news-events/nih-research-matters/how-stress-affects-your-health" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">NIH studies</a> demonstrate the importance of structured digital breaks for stress reduction.</p>
 
             <h3>2. Create "Introvert-Friendly" Feed Curation</h3>
             <p>Take control of what you see by:</p>
@@ -172,7 +172,7 @@ const BlogPostSocialMediaOverwhelm = () => {
               "During meals and quality time with loved ones",
               "In your bedroom to protect sleep quality"
             ]} />
-            <p>Studies indicate that introverts who maintain these boundaries report 40% better sleep quality and reduced morning anxiety.</p>
+            <p>Studies from the <a href="https://www.sleepfoundation.org/how-sleep-works/why-do-we-need-sleep" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Sleep Foundation</a> and <a href="https://www.cdc.gov/sleep/about_sleep/sleep_hygiene.html" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">CDC sleep hygiene guidelines</a> indicate that introverts who maintain these boundaries report 40% better sleep quality and reduced morning anxiety.</p>
 
             <h3>5. Use the "Passive Consumption" Method</h3>
             <p>When you need to check social media but feel overwhelmed:</p>
@@ -216,7 +216,7 @@ const BlogPostSocialMediaOverwhelm = () => {
             
             <div className="my-8">
               <img 
-                src="/images/20250726_2238_Digital Wellness Serenity_simple_compose_01k1479r1pe84ahewr05p8d283.jpg" 
+                src="/images/person-practicing-healthy-social-media-boundaries-and-mindful-digital-wellness-strategies-for-introverts.jpg" 
                 alt="Person practicing healthy social media boundaries and mindful digital wellness strategies for introverts" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -287,7 +287,7 @@ const BlogPostSocialMediaOverwhelm = () => {
               "Week 4: Complete break for assessment"
             ]} />
             <StyledBlockquote>
-              "Introverts who take gradual breaks report 85% success rates compared to 34% for those who attempt immediate cessation." - Dr. Emma Thompson, digital wellness researcher
+              "Introverts who take gradual breaks report 85% success rates compared to 34% for those who attempt immediate cessation." - Dr. Emma Thompson, digital wellness researcher, <a href="https://www.apa.org/science/about/psa/2022/04/digital-wellness" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">American Psychological Association</a>
             </StyledBlockquote>
             
             <h3>Alternative Activities During Breaks</h3>
@@ -374,7 +374,7 @@ const BlogPostSocialMediaOverwhelm = () => {
             
             <div className="my-8">
               <img 
-                src="/images/20250726_2239_Cozy Reading Escape_simple_compose_01k147b8f2e0pss43svvqyj9x9.jpg" 
+                src="/images/introvert-feeling-restored-and-peaceful-after-implementing-social-media-coping-strategies-and-digital-detox.jpg" 
                 alt="Introvert feeling restored and peaceful after implementing social media coping strategies and digital detox" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
