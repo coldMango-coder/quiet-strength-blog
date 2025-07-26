@@ -6,6 +6,7 @@ import BlogPostSocialBattery from './pages/BlogPostSocialBattery';
 import BlogPostIntentionalDating from './pages/BlogPostIntentionalDating';
 import BlogPostMeetings from './pages/BlogPostMeetings';
 import BlogPostToxicRelationship from './pages/BlogPostToxicRelationship';
+import BlogPostSocialMediaOverwhelm from './pages/BlogPostSocialMediaOverwhelm';
 
 export const categories = {
   INTROVERSION_PERSONALITY: 'Introversion & Personality',
@@ -16,6 +17,16 @@ export const categories = {
 };
 
 export const blogPosts = [
+  {
+    slug: 'introvert-overwhelmed-by-social-media-8-proven-coping-strategies-that-actually-work-in-2025',
+    title: 'Introvert Overwhelmed by Social Media: 8 Proven Coping Strategies That Actually Work in 2025',
+    description: 'Are you an introvert overwhelmed by social media? Discover 8 scientifically-backed coping strategies to reduce digital overwhelm and protect your mental energy in 2025.',
+    date: '2025-07-26',
+    category: categories.INTROVERSION_PERSONALITY,
+    component: BlogPostSocialMediaOverwhelm,
+    image: '/images/overwhelmed-introvert-burnout-signs.png',
+    readTime: '6 min read',
+  },
   {
     slug: 'how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025',
     title: 'How to Love Yourself After a Toxic Relationship: 8 Proven Steps That Actually Work in 2025',
