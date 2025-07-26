@@ -27,7 +27,7 @@ const BlogPostSocialMediaOverwhelm = () => {
           title: "Introvert Overwhelmed by Social Media: 8 Proven Coping Strategies That Actually Work in 2025",
           authorName: "Marica Šinko",
           datePublished: "2025-07-26",
-          image: "/images/overwhelmed-introvert-burnout-signs.png"
+          image: "/images/20250726_2237_Overwhelmed by Screens_simple_compose_01k14786fdejrvfxjkw1k96r8r.jpg"
         }}
         breadcrumbs={[
           { name: "Home", item: "/" },
@@ -84,14 +84,14 @@ const BlogPostSocialMediaOverwhelm = () => {
             
             <div className="my-8">
               <img 
-                src="/images/overwhelmed-introvert-burnout-signs.png" 
-                alt="Introvert feeling overwhelmed by social media notifications and digital overstimulation" 
+                src="/images/20250726_2237_Overwhelmed by Screens_simple_compose_01k14786fdejrvfxjkw1k96r8r.jpg" 
+                alt="Introvert overwhelmed by social media sitting alone with multiple screens showing overwhelming social feeds" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
                 width="600"
                 height="400"
               />
-              <p className="text-sm text-gray-600 mt-3 text-center italic">Introvert experiencing digital overwhelm from social media overstimulation</p>
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Introvert overwhelmed by social media sitting alone with multiple screens showing overwhelming social feeds</p>
             </div>
             
             <p>
@@ -213,6 +213,19 @@ const BlogPostSocialMediaOverwhelm = () => {
 
           <section id="creating-healthy-digital-boundaries" className="mb-16 scroll-mt-24">
             <h2>3. Creating Healthy Digital Boundaries for Introverts</h2>
+            
+            <div className="my-8">
+              <img 
+                src="/images/20250726_2238_Digital Wellness Serenity_simple_compose_01k1479r1pe84ahewr05p8d283.jpg" 
+                alt="Person practicing healthy social media boundaries and mindful digital wellness strategies for introverts" 
+                className="rounded-lg shadow-md" 
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Person practicing healthy social media boundaries and mindful digital wellness strategies for introverts</p>
+            </div>
+            
             <h3>The "Social Media Schedule" Approach</h3>
             <p>
               Just as you wouldn't go to three parties in one day, don't overwhelm yourself with unlimited social media access. Create a structured approach:
@@ -358,6 +371,18 @@ const BlogPostSocialMediaOverwhelm = () => {
             <p>
               Being an introvert overwhelmed by social media is not a character flaw—it's a natural response to overstimulation. The key is developing personalized strategies that honor your introverted nature while still allowing you to benefit from digital connections.
             </p>
+            
+            <div className="my-8">
+              <img 
+                src="/images/20250726_2239_Cozy Reading Escape_simple_compose_01k147b8f2e0pss43svvqyj9x9.jpg" 
+                alt="Introvert feeling restored and peaceful after implementing social media coping strategies and digital detox" 
+                className="rounded-lg shadow-md" 
+                loading="lazy"
+                width="600"
+                height="400"
+              />
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Introvert feeling restored and peaceful after implementing social media coping strategies and digital detox</p>
+            </div>
             
             <h3>Your 7-Day Action Plan</h3>
             <StyledList items={[

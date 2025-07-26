@@ -24,7 +24,7 @@ export const blogPosts = [
     date: '2025-07-26',
     category: categories.INTROVERSION_PERSONALITY,
     component: BlogPostSocialMediaOverwhelm,
-    image: '/images/overwhelmed-introvert-burnout-signs.png',
+    image: '/images/20250726_2237_Overwhelmed by Screens_simple_compose_01k14786fdejrvfxjkw1k96r8r.jpg',
     readTime: '6 min read',
   },
   {
