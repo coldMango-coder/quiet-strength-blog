@@ -39,7 +39,10 @@
       "WebFetch(domain:www.apa.org)",
       "WebFetch(domain:www.nimh.nih.gov)",
       "WebFetch(domain:www.psychologytoday.com)",
-      "WebFetch(domain:www.samhsa.gov)"
+      "WebFetch(domain:www.samhsa.gov)",
+      "WebFetch(domain:www.frontiersin.org)",
+      "WebFetch(domain:www.tandfonline.com)",
+      "WebFetch(domain:www.simplypsychology.org)"
     ],
     "deny": []
   }

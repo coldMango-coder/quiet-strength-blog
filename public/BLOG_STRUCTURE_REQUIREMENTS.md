@@ -8,21 +8,32 @@
 #### Acceptable External Link Sources:
 - **.edu domains** (universities, academic institutions)
 - **.gov domains** (government health agencies, research institutes)
-- **Research journals** (NCBI/PubMed, Nature, Science, Psychology journals)
+- **Research journals** (Frontiers in Psychology, Nature, Science, Psychology journals)
 - **Professional organizations** (APA, NIH, CDC, Sleep Foundation)
 - **Credible health organizations** (Mayo Clinic, Cleveland Clinic)
+- **Academic psychology sources** (Simply Psychology, Positive Psychology)
+
+#### ❌ AVOID THESE DOMAINS (Known Issues):
+- **NCBI/PubMed domains** - Frequently show maintenance messages
+- **Generic university homepages** - Not specific enough for citations
+- **Taylor & Francis** - Access restrictions
+- **Commercial .com sites** without clear academic authority
 
 #### WORKING EXTERNAL LINKS (verified 2025):
 - **Psychological Research**: https://www.frontiersin.org/articles/10.3389/fpsyg.2020.590748/full
-- **NCBI Social Processing**: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3129862/
+- **Stress Research**: https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1471084/full
 - **NIH Stress Research**: https://www.nhlbi.nih.gov/news/2025/risk-score-offers-new-way-assess-impact-stress-can-have-heart
-- **NIH Body Function**: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5579396/
+- **Psychology Education**: https://www.simplypsychology.org/introvert-extrovert.html
 - **CDC Sleep Research**: https://www.cdc.gov/sleep/about/index.html
 - **Sleep Foundation**: https://www.sleepfoundation.org/how-sleep-works/why-do-we-need-sleep
 - **APA Social Media**: https://www.apa.org/members/content/social-media-research-series
 - **NIMH Mental Health**: https://www.nimh.nih.gov/health/find-help
 - **Psychology Today**: https://www.psychologytoday.com/us/therapists
 - **SAMHSA Helpline**: https://www.samhsa.gov/find-help/helplines/national-helpline
+
+#### ⚠️ MAINTENANCE-PRONE DOMAINS TO AVOID:
+- **NCBI/PubMed**: Often shows "planned maintenance" messages that look unprofessional
+- **Government research portals**: May have temporary outages during updates
 
 #### Link Integration Rules:
 1. **Context Required**: Each external link must support a specific claim or statistic
@@ -208,9 +219,11 @@ import Seo from '../components/Seo';
 #### External Links:
 - ❌ Using generic homepage links (e.g., https://www.harvard.edu/)
 - ❌ Linking to broken or 404 pages
+- ❌ Using NCBI/PubMed domains (maintenance messages)
 - ❌ Using only .com commercial sites
 - ✅ Link to specific research articles and studies
-- ✅ Verify all links work before publishing
+- ✅ Use Frontiers in Psychology, Simply Psychology, verified .gov sites
+- ✅ Verify all links work before publishing - no maintenance pages!
 
 #### Images:
 - ❌ Generic filenames like "image1.jpg"
@@ -234,4 +247,8 @@ Instead of: "Research shows that introverts process information differently."
 Use: "Research from [Frontiers in Psychology](https://www.frontiersin.org/articles/10.3389/fpsyg.2020.590748/full) reveals that introverts process social engagement differently than extroverts, with studies showing that introverts can feel overwhelmed by social interactions and need time alone to recharge."
 
 ## FINAL REMINDER:
-Every blog post MUST include 6-8 working external links to credible sources (.edu, .gov, research journals, professional organizations). This is critical for SEO performance and Google algorithm ranking. Always verify links work before publishing.
+Every blog post MUST include 6-8 working external links to credible sources (.edu, .gov, research journals, professional organizations). This is critical for SEO performance and Google algorithm ranking. 
+
+**CRITICAL: Always verify links work before publishing - NO MAINTENANCE PAGES!**
+
+Avoid NCBI/PubMed domains as they frequently show unprofessional maintenance messages. Use Frontiers in Psychology, Simply Psychology, and verified .gov sites instead.
