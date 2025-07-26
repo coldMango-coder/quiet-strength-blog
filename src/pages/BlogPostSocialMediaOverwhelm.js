@@ -407,7 +407,7 @@ const BlogPostSocialMediaOverwhelm = () => {
             </KeyTakeawayBox>
             
             <p className="mt-6">
-              If you're struggling with severe social media addiction or mental health concerns, please reach out to professional resources like the <a href="https://www.samhsa.gov/find-help/helplines/national-helpline" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">SAMHSA National Helpline</a> at 1-800-662-4357 for immediate support and treatment referrals.
+              If you're struggling with severe social media addiction or mental health concerns, please reach out to professional resources like the <a href="https://988lifeline.org/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">988 Suicide & Crisis Lifeline</a> by calling or texting 988 for immediate support and mental health assistance.
             </p>
           </section>
 

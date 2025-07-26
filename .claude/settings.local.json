@@ -42,7 +42,8 @@
       "WebFetch(domain:www.samhsa.gov)",
       "WebFetch(domain:www.frontiersin.org)",
       "WebFetch(domain:www.tandfonline.com)",
-      "WebFetch(domain:www.simplypsychology.org)"
+      "WebFetch(domain:www.simplypsychology.org)",
+      "WebFetch(domain:988lifeline.org)"
     ],
     "deny": []
   }

@@ -29,10 +29,11 @@
 - **APA Social Media**: https://www.apa.org/members/content/social-media-research-series
 - **NIMH Mental Health**: https://www.nimh.nih.gov/health/find-help
 - **Psychology Today**: https://www.psychologytoday.com/us/therapists
-- **SAMHSA Helpline**: https://www.samhsa.gov/find-help/helplines/national-helpline
+- **988 Crisis Lifeline**: https://988lifeline.org/
 
 #### ⚠️ MAINTENANCE-PRONE DOMAINS TO AVOID:
 - **NCBI/PubMed**: Often shows "planned maintenance" messages that look unprofessional
+- **SAMHSA specific helpline pages**: May show 403 Forbidden errors - use 988lifeline.org instead
 - **Government research portals**: May have temporary outages during updates
 
 #### Link Integration Rules:
