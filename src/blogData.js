@@ -1,6 +1,4 @@
 import BlogPostBurnout from './pages/BlogPostBurnout';
-import BlogPostConfidence from './pages/BlogPostConfidence';
-import BlogPostProductivity from './pages/BlogPostProductivity';
 import BlogPostSayingNo from './components/BlogPostSayingNo';
 import BlogPostSayingNoWithoutGuilt from './components/BlogPostSayingNoWithoutGuilt';
 import BlogPostRelationshipSigns from './pages/BlogPostRelationshipSigns';
@@ -97,26 +95,6 @@ export const blogPosts = [
     component: BlogPostBurnout,
     image: '/images/overwhelmed-introvert-burnout-signs.png',
     readTime: '8 min read',
-  },
-  {
-    slug: 'building-quiet-confidence',
-    title: "Building Quiet Confidence: An Introvert's Guide",
-    description: 'Transform self-doubt into authentic self-esteem and navigate any room with quiet strength.',
-    date: '2025-07-10',
-    category: categories.INTROVERSION_PERSONALITY,
-    component: BlogPostConfidence,
-    image: '/images/overwhelmed-introvert-burnout-signs.png',
-    readTime: '7 min read',
-  },
-  {
-    slug: 'introvert-friendly-productivity',
-    title: 'Introvert-Friendly Productivity',
-    description: 'Optimize your workflow by leveraging your natural energy cycles. Achieve more with less stress.',
-    date: '2025-07-08',
-    category: categories.INTROVERSION_PERSONALITY,
-    component: BlogPostProductivity,
-    image: '/images/overwhelmed-introvert-burnout-signs.png',
-    readTime: '5 min read',
   },
 ];
 

@@ -6,24 +6,21 @@ const testimonialsData = [
   {
     quote: "Quiet Strength completely changed how I view my introversion. I used to see it as a weakness, but now I see it as my greatest asset. The articles are so insightful and relatable.",
     author: "Jessica M.",
-    title: "Software Developer",
-    avatar: "/images/marica-sinko-author-photo.jpg"
+    title: "Software Developer"
   },
   {
     quote: "I was on the verge of burnout before I found this blog. The advice on energy management and setting boundaries has been a lifesaver. I feel more in control of my life than ever before.",
     author: "Sarah L.",
-    title: "Graphic Designer",
-    avatar: "/images/marica-sinko-author-photo.jpg"
+    title: "Graphic Designer"
   },
   {
     quote: "Finally, a space that understands! The content is not just empowering; it's practical. I've applied so many tips to my daily life with amazing results.",
     author: "Emily R.",
-    title: "Librarian",
-    avatar: "/images/marica-sinko-author-photo.jpg"
+    title: "Librarian"
   }
 ];
 
-const TestimonialCard = ({ quote, author, title, avatar }) => (
+const TestimonialCard = ({ quote, author, title }) => (
   <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center text-center">
     <Seo
       type="review"
@@ -31,10 +28,6 @@ const TestimonialCard = ({ quote, author, title, avatar }) => (
       description={quote}
       path={`/testimonials/${author.toLowerCase().replace(' ', '-')}`}
     />
-    <div className="mb-6">
-      <img src={avatar} alt={author} className="w-40 h-40 rounded-full" />
-      <p className="text-sm text-gray-600 mt-3 text-center italic">{author}</p>
-    </div>
     <blockquote className="text-slate-600 italic mb-6">
       <p>"{quote}"</p>
     </blockquote>
