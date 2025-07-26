@@ -27,7 +27,19 @@
       "Bash(ls:*)",
       "Bash(dig:*)",
       "Bash(nslookup:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "WebFetch(domain:www.cambridge.org)",
+      "WebFetch(domain:www.nature.com)",
+      "WebFetch(domain:www.ncbi.nlm.nih.gov)",
+      "WebFetch(domain:pubmed.ncbi.nlm.nih.gov)",
+      "WebFetch(domain:www.harvard.edu)",
+      "WebFetch(domain:www.nih.gov)",
+      "WebFetch(domain:www.sleepfoundation.org)",
+      "WebFetch(domain:www.cdc.gov)",
+      "WebFetch(domain:www.apa.org)",
+      "WebFetch(domain:www.nimh.nih.gov)",
+      "WebFetch(domain:www.psychologytoday.com)",
+      "WebFetch(domain:www.samhsa.gov)"
     ],
     "deny": []
   }

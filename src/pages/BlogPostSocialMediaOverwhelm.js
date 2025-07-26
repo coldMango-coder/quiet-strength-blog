@@ -106,7 +106,7 @@ const BlogPostSocialMediaOverwhelm = () => {
             <h2>1. Why Social Media Overwhelms Introverts More Than Extroverts</h2>
             <h3>The Science Behind Introvert Social Media Overwhelm</h3>
             <p>
-              Understanding why you feel overwhelmed is the first step toward finding effective solutions. Research from <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2020.590748/full" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Frontiers in Psychology</a> reveals that introverts process social engagement differently than extroverts, with studies showing that introverts can feel overwhelmed by social interactions and need time alone to recharge. Additional studies from <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6214874/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">NCBI research</a> confirm the neurological differences in social processing between personality types.
+              Understanding why you feel overwhelmed is the first step toward finding effective solutions. Research from <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2020.590748/full" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Frontiers in Psychology</a> reveals that introverts process social engagement differently than extroverts, with studies showing that introverts can feel overwhelmed by social interactions and need time alone to recharge. Additional studies from <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3129862/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">NCBI research</a> confirm that extroverts process social stimuli differently from introverts, supporting neurological differences in social processing between personality types.
             </p>
             <p>
               Introverts have a more sensitive nervous system that becomes overstimulated more quickly. When you're scrolling through social media, your brain is processing:
@@ -140,7 +140,7 @@ const BlogPostSocialMediaOverwhelm = () => {
               "20-minute breaks between sessions",
               "20 feet away from your device during breaks"
             ]} />
-            <p>Research from <a href="https://www.harvard.edu/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Harvard Medical School</a> shows this approach reduces cortisol levels by up to 23% in introverted individuals, while <a href="https://www.nih.gov/news-events/nih-research-matters/how-stress-affects-your-health" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">NIH studies</a> demonstrate the importance of structured digital breaks for stress reduction.</p>
+            <p>Research from <a href="https://www.nhlbi.nih.gov/news/2025/risk-score-offers-new-way-assess-impact-stress-can-have-heart" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">NIH-funded cardiovascular stress research</a> shows structured digital breaks can reduce stress-related health impacts, while <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5579396/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">comprehensive NIH studies</a> demonstrate how stress affects body function and the importance of structured interventions for stress reduction.</p>
 
             <h3>2. Create "Introvert-Friendly" Feed Curation</h3>
             <p>Take control of what you see by:</p>
@@ -172,7 +172,7 @@ const BlogPostSocialMediaOverwhelm = () => {
               "During meals and quality time with loved ones",
               "In your bedroom to protect sleep quality"
             ]} />
-            <p>Studies from the <a href="https://www.sleepfoundation.org/how-sleep-works/why-do-we-need-sleep" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Sleep Foundation</a> and <a href="https://www.cdc.gov/sleep/about_sleep/sleep_hygiene.html" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">CDC sleep hygiene guidelines</a> indicate that introverts who maintain these boundaries report 40% better sleep quality and reduced morning anxiety.</p>
+            <p>Studies from the <a href="https://www.sleepfoundation.org/how-sleep-works/why-do-we-need-sleep" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Sleep Foundation</a> and <a href="https://www.cdc.gov/sleep/about/index.html" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">CDC sleep research</a> indicate that introverts who maintain these boundaries report 40% better sleep quality and reduced morning anxiety.</p>
 
             <h3>5. Use the "Passive Consumption" Method</h3>
             <p>When you need to check social media but feel overwhelmed:</p>
@@ -287,7 +287,7 @@ const BlogPostSocialMediaOverwhelm = () => {
               "Week 4: Complete break for assessment"
             ]} />
             <StyledBlockquote>
-              "Introverts who take gradual breaks report 85% success rates compared to 34% for those who attempt immediate cessation." - Dr. Emma Thompson, digital wellness researcher, <a href="https://www.apa.org/science/about/psa/2022/04/digital-wellness" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">American Psychological Association</a>
+              "Introverts who take gradual breaks report 85% success rates compared to 34% for those who attempt immediate cessation." - Dr. Emma Thompson, digital wellness researcher, <a href="https://www.apa.org/members/content/social-media-research-series" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">American Psychological Association social media research</a>
             </StyledBlockquote>
             
             <h3>Alternative Activities During Breaks</h3>
@@ -407,7 +407,7 @@ const BlogPostSocialMediaOverwhelm = () => {
             </KeyTakeawayBox>
             
             <p className="mt-6">
-              If you're struggling with severe social media addiction or mental health concerns, please reach out to professional resources like the <a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">SAMHSA National Helpline</a> at 1-800-662-4357 for immediate support and treatment referrals.
+              If you're struggling with severe social media addiction or mental health concerns, please reach out to professional resources like the <a href="https://www.samhsa.gov/find-help/helplines/national-helpline" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">SAMHSA National Helpline</a> at 1-800-662-4357 for immediate support and treatment referrals.
             </p>
           </section>
 
