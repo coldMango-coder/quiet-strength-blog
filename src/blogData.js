@@ -7,6 +7,7 @@ import BlogPostIntentionalDating from './pages/BlogPostIntentionalDating';
 import BlogPostMeetings from './pages/BlogPostMeetings';
 import BlogPostToxicRelationship from './pages/BlogPostToxicRelationship';
 import BlogPostSocialMediaOverwhelm from './pages/BlogPostSocialMediaOverwhelm';
+import BlogPostNarcissistRecovery from './pages/BlogPostNarcissistRecovery';
 
 export const categories = {
   INTROVERSION_PERSONALITY: 'Introversion & Personality',
@@ -17,6 +18,16 @@ export const categories = {
 };
 
 export const blogPosts = [
+  {
+    slug: 'emotional-manipulation-tactics-narcissist-ex-recovery-12-proven-steps-to-reclaim-your-life-in-2025',
+    title: 'Emotional Manipulation Tactics Narcissist Ex Recovery: 12 Proven Steps to Reclaim Your Life in 2025',
+    description: 'Learn to identify emotional manipulation tactics used by narcissist ex partners and discover 12 proven recovery steps to reclaim your life, rebuild confidence, and heal from narcissistic abuse in 2025.',
+    date: '2025-07-27',
+    category: categories.RELATIONSHIPS_DATING,
+    component: BlogPostNarcissistRecovery,
+    image: '/images/20250727_1641_Triumphant Mountain Sunrise_simple_compose_01k1657wqnedvvh014vmnxfjqv.jpg',
+    readTime: '8 min read',
+  },
   {
     slug: 'introvert-overwhelmed-by-social-media-8-proven-coping-strategies-that-actually-work-in-2025',
     title: 'Introvert Overwhelmed by Social Media: 8 Proven Coping Strategies That Actually Work in 2025',
