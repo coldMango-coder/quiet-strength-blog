@@ -26,7 +26,7 @@ export const blogPosts = [
     date: '2025-07-28',
     category: categories.SELF_DEVELOPMENT,
     component: BlogPostBreakupGlowUp,
-    image: '/images/confident-woman-celebrating-personal-transformation-breakthrough-moment-post-breakup-glow-up-empowerment-sunrise-mountain.jpg',
+    image: '/images/woman-showing-post-breakup-glow-up-transformation-before-and-after-in-mirror-reflection-demonstrating-confidence-and-style-improvement.jpg',
     readTime: '8 min read',
   },
   {

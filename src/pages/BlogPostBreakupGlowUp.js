@@ -27,7 +27,7 @@ const BlogPostBreakupGlowUp = () => {
           title: "Post Breakup Glow Up Transformation Guide: 10 Proven Steps to Become Your Best Self in 2025",
           authorName: "Marica Šinko",
           datePublished: "2025-07-28",
-          image: "/images/confident-woman-celebrating-personal-transformation-breakthrough-moment-post-breakup-glow-up-empowerment-sunrise-mountain.jpg"
+          image: "/images/woman-showing-post-breakup-glow-up-transformation-before-and-after-in-mirror-reflection-demonstrating-confidence-and-style-improvement.jpg"
         }}
         breadcrumbs={[
           { name: "Home", item: "/" },
@@ -88,12 +88,12 @@ const BlogPostBreakupGlowUp = () => {
 
             <div className="my-8">
               <img 
-                src="/images/confident-woman-celebrating-personal-transformation-breakthrough-moment-post-breakup-glow-up-empowerment-sunrise-mountain.jpg" 
-                alt="Confident woman celebrating personal transformation breakthrough moment post breakup glow up empowerment sunrise mountain" 
+                src="/images/woman-showing-post-breakup-glow-up-transformation-before-and-after-in-mirror-reflection-demonstrating-confidence-and-style-improvement.jpg" 
+                alt="Woman showing post breakup glow up transformation before and after in mirror reflection, demonstrating confidence and style improvement" 
                 className="rounded-lg shadow-md w-full" 
                 loading="lazy"
               />
-              <p className="text-sm text-gray-600 italic text-center mt-2">Confident woman celebrating personal transformation breakthrough moment post breakup glow up empowerment sunrise mountain</p>
+              <p className="text-sm text-gray-600 italic text-center mt-2">Woman showing post breakup glow up transformation before and after in mirror reflection, demonstrating confidence and style improvement</p>
             </div>
 
             <KeyTakeawayBox>
@@ -175,12 +175,12 @@ const BlogPostBreakupGlowUp = () => {
 
               <div className="my-8">
                 <img 
-                  src="/images/woman-exercising-yoga-meditation-fitness-routine-physical-transformation-wellness-journey-peaceful-natural-setting.jpg" 
-                  alt="Woman exercising yoga meditation fitness routine physical transformation wellness journey peaceful natural setting" 
+                  src="/images/woman-practicing-yoga-outdoors-during-post-breakup-transformation-journey-focusing-on-physical-and-mental-wellness-for-glow-up.jpg" 
+                  alt="Woman practicing yoga outdoors during post breakup transformation journey, focusing on physical and mental wellness for glow up" 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"
                 />
-                <p className="text-sm text-gray-600 italic text-center mt-2">Woman exercising yoga meditation fitness routine physical transformation wellness journey peaceful natural setting</p>
+                <p className="text-sm text-gray-600 italic text-center mt-2">Woman practicing yoga outdoors during post breakup transformation journey, focusing on physical and mental wellness for glow up</p>
               </div>
 
               <h4 className="text-xl font-semibold text-brand-dark mb-3">Creating Your Fitness Plan:</h4>
@@ -274,12 +274,12 @@ const BlogPostBreakupGlowUp = () => {
 
               <div className="my-8">
                 <img 
-                  src="/images/professional-woman-working-laptop-career-development-success-confidence-modern-workspace-achievement-goals.png" 
-                  alt="Professional woman working laptop career development success confidence modern workspace achievement goals" 
+                  src="/images/confident-woman-journaling-at-café-during-breakup-recovery-representing-personal-growth-and-transformation-in-glow-up-guide.jpg" 
+                  alt="Confident woman journaling at café during breakup recovery, representing personal growth and transformation in glow up guide" 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"
                 />
-                <p className="text-sm text-gray-600 italic text-center mt-2">Professional woman working laptop career development success confidence modern workspace achievement goals</p>
+                <p className="text-sm text-gray-600 italic text-center mt-2">Confident woman journaling at café during breakup recovery, representing personal growth and transformation in glow up guide</p>
               </div>
 
               <h4 className="text-xl font-semibold text-brand-dark mb-3">Career Development Strategies:</h4>
