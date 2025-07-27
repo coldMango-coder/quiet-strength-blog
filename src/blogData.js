@@ -8,6 +8,7 @@ import BlogPostMeetings from './pages/BlogPostMeetings';
 import BlogPostToxicRelationship from './pages/BlogPostToxicRelationship';
 import BlogPostSocialMediaOverwhelm from './pages/BlogPostSocialMediaOverwhelm';
 import BlogPostNarcissistRecovery from './pages/BlogPostNarcissistRecovery';
+import BlogPostBreakupGlowUp from './pages/BlogPostBreakupGlowUp';
 
 export const categories = {
   INTROVERSION_PERSONALITY: 'Introversion & Personality',
@@ -18,6 +19,16 @@ export const categories = {
 };
 
 export const blogPosts = [
+  {
+    slug: 'post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025',
+    title: 'Post Breakup Glow Up Transformation Guide: 10 Proven Steps to Become Your Best Self in 2025',
+    description: 'Discover the ultimate post breakup glow up transformation guide with 10 proven steps to heal, grow, and become your best self. Transform pain into power in 2025.',
+    date: '2025-07-28',
+    category: categories.SELF_DEVELOPMENT,
+    component: BlogPostBreakupGlowUp,
+    image: '/images/confident-woman-celebrating-personal-transformation-breakthrough-moment-post-breakup-glow-up-empowerment-sunrise-mountain.jpg',
+    readTime: '8 min read',
+  },
   {
     slug: 'emotional-manipulation-tactics-narcissist-ex-recovery-12-proven-steps-to-reclaim-your-life-in-2025',
     title: 'Emotional Manipulation Tactics Narcissist Ex Recovery: 12 Proven Steps to Reclaim Your Life in 2025',
