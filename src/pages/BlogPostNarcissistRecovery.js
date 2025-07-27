@@ -27,7 +27,7 @@ const BlogPostNarcissistRecovery = () => {
           title: "Emotional Manipulation Tactics Narcissist Ex Recovery: 12 Proven Steps to Reclaim Your Life in 2025",
           authorName: "Marica Šinko",
           datePublished: "2025-07-27",
-          image: "/images/20250727_1641_Triumphant Mountain Sunrise_simple_compose_01k1657wqnedvvh014vmnxfjqv.jpg"
+          image: "/images/confident-woman-standing-triumphantly-at-sunrise-representing-emotional-recovery-and-healing-from-narcissistic-abuse-manipulation-tactics.jpg"
         }}
         breadcrumbs={[
           { name: "Home", item: "/" },
@@ -111,7 +111,7 @@ const BlogPostNarcissistRecovery = () => {
 
               <div className="my-8">
                 <img 
-                  src="/images/20250727_1641_Triumphant Mountain Sunrise_simple_compose_01k1657wqnedvvh014vmnxfjqv.jpg" 
+                  src="/images/confident-woman-standing-triumphantly-at-sunrise-representing-emotional-recovery-and-healing-from-narcissistic-abuse-manipulation-tactics.jpg" 
                   alt="Confident woman standing triumphantly at sunrise representing emotional recovery and healing from narcissistic abuse manipulation tactics" 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"
@@ -181,7 +181,7 @@ const BlogPostNarcissistRecovery = () => {
 
               <div className="my-8">
                 <img 
-                  src="/images/8b8a3180-5a93-4de0-99f9-bfe238267f79.jpg" 
+                  src="/images/open-journal-with-a-pen-cup-of-tea-and-small-potted-plant-on-a-white-desk-in-soft-natural-light-evoking-calm-and-reflection.jpg" 
                   alt="Open journal with a pen, cup of tea, and small potted plant on a white desk in soft natural light, evoking calm and reflection." 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"
@@ -245,7 +245,7 @@ const BlogPostNarcissistRecovery = () => {
 
               <div className="my-8">
                 <img 
-                  src="/images/20250727_1645_Golden Light Barrier_simple_compose_01k165ff5vfswt5n7c633b2n2t.jpg" 
+                  src="/images/person-setting-healthy-emotional-boundaries-with-protective-golden-light-representing-recovery-from-narcissist-ex-manipulation-and-self-protection.jpg" 
                   alt="Person setting healthy emotional boundaries with protective golden light representing recovery from narcissist ex manipulation and self-protection" 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"

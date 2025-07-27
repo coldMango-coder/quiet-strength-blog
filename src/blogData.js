@@ -25,7 +25,7 @@ export const blogPosts = [
     date: '2025-07-27',
     category: categories.RELATIONSHIPS_DATING,
     component: BlogPostNarcissistRecovery,
-    image: '/images/20250727_1641_Triumphant Mountain Sunrise_simple_compose_01k1657wqnedvvh014vmnxfjqv.jpg',
+    image: '/images/confident-woman-standing-triumphantly-at-sunrise-representing-emotional-recovery-and-healing-from-narcissistic-abuse-manipulation-tactics.jpg',
     readTime: '8 min read',
   },
   {

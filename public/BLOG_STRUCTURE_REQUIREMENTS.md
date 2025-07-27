@@ -44,14 +44,22 @@
 
 ### 2. Image Requirements (MANDATORY FOR SEO)
 
-#### Image Naming Convention:
+#### Image Naming Convention (MANDATORY):
 - **File names MUST match alt text exactly**
 - **Replace spaces with hyphens (-)**
 - **Use descriptive, keyword-rich names**
+- **CRITICAL RULE: When adding ANY new image, it MUST be renamed to match its alt text with spaces replaced by hyphens**
 
 Example:
 - Alt text: "Introvert overwhelmed by social media sitting alone with multiple screens"
 - File name: `introvert-overwhelmed-by-social-media-sitting-alone-with-multiple-screens.jpg`
+
+**IMPORTANT WORKFLOW RULE:**
+Every time you add a new image to any blog post:
+1. First add the image with its descriptive alt text
+2. IMMEDIATELY rename the image file to match the alt text exactly (spaces → hyphens)
+3. Update all image src references to use the new filename
+4. This ensures SEO optimization and consistent file organization
 
 #### Image Placement:
 - **3 strategically placed images minimum per blog post**

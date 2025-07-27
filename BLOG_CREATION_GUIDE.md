@@ -175,14 +175,21 @@ Optimize images for web:
 - **Alt text**: Include descriptive alt text for accessibility
 - **Professional Naming**: Use SEO-optimized, descriptive filenames following our professional naming system
 
-#### Professional Image Naming System
+#### Professional Image Naming System (MANDATORY WORKFLOW)
 Follow these guidelines for all new images:
 
 **🎯 Naming Convention:**
 - **Descriptive Names**: Filename should describe the image content
 - **Kebab-Case Format**: Use hyphens instead of spaces (e.g., `confident-woman-business-meeting.jpg`)
 - **SEO-Friendly**: Google-optimized naming for better search discoverability
-- **Alt-Text Aligned**: Filename should match the alt text description
+- **Alt-Text Aligned**: Filename MUST match the alt text description exactly
+
+**🚨 CRITICAL WORKFLOW RULE:**
+When adding ANY new image to a blog post:
+1. Add image with descriptive alt text first
+2. IMMEDIATELY rename the image file to match alt text (spaces → hyphens)
+3. Update all src references to use new filename
+4. This is MANDATORY for every single image addition
 
 **✅ Examples:**
 ```
