@@ -10,6 +10,7 @@ import BlogPostSocialMediaOverwhelm from './pages/BlogPostSocialMediaOverwhelm';
 import BlogPostNarcissistRecovery from './pages/BlogPostNarcissistRecovery';
 import BlogPostBreakupGlowUp from './pages/BlogPostBreakupGlowUp';
 import BlogPostIntrovertConfidence from './pages/BlogPostIntrovertConfidence';
+import BlogPostNetworkingTips from './pages/BlogPostNetworkingTips';
 
 export const categories = {
   INTROVERSION_PERSONALITY: 'Introversion & Personality',
@@ -20,6 +21,16 @@ export const categories = {
 };
 
 export const blogPosts = [
+  {
+    slug: 'introvert-networking-tips-without-small-talk-guide',
+    title: '7 Powerful Introvert Networking Tips Without Small Talk That Actually Work',
+    description: 'Discover proven introvert networking tips without small talk that help shy professionals build meaningful connections. Skip the awkward conversations and network authentically.',
+    date: '2025-07-29',
+    category: categories.CAREER_WORKPLACE,
+    component: BlogPostNetworkingTips,
+    image: '/images/introvert-professional-networking-meaningful-conversation.jpg',
+    readTime: '10 min read',
+  },
   {
     slug: 'how-to-be-confident-as-an-introvert-woman-guide',
     title: 'How to Be Confident as an Introvert Woman: 9 Proven Strategies That Actually Work in 2025',

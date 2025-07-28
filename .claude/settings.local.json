@@ -44,7 +44,9 @@
       "WebFetch(domain:www.tandfonline.com)",
       "WebFetch(domain:www.simplypsychology.org)",
       "WebFetch(domain:988lifeline.org)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(vercel:*)",
+      "WebFetch(domain:www.gsb.stanford.edu)"
     ],
     "deny": []
   }
