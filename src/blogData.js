@@ -28,7 +28,7 @@ export const blogPosts = [
     date: '2025-07-29',
     category: categories.CAREER_WORKPLACE,
     component: BlogPostNetworkingTips,
-    image: '/images/introvert-professional-networking-meaningful-conversation.jpg',
+    image: '/images/20250728_1647_Engaged Coffee Shop Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.jpg',
     readTime: '10 min read',
   },
   {
@@ -38,7 +38,7 @@ export const blogPosts = [
     date: '2025-07-28',
     category: categories.INTROVERSION_PERSONALITY,
     component: BlogPostIntrovertConfidence,
-    image: '/images/introvert-coffee-meeting-networking.jpg',
+    image: '/images/confident-introvert-woman-sitting-thoughtfully-in-modern-office-space-demonstrating-quiet-strength-and-authentic-confidence-in-professional-setting.jpg',
     readTime: '8 min read',
   },
   {

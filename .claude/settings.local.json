@@ -48,7 +48,9 @@
       "Bash(vercel:*)",
       "WebFetch(domain:www.gsb.stanford.edu)",
       "Bash(pkill:*)",
-      "Bash(tasklist)"
+      "Bash(tasklist)",
+      "Bash(git checkout:*)",
+      "Bash(git restore:*)"
     ],
     "deny": []
   }

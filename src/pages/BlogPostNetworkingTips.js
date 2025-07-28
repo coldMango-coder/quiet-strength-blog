@@ -27,7 +27,7 @@ const BlogPostNetworkingTips = () => {
             title: "7 Powerful Introvert Networking Tips Without Small Talk That Actually Work",
             authorName: "Marica Šinko",
             datePublished: "2025-07-29",
-            image: "/images/introvert-professional-networking-meaningful-conversation.jpg"
+            image: "/images/20250728_1647_Engaged Coffee Shop Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.jpg"
           }}
           breadcrumbs={[
             { name: "Home", item: "/" },
@@ -88,14 +88,14 @@ const BlogPostNetworkingTips = () => {
               
               <div className="my-8">
                 <img 
-                  src="/images/introvert-professional-networking-meaningful-conversation.jpg" 
-                  alt="Introvert professional having meaningful networking conversation at coffee meeting, demonstrating authentic connection without small talk" 
+                  src="/images/20250728_1647_Engaged Coffee Shop Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.jpg" 
+                  alt="Two professionals having a meaningful one-on-one coffee meeting, demonstrating introvert networking tips without small talk in a comfortable setting" 
                   className="rounded-lg shadow-md" 
                   loading="eager"
                   width="600"
                   height="400"
                 />
-                <p className="text-sm text-gray-600 mt-3 text-center italic">Introvert professional having meaningful networking conversation at coffee meeting, demonstrating authentic connection without small talk</p>
+                <p className="text-sm text-gray-600 mt-3 text-center italic">Two professionals having a meaningful one-on-one coffee meeting, demonstrating introvert networking tips without small talk in a comfortable setting</p>
               </div>
             </section>
 
@@ -137,14 +137,14 @@ const BlogPostNetworkingTips = () => {
               
               <div className="my-8">
                 <img 
-                  src="/images/professional-one-on-one-coffee-meeting-networking.jpg" 
-                  alt="Two professionals having focused one-on-one coffee meeting for meaningful networking conversation without small talk distractions" 
+                  src="/images/20250728_1704_Focused Professional Workspace_simple_compose_01k18ryjaxejvaw4zbq46samh6.jpg" 
+                  alt="Professional introvert using written communication for networking, typing thoughtful content on laptop as an alternative to small talk networking" 
                   className="rounded-lg shadow-md" 
                   loading="lazy"
                   width="600"
                   height="400"
                 />
-                <p className="text-sm text-gray-600 mt-3 text-center italic">Two professionals having focused one-on-one coffee meeting for meaningful networking conversation without small talk distractions</p>
+                <p className="text-sm text-gray-600 mt-3 text-center italic">Professional introvert using written communication for networking, typing thoughtful content on laptop as an alternative to small talk networking</p>
               </div>
             </section>
 
@@ -221,14 +221,14 @@ const BlogPostNetworkingTips = () => {
               
               <div className="my-8">
                 <img 
-                  src="/images/professional-workshop-networking-learning-environment.jpg" 
-                  alt="Professionals networking naturally at skill-based workshop learning environment, focusing on meaningful professional development discussions" 
+                  src="/images/20250728_1706_Engaged Professional Workshop_simple_compose_01k18s27yxfaftwdx7snhfgjsv.jpg" 
+                  alt="Small professional workshop environment where introverts can network naturally through shared learning experiences without relying on small talk" 
                   className="rounded-lg shadow-md" 
                   loading="lazy"
                   width="600"
                   height="400"
                 />
-                <p className="text-sm text-gray-600 mt-3 text-center italic">Professionals networking naturally at skill-based workshop learning environment, focusing on meaningful professional development discussions</p>
+                <p className="text-sm text-gray-600 mt-3 text-center italic">Small professional workshop environment where introverts can network naturally through shared learning experiences without relying on small talk</p>
               </div>
             </section>
 

@@ -27,7 +27,7 @@ const BlogPostIntrovertConfidence = () => {
           title: "How to Be Confident as an Introvert Woman: 9 Proven Strategies That Actually Work in 2025",
           authorName: "Marica Šinko",
           datePublished: "2025-07-28",
-          image: "/images/introvert-coffee-meeting-networking.jpg"
+          image: "/images/confident-introvert-woman-sitting-thoughtfully-in-modern-office-space-demonstrating-quiet-strength-and-authentic-confidence-in-professional-setting.jpg"
         }}
         breadcrumbs={[
           { name: "Home", item: "/" },
@@ -94,15 +94,15 @@ const BlogPostIntrovertConfidence = () => {
               <h2 className="text-3xl font-bold text-brand-dark mb-6">Understanding Introvert Confidence vs. Extrovert Confidence</h2>
               
               <img 
-                src="/images/introvert-coffee-meeting-networking.jpg" 
-                alt="Two professionals having a meaningful one-on-one coffee meeting, demonstrating introvert networking tips without small talk in a comfortable setting" 
+                src="/images/confident-introvert-woman-sitting-thoughtfully-in-modern-office-space-demonstrating-quiet-strength-and-authentic-confidence-in-professional-setting.jpg" 
+                alt="confident-introvert-woman-sitting-thoughtfully-in-modern-office-space-demonstrating-quiet-strength-and-authentic-confidence-in-professional-setting" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
                 width="600"
                 height="400"
               />
               <p className="text-sm text-gray-600 text-center italic mb-6">
-                Two professionals having a meaningful one-on-one coffee meeting, demonstrating introvert networking tips without small talk in a comfortable setting
+                confident-introvert-woman-sitting-thoughtfully-in-modern-office-space-demonstrating-quiet-strength-and-authentic-confidence-in-professional-setting
               </p>
 
               <p className="mb-6">
@@ -181,15 +181,15 @@ const BlogPostIntrovertConfidence = () => {
               <h2 className="text-3xl font-bold text-brand-dark mb-6">9 Proven Strategies to Build Authentic Confidence</h2>
 
               <img 
-                src="/images/introvert-professional-workspace-networking.jpg" 
-                alt="Professional introvert using written communication for networking, typing thoughtful content on laptop as an alternative to small talk networking" 
+                src="/images/introvert-woman-confidently-engaging-in-meaningful-one-on-one-conversation-at-coffee-meeting-demonstrating-authentic-networking-strategies-for-introverts.jpg" 
+                alt="introvert-woman-confidently-engaging-in-meaningful-one-on-one-conversation-at-coffee-meeting-demonstrating-authentic-networking-strategies-for-introverts" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
                 width="600"
                 height="400"
               />
               <p className="text-sm text-gray-600 text-center italic mb-6">
-                Professional introvert using written communication for networking, typing thoughtful content on laptop as an alternative to small talk networking
+                introvert-woman-confidently-engaging-in-meaningful-one-on-one-conversation-at-coffee-meeting-demonstrating-authentic-networking-strategies-for-introverts
               </p>
 
               <div className="space-y-12">
@@ -640,15 +640,15 @@ const BlogPostIntrovertConfidence = () => {
               </div>
 
               <img 
-                src="/images/introvert-professional-workshop-networking.jpg" 
-                alt="Small professional workshop environment where introverts can network naturally through shared learning experiences without relying on small talk" 
+                src="/images/empowered-introvert-woman-standing-confidently-in-peaceful-natural-setting-representing-authentic-confidence-journey-and-quiet-strength-development.jpg" 
+                alt="empowered-introvert-woman-standing-confidently-in-peaceful-natural-setting-representing-authentic-confidence-journey-and-quiet-strength-development" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
                 width="600"
                 height="400"
               />
               <p className="text-sm text-gray-600 text-center italic mb-6">
-                Small professional workshop environment where introverts can network naturally through shared learning experiences without relying on small talk
+                empowered-introvert-woman-standing-confidently-in-peaceful-natural-setting-representing-authentic-confidence-journey-and-quiet-strength-development
               </p>
 
               <StyledBlockquote>
