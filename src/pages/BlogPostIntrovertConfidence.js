@@ -165,27 +165,12 @@ const BlogPostIntrovertConfidence = () => {
 
               <p className="mb-6">This neurological difference translates into powerful strengths:</p>
 
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h4 className="font-bold text-brand-dark mb-3">Enhanced Pattern Recognition</h4>
-                  <p className="text-sm">Introverts excel at noticing subtle patterns and connections others miss. A 2023 study published in the Journal of Personality Psychology found that introverts scored 23% higher on pattern recognition tests compared to extroverts.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h4 className="font-bold text-brand-dark mb-3">Superior Listening Skills</h4>
-                  <p className="text-sm">Research from Harvard Business School shows that introverted managers often outperform extroverted ones because they're more likely to listen to employee suggestions and implement valuable ideas.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h4 className="font-bold text-brand-dark mb-3">Deep Focus Abilities</h4>
-                  <p className="text-sm">Introverts can maintain concentration for longer periods, leading to higher quality work output. Microsoft's productivity research indicates that introverted employees show 31% better sustained attention during complex tasks.</p>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h4 className="font-bold text-brand-dark mb-3">Emotional Intelligence</h4>
-                  <p className="text-sm">Studies consistently show that introverts score higher on emotional intelligence assessments, particularly in self-awareness and empathy—two crucial components of authentic confidence.</p>
-                </div>
-              </div>
+              <StyledList items={[
+                "Enhanced Pattern Recognition: Introverts excel at noticing subtle patterns and connections others miss. A 2023 study published in the Journal of Personality Psychology found that introverts scored 23% higher on pattern recognition tests compared to extroverts.",
+                "Superior Listening Skills: Research from Harvard Business School shows that introverted managers often outperform extroverted ones because they're more likely to listen to employee suggestions and implement valuable ideas.",
+                "Deep Focus Abilities: Introverts can maintain concentration for longer periods, leading to higher quality work output. Microsoft's productivity research indicates that introverted employees show 31% better sustained attention during complex tasks.",
+                "Emotional Intelligence: Studies consistently show that introverts score higher on emotional intelligence assessments, particularly in self-awareness and empathy—two crucial components of authentic confidence."
+              ]} />
 
               <StyledBlockquote>
                 "These aren't consolation prizes or 'lesser' strengths—they're powerful advantages that, when properly leveraged, create a unique and valuable form of confidence."
