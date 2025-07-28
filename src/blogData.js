@@ -9,6 +9,7 @@ import BlogPostToxicRelationship from './pages/BlogPostToxicRelationship';
 import BlogPostSocialMediaOverwhelm from './pages/BlogPostSocialMediaOverwhelm';
 import BlogPostNarcissistRecovery from './pages/BlogPostNarcissistRecovery';
 import BlogPostBreakupGlowUp from './pages/BlogPostBreakupGlowUp';
+import BlogPostIntrovertConfidence from './pages/BlogPostIntrovertConfidence';
 
 export const categories = {
   INTROVERSION_PERSONALITY: 'Introversion & Personality',
@@ -19,6 +20,16 @@ export const categories = {
 };
 
 export const blogPosts = [
+  {
+    slug: 'how-to-be-confident-as-an-introvert-woman-guide',
+    title: 'How to Be Confident as an Introvert Woman: 9 Proven Strategies That Actually Work in 2025',
+    description: 'Discover how to be confident as an introvert woman with 9 proven strategies. Learn to embrace your quiet strength and build authentic confidence in 2025. Expert-backed tips inside.',
+    date: '2025-07-28',
+    category: categories.INTROVERSION_PERSONALITY,
+    component: BlogPostIntrovertConfidence,
+    image: '/images/confident-introvert-woman-sitting-thoughtfully-in-modern-office-space-demonstrating-quiet-strength-and-authentic-confidence-in-professional-setting.jpg',
+    readTime: '8 min read',
+  },
   {
     slug: 'post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025',
     title: 'Post Breakup Glow Up Transformation Guide: 10 Proven Steps to Become Your Best Self in 2025',
