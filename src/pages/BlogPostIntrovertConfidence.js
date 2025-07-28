@@ -196,7 +196,7 @@ const BlogPostIntrovertConfidence = () => {
               <h2 className="text-3xl font-bold text-brand-dark mb-6">9 Proven Strategies to Build Authentic Confidence</h2>
 
               <img 
-                src="/images/confident-woman-journaling-self-reflection.jpg" 
+                src="/images/woman-journaling-self-reflection.png" 
                 alt="Confident woman practicing self-reflection and journaling as part of confidence building routine representing introvert strengths" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
