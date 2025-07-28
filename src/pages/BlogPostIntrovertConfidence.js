@@ -247,7 +247,7 @@ const BlogPostIntrovertConfidence = () => {
                   <h3 className="text-2xl font-bold text-brand-dark mb-4">Strategy 3: Build Confidence Through One-on-One Connections</h3>
                   
                   <img 
-                    src="/images/introvert-woman-confidently-engaging-in-meaningful-one-on-one-conversation-at-coffee-meeting-demonstrating-authentic-networking-strategies-for-introverts.jpg" 
+                    src="/images/introvert-woman-confidently-engaging-in-meaningful-one-on-one-conversation-at-coffee-meeting-demonstrating-authentic-networking-strategies-for-introverts.png" 
                     alt="Introvert woman confidently engaging in meaningful one-on-one conversation at coffee meeting, demonstrating authentic networking strategies for introverts" 
                     className="rounded-lg shadow-md my-8 w-full" 
                     loading="lazy"
