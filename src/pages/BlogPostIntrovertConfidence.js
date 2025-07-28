@@ -94,15 +94,15 @@ const BlogPostIntrovertConfidence = () => {
               <h2 className="text-3xl font-bold text-brand-dark mb-6">Understanding Introvert Confidence vs. Extrovert Confidence</h2>
               
               <img 
-                src="/images/confident-introvert-woman-sitting-thoughtfully-in-modern-office-space-demonstrating-quiet-strength-and-authentic-confidence-in-professional-setting.jpg" 
-                alt="Confident introvert woman sitting thoughtfully in modern office space, demonstrating quiet strength and authentic confidence in professional setting" 
+                src="/images/20250728_1647_Engaged Coffee Shop Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.jpg" 
+                alt="Two professionals having a meaningful one-on-one coffee meeting, demonstrating introvert networking tips without small talk in a comfortable setting" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
                 width="600"
                 height="400"
               />
               <p className="text-sm text-gray-600 text-center italic mb-6">
-                Confident introvert woman sitting thoughtfully in modern office space, demonstrating quiet strength and authentic confidence in professional setting
+                Two professionals having a meaningful one-on-one coffee meeting, demonstrating introvert networking tips without small talk in a comfortable setting
               </p>
 
               <p className="mb-6">
@@ -181,13 +181,15 @@ const BlogPostIntrovertConfidence = () => {
               <h2 className="text-3xl font-bold text-brand-dark mb-6">9 Proven Strategies to Build Authentic Confidence</h2>
 
               <img 
-                src="/images/woman-journaling-self-reflection.png" 
-                alt="Confident woman practicing self-reflection and journaling as part of confidence building routine representing introvert strengths" 
+                src="/images/20250728_1704_Focused Professional Workspace_simple_compose_01k18ryjaxejvaw4zbq46samh6.jpg" 
+                alt="Professional introvert using written communication for networking, typing thoughtful content on laptop as an alternative to small talk networking" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
+                width="600"
+                height="400"
               />
               <p className="text-sm text-gray-600 text-center italic mb-6">
-                Confident woman practicing self-reflection and journaling as part of confidence building routine representing introvert strengths
+                Professional introvert using written communication for networking, typing thoughtful content on laptop as an alternative to small talk networking
               </p>
 
               <div className="space-y-12">
@@ -638,15 +640,15 @@ const BlogPostIntrovertConfidence = () => {
               </div>
 
               <img 
-                src="/images/introvert-woman-confidently-engaging-in-meaningful-one-on-one-conversation-at-coffee-meeting-demonstrating-authentic-networking-strategies-for-introverts.png" 
-                alt="Introvert woman confidently engaging in meaningful one-on-one conversation at coffee meeting, demonstrating authentic networking strategies for introverts" 
+                src="/images/20250728_1706_Engaged Professional Workshop_simple_compose_01k18s27yxfaftwdx7snhfgjsv.jpg" 
+                alt="Small professional workshop environment where introverts can network naturally through shared learning experiences without relying on small talk" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
                 width="600"
                 height="400"
               />
               <p className="text-sm text-gray-600 text-center italic mb-6">
-                Introvert woman confidently engaging in meaningful one-on-one conversation at coffee meeting, demonstrating authentic networking strategies for introverts
+                Small professional workshop environment where introverts can network naturally through shared learning experiences without relying on small talk
               </p>
 
               <StyledBlockquote>
