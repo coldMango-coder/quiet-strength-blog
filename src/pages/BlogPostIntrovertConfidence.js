@@ -243,20 +243,20 @@ const BlogPostIntrovertConfidence = () => {
                   </p>
                 </div>
 
+                <img 
+                  src="/images/introvert-woman-confidently-engaging-in-meaningful-one-on-one-conversation-at-coffee-meeting-demonstrating-authentic-networking-strategies-for-introverts.png" 
+                  alt="Introvert woman confidently engaging in meaningful one-on-one conversation at coffee meeting, demonstrating authentic networking strategies for introverts" 
+                  className="rounded-lg shadow-md my-8 w-full" 
+                  loading="lazy"
+                  width="600"
+                  height="400"
+                />
+                <p className="text-sm text-gray-600 text-center italic mb-6">
+                  Introvert woman confidently engaging in meaningful one-on-one conversation at coffee meeting, demonstrating authentic networking strategies for introverts
+                </p>
+
                 <div>
                   <h3 className="text-2xl font-bold text-brand-dark mb-4">Strategy 3: Build Confidence Through One-on-One Connections</h3>
-                  
-                  <img 
-                    src="/images/introvert-woman-confidently-engaging-in-meaningful-one-on-one-conversation-at-coffee-meeting-demonstrating-authentic-networking-strategies-for-introverts.png" 
-                    alt="Introvert woman confidently engaging in meaningful one-on-one conversation at coffee meeting, demonstrating authentic networking strategies for introverts" 
-                    className="rounded-lg shadow-md my-8 w-full" 
-                    loading="lazy"
-                    width="600"
-                    height="400"
-                  />
-                  <p className="text-sm text-gray-600 text-center italic mb-6">
-                    Introvert woman confidently engaging in meaningful one-on-one conversation at coffee meeting, demonstrating authentic networking strategies for introverts
-                  </p>
                   
                   <p className="mb-4">
                     While extroverts gain confidence from large groups, introvert women typically shine in one-on-one or small group settings. Focus on building your confidence through meaningful individual connections rather than trying to work a room.
