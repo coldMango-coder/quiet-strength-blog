@@ -27,7 +27,7 @@ const BlogPostIntrovertConfidence = () => {
           title: "How to Be Confident as an Introvert Woman: 9 Proven Strategies That Actually Work in 2025",
           authorName: "Marica Šinko",
           datePublished: "2025-07-28",
-          image: "/images/confident-introvert-woman-professional-setting.jpg"
+          image: "/images/20250728_1647_Engaged Coffee Shop Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.jpg"
         }}
         breadcrumbs={[
           { name: "Home", item: "/" },
