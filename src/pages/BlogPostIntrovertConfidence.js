@@ -201,6 +201,9 @@ const BlogPostIntrovertConfidence = () => {
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
               />
+              <p className="text-sm text-gray-600 text-center italic mb-6">
+                Confident woman practicing self-reflection and journaling as part of confidence building routine representing introvert strengths
+              </p>
 
               <div className="space-y-12">
                 <div>
