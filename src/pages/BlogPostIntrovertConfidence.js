@@ -244,15 +244,15 @@ const BlogPostIntrovertConfidence = () => {
                 </div>
 
                 <img 
-                  src="/images/introvert-woman-confidently-engaging-in-meaningful-one-on-one-conversation-at-coffee-meeting-demonstrating-authentic-networking-strategies-for-introverts.png" 
-                  alt="Introvert woman confidently engaging in meaningful one-on-one conversation at coffee meeting, demonstrating authentic networking strategies for introverts" 
+                  src="/images/empowered-introvert-woman-standing-confidently-in-peaceful-natural-setting-representing-authentic-confidence-journey-and-quiet-strength-development.jpg" 
+                  alt="Empowered introvert woman standing confidently in peaceful natural setting, representing authentic confidence journey and quiet strength development" 
                   className="rounded-lg shadow-md my-8 w-full" 
                   loading="lazy"
                   width="600"
                   height="400"
                 />
                 <p className="text-sm text-gray-600 text-center italic mb-6">
-                  Introvert woman confidently engaging in meaningful one-on-one conversation at coffee meeting, demonstrating authentic networking strategies for introverts
+                  Empowered introvert woman standing confidently in peaceful natural setting, representing authentic confidence journey and quiet strength development
                 </p>
 
                 <div>
@@ -662,15 +662,15 @@ const BlogPostIntrovertConfidence = () => {
               </div>
 
               <img 
-                src="/images/empowered-introvert-woman-standing-confidently-in-peaceful-natural-setting-representing-authentic-confidence-journey-and-quiet-strength-development.jpg" 
-                alt="Empowered introvert woman standing confidently in peaceful natural setting, representing authentic confidence journey and quiet strength development" 
+                src="/images/introvert-woman-confidently-engaging-in-meaningful-one-on-one-conversation-at-coffee-meeting-demonstrating-authentic-networking-strategies-for-introverts.png" 
+                alt="Introvert woman confidently engaging in meaningful one-on-one conversation at coffee meeting, demonstrating authentic networking strategies for introverts" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
                 width="600"
                 height="400"
               />
               <p className="text-sm text-gray-600 text-center italic mb-6">
-                Empowered introvert woman standing confidently in peaceful natural setting, representing authentic confidence journey and quiet strength development
+                Introvert woman confidently engaging in meaningful one-on-one conversation at coffee meeting, demonstrating authentic networking strategies for introverts
               </p>
 
               <StyledBlockquote>
