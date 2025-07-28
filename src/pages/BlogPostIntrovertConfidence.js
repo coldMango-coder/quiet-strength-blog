@@ -98,6 +98,8 @@ const BlogPostIntrovertConfidence = () => {
                 alt="Confident introvert woman sitting thoughtfully in modern office space, demonstrating quiet strength and authentic confidence in professional setting" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
+                width="600"
+                height="400"
               />
               <p className="text-sm text-gray-600 text-center italic mb-6">
                 Confident introvert woman sitting thoughtfully in modern office space, demonstrating quiet strength and authentic confidence in professional setting
@@ -249,6 +251,8 @@ const BlogPostIntrovertConfidence = () => {
                     alt="Introvert woman confidently engaging in meaningful one-on-one conversation at coffee meeting, demonstrating authentic networking strategies for introverts" 
                     className="rounded-lg shadow-md my-8 w-full" 
                     loading="lazy"
+                    width="600"
+                    height="400"
                   />
                   <p className="text-sm text-gray-600 text-center italic mb-6">
                     Introvert woman confidently engaging in meaningful one-on-one conversation at coffee meeting, demonstrating authentic networking strategies for introverts
@@ -662,6 +666,8 @@ const BlogPostIntrovertConfidence = () => {
                 alt="Empowered introvert woman standing confidently in peaceful natural setting, representing authentic confidence journey and quiet strength development" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
+                width="600"
+                height="400"
               />
               <p className="text-sm text-gray-600 text-center italic mb-6">
                 Empowered introvert woman standing confidently in peaceful natural setting, representing authentic confidence journey and quiet strength development
