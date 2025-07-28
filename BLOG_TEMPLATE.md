@@ -392,6 +392,16 @@ export default BlogPost[Title];
 - Commercial websites selling products
 - Social media posts or personal blogs
 - Wikipedia (unless absolutely necessary)
+- Psychology Today archived articles (old URLs often return 404)
+- Stanford GSB insight pages without verification (URLs may have changed)
+
+### 🔧 AUTOMATIC LINK VERIFICATION PROCESS:
+**MANDATORY STEP: Before publishing any blog post, you MUST:**
+1. Test every single external link by visiting the URL
+2. Verify the linked page contains relevant content that supports your claim
+3. If any link is broken (404, 403, or maintenance page), immediately replace with working alternative
+4. Use only verified working links from the approved domains list above
+5. Document link replacements in commit messages for future reference
 
 ---
 

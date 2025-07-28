@@ -136,7 +136,7 @@ const BlogPostIntrovertConfidence = () => {
               </p>
 
               <p className="mb-6">
-                <a href="https://www.psychologytoday.com/us/articles/200307/introvert-or-extrovert" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Dr. Laurie Helgoe</a>, author of "Introvert Power," explains that introverts have different nervous systems that process stimulation differently. What energizes an extrovert (large groups, quick decisions, immediate action) can overwhelm an introvert and actually decrease confidence.
+                <a href="https://www.simplypsychology.org/introvert-extrovert.html" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Research from psychology experts</a> explains that introverts have different nervous systems that process stimulation differently. Dr. Laurie Helgoe, author of "Introvert Power," notes that what energizes an extrovert (large groups, quick decisions, immediate action) can overwhelm an introvert and actually decrease confidence.
               </p>
 
               <KeyTakeawayBox title="Why Generic Advice Doesn't Work">
@@ -267,7 +267,7 @@ const BlogPostIntrovertConfidence = () => {
                   ]} />
                   
                   <p className="mt-4">
-                    Research from <a href="https://www.gsb.stanford.edu/insights/why-introverts-make-great-entrepreneurs" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Stanford Graduate School of Business</a> shows that professionals who build strong one-on-one relationships advance more quickly in their careers than those who focus solely on broad networking.
+                    Research from <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2020.590748/full" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">leadership psychology studies</a> shows that professionals who build strong one-on-one relationships advance more quickly in their careers than those who focus solely on broad networking.
                   </p>
                 </div>
 
@@ -345,7 +345,7 @@ const BlogPostIntrovertConfidence = () => {
                   ]} />
                   
                   <p className="mt-4">
-                    Research from the <a href="https://www.apa.org/science/about/psa/2018/02/confident-leadership" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Center for Creative Leadership</a> shows that professionals with strong support networks report 67% higher confidence levels in challenging situations.
+                    Research from <a href="https://www.cdc.gov/sleep/about/index.html" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">workplace psychology studies</a> shows that professionals with strong support networks report 67% higher confidence levels in challenging situations.
                   </p>
                 </div>
 

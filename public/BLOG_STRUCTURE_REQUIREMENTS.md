@@ -35,12 +35,16 @@
 - **NCBI/PubMed**: Often shows "planned maintenance" messages that look unprofessional
 - **SAMHSA specific helpline pages**: May show 403 Forbidden errors - use 988lifeline.org instead
 - **Government research portals**: May have temporary outages during updates
+- **Psychology Today archived articles**: Old URLs may return 404 errors - use current pages instead
+- **Stanford GSB old insight pages**: May have been restructured - verify links before publishing
 
 #### Link Integration Rules:
 1. **Context Required**: Each external link must support a specific claim or statistic
 2. **Natural Integration**: Links should flow naturally in sentences, not feel forced
 3. **Authoritative Support**: Use links to back up research claims and expert quotes
 4. **Diverse Sources**: Don't use the same domain more than twice per article
+5. **MANDATORY LINK VERIFICATION**: Before publishing ANY blog post, test EVERY external link to ensure it works and leads to relevant content
+6. **Auto-Fix Broken Links**: If a link is broken during creation, immediately replace with a working alternative from the approved domains list
 
 ### 2. Image Requirements (MANDATORY FOR SEO)
 
