@@ -38,7 +38,7 @@ export const blogPosts = [
     date: '2025-07-28',
     category: categories.INTROVERSION_PERSONALITY,
     component: BlogPostIntrovertConfidence,
-    image: '/images/20250728_1647_Engaged Coffee Shop Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.jpg',
+    image: '/images/introvert-coffee-meeting-networking.jpg',
     readTime: '8 min read',
   },
   {

@@ -27,7 +27,7 @@ const BlogPostIntrovertConfidence = () => {
           title: "How to Be Confident as an Introvert Woman: 9 Proven Strategies That Actually Work in 2025",
           authorName: "Marica Šinko",
           datePublished: "2025-07-28",
-          image: "/images/20250728_1647_Engaged Coffee Shop Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.jpg"
+          image: "/images/introvert-coffee-meeting-networking.jpg"
         }}
         breadcrumbs={[
           { name: "Home", item: "/" },
@@ -94,7 +94,7 @@ const BlogPostIntrovertConfidence = () => {
               <h2 className="text-3xl font-bold text-brand-dark mb-6">Understanding Introvert Confidence vs. Extrovert Confidence</h2>
               
               <img 
-                src="/images/20250728_1647_Engaged Coffee Shop Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.jpg" 
+                src="/images/introvert-coffee-meeting-networking.jpg" 
                 alt="Two professionals having a meaningful one-on-one coffee meeting, demonstrating introvert networking tips without small talk in a comfortable setting" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
@@ -181,7 +181,7 @@ const BlogPostIntrovertConfidence = () => {
               <h2 className="text-3xl font-bold text-brand-dark mb-6">9 Proven Strategies to Build Authentic Confidence</h2>
 
               <img 
-                src="/images/20250728_1704_Focused Professional Workspace_simple_compose_01k18ryjaxejvaw4zbq46samh6.jpg" 
+                src="/images/introvert-professional-workspace-networking.jpg" 
                 alt="Professional introvert using written communication for networking, typing thoughtful content on laptop as an alternative to small talk networking" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
@@ -640,7 +640,7 @@ const BlogPostIntrovertConfidence = () => {
               </div>
 
               <img 
-                src="/images/20250728_1706_Engaged Professional Workshop_simple_compose_01k18s27yxfaftwdx7snhfgjsv.jpg" 
+                src="/images/introvert-professional-workshop-networking.jpg" 
                 alt="Small professional workshop environment where introverts can network naturally through shared learning experiences without relying on small talk" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
