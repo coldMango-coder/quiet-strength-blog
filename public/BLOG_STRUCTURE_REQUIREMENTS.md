@@ -1,4 +1,4 @@
-# Blog Structure Requirements for trueallyguide.com
+# Blog Structure Requirements for truellyguide.com
 
 ## CRITICAL REQUIREMENTS FOR EVERY BLOG POST
 
@@ -87,7 +87,7 @@ slug: "url-friendly-slug"
 date: "YYYY-MM-DD"
 category: "Category Name"
 description: "150-160 character meta description with primary keyword"
-canonical: "https://trueallyguide.com/blog/slug"
+canonical: "https://truellyguide.com/blog/slug"
 readTime: "X min read"
 image: "/images/seo-optimized-filename.jpg"
 author: "Marica Šinko"

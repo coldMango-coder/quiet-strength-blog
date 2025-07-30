@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 const Seo = ({ title, description, type = 'website', path, article, book, person, breadcrumbs }) => {
   const siteName = 'Quiet Strength';
-  const baseUrl = 'https://trueallyguide.com';
+  const baseUrl = 'https://truellyguide.com';
   const url = `${baseUrl}${path}`;
 
   const schema = [];
