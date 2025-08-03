@@ -9,11 +9,11 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center md:text-left">
           <div>
-            <h3 className="text-xl font-bold mb-4">Quiet Strength</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">Quiet Strength</h3>
             <p className="text-slate-200">Empowering introverted women to thrive.</p>
           </div>
           <div>
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
               <Link 
                 to="/#about"
@@ -42,7 +42,7 @@ const Footer = () => {
             </nav>
           </div>
           <div>
-            <h3 className="text-xl font-bold mb-4">Legal</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">Legal</h3>
             <nav className="flex flex-col space-y-2">
               <button className="text-slate-200 hover:text-white text-left">Privacy Policy</button>
             </nav>
