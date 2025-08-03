@@ -50,7 +50,14 @@
       "Bash(pkill:*)",
       "Bash(tasklist)",
       "Bash(git checkout:*)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "WebFetch(domain:www.danielgoleman.info)",
+      "WebFetch(domain:bpded.biomedcentral.com)",
+      "Bash(npm run sitemap-status:*)",
+      "Bash(npm run generate-sitemap-dynamic:*)",
+      "WebFetch(domain:search.google.com)",
+      "WebFetch(domain:validator.schema.org)",
+      "Bash(find:*)"
     ],
     "deny": []
   }

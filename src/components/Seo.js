@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 const Seo = ({ title, description, type = 'website', path, article, book, person, breadcrumbs }) => {
   const siteName = 'Quiet Strength';
-  const baseUrl = 'https://truellyguide.com';
+  const baseUrl = 'https://trueallyguide.com';
   const url = `${baseUrl}${path}`;
 
   const schema = [];
@@ -20,6 +20,7 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
       author: {
         '@type': 'Person',
         name: article.authorName,
+        url: 'https://trueallyguide.com/author/marica-sinko',
       },
       datePublished: article.datePublished,
       image: `${baseUrl}${article.image}`,

@@ -1,40 +1,12 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
-import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
-import Seo from '../components/Seo';
 
 const BlogPostNarcissistAttraction = () => {
-  const postData = sortedBlogPosts.find(post => post.slug === 'how-to-stop-attracting-narcissists-9-proven-strategies');
-  const canonicalUrl = `https://trueallyguide.com/blog/${postData?.slug || 'how-to-stop-attracting-narcissists-9-proven-strategies'}`;
-  
   return (
-    <>
-    <Helmet>
-      <link rel="canonical" href={canonicalUrl} />
-    </Helmet>
     <div className="bg-brand-light">
-      <Seo
-        title="How to Stop Attracting Narcissists: 9 Proven Strategies That Actually Work in 2025"
-        description="Learn how to stop attracting narcissists with 9 proven strategies. Discover the psychology behind these patterns and build healthier relationships in 2025."
-        type="article"
-        path="/blog/how-to-stop-attracting-narcissists-9-proven-strategies"
-        article={{
-          title: "How to Stop Attracting Narcissists: 9 Proven Strategies That Actually Work in 2025",
-          authorName: "Marica Šinko",
-          datePublished: "2025-08-03",
-          image: "/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.jpg"
-        }}
-        breadcrumbs={[
-          { name: "Home", item: "/" },
-          { name: "Blog", item: "/blog" },
-          { name: "How to Stop Attracting Narcissists", item: "/blog/how-to-stop-attracting-narcissists-9-proven-strategies" }
-        ]}
-      />
 
       <div className="container mx-auto px-6 py-16">
         <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">
@@ -686,7 +658,6 @@ const BlogPostNarcissistAttraction = () => {
         </article>
       </div>
     </div>
-    </>
   );
 };
 

@@ -1,39 +1,16 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
-import Seo from '../components/Seo';
 
 const BlogPostRelationshipSigns = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'how-to-know-if-you-deserve-better-relationship-introvert-woman-guide');
-  const canonicalUrl = `https://trueallyguide.com/blog/${postData.slug}`;
   return (
     <>
-    <Helmet>
-      <link rel="canonical" href={canonicalUrl} />
-    </Helmet>
     <div className="bg-brand-light">
-      <Seo
-        title="How to Know if You Deserve Better in Your Relationship: 7 Clear Signs Every Introvert Woman Must Recognize in 2025"
-        description="Discover 7 proven signs that show you deserve better in your relationship as an introvert woman. Learn to recognize your worth and make empowered decisions in 2025."
-        type="article"
-        path="/blog/how-to-know-if-you-deserve-better-relationship-introvert-woman-guide"
-        article={{
-          title: "How to Know if You Deserve Better in Your Relationship: 7 Clear Signs Every Introvert Woman Must Recognize in 2025",
-          authorName: "Marica Šinko",
-          datePublished: "2025-07-19",
-          image: "/images/contemplativeserenity.jpg"
-        }}
-        breadcrumbs={[
-          { name: "Home", item: "/" },
-          { name: "Blog", item: "/blog" },
-          { name: "How to Know if You Deserve Better in Your Relationship", item: "/blog/how-to-know-if-you-deserve-better-relationship-introvert-woman-guide" }
-        ]}
-      />
 
       <div className="container mx-auto px-6 py-16">
         <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">

@@ -1,40 +1,17 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
-import Seo from '../components/Seo';
 
 const BlogPostIntrovertConfidence = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'how-to-be-confident-as-an-introvert-woman-guide');
-  const canonicalUrl = `https://trueallyguide.com/blog/${postData.slug}`;
   
   return (
     <>
-    <Helmet>
-      <link rel="canonical" href={canonicalUrl} />
-    </Helmet>
     <div className="bg-brand-light">
-      <Seo
-        title="How to Be Confident as an Introvert Woman: 9 Proven Strategies That Actually Work in 2025"
-        description="Discover how to be confident as an introvert woman with 9 proven strategies. Learn to embrace your quiet strength and build authentic confidence in 2025. Expert-backed tips inside."
-        type="article"
-        path="/blog/how-to-be-confident-as-an-introvert-woman-guide"
-        article={{
-          title: "How to Be Confident as an Introvert Woman: 9 Proven Strategies That Actually Work in 2025",
-          authorName: "Marica Šinko",
-          datePublished: "2025-07-28",
-          image: "/images/confident-introvert-woman-sitting-thoughtfully-in-modern-office-space-demonstrating-quiet-strength-and-authentic-confidence-in-professional-setting.jpg"
-        }}
-        breadcrumbs={[
-          { name: "Home", item: "/" },
-          { name: "Blog", item: "/blog" },
-          { name: "How to Be Confident as an Introvert Woman", item: "/blog/how-to-be-confident-as-an-introvert-woman-guide" }
-        ]}
-      />
 
       <div className="container mx-auto px-6 py-16">
         <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">

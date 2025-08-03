@@ -20,6 +20,9 @@
 - **Commercial .com sites** without clear academic authority
 
 #### WORKING EXTERNAL LINKS (verified 2025):
+- **Narcissism & Behavioral Neuroscience**: https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2024.1354258/full
+- **Childhood Trauma & Attachment (2024)**: https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2024.1519699/full
+- **Pathological Narcissism Research**: https://bpded.biomedcentral.com/articles/10.1186/s40479-020-00132-8
 - **Psychological Research**: https://www.frontiersin.org/articles/10.3389/fpsyg.2020.590748/full
 - **Stress Research**: https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1471084/full
 - **NIH Stress Research**: https://www.nhlbi.nih.gov/news/2025/risk-score-offers-new-way-assess-impact-stress-can-have-heart
@@ -38,6 +41,10 @@
 - **Psychology Today archived articles**: Old URLs may return 404 errors - use current pages instead
 - **Stanford GSB old insight pages**: May have been restructured - verify links before publishing
 
+#### 🚨 BROKEN LINKS (DO NOT USE):
+- **https://www.frontiersin.org/articles/10.3389/fpsyg.2021.647539/full** - Returns 404 error, article not found
+- **https://www.apa.org/pubs/journals/** - Generic journals page, not specific research content
+
 #### Link Integration Rules:
 1. **Context Required**: Each external link must support a specific claim or statistic
 2. **Natural Integration**: Links should flow naturally in sentences, not feel forced
@@ -45,6 +52,8 @@
 4. **Diverse Sources**: Don't use the same domain more than twice per article
 5. **MANDATORY LINK VERIFICATION**: Before publishing ANY blog post, test EVERY external link to ensure it works and leads to relevant content
 6. **Auto-Fix Broken Links**: If a link is broken during creation, immediately replace with a working alternative from the approved domains list
+7. **⚠️ CRITICAL: CONTENT RELEVANCE**: Every external link must directly relate to the article's topic. Never use generic domain links (e.g., frontiersin.org/journals/psychology) - always use specific article URLs that match the research claim being made
+8. **SPECIFIC ARTICLE LINKS**: Use direct links to research articles, not journal homepages or general domain pages
 
 ### 2. Image Requirements (MANDATORY FOR SEO)
 

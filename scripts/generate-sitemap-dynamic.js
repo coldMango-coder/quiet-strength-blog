@@ -34,31 +34,119 @@ function parseFrontmatter(content) {
   return frontmatter;
 }
 
+// Function to extract metadata from content without frontmatter
+function extractContentMetadata(content, filename) {
+  const lines = content.split('\n').filter(line => line.trim());
+  let title = '';
+  let date = '';
+  
+  // Try to extract title from first non-empty line
+  if (lines.length > 0) {
+    title = lines[0].replace(/^#+\s*/, '').trim();
+  }
+  
+  // Try to find date in the first few lines
+  for (let i = 0; i < Math.min(5, lines.length); i++) {
+    const line = lines[i];
+    const dateMatch = line.match(/(?:Last updated:|Date:|Published:)?\s*(\d{4}-\d{2}-\d{2})/i);
+    if (dateMatch) {
+      date = dateMatch[1];
+      break;
+    }
+  }
+  
+  // If no date found, use file modification time
+  if (!date) {
+    const publicDir = path.join(__dirname, '..', 'public');
+    const fileStats = fs.statSync(path.join(publicDir, filename));
+    date = fileStats.mtime.toISOString().split('T')[0];
+  }
+  
+  // Generate slug from filename or title
+  let slug = filename.replace('.md', '');
+  if (slug.match(/^(First|Second|Third|Fourth|Fifth|Sixth|Seventh|Eigth|Ninth|Tenth|Eleventh|Twelvth|13th)Blog$/i)) {
+    // For numbered blogs, create slug from title if available
+    if (title) {
+      slug = title.toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .trim('-');
+    }
+  }
+  
+  return { title, date, slug };
+}
+
 // Function to read all markdown files from public directory
 function readBlogPosts() {
   const publicDir = path.join(__dirname, '..', 'public');
   const files = fs.readdirSync(publicDir);
   const blogPosts = [];
 
+  console.log(`🔍 Scanning ${files.filter(f => f.endsWith('.md')).length} markdown files...`);
+
   for (const file of files) {
-    if (file.endsWith('.md') && file !== 'README.md') {
-      const filePath = path.join(publicDir, file);
-      const content = fs.readFileSync(filePath, 'utf8');
-      const frontmatter = parseFrontmatter(content);
+    if (file.endsWith('.md') && 
+        file !== 'README.md' && 
+        file !== 'BLOG_STRUCTURE_REQUIREMENTS.md') {
       
-      if (frontmatter && frontmatter.slug) {
-        blogPosts.push({
-          slug: frontmatter.slug,
-          title: frontmatter.title || 'Untitled',
-          date: frontmatter.date || new Date().toISOString().split('T')[0],
-          category: frontmatter.category || 'Uncategorized',
-          lastmod: frontmatter.date || new Date().toISOString().split('T')[0]
-        });
+      try {
+        const filePath = path.join(publicDir, file);
+        const content = fs.readFileSync(filePath, 'utf8');
+        const frontmatter = parseFrontmatter(content);
+        
+        let blogPost;
+        
+        if (frontmatter && frontmatter.slug) {
+          // Use frontmatter data
+          blogPost = {
+            slug: frontmatter.slug,
+            title: frontmatter.title || 'Untitled',
+            date: frontmatter.date || new Date().toISOString().split('T')[0],
+            category: frontmatter.category || 'Self-Development',
+            lastmod: frontmatter.date || new Date().toISOString().split('T')[0],
+            filename: file
+          };
+          console.log(`✅ Frontmatter: ${file} -> ${blogPost.slug}`);
+        } else {
+          // Extract from content
+          const extracted = extractContentMetadata(content, file);
+          blogPost = {
+            slug: extracted.slug,
+            title: extracted.title || file.replace('.md', ''),
+            date: extracted.date,
+            category: 'Self-Development', // Default category
+            lastmod: extracted.date,
+            filename: file
+          };
+          console.log(`📝 Content: ${file} -> ${blogPost.slug}`);
+        }
+        
+        blogPosts.push(blogPost);
+        
+      } catch (error) {
+        console.error(`❌ Error processing ${file}:`, error.message);
       }
     }
   }
 
-  return blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  // Remove duplicates based on slug (keep the most recent one)
+  const uniquePosts = [];
+  const seenSlugs = new Set();
+  
+  const sortedPosts = blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+  
+  for (const post of sortedPosts) {
+    if (!seenSlugs.has(post.slug)) {
+      seenSlugs.add(post.slug);
+      uniquePosts.push(post);
+    } else {
+      console.log(`🔄 Duplicate slug removed: ${post.filename} (${post.slug})`);
+    }
+  }
+
+  return uniquePosts;
 }
 
 // Get unique categories from blog posts

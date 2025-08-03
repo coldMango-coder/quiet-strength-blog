@@ -1,40 +1,17 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
-import Seo from '../components/Seo';
 
 const BlogPostNarcissistRecovery = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'emotional-manipulation-tactics-narcissist-ex-recovery-12-proven-steps-to-reclaim-your-life-in-2025');
-  const canonicalUrl = `https://trueallyguide.com/blog/${postData.slug}`;
   
   return (
     <>
-    <Helmet>
-      <link rel="canonical" href={canonicalUrl} />
-    </Helmet>
     <div className="bg-brand-light">
-      <Seo
-        title="Emotional Manipulation Tactics Narcissist Ex Recovery: 12 Proven Steps to Reclaim Your Life in 2025"
-        description="Learn to identify emotional manipulation tactics used by narcissist ex partners and discover 12 proven recovery steps to reclaim your life, rebuild confidence, and heal from narcissistic abuse in 2025."
-        type="article"
-        path="/blog/emotional-manipulation-tactics-narcissist-ex-recovery-12-proven-steps-to-reclaim-your-life-in-2025"
-        article={{
-          title: "Emotional Manipulation Tactics Narcissist Ex Recovery: 12 Proven Steps to Reclaim Your Life in 2025",
-          authorName: "Marica Šinko",
-          datePublished: "2025-07-27",
-          image: "/images/confident-woman-standing-triumphantly-at-sunrise-representing-emotional-recovery-and-healing-from-narcissistic-abuse-manipulation-tactics.jpg"
-        }}
-        breadcrumbs={[
-          { name: "Home", item: "/" },
-          { name: "Blog", item: "/blog" },
-          { name: "Emotional Manipulation Tactics Narcissist Ex Recovery", item: "/blog/emotional-manipulation-tactics-narcissist-ex-recovery-12-proven-steps-to-reclaim-your-life-in-2025" }
-        ]}
-      />
 
       <div className="container mx-auto px-6 py-16">
         <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">

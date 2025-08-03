@@ -4,7 +4,7 @@ slug: "how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actua
 date: "2025-07-24"
 category: "Relationships & Dating"
 description: "Learn how to love yourself after a toxic relationship with expert-backed strategies. Discover 8 proven steps to rebuild self-worth and find inner peace in 2025."
-canonical: "https://truellyguide.com/blog/how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025"
+canonical: "https://trueallyguide.com/blog/how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025"
 readTime: "14 min read"
 image: "/images/confident-woman-future-empowerment.png"
 author: "Marica Šinko"

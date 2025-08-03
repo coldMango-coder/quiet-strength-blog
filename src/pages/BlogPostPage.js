@@ -28,7 +28,7 @@ const BlogPostPage = () => {
         article={{
           title: post.title,
           authorName: 'Marica Šinko',
-          datePublished: post.date,
+          datePublished: `${post.date}T00:00:00+00:00`,
           image: post.image,
         }}
       />

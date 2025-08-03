@@ -1,40 +1,17 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
-import Seo from '../components/Seo';
 
 const BlogPostSocialMediaOverwhelm = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'introvert-overwhelmed-by-social-media-8-proven-coping-strategies-that-actually-work-in-2025');
-  const canonicalUrl = `https://trueallyguide.com/blog/${postData.slug}`;
   
   return (
     <>
-    <Helmet>
-      <link rel="canonical" href={canonicalUrl} />
-    </Helmet>
     <div className="bg-brand-light">
-      <Seo
-        title="Introvert Overwhelmed by Social Media: 8 Proven Coping Strategies That Actually Work in 2025"
-        description="Are you an introvert overwhelmed by social media? Discover 8 scientifically-backed coping strategies to reduce digital overwhelm and protect your mental energy in 2025."
-        type="article"
-        path="/blog/introvert-overwhelmed-by-social-media-8-proven-coping-strategies-that-actually-work-in-2025"
-        article={{
-          title: "Introvert Overwhelmed by Social Media: 8 Proven Coping Strategies That Actually Work in 2025",
-          authorName: "Marica Šinko",
-          datePublished: "2025-07-26",
-          image: "/images/introvert-overwhelmed-by-social-media-sitting-alone-with-multiple-screens-showing-overwhelming-social-feeds.jpg"
-        }}
-        breadcrumbs={[
-          { name: "Home", item: "/" },
-          { name: "Blog", item: "/blog" },
-          { name: "Introvert Overwhelmed by Social Media", item: "/blog/introvert-overwhelmed-by-social-media-8-proven-coping-strategies-that-actually-work-in-2025" }
-        ]}
-      />
 
       <div className="container mx-auto px-6 py-16">
         <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">

@@ -1,40 +1,17 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
-import Seo from '../components/Seo';
 
 const BlogPostBreakupGlowUp = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025');
-  const canonicalUrl = `https://trueallyguide.com/blog/${postData.slug}`;
   
   return (
     <>
-    <Helmet>
-      <link rel="canonical" href={canonicalUrl} />
-    </Helmet>
     <div className="bg-brand-light">
-      <Seo
-        title="Post Breakup Glow Up Transformation Guide: 10 Proven Steps to Become Your Best Self in 2025"
-        description="Discover the ultimate post breakup glow up transformation guide with 10 proven steps to heal, grow, and become your best self. Transform pain into power in 2025."
-        type="article"
-        path="/blog/post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025"
-        article={{
-          title: "Post Breakup Glow Up Transformation Guide: 10 Proven Steps to Become Your Best Self in 2025",
-          authorName: "Marica Šinko",
-          datePublished: "2025-07-28",
-          image: "/images/woman-showing-post-breakup-glow-up-transformation-before-and-after-in-mirror-reflection-demonstrating-confidence-and-style-improvement.jpg"
-        }}
-        breadcrumbs={[
-          { name: "Home", item: "/" },
-          { name: "Blog", item: "/blog" },
-          { name: "Post Breakup Glow Up Transformation Guide", item: "/blog/post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025" }
-        ]}
-      />
 
       <div className="container mx-auto px-6 py-16">
         <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">

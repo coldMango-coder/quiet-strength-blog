@@ -1,40 +1,17 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
-import Seo from '../components/Seo';
 
 const BlogPostNetworkingTips = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'introvert-networking-tips-without-small-talk-guide');
-  const canonicalUrl = `https://trueallyguide.com/blog/${postData?.slug}`;
   
   return (
     <>
-      <Helmet>
-        <link rel="canonical" href={canonicalUrl} />
-      </Helmet>
       <div className="bg-brand-light">
-        <Seo
-          title="7 Powerful Introvert Networking Tips Without Small Talk That Actually Work"
-          description="Discover proven introvert networking tips without small talk that help shy professionals build meaningful connections. Skip the awkward conversations and network authentically."
-          type="article"
-          path="/blog/introvert-networking-tips-without-small-talk-guide"
-          article={{
-            title: "7 Powerful Introvert Networking Tips Without Small Talk That Actually Work",
-            authorName: "Marica Šinko",
-            datePublished: "2025-07-29",
-            image: "/images/20250728_1647_Engaged Coffee Shop Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.jpg"
-          }}
-          breadcrumbs={[
-            { name: "Home", item: "/" },
-            { name: "Blog", item: "/blog" },
-            { name: "Introvert Networking Tips Without Small Talk", item: "/blog/introvert-networking-tips-without-small-talk-guide" }
-          ]}
-        />
 
         <div className="container mx-auto px-6 py-16">
           <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">

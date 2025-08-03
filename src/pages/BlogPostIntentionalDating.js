@@ -1,40 +1,16 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
-import Seo from '../components/Seo';
 import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
 
 const BlogPostIntentionalDating = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'intentional-dating-2025-guide');
-  const canonicalUrl = `https://trueallyguide.com/blog/${postData.slug}`;
   return (
     <>
-    <Helmet>
-      <link rel="canonical" href={canonicalUrl} />
-    </Helmet>
     <div className="bg-brand-light">
-      {/* SEO COMPONENT - CRITICAL FOR GOOGLE RANKING */}
-      <Seo
-        title="Intentional Dating 2025: How to Date Purposefully (7 Proven Steps)"
-        description="Learn how to date purposefully in 2025 with our complete guide to intentional dating. Discover 7 proven steps that actually work for meaningful relationships."
-        type="article"
-        path="/blog/intentional-dating-2025-guide"
-        article={{
-          title: "Intentional Dating 2025: How to Date Purposefully (7 Proven Steps)",
-          authorName: "Marica Šinko",
-          datePublished: "2025-07-21",
-          image: "/images/intentional-dating-couple.jpg"
-        }}
-        breadcrumbs={[
-          { name: "Home", item: "/" },
-          { name: "Blog", item: "/blog" },
-          { name: "Intentional Dating 2025", item: "/blog/intentional-dating-2025-guide" }
-        ]}
-      />
 
       <div className="container mx-auto px-6 py-16">
         <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">&larr; Back to Home</Link>

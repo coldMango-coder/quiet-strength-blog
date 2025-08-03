@@ -1,40 +1,17 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
-import Seo from '../components/Seo';
 
 const BlogPostToxicRelationship = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025');
-  const canonicalUrl = `https://trueallyguide.com/blog/${postData.slug}`;
   
   return (
     <>
-    <Helmet>
-      <link rel="canonical" href={canonicalUrl} />
-    </Helmet>
     <div className="bg-brand-light">
-      <Seo
-        title="How to Love Yourself After a Toxic Relationship: 8 Proven Steps That Actually Work in 2025"
-        description="Learn how to love yourself after a toxic relationship with expert-backed strategies. Discover 8 proven steps to rebuild self-worth and find inner peace in 2025."
-        type="article"
-        path="/blog/how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025"
-        article={{
-          title: "How to Love Yourself After a Toxic Relationship: 8 Proven Steps That Actually Work in 2025",
-          authorName: "Marica Šinko",
-          datePublished: "2025-07-24",
-          image: "/images/woman-embracing-self-love-freedom-toxic-relationship-recovery-mountain-peak-sunrise-new-beginnings-personal-growth.jpg"
-        }}
-        breadcrumbs={[
-          { name: "Home", item: "/" },
-          { name: "Blog", item: "/blog" },
-          { name: "How to Love Yourself After a Toxic Relationship", item: "/blog/how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025" }
-        ]}
-      />
 
       <div className="container mx-auto px-6 py-16">
         <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">

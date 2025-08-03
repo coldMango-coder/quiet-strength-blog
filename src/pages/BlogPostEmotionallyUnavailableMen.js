@@ -1,40 +1,17 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
-import Seo from '../components/Seo';
 
 const BlogPostEmotionallyUnavailableMen = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'how-to-stop-attracting-emotionally-unavailable-men-guide');
-  const canonicalUrl = `https://trueallyguide.com/blog/${postData?.slug || 'how-to-stop-attracting-emotionally-unavailable-men-guide'}`;
   
   return (
     <>
-    <Helmet>
-      <link rel="canonical" href={canonicalUrl} />
-    </Helmet>
     <div className="bg-brand-light">
-      <Seo
-        title="How to Stop Attracting Emotionally Unavailable Men: 7 Proven Steps That Actually Work in 2025"
-        description="Learn how to stop attracting emotionally unavailable men with 7 proven strategies. Discover the psychology behind these patterns and build healthier relationships in 2025."
-        type="article"
-        path="/blog/how-to-stop-attracting-emotionally-unavailable-men-guide"
-        article={{
-          title: "How to Stop Attracting Emotionally Unavailable Men: 7 Proven Steps That Actually Work in 2025",
-          authorName: "Marica Šinko",
-          datePublished: "2025-08-03",
-          image: "/images/confident-woman-journaling-about-emotional-growth-and-learning-how-to-stop-attracting-emotionally-unavailable-men-in-bright-coffee-shop-setting.jpg"
-        }}
-        breadcrumbs={[
-          { name: "Home", item: "/" },
-          { name: "Blog", item: "/blog" },
-          { name: "How to Stop Attracting Emotionally Unavailable Men", item: "/blog/how-to-stop-attracting-emotionally-unavailable-men-guide" }
-        ]}
-      />
 
       <div className="container mx-auto px-6 py-16">
         <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">
