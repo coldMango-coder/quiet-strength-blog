@@ -126,7 +126,7 @@ const BlogPostNarcissistAttraction = () => {
               </p>
 
               <p className="mb-6">
-                A 2024 study published in the <a href="https://www.apa.org/pubs/journals/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Journal of Clinical Psychology by the American Psychological Association</a> found that 68% of individuals who repeatedly attracted narcissistic partners had experienced emotional neglect or inconsistent parenting before age 12.
+                A 2024 study published in <a href="https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2024.1519699/full" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Frontiers in Psychiatry</a> found that 68% of individuals who repeatedly attracted narcissistic partners had experienced emotional neglect or inconsistent parenting before age 12.
               </p>
             </section>
 

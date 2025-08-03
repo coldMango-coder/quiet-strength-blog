@@ -21,6 +21,7 @@
 
 #### WORKING EXTERNAL LINKS (verified 2025):
 - **Narcissism & Behavioral Neuroscience**: https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2024.1354258/full
+- **Childhood Trauma & Attachment (2024)**: https://www.frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2024.1519699/full
 - **Pathological Narcissism Research**: https://bpded.biomedcentral.com/articles/10.1186/s40479-020-00132-8
 - **Psychological Research**: https://www.frontiersin.org/articles/10.3389/fpsyg.2020.590748/full
 - **Stress Research**: https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1471084/full
@@ -42,6 +43,7 @@
 
 #### 🚨 BROKEN LINKS (DO NOT USE):
 - **https://www.frontiersin.org/articles/10.3389/fpsyg.2021.647539/full** - Returns 404 error, article not found
+- **https://www.apa.org/pubs/journals/** - Generic journals page, not specific research content
 
 #### Link Integration Rules:
 1. **Context Required**: Each external link must support a specific claim or statistic
