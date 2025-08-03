@@ -20,7 +20,8 @@
 - **Commercial .com sites** without clear academic authority
 
 #### WORKING EXTERNAL LINKS (verified 2025):
-- **Narcissism & Personality Research**: https://www.frontiersin.org/articles/10.3389/fpsyg.2021.647539/full
+- **Narcissism & Behavioral Neuroscience**: https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2024.1354258/full
+- **Pathological Narcissism Research**: https://bpded.biomedcentral.com/articles/10.1186/s40479-020-00132-8
 - **Psychological Research**: https://www.frontiersin.org/articles/10.3389/fpsyg.2020.590748/full
 - **Stress Research**: https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1471084/full
 - **NIH Stress Research**: https://www.nhlbi.nih.gov/news/2025/risk-score-offers-new-way-assess-impact-stress-can-have-heart
@@ -38,6 +39,9 @@
 - **Government research portals**: May have temporary outages during updates
 - **Psychology Today archived articles**: Old URLs may return 404 errors - use current pages instead
 - **Stanford GSB old insight pages**: May have been restructured - verify links before publishing
+
+#### 🚨 BROKEN LINKS (DO NOT USE):
+- **https://www.frontiersin.org/articles/10.3389/fpsyg.2021.647539/full** - Returns 404 error, article not found
 
 #### Link Integration Rules:
 1. **Context Required**: Each external link must support a specific claim or statistic

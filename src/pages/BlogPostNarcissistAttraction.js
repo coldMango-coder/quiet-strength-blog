@@ -105,7 +105,7 @@ const BlogPostNarcissistAttraction = () => {
               </p>
 
               <p className="mb-6">
-                Research from the <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2021.647539/full" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Journal of Personality Disorders published in Frontiers in Psychology</a> reveals that narcissists are drawn to individuals who display what psychologists call "complementary traits." These include:
+                Research from the <a href="https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2024.1354258/full" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Frontiers in Behavioral Neuroscience</a> reveals that narcissists are drawn to individuals who display what psychologists call "complementary traits." These include:
               </p>
 
               <StyledList items={[
