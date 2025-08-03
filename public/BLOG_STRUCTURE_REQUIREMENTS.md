@@ -20,6 +20,7 @@
 - **Commercial .com sites** without clear academic authority
 
 #### WORKING EXTERNAL LINKS (verified 2025):
+- **Narcissism & Personality Research**: https://www.frontiersin.org/articles/10.3389/fpsyg.2021.647539/full
 - **Psychological Research**: https://www.frontiersin.org/articles/10.3389/fpsyg.2020.590748/full
 - **Stress Research**: https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1471084/full
 - **NIH Stress Research**: https://www.nhlbi.nih.gov/news/2025/risk-score-offers-new-way-assess-impact-stress-can-have-heart
@@ -45,6 +46,8 @@
 4. **Diverse Sources**: Don't use the same domain more than twice per article
 5. **MANDATORY LINK VERIFICATION**: Before publishing ANY blog post, test EVERY external link to ensure it works and leads to relevant content
 6. **Auto-Fix Broken Links**: If a link is broken during creation, immediately replace with a working alternative from the approved domains list
+7. **⚠️ CRITICAL: CONTENT RELEVANCE**: Every external link must directly relate to the article's topic. Never use generic domain links (e.g., frontiersin.org/journals/psychology) - always use specific article URLs that match the research claim being made
+8. **SPECIFIC ARTICLE LINKS**: Use direct links to research articles, not journal homepages or general domain pages
 
 ### 2. Image Requirements (MANDATORY FOR SEO)
 
