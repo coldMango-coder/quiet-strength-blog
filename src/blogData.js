@@ -11,6 +11,7 @@ import BlogPostNarcissistRecovery from './pages/BlogPostNarcissistRecovery';
 import BlogPostBreakupGlowUp from './pages/BlogPostBreakupGlowUp';
 import BlogPostIntrovertConfidence from './pages/BlogPostIntrovertConfidence';
 import BlogPostNetworkingTips from './pages/BlogPostNetworkingTips';
+import BlogPostEmotionallyUnavailableMen from './pages/BlogPostEmotionallyUnavailableMen';
 
 export const categories = {
   INTROVERSION_PERSONALITY: 'Introversion & Personality',
@@ -21,6 +22,16 @@ export const categories = {
 };
 
 export const blogPosts = [
+  {
+    slug: 'how-to-stop-attracting-emotionally-unavailable-men-guide',
+    title: 'How to Stop Attracting Emotionally Unavailable Men: 7 Proven Steps That Actually Work in 2025',
+    description: 'Learn how to stop attracting emotionally unavailable men with 7 proven strategies. Discover the psychology behind these patterns and build healthier relationships in 2025.',
+    date: '2025-08-03',
+    category: categories.RELATIONSHIPS_DATING,
+    component: BlogPostEmotionallyUnavailableMen,
+    image: '/images/confident-woman-journaling-about-emotional-growth-and-learning-how-to-stop-attracting-emotionally-unavailable-men-in-bright-coffee-shop-setting.jpg',
+    readTime: '8 min read',
+  },
   {
     slug: 'introvert-networking-tips-without-small-talk-guide',
     title: '7 Powerful Introvert Networking Tips Without Small Talk That Actually Work',
