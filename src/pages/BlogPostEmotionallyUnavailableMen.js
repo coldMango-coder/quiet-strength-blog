@@ -116,7 +116,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">The Hidden Psychology Behind the Pattern</h3>
               <p className="mb-6">
-                Research published in the <a href="https://www.tandfonline.com/journals/rspr20" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Journal of Social and Personal Relationships</a> found that individuals who repeatedly attract emotionally unavailable partners often share specific psychological patterns:
+                Research published in the <a href="https://journals.sagepub.com/home/spr" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Journal of Social and Personal Relationships</a> found that individuals who repeatedly attract emotionally unavailable partners often share specific psychological patterns:
               </p>
 
               <StyledList items={[
@@ -146,7 +146,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
               </p>
 
               <p className="mb-6">
-                A 2023 study by the <a href="https://www.ncbi.nlm.nih.gov/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">University of California published in NCBI</a> found that women who experienced inconsistent attention from partners showed increased activity in the brain's reward centers, similar to addiction patterns. This explains why the "hot and cold" behavior of emotionally unavailable men can feel so compelling.
+                A 2023 study by the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8462781/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">University of California published in NCBI</a> found that women who experienced inconsistent attention from partners showed increased activity in the brain's reward centers, similar to addiction patterns. This explains why the "hot and cold" behavior of emotionally unavailable men can feel so compelling.
               </p>
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">Cultural and Social Conditioning</h3>
@@ -401,7 +401,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">The Four Components of Emotional Intelligence</h3>
               <p className="mb-6">
-                According to psychologist <a href="https://www.apa.org/science/about/psa/2004/03/goleman" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Daniel Goleman from the American Psychological Association</a>, emotional intelligence consists of four key abilities:
+                According to psychologist <a href="https://www.danielgoleman.info/topics/emotional-intelligence/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Daniel Goleman</a>, emotional intelligence consists of four key abilities:
               </p>
 
               <StyledList items={[
@@ -787,61 +787,117 @@ const BlogPostEmotionallyUnavailableMen = () => {
             <section id="faq" className="mb-16 scroll-mt-24">
               <h2 className="text-3xl font-bold text-brand-dark mb-6">Frequently Asked Questions</h2>
 
-              <div className="space-y-8">
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-bold text-brand-dark mb-4">How long does it take to stop attracting emotionally unavailable men?</h3>
-                  <p>
-                    The timeline varies depending on your specific patterns, commitment to change, and whether you're working with a therapist. Most people begin noticing shifts in 3-6 months of consistent work, with more significant changes occurring over 1-2 years.
-                  </p>
+              <div className="space-y-6">
+                <div className="bg-gradient-to-r from-brand-light to-white border-l-4 border-brand-emphasis p-6 rounded-r-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <h3 className="text-xl font-bold text-brand-dark mb-4 flex items-center">
+                    <span className="bg-brand-emphasis text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+                      Q
+                    </span>
+                    How long does it take to stop attracting emotionally unavailable men?
+                  </h3>
+                  <div className="ml-11">
+                    <p className="text-brand-primary leading-relaxed">
+                      The timeline varies depending on your specific patterns, commitment to change, and whether you're working with a therapist. Most people begin noticing shifts in 3-6 months of consistent work, with more significant changes occurring over 1-2 years.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-bold text-brand-dark mb-4">What if I'm already in a relationship with an emotionally unavailable man?</h3>
-                  <p>
-                    Focus on your own growth and communication skills first. Set clear boundaries and express your needs directly. If your partner is willing to work on emotional availability together, the relationship may improve. If not, you'll need to decide whether to accept the relationship as it is or end it.
-                  </p>
+                <div className="bg-gradient-to-r from-brand-light to-white border-l-4 border-brand-emphasis p-6 rounded-r-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <h3 className="text-xl font-bold text-brand-dark mb-4 flex items-center">
+                    <span className="bg-brand-emphasis text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+                      Q
+                    </span>
+                    What if I'm already in a relationship with an emotionally unavailable man?
+                  </h3>
+                  <div className="ml-11">
+                    <p className="text-brand-primary leading-relaxed">
+                      Focus on your own growth and communication skills first. Set clear boundaries and express your needs directly. If your partner is willing to work on emotional availability together, the relationship may improve. If not, you'll need to decide whether to accept the relationship as it is or end it.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-bold text-brand-dark mb-4">Can emotionally unavailable men change?</h3>
-                  <p>
-                    Yes, but only if they recognize the issue and actively commit to change. This typically requires therapy, self-reflection, and consistent effort over time. You cannot change someone else—they must choose to change themselves.
-                  </p>
+                <div className="bg-gradient-to-r from-brand-light to-white border-l-4 border-brand-emphasis p-6 rounded-r-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <h3 className="text-xl font-bold text-brand-dark mb-4 flex items-center">
+                    <span className="bg-brand-emphasis text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+                      Q
+                    </span>
+                    Can emotionally unavailable men change?
+                  </h3>
+                  <div className="ml-11">
+                    <p className="text-brand-primary leading-relaxed">
+                      Yes, but only if they recognize the issue and actively commit to change. This typically requires therapy, self-reflection, and consistent effort over time. You cannot change someone else—they must choose to change themselves.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-bold text-brand-dark mb-4">How do I know if someone is emotionally available or just good at pretending?</h3>
-                  <p>
-                    Look for consistency over time rather than initial impressions. Emotionally available people maintain their openness and vulnerability even during stress or conflict. They integrate you into their life and make decisions considering your feelings.
-                  </p>
+                <div className="bg-gradient-to-r from-brand-light to-white border-l-4 border-brand-emphasis p-6 rounded-r-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <h3 className="text-xl font-bold text-brand-dark mb-4 flex items-center">
+                    <span className="bg-brand-emphasis text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+                      Q
+                    </span>
+                    How do I know if someone is emotionally available or just good at pretending?
+                  </h3>
+                  <div className="ml-11">
+                    <p className="text-brand-primary leading-relaxed">
+                      Look for consistency over time rather than initial impressions. Emotionally available people maintain their openness and vulnerability even during stress or conflict. They integrate you into their life and make decisions considering your feelings.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-bold text-brand-dark mb-4">What's the difference between being independent and being emotionally unavailable?</h3>
-                  <p>
-                    Independence means maintaining your identity and autonomy within a relationship. Emotional unavailability means being unable or unwilling to form deep emotional connections. You can be independent while still being emotionally present and responsive to your partner.
-                  </p>
+                <div className="bg-gradient-to-r from-brand-light to-white border-l-4 border-brand-emphasis p-6 rounded-r-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <h3 className="text-xl font-bold text-brand-dark mb-4 flex items-center">
+                    <span className="bg-brand-emphasis text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+                      Q
+                    </span>
+                    What's the difference between being independent and being emotionally unavailable?
+                  </h3>
+                  <div className="ml-11">
+                    <p className="text-brand-primary leading-relaxed">
+                      Independence means maintaining your identity and autonomy within a relationship. Emotional unavailability means being unable or unwilling to form deep emotional connections. You can be independent while still being emotionally present and responsive to your partner.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-bold text-brand-dark mb-4">Should I tell potential partners about my pattern of attracting unavailable men?</h3>
-                  <p>
-                    You don't need to share this immediately, but as relationships deepen, honest communication about your growth and what you're looking for can be helpful. Focus on what you want rather than what you're trying to avoid.
-                  </p>
+                <div className="bg-gradient-to-r from-brand-light to-white border-l-4 border-brand-emphasis p-6 rounded-r-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <h3 className="text-xl font-bold text-brand-dark mb-4 flex items-center">
+                    <span className="bg-brand-emphasis text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+                      Q
+                    </span>
+                    Should I tell potential partners about my pattern of attracting unavailable men?
+                  </h3>
+                  <div className="ml-11">
+                    <p className="text-brand-primary leading-relaxed">
+                      You don't need to share this immediately, but as relationships deepen, honest communication about your growth and what you're looking for can be helpful. Focus on what you want rather than what you're trying to avoid.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-bold text-brand-dark mb-4">How do I deal with loneliness while working on these patterns?</h3>
-                  <p>
-                    Build a strong support network of friends and family. Engage in meaningful activities and hobbies. Consider that temporary loneliness while working on yourself is preferable to long-term dissatisfaction in unfulfilling relationships.
-                  </p>
+                <div className="bg-gradient-to-r from-brand-light to-white border-l-4 border-brand-emphasis p-6 rounded-r-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <h3 className="text-xl font-bold text-brand-dark mb-4 flex items-center">
+                    <span className="bg-brand-emphasis text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+                      Q
+                    </span>
+                    How do I deal with loneliness while working on these patterns?
+                  </h3>
+                  <div className="ml-11">
+                    <p className="text-brand-primary leading-relaxed">
+                      Build a strong support network of friends and family. Engage in meaningful activities and hobbies. Consider that temporary loneliness while working on yourself is preferable to long-term dissatisfaction in unfulfilling relationships.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="text-xl font-bold text-brand-dark mb-4">What if my friends and family keep introducing me to emotionally unavailable men?</h3>
-                  <p>
-                    Educate your support network about what you're looking for in a partner. Be specific about the qualities that matter to you. Sometimes well-meaning people don't understand emotional availability and focus on superficial qualities instead.
-                  </p>
+                <div className="bg-gradient-to-r from-brand-light to-white border-l-4 border-brand-emphasis p-6 rounded-r-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <h3 className="text-xl font-bold text-brand-dark mb-4 flex items-center">
+                    <span className="bg-brand-emphasis text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-3">
+                      Q
+                    </span>
+                    What if my friends and family keep introducing me to emotionally unavailable men?
+                  </h3>
+                  <div className="ml-11">
+                    <p className="text-brand-primary leading-relaxed">
+                      Educate your support network about what you're looking for in a partner. Be specific about the qualities that matter to you. Sometimes well-meaning people don't understand emotional availability and focus on superficial qualities instead.
+                    </p>
+                  </div>
                 </div>
               </div>
             </section>
