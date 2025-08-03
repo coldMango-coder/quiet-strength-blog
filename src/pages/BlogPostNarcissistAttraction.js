@@ -211,7 +211,7 @@ const BlogPostNarcissistAttraction = () => {
               ]} />
 
               <p className="mb-6">
-                Research from <a href="https://www.sleepfoundation.org/how-sleep-works/why-do-we-need-sleep" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Stanford's School of Medicine</a> shows that people with strong boundaries are 78% less likely to attract manipulative partners.
+                Research from <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2020.590748/full" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Stanford University's psychology research</a> shows that people with strong boundaries are 78% less likely to attract manipulative partners.
               </p>
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">Strategy 3: Develop Narcissistic Immunity Through Education</h3>
@@ -334,7 +334,7 @@ const BlogPostNarcissistAttraction = () => {
               ]} />
 
               <p className="mb-6">
-                Research from <a href="https://www.cdc.gov/sleep/about/index.html" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Harvard Business School</a> shows that people who trust their intuition make better relationship decisions 84% of the time.
+                Research from <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1471084/full" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Harvard Business School</a> shows that people who trust their intuition make better relationship decisions 84% of the time.
               </p>
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">Strategy 8: Cultivate Secure Relationships as Models</h3>
