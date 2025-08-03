@@ -12,6 +12,7 @@ import BlogPostBreakupGlowUp from './pages/BlogPostBreakupGlowUp';
 import BlogPostIntrovertConfidence from './pages/BlogPostIntrovertConfidence';
 import BlogPostNetworkingTips from './pages/BlogPostNetworkingTips';
 import BlogPostEmotionallyUnavailableMen from './pages/BlogPostEmotionallyUnavailableMen';
+import BlogPostNarcissistAttraction from './pages/BlogPostNarcissistAttraction';
 
 export const categories = {
   INTROVERSION_PERSONALITY: 'Introversion & Personality',
@@ -22,6 +23,16 @@ export const categories = {
 };
 
 export const blogPosts = [
+  {
+    slug: 'how-to-stop-attracting-narcissists-9-proven-strategies',
+    title: 'How to Stop Attracting Narcissists: 9 Proven Strategies That Actually Work in 2025',
+    description: 'Learn how to stop attracting narcissists with 9 proven strategies. Discover the psychology behind these patterns and build healthier relationships in 2025.',
+    date: '2025-08-03',
+    category: categories.RELATIONSHIPS_DATING,
+    component: BlogPostNarcissistAttraction,
+    image: '/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.jpg',
+    readTime: '8 min read',
+  },
   {
     slug: 'how-to-stop-attracting-emotionally-unavailable-men-guide',
     title: 'How to Stop Attracting Emotionally Unavailable Men: 7 Proven Steps That Actually Work in 2025',
