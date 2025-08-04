@@ -78,8 +78,73 @@ function extractContentMetadata(content, filename) {
   return { title, date, slug };
 }
 
-// Function to read all markdown files from public directory
+// Function to read blog posts from blogData.js
 function readBlogPosts() {
+  console.log('📖 Reading blog posts from blogData.js...');
+  
+  try {
+    // Import the blog data from the source
+    const blogDataPath = path.join(__dirname, '..', 'src', 'blogData.js');
+    
+    // Read the file content and extract the blogPosts array
+    const content = fs.readFileSync(blogDataPath, 'utf8');
+    
+    // This is a simple approach - in a real scenario you might want to use a proper module loader
+    // For now, we'll parse the exported data manually
+    const blogPosts = [];
+    
+    // Extract blog post data from the JavaScript file
+    const postMatches = content.match(/\{\s*slug:\s*['"`]([^'"`]+)['"`][\s\S]*?readTime:\s*['"`][^'"`]+['"`],?\s*\}/g);
+    
+    if (postMatches) {
+      postMatches.forEach((match, index) => {
+        try {
+          const slugMatch = match.match(/slug:\s*['"`]([^'"`]+)['"`]/);
+          const titleMatch = match.match(/title:\s*['"`]([^'"`]+)['"`]/);
+          const dateMatch = match.match(/date:\s*['"`]([^'"`]+)['"`]/);
+          const categoryMatch = match.match(/category:\s*categories\.([A-Z_]+)/);
+          
+          // Map category constants to their display names
+          const categoryMap = {
+            'INTROVERSION_PERSONALITY': 'Introversion & Personality',
+            'RELATIONSHIPS_DATING': 'Relationships & Dating',
+            'CAREER_WORKPLACE': 'Career & Workplace',
+            'SELF_DEVELOPMENT': 'Self-Development',
+            'WOMENS_WELLNESS': 'Women\'s Wellness'
+          };
+          
+          if (slugMatch && titleMatch && dateMatch) {
+            const blogPost = {
+              slug: slugMatch[1],
+              title: titleMatch[1],
+              date: dateMatch[1],
+              category: categoryMatch ? categoryMap[categoryMatch[1]] || 'Self-Development' : 'Self-Development',
+              lastmod: dateMatch[1]
+            };
+            
+            blogPosts.push(blogPost);
+            console.log(`✅ React Component: ${blogPost.title} -> ${blogPost.slug}`);
+          }
+        } catch (error) {
+          console.error(`❌ Error parsing blog post ${index + 1}:`, error.message);
+        }
+      });
+    }
+    
+    console.log(`Found ${blogPosts.length} blog posts from React components`);
+    return blogPosts;
+    
+  } catch (error) {
+    console.error('❌ Error reading blogData.js:', error.message);
+    console.log('📝 Falling back to markdown file scanning...');
+    
+    // Fallback to the original markdown scanning method
+    return readBlogPostsFromMarkdown();
+  }
+}
+
+// Fallback function to read from markdown files (original implementation)
+function readBlogPostsFromMarkdown() {
   const publicDir = path.join(__dirname, '..', 'public');
   const files = fs.readdirSync(publicDir);
   const blogPosts = [];
