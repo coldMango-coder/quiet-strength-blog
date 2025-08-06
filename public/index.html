@@ -46,6 +46,17 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/images/logo.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Quiet Strength: Self-Help & Productivity for Introverted Women</title>
+    
+    <!-- Preload critical hero images for faster LCP -->
+    <link rel="preload" as="image" href="/images/logo.avif" type="image/avif">
+    <link rel="preload" as="image" href="/images/logo.webp" type="image/webp">
+    
+    <!-- Preload critical first-chunk JS for faster interactivity -->
+    <link rel="preload" as="script" href="/static/js/main.bbef11e3.js">
+    
+    <!-- Minimal preconnect only for essential resources -->
+    <link rel="dns-prefetch" href="//trueallyguide.com">
+    
     <!-- Remove font preconnects to eliminate network overhead -->
     <!-- Remove font preloads to eliminate blocking -->
     <!-- Remove font CSS to eliminate render blocking -->

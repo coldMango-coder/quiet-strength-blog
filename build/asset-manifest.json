@@ -1,13 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.5e798996.css",
-    "main.js": "/static/js/main.c303f38e.js",
-    "static/js/393.59a1a132.chunk.js": "/static/js/393.59a1a132.chunk.js",
-    "static/js/471.df7364d0.chunk.js": "/static/js/471.df7364d0.chunk.js",
-    "static/js/865.ae8084a6.chunk.js": "/static/js/865.ae8084a6.chunk.js",
-    "static/js/947.a8abcbe3.chunk.js": "/static/js/947.a8abcbe3.chunk.js",
-    "static/js/318.7ca68eca.chunk.js": "/static/js/318.7ca68eca.chunk.js",
+    "main.css": "/static/css/main.5c251f75.css",
+    "main.js": "/static/js/main.bbef11e3.js",
+    "static/js/393.85d14d9e.chunk.js": "/static/js/393.85d14d9e.chunk.js",
+    "static/js/471.8530102d.chunk.js": "/static/js/471.8530102d.chunk.js",
+    "static/js/865.0d9d94cb.chunk.js": "/static/js/865.0d9d94cb.chunk.js",
+    "static/js/947.5a459268.chunk.js": "/static/js/947.5a459268.chunk.js",
+    "static/js/318.f1a5ac00.chunk.js": "/static/js/318.f1a5ac00.chunk.js",
     "static/js/288.45d9c737.chunk.js": "/static/js/288.45d9c737.chunk.js",
+    "static/js/873.dff2a2ae.chunk.js": "/static/js/873.dff2a2ae.chunk.js",
+    "static/js/860.9ef4de1a.chunk.js": "/static/js/860.9ef4de1a.chunk.js",
+    "static/js/785.03dc3211.chunk.js": "/static/js/785.03dc3211.chunk.js",
+    "static/js/76.633d9714.chunk.js": "/static/js/76.633d9714.chunk.js",
+    "static/js/376.e5b03a43.chunk.js": "/static/js/376.e5b03a43.chunk.js",
+    "static/js/370.62c5c718.chunk.js": "/static/js/370.62c5c718.chunk.js",
+    "static/js/616.49d59b9d.chunk.js": "/static/js/616.49d59b9d.chunk.js",
+    "static/js/43.6cfeb19a.chunk.js": "/static/js/43.6cfeb19a.chunk.js",
+    "static/js/642.724ee415.chunk.js": "/static/js/642.724ee415.chunk.js",
+    "static/js/608.f65786c5.chunk.js": "/static/js/608.f65786c5.chunk.js",
+    "static/js/570.7ab88977.chunk.js": "/static/js/570.7ab88977.chunk.js",
+    "static/js/135.e3b5c133.chunk.js": "/static/js/135.e3b5c133.chunk.js",
+    "static/js/102.859a9309.chunk.js": "/static/js/102.859a9309.chunk.js",
+    "static/js/171.fa2a05cf.chunk.js": "/static/js/171.fa2a05cf.chunk.js",
+    "static/js/918.df8524d2.chunk.js": "/static/js/918.df8524d2.chunk.js",
     "static/js/206.e806b24f.chunk.js": "/static/js/206.e806b24f.chunk.js",
     "static/js/861.db59f714.chunk.js": "/static/js/861.db59f714.chunk.js",
     "static/media/marica-sinko-author-photo.jpg": "/static/media/marica-sinko-author-photo.a1c6b27567b739e5601b.jpg",
@@ -15,7 +30,7 @@
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.5e798996.css",
-    "static/js/main.c303f38e.js"
+    "static/css/main.5c251f75.css",
+    "static/js/main.bbef11e3.js"
   ]
 }

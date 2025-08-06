@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { sortedBlogPosts } from '../blogData';
@@ -32,7 +32,15 @@ const BlogPostPage = () => {
           image: post.image,
         }}
       />
-      <PostComponent />
+      <Suspense 
+        fallback={
+          <div className="flex justify-center items-center py-24">
+            <div className="text-brand-primary animate-pulse">Loading article...</div>
+          </div>
+        }
+      >
+        <PostComponent />
+      </Suspense>
     </>
   );
 };

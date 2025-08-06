@@ -1,18 +1,21 @@
-import BlogPostBurnout from './pages/BlogPostBurnout';
-import BlogPostSayingNo from './components/BlogPostSayingNo';
-import BlogPostSayingNoWithoutGuilt from './components/BlogPostSayingNoWithoutGuilt';
-import BlogPostRelationshipSigns from './pages/BlogPostRelationshipSigns';
-import BlogPostSocialBattery from './pages/BlogPostSocialBattery';
-import BlogPostIntentionalDating from './pages/BlogPostIntentionalDating';
-import BlogPostMeetings from './pages/BlogPostMeetings';
-import BlogPostToxicRelationship from './pages/BlogPostToxicRelationship';
-import BlogPostSocialMediaOverwhelm from './pages/BlogPostSocialMediaOverwhelm';
-import BlogPostNarcissistRecovery from './pages/BlogPostNarcissistRecovery';
-import BlogPostBreakupGlowUp from './pages/BlogPostBreakupGlowUp';
-import BlogPostIntrovertConfidence from './pages/BlogPostIntrovertConfidence';
-import BlogPostNetworkingTips from './pages/BlogPostNetworkingTips';
-import BlogPostEmotionallyUnavailableMen from './pages/BlogPostEmotionallyUnavailableMen';
-import BlogPostNarcissistAttraction from './pages/BlogPostNarcissistAttraction';
+import React from 'react';
+
+// Lazy load blog post components to reduce initial bundle size
+const BlogPostBurnout = React.lazy(() => import('./pages/BlogPostBurnout'));
+const BlogPostSayingNo = React.lazy(() => import('./components/BlogPostSayingNo'));
+const BlogPostSayingNoWithoutGuilt = React.lazy(() => import('./components/BlogPostSayingNoWithoutGuilt'));
+const BlogPostRelationshipSigns = React.lazy(() => import('./pages/BlogPostRelationshipSigns'));
+const BlogPostSocialBattery = React.lazy(() => import('./pages/BlogPostSocialBattery'));
+const BlogPostIntentionalDating = React.lazy(() => import('./pages/BlogPostIntentionalDating'));
+const BlogPostMeetings = React.lazy(() => import('./pages/BlogPostMeetings'));
+const BlogPostToxicRelationship = React.lazy(() => import('./pages/BlogPostToxicRelationship'));
+const BlogPostSocialMediaOverwhelm = React.lazy(() => import('./pages/BlogPostSocialMediaOverwhelm'));
+const BlogPostNarcissistRecovery = React.lazy(() => import('./pages/BlogPostNarcissistRecovery'));
+const BlogPostBreakupGlowUp = React.lazy(() => import('./pages/BlogPostBreakupGlowUp'));
+const BlogPostIntrovertConfidence = React.lazy(() => import('./pages/BlogPostIntrovertConfidence'));
+const BlogPostNetworkingTips = React.lazy(() => import('./pages/BlogPostNetworkingTips'));
+const BlogPostEmotionallyUnavailableMen = React.lazy(() => import('./pages/BlogPostEmotionallyUnavailableMen'));
+const BlogPostNarcissistAttraction = React.lazy(() => import('./pages/BlogPostNarcissistAttraction'));
 
 export const categories = {
   INTROVERSION_PERSONALITY: 'Introversion & Personality',
