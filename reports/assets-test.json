@@ -1,0 +1,51 @@
+[
+  {
+    "type": "CSS",
+    "url": "https://trueallyguide.com/static/css/main.c1812f66.css",
+    "status": 308,
+    "contentType": "text/plain",
+    "contentLength": "unknown"
+  },
+  {
+    "type": "JS",
+    "url": "https://trueallyguide.com/static/js/main.82890643.js",
+    "status": 308,
+    "contentType": "text/plain",
+    "contentLength": "unknown"
+  },
+  {
+    "type": "PRELOAD (image)",
+    "url": "https://trueallyguide.com/images/logo.avif",
+    "status": 308,
+    "contentType": "text/plain",
+    "contentLength": "unknown"
+  },
+  {
+    "type": "PRELOAD (image)",
+    "url": "https://trueallyguide.com/images/logo.webp",
+    "status": 308,
+    "contentType": "text/plain",
+    "contentLength": "unknown"
+  },
+  {
+    "type": "IMG",
+    "url": "https://trueallyguide.com/images/logo.png",
+    "status": 308,
+    "contentType": "text/plain",
+    "contentLength": "unknown"
+  },
+  {
+    "type": "ICON",
+    "url": "https://trueallyguide.com/favicon.ico",
+    "status": 308,
+    "contentType": "text/plain",
+    "contentLength": "unknown"
+  },
+  {
+    "type": "ICON",
+    "url": "https://trueallyguide.com/images/logo.png",
+    "status": 308,
+    "contentType": "text/plain",
+    "contentLength": "unknown"
+  }
+]

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-	<link rel="canonical" href="https://truereallyguide.com/" />
+	<link rel="canonical" href="https://trueallyguide.com/" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#C05621" />
@@ -16,13 +16,13 @@
     <!-- Enhanced Open Graph tags -->
     <meta property="og:title" content="Quiet Strength: Thrive as an Introverted Woman" />
     <meta property="og:description" content="Your essential guide to building confidence, managing energy, finding purpose, and achieving financial freedom – on your own terms." />
-    <meta property="og:image" content="https://truereallyguide.com/images/logo.png" />
+    <meta property="og:image" content="https://trueallyguide.com/images/logo.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Quiet Strength - Self-Help for Introverted Women" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Quiet Strength" />
-    <meta property="og:url" content="https://truereallyguide.com/" />
+    <meta property="og:url" content="https://trueallyguide.com/" />
     <meta property="og:locale" content="en_US" />
     
     <!-- Enhanced Twitter Card tags -->
@@ -31,7 +31,7 @@
     <meta name="twitter:creator" content="@MaricaSinko" />
     <meta name="twitter:title" content="Quiet Strength: Thrive as an Introverted Woman" />
     <meta name="twitter:description" content="Your essential guide to building confidence, managing energy, finding purpose, and achieving financial freedom – on your own terms." />
-    <meta name="twitter:image" content="https://truereallyguide.com/images/logo.png" />
+    <meta name="twitter:image" content="https://trueallyguide.com/images/logo.png" />
     <meta name="twitter:image:alt" content="Quiet Strength - Self-Help for Introverted Women" />
     
     <!-- Additional SEO enhancements -->
@@ -51,8 +51,7 @@
     <link rel="preload" as="image" href="/images/logo.avif" type="image/avif">
     <link rel="preload" as="image" href="/images/logo.webp" type="image/webp">
     
-    <!-- Preload critical first-chunk JS for faster interactivity -->
-    <link rel="preload" as="script" href="/static/js/main.bbef11e3.js">
+    <!-- Note: JS preload removed to avoid stale hash references after builds -->
     
     <!-- Minimal preconnect only for essential resources -->
     <link rel="dns-prefetch" href="//trueallyguide.com">
@@ -156,24 +155,5 @@ img[src*="confident-woman"]{width:400px;height:auto;aspect-ratio:1.5/1}
     </div>
     
     <!-- Performance: Load resources only after LCP is measured -->
-    <script>
-      // Immediately mark critical content as loaded
-      window.addEventListener('load', () => {
-        // Load resources after a significant delay to ensure LCP is captured
-        setTimeout(() => {
-          const link = document.createElement('link');
-          link.rel = 'stylesheet';
-          link.href = '/static/css/main.5e798996.css';
-          document.head.appendChild(link);
-          
-          setTimeout(() => {
-            const script = document.createElement('script');
-            script.src = '/static/js/main.c303f38e.js';
-            script.async = true;
-            document.body.appendChild(script);
-          }, 5000);
-        }, 3000);
-      });
-    </script>
   </body>
 </html>

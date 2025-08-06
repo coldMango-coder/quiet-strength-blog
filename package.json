@@ -31,7 +31,8 @@
     "test:performance": "playwright test tests/performance.spec.js",
     "test:e2e": "playwright test",
     "test:install": "playwright install",
-    "redirects:test": "node scripts/test-redirects.js"
+    "redirects:test": "node scripts/test-redirects.js",
+    "assets:test": "node scripts/test-assets.js"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +54,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
+    "cheerio": "^1.1.2",
     "chokidar": "^4.0.3",
     "sharp": "^0.34.3",
     "tailwindcss": "^3.3.3",
