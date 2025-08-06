@@ -1,15 +1,14 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
-import { sortedBlogPosts, categories } from '../blogData';
+import { sortedBlogPosts, categories, slugToCategoryMap, categorySlugMap } from '../blogData';
 import BlogCard from '../components/BlogCard';
 import Seo from '../components/Seo';
 
 const CategoryPage = () => {
   const { categoryName } = useParams();
-  const decodedCategoryName = decodeURIComponent(categoryName);
+  const displayName = slugToCategoryMap[categoryName] || decodeURIComponent(categoryName);
   
-  const filteredPosts = sortedBlogPosts.filter(post => post.category === decodedCategoryName);
+  const filteredPosts = sortedBlogPosts.filter(post => post.category === displayName);
 
   const getCategoryDescription = (category) => {
     const descriptions = {
@@ -21,23 +20,17 @@ const CategoryPage = () => {
     };
     return descriptions[category] || 'Explore articles in this category to enhance your personal growth journey.';
   };
-  const canonicalUrl = decodedCategoryName
-    ? `https://trueallyguide.com/category/${encodeURIComponent(decodedCategoryName)}`
-    : 'https://trueallyguide.com/blog';
   return (
     <>
-    <Helmet>
-      <link rel="canonical" href={canonicalUrl} />
-    </Helmet>
     <div className="bg-white min-h-screen">
       <Seo
-        title={`${decodedCategoryName} - Blog Category`}
-        description={`Explore all articles in the ${decodedCategoryName} category. ${getCategoryDescription(decodedCategoryName)}`}
-        path={`/category/${encodeURIComponent(decodedCategoryName)}`}
+        title={`${displayName} - Blog Category`}
+        description={`Explore all articles in the ${displayName} category. ${getCategoryDescription(displayName)}`}
+        path={`/category/${categoryName}`}
         breadcrumbs={[
           { name: 'Home', item: '/' },
           { name: 'Categories', item: '/categories' },
-          { name: decodedCategoryName, item: `/category/${encodeURIComponent(decodedCategoryName)}` },
+          { name: displayName, item: `/category/${categoryName}` },
         ]}
       />
       
@@ -51,9 +44,9 @@ const CategoryPage = () => {
         
         {/* Category Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-dark mb-6">{decodedCategoryName}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-brand-dark mb-6">{displayName}</h1>
           <p className="text-xl text-brand-primary max-w-3xl mx-auto leading-relaxed">
-            {getCategoryDescription(decodedCategoryName)}
+            {getCategoryDescription(displayName)}
           </p>
           <div className="mt-8 flex justify-center">
             <div className="bg-brand-light px-6 py-3 rounded-full">
@@ -98,10 +91,10 @@ const CategoryPage = () => {
         <div className="mt-20 pt-12 border-t border-gray-200">
           <h3 className="text-2xl font-bold text-brand-dark mb-8 text-center">Explore Other Categories</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {Object.values(categories).filter(cat => cat !== decodedCategoryName).map((otherCategory) => (
+            {Object.values(categories).filter(cat => cat !== displayName).map((otherCategory) => (
               <Link
                 key={otherCategory}
-                to={`/category/${encodeURIComponent(otherCategory)}`}
+                to={`/category/${categorySlugMap[otherCategory]}`}
                 className="px-6 py-3 rounded-full font-semibold bg-gray-100 text-brand-dark hover:bg-brand-light hover:text-brand-emphasis transition-colors inline-block"
               >
                 {otherCategory}

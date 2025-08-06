@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { categories } from '../blogData';
+import { categories, categorySlugMap } from '../blogData';
 
 const themeIcons = {
   [categories.INTROVERSION_PERSONALITY]: (
@@ -51,7 +51,7 @@ const ThemeCard = ({ icon, title, description, categoryName }) => (
     </motion.div>
     <h3 className="text-xl font-bold text-brand-dark mb-2" aria-label={title}>{title}</h3>
     <p className="text-slate-600 flex-grow">{description}</p>
-    <Link to={`/category/${encodeURIComponent(categoryName)}`} className="mt-4 text-brand-emphasis hover:underline font-semibold">Explore More &rarr;</Link>
+    <Link to={`/category/${categorySlugMap[categoryName]}`} className="mt-4 text-brand-emphasis hover:underline font-semibold">Explore More &rarr;</Link>
   </motion.div>
 );
 

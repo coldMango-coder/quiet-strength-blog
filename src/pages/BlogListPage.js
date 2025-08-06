@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { sortedBlogPosts, categories } from '../blogData';
+import { sortedBlogPosts, categories, categorySlugMap } from '../blogData';
 import BlogCard from '../components/BlogCard';
 import Seo from '../components/Seo';
 
@@ -18,7 +18,7 @@ const BlogListPage = () => {
    : sortedBlogPosts;
 
   const canonicalUrl = selectedCategory
-    ? `https://trueallyguide.com/blog?category=${encodeURIComponent(selectedCategory)}`
+    ? `https://trueallyguide.com/blog?category=${categorySlugMap[selectedCategory] || selectedCategory}`
     : 'https://trueallyguide.com/blog';
 
   return (
@@ -30,11 +30,11 @@ const BlogListPage = () => {
         <Seo
           title={selectedCategory ? `${selectedCategory} Articles` : 'Blog'}
           description={`Read all blog posts${selectedCategory ? ` in the ${selectedCategory} category` : ''}.`}
-          path={selectedCategory ? `/blog?category=${encodeURIComponent(selectedCategory)}` : '/blog'}
+          path={selectedCategory ? `/blog?category=${categorySlugMap[selectedCategory] || selectedCategory}` : '/blog'}
           breadcrumbs={[
             { name: 'Home', item: '/' },
             { name: 'Blog', item: '/blog' },
-            ...(selectedCategory ? [{ name: selectedCategory, item: `/blog?category=${encodeURIComponent(selectedCategory)}` }] : []),
+            ...(selectedCategory ? [{ name: selectedCategory, item: `/blog?category=${categorySlugMap[selectedCategory] || selectedCategory}` }] : []),
           ]}
         />
         <div className="container mx-auto px-6 py-12">

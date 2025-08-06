@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { categories } from '../blogData';
+import { categories, categorySlugMap } from '../blogData';
 import OptimizedImage from './OptimizedImage';
 
 const Header = () => {
@@ -106,7 +106,7 @@ const Header = () => {
                         {Object.values(categories).map((categoryName) => (
                           <button
                             key={categoryName}
-                            onClick={() => window.location.href = `/category/${encodeURIComponent(categoryName)}`}
+                            onClick={() => window.location.href = `/category/${categorySlugMap[categoryName]}`}
                             className="w-full text-left px-4 py-3 text-gray-700 hover:bg-brand-light hover:text-brand-emphasis transition-colors duration-200"
                             role="menuitem"
                             aria-label={`View ${categoryName} category`}
@@ -174,7 +174,7 @@ const Header = () => {
                         <button
                           key={categoryName}
                           onClick={() => {
-                            window.location.href = `/category/${encodeURIComponent(categoryName)}`;
+                            window.location.href = `/category/${categorySlugMap[categoryName]}`;
                             setIsOpen(false);
                           }}
                           className="block text-lg text-brand-primary hover:text-brand-emphasis transition-colors duration-300"

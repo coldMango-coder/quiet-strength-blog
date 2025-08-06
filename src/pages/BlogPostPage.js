@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import { useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { sortedBlogPosts } from '../blogData';
 import Seo from '../components/Seo';
 import NotFoundPage from './NotFoundPage';
@@ -17,9 +16,6 @@ const BlogPostPage = () => {
 
   return (
     <>
-      <Helmet>
-        <link rel="canonical" href={`https://trueallyguide.com/blog/${post.slug}`} />
-      </Helmet>
       <Seo
         title={post.title}
         description={post.description}

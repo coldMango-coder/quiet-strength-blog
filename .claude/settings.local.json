@@ -67,7 +67,9 @@
       "Bash(PORT=3002 npx serve -s build)",
       "Bash(PORT=3003 npx serve -s build)",
       "Bash(PORT=3004 npx serve -s build)",
-      "Bash(npm run analyze:*)"
+      "Bash(npm run analyze:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm run redirects:test:*)"
     ],
     "deny": []
   }

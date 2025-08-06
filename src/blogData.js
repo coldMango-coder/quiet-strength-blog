@@ -25,6 +25,20 @@ export const categories = {
   WOMENS_WELLNESS: 'Women\'s Wellness',
 };
 
+// Category slug mapping for clean URLs without encoded characters
+export const categorySlugMap = {
+  'Introversion & Personality': 'introversion-and-personality',
+  'Relationships & Dating': 'relationships-and-dating',
+  'Career & Workplace': 'career-and-workplace',
+  'Self-Development': 'self-development',
+  'Women\'s Wellness': 'womens-wellness',
+};
+
+// Reverse mapping for category slug to display name
+export const slugToCategoryMap = Object.fromEntries(
+  Object.entries(categorySlugMap).map(([name, slug]) => [slug, name])
+);
+
 export const blogPosts = [
   {
     slug: 'how-to-stop-attracting-narcissists-9-proven-strategies',

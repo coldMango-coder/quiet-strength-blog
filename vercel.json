@@ -62,6 +62,39 @@
       ]
     }
   ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.trueallyguide.com"
+        }
+      ],
+      "destination": "https://trueallyguide.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/category/Introversion%20%26%20Personality",
+      "destination": "/category/introversion-and-personality",
+      "permanent": true
+    },
+    {
+      "source": "/category/Relationships%20%26%20Dating", 
+      "destination": "/category/relationships-and-dating",
+      "permanent": true
+    },
+    {
+      "source": "/category/Career%20%26%20Workplace",
+      "destination": "/category/career-and-workplace", 
+      "permanent": true
+    },
+    {
+      "source": "/category/Self-Development",
+      "destination": "/category/self-development",
+      "permanent": true
+    }
+  ],
   "routes": [
     {
       "src": "/static/(.*)",

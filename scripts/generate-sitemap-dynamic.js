@@ -112,6 +112,15 @@ function readBlogPosts() {
             'SELF_DEVELOPMENT': 'Self-Development',
             'WOMENS_WELLNESS': 'Women\'s Wellness'
           };
+
+          // Category slug mapping for clean URLs
+          const categorySlugMap = {
+            'Introversion & Personality': 'introversion-and-personality',
+            'Relationships & Dating': 'relationships-and-dating',
+            'Career & Workplace': 'career-and-workplace',
+            'Self-Development': 'self-development',
+            'Women\'s Wellness': 'womens-wellness',
+          };
           
           if (slugMatch && titleMatch && dateMatch) {
             const blogPost = {
@@ -243,6 +252,15 @@ function generateSitemap() {
   console.log(`Found ${blogPosts.length} blog posts`);
   console.log(`Found ${categories.length} categories: ${categories.join(', ')}`);
 
+  // Category slug mapping for clean URLs
+  const categorySlugMap = {
+    'Introversion & Personality': 'introversion-and-personality',
+    'Relationships & Dating': 'relationships-and-dating',
+    'Career & Workplace': 'career-and-workplace',
+    'Self-Development': 'self-development',
+    'Women\'s Wellness': 'womens-wellness',
+  };
+
   const urls = [
     // Homepage
     {
@@ -260,7 +278,7 @@ function generateSitemap() {
     },
     // Category pages
     ...categories.map(category => ({
-      loc: `${baseUrl}/category/${encodeURIComponent(category)}`,
+      loc: `${baseUrl}/category/${categorySlugMap[category] || category.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-')}`,
       lastmod: formatDate(new Date()),
       changefreq: 'weekly',
       priority: '0.8'
