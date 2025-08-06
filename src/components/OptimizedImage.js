@@ -43,22 +43,10 @@ const OptimizedImage = ({
     return () => observer.disconnect();
   }, [priority, loading]);
 
-  // Generate WebP and fallback sources
-  const getOptimizedSrc = (originalSrc) => {
-    if (!originalSrc) return originalSrc;
-    
-    // Generate WebP and AVIF sources - fallback gracefully if they don't exist
-    const webpSrc = originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-    const avifSrc = originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.avif');
-    
-    return {
-      avif: avifSrc,
-      webp: webpSrc,
-      original: originalSrc
-    };
+  // Use original source only to avoid loading non-existent WebP/AVIF files
+  const sources = {
+    original: src
   };
-
-  const sources = getOptimizedSrc(src);
   
   // Generate srcset for responsive images
   const generateSrcSet = (baseSrc) => {
@@ -73,14 +61,9 @@ const OptimizedImage = ({
   };
 
   const handleError = (e) => {
-    // Graceful fallback from WebP/AVIF to original format
-    if (e.target.src.includes('.avif') || e.target.src.includes('.webp')) {
-      e.target.src = sources.original;
-    } else {
-      // If original also fails, show placeholder
-      console.warn('Image failed to load:', e.target.src);
-      setIsLoaded(true);
-    }
+    // Show placeholder if image fails to load
+    console.warn('Image failed to load:', e.target.src);
+    setIsLoaded(true);
   };
 
   return (
@@ -110,39 +93,22 @@ const OptimizedImage = ({
         </div>
       )}
       
-      {/* Optimized picture element with multiple formats */}
+      {/* Load original image only */}
       {isInView && (
-        <picture>
-          {/* AVIF format for maximum compression */}
-          <source 
-            srcSet={generateSrcSet(sources.avif)} 
-            sizes={sizes}
-            type="image/avif" 
-          />
-          
-          {/* WebP format for better compression */}
-          <source 
-            srcSet={generateSrcSet(sources.webp)} 
-            sizes={sizes}
-            type="image/webp" 
-          />
-          
-          {/* Fallback to original format */}
-          <img
-            src={sources.original}
-            srcSet={generateSrcSet(sources.original)}
-            sizes={sizes}
-            alt={alt}
-            width={width}
-            height={height}
-            loading={priority ? 'eager' : 'lazy'}
-            decoding="async"
-            onLoad={handleLoad}
-            onError={handleError}
-            className={`transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'} w-full h-full object-cover`}
-            {...props}
-          />
-        </picture>
+        <img
+          src={sources.original}
+          srcSet={generateSrcSet(sources.original)}
+          sizes={sizes}
+          alt={alt}
+          width={width}
+          height={height}
+          loading={priority ? 'eager' : 'lazy'}
+          decoding="async"
+          onLoad={handleLoad}
+          onError={handleError}
+          className={`transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'} w-full h-full object-cover`}
+          {...props}
+        />
       )}
     </div>
   );

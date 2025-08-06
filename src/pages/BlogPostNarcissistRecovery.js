@@ -7,6 +7,7 @@ import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
 
 const BlogPostNarcissistRecovery = () => {
+  // eslint-disable-next-line no-unused-vars
   const postData = sortedBlogPosts.find(post => post.slug === 'emotional-manipulation-tactics-narcissist-ex-recovery-12-proven-steps-to-reclaim-your-life-in-2025');
   
   return (

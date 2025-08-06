@@ -1,15 +1,17 @@
 // src/App.js
 
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import BlogListPage from './pages/BlogListPage';
-import BlogPostPage from './pages/BlogPostPage';
-import CategoryPage from './pages/CategoryPage';
-import QuietConfidenceBook from './pages/books/QuietConfidenceBook';
-import NotFoundPage from './pages/NotFoundPage';
+
+// Lazy load all page components
+const HomePage = React.lazy(() => import('./pages/HomePage'));
+const BlogListPage = React.lazy(() => import('./pages/BlogListPage'));
+const BlogPostPage = React.lazy(() => import('./pages/BlogPostPage'));
+const CategoryPage = React.lazy(() => import('./pages/CategoryPage'));
+const QuietConfidenceBook = React.lazy(() => import('./pages/books/QuietConfidenceBook'));
+const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 
 function App() {
   return (
@@ -18,14 +20,16 @@ function App() {
       <main id="main-content" className="container mx-auto">
         <div className="lg:grid lg:grid-cols-12 lg:gap-24">
           <div className="lg:col-span-8">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/blog" element={<BlogListPage />} />
-              <Route path="/blog/:slug" element={<BlogPostPage />} />
-              <Route path="/category/:categoryName" element={<CategoryPage />} />
-              <Route path="/book-quiet-confidence" element={<QuietConfidenceBook />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
+            <Suspense fallback={<div className="flex justify-center items-center py-24"><div className="text-brand-primary">Loading...</div></div>}>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/blog" element={<BlogListPage />} />
+                <Route path="/blog/:slug" element={<BlogPostPage />} />
+                <Route path="/category/:categoryName" element={<CategoryPage />} />
+                <Route path="/book-quiet-confidence" element={<QuietConfidenceBook />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </Suspense>
           </div>
           <aside className="hidden lg:block lg:col-span-4 py-24">
             {/* This is the intentional empty space for the asymmetrical layout */}

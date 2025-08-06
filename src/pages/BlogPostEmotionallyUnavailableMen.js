@@ -7,6 +7,7 @@ import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
 
 const BlogPostEmotionallyUnavailableMen = () => {
+  // eslint-disable-next-line no-unused-vars
   const postData = sortedBlogPosts.find(post => post.slug === 'how-to-stop-attracting-emotionally-unavailable-men-guide');
   
   return (

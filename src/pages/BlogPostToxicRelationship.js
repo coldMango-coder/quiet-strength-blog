@@ -7,6 +7,7 @@ import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
 
 const BlogPostToxicRelationship = () => {
+  // eslint-disable-next-line no-unused-vars
   const postData = sortedBlogPosts.find(post => post.slug === 'how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025');
   
   return (

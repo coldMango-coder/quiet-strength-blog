@@ -7,6 +7,7 @@ import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
 
 const BlogPostBreakupGlowUp = () => {
+  // eslint-disable-next-line no-unused-vars
   const postData = sortedBlogPosts.find(post => post.slug === 'post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025');
   
   return (

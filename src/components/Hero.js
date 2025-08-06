@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { sortedBlogPosts } from '../blogData';
+import OptimizedImage from './OptimizedImage';
 
 const Hero = () => {
   return (
@@ -33,7 +34,7 @@ const Hero = () => {
             {/* Latest Insights & Articles Section */}
             <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 lg:p-8 border border-gray-100 min-h-fit min-w-0">
               <div className="flex items-center justify-between mb-4 sm:mb-6 min-w-0">
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-brand-dark flex-shrink-0">Latest Insights</h3>
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-brand-dark flex-shrink-0">Latest Insights</h2>
                 <Link 
                   to="/blog"
                   className="text-brand-emphasis text-xs sm:text-sm font-semibold hover:underline hover:text-brand-dark transition-colors flex-shrink-0 ml-2"
@@ -45,10 +46,14 @@ const Hero = () => {
               <div className="space-y-6 lg:space-y-8">
                 {sortedBlogPosts.slice(0, 3).map((post, index) => (
                   <Link key={post.slug} to={`/blog/${post.slug}`} className={`flex items-start group cursor-pointer p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200 min-w-0 ${index === 0 ? 'bg-gradient-to-r from-brand-secondary/30 to-transparent border-l-4 border-brand-emphasis' : ''}`}>
-                    <img 
+                    <OptimizedImage 
                       src={post.image} 
                       alt={post.title}
-                      className={`rounded-lg object-cover flex-shrink-0 shadow-sm ${index === 0 ? 'w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48' : 'w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40'}`}
+                      className={`rounded-lg flex-shrink-0 shadow-sm ${index === 0 ? 'w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48' : 'w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40'}`}
+                      width={index === 0 ? 192 : 160}
+                      height={index === 0 ? 192 : 160}
+                      sizes={index === 0 ? '(max-width: 640px) 96px, (max-width: 768px) 128px, (max-width: 1024px) 160px, 192px' : '(max-width: 640px) 80px, (max-width: 768px) 96px, (max-width: 1024px) 128px, 160px'}
+                      priority={index === 0} // First image should load immediately
                     />
                     <div className={`flex-1 min-w-0 ${index === 0 ? 'ml-3 sm:ml-4 md:ml-6 lg:ml-8' : 'ml-2 sm:ml-3 md:ml-4 lg:ml-6'}`}>
                       {index === 0 && (
@@ -58,9 +63,9 @@ const Hero = () => {
                           </span>
                         </div>
                       )}
-                      <h4 className={`font-bold text-brand-dark group-hover:text-brand-emphasis transition-colors mb-2 leading-tight overflow-wrap-break-word ${index === 0 ? 'text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl' : 'text-xs sm:text-sm md:text-base lg:text-lg'}`}>
+                      <h3 className={`font-bold text-brand-dark group-hover:text-brand-emphasis transition-colors mb-2 leading-tight overflow-wrap-break-word ${index === 0 ? 'text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl' : 'text-xs sm:text-sm md:text-base lg:text-lg'}`}>
                         {post.title}
-                      </h4>
+                      </h3>
                       <p className={`text-brand-primary mb-3 leading-relaxed overflow-wrap-break-word ${index === 0 ? 'text-xs sm:text-sm lg:text-base' : 'text-xs lg:text-sm'}`}>
                         {post.description}
                       </p>

@@ -1,14 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.9bcc6a1d.css",
-    "main.js": "/static/js/main.28ba3f8f.js",
+    "main.css": "/static/css/main.5c251f75.css",
+    "main.js": "/static/js/main.0ce8be28.js",
+    "static/js/393.59a1a132.chunk.js": "/static/js/393.59a1a132.chunk.js",
+    "static/js/471.df7364d0.chunk.js": "/static/js/471.df7364d0.chunk.js",
+    "static/js/865.ae8084a6.chunk.js": "/static/js/865.ae8084a6.chunk.js",
+    "static/js/947.a8abcbe3.chunk.js": "/static/js/947.a8abcbe3.chunk.js",
+    "static/js/318.7ca68eca.chunk.js": "/static/js/318.7ca68eca.chunk.js",
+    "static/js/288.45d9c737.chunk.js": "/static/js/288.45d9c737.chunk.js",
     "static/js/206.e806b24f.chunk.js": "/static/js/206.e806b24f.chunk.js",
+    "static/js/861.db59f714.chunk.js": "/static/js/861.db59f714.chunk.js",
     "static/media/marica-sinko-author-photo.jpg": "/static/media/marica-sinko-author-photo.a1c6b27567b739e5601b.jpg",
     "static/media/paper-texture-background.png": "/static/media/paper-texture-background.6f813294c3699e1f9221.png",
     "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.9bcc6a1d.css",
-    "static/js/main.28ba3f8f.js"
+    "static/css/main.5c251f75.css",
+    "static/js/main.0ce8be28.js"
   ]
 }

@@ -2,6 +2,17 @@
 
 ## CRITICAL REQUIREMENTS FOR EVERY BLOG POST
 
+### 🚨 ARTICLE SCHEMA RULE - MANDATORY REQUIREMENT
+**CRITICAL: Each article MUST have ONLY ONE article schema. NO DUPLICATE SCHEMAS ALLOWED.**
+
+**Before adding any new article:**
+1. Check all existing .md files for Article schemas: `grep -r "@type.*Article" public/*.md`
+2. Ensure no duplicate `"@type": "Article"` schemas exist
+3. Each article must contain exactly ONE unique Article schema
+4. **MANDATORY: Instantly update sitemap.xml** after adding any new article
+
+---
+
 ### 1. External Links (MANDATORY FOR SEO)
 **REQUIREMENT: Minimum 6-8 credible external links per blog post**
 
