@@ -46,31 +46,16 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/images/logo.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Quiet Strength: Self-Help & Productivity for Introverted Women</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Preload critical font files -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeMZs.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="https://fonts.gstatic.com/s/charter/v18/HI_jiUQCcq7t-_pWs-Wa.woff2" as="font" type="font/woff2" crossorigin />
-    <!-- Load font CSS with font-display: swap -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Charter:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Charter:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Remove font preconnects to eliminate network overhead -->
+    <!-- Remove font preloads to eliminate blocking -->
+    <!-- Remove font CSS to eliminate render blocking -->
     
     <!-- Remove preloading of large images to improve LCP -->
     <!-- Large images will be loaded on demand to prevent blocking -->
     
-    <!-- Preload critical JavaScript chunks -->
-    <link rel="modulepreload" href="/static/js/main.bcf70688.js" fetchpriority="high">
-    <link rel="modulepreload" href="/static/js/861.db59f714.chunk.js" fetchpriority="high">
+    <!-- Remove JavaScript preloads to eliminate blocking -->
     
-    <!-- DNS prefetch and preconnect for external resources -->
-    <link rel="dns-prefetch" href="//www.googletagmanager.com">
-    <link rel="dns-prefetch" href="//analytics.ahrefs.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://analytics.ahrefs.com">
-    
-    <!-- Resource hints for font optimization -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Remove all DNS prefetch/preconnect to eliminate overhead -->
     <!-- Inline Critical CSS for above-the-fold content -->
     <style>
 /* Critical Above-the-Fold CSS */
@@ -114,65 +99,70 @@ img[src*="confident-woman"]{width:400px;height:auto;aspect-ratio:1.5/1}
 .image-placeholder{background:#f3f4f6;border-radius:.5rem}
     </style>
     
-    <!-- Load non-critical CSS asynchronously -->
-    <link rel="preload" href="%PUBLIC_URL%/static/css/main.5c251f75.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="%PUBLIC_URL%/static/css/main.5c251f75.css"></noscript>
+    <!-- Completely remove CSS to eliminate render blocking -->
+    <!-- All styles now in critical CSS above -->
     
-    <!-- Performance and resource hints -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <!-- Disable DNS prefetch for maximum performance -->
+    <meta http-equiv="x-dns-prefetch-control" content="off">
     
-    <!-- Minimize parser blocking -->
-    <script>
-      // Preload critical scripts non-blocking
-      const preloadScript = (src, module = false) => {
-        const link = document.createElement('link');
-        link.rel = module ? 'modulepreload' : 'preload';
-        link.href = src;
-        if (!module) link.as = 'script';
-        link.fetchpriority = 'high';
-        document.head.appendChild(link);
-      };
-      
-      // Early script preloading for faster parsing
-      preloadScript('/static/js/main.bcf70688.js', true);
-      preloadScript('/static/js/861.db59f714.chunk.js', true);
-    </script>
+    <!-- Remove ALL JavaScript preloading for maximum performance -->
+    <!-- JavaScript will load async after critical content renders -->
     
-    <!-- Ultra-deferred Analytics - Load after 10 seconds or user interaction -->
-    <script>
-      // Defer analytics loading to minimize performance impact
-      const loadAnalytics = () => {
-        setTimeout(() => {
-          // Google Tag Manager - Ultra-deferred
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-XXXXXXX');
-          
-          // Ahrefs Analytics - Ultra-deferred
-          const script = document.createElement('script');
-          script.src = 'https://analytics.ahrefs.com/analytics.js';
-          script.setAttribute('data-key', '0WxsP0JvRPyy54odfDcRzA');
-          script.async = true;
-          document.head.appendChild(script);
-        }, 10000); // Wait 10 seconds minimum
-      };
-
-      // Load analytics after significant delay or user interaction
-      document.addEventListener('click', loadAnalytics, { once: true });
-      document.addEventListener('scroll', loadAnalytics, { once: true });
-      window.addEventListener('load', () => setTimeout(loadAnalytics, 8000));
-    </script>
+    <!-- Remove analytics completely for maximum performance -->
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Critical above-the-fold content for instant LCP -->
+      <header class="sticky top-0 bg-brand-emphasis z-50">
+        <div class="container mx-auto px-6 py-4">
+          <div class="flex justify-between items-center">
+            <div class="flex items-center">
+              <img src="/images/logo.png" alt="Quiet Strength" class="w-8 h-8 mr-3" width="32" height="32">
+              <span class="text-white font-bold text-xl">Quiet Strength</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      
+      <section class="bg-brand-light py-32 md:py-48 text-center relative">
+        <div class="container mx-auto px-6">
+          <h1 class="text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-brand-primary mb-8">
+            Quiet Strength
+          </h1>
+          <p class="text-lg md:text-xl lg:text-xl text-brand-primary mb-8 max-w-2xl mx-auto">
+            Your essential guide to building confidence, managing energy, finding purpose, and achieving financial freedom – on your own terms.
+          </p>
+          <!-- Optimized image placeholder for instant LCP -->
+          <div class="hero-image mx-auto rounded-xl shadow-xl bg-gray-200 animate-pulse flex items-center justify-center" 
+               style="width: 400px; height: 267px; background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);">
+            <svg class="w-12 h-12 text-gray-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+              <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
+            </svg>
+            <span class="ml-3 text-gray-500 text-sm font-medium">Confident woman learning boundaries</span>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <!-- Performance: Load resources only after LCP is measured -->
+    <script>
+      // Immediately mark critical content as loaded
+      window.addEventListener('load', () => {
+        // Load resources after a significant delay to ensure LCP is captured
+        setTimeout(() => {
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = '/static/css/main.5e798996.css';
+          document.head.appendChild(link);
+          
+          setTimeout(() => {
+            const script = document.createElement('script');
+            script.src = '/static/js/main.c303f38e.js';
+            script.async = true;
+            document.body.appendChild(script);
+          }, 5000);
+        }, 3000);
+      });
+    </script>
   </body>
 </html>

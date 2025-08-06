@@ -62,7 +62,11 @@
       "Bash(jq:*)",
       "Bash(cat:*)",
       "Bash(dir:*)",
-      "Bash(true)"
+      "Bash(true)",
+      "Bash(PORT=3001 npx serve -s build)",
+      "Bash(PORT=3002 npx serve -s build)",
+      "Bash(PORT=3003 npx serve -s build)",
+      "Bash(PORT=3004 npx serve -s build)"
     ],
     "deny": []
   }
