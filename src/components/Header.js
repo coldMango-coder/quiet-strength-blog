@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { categories } from '../blogData';
+import OptimizedImage from './OptimizedImage';
 
 const Header = () => {
   const location = useLocation();
@@ -10,15 +11,25 @@ const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrollPosition = window.scrollY;
-      setProgress((scrollPosition / totalHeight) * 100);
-      setIsScrolled(scrollPosition > 120);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const scrollPosition = window.scrollY;
+          setProgress((scrollPosition / totalHeight) * 100);
+          setIsScrolled(scrollPosition > 120);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    
+    // Throttle scroll events using passive listeners
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScroll, { passive: true });
     };
   }, []);
 
@@ -58,10 +69,14 @@ const Header = () => {
         <div className="container mx-auto px-6 flex justify-between items-center h-full">
           <Link to="/" className="focus:outline-none">
             <div className={`modern-logo transition-all duration-300 ${isScrolled ? 'h-12' : 'h-16'} rounded-full overflow-hidden`}>
-              <img 
+              <OptimizedImage 
                 src="/images/logo.png" 
                 alt="Quiet Strength Logo" 
-                className="w-full h-full object-cover"
+                className="w-full h-full"
+                width={64}
+                height={64}
+                priority={true} // Logo should load immediately
+                sizes="64px"
               />
             </div>
           </Link>
@@ -75,21 +90,26 @@ const Header = () => {
                   <div className="relative">
                     <button
                       className={`relative text-white font-semibold hover:text-[#FFECD8] transition-all duration-300 group transform hover:-translate-y-0.5 ${isScrolled ? 'text-xl py-3' : 'text-2xl py-4'} flex items-center gap-1`}
+                      aria-label={`${link.name} menu - show categories`}
+                      aria-expanded="false"
+                      aria-haspopup="true"
                     >
                       {link.icon}
                       <span>{link.name}</span>
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                       </svg>
                       <span className="absolute left-0 -bottom-2 w-full h-[3px] bg-[#FFECD8] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></span>
                     </button>
-                    <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                    <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50" role="menu" aria-label="Category menu">
                       <div className="py-2">
                         {Object.values(categories).map((categoryName) => (
                           <button
                             key={categoryName}
                             onClick={() => window.location.href = `/category/${encodeURIComponent(categoryName)}`}
                             className="w-full text-left px-4 py-3 text-gray-700 hover:bg-brand-light hover:text-brand-emphasis transition-colors duration-200"
+                            role="menuitem"
+                            aria-label={`View ${categoryName} category`}
                           >
                             {categoryName}
                           </button>
@@ -119,16 +139,16 @@ const Header = () => {
                 )}
               </div>
             ))}
-            <a href="/newsletter" className="btn--nav ml-8 bg-[#FFECD8] text-[#B44416] font-semibold py-3 px-7 rounded-full hover:brightness-105 transition-all duration-300 text-lg transform translate-y-0.5">Join</a>
-            <button id="mode-toggle" aria-label="Toggle dark mode" onClick={toggleDarkMode} className="ml-4 p-2 rounded-full hover:bg-white/20 transition-colors duration-300">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <a href="/newsletter" className="btn--nav ml-8 bg-[#FFECD8] text-[#B44416] font-semibold py-3 px-7 rounded-full hover:brightness-105 transition-all duration-300 text-lg transform translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#B44416]" aria-label="Join our newsletter community">Join Newsletter</a>
+            <button id="mode-toggle" aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`} onClick={toggleDarkMode} className="ml-4 p-2 rounded-full hover:bg-white/20 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#B44416]" type="button">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 {isDarkMode ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path> : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>}
               </svg>
             </button>
           </nav>
           <div className="lg:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none">
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#B44416] p-2 rounded-md" aria-label={`${isOpen ? 'Close' : 'Open'} navigation menu`} aria-expanded={isOpen} type="button">
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={!isOpen ? "M4 6h16M4 12h16M4 18h16" : "M6 18L18 6M6 6l12 12"}></path>
               </svg>
             </button>
@@ -137,8 +157,8 @@ const Header = () => {
         {/* Mobile Menu */}
         <div className={`fixed top-0 right-0 h-full w-full bg-white z-40 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'} lg:hidden`}>
           <div className="flex justify-end p-6">
-            <button onClick={() => setIsOpen(false)} className="text-brand-dark focus:outline-none">
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <button onClick={() => setIsOpen(false)} className="text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-emphasis focus:ring-offset-2 p-2 rounded-md" aria-label="Close navigation menu" type="button">
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
