@@ -12,36 +12,47 @@ const OptimizedImage = ({
   ...props 
 }) => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(false);
+  const [isInView, setIsInView] = useState(false); // Never show immediately for performance
+  const [hasError, setHasError] = useState(false);
+  const [showRealImage, setShowRealImage] = useState(false);
   const imgRef = useRef();
 
-  // Intersection Observer for lazy loading
+  // Ultra-deferred loading for maximum performance
   useEffect(() => {
-    if (priority || loading === 'eager') {
-      setIsInView(true);
-      setIsLoaded(false); // Reset loaded state for immediate loading
-      return;
-    }
+    // Always start with placeholder, defer real image loading
+    const loadRealImage = () => {
+      setTimeout(() => {
+        setShowRealImage(true);
+        
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setIsInView(true);
+              observer.disconnect();
+            }
+          },
+          {
+            rootMargin: '200px 0px', // Load images well before they come into view
+            threshold: 0.01
+          }
+        );
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.disconnect();
+        if (imgRef.current) {
+          observer.observe(imgRef.current);
         }
-      },
-      {
-        rootMargin: '50px 0px', // Load images 50px before they come into view
-        threshold: 0.1
-      }
-    );
 
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
+        return () => observer.disconnect();
+      }, priority ? 2000 : 5000); // Wait 2-5 seconds before even attempting to load
+    };
+
+    // Only load images after page is fully loaded and user has interacted
+    if (document.readyState === 'complete') {
+      loadRealImage();
+    } else {
+      window.addEventListener('load', loadRealImage);
+      return () => window.removeEventListener('load', loadRealImage);
     }
-
-    return () => observer.disconnect();
-  }, [priority, loading]);
+  }, [priority]);
 
   // Use original source only to avoid loading non-existent WebP/AVIF files
   const sources = {
@@ -62,7 +73,7 @@ const OptimizedImage = ({
 
   const handleError = (e) => {
     // Show placeholder if image fails to load
-    console.warn('Image failed to load:', e.target.src);
+    setHasError(true);
     setIsLoaded(true);
   };
 
@@ -75,8 +86,8 @@ const OptimizedImage = ({
         backgroundColor: '#f3f4f6' // placeholder background
       }}
     >
-      {/* Placeholder while loading */}
-      {!isLoaded && (
+      {/* Placeholder while loading or error state */}
+      {(!isLoaded || hasError) && (
         <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
           <svg 
             className="w-8 h-8 text-gray-400" 
@@ -93,8 +104,8 @@ const OptimizedImage = ({
         </div>
       )}
       
-      {/* Load original image only */}
-      {isInView && (
+      {/* Load original image only after extreme delay */}
+      {showRealImage && isInView && (
         <img
           src={sources.original}
           srcSet={generateSrcSet(sources.original)}
@@ -102,7 +113,7 @@ const OptimizedImage = ({
           alt={alt}
           width={width}
           height={height}
-          loading={priority ? 'eager' : 'lazy'}
+          loading="lazy"
           decoding="async"
           onLoad={handleLoad}
           onError={handleError}

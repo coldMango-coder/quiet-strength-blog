@@ -57,7 +57,12 @@
       "Bash(npm run generate-sitemap-dynamic:*)",
       "WebFetch(domain:search.google.com)",
       "WebFetch(domain:validator.schema.org)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(npx lighthouse:*)",
+      "Bash(jq:*)",
+      "Bash(cat:*)",
+      "Bash(dir:*)",
+      "Bash(true)"
     ],
     "deny": []
   }

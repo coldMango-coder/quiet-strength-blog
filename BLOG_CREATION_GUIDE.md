@@ -44,6 +44,8 @@ node scripts/create-blog-post.js \
 
 ### Step 3: Update the Sitemap
 
+**🚨 CRITICAL REQUIREMENT: Every new article MUST be immediately added to sitemap.xml**
+
 The script automatically updates the sitemap, but you can also regenerate it manually:
 
 ```bash
@@ -53,6 +55,11 @@ node scripts/generate-sitemap-dynamic.js
 # Validate the sitemap
 node scripts/generate-sitemap-dynamic.js --validate
 ```
+
+**MANDATORY SITEMAP RULE:**
+- Every new blog post MUST trigger an immediate sitemap update
+- Verify the new article URL appears in sitemap.xml before publishing
+- Never publish without confirming sitemap includes the new content
 
 ### Step 4: Test Your Blog Post
 
@@ -244,6 +251,12 @@ ls -la public/sitemap.xml
 # Validate sitemap
 node scripts/generate-sitemap-dynamic.js --validate
 
+# Check for duplicate article schemas (CRITICAL)
+grep -r "@type.*Article" public/*.md
+
+# Verify sitemap includes new article
+grep "your-blog-slug" public/sitemap.xml
+
 # Check blog post format
 node -e "console.log(require('./scripts/create-blog-post.js'))"
 
@@ -260,6 +273,8 @@ console.log('YAML frontmatter detected:', content.startsWith('---'));
 Before publishing, ensure your blog post has:
 
 ### Technical Requirements
+- [ ] **CRITICAL: No duplicate article schemas** - Each article has exactly ONE Article schema
+- [ ] **MANDATORY: Sitemap updated** - New article added to sitemap.xml immediately
 - [ ] Valid YAML frontmatter with all required fields
 - [ ] URL-friendly slug (auto-generated)
 - [ ] Proper canonical URL

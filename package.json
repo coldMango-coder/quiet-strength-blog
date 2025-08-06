@@ -26,7 +26,11 @@
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "generate-sitemap-dynamic": "node scripts/generate-sitemap-dynamic.js",
     "sitemap-watch": "node scripts/sitemap-watcher.js",
-    "sitemap-status": "node scripts/sitemap-watcher.js --status"
+    "sitemap-status": "node scripts/sitemap-watcher.js --status",
+    "test:visual": "playwright test tests/visual.spec.js",
+    "test:performance": "playwright test tests/performance.spec.js",
+    "test:e2e": "playwright test",
+    "test:install": "playwright install"
   },
   "eslintConfig": {
     "extends": [

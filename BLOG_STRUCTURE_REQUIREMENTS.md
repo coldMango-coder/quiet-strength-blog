@@ -6,6 +6,31 @@ This document contains **CRITICAL REQUIREMENTS** that MUST be followed for every
 
 ---
 
+## 0. ARTICLE SCHEMA REQUIREMENTS - CRITICAL RULE ⚠️
+
+### **MANDATORY RULE: NO DUPLICATE ARTICLE SCHEMAS**
+
+**CRITICAL REQUIREMENT: Each article MUST have ONLY ONE article schema**
+
+**Before adding any new article:**
+1. **Check existing schemas:** Search all .md files for existing Article schemas
+2. **Verify uniqueness:** Ensure no duplicate `"@type": "Article"` schemas exist
+3. **Single schema rule:** Each article must contain exactly ONE Article schema with unique content
+4. **Instant sitemap update:** Every new article MUST be immediately added to sitemap.xml
+
+**Schema Validation Process:**
+```bash
+# Check for existing article schemas before adding new content
+grep -r "@type.*Article" public/*.md
+```
+
+**Sitemap Update Rule:**
+- **MANDATORY:** Every new article post MUST be instantly updated in sitemap.xml
+- **AUTOMATION:** Use `node scripts/generate-sitemap-dynamic.js` after each new article
+- **VERIFICATION:** Always verify sitemap.xml contains the new article URL before publishing
+
+---
+
 ## 1. EXTERNAL LINKS - MANDATORY REQUIREMENT ⚠️
 
 ### **CRITICAL RULE: ALL EXTERNAL LINKS MUST BE VERIFIED AND WORKING**
@@ -189,6 +214,8 @@ import Seo from '../components/Seo';
 ## 9. DEPLOYMENT CHECKLIST
 
 ### **Before Pushing to GitHub:**
+- ✅ **CRITICAL: No duplicate article schemas** - Only ONE Article schema per post
+- ✅ **MANDATORY: Sitemap updated** - New article added to sitemap.xml
 - ✅ All external links tested and working
 - ✅ Images renamed to match alt text
 - ✅ FAQ section uses modern design

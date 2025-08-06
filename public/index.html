@@ -55,9 +55,12 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Charter:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Charter:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
     
-    <!-- Preload critical assets -->
-    <link rel="preload" href="/images/logo.png" as="image" type="image/png" fetchpriority="high">
-    <link rel="preload" href="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.jpg" as="image" type="image/jpeg" fetchpriority="high">
+    <!-- Remove preloading of large images to improve LCP -->
+    <!-- Large images will be loaded on demand to prevent blocking -->
+    
+    <!-- Preload critical JavaScript chunks -->
+    <link rel="modulepreload" href="/static/js/main.bcf70688.js" fetchpriority="high">
+    <link rel="modulepreload" href="/static/js/861.db59f714.chunk.js" fetchpriority="high">
     
     <!-- DNS prefetch and preconnect for external resources -->
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
@@ -92,37 +95,76 @@ h1{font-size:2.5rem;line-height:1.1;margin-bottom:1.5rem;font-weight:800}
 .modern-logo{position:relative;aspect-ratio:1;transition:all .3s ease}.logo-icon{width:100%;height:100%;transition:transform .3s ease}.w-full{width:100%}.h-full{height:100%}.object-cover{object-fit:cover}
 a:focus-visible{outline:3px solid #C05621;outline-offset:3px}
 header.sticky{background:#B44416}header.sticky.scrolled{background:#C65616}
+.text-2xl{font-size:1.5rem;line-height:2rem}.mb-6{margin-bottom:1.5rem}.mb-4{margin-bottom:1rem}.space-y-6>*+*{margin-top:1.5rem}
+.grid{display:grid}.gap-6{gap:1.5rem}.rounded-lg{border-radius:.5rem}.hover\:bg-gray-50:hover{background-color:#f9fafb}
+.min-w-0{min-width:0}.flex-1{flex:1 1 0%}.ml-3{margin-left:.75rem}.ml-4{margin-left:1rem}
+.text-sm{font-size:.875rem;line-height:1.25rem}.text-gray-600{color:#4b5563}.text-gray-500{color:#6b7280}.italic{font-style:italic}
+.loading-skeleton{background:#f3f4f6;animation:pulse 2s cubic-bezier(.4,0,.6,1)infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.opacity-0{opacity:0}.opacity-100{opacity:1}.animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1)infinite}
+.bg-gray-200{background-color:#e5e7eb}.w-8{width:2rem}.h-8{height:2rem}.text-gray-400{color:#9ca3af}
+.fill-current{fill:currentColor}.viewBox{viewBox:0 0 20 20}
+/* Optimize image loading for LCP */
+.hero-image{max-width:400px;height:auto;aspect-ratio:1.5/1}
+.logo-image{max-width:200px;height:auto}
+/* Remove layout shift from images */
+img[src*="logo"]{width:200px;height:auto}
+img[src*="confident-woman"]{width:400px;height:auto;aspect-ratio:1.5/1}
+/* Fast loading placeholder */
+.image-placeholder{background:#f3f4f6;border-radius:.5rem}
     </style>
     
     <!-- Load non-critical CSS asynchronously -->
-    <link rel="preload" href="%PUBLIC_URL%/static/css/main.8f3e8807.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="%PUBLIC_URL%/static/css/main.8f3e8807.css"></noscript>
+    <link rel="preload" href="%PUBLIC_URL%/static/css/main.5c251f75.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="%PUBLIC_URL%/static/css/main.5c251f75.css"></noscript>
     
-    <!-- Optimized Analytics - Load after critical content with requestIdleCallback -->
+    <!-- Performance and resource hints -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Minimize parser blocking -->
     <script>
-      // Use requestIdleCallback for better performance, fallback to setTimeout
+      // Preload critical scripts non-blocking
+      const preloadScript = (src, module = false) => {
+        const link = document.createElement('link');
+        link.rel = module ? 'modulepreload' : 'preload';
+        link.href = src;
+        if (!module) link.as = 'script';
+        link.fetchpriority = 'high';
+        document.head.appendChild(link);
+      };
+      
+      // Early script preloading for faster parsing
+      preloadScript('/static/js/main.bcf70688.js', true);
+      preloadScript('/static/js/861.db59f714.chunk.js', true);
+    </script>
+    
+    <!-- Ultra-deferred Analytics - Load after 10 seconds or user interaction -->
+    <script>
+      // Defer analytics loading to minimize performance impact
       const loadAnalytics = () => {
-        // Google Tag Manager - Deferred
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-XXXXXXX');
-        
-        // Ahrefs Analytics - Deferred
-        const script = document.createElement('script');
-        script.src = 'https://analytics.ahrefs.com/analytics.js';
-        script.setAttribute('data-key', '0WxsP0JvRPyy54odfDcRzA');
-        script.async = true;
-        document.head.appendChild(script);
+        setTimeout(() => {
+          // Google Tag Manager - Ultra-deferred
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-XXXXXXX');
+          
+          // Ahrefs Analytics - Ultra-deferred
+          const script = document.createElement('script');
+          script.src = 'https://analytics.ahrefs.com/analytics.js';
+          script.setAttribute('data-key', '0WxsP0JvRPyy54odfDcRzA');
+          script.async = true;
+          document.head.appendChild(script);
+        }, 10000); // Wait 10 seconds minimum
       };
 
-      // Load analytics when browser is idle or after page load
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadAnalytics, { timeout: 5000 });
-      } else {
-        window.addEventListener('load', loadAnalytics);
-      }
+      // Load analytics after significant delay or user interaction
+      document.addEventListener('click', loadAnalytics, { once: true });
+      document.addEventListener('scroll', loadAnalytics, { once: true });
+      window.addEventListener('load', () => setTimeout(loadAnalytics, 8000));
     </script>
   </head>
   <body>
