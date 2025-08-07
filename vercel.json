@@ -104,20 +104,16 @@
   ],
   "rewrites": [
     {
-      "source": "/blog/([^/]+)",
+      "source": "/blog/(.*)",
       "destination": "/blog/$1/index.html"
     },
     {
-      "source": "/category/([^/]+)",
+      "source": "/category/(.*)",
       "destination": "/category/$1/index.html"
     },
     {
       "source": "/blog",
       "destination": "/blog/index.html"
-    },
-    {
-      "source": "/((?!api|_next|static|favicon.ico).*)",
-      "destination": "/index.html"
     }
   ]
 }
