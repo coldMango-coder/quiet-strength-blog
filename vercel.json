@@ -141,6 +141,24 @@
       "dest": "/images/$1"
     },
     {
+      "src": "^/blog/([^/]+)/?$",
+      "dest": "/blog/$1/index.html",
+      "status": 200,
+      "continue": true
+    },
+    {
+      "src": "^/category/([^/]+)/?$", 
+      "dest": "/category/$1/index.html",
+      "status": 200,
+      "continue": true
+    },
+    {
+      "src": "^/([^/]+)/?$",
+      "dest": "/$1/index.html",
+      "status": 200,
+      "continue": true
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }

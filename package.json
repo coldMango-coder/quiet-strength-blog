@@ -8,6 +8,9 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^12.23.5",
+    "fs-extra": "^11.3.1",
+    "globby": "^14.1.0",
+    "puppeteer": "^24.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
@@ -17,7 +20,8 @@
   },
   "scripts": {
     "start": "npx react-scripts start",
-    "build": "node build.js",
+    "build": "node build.js && node scripts/prerender.mjs",
+    "build:no-prerender": "node build.js",
     "test": "npx react-scripts test",
     "eject": "npx react-scripts eject",
     "analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
@@ -34,7 +38,9 @@
     "test:install": "playwright install",
     "redirects:test": "node scripts/test-redirects.js",
     "assets:test": "node scripts/test-assets.js",
-    "ci:validate-assets": "node scripts/ci-asset-validation.js"
+    "ci:validate-assets": "node scripts/ci-asset-validation.js",
+    "prerender": "node scripts/prerender.mjs",
+    "test:prerender": "playwright test tests/prerender.spec.js"
   },
   "eslintConfig": {
     "extends": [
