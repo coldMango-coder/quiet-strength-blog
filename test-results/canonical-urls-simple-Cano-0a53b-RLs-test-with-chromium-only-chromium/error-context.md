@@ -1,0 +1,180 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Skip to main content":
+    - /url: "#main-content"
+  - link "Quiet Strength Logo":
+    - /url: /
+    - img "Quiet Strength Logo"
+  - navigation:
+    - link "About":
+      - /url: /#about
+    - button "Category menu - show categories": Category
+    - link "Blog":
+      - /url: /blog
+    - link "Books":
+      - /url: /#books
+    - link "Join our newsletter community":
+      - /url: /newsletter
+      - text: Join Newsletter
+    - button "Switch to dark mode"
+- main:
+  - 'heading "Quiet Strength: Self-Help for Introverted Women" [level=1]'
+  - paragraph: Your essential guide to building confidence, managing energy, finding purpose, and achieving financial freedom – on your own terms.
+  - link "Join the Community":
+    - /url: "#newsletter"
+  - link "Read the Blog":
+    - /url: "#blog"
+  - heading "Latest Insights" [level=2]
+  - link "View All →":
+    - /url: /blog
+  - 'link "How to Stop Attracting Narcissists: 9 Proven Strategies That Actually Work in 2025 LATEST How to Stop Attracting Narcissists: 9 Proven Strategies That Actually Work in 2025 Learn how to stop attracting narcissists with 9 proven strategies. Discover the psychology behind these patterns and build healthier relationships in 2025. Relationships & Dating Aug 3"':
+    - /url: /blog/how-to-stop-attracting-narcissists-9-proven-strategies
+    - 'img "How to Stop Attracting Narcissists: 9 Proven Strategies That Actually Work in 2025"'
+    - text: LATEST
+    - 'heading "How to Stop Attracting Narcissists: 9 Proven Strategies That Actually Work in 2025" [level=3]'
+    - paragraph: Learn how to stop attracting narcissists with 9 proven strategies. Discover the psychology behind these patterns and build healthier relationships in 2025.
+    - text: Relationships & Dating
+    - time: Aug 3
+  - 'link "How to Stop Attracting Emotionally Unavailable Men: 7 Proven Steps That Actually Work in 2025 How to Stop Attracting Emotionally Unavailable Men: 7 Proven Steps That Actually Work in 2025 Learn how to stop attracting emotionally unavailable men with 7 proven strategies. Discover the psychology behind these patterns and build healthier relationships in 2025. Relationships & Dating Aug 3"':
+    - /url: /blog/how-to-stop-attracting-emotionally-unavailable-men-guide
+    - 'img "How to Stop Attracting Emotionally Unavailable Men: 7 Proven Steps That Actually Work in 2025"'
+    - 'heading "How to Stop Attracting Emotionally Unavailable Men: 7 Proven Steps That Actually Work in 2025" [level=3]'
+    - paragraph: Learn how to stop attracting emotionally unavailable men with 7 proven strategies. Discover the psychology behind these patterns and build healthier relationships in 2025.
+    - text: Relationships & Dating
+    - time: Aug 3
+  - link "7 Powerful Introvert Networking Tips Without Small Talk That Actually Work 7 Powerful Introvert Networking Tips Without Small Talk That Actually Work Discover proven introvert networking tips without small talk that help shy professionals build meaningful connections. Skip the awkward conversations and network authentically. Career & Workplace Jul 29":
+    - /url: /blog/introvert-networking-tips-without-small-talk-guide
+    - img "7 Powerful Introvert Networking Tips Without Small Talk That Actually Work"
+    - heading "7 Powerful Introvert Networking Tips Without Small Talk That Actually Work" [level=3]
+    - paragraph: Discover proven introvert networking tips without small talk that help shy professionals build meaningful connections. Skip the awkward conversations and network authentically.
+    - text: Career & Workplace
+    - time: Jul 29
+  - img "Quiet Strength Logo"
+  - 'heading "My Story: From Burnout to Quiet Strength" [level=2]'
+  - paragraph:
+    - text: I’m an
+    - strong: introvert-women burnout coach
+    - text: who helps high-achieving introverts rebuild confidence. For years, I tried to be someone I wasn't. I chased the extroverted ideal of success, believing that to be seen, I had to be loud. The result? I was left feeling drained, inauthentic, and completely burnt out.
+  - paragraph: It was in hitting that wall that I discovered my true strength wasn't in changing who I am, but in embracing my introversion. I created Quiet Strength to be the resource I wish I'd had—a place that honors our need for depth, reflection, and a calmer path to success.
+  - paragraph: My mission is to give you the tools to stop fighting your nature and start using it as your greatest asset. I'm a Certified Mental Wellness Coach (ICF) dedicated to helping introverted women build sustainable success.
+  - heading "The 3 breakthroughs I deliver:" [level=3]
+  - list:
+    - listitem: We will find the root cause of your burnout and create a personalized plan for burnout recovery for introverted women.
+    - listitem: We will work together to build unshakeable confidence that feels authentic to you.
+    - listitem: You will learn to manage your energy, set boundaries, and create a life that is not just successful, but sustainable and deeply fulfilling.
+  - heading "Latest Insights & Articles" [level=2]
+  - 'img "Featured article: How to Stop Attracting Narcissists: 9 Proven Strategies That Actually Work in 2025 - self-help guide for introverted women"'
+  - 'heading "How to Stop Attracting Narcissists: 9 Proven Strategies That Actually Work in 2025" [level=3]'
+  - paragraph: Learn how to stop attracting narcissists with 9 proven strategies. Discover the psychology behind these patterns and build healthier relationships in 2025.
+  - text: 8 min read Relationships & Dating
+  - link "Read the Full Article →":
+    - /url: /blog/how-to-stop-attracting-narcissists-9-proven-strategies
+  - article:
+    - 'img "How to Stop Attracting Emotionally Unavailable Men: 7 Proven Steps That Actually Work in 2025 - Self-help article for introverted women"'
+    - text: Relationships & Dating
+    - 'heading "How to Stop Attracting Emotionally Unavailable Men: 7 Proven Steps That Actually Work in 2025" [level=3]'
+    - paragraph: Learn how to stop attracting emotionally unavailable men with 7 proven strategies. Discover the psychology behind these patterns and build healthier relationships in 2025.
+    - 'link "Read full article: How to Stop Attracting Emotionally Unavailable Men: 7 Proven Steps That Actually Work in 2025"':
+      - /url: /blog/how-to-stop-attracting-emotionally-unavailable-men-guide
+      - text: Read More →
+    - text: Marica Šinko
+  - article:
+    - img "7 Powerful Introvert Networking Tips Without Small Talk That Actually Work - Self-help article for introverted women"
+    - text: Career & Workplace
+    - heading "7 Powerful Introvert Networking Tips Without Small Talk That Actually Work" [level=3]
+    - paragraph: Discover proven introvert networking tips without small talk that help shy professionals build meaningful connections. Skip the awkward conversations and network authentically.
+    - 'link "Read full article: 7 Powerful Introvert Networking Tips Without Small Talk That Actually Work"':
+      - /url: /blog/introvert-networking-tips-without-small-talk-guide
+      - text: Read More →
+    - text: Marica Šinko
+  - article:
+    - 'img "How to Be Confident as an Introvert Woman: 9 Proven Strategies That Actually Work in 2025 - Self-help article for introverted women"'
+    - text: Introversion & Personality
+    - 'heading "How to Be Confident as an Introvert Woman: 9 Proven Strategies That Actually Work in 2025" [level=3]'
+    - paragraph: Discover how to be confident as an introvert woman with 9 proven strategies. Learn to embrace your quiet strength and build authentic confidence in 2025. Expert-backed tips inside.
+    - 'link "Read full article: How to Be Confident as an Introvert Woman: 9 Proven Strategies That Actually Work in 2025"':
+      - /url: /blog/how-to-be-confident-as-an-introvert-woman-guide
+      - text: Read More →
+    - text: Marica Šinko
+  - link "View All Articles":
+    - /url: /blog
+  - heading "Our Core Self-Help Themes for Introverted Women" [level=2]
+  - img
+  - heading "Introversion & Personality" [level=3]
+  - paragraph: Discover actionable strategies to transform self-doubt into authentic self-esteem and navigate any room with quiet strength as an introvert.
+  - link "Explore More →":
+    - /url: /category/introversion-and-personality
+  - img
+  - heading "Relationships & Dating" [level=3]
+  - paragraph: Cultivate deep, authentic relationships that respect your need for solitude and enrich your life without draining your social energy.
+  - link "Explore More →":
+    - /url: /category/relationships-and-dating
+  - img
+  - heading "Career & Workplace" [level=3]
+  - paragraph: Master your professional journey with strategies designed for introverts to thrive in the workplace without burnout.
+  - link "Explore More →":
+    - /url: /category/career-and-workplace
+  - img
+  - heading "Self-Development" [level=3]
+  - paragraph: Unlock your full potential with personalized growth strategies that honor your introverted nature and amplify your unique strengths.
+  - link "Explore More →":
+    - /url: /category/self-development
+  - img
+  - heading "Women's Wellness" [level=3]
+  - paragraph: Comprehensive wellness approaches tailored for introverted women, focusing on mental health, self-care, and maintaining energy balance.
+  - link "Explore More →":
+    - /url: /category/womens-wellness
+  - heading "My Books & Exclusive Resources" [level=2]
+  - paragraph: Dive deeper with these comprehensive e-books, designed to give you the tools and confidence to thrive.
+  - 'img "Book cover for The Art of Saying No: A Guide for People-Pleasers on the Brink of Burnout"'
+  - paragraph: "Book cover for The Art of Saying No: A Guide for People-Pleasers on the Brink of Burnout"
+  - 'heading "The Art of Saying No: A Guide for People-Pleasers on the Brink of Burnout" [level=3]'
+  - paragraph: "\"The Art of Saying No\" is more than just a guide—it's a compassionate and practical roadmap to reclaiming your life. For too long, the compulsive need for approval has dictated your decisions, drained your energy, and left you feeling resentful and depleted. This book provides the tools to break free from the \"disease to please\" and build a life based on your own terms."
+  - text: $7
+  - link "Buy Now":
+    - /url: https://www.amazon.com/dp/B0FHZL4Q5G
+  - 'img "Book cover for The Quiet Confidence Blueprint: An Introverted Woman''s Uncensored Guide to Owning Her Power"'
+  - paragraph: "Book cover for The Quiet Confidence Blueprint: An Introverted Woman's Uncensored Guide to Owning Her Power"
+  - 'heading "The Quiet Confidence Blueprint: An Introverted Woman''s Uncensored Guide to Owning Her Power" [level=3]'
+  - paragraph: Are you an introverted woman tired of feeling overlooked, drained by social demands, or battling imposter syndrome? This raw, actionable guide reveals how to transform your quiet nature into an unshakeable source of confidence, set powerful boundaries, and claim your authentic strength without becoming someone you're not. Discover self-esteem for introverts, energy mastery, and thriving as a quiet leader in an extroverted world.
+  - text: $5
+  - link "Buy Now":
+    - /url: https://www.amazon.com/dp/B0FHX2YTVX
+  - heading "Get Your Free Guide to Setting Boundaries" [level=2]
+  - paragraph: Enter your email to receive your free copy of "The 5-Minute Guide to Setting Boundaries" and join the Quiet Strength community for weekly, introvert-friendly self-help tips.
+  - textbox "Enter your email address"
+  - button "Send Me The Guide"
+  - heading "What Our Readers Say" [level=2]
+  - blockquote:
+    - paragraph: "\"Quiet Strength completely changed how I view my introversion. I used to see it as a weakness, but now I see it as my greatest asset. The articles are so insightful and relatable.\""
+  - text: Jessica M.
+  - paragraph: Software Developer
+  - blockquote:
+    - paragraph: "\"I was on the verge of burnout before I found this blog. The advice on energy management and setting boundaries has been a lifesaver. I feel more in control of my life than ever before.\""
+  - text: Sarah L.
+  - paragraph: Graphic Designer
+  - blockquote:
+    - paragraph: "\"Finally, a space that understands! The content is not just empowering; it's practical. I've applied so many tips to my daily life with amazing results.\""
+  - text: Emily R.
+  - paragraph: Librarian
+  - complementary
+- contentinfo:
+  - heading "Quiet Strength" [level=3]
+  - paragraph: Empowering introverted women to thrive.
+  - heading "Quick Links" [level=3]
+  - navigation:
+    - link "About":
+      - /url: /#about
+    - link "Themes":
+      - /url: /#themes
+    - link "Blog":
+      - /url: /blog
+    - link "Books":
+      - /url: /#books
+  - heading "Legal" [level=3]
+  - navigation:
+    - button "Privacy Policy"
+  - paragraph: © 2025 Quiet Strength. All Rights Reserved.
+```

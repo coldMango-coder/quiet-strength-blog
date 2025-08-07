@@ -1,0 +1,113 @@
+{
+  "timestamp": "2025-08-07T20:42:42.235Z",
+  "total": 21,
+  "successful": 0,
+  "failed": 21,
+  "results": [
+    {
+      "route": "/",
+      "success": false,
+      "error": "net::ERR_CONNECTION_RESET at http://localhost:3456/"
+    },
+    {
+      "route": "/blog",
+      "success": false,
+      "error": "net::ERR_CONNECTION_RESET at http://localhost:3456/blog"
+    },
+    {
+      "route": "/category/relationships-and-dating",
+      "success": false,
+      "error": "net::ERR_CONNECTION_RESET at http://localhost:3456/category/relationships-and-dating"
+    },
+    {
+      "route": "/category/career-and-workplace",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/category/career-and-workplace"
+    },
+    {
+      "route": "/category/introversion-and-personality",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/category/introversion-and-personality"
+    },
+    {
+      "route": "/category/self-development",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/category/self-development"
+    },
+    {
+      "route": "/blog/how-to-stop-attracting-narcissists-9-proven-strategies",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/blog/how-to-stop-attracting-narcissists-9-proven-strategies"
+    },
+    {
+      "route": "/blog/how-to-stop-attracting-emotionally-unavailable-men-guide",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/blog/how-to-stop-attracting-emotionally-unavailable-men-guide"
+    },
+    {
+      "route": "/blog/introvert-networking-tips-without-small-talk-guide",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/blog/introvert-networking-tips-without-small-talk-guide"
+    },
+    {
+      "route": "/blog/how-to-be-confident-as-an-introvert-woman-guide",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/blog/how-to-be-confident-as-an-introvert-woman-guide"
+    },
+    {
+      "route": "/blog/post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/blog/post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025"
+    },
+    {
+      "route": "/blog/emotional-manipulation-tactics-narcissist-ex-recovery-12-proven-steps-to-reclaim-your-life-in-2025",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/blog/emotional-manipulation-tactics-narcissist-ex-recovery-12-proven-steps-to-reclaim-your-life-in-2025"
+    },
+    {
+      "route": "/blog/introvert-overwhelmed-by-social-media-8-proven-coping-strategies-that-actually-work-in-2025",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/blog/introvert-overwhelmed-by-social-media-8-proven-coping-strategies-that-actually-work-in-2025"
+    },
+    {
+      "route": "/blog/how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/blog/how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025"
+    },
+    {
+      "route": "/blog/how-to-speak-up-in-meetings-introvert-strategies-2025",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/blog/how-to-speak-up-in-meetings-introvert-strategies-2025"
+    },
+    {
+      "route": "/blog/intentional-dating-2025-guide",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/blog/intentional-dating-2025-guide"
+    },
+    {
+      "route": "/blog/introvert-social-battery-drained-recovery-methods",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/blog/introvert-social-battery-drained-recovery-methods"
+    },
+    {
+      "route": "/blog/how-to-know-if-you-deserve-better-relationship-introvert-woman-guide",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/blog/how-to-know-if-you-deserve-better-relationship-introvert-woman-guide"
+    },
+    {
+      "route": "/blog/how-to-say-no-without-guilt",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/blog/how-to-say-no-without-guilt"
+    },
+    {
+      "route": "/blog/art-of-saying-no",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/blog/art-of-saying-no"
+    },
+    {
+      "route": "/blog/prevent-professional-burnout",
+      "success": false,
+      "error": "net::ERR_CONNECTION_REFUSED at http://localhost:3456/blog/prevent-professional-burnout"
+    }
+  ]
+}

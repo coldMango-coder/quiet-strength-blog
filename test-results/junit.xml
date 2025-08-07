@@ -1,0 +1,46 @@
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="7.865358000000001">
+<testsuite name="canonical-urls-simple.spec.js" timestamp="2025-08-07T14:37:21.815Z" hostname="chromium" tests="1" failures="1" skipped="0" time="4.784" errors="0">
+<testcase name="Canonical URL Tests - Simple › canonical URLs test with chromium only" classname="canonical-urls-simple.spec.js" time="4.784">
+<failure message="canonical-urls-simple.spec.js:7:3 canonical URLs test with chromium only" type="FAILURE">
+<![CDATA[  [chromium] › canonical-urls-simple.spec.js:7:3 › Canonical URL Tests - Simple › canonical URLs test with chromium only 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: "https://trueallyguide.com/"
+    Received: "https://trueallyguide.com/testimonials/emily-r."
+
+      33 |         
+      34 |         const canonicalHref = await canonicalTags[0].getAttribute('href');
+    > 35 |         expect(canonicalHref).toBe(expected);
+         |                               ^
+      36 |         
+      37 |         console.log(`✓ ${path} → ${canonicalHref}`);
+      38 |       } catch (error) {
+        at C:\Users\Jurek2\Downloads\Project_WEB_01\tests\canonical-urls-simple.spec.js:35:31
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\canonical-urls-simple-Cano-0a53b-RLs-test-with-chromium-only-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\canonical-urls-simple-Cano-0a53b-RLs-test-with-chromium-only-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[Starting server...
+Testing /
+
+[[ATTACHMENT|canonical-urls-simple-Cano-0a53b-RLs-test-with-chromium-only-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|canonical-urls-simple-Cano-0a53b-RLs-test-with-chromium-only-chromium\error-context.md]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[✗ / failed: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m"https://trueallyguide.com/"[39m
+Received: [31m"https://trueallyguide.com/[7mtestimonials/emily-r.[27m"[39m
+]]>
+</system-err>
+</testcase>
+</testsuite>
+</testsuites>

@@ -70,7 +70,14 @@
       "Bash(npm run analyze:*)",
       "Bash(mkdir:*)",
       "Bash(npm run redirects:test:*)",
-      "Bash(npm run assets:test:*)"
+      "Bash(npm run assets:test:*)",
+      "Bash(npm run test:*)",
+      "Bash(npm run ci:validate-assets:*)",
+      "Bash(npm test:*)",
+      "Bash(npx playwright:*)",
+      "Bash(npm run prerender:*)",
+      "Bash(python:*)",
+      "Bash(npx http-server:*)"
     ],
     "deny": []
   }

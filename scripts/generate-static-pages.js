@@ -31,33 +31,12 @@ function generateHTMLWithCanonical(url, title, description) {
   <meta property="og:url" content="${canonicalUrl}" />
   <meta property="og:type" content="website" />
   <title>${title}</title>
-  <link href="/static/css/main.43dd6ae1.css" rel="stylesheet">
-  <script>
-    // Redirect to SPA after search engines crawl
-    if (typeof window !== 'undefined' && !window.location.hash) {
-      setTimeout(function() {
-        window.location.href = '${canonicalUrl}#app';
-      }, 100);
-    }
-  </script>
+  <meta http-equiv="refresh" content="0;url=${canonicalUrl}?spa=1">
 </head>
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root">
-    <div style="padding: 20px; text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-      <h1>${title}</h1>
-      <p>This page is optimized for search engines.</p>
-      <p><a href="${canonicalUrl}#app">Continue to interactive version</a></p>
-      <script>
-        // Load the React app after a brief delay for SEO
-        setTimeout(function() {
-          var script = document.createElement('script');
-          script.src = '/static/js/main.a5cd8a7a.js';
-          document.body.appendChild(script);
-        }, 500);
-      </script>
-    </div>
-  </div>
+  <h1>${title}</h1>
+  <p>Redirecting to interactive version...</p>
+  <p><a href="${canonicalUrl}?spa=1">Continue to ${canonicalUrl}</a></p>
 </body>
 </html>`;
 }

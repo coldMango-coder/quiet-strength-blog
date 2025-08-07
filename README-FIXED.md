@@ -68,6 +68,29 @@ Once running, visit these URLs:
 3. **Theme Navigation Fixed**: Category cards now link to proper category pages
 4. **Clean Build**: Removed unused code and variables
 5. **SEO Ready**: Sitemap.xml with 16 URLs, robots.txt configured
+6. **Canonical URL Fix**: Implemented dynamic canonical tags to fix Google Search Console "Page with redirect" errors
+
+## 🔍 Canonical URL Strategy
+
+The website now uses a **dynamic canonical URL system** that fixes the major SEO issue where all pages showed the same canonical tag.
+
+### How It Works:
+- **Problem**: Hard-coded `<link rel="canonical" href="https://trueallyguide.com/" />` in all pages
+- **Solution**: Dynamic `getCanonicalUrl(pathname)` function that generates correct URLs
+- **Result**: Each page now has its own unique canonical URL
+
+### Implementation:
+```javascript
+// Each page gets its correct canonical URL:
+// Homepage: https://trueallyguide.com/
+// Blog post: https://trueallyguide.com/blog/article-name
+// Category: https://trueallyguide.com/category/category-name
+```
+
+### Testing:
+- **Unit tests**: 11 test cases covering all URL patterns
+- **E2E tests**: `npm run test:url-canonicals` validates every sitemap URL
+- **CI validation**: Automatic asset validation in deployment pipeline
 
 ## 📁 Project Structure
 
