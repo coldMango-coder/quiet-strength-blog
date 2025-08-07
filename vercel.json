@@ -82,17 +82,6 @@
   ],
   "redirects": [
     {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.trueallyguide.com"
-        }
-      ],
-      "destination": "https://trueallyguide.com/$1",
-      "permanent": true
-    },
-    {
       "source": "/category/Introversion%20%26%20Personality",
       "destination": "/category/introversion-and-personality",
       "permanent": true
@@ -127,7 +116,7 @@
       "destination": "/blog/index.html"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!api|_next|static|favicon.ico).*)",
       "destination": "/index.html"
     }
   ]
