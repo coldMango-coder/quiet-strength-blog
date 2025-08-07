@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import NormalizedLink from './NormalizedLink';
 import { sortedBlogPosts } from '../blogData';
 import OptimizedImage from './OptimizedImage';
 
@@ -35,17 +35,17 @@ const Hero = () => {
             <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 lg:p-8 border border-gray-100 min-h-fit min-w-0">
               <div className="flex items-center justify-between mb-4 sm:mb-6 min-w-0">
                 <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-brand-dark flex-shrink-0">Latest Insights</h2>
-                <Link 
+                <NormalizedLink 
                   to="/blog"
                   className="text-brand-emphasis text-xs sm:text-sm font-semibold hover:underline hover:text-brand-dark transition-colors flex-shrink-0 ml-2"
                 >
                   View All →
-                </Link>
+                </NormalizedLink>
               </div>
               
               <div className="space-y-6 lg:space-y-8">
                 {sortedBlogPosts.slice(0, 3).map((post, index) => (
-                  <Link key={post.slug} to={`/blog/${post.slug}`} className={`flex items-start group cursor-pointer p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200 min-w-0 ${index === 0 ? 'bg-gradient-to-r from-brand-secondary/30 to-transparent border-l-4 border-brand-emphasis' : ''}`}>
+                  <NormalizedLink key={post.slug} to={`/blog/${post.slug}`} className={`flex items-start group cursor-pointer p-2 sm:p-3 lg:p-4 rounded-xl hover:bg-gray-50 transition-colors duration-200 min-w-0 ${index === 0 ? 'bg-gradient-to-r from-brand-secondary/30 to-transparent border-l-4 border-brand-emphasis' : ''}`}>
                     <OptimizedImage 
                       src={post.image} 
                       alt={post.title}
@@ -81,7 +81,7 @@ const Hero = () => {
                         </time>
                       </div>
                     </div>
-                  </Link>
+                  </NormalizedLink>
                 ))}
               </div>
             </div>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import NormalizedLink from '../components/NormalizedLink';
 import { sortedBlogPosts, categories, slugToCategoryMap, categorySlugMap } from '../blogData';
 import BlogCard from '../components/BlogCard';
 import Seo from '../components/Seo';
@@ -26,7 +27,6 @@ const CategoryPage = () => {
       <Seo
         title={`${displayName} - Blog Category`}
         description={`Explore all articles in the ${displayName} category. ${getCategoryDescription(displayName)}`}
-        path={`/category/${categoryName}`}
         breadcrumbs={[
           { name: 'Home', item: '/' },
           { name: 'Categories', item: '/categories' },
@@ -35,12 +35,12 @@ const CategoryPage = () => {
       />
       
       <div className="container mx-auto px-6 py-12">
-        <Link to="/" className="text-brand-emphasis hover:text-brand-dark font-semibold mb-8 flex items-center gap-2">
+        <NormalizedLink to="/" className="text-brand-emphasis hover:text-brand-dark font-semibold mb-8 flex items-center gap-2">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
           </svg>
           Back to Home
-        </Link>
+        </NormalizedLink>
         
         {/* Category Header */}
         <div className="text-center mb-16">
@@ -77,12 +77,12 @@ const CategoryPage = () => {
               <p className="text-brand-primary mb-6">
                 We're working on adding more content to this category. Check back soon!
               </p>
-              <Link 
+              <NormalizedLink 
                 to="/blog"
                 className="bg-brand-emphasis text-white font-semibold py-3 px-6 rounded-full hover:bg-opacity-90 transition-colors inline-block"
               >
                 Browse All Articles
-              </Link>
+              </NormalizedLink>
             </div>
           </div>
         )}
@@ -92,13 +92,13 @@ const CategoryPage = () => {
           <h3 className="text-2xl font-bold text-brand-dark mb-8 text-center">Explore Other Categories</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {Object.values(categories).filter(cat => cat !== displayName).map((otherCategory) => (
-              <Link
+              <NormalizedLink
                 key={otherCategory}
                 to={`/category/${categorySlugMap[otherCategory]}`}
                 className="px-6 py-3 rounded-full font-semibold bg-gray-100 text-brand-dark hover:bg-brand-light hover:text-brand-emphasis transition-colors inline-block"
               >
                 {otherCategory}
-              </Link>
+              </NormalizedLink>
             ))}
           </div>
         </div>

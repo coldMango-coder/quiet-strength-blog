@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import NormalizedLink from '../components/NormalizedLink';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
@@ -15,9 +15,9 @@ const BlogPostToxicRelationship = () => {
     <div className="bg-brand-light">
 
       <div className="container mx-auto px-6 py-16">
-        <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">
+        <NormalizedLink to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">
           &larr; Back to Home
-        </Link>
+        </NormalizedLink>
         
         <article className="article-container mx-auto max-w-[720px]">
           <header className="mb-16 text-left">

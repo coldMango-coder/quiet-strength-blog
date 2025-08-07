@@ -14,7 +14,6 @@ const HomePage = () => {
       <Seo
         title="Quiet Strength – Self-Help & Productivity for Introverted Women"
         description="Actionable articles, e-books, and courses that help introverted women build confidence, prevent burnout, and thrive on their own terms."
-        path="/"
       />
       <div className="space-y-24">
         <Hero />

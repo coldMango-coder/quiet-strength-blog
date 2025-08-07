@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NormalizedLink Snapshot Test renders blog post content with normalized internal links: normalized-internal-links 1`] = `
+Array [
+  Object {
+    "href": "/blog",
+    "isRouterLink": true,
+    "text": "blog",
+  },
+  Object {
+    "href": "/category/self-development",
+    "isRouterLink": true,
+    "text": "self-development",
+  },
+  Object {
+    "href": "/blog/introvert-tips",
+    "isRouterLink": true,
+    "text": "introvert tips",
+  },
+  Object {
+    "href": "/",
+    "isRouterLink": true,
+    "text": "homepage",
+  },
+  Object {
+    "href": "mailto:contact@trueallyguide.com",
+    "isRouterLink": false,
+    "text": "contact us",
+  },
+  Object {
+    "href": "https://example.com",
+    "isRouterLink": false,
+    "text": "Example",
+  },
+  Object {
+    "href": "#section",
+    "isRouterLink": false,
+    "text": "section",
+  },
+]
+`;

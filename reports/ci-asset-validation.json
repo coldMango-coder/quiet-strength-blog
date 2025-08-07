@@ -1,0 +1,120 @@
+{
+  "timestamp": "2025-08-07T14:44:43.646Z",
+  "totalAssets": 7,
+  "failures": 0,
+  "successRate": 100,
+  "assets": [
+    {
+      "type": "CSS",
+      "url": "https://trueallyguide.com/static/css/main.43dd6ae1.css",
+      "statusCode": 308,
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "date": "Thu, 07 Aug 2025 14:44:44 GMT",
+        "location": "https://www.trueallyguide.com/static/css/main.43dd6ae1.css",
+        "refresh": "0;url=https://www.trueallyguide.com/static/css/main.43dd6ae1.css",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-id": "fra1::rm2w6-1754577884132-6f92aa0a0cfe",
+        "transfer-encoding": "chunked"
+      }
+    },
+    {
+      "type": "JS",
+      "url": "https://trueallyguide.com/static/js/main.a5cd8a7a.js",
+      "statusCode": 308,
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "date": "Thu, 07 Aug 2025 14:44:44 GMT",
+        "location": "https://www.trueallyguide.com/static/js/main.a5cd8a7a.js",
+        "refresh": "0;url=https://www.trueallyguide.com/static/js/main.a5cd8a7a.js",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-id": "fra1::2rffs-1754577884306-bc533428716a",
+        "transfer-encoding": "chunked"
+      }
+    },
+    {
+      "type": "IMG",
+      "url": "https://trueallyguide.com/images/logo.png",
+      "statusCode": 308,
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "date": "Thu, 07 Aug 2025 14:44:44 GMT",
+        "location": "https://www.trueallyguide.com/images/logo.png",
+        "refresh": "0;url=https://www.trueallyguide.com/images/logo.png",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-id": "fra1::9wgk4-1754577884420-857d9b9c245d",
+        "transfer-encoding": "chunked"
+      }
+    },
+    {
+      "type": "PRELOAD",
+      "url": "https://trueallyguide.com/images/logo.avif",
+      "statusCode": 308,
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "date": "Thu, 07 Aug 2025 14:44:44 GMT",
+        "location": "https://www.trueallyguide.com/images/logo.avif",
+        "refresh": "0;url=https://www.trueallyguide.com/images/logo.avif",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-id": "fra1::r2t29-1754577884545-efae585286c4",
+        "transfer-encoding": "chunked"
+      }
+    },
+    {
+      "type": "PRELOAD",
+      "url": "https://trueallyguide.com/images/logo.webp",
+      "statusCode": 308,
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "date": "Thu, 07 Aug 2025 14:44:44 GMT",
+        "location": "https://www.trueallyguide.com/images/logo.webp",
+        "refresh": "0;url=https://www.trueallyguide.com/images/logo.webp",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-id": "fra1::pqrvd-1754577884670-6ce17943adff",
+        "transfer-encoding": "chunked"
+      }
+    },
+    {
+      "type": "ICON",
+      "url": "https://trueallyguide.com/favicon.ico",
+      "statusCode": 308,
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "date": "Thu, 07 Aug 2025 14:44:44 GMT",
+        "location": "https://www.trueallyguide.com/favicon.ico",
+        "refresh": "0;url=https://www.trueallyguide.com/favicon.ico",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-id": "fra1::hn9c8-1754577884780-3879f3190839",
+        "transfer-encoding": "chunked"
+      }
+    },
+    {
+      "type": "ICON",
+      "url": "https://trueallyguide.com/images/logo.png",
+      "statusCode": 308,
+      "headers": {
+        "cache-control": "public, max-age=0, must-revalidate",
+        "content-type": "text/plain",
+        "date": "Thu, 07 Aug 2025 14:44:44 GMT",
+        "location": "https://www.trueallyguide.com/images/logo.png",
+        "refresh": "0;url=https://www.trueallyguide.com/images/logo.png",
+        "server": "Vercel",
+        "strict-transport-security": "max-age=63072000",
+        "x-vercel-id": "fra1::ngnrh-1754577884898-7f9f226feefd",
+        "transfer-encoding": "chunked"
+      }
+    }
+  ]
+}

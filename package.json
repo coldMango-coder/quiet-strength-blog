@@ -30,9 +30,11 @@
     "test:visual": "playwright test tests/visual.spec.js",
     "test:performance": "playwright test tests/performance.spec.js",
     "test:e2e": "playwright test",
+    "test:url-canonicals": "playwright test tests/canonical-urls.spec.js",
     "test:install": "playwright install",
     "redirects:test": "node scripts/test-redirects.js",
-    "assets:test": "node scripts/test-assets.js"
+    "assets:test": "node scripts/test-assets.js",
+    "ci:validate-assets": "node scripts/ci-asset-validation.js"
   },
   "eslintConfig": {
     "extends": [
@@ -53,9 +55,11 @@
     ]
   },
   "devDependencies": {
+    "@playwright/test": "^1.54.2",
     "@tailwindcss/typography": "^0.5.16",
     "cheerio": "^1.1.2",
     "chokidar": "^4.0.3",
+    "playwright": "^1.54.2",
     "sharp": "^0.34.3",
     "tailwindcss": "^3.3.3",
     "webpack-bundle-analyzer": "^4.10.2",

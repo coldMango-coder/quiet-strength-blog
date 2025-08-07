@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import NormalizedLink from './NormalizedLink';
 import StyledBlockquote from './StyledBlockquote';
 import KeyTakeawayBox from './KeyTakeawayBox';
 import StyledList from './StyledList';
@@ -14,7 +14,6 @@ const BlogPostSayingNoWithoutGuilt = () => {
         title="How to Say No Without Guilt: 12 Real-Life Scripts"
         description="Learn how to say no without guilt. Real scripts for work, family & friends + emotional aftercare. Free 20 Script PDF."
         type="article"
-        path="/blog/how-to-say-no-without-guilt"
         article={{
           title: "How to Say No Without Guilt: Real-Life Scripts for Work, Family & Friends",
           authorName: "Marica Šinko",
@@ -29,9 +28,9 @@ const BlogPostSayingNoWithoutGuilt = () => {
       />
 
       <div className="container mx-auto px-6 py-16">
-        <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">
+        <NormalizedLink to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">
           &larr; Back to Home
-        </Link>
+        </NormalizedLink>
         
         <article className="article-container mx-auto max-w-[720px]">
           {/* HEADER SECTION - SEO CRITICAL */}

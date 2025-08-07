@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NormalizedLink Internal Links Test normalizes internal links to match canonical URLs: normalized-internal-links 1`] = `
+Array [
+  Object {
+    "actualHref": "/blog",
+    "expectedCanonical": "https://trueallyguide.com/blog",
+    "isCorrectlyNormalized": true,
+    "text": "blog",
+  },
+  Object {
+    "actualHref": "/category/self-development",
+    "expectedCanonical": "https://trueallyguide.com/category/self-development",
+    "isCorrectlyNormalized": true,
+    "text": "self-development",
+  },
+  Object {
+    "actualHref": "/blog/introvert-tips",
+    "expectedCanonical": "https://trueallyguide.com/blog/introvert-tips",
+    "isCorrectlyNormalized": true,
+    "text": "introvert tips",
+  },
+  Object {
+    "actualHref": "/",
+    "expectedCanonical": "https://trueallyguide.com/",
+    "isCorrectlyNormalized": true,
+    "text": "homepage",
+  },
+]
+`;

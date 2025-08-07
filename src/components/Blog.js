@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import NormalizedLink from './NormalizedLink';
 import { sortedBlogPosts } from '../blogData';
 import BlogCard from './BlogCard';
 
@@ -42,12 +42,12 @@ const Blog = () => {
                 {latestPost.category}
               </span>
             </div>
-            <Link 
+            <NormalizedLink 
               to={`/blog/${latestPost.slug}`}
               className="text-brand-emphasis font-semibold hover:underline text-sm sm:text-base lg:text-lg self-start break-words"
             >
               Read the Full Article &rarr;
-            </Link>
+            </NormalizedLink>
           </div>
         </div>
 
@@ -64,9 +64,9 @@ const Blog = () => {
 
 
         <div className="text-center">
-          <Link to="/blog" className="bg-brand-dark text-white font-bold py-4 px-10 rounded-full hover:bg-opacity-90 transition duration-300 transform hover:scale-105 inline-block">
+          <NormalizedLink to="/blog" className="bg-brand-dark text-white font-bold py-4 px-10 rounded-full hover:bg-opacity-90 transition duration-300 transform hover:scale-105 inline-block">
             View All Articles
-          </Link>
+          </NormalizedLink>
         </div>
       </div>
     </section>

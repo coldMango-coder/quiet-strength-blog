@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Seo from './Seo';
-
 const testimonialsData = [
   {
     quote: "Quiet Strength completely changed how I view my introversion. I used to see it as a weakness, but now I see it as my greatest asset. The articles are so insightful and relatable.",
@@ -22,12 +20,6 @@ const testimonialsData = [
 
 const TestimonialCard = ({ quote, author, title }) => (
   <div className="bg-white p-8 rounded-lg shadow-md flex flex-col items-center text-center">
-    <Seo
-      type="review"
-      title={`Testimonial from ${author}`}
-      description={quote}
-      path={`/testimonials/${author.toLowerCase().replace(' ', '-')}`}
-    />
     <blockquote className="text-slate-600 italic mb-6">
       <p>"{quote}"</p>
     </blockquote>

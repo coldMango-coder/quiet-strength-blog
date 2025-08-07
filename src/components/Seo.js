@@ -1,10 +1,17 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
+import { getCanonicalUrl } from '../lib/seo/getCanonicalUrl';
 
 const Seo = ({ title, description, type = 'website', path, article, book, person, breadcrumbs }) => {
+  const location = useLocation();
   const siteName = 'Quiet Strength';
   const baseUrl = 'https://trueallyguide.com';
-  const url = `${baseUrl}${path}`;
+  
+  // Use the provided path or automatically detect from current location
+  const currentPath = path || location.pathname + location.search;
+  const canonicalUrl = getCanonicalUrl(currentPath);
+  const url = canonicalUrl;
 
   const schema = [];
 
@@ -61,7 +68,7 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
     });
     
     // Add Organization schema for homepage
-    if (path === '/') {
+    if (currentPath === '/') {
       schema.push({
         ...baseSchema,
         '@type': 'Organization',
@@ -96,7 +103,7 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
     <Helmet>
       <title>{title ? `${title} | ${siteName}` : siteName}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={url} />
+      <link rel="canonical" href={canonicalUrl} />
 
       {/* Open Graph */}
       <meta property="og:title" content={`${title} | ${siteName}`} />

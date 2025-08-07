@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import NormalizedLink from './NormalizedLink';
 import { motion } from 'framer-motion';
 import { categories, categorySlugMap } from '../blogData';
 
@@ -51,7 +51,7 @@ const ThemeCard = ({ icon, title, description, categoryName }) => (
     </motion.div>
     <h3 className="text-xl font-bold text-brand-dark mb-2" aria-label={title}>{title}</h3>
     <p className="text-slate-600 flex-grow">{description}</p>
-    <Link to={`/category/${categorySlugMap[categoryName]}`} className="mt-4 text-brand-emphasis hover:underline font-semibold">Explore More &rarr;</Link>
+    <NormalizedLink to={`/category/${categorySlugMap[categoryName]}`} className="mt-4 text-brand-emphasis hover:underline font-semibold">Explore More &rarr;</NormalizedLink>
   </motion.div>
 );
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import NormalizedLink from './NormalizedLink';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,30 +15,30 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
-              <Link 
+              <NormalizedLink 
                 to="/#about"
                 className="text-slate-200 hover:text-white text-left"
               >
                 About
-              </Link>
-              <Link 
+              </NormalizedLink>
+              <NormalizedLink 
                 to="/#themes"
                 className="text-slate-200 hover:text-white text-left"
               >
                 Themes
-              </Link>
-              <Link 
+              </NormalizedLink>
+              <NormalizedLink 
                 to="/blog"
                 className="text-slate-200 hover:text-white text-left"
               >
                 Blog
-              </Link>
-              <Link 
+              </NormalizedLink>
+              <NormalizedLink 
                 to="/#books"
                 className="text-slate-200 hover:text-white text-left"
               >
                 Books
-              </Link>
+              </NormalizedLink>
             </nav>
           </div>
           <div>

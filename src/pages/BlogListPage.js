@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import NormalizedLink from '../components/NormalizedLink';
 import { Helmet } from 'react-helmet-async';
 import { sortedBlogPosts, categories, categorySlugMap } from '../blogData';
 import BlogCard from '../components/BlogCard';
@@ -38,7 +38,7 @@ const BlogListPage = () => {
           ]}
         />
         <div className="container mx-auto px-6 py-12">
-          <Link to="/" className="text-indigo-600 hover:text-indigo-800 font-semibold mb-8 inline-block">&larr; Back to Home</Link>
+          <NormalizedLink to="/" className="text-indigo-600 hover:text-indigo-800 font-semibold mb-8 inline-block">&larr; Back to Home</NormalizedLink>
           <h2 className="text-4xl font-bold text-center mb-12 text-slate-800">{selectedCategory || 'From the Blog'}</h2>
           
           {/* Category Navigation */}

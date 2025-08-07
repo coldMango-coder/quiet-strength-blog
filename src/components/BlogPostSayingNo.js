@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import NormalizedLink from './NormalizedLink';
 import StyledBlockquote from './StyledBlockquote';
 import KeyTakeawayBox from './KeyTakeawayBox';
 import StyledList from './StyledList';
@@ -11,7 +11,7 @@ const BlogPostSayingNo = () => {
   return (
     <div className="bg-brand-light">
       <div className="container mx-auto px-6 py-16">
-        <Link to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">&larr; Back to Home</Link>
+        <NormalizedLink to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">&larr; Back to Home</NormalizedLink>
         
         <article className="article-container mx-auto max-w-[720px]">
           <header className="mb-16 text-left">

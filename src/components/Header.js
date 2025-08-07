@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import NormalizedLink from './NormalizedLink';
 import { categories, categorySlugMap } from '../blogData';
 import OptimizedImage from './OptimizedImage';
 
@@ -67,7 +68,7 @@ const Header = () => {
       <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'h-[92px] bg-[#C65616] shadow-lg' : 'h-[128px] bg-[#B44416]'}`}>
         <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
         <div className="container mx-auto px-6 flex justify-between items-center h-full">
-          <Link to="/" className="focus:outline-none">
+          <NormalizedLink to="/" className="focus:outline-none">
             <div className={`modern-logo transition-all duration-300 ${isScrolled ? 'w-12 h-12' : 'w-16 h-16'} rounded-full overflow-hidden`}>
               <OptimizedImage 
                 src="/images/logo.png" 
@@ -79,7 +80,7 @@ const Header = () => {
                 sizes="64px"
               />
             </div>
-          </Link>
+          </NormalizedLink>
           <nav className="hidden lg:flex items-center gap-11">
             {navLinks.map(link => (
               <div
@@ -118,7 +119,7 @@ const Header = () => {
                     </div>
                   </div>
                 ) : (
-                  <Link
+                  <NormalizedLink
                     to={link.page === 'blog' ? '/blog' : `/#${link.page}`}
                     onClick={link.page !== 'blog' ? (e) => {
                       if (location.pathname === '/') {
@@ -135,7 +136,7 @@ const Header = () => {
                     {link.icon}
                     <span>{link.name}</span>
                     <span className="absolute left-0 -bottom-2 w-full h-[3px] bg-[#FFECD8] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left group-[.active]:scale-x-100"></span>
-                  </Link>
+                  </NormalizedLink>
                 )}
               </div>
             ))}
@@ -185,7 +186,7 @@ const Header = () => {
                     </div>
                   </div>
                 ) : (
-                  <Link
+                  <NormalizedLink
                     to={link.page === 'blog' ? '/blog' : `/#${link.page}`}
                     onClick={(e) => {
                       if (link.page !== 'blog' && location.pathname === '/') {
@@ -200,7 +201,7 @@ const Header = () => {
                     className="text-2xl text-brand-dark font-semibold hover:text-brand-emphasis transition-colors duration-300"
                   >
                     {link.name}
-                  </Link>
+                  </NormalizedLink>
                 )}
               </div>
             ))}

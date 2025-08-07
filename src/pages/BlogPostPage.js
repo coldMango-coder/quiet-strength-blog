@@ -20,7 +20,6 @@ const BlogPostPage = () => {
         title={post.title}
         description={post.description}
         type="article"
-        path={`/blog/${post.slug}`}
         article={{
           title: post.title,
           authorName: 'Marica Šinko',

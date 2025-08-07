@@ -1,26 +1,7 @@
 import React from 'react';
 
-import Seo from './Seo';
-
 const BookCard = ({ imgSrc, title, description, price, ctaText, slug, isExternal, externalLink }) => (
   <div className="bg-white rounded-lg shadow-md flex flex-col hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 w-full max-w-md mx-auto">
-    <Seo
-      type="book"
-      title={title}
-      description={description}
-      path={`/books/${slug}`}
-      book={{
-        title: title,
-        authorName: 'Marica Šinko',
-        isbn: '978-3-16-148410-0', // Example ISBN
-        offers: {
-          '@type': 'Offer',
-          price: price.replace('$', ''),
-          priceCurrency: 'USD',
-          availability: 'https://schema.org/InStock',
-        },
-      }}
-    />
     <div>
       <img src={imgSrc} alt={`Book cover for ${title}`} className="w-full h-[500px] object-contain" loading="lazy" decoding="async" />
       <p className="text-sm text-gray-600 mt-3 text-center italic px-4">Book cover for {title}</p>

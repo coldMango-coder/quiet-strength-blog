@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import NormalizedLink from './NormalizedLink';
 
 const BlogCard = ({ post, onReadMore, linkTo }) => {
   const { title, description, category, image, datePublished, readingTime, slug } = post;
@@ -45,13 +45,13 @@ const BlogCard = ({ post, onReadMore, linkTo }) => {
         </div>
         
         {linkTo ? (
-          <Link
+          <NormalizedLink
             to={linkTo}
             className="font-semibold text-brand-emphasis hover:underline text-left self-start mt-auto"
             aria-label={`Read full article: ${title}`}
           >
             Read More &rarr;
-          </Link>
+          </NormalizedLink>
         ) : (
           <button
             onClick={onReadMore}
