@@ -1,5 +1,7 @@
 # Quiet Strength Blog
 
+**Latest Update (Aug 7, 2025)**: Static page generation with server-side canonical tags implemented!
+
 A React-based blog focused on helping introverted women build confidence, prevent burnout, and thrive on their own terms.
 
 ## 🚀 Quick Start
