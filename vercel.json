@@ -44,7 +44,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(js|css|woff|woff2|ttf|eot|webp|avif))",
+      "source": "/(.*).js",
       "headers": [
         {
           "key": "Cache-Control",
@@ -53,7 +53,16 @@
       ]
     },
     {
-      "source": "/(.*\\.html)$",
+      "source": "/(.*).css",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*).html",
       "headers": [
         {
           "key": "Cache-Control",
@@ -67,24 +76,6 @@
         {
           "key": "Content-Type",
           "value": "application/xml"
-        }
-      ]
-    },
-    {
-      "source": "/rss.xml",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/rss+xml"
-        }
-      ]
-    },
-    {
-      "source": "/atom.xml",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/atom+xml"
         }
       ]
     }
