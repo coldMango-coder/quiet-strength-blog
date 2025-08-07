@@ -1,20 +1,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap
 Sitemap: https://trueallyguide.com/sitemap.xml
 
-# Block access to admin areas
 Disallow: /admin/
 Disallow: /private/
 Disallow: /.env
-
-# Allow search engines to crawl all pages
-Allow: /blog/
-Allow: /books/
-Allow: /about/
-Allow: /themes/
-Allow: /category/
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
