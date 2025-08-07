@@ -1,0 +1,2 @@
+Deployment trigger: 2025-08-07 22:55 UTC
+Fixed vercel.json routing to serve static pages with correct canonical tags
