@@ -72,10 +72,10 @@ const Header = () => {
               <OptimizedImage 
                 src="/images/logo.png" 
                 alt="Quiet Strength Logo" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 width={64}
                 height={64}
-                priority={true} // Logo should load immediately
+                priority={true}
                 sizes="64px"
               />
             </div>
