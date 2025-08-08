@@ -32,41 +32,80 @@ function generateHTMLWithCanonical(url, title, description) {
   <meta property="og:type" content="website" />
   <title>${title}</title>
   <script>
-    // Check if this is the SPA version (?spa=1)
-    const urlParams = new URLSearchParams(window.location.search);
-    const isSpaVersion = urlParams.has('spa');
-    
-    if (!isSpaVersion) {
-      // Static version - redirect to SPA
-      document.write('<meta http-equiv="refresh" content="0;url=' + window.location.href + '?spa=1">');
-    } else {
-      // SPA version - clean URL and load React app
-      const cleanUrl = window.location.protocol + '//' + window.location.host + window.location.pathname;
-      window.history.replaceState({}, '', cleanUrl);
-      
-      // Load React app styles and scripts
-      document.write('<link href="/static/css/main.43dd6ae1.css" rel="stylesheet">');
-    }
+    // Safe SPA redirect script - prevents infinite loops, preserves fragments and query params
+    (function() {
+      try {
+        var href = window.location.href;
+        var hasSpaPParam = href.indexOf('spa=1') !== -1;
+        
+        if (hasSpaPParam) {
+          // Clean URL preserving hash and other query parameters
+          var url = new URL(href);
+          url.searchParams.delete('spa');
+          var cleanUrl = url.pathname + (url.search || '') + (url.hash || '');
+          
+          // Use history.replaceState to avoid page reload
+          if (window.history && window.history.replaceState) {
+            window.history.replaceState(null, '', cleanUrl);
+          } else {
+            // Fallback for older browsers - one-time redirect only
+            var clean = href.replace(/[?&]spa=1(&|$)/, '$1').replace(/[?&]$/, '');
+            if (clean !== href && !window.__REDIRECT_DONE__) {
+              window.__REDIRECT_DONE__ = true;
+              window.location.replace(clean);
+              return;
+            }
+          }
+          
+          // Load SPA resources for ?spa=1 visitors
+          document.write('<link href="/static/css/main.43dd6ae1.css" rel="stylesheet">');
+          window.__IS_SPA_VERSION__ = true;
+        } else {
+          // Static version - redirect to SPA version via meta refresh
+          var spaUrl = href + (href.indexOf('?') === -1 ? '?' : '&') + 'spa=1';
+          document.write('<meta http-equiv="refresh" content="0;url=' + spaUrl + '">');
+          window.__IS_SPA_VERSION__ = false;
+        }
+      } catch (e) {
+        // Error fallback - assume static version
+        console.warn('SPA redirect error:', e);
+        window.__IS_SPA_VERSION__ = false;
+      }
+    })();
   </script>
+  <!-- NoScript fallback for SEO -->
+  <noscript><meta http-equiv="refresh" content="0; url=${canonicalUrl}" /></noscript>
 </head>
 <body>
   <script>
-    if (!new URLSearchParams(window.location.search).has('spa')) {
-      // Static fallback content
-      document.write('<h1>${title}</h1>');
-      document.write('<p>Redirecting to interactive version...</p>');
-      document.write('<p><a href="' + window.location.href + '?spa=1">Continue to ${canonicalUrl}</a></p>');
-    } else {
-      // React app root
-      document.write('<noscript>You need to enable JavaScript to run this app.</noscript>');
-      document.write('<div id="root"></div>');
-      
-      // Load React bundle
-      var script = document.createElement('script');
-      script.src = '/static/js/main.a5cd8a7a.js';
-      script.async = false;
-      document.body.appendChild(script);
-    }
+    // Safe body content rendering
+    (function() {
+      try {
+        if (window.__IS_SPA_VERSION__) {
+          // SPA version - render app container
+          document.write('<noscript>You need to enable JavaScript to run this app.</noscript>');
+          document.write('<div id="root"></div>');
+          
+          // Load React bundle with error handling
+          var script = document.createElement('script');
+          script.src = '/static/js/main.2be25108.js';
+          script.async = false;
+          script.onerror = function() {
+            document.getElementById('root').innerHTML = '<h1>Loading Error</h1><p>Please <a href="/">refresh the page</a>.</p>';
+          };
+          document.body.appendChild(script);
+        } else {
+          // Static fallback version
+          document.write('<h1>${title}</h1>');
+          document.write('<p>Redirecting to interactive version...</p>');
+          document.write('<p><a href="${canonicalUrl}?spa=1">Continue to ${canonicalUrl}</a></p>');
+        }
+      } catch (e) {
+        // Ultimate fallback
+        document.write('<h1>${title}</h1>');
+        document.write('<p><a href="${canonicalUrl}">Visit Site</a></p>');
+      }
+    })();
   </script>
 </body>
 </html>`;
