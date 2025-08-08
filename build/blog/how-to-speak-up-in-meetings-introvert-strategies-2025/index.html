@@ -12,79 +12,44 @@
   <meta property="og:url" content="https://trueallyguide.com/blog/how-to-speak-up-in-meetings-introvert-strategies-2025" />
   <meta property="og:type" content="website" />
   <title>How To Speak Up In Meetings Introvert Strategies 2025 | Quiet Strength</title>
+  <link href="/static/css/main.43dd6ae1.css" rel="stylesheet">
   <script>
-    // Safe SPA redirect script - prevents infinite loops, preserves fragments and query params
+    // Clean any legacy ?spa=1 parameter if present (no redirect loops)
     (function() {
       try {
         var href = window.location.href;
-        var hasSpaPParam = href.indexOf('spa=1') !== -1;
-        
-        if (hasSpaPParam) {
-          // Clean URL preserving hash and other query parameters
+        if (href.indexOf('spa=1') !== -1) {
           var url = new URL(href);
           url.searchParams.delete('spa');
           var cleanUrl = url.pathname + (url.search || '') + (url.hash || '');
           
-          // Use history.replaceState to avoid page reload
           if (window.history && window.history.replaceState) {
             window.history.replaceState(null, '', cleanUrl);
-          } else {
-            // Fallback for older browsers - one-time redirect only
-            var clean = href.replace(/[?&]spa=1(&|$)/, '$1').replace(/[?&]$/, '');
-            if (clean !== href && !window.__REDIRECT_DONE__) {
-              window.__REDIRECT_DONE__ = true;
-              window.location.replace(clean);
-              return;
-            }
           }
-          
-          // Load SPA resources for ?spa=1 visitors
-          document.write('<link href="/static/css/main.43dd6ae1.css" rel="stylesheet">');
-          window.__IS_SPA_VERSION__ = true;
-        } else {
-          // Static version - redirect to SPA version via meta refresh
-          var spaUrl = href + (href.indexOf('?') === -1 ? '?' : '&') + 'spa=1';
-          document.write('<meta http-equiv="refresh" content="0;url=' + spaUrl + '">');
-          window.__IS_SPA_VERSION__ = false;
         }
       } catch (e) {
-        // Error fallback - assume static version
-        console.warn('SPA redirect error:', e);
-        window.__IS_SPA_VERSION__ = false;
+        // Silent fallback - don't break the site
       }
     })();
   </script>
-  <!-- NoScript fallback for SEO -->
-  <noscript><meta http-equiv="refresh" content="0; url=https://trueallyguide.com/blog/how-to-speak-up-in-meetings-introvert-strategies-2025" /></noscript>
 </head>
 <body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  
   <script>
-    // Safe body content rendering
+    // Load React bundle with error handling
     (function() {
       try {
-        if (window.__IS_SPA_VERSION__) {
-          // SPA version - render app container
-          document.write('<noscript>You need to enable JavaScript to run this app.</noscript>');
-          document.write('<div id="root"></div>');
-          
-          // Load React bundle with error handling
-          var script = document.createElement('script');
-          script.src = '/static/js/main.2be25108.js';
-          script.async = false;
-          script.onerror = function() {
-            document.getElementById('root').innerHTML = '<h1>Loading Error</h1><p>Please <a href="/">refresh the page</a>.</p>';
-          };
-          document.body.appendChild(script);
-        } else {
-          // Static fallback version
-          document.write('<h1>How To Speak Up In Meetings Introvert Strategies 2025 | Quiet Strength</h1>');
-          document.write('<p>Redirecting to interactive version...</p>');
-          document.write('<p><a href="https://trueallyguide.com/blog/how-to-speak-up-in-meetings-introvert-strategies-2025?spa=1">Continue to https://trueallyguide.com/blog/how-to-speak-up-in-meetings-introvert-strategies-2025</a></p>');
-        }
+        var script = document.createElement('script');
+        script.src = '/static/js/main.2be25108.js';
+        script.async = false;
+        script.onerror = function() {
+          document.getElementById('root').innerHTML = '<h1>Loading Error</h1><p>Please <a href="/">refresh the page</a>.</p>';
+        };
+        document.body.appendChild(script);
       } catch (e) {
-        // Ultimate fallback
-        document.write('<h1>How To Speak Up In Meetings Introvert Strategies 2025 | Quiet Strength</h1>');
-        document.write('<p><a href="https://trueallyguide.com/blog/how-to-speak-up-in-meetings-introvert-strategies-2025">Visit Site</a></p>');
+        document.getElementById('root').innerHTML = '<h1>How To Speak Up In Meetings Introvert Strategies 2025 | Quiet Strength</h1><p><a href="https://trueallyguide.com/blog/how-to-speak-up-in-meetings-introvert-strategies-2025">Continue to site</a></p>';
       }
     })();
   </script>
