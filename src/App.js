@@ -4,6 +4,7 @@ import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { useDynamicSEO } from './hooks/useDynamicSEO';
 
 // Lazy load all page components
 const HomePage = React.lazy(() => import('./pages/HomePage'));
@@ -14,6 +15,9 @@ const QuietConfidenceBook = React.lazy(() => import('./pages/books/QuietConfiden
 const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 
 function App() {
+  // Initialize dynamic SEO updates for client-side navigation
+  useDynamicSEO();
+  
   return (
     <div className="bg-brand-light">
       <Header />

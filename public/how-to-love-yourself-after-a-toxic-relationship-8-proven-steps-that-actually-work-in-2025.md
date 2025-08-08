@@ -2,6 +2,8 @@
 title: "How to Love Yourself After a Toxic Relationship: 8 Proven Steps That Actually Work in 2025"
 slug: "how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025"
 date: "2025-07-24"
+datePublished: "2025-07-24"
+dateModified: "2025-07-24"
 category: "Relationships & Dating"
 description: "Learn how to love yourself after a toxic relationship with expert-backed strategies. Discover 8 proven steps to rebuild self-worth and find inner peace in 2025."
 canonical: "https://trueallyguide.com/blog/how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025"
@@ -9,6 +11,12 @@ readTime: "14 min read"
 image: "/images/confident-woman-future-empowerment.png"
 author: "Marica Šinko"
 keywords: ["toxic relationship recovery", "self love after abuse", "relationship healing", "self worth rebuilding", "emotional recovery", "healthy boundaries", "self compassion", "toxic relationship recovery"]
+ogTitle: "How to Love Yourself After a Toxic Relationship: 8 Proven Steps"
+ogDescription: "Expert-backed strategies to rebuild self-worth and find inner peace after toxic relationships. Start your healing journey today."
+ogImage: "/images/confident-woman-future-empowerment.png"
+twitterTitle: "How to Love Yourself After a Toxic Relationship: 8 Steps That Work"
+twitterDescription: "Rebuild your self-worth with these proven strategies for healing after toxic relationships."
+twitterImage: "/images/confident-woman-future-empowerment.png"
 ---
 
 Have you ever looked in the mirror after a toxic relationship and wondered who you've become? If you're struggling with how to love yourself after a toxic relationship, you're not alone. Research from the National Intimate Partner and Sexual Violence Survey shows that 1 in 4 women and 1 in 10 men experience intimate partner violence, with emotional abuse being even more common.

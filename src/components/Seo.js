@@ -2,11 +2,15 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { getCanonicalUrl } from '../lib/seo/getCanonicalUrl';
+import { useDynamicSEO } from '../hooks/useDynamicSEO';
 
 const Seo = ({ title, description, type = 'website', path, article, book, person, breadcrumbs }) => {
   const location = useLocation();
   const siteName = 'Quiet Strength';
   const baseUrl = 'https://trueallyguide.com';
+  
+  // Use dynamic SEO hook for client-side updates
+  useDynamicSEO();
   
   // Use the provided path or automatically detect from current location
   const currentPath = path || location.pathname + location.search;
@@ -22,16 +26,32 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
   if (type === 'article' && article) {
     schema.push({
       ...baseSchema,
-      '@type': 'Article',
+      '@type': 'BlogPosting',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': canonicalUrl
+      },
       headline: article.title,
+      description: description,
+      image: article.image ? [`${baseUrl}${article.image}`] : [`${baseUrl}/images/logo.png`],
       author: {
         '@type': 'Person',
-        name: article.authorName,
+        name: article.authorName || 'Marica Šinko',
         url: 'https://trueallyguide.com/author/marica-sinko',
       },
+      publisher: {
+        '@type': 'Organization',
+        name: siteName,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${baseUrl}/images/logo.png`
+        }
+      },
       datePublished: article.datePublished,
-      image: `${baseUrl}${article.image}`,
-      description: description,
+      dateModified: article.dateModified || article.datePublished,
+      ...(article.readTime && { timeRequired: article.readTime }),
+      ...(article.keywords && { keywords: Array.isArray(article.keywords) ? article.keywords : article.keywords.split(',').map(k => k.trim()) }),
+      ...(article.category && { articleSection: article.category })
     });
   } else if (type === 'book' && book) {
     schema.push({
@@ -106,18 +126,45 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
       <link rel="canonical" href={canonicalUrl} />
 
       {/* Open Graph */}
-      <meta property="og:title" content={`${title} | ${siteName}`} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={article?.ogTitle || `${title} | ${siteName}`} />
+      <meta property="og:description" content={article?.ogDescription || description} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={siteName} />
-      {article && <meta property="og:image" content={`${baseUrl}${article.image}`} />}
+      <meta property="og:locale" content="en_US" />
+      {(article?.ogImage || article?.image) && (
+        <>
+          <meta property="og:image" content={`${baseUrl}${article.ogImage || article.image}`} />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <meta property="og:image:alt" content={article?.ogTitle || title} />
+        </>
+      )}
+      {type === 'article' && article && (
+        <>
+          <meta property="article:published_time" content={article.datePublished} />
+          {article.dateModified && <meta property="article:modified_time" content={article.dateModified} />}
+          <meta property="article:author" content={article.authorName || 'Marica Šinko'} />
+          {article.category && <meta property="article:section" content={article.category} />}
+          {article.keywords && article.keywords.map((tag, index) => 
+            <meta key={index} property="article:tag" content={tag.trim()} />
+          )}
+        </>
+      )}
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={`${title} | ${siteName}`} />
-      <meta name="twitter:description" content={description} />
-      {article && <meta name="twitter:image" content={`${baseUrl}${article.image}`} />}
+      <meta name="twitter:site" content="@QuietStrengthGuide" />
+      <meta name="twitter:creator" content="@MaricaSinko" />
+      <meta name="twitter:title" content={article?.twitterTitle || article?.ogTitle || `${title} | ${siteName}`} />
+      <meta name="twitter:description" content={article?.twitterDescription || article?.ogDescription || description} />
+      <meta name="twitter:url" content={url} />
+      {(article?.twitterImage || article?.ogImage || article?.image) && (
+        <>
+          <meta name="twitter:image" content={`${baseUrl}${article.twitterImage || article.ogImage || article.image}`} />
+          <meta name="twitter:image:alt" content={article?.twitterTitle || article?.ogTitle || title} />
+        </>
+      )}
 
       {/* JSON-LD Schema */}
       <script type="application/ld+json">{JSON.stringify(schema.length > 1 ? schema : schema[0])}</script>

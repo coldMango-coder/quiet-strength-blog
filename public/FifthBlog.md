@@ -2,6 +2,8 @@
 title: "How to Say No Without Guilt: Real-Life Scripts for Work, Family & Friends"
 slug: "how-to-say-no-without-guilt"
 date: "2025-07-18"
+datePublished: "2025-07-18"
+dateModified: "2025-07-18"
 category: "Self-Development"
 description: "Learn how to say no without guilt. Real scripts for work, family & friends + emotional aftercare. Free 20 Script PDF."
 canonical: "https://trueallyguide.com/blog/how-to-say-no-without-guilt"
@@ -9,6 +11,12 @@ readTime: "9 min read"
 image: "/images/sayingNowithoutGuiltimage.png"
 author: "Marica Šinko"
 keywords: ["how to say no", "boundary setting", "saying no without guilt", "people pleasing recovery", "healthy boundaries"]
+ogTitle: "How to Say No Without Guilt: Real-Life Scripts That Work"
+ogDescription: "Master the art of saying no with confidence. Get practical scripts for work, family & friends plus emotional aftercare strategies."
+ogImage: "/images/sayingNowithoutGuiltimage.png"
+twitterTitle: "Say No Without Guilt: Real Scripts for Every Situation"
+twitterDescription: "Practical scripts and strategies to set boundaries confidently in work, family, and social situations."
+twitterImage: "/images/sayingNowithoutGuiltimage.png"
 ---
 
 If you're reading this, chances are you've found yourself saying "yes" when every fiber of your being wanted to say "no." Maybe it was your boss asking you to take on another project when you're already drowning, or your family expecting you to host the holidays again. Learning how to say no without guilt isn't about becoming selfish—it's about protecting your energy, time, and mental health so you can show up fully for what truly matters.
