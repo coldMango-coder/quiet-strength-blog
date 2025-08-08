@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { useDynamicSEO } from './hooks/useDynamicSEO';
+import { useDevCanonicalFallback } from './hooks/useDevCanonicalFallback';
 
 // Lazy load all page components
 const HomePage = React.lazy(() => import('./pages/HomePage'));
@@ -17,6 +18,9 @@ const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 function App() {
   // Initialize dynamic SEO updates for client-side navigation
   useDynamicSEO();
+  
+  // DEV-ONLY: Ensure canonical tags exist before React hydration
+  useDevCanonicalFallback();
   
   return (
     <div className="bg-brand-light">

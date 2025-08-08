@@ -8,6 +8,14 @@
 
 const fs = require('fs');
 const path = require('path');
+const {
+  getBlogPostMetadata: getEnhancedBlogPostMetadata,
+  getCategoryMetadata,
+  generateBlogPostSchema,
+  generateCategorySchema,
+  generateHomepageSchema,
+  generateBlogListingSchema
+} = require('./enhanced-metadata-extractor');
 
 const BASE_URL = 'https://trueallyguide.com';
 const BUILD_DIR = path.join(__dirname, '../build');
@@ -30,15 +38,100 @@ function getAssetManifest() {
   };
 }
 
-// Enhanced template for generating static HTML with correct canonical tag and dynamic bundles
-function generateHTMLWithCanonical(url, title, description, assets) {
+// Enhanced template for generating static HTML with comprehensive SEO and schema.org structured data
+function generateHTMLWithMetadata(url, pageType, routeData, assets) {
   const canonicalUrl = url === BASE_URL ? `${BASE_URL}/` : url;
   const cssFile = assets.files['main.css'] || '/static/css/main.43dd6ae1.css';
   const jsFile = assets.files['main.js'] || '/static/js/main.32b1b242.js';
   
-  // Determine content type for better meta tags
-  const isArticle = url.includes('/blog/') && url !== `${BASE_URL}/blog`;
-  const ogType = isArticle ? 'article' : 'website';
+  let metadata, schema;
+  
+  // Get metadata and schema based on page type
+  switch (pageType) {
+    case 'homepage':
+      metadata = {
+        title: 'Quiet Strength – Self-Help & Productivity for Introverted Women',
+        description: 'Actionable articles, e-books, and courses that help introverted women build confidence, prevent burnout, and thrive on their own terms.',
+        image: `${BASE_URL}/images/logo.png`,
+        ogType: 'website',
+        keywords: ['self-help', 'introvert', 'confidence', 'personal development', 'women empowerment']
+      };
+      schema = generateHomepageSchema();
+      break;
+      
+    case 'blog-listing':
+      metadata = {
+        title: 'Blog | Quiet Strength',
+        description: 'Self-help articles and guides for introverted women seeking to build confidence and prevent burnout.',
+        image: `${BASE_URL}/images/logo.png`,
+        ogType: 'website',
+        keywords: ['blog', 'self-help', 'introvert', 'articles']
+      };
+      schema = generateBlogListingSchema();
+      break;
+      
+    case 'blog-post':
+      const slug = routeData.slug;
+      const postMetadata = getEnhancedBlogPostMetadata(slug);
+      metadata = {
+        title: `${postMetadata.title} | Quiet Strength`,
+        description: postMetadata.description,
+        image: postMetadata.image,
+        ogType: 'article',
+        keywords: postMetadata.keywords,
+        datePublished: postMetadata.datePublished,
+        dateModified: postMetadata.dateModified,
+        author: postMetadata.author,
+        category: postMetadata.category,
+        readTime: postMetadata.readTime
+      };
+      schema = generateBlogPostSchema(canonicalUrl, postMetadata);
+      break;
+      
+    case 'category':
+      const categorySlug = routeData.categorySlug;
+      const categoryMetadata = getCategoryMetadata(categorySlug);
+      metadata = {
+        title: `${categoryMetadata.name} Articles | Quiet Strength`,
+        description: categoryMetadata.description,
+        image: categoryMetadata.image,
+        ogType: 'website',
+        keywords: ['category', categoryMetadata.name.toLowerCase(), 'articles']
+      };
+      schema = generateCategorySchema(categoryMetadata);
+      break;
+      
+    default:
+      metadata = {
+        title: 'Quiet Strength',
+        description: 'Self-help and productivity for introverted women.',
+        image: `${BASE_URL}/images/logo.png`,
+        ogType: 'website',
+        keywords: ['self-help', 'introvert']
+      };
+      schema = { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Quiet Strength', url: canonicalUrl };
+  }
+  
+  // Generate structured data JSON
+  const structuredData = Array.isArray(schema) ? schema : [schema];
+  const jsonLdScript = structuredData.map(data => 
+    `<script type="application/ld+json">${JSON.stringify(data, null, 0)}</script>`
+  ).join('\n  ');
+  
+  // Generate article-specific meta tags for blog posts
+  let articleMetaTags = '';
+  if (pageType === 'blog-post' && metadata.datePublished) {
+    articleMetaTags = `
+  <!-- Article-specific meta tags -->
+  <meta property="article:published_time" content="${metadata.datePublished}" />
+  <meta property="article:modified_time" content="${metadata.dateModified}" />
+  <meta property="article:author" content="${metadata.author.name}" />
+  <meta property="article:section" content="${metadata.category}" />
+  ${metadata.keywords.map(keyword => `<meta property="article:tag" content="${keyword}" />`).join('\n  ')}`;
+  }
+  
+  // Generate keywords meta tag
+  const keywordsTag = metadata.keywords ? `<meta name="keywords" content="${metadata.keywords.join(', ')}" />` : '';
   
   return `<!DOCTYPE html>
 <html lang="en">
@@ -49,35 +142,55 @@ function generateHTMLWithCanonical(url, title, description, assets) {
   <meta name="theme-color" content="#C05621" />
   <meta name="author" content="Marica Šinko" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  <meta name="description" content="${description}" />
+  <meta name="description" content="${metadata.description}" />
+  ${keywordsTag}
   
-  <!-- Server-side canonical URL - NO hardcoding, route-specific -->
+  <!-- Server-side canonical URL - Exact match to live URL -->
   <link rel="canonical" href="${canonicalUrl}" />
   
   <!-- Enhanced Open Graph tags -->
-  <meta property="og:title" content="${title}" />
-  <meta property="og:description" content="${description}" />
+  <meta property="og:title" content="${metadata.title}" />
+  <meta property="og:description" content="${metadata.description}" />
   <meta property="og:url" content="${canonicalUrl}" />
-  <meta property="og:type" content="${ogType}" />
+  <meta property="og:type" content="${metadata.ogType}" />
   <meta property="og:site_name" content="Quiet Strength" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:image" content="https://trueallyguide.com/images/logo.png" />
+  <meta property="og:image" content="${metadata.image}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="${title}" />
+  <meta property="og:image:alt" content="${metadata.title}" />
+  <meta property="og:image:type" content="image/jpeg" />
+  ${articleMetaTags}
   
   <!-- Enhanced Twitter Card tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@QuietStrengthGuide" />
   <meta name="twitter:creator" content="@MaricaSinko" />
-  <meta name="twitter:title" content="${title}" />
-  <meta name="twitter:description" content="${description}" />
+  <meta name="twitter:title" content="${metadata.title}" />
+  <meta name="twitter:description" content="${metadata.description}" />
   <meta name="twitter:url" content="${canonicalUrl}" />
-  <meta name="twitter:image" content="https://trueallyguide.com/images/logo.png" />
-  <meta name="twitter:image:alt" content="${title}" />
+  <meta name="twitter:image" content="${metadata.image}" />
+  <meta name="twitter:image:alt" content="${metadata.title}" />
   
-  <title>${title}</title>
+  <!-- Additional SEO meta tags -->
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="distribution" content="global" />
+  <meta name="rating" content="general" />
+  <meta name="application-name" content="Quiet Strength" />
+  
+  <title>${metadata.title}</title>
   <link href="${cssFile}" rel="stylesheet">
+  
+  <!-- Schema.org structured data for rich snippets -->
+  ${jsonLdScript}
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" as="image" href="/images/logo.avif" type="image/avif">
+  <link rel="preload" as="image" href="/images/logo.webp" type="image/webp">
+  
+  <!-- DNS prefetch for external resources -->
+  <link rel="dns-prefetch" href="//trueallyguide.com">
   
   <!-- Client-side URL cleanup (remove tracking params) -->
   <script>
@@ -123,7 +236,7 @@ function generateHTMLWithCanonical(url, title, description, assets) {
         };
         document.body.appendChild(script);
       } catch (e) {
-        document.getElementById('root').innerHTML = '<h1>${title}</h1><p><a href="${canonicalUrl}">Continue to site</a></p>';
+        document.getElementById('root').innerHTML = '<h1>${metadata.title}</h1><p><a href="${canonicalUrl}">Continue to site</a></p>';
       }
     })();
   </script>
@@ -181,43 +294,29 @@ function getBlogPostMetadata(slug) {
   };
 }
 
-// Map route paths to page metadata
-function getPageMetadata(path) {
-  if (path === '/' || path === BASE_URL || path === `${BASE_URL}/`) {
-    return {
-      title: 'Quiet Strength – Self-Help & Productivity for Introverted Women',
-      description: 'Actionable articles, e-books, and courses that help introverted women build confidence, prevent burnout, and thrive on their own terms.'
-    };
+// Determine page type and route data for enhanced metadata generation
+function getPageTypeAndData(url) {
+  const path = url.replace(BASE_URL, '') || '/';
+  
+  if (path === '/') {
+    return { pageType: 'homepage', routeData: {} };
   }
   
-  if (path.includes('/blog/') && path !== `${BASE_URL}/blog`) {
+  if (path === '/blog') {
+    return { pageType: 'blog-listing', routeData: {} };
+  }
+  
+  if (path.includes('/blog/') && path !== '/blog') {
     const slug = path.split('/blog/')[1];
-    return getBlogPostMetadata(slug);
+    return { pageType: 'blog-post', routeData: { slug } };
   }
   
   if (path.includes('/category/')) {
-    const category = path.split('/category/')[1];
-    const title = category.replace(/-/g, ' ')
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-    return {
-      title: `${title} Articles | Quiet Strength`,
-      description: `Browse articles about ${title.toLowerCase()} for introverted women seeking confidence and personal growth.`
-    };
+    const categorySlug = path.split('/category/')[1];
+    return { pageType: 'category', routeData: { categorySlug } };
   }
   
-  if (path.includes('/blog')) {
-    return {
-      title: 'Blog | Quiet Strength',
-      description: 'Self-help articles and guides for introverted women seeking to build confidence and prevent burnout.'
-    };
-  }
-  
-  return {
-    title: 'Quiet Strength',
-    description: 'Self-help and productivity for introverted women.'
-  };
+  return { pageType: 'page', routeData: { path } };
 }
 
 async function generateStaticPages() {
@@ -246,11 +345,11 @@ async function generateStaticPages() {
     
     console.log(`📋 Found ${urls.length} URLs in sitemap`);
     
-    // Generate static HTML for each route
+    // Generate static HTML for each route with comprehensive SEO and schema.org
     for (const url of urls) {
       const routePath = url.replace(BASE_URL, '') || '/';
-      const metadata = getPageMetadata(url);
-      const html = generateHTMLWithCanonical(url, metadata.title, metadata.description, assets);
+      const { pageType, routeData } = getPageTypeAndData(url);
+      const html = generateHTMLWithMetadata(url, pageType, routeData, assets);
       
       // Determine output file path
       let outputPath;
@@ -265,7 +364,7 @@ async function generateStaticPages() {
       // Write the static HTML file
       await fs.promises.writeFile(outputPath, html, 'utf8');
       
-      console.log(`✅ Generated ${routePath} → ${path.relative(BUILD_DIR, outputPath)}`);
+      console.log(`✅ Generated ${routePath} (${pageType}) → ${path.relative(BUILD_DIR, outputPath)}`);
     }
     
     console.log(`🎉 Successfully generated ${urls.length} static pages with server-side canonical URLs`);
