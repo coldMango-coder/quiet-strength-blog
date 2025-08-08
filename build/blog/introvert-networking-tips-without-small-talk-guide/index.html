@@ -12,11 +12,42 @@
   <meta property="og:url" content="https://trueallyguide.com/blog/introvert-networking-tips-without-small-talk-guide" />
   <meta property="og:type" content="website" />
   <title>Introvert Networking Tips Without Small Talk Guide | Quiet Strength</title>
-  <meta http-equiv="refresh" content="0;url=https://trueallyguide.com/blog/introvert-networking-tips-without-small-talk-guide?spa=1">
+  <script>
+    // Check if this is the SPA version (?spa=1)
+    const urlParams = new URLSearchParams(window.location.search);
+    const isSpaVersion = urlParams.has('spa');
+    
+    if (!isSpaVersion) {
+      // Static version - redirect to SPA
+      document.write('<meta http-equiv="refresh" content="0;url=' + window.location.href + '?spa=1">');
+    } else {
+      // SPA version - clean URL and load React app
+      const cleanUrl = window.location.protocol + '//' + window.location.host + window.location.pathname;
+      window.history.replaceState({}, '', cleanUrl);
+      
+      // Load React app styles and scripts
+      document.write('<link href="/static/css/main.43dd6ae1.css" rel="stylesheet">');
+    }
+  </script>
 </head>
 <body>
-  <h1>Introvert Networking Tips Without Small Talk Guide | Quiet Strength</h1>
-  <p>Redirecting to interactive version...</p>
-  <p><a href="https://trueallyguide.com/blog/introvert-networking-tips-without-small-talk-guide?spa=1">Continue to https://trueallyguide.com/blog/introvert-networking-tips-without-small-talk-guide</a></p>
+  <script>
+    if (!new URLSearchParams(window.location.search).has('spa')) {
+      // Static fallback content
+      document.write('<h1>Introvert Networking Tips Without Small Talk Guide | Quiet Strength</h1>');
+      document.write('<p>Redirecting to interactive version...</p>');
+      document.write('<p><a href="' + window.location.href + '?spa=1">Continue to https://trueallyguide.com/blog/introvert-networking-tips-without-small-talk-guide</a></p>');
+    } else {
+      // React app root
+      document.write('<noscript>You need to enable JavaScript to run this app.</noscript>');
+      document.write('<div id="root"></div>');
+      
+      // Load React bundle
+      var script = document.createElement('script');
+      script.src = '/static/js/main.a5cd8a7a.js';
+      script.async = false;
+      document.body.appendChild(script);
+    }
+  </script>
 </body>
 </html>
