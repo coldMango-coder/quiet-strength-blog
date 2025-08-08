@@ -10,6 +10,7 @@
     "framer-motion": "^12.23.5",
     "fs-extra": "^11.3.1",
     "globby": "^14.1.0",
+    "jsdom": "^26.1.0",
     "puppeteer": "^24.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -40,7 +41,9 @@
     "assets:test": "node scripts/test-assets.js",
     "ci:validate-assets": "node scripts/ci-asset-validation.js",
     "prerender": "node scripts/prerender.mjs",
-    "test:prerender": "playwright test tests/prerender.spec.js"
+    "test:prerender": "playwright test tests/prerender.spec.js",
+    "validate:canonicals": "node scripts/validate-canonical-urls.js",
+    "seo:validate": "npm run build && npm run validate:canonicals"
   },
   "eslintConfig": {
     "extends": [

@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 /**
- * Custom hook for dynamic SEO meta tag updates
+ * Custom hook for dynamic SEO meta tag updates during SPA navigation
+ * Ensures canonical URL always matches current page URL exactly
  * Updates canonical, OG, and Twitter meta tags on route changes
  * Strips tracking parameters from canonical URLs
  */
@@ -10,19 +11,28 @@ export const useDynamicSEO = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const updateSEO = () => {
+    const updateCanonical = () => {
       try {
         const loc = window.location;
         
-        // Clean URL by removing tracking parameters
+        // Build clean canonical URL by removing tracking parameters
         const url = new URL(loc.href);
-        const trackingParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'ref', 'gclid', 'fbclid'];
+        const trackingParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'ref', 'gclid', 'fbclid', 'spa'];
+        
         trackingParams.forEach(param => url.searchParams.delete(param));
         
-        const cleanUrl = url.toString();
-        const canonicalUrl = cleanUrl.replace(/\/+$/, '') || cleanUrl; // Remove trailing slashes except root
+        // Create clean canonical URL - absolute URL matching current page exactly
+        let cleanUrl = url.origin + url.pathname;
+        if (url.search && !trackingParams.some(param => url.search.includes(param))) {
+          cleanUrl += url.search;
+        }
+        
+        // Remove trailing slash except for root
+        if (cleanUrl !== url.origin + '/' && cleanUrl.endsWith('/')) {
+          cleanUrl = cleanUrl.slice(0, -1);
+        }
 
-        // Update canonical link
+        // Helper functions to update/create tags
         const setOrUpdateLink = (rel, href) => {
           let tag = document.querySelector(`link[rel='${rel}']`);
           if (!tag) {
@@ -33,7 +43,6 @@ export const useDynamicSEO = () => {
           tag.setAttribute('href', href);
         };
 
-        // Update meta tags
         const setOrUpdateMeta = (selector, attrName, attrValue, content) => {
           let tag = document.querySelector(selector);
           if (!tag) {
@@ -44,34 +53,51 @@ export const useDynamicSEO = () => {
           tag.setAttribute('content', content);
         };
 
-        // Update canonical URL
-        setOrUpdateLink('canonical', canonicalUrl);
+        // Update canonical URL - most critical for SEO
+        setOrUpdateLink('canonical', cleanUrl);
 
-        // Update Open Graph URL
-        setOrUpdateMeta('meta[property="og:url"]', 'property', 'og:url', canonicalUrl);
+        // Update Open Graph URL to match canonical
+        setOrUpdateMeta('meta[property="og:url"]', 'property', 'og:url', cleanUrl);
 
-        // Update Twitter URL
-        setOrUpdateMeta('meta[name="twitter:url"]', 'name', 'twitter:url', canonicalUrl);
+        // Update Twitter URL to match canonical  
+        setOrUpdateMeta('meta[name="twitter:url"]', 'name', 'twitter:url', cleanUrl);
 
         // Update Open Graph type based on path
-        const ogType = location.pathname.includes('/blog/') ? 'article' : 'website';
+        const isArticle = location.pathname.includes('/blog/') && location.pathname !== '/blog';
+        const ogType = isArticle ? 'article' : 'website';
         setOrUpdateMeta('meta[property="og:type"]', 'property', 'og:type', ogType);
 
-        // Add structured data script update trigger
-        window.dispatchEvent(new CustomEvent('seo-updated', { 
-          detail: { canonicalUrl, path: location.pathname } 
+        // Clean browser URL if tracking params were present
+        if (loc.href !== cleanUrl && window.history && window.history.replaceState) {
+          const urlObj = new URL(cleanUrl);
+          const newPath = urlObj.pathname + urlObj.search + urlObj.hash;
+          window.history.replaceState(null, '', newPath);
+        }
+
+        // Debug log for development
+        if (process.env.NODE_ENV === 'development') {
+          console.log('📍 SEO updated:', { 
+            canonical: cleanUrl, 
+            type: ogType,
+            route: location.pathname 
+          });
+        }
+
+        // Dispatch event for other components that might need to know about SEO updates
+        window.dispatchEvent(new CustomEvent('canonical-updated', { 
+          detail: { canonicalUrl: cleanUrl, path: location.pathname, type: ogType } 
         }));
 
       } catch (error) {
-        console.error('SEO update error:', error);
+        console.error('❌ SEO update error:', error);
       }
     };
 
-    // Update SEO on route change
-    updateSEO();
+    // Update canonical on route change (critical for SPA navigation)
+    updateCanonical();
 
-    // Also update on popstate (back/forward navigation)
-    const handlePopstate = () => updateSEO();
+    // Also update on browser navigation events
+    const handlePopstate = () => updateCanonical();
     window.addEventListener('popstate', handlePopstate);
 
     return () => {
