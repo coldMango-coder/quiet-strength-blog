@@ -1,2 +1,7 @@
-# SPA routing - redirect all routes to index.html
-/*    /index.html   200
+# Force serve static HTML files instead of React SPA
+/blog/how-to-stop-attracting-narcissists-9-proven-strategies/ /blog/how-to-stop-attracting-narcissists-9-proven-strategies/index.html 200\!
+/blog/introvert-networking-tips-without-small-talk-guide/ /blog/introvert-networking-tips-without-small-talk-guide/index.html 200\!
+/blog/* /blog/:splat/index.html 200\!
+/category/* /category/:splat/index.html 200\!
+/blog /blog/index.html 200\!
+/* /index.html 200

@@ -1,70 +1,7 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "build/**",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/build/static/$1",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/blog/how-to-stop-attracting-narcissists-9-proven-strategies/?",
-      "dest": "/build/blog/how-to-stop-attracting-narcissists-9-proven-strategies/index.html"
-    },
-    {
-      "src": "/blog/introvert-networking-tips-without-small-talk-guide/?",
-      "dest": "/build/blog/introvert-networking-tips-without-small-talk-guide/index.html"
-    },
-    {
-      "src": "/blog/([^/]+)/?",
-      "dest": "/build/blog/$1/index.html"
-    },
-    {
-      "src": "/category/([^/]+)/?",
-      "dest": "/build/category/$1/index.html"
-    },
-    {
-      "src": "/blog/?",
-      "dest": "/build/blog/index.html"
-    },
-    {
-      "src": "/sitemap.xml",
-      "dest": "/build/sitemap.xml",
-      "headers": {
-        "content-type": "application/xml"
-      }
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/build/index.html"
-    }
-  ],
-  "cleanUrls": true,
   "trailingSlash": true,
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        }
-      ]
-    }
-  ]
+  "cleanUrls": true,
+  "public": false,
+  "outputDirectory": "build"
 }
