@@ -104,22 +104,34 @@
   ],
   "rewrites": [
     {
+      "source": "/blog/(.*)/",
+      "destination": "/blog/$1/index.html"
+    },
+    {
       "source": "/blog/(.*)",
       "destination": "/blog/$1/index.html"
+    },
+    {
+      "source": "/category/(.*)/",
+      "destination": "/category/$1/index.html"
     },
     {
       "source": "/category/(.*)",
       "destination": "/category/$1/index.html"
     },
     {
+      "source": "/blog/",
+      "destination": "/blog/index.html"
+    },
+    {
       "source": "/blog",
       "destination": "/blog/index.html"
     },
     {
-      "source": "/(.*)",
+      "source": "/",
       "destination": "/index.html"
     }
   ],
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": true
 }
