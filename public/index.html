@@ -39,11 +39,12 @@
     <link rel="preload" href="/fonts/charter-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/charter-bold.woff2" as="font" type="font/woff2" crossorigin> -->
     
-    <!-- Preload critical hero images for faster LCP - first blog post images -->
-    <link rel="preload" as="image" href="/images/confident-woman-standing-triumphantly-at-sunrise-representing-emotional-recovery-and-healing-from-narcissistic-abuse-manipulation-tactics.avif" type="image/avif" fetchpriority="high">
-    <link rel="preload" as="image" href="/images/confident-woman-standing-triumphantly-at-sunrise-representing-emotional-recovery-and-healing-from-narcissistic-abuse-manipulation-tactics.webp" type="image/webp" fetchpriority="high">
-    <link rel="preload" as="image" href="/images/logo.avif" type="image/avif">
-    <link rel="preload" as="image" href="/images/logo.webp" type="image/webp">
+    <!-- CRITICAL: Preload hero images immediately for perfect LCP -->
+    <link rel="preload" as="image" href="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.avif" type="image/avif" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/logo.avif" type="image/avif" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/logo.webp" type="image/webp" fetchpriority="high">
     
     <!-- Preconnect to own domain for faster resource loading -->
     <link rel="preconnect" href="https://trueallyguide.com" crossorigin>
@@ -86,22 +87,23 @@ header.sticky{background:#B44416}header.sticky.scrolled{background:#C65616}
 .opacity-0{opacity:0}.opacity-100{opacity:1}.animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1)infinite}
 .bg-gray-200{background-color:#e5e7eb}.w-8{width:2rem}.h-8{height:2rem}.text-gray-400{color:#9ca3af}
 .fill-current{fill:currentColor}.viewBox{viewBox:0 0 20 20}
-/* Optimize image loading for LCP and prevent CLS */
-.hero-image{max-width:400px;height:auto;aspect-ratio:1.5/1;min-height:267px}
-.logo-image{max-width:200px;height:auto;min-height:200px}
-/* Remove layout shift from images - fixed dimensions */
-img[src*="logo"]{width:32px;height:32px;object-fit:cover}
-img[src*="confident-woman"]{aspect-ratio:1.5/1;min-height:128px}
-/* Fixed aspect ratios for all blog images */
-.blog-image{aspect-ratio:1.5/1;object-fit:cover;border-radius:0.5rem}
-/* Fast loading placeholder with proper dimensions */
-.image-placeholder{background:#f3f4f6;border-radius:.5rem;min-height:200px;display:flex;align-items:center;justify-content:center}
-/* Hero section layout stability */
-.hero-container{min-height:600px;display:flex;flex-direction:column;justify-content:center;contain:layout style paint}
-/* Navigation height consistency */
-header.sticky{height:80px;display:flex;align-items:center;contain:layout style paint}
-/* Blog card image consistency */
-.blog-card-image{aspect-ratio:1.5/1;height:160px;object-fit:cover;border-radius:0.5rem;contain:layout style paint}
+/* CRITICAL: Prevent ALL layout shifts with fixed dimensions and aspect ratios */
+.hero-image{width:400px;height:267px;aspect-ratio:1.5/1;object-fit:cover;contain:layout size paint}
+.logo-image{width:32px;height:32px;contain:layout size paint}
+/* Explicit dimensions for all images to prevent CLS */
+img[src*="logo"]{width:32px!important;height:32px!important;object-fit:cover;contain:layout size}
+img[src*="confident-woman"]{aspect-ratio:1.5/1!important;contain:layout size;min-height:128px}
+.w-24{width:6rem!important;height:6rem!important;contain:layout size}
+.w-20{width:5rem!important;height:5rem!important;contain:layout size}
+.w-8{width:2rem!important;height:2rem!important;contain:layout size}
+/* Blog images with fixed aspect ratios */
+.blog-image{aspect-ratio:1.5/1!important;object-fit:cover;border-radius:0.5rem;contain:layout size paint}
+/* Fast loading with reserved space */
+.image-placeholder{background:#f3f4f6;border-radius:.5rem;min-height:200px;display:flex;align-items:center;justify-content:center;contain:layout size paint}
+/* Layout containers with containment */
+.hero-container{min-height:600px;display:flex;flex-direction:column;justify-content:center;contain:layout style size paint}
+header.sticky{height:80px;display:flex;align-items:center;contain:layout style size paint}
+.blog-card-image{aspect-ratio:1.5/1!important;height:160px;object-fit:cover;border-radius:0.5rem;contain:layout style size paint}
 /* Performance: GPU acceleration for smooth animations */
 .transform{will-change:transform;transform:translateZ(0)}.transition-all{will-change:transform,opacity;transform:translateZ(0)}
 /* Performance: Optimize expensive operations with hardware acceleration */

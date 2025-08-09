@@ -1,8 +1,26 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://trueallyguide.com/sitemap.xml
+# Sitemap reference with correct domain
+Sitemap: https://www.trueallyguide.com/sitemap.xml
 
+# Block non-public areas
 Disallow: /admin/
 Disallow: /private/
 Disallow: /.env
+Disallow: /build/
+Disallow: /node_modules/
+Disallow: /scripts/
+Disallow: /src/
+
+# Block development and testing files
+Disallow: *.test.js
+Disallow: *.spec.js
+Disallow: /reports/
+Disallow: /test-results/
+
+# Allow all other content
+Allow: /blog/
+Allow: /category/
+Allow: /images/
+Allow: /static/

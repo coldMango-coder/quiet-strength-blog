@@ -47,7 +47,8 @@
     "validate:canonicals:dev": "node validate-canonicals-dev.js",
     "validate:seo:enhanced": "node validate-enhanced-seo.js",
     "seo:validate": "npm run build && npm run validate:seo:enhanced",
-    "seo:validate:dev": "npm run validate:canonicals:dev"
+    "seo:validate:dev": "npm run validate:canonicals:dev",
+    "test:canonical-raw-html": "playwright test tests/canonical-raw-html.spec.js"
   },
   "eslintConfig": {
     "extends": [

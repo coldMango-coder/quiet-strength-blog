@@ -1,46 +1,102 @@
-<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="7.865358000000001">
-<testsuite name="canonical-urls-simple.spec.js" timestamp="2025-08-07T14:37:21.815Z" hostname="chromium" tests="1" failures="1" skipped="0" time="4.784" errors="0">
-<testcase name="Canonical URL Tests - Simple › canonical URLs test with chromium only" classname="canonical-urls-simple.spec.js" time="4.784">
-<failure message="canonical-urls-simple.spec.js:7:3 canonical URLs test with chromium only" type="FAILURE">
-<![CDATA[  [chromium] › canonical-urls-simple.spec.js:7:3 › Canonical URL Tests - Simple › canonical URLs test with chromium only 
-
-    Error: expect(received).toBe(expected) // Object.is equality
-
-    Expected: "https://trueallyguide.com/"
-    Received: "https://trueallyguide.com/testimonials/emily-r."
-
-      33 |         
-      34 |         const canonicalHref = await canonicalTags[0].getAttribute('href');
-    > 35 |         expect(canonicalHref).toBe(expected);
-         |                               ^
-      36 |         
-      37 |         console.log(`✓ ${path} → ${canonicalHref}`);
-      38 |       } catch (error) {
-        at C:\Users\Jurek2\Downloads\Project_WEB_01\tests\canonical-urls-simple.spec.js:35:31
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\canonical-urls-simple-Cano-0a53b-RLs-test-with-chromium-only-chromium\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ..\test-results\canonical-urls-simple-Cano-0a53b-RLs-test-with-chromium-only-chromium\error-context.md
-]]>
-</failure>
-<system-out>
-<![CDATA[Starting server...
-Testing /
-
-[[ATTACHMENT|canonical-urls-simple-Cano-0a53b-RLs-test-with-chromium-only-chromium\test-failed-1.png]]
-
-[[ATTACHMENT|canonical-urls-simple-Cano-0a53b-RLs-test-with-chromium-only-chromium\error-context.md]]
-]]>
-</system-out>
-<system-err>
-<![CDATA[✗ / failed: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
-
-Expected: [32m"https://trueallyguide.com/"[39m
-Received: [31m"https://trueallyguide.com/[7mtestimonials/emily-r.[27m"[39m
-]]>
-</system-err>
+<testsuites id="" name="" tests="45" failures="0" skipped="0" errors="0" time="8.777298">
+<testsuite name="canonical-raw-html.spec.js" timestamp="2025-08-09T23:34:13.239Z" hostname="chromium" tests="9" failures="0" skipped="0" time="1.218" errors="0">
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Homepage has correct canonical in server HTML" classname="canonical-raw-html.spec.js" time="0.182">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › First display item has self-canonical in server HTML" classname="canonical-raw-html.spec.js" time="0.187">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Second display item has self-canonical in server HTML" classname="canonical-raw-html.spec.js" time="0.192">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Blog listing page has correct canonical" classname="canonical-raw-html.spec.js" time="0.046">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Additional blog post has self-canonical" classname="canonical-raw-html.spec.js" time="0.046">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › All canonicals are absolute URLs with correct domain" classname="canonical-raw-html.spec.js" time="0.194">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Server HTML contains comprehensive meta tags" classname="canonical-raw-html.spec.js" time="0.051">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Canonical URLs match live URL patterns exactly" classname="canonical-raw-html.spec.js" time="0.139">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › No homepage canonical leakage on non-homepage pages" classname="canonical-raw-html.spec.js" time="0.181">
+</testcase>
+</testsuite>
+<testsuite name="canonical-raw-html.spec.js" timestamp="2025-08-09T23:34:13.239Z" hostname="firefox" tests="9" failures="0" skipped="0" time="1.233" errors="0">
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Homepage has correct canonical in server HTML" classname="canonical-raw-html.spec.js" time="0.174">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › First display item has self-canonical in server HTML" classname="canonical-raw-html.spec.js" time="0.183">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Second display item has self-canonical in server HTML" classname="canonical-raw-html.spec.js" time="0.178">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Blog listing page has correct canonical" classname="canonical-raw-html.spec.js" time="0.047">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Additional blog post has self-canonical" classname="canonical-raw-html.spec.js" time="0.048">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › All canonicals are absolute URLs with correct domain" classname="canonical-raw-html.spec.js" time="0.235">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Server HTML contains comprehensive meta tags" classname="canonical-raw-html.spec.js" time="0.05">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Canonical URLs match live URL patterns exactly" classname="canonical-raw-html.spec.js" time="0.128">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › No homepage canonical leakage on non-homepage pages" classname="canonical-raw-html.spec.js" time="0.19">
+</testcase>
+</testsuite>
+<testsuite name="canonical-raw-html.spec.js" timestamp="2025-08-09T23:34:13.239Z" hostname="webkit" tests="9" failures="0" skipped="0" time="1.295" errors="0">
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Homepage has correct canonical in server HTML" classname="canonical-raw-html.spec.js" time="0.188">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › First display item has self-canonical in server HTML" classname="canonical-raw-html.spec.js" time="0.176">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Second display item has self-canonical in server HTML" classname="canonical-raw-html.spec.js" time="0.169">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Blog listing page has correct canonical" classname="canonical-raw-html.spec.js" time="0.046">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Additional blog post has self-canonical" classname="canonical-raw-html.spec.js" time="0.051">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › All canonicals are absolute URLs with correct domain" classname="canonical-raw-html.spec.js" time="0.23">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Server HTML contains comprehensive meta tags" classname="canonical-raw-html.spec.js" time="0.058">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Canonical URLs match live URL patterns exactly" classname="canonical-raw-html.spec.js" time="0.172">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › No homepage canonical leakage on non-homepage pages" classname="canonical-raw-html.spec.js" time="0.205">
+</testcase>
+</testsuite>
+<testsuite name="canonical-raw-html.spec.js" timestamp="2025-08-09T23:34:13.239Z" hostname="Mobile Chrome" tests="9" failures="0" skipped="0" time="1.229" errors="0">
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Homepage has correct canonical in server HTML" classname="canonical-raw-html.spec.js" time="0.196">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › First display item has self-canonical in server HTML" classname="canonical-raw-html.spec.js" time="0.183">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Second display item has self-canonical in server HTML" classname="canonical-raw-html.spec.js" time="0.197">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Blog listing page has correct canonical" classname="canonical-raw-html.spec.js" time="0.05">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Additional blog post has self-canonical" classname="canonical-raw-html.spec.js" time="0.056">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › All canonicals are absolute URLs with correct domain" classname="canonical-raw-html.spec.js" time="0.189">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Server HTML contains comprehensive meta tags" classname="canonical-raw-html.spec.js" time="0.045">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Canonical URLs match live URL patterns exactly" classname="canonical-raw-html.spec.js" time="0.127">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › No homepage canonical leakage on non-homepage pages" classname="canonical-raw-html.spec.js" time="0.186">
+</testcase>
+</testsuite>
+<testsuite name="canonical-raw-html.spec.js" timestamp="2025-08-09T23:34:13.239Z" hostname="Mobile Safari" tests="9" failures="0" skipped="0" time="1.192" errors="0">
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Homepage has correct canonical in server HTML" classname="canonical-raw-html.spec.js" time="0.191">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › First display item has self-canonical in server HTML" classname="canonical-raw-html.spec.js" time="0.188">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Second display item has self-canonical in server HTML" classname="canonical-raw-html.spec.js" time="0.167">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Blog listing page has correct canonical" classname="canonical-raw-html.spec.js" time="0.044">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Additional blog post has self-canonical" classname="canonical-raw-html.spec.js" time="0.048">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › All canonicals are absolute URLs with correct domain" classname="canonical-raw-html.spec.js" time="0.187">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Server HTML contains comprehensive meta tags" classname="canonical-raw-html.spec.js" time="0.051">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › Canonical URLs match live URL patterns exactly" classname="canonical-raw-html.spec.js" time="0.133">
+</testcase>
+<testcase name="Raw HTML Canonical URLs (Server-Side) › No homepage canonical leakage on non-homepage pages" classname="canonical-raw-html.spec.js" time="0.183">
 </testcase>
 </testsuite>
 </testsuites>
