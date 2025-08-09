@@ -18,8 +18,8 @@ const BlogListPage = () => {
    : sortedBlogPosts;
 
   const canonicalUrl = selectedCategory
-    ? `https://trueallyguide.com/blog?category=${categorySlugMap[selectedCategory] || selectedCategory}`
-    : 'https://trueallyguide.com/blog';
+    ? `https://www.trueallyguide.com/blog?category=${categorySlugMap[selectedCategory] || selectedCategory}`
+    : 'https://www.trueallyguide.com/blog';
 
   return (
     <>

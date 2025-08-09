@@ -37,7 +37,7 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
       author: {
         '@type': 'Person',
         name: article.authorName || 'Marica Šinko',
-        url: 'https://trueallyguide.com/author/marica-sinko',
+        url: 'https://www.trueallyguide.com/author/marica-sinko',
       },
       publisher: {
         '@type': 'Organization',

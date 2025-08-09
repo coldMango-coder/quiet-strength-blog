@@ -22,7 +22,7 @@ const NormalizedLink = ({ to, href, children, ...props }) => {
   }
   
   // Check if this is an external link or special link type
-  const isExternal = normalizedHref.startsWith('http') && !normalizedHref.startsWith('https://trueallyguide.com');
+  const isExternal = normalizedHref.startsWith('http') && !normalizedHref.startsWith('https://www.trueallyguide.com');
   const isSpecial = normalizedHref.startsWith('mailto:') || 
                    normalizedHref.startsWith('tel:') || 
                    normalizedHref.startsWith('#');
@@ -38,8 +38,8 @@ const NormalizedLink = ({ to, href, children, ...props }) => {
   
   // Convert full URLs back to relative paths for React Router
   let routerPath = normalizedHref;
-  if (normalizedHref.startsWith('https://trueallyguide.com')) {
-    routerPath = normalizedHref.replace('https://trueallyguide.com', '') || '/';
+  if (normalizedHref.startsWith('https://www.trueallyguide.com')) {
+    routerPath = normalizedHref.replace('https://www.trueallyguide.com', '') || '/';
   }
   
   // Use React Router Link for internal navigation
