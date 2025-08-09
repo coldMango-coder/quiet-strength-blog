@@ -20,7 +20,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npx react-scripts start",
+    "start": "set BROWSER=1 && npx react-scripts start",
     "dev:canonical": "node dev-server.js",
     "build": "node build.js && node scripts/generate-static-pages.js",
     "build:no-prerender": "node build.js",

@@ -25,8 +25,7 @@ const NormalizedLink = ({ to, href, children, ...props }) => {
   const isExternal = normalizedHref.startsWith('http') && !normalizedHref.startsWith('https://trueallyguide.com');
   const isSpecial = normalizedHref.startsWith('mailto:') || 
                    normalizedHref.startsWith('tel:') || 
-                   normalizedHref.startsWith('#') || 
-                   normalizedHref.startsWith('javascript:');
+                   normalizedHref.startsWith('#');
   
   // Use regular anchor tag for external links and special links
   if (isExternal || isSpecial) {

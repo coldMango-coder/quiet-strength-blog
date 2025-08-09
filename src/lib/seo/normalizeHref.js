@@ -13,7 +13,7 @@ export function normalizeHref(href) {
     return href;
   }
   
-  if (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('#') || href.startsWith('javascript:')) {
+  if (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('#')) {
     return href;
   }
   
@@ -30,7 +30,7 @@ export function normalizeHref(href) {
   }
   
   // Remove query parameters and hash for normalization (but keep in final URL)
-  const [pathPart, queryAndHash] = path.split(/[?#]/);
+  const [pathPart] = path.split(/[?#]/);
   let normalizedPath = pathPart;
   
   // Convert to lowercase
