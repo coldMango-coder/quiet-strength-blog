@@ -1,5 +1,53 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "build/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/build/static/$1",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/blog/how-to-stop-attracting-narcissists-9-proven-strategies/?",
+      "dest": "/build/blog/how-to-stop-attracting-narcissists-9-proven-strategies/index.html"
+    },
+    {
+      "src": "/blog/introvert-networking-tips-without-small-talk-guide/?",
+      "dest": "/build/blog/introvert-networking-tips-without-small-talk-guide/index.html"
+    },
+    {
+      "src": "/blog/([^/]+)/?",
+      "dest": "/build/blog/$1/index.html"
+    },
+    {
+      "src": "/category/([^/]+)/?",
+      "dest": "/build/category/$1/index.html"
+    },
+    {
+      "src": "/blog/?",
+      "dest": "/build/blog/index.html"
+    },
+    {
+      "src": "/sitemap.xml",
+      "dest": "/build/sitemap.xml",
+      "headers": {
+        "content-type": "application/xml"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/build/index.html"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": true,
   "headers": [
     {
       "source": "/(.*)",
@@ -15,123 +63,8 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
-        },
-        {
-          "key": "Strict-Transport-Security",
-          "value": "max-age=31536000; includeSubDomains; preload"
-        },
-        {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self';"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "geolocation=(), microphone=(), camera=()"
-        }
-      ]
-    },
-    {
-      "source": "/static/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*).js",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*).css",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*).html",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
-      ]
-    },
-    {
-      "source": "/sitemap.xml",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/xml"
         }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/category/Introversion%20%26%20Personality",
-      "destination": "/category/introversion-and-personality",
-      "permanent": true
-    },
-    {
-      "source": "/category/Relationships%20%26%20Dating", 
-      "destination": "/category/relationships-and-dating",
-      "permanent": true
-    },
-    {
-      "source": "/category/Career%20%26%20Workplace",
-      "destination": "/category/career-and-workplace", 
-      "permanent": true
-    },
-    {
-      "source": "/category/Self-Development",
-      "destination": "/category/self-development",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/blog/(.*)/",
-      "destination": "/blog/$1/index.html"
-    },
-    {
-      "source": "/blog/(.*)",
-      "destination": "/blog/$1/index.html"
-    },
-    {
-      "source": "/category/(.*)/",
-      "destination": "/category/$1/index.html"
-    },
-    {
-      "source": "/category/(.*)",
-      "destination": "/category/$1/index.html"
-    },
-    {
-      "source": "/blog/",
-      "destination": "/blog/index.html"
-    },
-    {
-      "source": "/blog",
-      "destination": "/blog/index.html"
-    },
-    {
-      "source": "/",
-      "destination": "/index.html"
-    }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": true
+  ]
 }
