@@ -35,6 +35,7 @@ build.on('close', (code) => {
     sitemap.on('close', (sitemapCode) => {
         if (sitemapCode !== 0) {
             console.error(`Sitemap generation exited with code ${sitemapCode}`);
+            process.exit(sitemapCode);
         } else {
             // Copy sitemap from public to build directory to ensure it's in the deployment
             const fs = require('fs');
@@ -49,8 +50,29 @@ build.on('close', (code) => {
             } catch (err) {
                 console.error('Error copying sitemap to build:', err);
             }
+            
+            // CRITICAL: Run enhanced static page generation for canonical URLs
+            console.log('Running enhanced static page generation with canonical URLs...');
+            const staticPages = spawn('node', [
+                path.join(__dirname, 'scripts', 'generate-static-pages.js')
+            ], {
+                stdio: 'inherit'
+            });
+            
+            staticPages.on('close', (staticCode) => {
+                if (staticCode !== 0) {
+                    console.error(`Static page generation exited with code ${staticCode}`);
+                } else {
+                    console.log('✅ Enhanced SEO static pages generated successfully');
+                }
+                process.exit(staticCode);
+            });
+            
+            staticPages.on('error', (err) => {
+                console.error('Failed to start static page generation:', err);
+                process.exit(1);
+            });
         }
-        process.exit(sitemapCode);
     });
 });
 
