@@ -105,13 +105,11 @@
   "rewrites": [
     {
       "source": "/blog/(.*)",
-      "destination": "/blog/$1/index.html",
-      "check": true
+      "destination": "/blog/$1/index.html"
     },
     {
       "source": "/category/(.*)",
-      "destination": "/category/$1/index.html", 
-      "check": true
+      "destination": "/category/$1/index.html"
     },
     {
       "source": "/blog",
