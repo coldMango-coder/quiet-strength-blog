@@ -7,7 +7,7 @@ import { useDynamicSEO } from '../hooks/useDynamicSEO';
 const Seo = ({ title, description, type = 'website', path, article, book, person, breadcrumbs }) => {
   const location = useLocation();
   const siteName = 'Quiet Strength';
-  const baseUrl = 'https://trueallyguide.com';
+  const baseUrl = 'https://www.trueallyguide.com';
   
   // Use dynamic SEO hook for client-side updates
   useDynamicSEO();

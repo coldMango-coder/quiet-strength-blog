@@ -17,7 +17,7 @@ const {
   generateBlogListingSchema
 } = require('./enhanced-metadata-extractor');
 
-const BASE_URL = 'https://trueallyguide.com';
+const BASE_URL = 'https://www.trueallyguide.com';
 const BUILD_DIR = path.join(__dirname, '../build');
 const SITEMAP_PATH = path.join(__dirname, '../public/sitemap.xml');
 const ASSET_MANIFEST_PATH = path.join(BUILD_DIR, 'asset-manifest.json');
@@ -199,7 +199,7 @@ function generateHTMLWithMetadata(url, pageType, routeData, assets) {
   <link rel="preload" href="${jsFile}" as="script" fetchpriority="low">
   
   <!-- Performance: Resource hints for faster loading -->
-  <link rel="preconnect" href="https://trueallyguide.com" crossorigin>
+  <link rel="preconnect" href="https://www.trueallyguide.com" crossorigin>
   <link rel="dns-prefetch" href="//trueallyguide.com">
   
   <!-- Performance: Advanced optimizations -->

@@ -1,7 +1,7 @@
 import { getCanonicalUrl } from './getCanonicalUrl';
 
 describe('getCanonicalUrl', () => {
-  const baseUrl = 'https://trueallyguide.com';
+  const baseUrl = 'https://www.trueallyguide.com';
 
   test('returns correct URL for homepage', () => {
     expect(getCanonicalUrl('/')).toBe(`${baseUrl}/`);

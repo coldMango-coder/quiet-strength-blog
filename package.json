@@ -2,7 +2,7 @@
   "name": "quiet-strength-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://trueallyguide.com",
+  "homepage": "https://www.trueallyguide.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

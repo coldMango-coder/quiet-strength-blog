@@ -5,7 +5,7 @@
  * @returns {string} - The canonical URL that exactly matches the live URL
  */
 export function getCanonicalUrl(pathname) {
-  const baseUrl = 'https://trueallyguide.com';
+  const baseUrl = 'https://www.trueallyguide.com';
   
   // Normalize pathname with strict rules
   let normalizedPath = pathname || '/';
