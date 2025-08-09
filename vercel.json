@@ -102,6 +102,26 @@
       "permanent": true
     }
   ],
+  "rewrites": [
+    {
+      "source": "/blog/(.*)",
+      "destination": "/blog/$1/index.html",
+      "check": true
+    },
+    {
+      "source": "/category/(.*)",
+      "destination": "/category/$1/index.html", 
+      "check": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
   "cleanUrls": true,
   "trailingSlash": false
 }
