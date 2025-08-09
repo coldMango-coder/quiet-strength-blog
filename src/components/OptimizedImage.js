@@ -14,11 +14,19 @@ const OptimizedImage = ({
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
 
-  // Generate WebP and AVIF sources from original path
-  const generateSrcSet = (originalSrc) => {
+  // Generate responsive srcset for different formats
+  const generateResponsiveSrcSet = (originalSrc, format) => {
     if (!originalSrc) return '';
     const baseName = originalSrc.replace(/\.[^/.]+$/, '');
-    return `${baseName}.avif, ${baseName}.webp, ${originalSrc}`;
+    const extension = format === 'avif' ? '.avif' : format === 'webp' ? '.webp' : originalSrc.match(/\.[^/.]+$/)?.[0] || '.jpg';
+    
+    // Generate multiple sizes for responsive images
+    if (width && height) {
+      const w1x = Math.round(width);
+      const w2x = Math.round(width * 2);
+      return `${baseName}${extension} ${w1x}w, ${baseName}${extension} ${w2x}w`;
+    }
+    return `${baseName}${extension}`;
   };
 
   const handleLoad = () => setLoaded(true);
@@ -61,8 +69,16 @@ const OptimizedImage = ({
       )}
       
       <picture>
-        <source srcSet={generateSrcSet(src).split(', ')[0]} type="image/avif" />
-        <source srcSet={generateSrcSet(src).split(', ')[1]} type="image/webp" />
+        <source 
+          srcSet={generateResponsiveSrcSet(src, 'avif')} 
+          type="image/avif" 
+          sizes={sizes}
+        />
+        <source 
+          srcSet={generateResponsiveSrcSet(src, 'webp')} 
+          type="image/webp" 
+          sizes={sizes}
+        />
         <img
           src={src}
           alt={alt}
@@ -73,7 +89,8 @@ const OptimizedImage = ({
           sizes={sizes}
           onLoad={handleLoad}
           onError={handleError}
-          className={`transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'} ${className}`}
+          className={`w-full h-full object-cover transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+          style={{ aspectRatio: width && height ? `${width}/${height}` : undefined }}
           {...props}
         />
       </picture>

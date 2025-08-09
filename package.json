@@ -22,7 +22,7 @@
   "scripts": {
     "start": "set BROWSER=1 && npx react-scripts start",
     "dev:canonical": "node dev-server.js",
-    "build": "node build.js && node scripts/generate-static-pages.js",
+    "build": "node build.js && node scripts/generate-static-pages.js && node scripts/optimize-performance.js",
     "build:no-prerender": "node build.js",
     "test": "npx react-scripts test",
     "eject": "npx react-scripts eject",

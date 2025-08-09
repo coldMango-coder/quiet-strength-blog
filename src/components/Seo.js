@@ -119,6 +119,17 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
     });
   }
 
+  // Prevent duplicate canonical tags
+  React.useEffect(() => {
+    // Remove any existing canonical tags to prevent conflicts
+    const existingCanonicals = document.querySelectorAll('link[rel="canonical"]');
+    existingCanonicals.forEach(canonical => {
+      if (canonical.href !== canonicalUrl) {
+        canonical.remove();
+      }
+    });
+  }, [canonicalUrl]);
+
   return (
     <Helmet>
       <title>{title ? `${title} | ${siteName}` : siteName}</title>

@@ -34,8 +34,26 @@ function startApp() {
       </React.StrictMode>
     );
 
-    // Performance monitoring
-    reportWebVitals();
+    // Register service worker for performance
+    if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((registration) => {
+            console.log('SW registered: ', registration);
+          })
+          .catch((registrationError) => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
+
+    // Performance monitoring (development only)
+    if (process.env.NODE_ENV === 'development') {
+      reportWebVitals((metric) => {
+        // Log metrics for debugging (dev only)
+        console.log(metric.name, Math.round(metric.value));
+      });
+    }
     
     console.log('SPA initialized successfully');
   } catch (error) {
