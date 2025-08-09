@@ -40,7 +40,13 @@ function getAssetManifest() {
 
 // Enhanced template for generating static HTML with comprehensive SEO and schema.org structured data
 function generateHTMLWithMetadata(url, pageType, routeData, assets) {
-  const canonicalUrl = url === BASE_URL ? `${BASE_URL}/` : url;
+  // Fix canonical URL to match exact live URL patterns
+  let canonicalUrl;
+  if (url === BASE_URL || url === `${BASE_URL}/`) {
+    canonicalUrl = `${BASE_URL}/`; // Homepage always has trailing slash
+  } else {
+    canonicalUrl = url; // All other pages have no trailing slash
+  }
   const cssFile = assets.files['main.css'] || '/static/css/main.43dd6ae1.css';
   const jsFile = assets.files['main.js'] || '/static/js/main.32b1b242.js';
   
@@ -185,12 +191,18 @@ function generateHTMLWithMetadata(url, pageType, routeData, assets) {
   <!-- Schema.org structured data for rich snippets -->
   ${jsonLdScript}
   
-  <!-- Preload critical resources -->
-  <link rel="preload" as="image" href="/images/logo.avif" type="image/avif">
-  <link rel="preload" as="image" href="/images/logo.webp" type="image/webp">
+  <!-- Performance: Critical resource preloading for 100/100 scores -->
+  <link rel="preload" as="image" href="/images/logo.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/logo.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="${cssFile}" as="style">
+  <link rel="preload" href="${jsFile}" as="script">
   
-  <!-- DNS prefetch for external resources -->
+  <!-- Performance: Resource hints for faster loading -->
+  <link rel="preconnect" href="https://trueallyguide.com" crossorigin>
   <link rel="dns-prefetch" href="//trueallyguide.com">
+  
+  <!-- Performance: Optimize third-party resources -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
   
   <!-- Client-side URL cleanup (remove tracking params) -->
   <script>

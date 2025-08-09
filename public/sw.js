@@ -1,13 +1,12 @@
-// Service Worker for maximum performance
-const CACHE_NAME = 'quiet-strength-v1';
+// Performance-optimized Service Worker for 100/100 Lighthouse scores
+const CACHE_NAME = 'quiet-strength-performance-v2';
 const STATIC_CACHE_URLS = [
   '/',
-  '/static/css/main.8b54181d.css',
-  '/static/js/main.b22aa0de.js',
   '/images/logo.avif',
-  '/images/logo.webp',
+  '/images/logo.webp', 
   '/images/logo.png',
   '/manifest.json',
+  '/favicon.ico'
 ];
 
 const DYNAMIC_CACHE_NAME = 'quiet-strength-dynamic-v1';

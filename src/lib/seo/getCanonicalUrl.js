@@ -1,8 +1,8 @@
 /**
  * Generates canonical URLs for trueallyguide.com pages
- * Ensures single, consistent canonical URL per page to prevent conflicts
+ * Ensures EXACT match between canonical URLs and live page URLs
  * @param {string} pathname - The pathname from router (e.g., '/blog/post')
- * @returns {string} - The canonical URL
+ * @returns {string} - The canonical URL that exactly matches the live URL
  */
 export function getCanonicalUrl(pathname) {
   const baseUrl = 'https://trueallyguide.com';
@@ -13,31 +13,19 @@ export function getCanonicalUrl(pathname) {
   // Remove query parameters and hash
   normalizedPath = normalizedPath.split('?')[0].split('#')[0];
   
-  // Remove trailing slash except for root
+  // Convert to lowercase for consistency
+  normalizedPath = normalizedPath.toLowerCase();
+  
+  // Remove trailing slash except for root to match live URLs
   if (normalizedPath !== '/' && normalizedPath.endsWith('/')) {
     normalizedPath = normalizedPath.slice(0, -1);
   }
   
-  // Convert to lowercase for consistency
-  normalizedPath = normalizedPath.toLowerCase();
-  
-  // Special handling for common paths to prevent conflicts
-  const pathMap = {
-    '/about': '/about',
-    '/blog': '/blog', 
-    '/': '/'
-  };
-  
-  // Use mapped path if available to ensure consistency
-  if (pathMap[normalizedPath]) {
-    normalizedPath = pathMap[normalizedPath];
-  }
-  
-  // For root, return exact base URL with trailing slash
-  if (normalizedPath === '/') {
+  // Ensure root path has trailing slash (matches live URL)
+  if (normalizedPath === '' || normalizedPath === '/') {
     return `${baseUrl}/`;
   }
   
-  // For all other paths, no trailing slash
+  // All other paths: no trailing slash (matches live URLs exactly)
   return `${baseUrl}${normalizedPath}`;
 }

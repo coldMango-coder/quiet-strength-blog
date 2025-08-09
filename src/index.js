@@ -34,18 +34,21 @@ function startApp() {
       </React.StrictMode>
     );
 
-    // Service worker temporarily disabled for debugging
-    // if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
-    //   window.addEventListener('load', () => {
-    //     navigator.serviceWorker.register('/sw.js')
-    //       .then((registration) => {
-    //         console.log('SW registered: ', registration);
-    //       })
-    //       .catch((registrationError) => {
-    //         console.log('SW registration failed: ', registrationError);
-    //       });
-    //   });
-    // }
+    // Performance-optimized service worker for 100/100 scores
+    if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js', { 
+          scope: '/',
+          updateViaCache: 'none'
+        })
+        .then((registration) => {
+          console.log('Performance SW registered successfully');
+        })
+        .catch((error) => {
+          console.warn('SW registration failed:', error);
+        });
+      });
+    }
 
     // Performance monitoring (development only)
     if (process.env.NODE_ENV === 'development') {

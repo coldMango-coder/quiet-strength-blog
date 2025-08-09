@@ -4,28 +4,86 @@
   <meta charset="utf-8" />
   <link rel="icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Browse articles about introversion and personality for introverted women." />
+  <meta name="theme-color" content="#C05621" />
+  <meta name="author" content="Marica Šinko" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="description" content="Understanding and embracing your introverted personality while building authentic confidence." />
+  <meta name="keywords" content="category, introversion & personality, articles" />
+  
+  <!-- Server-side canonical URL - Exact match to live URL -->
   <link rel="canonical" href="https://trueallyguide.com/category/introversion-and-personality" />
-  <meta property="og:title" content="Introversion And Personality Articles | Quiet Strength" />
-  <meta property="og:description" content="Browse articles about introversion and personality for introverted women." />
+  
+  <!-- Enhanced Open Graph tags -->
+  <meta property="og:title" content="Introversion & Personality Articles | Quiet Strength" />
+  <meta property="og:description" content="Understanding and embracing your introverted personality while building authentic confidence." />
   <meta property="og:url" content="https://trueallyguide.com/category/introversion-and-personality" />
   <meta property="og:type" content="website" />
-  <title>Introversion And Personality Articles | Quiet Strength</title>
-  <link href="/static/css/main.43dd6ae1.css" rel="stylesheet">
+  <meta property="og:site_name" content="Quiet Strength" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://trueallyguide.com/images/empowered-introvert-woman-standing-confidently-in-peaceful-natural-setting-representing-authentic-confidence-journey-and-quiet-strength-development.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Introversion & Personality Articles | Quiet Strength" />
+  <meta property="og:image:type" content="image/jpeg" />
+  
+  
+  <!-- Enhanced Twitter Card tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@QuietStrengthGuide" />
+  <meta name="twitter:creator" content="@MaricaSinko" />
+  <meta name="twitter:title" content="Introversion & Personality Articles | Quiet Strength" />
+  <meta name="twitter:description" content="Understanding and embracing your introverted personality while building authentic confidence." />
+  <meta name="twitter:url" content="https://trueallyguide.com/category/introversion-and-personality" />
+  <meta name="twitter:image" content="https://trueallyguide.com/images/empowered-introvert-woman-standing-confidently-in-peaceful-natural-setting-representing-authentic-confidence-journey-and-quiet-strength-development.jpg" />
+  <meta name="twitter:image:alt" content="Introversion & Personality Articles | Quiet Strength" />
+  
+  <!-- Additional SEO meta tags -->
+  <meta name="language" content="English" />
+  <meta name="revisit-after" content="7 days" />
+  <meta name="distribution" content="global" />
+  <meta name="rating" content="general" />
+  <meta name="application-name" content="Quiet Strength" />
+  
+  <title>Introversion & Personality Articles | Quiet Strength</title>
+  <link href="/static/css/main.884ce9db.css" rel="stylesheet">
+  
+  <!-- Schema.org structured data for rich snippets -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Introversion & Personality","url":"https://trueallyguide.com/category/introversion-and-personality","description":"Understanding and embracing your introverted personality while building authentic confidence.","image":"https://trueallyguide.com/images/empowered-introvert-woman-standing-confidently-in-peaceful-natural-setting-representing-authentic-confidence-journey-and-quiet-strength-development.jpg","isPartOf":{"@type":"WebSite","name":"Quiet Strength","url":"https://trueallyguide.com"},"inLanguage":"en-US"}</script>
+  
+  <!-- Performance: Critical resource preloading for 100/100 scores -->
+  <link rel="preload" as="image" href="/images/logo.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="/images/logo.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="/static/css/main.884ce9db.css" as="style">
+  <link rel="preload" href="/static/js/main.926b1560.js" as="script">
+  
+  <!-- Performance: Resource hints for faster loading -->
+  <link rel="preconnect" href="https://trueallyguide.com" crossorigin>
+  <link rel="dns-prefetch" href="//trueallyguide.com">
+  
+  <!-- Performance: Optimize third-party resources -->
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  
+  <!-- Client-side URL cleanup (remove tracking params) -->
   <script>
-    // Clean any legacy ?spa=1 parameter if present (no redirect loops)
     (function() {
       try {
         var href = window.location.href;
-        if (href.indexOf('spa=1') !== -1) {
-          var url = new URL(href);
-          url.searchParams.delete('spa');
-          var cleanUrl = url.pathname + (url.search || '') + (url.hash || '');
-          
-          if (window.history && window.history.replaceState) {
-            window.history.replaceState(null, '', cleanUrl);
+        var url = new URL(href);
+        var changed = false;
+        
+        // Remove tracking parameters
+        var trackingParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'ref', 'gclid', 'fbclid', 'spa'];
+        trackingParams.forEach(function(param) {
+          if (url.searchParams.has(param)) {
+            url.searchParams.delete(param);
+            changed = true;
           }
+        });
+        
+        // Update URL if tracking params were removed
+        if (changed && window.history && window.history.replaceState) {
+          var cleanUrl = url.pathname + (url.search || '') + (url.hash || '');
+          window.history.replaceState(null, '', cleanUrl);
         }
       } catch (e) {
         // Silent fallback - don't break the site
@@ -42,14 +100,14 @@
     (function() {
       try {
         var script = document.createElement('script');
-        script.src = '/static/js/main.2be25108.js';
+        script.src = '/static/js/main.926b1560.js';
         script.async = false;
         script.onerror = function() {
           document.getElementById('root').innerHTML = '<h1>Loading Error</h1><p>Please <a href="/">refresh the page</a>.</p>';
         };
         document.body.appendChild(script);
       } catch (e) {
-        document.getElementById('root').innerHTML = '<h1>Introversion And Personality Articles | Quiet Strength</h1><p><a href="https://trueallyguide.com/category/introversion-and-personality">Continue to site</a></p>';
+        document.getElementById('root').innerHTML = '<h1>Introversion & Personality Articles | Quiet Strength</h1><p><a href="https://trueallyguide.com/category/introversion-and-personality">Continue to site</a></p>';
       }
     })();
   </script>

@@ -102,14 +102,28 @@ img[src*="confident-woman"]{aspect-ratio:1.5/1;min-height:128px}
 header.sticky{height:80px;display:flex;align-items:center}
 /* Blog card image consistency */
 .blog-card-image{aspect-ratio:1.5/1;height:160px;object-fit:cover;border-radius:0.5rem}
+/* Performance: GPU acceleration for smooth animations */
+.transform{will-change:transform}.transition-all{will-change:transform,opacity}
+/* Performance: Optimize expensive operations */
+*{box-sizing:border-box}img{max-width:100%;height:auto}
+/* Performance: Prevent layout thrashing */
+.sticky{contain:layout style paint}
     </style>
     
     <!-- Critical CSS inlined above for zero render blocking -->
     <!-- Non-critical CSS will be loaded async via React -->
     
-    <!-- Resource hints for better performance -->
-    <link rel="prefetch" href="/sw.js">
+    <!-- Performance: Resource hints for 100/100 scores -->
+    <link rel="dns-prefetch" href="https://trueallyguide.com">
+    <link rel="preconnect" href="https://trueallyguide.com" crossorigin>
+    
+    <!-- Prefetch key chunks for faster navigation -->
     <link rel="prefetch" href="/static/js/861.db59f714.chunk.js">
+    <link rel="prefetch" href="/static/js/171.2a8e9e0b.chunk.js">
+    
+    <!-- Preload critical above-the-fold images -->
+    <link rel="preload" as="image" href="/images/logo.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/logo.avif" type="image/avif" fetchpriority="high">
     
     <!-- Disable DNS prefetch for maximum performance -->
     <meta http-equiv="x-dns-prefetch-control" content="off">
