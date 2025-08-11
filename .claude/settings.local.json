@@ -88,7 +88,8 @@
       "Bash(set CAN_HOST=https://www.trueallyguide.com)",
       "Bash(npx critters build:*)",
       "Bash(set ROUTES=/blog/how-to-stop-attracting-narcissists-9-proven-strategies,/blog/introvert-networking-tips-without-small-talk-guide)",
-      "Bash(HOST=https://trueallyguide.com ROUTES=/blog/how-to-stop-attracting-narcissists-9-proven-strategies,/blog/introvert-networking-tips-without-small-talk-guide node scripts/fetch-prod.mjs)"
+      "Bash(HOST=https://trueallyguide.com ROUTES=/blog/how-to-stop-attracting-narcissists-9-proven-strategies,/blog/introvert-networking-tips-without-small-talk-guide node scripts/fetch-prod.mjs)",
+      "Bash(DOM=trueallyguide.com SLUGS='[\"\"/blog/how-to-stop-attracting-narcissists-9-proven-strategies\"\", \"\"/blog/introvert-networking-tips-without-small-talk-guide\"\"]' node scripts/status-probe.js)"
     ],
     "deny": []
   }

@@ -1,0 +1,18 @@
+MIDDLEWARE AUDIT REPORT
+======================
+
+FINDINGS:
+- No middleware.js or middleware.ts file found in project
+- No auth-related code found in codebase
+- 401 errors likely coming from Vercel project-level Password Protection
+- vercel.json has proper host redirects configured
+- postbuild script may be causing issues: "CAN_HOST=https://www.trueallyguide.com node scripts/prerender-blog.mjs"
+
+ACTIONS TAKEN:
+- No middleware to patch (none exists)
+- Will remove postbuild script in build parity step
+- Will clean up Vercel environment variables in next step
+
+RECOMMENDATION:
+- The 401 errors are likely from Vercel Dashboard Password Protection settings
+- Need to check/disable team-level or project-level password protection in Vercel Dashboard
