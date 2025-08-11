@@ -1,0 +1,36 @@
+[
+  {
+    "title": "How to Stop Attracting Narcissists: 9 Proven Strategies",
+    "path": "/blog/how-to-stop-attracting-narcissists-9-proven-strategies",
+    "description": "Learn 9 proven strategies to stop attracting narcissists and set healthy boundaries.",
+    "ogImage": "/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.jpg",
+    "jsonld": {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.trueallyguide.com/blog/how-to-stop-attracting-narcissists-9-proven-strategies"
+      },
+      "headline": "How to Stop Attracting Narcissists: 9 Proven Strategies",
+      "description": "Learn 9 proven strategies to stop attracting narcissists and set healthy boundaries.",
+      "image": ["https://www.trueallyguide.com/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.jpg"]
+    }
+  },
+  {
+    "title": "Introvert Networking Tips Without Small Talk: Guide",
+    "path": "/blog/introvert-networking-tips-without-small-talk-guide",
+    "description": "Actionable networking strategies for introverts without small talk.",
+    "ogImage": "/images/introvert-woman-confidently-engaging-in-meaningful-one-on-one-conversation-at-coffee-meeting-demonstrating-authentic-networking-strategies-for-introverts.jpg",
+    "jsonld": {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.trueallyguide.com/blog/introvert-networking-tips-without-small-talk-guide"
+      },
+      "headline": "Introvert Networking Tips Without Small Talk: Guide",
+      "description": "Actionable networking strategies for introverts without small talk.",
+      "image": ["https://www.trueallyguide.com/images/introvert-woman-confidently-engaging-in-meaningful-one-on-one-conversation-at-coffee-meeting-demonstrating-authentic-networking-strategies-for-introverts.jpg"]
+    }
+  }
+]

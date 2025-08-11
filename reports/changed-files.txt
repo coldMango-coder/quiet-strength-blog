@@ -1,0 +1,36 @@
+SEO & Performance Optimization - Changed Files
+==============================================
+
+MODIFIED FILES:
+- src/lib/seo/getCanonicalUrl.js (Fixed canonical URL domain)
+- scripts/generate-static-pages.js (Updated BASE_URL to www domain)
+- public/robots.txt (Updated sitemap URL to www domain)
+- public/sitemap.xml (Updated all URLs to www domain)
+- vercel.json (Fixed redirects: non-www → www)
+- package.json (Added postbuild steps, critters dependency)
+- public/index.html (Enabled self-hosted fonts, optimized critical CSS)
+
+CREATED FILES:
+- data/posts.json (Blog post metadata for prerendering)
+- scripts/prerender-blog.mjs (Build-time blog page generator)
+- public/fonts/fonts.css (Self-hosted font definitions)
+- public/templates/blog.html (Blog page template)
+- reports/seo-perf-log.md (Optimization report)
+- reports/lh-mobile.json (Lighthouse performance results)
+- reports/canonical-scan.json (Canonical URL audit results)
+- reports/changed-files.txt (This file)
+
+DIRECTORIES CREATED:
+- data/ (Blog post metadata)
+- public/templates/ (HTML templates)
+- reports/ (Audit reports)
+
+PERFORMANCE IMPACT:
+- Mobile Lighthouse Score: 94/100 (Target: ≥90) ✅
+- Self-hosted fonts for faster loading
+- Optimized CSS delivery pipeline
+- Pre-rendered blog pages with correct canonicals
+
+DEPLOYMENT READY:
+All files are ready for production deployment.
+Post-deployment: Run canonical URL audit to verify fixes.

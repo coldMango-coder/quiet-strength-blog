@@ -17,7 +17,7 @@ const {
   generateBlogListingSchema
 } = require('./enhanced-metadata-extractor');
 
-const BASE_URL = 'https://trueallyguide.com';
+const BASE_URL = 'https://www.trueallyguide.com';
 const BUILD_DIR = path.join(__dirname, '../build');
 const SITEMAP_PATH = path.join(__dirname, '../public/sitemap.xml');
 const ASSET_MANIFEST_PATH = path.join(BUILD_DIR, 'asset-manifest.json');

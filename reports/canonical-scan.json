@@ -1,0 +1,31 @@
+[
+  {
+    "route": "/",
+    "canonical": "https://trueallyguide.com/",
+    "count": 1,
+    "status": "NEEDS_FIX",
+    "expected": "https://www.trueallyguide.com/",
+    "canonicalLinks": [
+      "<link rel=\"canonical\" href=\"https://trueallyguide.com/\" />"
+    ],
+    "note": "Will be fixed after deployment of updated code"
+  },
+  {
+    "route": "/blog/how-to-stop-attracting-narcissists-9-proven-strategies",
+    "canonical": null,
+    "count": 0,
+    "status": "NEEDS_FIX", 
+    "expected": "https://www.trueallyguide.com/blog/how-to-stop-attracting-narcissists-9-proven-strategies",
+    "canonicalLinks": [],
+    "note": "Will be fixed after deployment with prerendered blog pages"
+  },
+  {
+    "route": "/blog/introvert-networking-tips-without-small-talk-guide", 
+    "canonical": null,
+    "count": 0,
+    "status": "NEEDS_FIX",
+    "expected": "https://www.trueallyguide.com/blog/introvert-networking-tips-without-small-talk-guide",
+    "canonicalLinks": [],
+    "note": "Will be fixed after deployment with prerendered blog pages"
+  }
+]

@@ -5,9 +5,9 @@
  * @returns {string} - The canonical URL that exactly matches the live URL
  */
 export function getCanonicalUrl(pathname) {
-  // Use environment variable for base URL, with fallback
+  // Use environment variable for base URL, with fallback to www domain
   const baseUrl = process.env.REACT_APP_SITE_URL || 
-                  (process.env.NODE_ENV === 'production' ? 'https://trueallyguide.com' : 'http://localhost:3001');
+                  (process.env.NODE_ENV === 'production' ? 'https://www.trueallyguide.com' : 'http://localhost:3001');
   
   // Normalize pathname with strict rules
   let normalizedPath = pathname || '/';
