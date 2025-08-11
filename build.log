@@ -1,0 +1,129 @@
+
+> quiet-strength-blog@0.1.0 build
+> node build.js && node scripts/generate-static-pages.js
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  67.65 kB (+11 B)  build\static\js\main.953fe73b.js
+  36.7 kB           build\static\js\861.db59f714.chunk.js
+  13.27 kB          build\static\js\171.2a8e9e0b.chunk.js
+  12.04 kB          build\static\css\main.884ce9db.css
+  11.56 kB          build\static\js\135.7a87d03d.chunk.js
+  11.28 kB          build\static\js\370.785372b7.chunk.js
+  11.1 kB           build\static\js\785.a82554db.chunk.js
+  10.4 kB           build\static\js\918.c95220f6.chunk.js
+  8.86 kB           build\static\js\616.62132301.chunk.js
+  8.74 kB           build\static\js\376.0453d7c4.chunk.js
+  8.42 kB           build\static\js\570.5996fafc.chunk.js
+  8.32 kB           build\static\js\76.6b3673f6.chunk.js
+  8.16 kB           build\static\js\393.41cf01fe.chunk.js
+  8.09 kB           build\static\js\642.d217336a.chunk.js
+  7.78 kB           build\static\js\43.9724c695.chunk.js
+  7.77 kB           build\static\js\608.b740ebd3.chunk.js
+  7.22 kB           build\static\js\102.f8f6b8b2.chunk.js
+  6.52 kB           build\static\js\860.a82f7933.chunk.js
+  4.75 kB           build\static\js\873.628d2805.chunk.js
+  3.69 kB           build\static\js\947.f7540b08.chunk.js
+  3.09 kB           build\static\js\471.fdabfe16.chunk.js
+  2.17 kB           build\static\js\865.ba6758b2.chunk.js
+  1.97 kB           build\static\js\318.337bde43.chunk.js
+  538 B             build\static\js\288.22ae9377.chunk.js
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  serve -s build
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+Running dynamic sitemap generation...
+📖 Reading blog posts from markdown files...
+📖 Reading blog posts from blogData.js...
+✅ React Component: How to Stop Attracting Narcissists: 9 Proven Strategies That Actually Work in 2025 -> how-to-stop-attracting-narcissists-9-proven-strategies
+✅ React Component: How to Stop Attracting Emotionally Unavailable Men: 7 Proven Steps That Actually Work in 2025 -> how-to-stop-attracting-emotionally-unavailable-men-guide
+✅ React Component: 7 Powerful Introvert Networking Tips Without Small Talk That Actually Work -> introvert-networking-tips-without-small-talk-guide
+✅ React Component: How to Be Confident as an Introvert Woman: 9 Proven Strategies That Actually Work in 2025 -> how-to-be-confident-as-an-introvert-woman-guide
+✅ React Component: Post Breakup Glow Up Transformation Guide: 10 Proven Steps to Become Your Best Self in 2025 -> post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025
+✅ React Component: Emotional Manipulation Tactics Narcissist Ex Recovery: 12 Proven Steps to Reclaim Your Life in 2025 -> emotional-manipulation-tactics-narcissist-ex-recovery-12-proven-steps-to-reclaim-your-life-in-2025
+✅ React Component: Introvert Overwhelmed by Social Media: 8 Proven Coping Strategies That Actually Work in 2025 -> introvert-overwhelmed-by-social-media-8-proven-coping-strategies-that-actually-work-in-2025
+✅ React Component: How to Love Yourself After a Toxic Relationship: 8 Proven Steps That Actually Work in 2025 -> how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025
+✅ React Component: How to Speak Up in Meetings as an Introvert: 9 Proven Strategies That Actually Work in 2025 -> how-to-speak-up-in-meetings-introvert-strategies-2025
+✅ React Component: Intentional Dating 2025: How to Date Purposefully (7 Proven Steps) -> intentional-dating-2025-guide
+✅ React Component: Introvert Social Battery Drained: 9 Proven Recovery Methods That Actually Work in 2025 -> introvert-social-battery-drained-recovery-methods
+✅ React Component: How to Know if You Deserve Better in Your Relationship: 7 Clear Signs Every Introvert Woman Must Recognize in 2025 -> how-to-know-if-you-deserve-better-relationship-introvert-woman-guide
+✅ React Component: How to Say No Without Guilt: Real-Life Scripts for Work, Family & Friends -> how-to-say-no-without-guilt
+✅ React Component: The Art of Saying No: A Guide for People-Pleasers -> art-of-saying-no
+✅ React Component: How to Prevent Professional Burnout: A Woman -> prevent-professional-burnout
+Found 15 blog posts from React components
+Found 15 blog posts
+Found 4 categories: Relationships & Dating, Career & Workplace, Introversion & Personality, Self-Development
+✅ Sitemap generated successfully!
+📍 Location: C:\Users\Jurek2\Downloads\Project_WEB_01\public\sitemap.xml
+🔗 Total URLs: 21
+
+URLs included:
+- Homepage
+- Blog listing page
+- 4 category pages
+- 15 blog posts
+Sitemap copied to build directory
+Running enhanced static page generation with canonical URLs...
+📝 Generating static pages with server-side canonical tags...
+📦 Using bundles: [ 'main.css', 'main.js' ]
+📋 Found 21 URLs in sitemap
+✅ Generated / (homepage) → index.html
+✅ Generated /blog (blog-listing) → blog\index.html
+✅ Generated /category/relationships-and-dating (category) → category\relationships-and-dating\index.html
+✅ Generated /category/career-and-workplace (category) → category\career-and-workplace\index.html
+✅ Generated /category/introversion-and-personality (category) → category\introversion-and-personality\index.html
+✅ Generated /category/self-development (category) → category\self-development\index.html
+✅ Generated /blog/how-to-stop-attracting-narcissists-9-proven-strategies (blog-post) → blog\how-to-stop-attracting-narcissists-9-proven-strategies\index.html
+✅ Generated /blog/how-to-stop-attracting-emotionally-unavailable-men-guide (blog-post) → blog\how-to-stop-attracting-emotionally-unavailable-men-guide\index.html
+✅ Generated /blog/introvert-networking-tips-without-small-talk-guide (blog-post) → blog\introvert-networking-tips-without-small-talk-guide\index.html
+✅ Generated /blog/how-to-be-confident-as-an-introvert-woman-guide (blog-post) → blog\how-to-be-confident-as-an-introvert-woman-guide\index.html
+✅ Generated /blog/post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025 (blog-post) → blog\post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025\index.html
+✅ Generated /blog/emotional-manipulation-tactics-narcissist-ex-recovery-12-proven-steps-to-reclaim-your-life-in-2025 (blog-post) → blog\emotional-manipulation-tactics-narcissist-ex-recovery-12-proven-steps-to-reclaim-your-life-in-2025\index.html
+✅ Generated /blog/introvert-overwhelmed-by-social-media-8-proven-coping-strategies-that-actually-work-in-2025 (blog-post) → blog\introvert-overwhelmed-by-social-media-8-proven-coping-strategies-that-actually-work-in-2025\index.html
+✅ Generated /blog/how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025 (blog-post) → blog\how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025\index.html
+✅ Generated /blog/how-to-speak-up-in-meetings-introvert-strategies-2025 (blog-post) → blog\how-to-speak-up-in-meetings-introvert-strategies-2025\index.html
+✅ Generated /blog/intentional-dating-2025-guide (blog-post) → blog\intentional-dating-2025-guide\index.html
+✅ Generated /blog/introvert-social-battery-drained-recovery-methods (blog-post) → blog\introvert-social-battery-drained-recovery-methods\index.html
+✅ Generated /blog/how-to-know-if-you-deserve-better-relationship-introvert-woman-guide (blog-post) → blog\how-to-know-if-you-deserve-better-relationship-introvert-woman-guide\index.html
+✅ Generated /blog/how-to-say-no-without-guilt (blog-post) → blog\how-to-say-no-without-guilt\index.html
+✅ Generated /blog/art-of-saying-no (blog-post) → blog\art-of-saying-no\index.html
+✅ Generated /blog/prevent-professional-burnout (blog-post) → blog\prevent-professional-burnout\index.html
+🎉 Successfully generated 21 static pages with server-side canonical URLs
+✅ Enhanced SEO static pages generated successfully
+📝 Generating static pages with server-side canonical tags...
+📦 Using bundles: [ 'main.css', 'main.js' ]
+📋 Found 21 URLs in sitemap
+✅ Generated / (homepage) → index.html
+✅ Generated /blog (blog-listing) → blog\index.html
+✅ Generated /category/relationships-and-dating (category) → category\relationships-and-dating\index.html
+✅ Generated /category/career-and-workplace (category) → category\career-and-workplace\index.html
+✅ Generated /category/introversion-and-personality (category) → category\introversion-and-personality\index.html
+✅ Generated /category/self-development (category) → category\self-development\index.html
+✅ Generated /blog/how-to-stop-attracting-narcissists-9-proven-strategies (blog-post) → blog\how-to-stop-attracting-narcissists-9-proven-strategies\index.html
+✅ Generated /blog/how-to-stop-attracting-emotionally-unavailable-men-guide (blog-post) → blog\how-to-stop-attracting-emotionally-unavailable-men-guide\index.html
+✅ Generated /blog/introvert-networking-tips-without-small-talk-guide (blog-post) → blog\introvert-networking-tips-without-small-talk-guide\index.html
+✅ Generated /blog/how-to-be-confident-as-an-introvert-woman-guide (blog-post) → blog\how-to-be-confident-as-an-introvert-woman-guide\index.html
+✅ Generated /blog/post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025 (blog-post) → blog\post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025\index.html
+✅ Generated /blog/emotional-manipulation-tactics-narcissist-ex-recovery-12-proven-steps-to-reclaim-your-life-in-2025 (blog-post) → blog\emotional-manipulation-tactics-narcissist-ex-recovery-12-proven-steps-to-reclaim-your-life-in-2025\index.html
+✅ Generated /blog/introvert-overwhelmed-by-social-media-8-proven-coping-strategies-that-actually-work-in-2025 (blog-post) → blog\introvert-overwhelmed-by-social-media-8-proven-coping-strategies-that-actually-work-in-2025\index.html
+✅ Generated /blog/how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025 (blog-post) → blog\how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025\index.html
+✅ Generated /blog/how-to-speak-up-in-meetings-introvert-strategies-2025 (blog-post) → blog\how-to-speak-up-in-meetings-introvert-strategies-2025\index.html
+✅ Generated /blog/intentional-dating-2025-guide (blog-post) → blog\intentional-dating-2025-guide\index.html
+✅ Generated /blog/introvert-social-battery-drained-recovery-methods (blog-post) → blog\introvert-social-battery-drained-recovery-methods\index.html
+✅ Generated /blog/how-to-know-if-you-deserve-better-relationship-introvert-woman-guide (blog-post) → blog\how-to-know-if-you-deserve-better-relationship-introvert-woman-guide\index.html
+✅ Generated /blog/how-to-say-no-without-guilt (blog-post) → blog\how-to-say-no-without-guilt\index.html
+✅ Generated /blog/art-of-saying-no (blog-post) → blog\art-of-saying-no\index.html
+✅ Generated /blog/prevent-professional-burnout (blog-post) → blog\prevent-professional-burnout\index.html
+🎉 Successfully generated 21 static pages with server-side canonical URLs

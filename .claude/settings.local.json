@@ -77,7 +77,10 @@
       "Bash(npx playwright:*)",
       "Bash(npm run prerender:*)",
       "Bash(python:*)",
-      "Bash(npx http-server:*)"
+      "Bash(npx http-server:*)",
+      "Bash(timeout:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(git fetch:*)"
     ],
     "deny": []
   }
