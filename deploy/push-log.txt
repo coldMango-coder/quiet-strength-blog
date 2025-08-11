@@ -1,1 +1,8 @@
-branch 'main' set up to track 'origin/main'.
+[main f28d1e03] fix(auth): disable prod middleware on public routes; route priority; host redirects
+ 13 files changed, 127 insertions(+), 9 deletions(-)
+ create mode 100644 deploy/alias.json
+ create mode 100644 deploy/deploy-url.txt
+ create mode 100644 deploy/push-log.txt
+ create mode 100644 reports/middleware-audit.txt
+ create mode 100644 reports/status-before.json
+ create mode 100644 scripts/status-probe.js
