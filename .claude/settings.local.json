@@ -80,7 +80,15 @@
       "Bash(npx http-server:*)",
       "Bash(timeout:*)",
       "Bash(git rev-parse:*)",
-      "Bash(git fetch:*)"
+      "Bash(git fetch:*)",
+      "Bash(git pull:*)",
+      "Bash(npx vercel:*)",
+      "Bash(set HOST=https://trueallyguide.com)",
+      "Bash(set ROUTES=/,/blog/how-to-stop-attracting-narcissists-9-proven-strategies,/blog/introvert-networking-tips-without-small-talk-guide)",
+      "Bash(set CAN_HOST=https://www.trueallyguide.com)",
+      "Bash(npx critters build:*)",
+      "Bash(set ROUTES=/blog/how-to-stop-attracting-narcissists-9-proven-strategies,/blog/introvert-networking-tips-without-small-talk-guide)",
+      "Bash(HOST=https://trueallyguide.com ROUTES=/blog/how-to-stop-attracting-narcissists-9-proven-strategies,/blog/introvert-networking-tips-without-small-talk-guide node scripts/fetch-prod.mjs)"
     ],
     "deny": []
   }

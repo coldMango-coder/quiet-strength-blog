@@ -2,7 +2,6 @@
   "version": 2,
   "trailingSlash": true,
   "cleanUrls": true,
-  "public": false,
   "outputDirectory": "build",
   "redirects": [
     {

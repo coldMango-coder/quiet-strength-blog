@@ -1,0 +1,14 @@
+{
+  "projects": [
+    {
+      "id": "quiet-strength",
+      "name": "quiet-strength",
+      "latestDeployment": null
+    },
+    {
+      "id": "quiet-strength-blog-plbo", 
+      "name": "quiet-strength-blog-plbo",
+      "latestDeployment": "https://www.trueallyguide.com"
+    }
+  ]
+}
