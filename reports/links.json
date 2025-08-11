@@ -1,0 +1,18 @@
+[
+  {
+    "link": "/about",
+    "status": 404
+  },
+  {
+    "link": "/themes",
+    "status": 404
+  },
+  {
+    "link": "/blog",
+    "status": 200
+  },
+  {
+    "link": "/books",
+    "status": 404
+  }
+]

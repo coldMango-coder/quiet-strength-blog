@@ -1,0 +1,14 @@
+/* --- layout hotfixes (non-destructive) --- */
+:root{--bg:#ffecd8}
+body{background-color:var(--bg)}
+.toc,.table-of-contents{position:relative;z-index:1;margin:0 0 1.25rem 0}
+.toc a,.table-of-contents a{display:block;line-height:1.5}
+.toc ol,.toc ul,.table-of-contents ol,.table-of-contents ul{margin:0 0 1rem 1.25rem;padding:0}
+h2[id],h3[id]{scroll-margin-top:96px}
+/* prevent overlays blocking clicks */
+.cta-section,.newsletter,.overlay{pointer-events:auto;z-index:auto}
+footer a,footer button{pointer-events:auto;position:relative;z-index:2}
+/* make cards and book images visible if lazy class keeps them hidden */
+.book-card img,.article-card img,.card img{opacity:1!important;visibility:visible!important}
+/* guard against accidental absolute ToC items */
+.toc li,.table-of-contents li{position:static}

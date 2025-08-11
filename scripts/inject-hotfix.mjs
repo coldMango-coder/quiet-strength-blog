@@ -1,0 +1,2 @@
+import fs from 'fs';import path from 'path';const add=(file)=>{let html=fs.readFileSync(file,'utf8');if(!/hotfix\.css/.test(html)){html=html.replace(/<\/head>/i,`<link href="/hotfix.css" rel="stylesheet"/>
+</head>`);fs.writeFileSync(file,html);} };const walk=(dir)=>{for(const f of fs.readdirSync(dir)){const p=path.join(dir,f);const s=fs.statSync(p);if(s.isDirectory()) walk(p); else if(/\.html$/.test(p)) add(p);} };walk('build');

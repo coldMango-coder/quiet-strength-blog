@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-08-11T22:22:27.345Z",
+  "criticalFiles": [
+    {
+      "file": "index.html",
+      "exists": true
+    },
+    {
+      "file": "hotfix.css",
+      "exists": true
+    },
+    {
+      "file": "blog/index.html",
+      "exists": true
+    },
+    {
+      "file": "blog/how-to-stop-attracting-narcissists-9-proven-strategies/index.html",
+      "exists": true
+    },
+    {
+      "file": "blog/introvert-networking-tips-without-small-talk-guide/index.html",
+      "exists": true
+    }
+  ],
+  "hotfixInjected": {
+    "index": true,
+    "blog": true
+  },
+  "canonicalFound": true
+}
