@@ -1,0 +1,9 @@
+=== DEPLOYMENT LOG ===
+Date: Mon Aug 11 03:17:32 CEDT 2025
+Repository: coldMango-coder/quiet-strength-blog
+Branch: main
+Last commit: 4ebbc102 fix: remove problematic header pattern for deployment
+Deployment URL: https://trueallyguide-5xksosmnb-mangos-projects-e814ad8c.vercel.app
+Production URL: https://www.trueallyguide.com
+Canonical URLs: FIXED - using https://trueallyguide.com
+Status: DEPLOYED SUCCESSFULLY
