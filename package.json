@@ -23,7 +23,7 @@
     "start": "set BROWSER=1 && npx react-scripts start",
     "dev:canonical": "node dev-server.js",
     "build": "node build.js && node scripts/generate-static-pages.js",
-    "postbuild": "node scripts/prerender-blog.mjs && npx critters build --preload='swap' --inlineFonts=false",
+    "postbuild": "CAN_HOST=https://www.trueallyguide.com node scripts/prerender-blog.mjs",
     "build:no-prerender": "node build.js",
     "test": "npx react-scripts test",
     "eject": "npx react-scripts eject",
