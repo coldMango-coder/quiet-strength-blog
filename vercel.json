@@ -15,10 +15,10 @@
       "has": [
         {
           "type": "host",
-          "value": "trueallyguide.com"
+          "value": "www.trueallyguide.com"
         }
       ],
-      "destination": "https://www.trueallyguide.com/:path*",
+      "destination": "https://trueallyguide.com/:path*",
       "permanent": true
     },
     {
@@ -29,7 +29,18 @@
           "value": "truereallyguide.com"
         }
       ],
-      "destination": "https://www.trueallyguide.com/:path*",
+      "destination": "https://trueallyguide.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.truereallyguide.com"
+        }
+      ],
+      "destination": "https://trueallyguide.com/:path*",
       "permanent": true
     },
     {
@@ -40,7 +51,7 @@
           "value": "trueallyguide.vercel.app"
         }
       ],
-      "destination": "https://www.trueallyguide.com/:path*",
+      "destination": "https://trueallyguide.com/:path*",
       "permanent": true
     }
   ],

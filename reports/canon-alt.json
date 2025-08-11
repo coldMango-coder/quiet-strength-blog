@@ -1,0 +1,42 @@
+[
+  {
+    "url": "https://www.trueallyguide.com/blog/how-to-stop-attracting-narcissists-9-proven-strategies",
+    "status": 308,
+    "canonical": null,
+    "location": "/blog/how-to-stop-attracting-narcissists-9-proven-strategies/",
+    "contentLength": 0,
+    "isRedirect": true
+  },
+  {
+    "url": "https://www.trueallyguide.com/blog/introvert-networking-tips-without-small-talk-guide",
+    "status": 308,
+    "canonical": null,
+    "location": "/blog/introvert-networking-tips-without-small-talk-guide/",
+    "contentLength": 0,
+    "isRedirect": true
+  },
+  {
+    "url": "https://truereallyguide.com/blog/how-to-stop-attracting-narcissists-9-proven-strategies",
+    "status": "ERROR",
+    "canonical": null,
+    "error": "fetch failed"
+  },
+  {
+    "url": "https://truereallyguide.com/blog/introvert-networking-tips-without-small-talk-guide",
+    "status": "ERROR",
+    "canonical": null,
+    "error": "fetch failed"
+  },
+  {
+    "url": "https://www.truereallyguide.com/blog/how-to-stop-attracting-narcissists-9-proven-strategies",
+    "status": "ERROR",
+    "canonical": null,
+    "error": "fetch failed"
+  },
+  {
+    "url": "https://www.truereallyguide.com/blog/introvert-networking-tips-without-small-talk-guide",
+    "status": "ERROR",
+    "canonical": null,
+    "error": "fetch failed"
+  }
+]
