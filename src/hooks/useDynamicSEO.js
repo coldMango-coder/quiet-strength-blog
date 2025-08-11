@@ -23,13 +23,14 @@ export const useDynamicSEO = () => {
         
         // Create clean canonical URL - absolute URL matching current page exactly
         let cleanUrl = url.origin + url.pathname;
-        if (url.search && !trackingParams.some(param => url.search.includes(param))) {
-          cleanUrl += url.search;
+        
+        // Add trailing slash if not present (align with Vercel config)
+        if (!cleanUrl.endsWith('/')) {
+          cleanUrl += '/';
         }
         
-        // Remove trailing slash except for root
-        if (cleanUrl !== url.origin + '/' && cleanUrl.endsWith('/')) {
-          cleanUrl = cleanUrl.slice(0, -1);
+        if (url.search && !trackingParams.some(param => url.search.includes(param))) {
+          cleanUrl += url.search;
         }
 
         // Helper functions to update/create tags

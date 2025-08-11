@@ -229,7 +229,7 @@ function getCategories(blogPosts) {
   return categories.filter(cat => cat && cat !== 'Uncategorized');
 }
 
-const baseUrl = 'https://www.trueallyguide.com';
+const baseUrl = 'https://trueallyguide.com';
 
 function formatDate(dateString) {
   if (!dateString) return new Date().toISOString().split('T')[0];

@@ -44,7 +44,12 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">Legal</h3>
             <nav className="flex flex-col space-y-2">
-              <button className="text-slate-200 hover:text-white text-left">Privacy Policy</button>
+              <button 
+                className="text-slate-200 hover:text-white text-left"
+                aria-label="View privacy policy"
+              >
+                Privacy Policy
+              </button>
             </nav>
           </div>
         </div>

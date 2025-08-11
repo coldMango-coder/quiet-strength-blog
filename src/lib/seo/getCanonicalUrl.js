@@ -5,7 +5,9 @@
  * @returns {string} - The canonical URL that exactly matches the live URL
  */
 export function getCanonicalUrl(pathname) {
-  const baseUrl = 'https://www.trueallyguide.com';
+  // Use environment variable for base URL, with fallback
+  const baseUrl = process.env.REACT_APP_SITE_URL || 
+                  (process.env.NODE_ENV === 'production' ? 'https://trueallyguide.com' : 'http://localhost:3001');
   
   // Normalize pathname with strict rules
   let normalizedPath = pathname || '/';
@@ -16,16 +18,11 @@ export function getCanonicalUrl(pathname) {
   // Convert to lowercase for consistency
   normalizedPath = normalizedPath.toLowerCase();
   
-  // Remove trailing slash except for root to match live URLs
-  if (normalizedPath !== '/' && normalizedPath.endsWith('/')) {
-    normalizedPath = normalizedPath.slice(0, -1);
+  // Handle trailing slashes based on Vercel config - all paths should have trailing slash
+  if (!normalizedPath.endsWith('/')) {
+    normalizedPath += '/';
   }
   
-  // Ensure root path has trailing slash (matches live URL)
-  if (normalizedPath === '' || normalizedPath === '/') {
-    return `${baseUrl}/`;
-  }
-  
-  // All other paths: no trailing slash (matches live URLs exactly)
+  // Construct canonical URL
   return `${baseUrl}${normalizedPath}`;
 }

@@ -7,7 +7,7 @@ import { useDynamicSEO } from '../hooks/useDynamicSEO';
 const Seo = ({ title, description, type = 'website', path, article, book, person, breadcrumbs }) => {
   const location = useLocation();
   const siteName = 'Quiet Strength';
-  const baseUrl = 'https://www.trueallyguide.com';
+  const baseUrl = process.env.REACT_APP_SITE_URL || 'https://trueallyguide.com';
   
   // Use dynamic SEO hook for client-side updates
   useDynamicSEO();
@@ -119,16 +119,7 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
     });
   }
 
-  // Prevent duplicate canonical tags
-  React.useEffect(() => {
-    // Remove any existing canonical tags to prevent conflicts
-    const existingCanonicals = document.querySelectorAll('link[rel="canonical"]');
-    existingCanonicals.forEach(canonical => {
-      if (canonical.href !== canonicalUrl) {
-        canonical.remove();
-      }
-    });
-  }, [canonicalUrl]);
+  // Let React Helmet handle deduplication automatically
 
   return (
     <Helmet>

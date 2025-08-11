@@ -179,6 +179,7 @@ const Header = () => {
                             setIsOpen(false);
                           }}
                           className="block text-lg text-brand-primary hover:text-brand-emphasis transition-colors duration-300"
+                          aria-label={`View ${categoryName} category`}
                         >
                           {categoryName}
                         </button>

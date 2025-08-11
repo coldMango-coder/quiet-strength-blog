@@ -1,5 +1,6 @@
 import React from 'react';
 import NormalizedLink from './NormalizedLink';
+import OptimizedImage from './OptimizedImage';
 
 const BlogCard = ({ post, onReadMore, linkTo }) => {
   const { title, description, category, image, datePublished, readingTime, slug } = post;
@@ -7,13 +8,14 @@ const BlogCard = ({ post, onReadMore, linkTo }) => {
   return (
     <article className="w-full max-w-full rounded-lg border border-gray-200 shadow-md bg-white flex flex-col overflow-hidden transform hover:-translate-y-1 transition-transform duration-300" itemScope itemType="https://schema.org/BlogPosting">
       <div className="overflow-hidden">
-        <img 
-          className="w-full h-48 object-cover transform hover:scale-105 transition-transform duration-300 max-w-full" 
+        <OptimizedImage 
+          className="w-full h-48 transform hover:scale-105 transition-transform duration-300" 
           src={image} 
           alt={`${title} - Self-help article for introverted women`}
-          width="400"
-          height="192"
+          width={400}
+          height={192}
           loading="lazy"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
           itemProp="image"
         />
       </div>

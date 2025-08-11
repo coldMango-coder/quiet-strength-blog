@@ -8,7 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const BASE_URL = 'https://www.trueallyguide.com';
+const BASE_URL = 'https://trueallyguide.com';
 
 // Import blog data safely
 function getBlogData() {

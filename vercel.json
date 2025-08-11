@@ -4,6 +4,35 @@
   "cleanUrls": true,
   "public": false,
   "outputDirectory": "build",
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.trueallyguide.com"
+        }
+      ],
+      "destination": "https://trueallyguide.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "trueallyguide.vercel.app"
+        }
+      ],
+      "destination": "https://trueallyguide.com/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
