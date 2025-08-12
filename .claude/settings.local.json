@@ -91,7 +91,9 @@
       "Bash(HOST=https://trueallyguide.com ROUTES=/blog/how-to-stop-attracting-narcissists-9-proven-strategies,/blog/introvert-networking-tips-without-small-talk-guide node scripts/fetch-prod.mjs)",
       "Bash(DOM=trueallyguide.com SLUGS='[\"\"/blog/how-to-stop-attracting-narcissists-9-proven-strategies\"\", \"\"/blog/introvert-networking-tips-without-small-talk-guide\"\"]' node scripts/status-probe.js)",
       "Bash(DOM=trueallyguide.com SLUGS='[\"\"/blog/how-to-stop-attracting-narcissists-9-proven-strategies\"\", \"\"/blog/introvert-networking-tips-without-small-talk-guide\"\"]' node scripts/status-probe-after.js)",
-      "Bash(DOM=quiet-strength-qixw1iw71-mangos-projects-e814ad8c.vercel.app SLUGS='[\"\"/blog/how-to-stop-attracting-narcissists-9-proven-strategies\"\", \"\"/blog/introvert-networking-tips-without-small-talk-guide\"\"]' node scripts/status-probe-after.js)"
+      "Bash(DOM=quiet-strength-qixw1iw71-mangos-projects-e814ad8c.vercel.app SLUGS='[\"\"/blog/how-to-stop-attracting-narcissists-9-proven-strategies\"\", \"\"/blog/introvert-networking-tips-without-small-talk-guide\"\"]' node scripts/status-probe-after.js)",
+      "Bash(DOM=https://trueallyguide.com SLUGS='[\"\"/blog/how-to-stop-attracting-narcissists-9-proven-strategies\"\", \"\"/blog/introvert-networking-tips-without-small-talk-guide\"\"]' node scripts/verify-live.js)",
+      "Bash(DOM=https://trueallyguide.com node scripts/verify-footer-links.js)"
     ],
     "deny": []
   }
