@@ -2,7 +2,7 @@
   "name": "quiet-strength-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.trueallyguide.com",
+  "homepage": "https://trueallyguide.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -22,8 +22,9 @@
   "scripts": {
     "dev": "react-scripts start",
     "start": "react-scripts start", 
-    "build": "react-scripts build && node scripts/generate-static-pages.js",
+    "build": "react-scripts build",
     "build:basic": "react-scripts build",
+    "preview": "npx serve -s build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
