@@ -4,6 +4,9 @@ const ReadingProgress = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    // Only run on client-side
+    if (typeof window === 'undefined') return;
+    
     const updateScrollProgress = () => {
       const currentProgress = window.scrollY;
       const scrollHeight = document.body.scrollHeight - window.innerHeight;

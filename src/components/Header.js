@@ -12,6 +12,9 @@ const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
+    // Only run on client-side
+    if (typeof window === 'undefined') return;
+    
     let ticking = false;
     
     const handleScroll = () => {
@@ -35,6 +38,9 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
+    // Only run on client-side
+    if (typeof window === 'undefined' || typeof localStorage === 'undefined') return;
+    
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
       setIsDarkMode(true);

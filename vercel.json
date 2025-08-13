@@ -60,12 +60,12 @@
       "destination": "/robots.txt"
     },
     {
-      "source": "/sitemap.xml",
+      "source": "/sitemap.xml", 
       "destination": "/sitemap.xml"
     },
     {
-      "source": "/blog/:slug",
-      "destination": "/blog/:slug/index.html"
+      "source": "/((?!static/).*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [

@@ -16,6 +16,9 @@ export function useDevCanonicalFallback() {
     }
 
     const applyCanonical = () => {
+      // Only run on client-side and in development
+      if (typeof window === 'undefined' || typeof document === 'undefined') return;
+      
       try {
         // Check if canonical already exists (avoid duplicates)
         let existingCanonical = document.querySelector('link[rel="canonical"]');

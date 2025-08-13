@@ -20,12 +20,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "set BROWSER=1 && npx react-scripts start",
-    "dev:canonical": "node dev-server.js",
-    "build": "node build.js && node scripts/generate-static-pages.js",
-    "build:no-prerender": "node build.js",
-    "test": "npx react-scripts test",
-    "eject": "npx react-scripts eject",
+    "dev": "react-scripts start",
+    "start": "react-scripts start", 
+    "build": "react-scripts build && node scripts/generate-static-pages.js",
+    "build:basic": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
     "lighthouse": "lhci autorun",
     "seo-check": "echo 'Running SEO analysis...' && npm run build",
@@ -49,6 +49,9 @@
     "seo:validate": "npm run build && npm run validate:seo:enhanced",
     "seo:validate:dev": "npm run validate:canonicals:dev",
     "test:canonical-raw-html": "playwright test tests/canonical-raw-html.spec.js"
+  },
+  "engines": {
+    "node": ">=18 <21"
   },
   "eslintConfig": {
     "extends": [

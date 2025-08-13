@@ -12,6 +12,9 @@ export const useDynamicSEO = () => {
 
   useEffect(() => {
     const updateCanonical = () => {
+      // Only run on client-side to avoid SSR/CSR mismatches
+      if (typeof window === 'undefined') return;
+      
       try {
         const loc = window.location;
         
