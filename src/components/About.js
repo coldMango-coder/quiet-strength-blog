@@ -14,7 +14,7 @@ const About = () => {
           alternateName: "Quiet Strength Coach",
           jobTitle: "Mental Wellness Coach",
           knowsAbout: ["burnout recovery", "introvert confidence"],
-          url: "https://quietstrength.com/about",
+          url: (process.env.REACT_APP_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '')) + '/about',
           image: "/images/logo.png"
         }}
       />

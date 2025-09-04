@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 
-const BASE = process.env.REACT_APP_SITE_URL || 'http://localhost:3000';
+const BASE = process.env.REACT_APP_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : 'http://localhost:5173');
 
 function normalize(href) {
   try {

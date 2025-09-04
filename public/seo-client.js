@@ -8,7 +8,7 @@
   
   // Configuration
   const TRACKING_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'ref', 'gclid', 'fbclid', 'spa'];
-  const BASE_URL = 'https://trueallyguide.com';
+  const BASE_URL = (window.__BASE_URL__ || (window.location.origin));
   
   /**
    * Updates SEO meta tags based on current URL

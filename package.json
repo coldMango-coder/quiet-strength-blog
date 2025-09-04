@@ -20,7 +20,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "react-scripts start",
+    "clean": "rimraf node_modules .next dist build .turbo .cache",
+    "predev": "node ./scripts/predev.js",
+    "dev": "cross-env PORT=5173 npm run predev && react-scripts start",
     "start": "react-scripts start", 
     "build": "react-scripts build",
     "build:basic": "react-scripts build",
@@ -49,7 +51,9 @@
     "validate:seo:enhanced": "node validate-enhanced-seo.js",
     "seo:validate": "npm run build && npm run validate:seo:enhanced",
     "seo:validate:dev": "npm run validate:canonicals:dev",
-    "test:canonical-raw-html": "playwright test tests/canonical-raw-html.spec.js"
+    "test:canonical-raw-html": "playwright test tests/canonical-raw-html.spec.js",
+    "test:smoke": "playwright test",
+    "ci": "npm run clean && npm ci && npm run build && npm run test:smoke"
   },
   "engines": {
     "node": ">=18 <21"
@@ -73,6 +77,8 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
+    "rimraf": "^5.0.5",
     "@playwright/test": "^1.54.2",
     "@tailwindcss/typography": "^0.5.16",
     "cheerio": "^1.1.2",
@@ -84,6 +90,7 @@
     "sharp": "^0.34.3",
     "tailwindcss": "^3.3.3",
     "webpack-bundle-analyzer": "^4.10.2",
-    "xml2js": "^0.6.2"
+    "xml2js": "^0.6.2",
+    "@lhci/cli": "^0.13.0"
   }
 }

@@ -47,9 +47,7 @@
     <link rel="preload" as="image" href="/images/logo.webp" type="image/webp" fetchpriority="high">
     
     <!-- Preconnect to own domain for faster resource loading -->
-    <link rel="preconnect" href="https://trueallyguide.com" crossorigin>
-    <!-- Resource hints to reduce network dependency depth -->
-    <link rel="dns-prefetch" href="https://trueallyguide.com">
+    <!-- Avoid hard-coding cross-origin preconnect/dns-prefetch to a specific domain -->
     <!-- Inline Critical CSS for above-the-fold content -->
     <style>
 /* Self-hosted fonts with optimized fallbacks */
@@ -134,8 +132,7 @@ html{scroll-behavior:auto}
     <link rel="preconnect" href="https://trueallyguide.com" crossorigin>
     
     <!-- Prefetch key chunks for faster navigation -->
-    <link rel="prefetch" href="/static/js/861.db59f714.chunk.js">
-    <link rel="prefetch" href="/static/js/171.2a8e9e0b.chunk.js">
+    <!-- Avoid prefetching hashed chunks at source level (handled by build output) -->
     
     <!-- Preload critical above-the-fold images -->
     <link rel="preload" as="image" href="/images/logo.webp" type="image/webp" fetchpriority="high">
@@ -145,11 +142,11 @@ html{scroll-behavior:auto}
     <meta http-equiv="x-dns-prefetch-control" content="off">
     
     <!-- Performance: Advanced optimization for 100/100 desktop -->
-    <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
+    <!-- Do not set long cache for HTML at source; controlled via vercel.json headers -->
     <meta name="format-detection" content="telephone=no">
     
     <!-- Performance: Minimize parser blocking -->
-    <link rel="preconnect" href="https://trueallyguide.com" crossorigin>
+    <!-- Avoid domain-specific preconnect at source -->
     
     <!-- Remove analytics completely for maximum performance -->
   </head>
@@ -189,6 +186,9 @@ html{scroll-behavior:auto}
       </section>
     </div>
     
+    <!-- Dev-only SW cleanup on localhost to prevent stale assets -->
+    <script src="/dev-sw-kill.js"></script>
+
     <!-- Performance: Load resources only after LCP is measured -->
   </body>
 </html>

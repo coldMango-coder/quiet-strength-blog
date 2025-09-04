@@ -7,7 +7,7 @@ import { useDynamicSEO } from '../hooks/useDynamicSEO';
 const Seo = ({ title, description, type = 'website', path, article, book, person, breadcrumbs }) => {
   const location = useLocation();
   const siteName = 'Quiet Strength';
-  const baseUrl = process.env.REACT_APP_SITE_URL || 'https://trueallyguide.com';
+  const baseUrl = process.env.REACT_APP_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '');
   
   // Use dynamic SEO hook for client-side updates
   useDynamicSEO();
@@ -37,7 +37,7 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
       author: {
         '@type': 'Person',
         name: article.authorName || 'Marica Šinko',
-        url: 'https://trueallyguide.com/author/marica-sinko',
+        url: `${baseUrl}/author/marica-sinko`,
       },
       publisher: {
         '@type': 'Organization',
