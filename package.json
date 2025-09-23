@@ -22,7 +22,8 @@
   "scripts": {
     "clean": "rimraf node_modules .next dist build .turbo .cache",
     "predev": "node ./scripts/predev.js",
-    "dev": "cross-env PORT=5173 npm run predev && react-scripts start",
+    "dev": "npm run predev && react-scripts start",
+    "dev:express": "node dev-server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:basic": "react-scripts build",
