@@ -170,6 +170,10 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
 
       {/* JSON-LD Schema */}
       <script type="application/ld+json">{JSON.stringify(schema.length > 1 ? schema : schema[0])}</script>
+    
+      {type === 'article' && article?.image && (
+        <link rel="preload" as="image" href={`${baseUrl}${article.image}`} fetchpriority="high" data-preload-article-image />
+      )}
     </Helmet>
   );
 };

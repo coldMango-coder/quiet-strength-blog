@@ -15,15 +15,15 @@ const About = () => {
           jobTitle: "Mental Wellness Coach",
           knowsAbout: ["burnout recovery", "introvert confidence"],
           url: (process.env.REACT_APP_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '')) + '/about',
-          image: "/images/logo.png"
+          image: "/images/logo.webp"
         }}
       />
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/3 text-center">
             <div className="modern-logo w-56 h-56 mx-auto shadow-2xl border-8 border-white rounded-full overflow-hidden">
-              <img 
-                src="/images/logo.png" 
+              <img loading="lazy" decoding="async" 
+                src="/images/logo.webp" 
                 alt="Quiet Strength Logo" 
                 className="w-full h-full object-cover"
               />

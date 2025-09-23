@@ -89,7 +89,7 @@ const BlogPostNarcissistRecovery = () => {
 
               <div className="my-8">
                 <img 
-                  src="/images/confident-woman-standing-triumphantly-at-sunrise-representing-emotional-recovery-and-healing-from-narcissistic-abuse-manipulation-tactics.jpg" 
+                  src="/images/confident-woman-standing-triumphantly-at-sunrise-representing-emotional-recovery-and-healing-from-narcissistic-abuse-manipulation-tactics.webp" 
                   alt="Confident woman standing triumphantly at sunrise representing emotional recovery and healing from narcissistic abuse manipulation tactics" 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"
@@ -159,7 +159,7 @@ const BlogPostNarcissistRecovery = () => {
 
               <div className="my-8">
                 <img 
-                  src="/images/open-journal-with-a-pen-cup-of-tea-and-small-potted-plant-on-a-white-desk-in-soft-natural-light-evoking-calm-and-reflection.jpg" 
+                  src="/images/open-journal-with-a-pen-cup-of-tea-and-small-potted-plant-on-a-white-desk-in-soft-natural-light-evoking-calm-and-reflection.webp" 
                   alt="Open journal with a pen, cup of tea, and small potted plant on a white desk in soft natural light, evoking calm and reflection." 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"
@@ -223,7 +223,7 @@ const BlogPostNarcissistRecovery = () => {
 
               <div className="my-8">
                 <img 
-                  src="/images/person-setting-healthy-emotional-boundaries-with-protective-golden-light-representing-recovery-from-narcissist-ex-manipulation-and-self-protection.jpg" 
+                  src="/images/person-setting-healthy-emotional-boundaries-with-protective-golden-light-representing-recovery-from-narcissist-ex-manipulation-and-self-protection.webp" 
                   alt="Person setting healthy emotional boundaries with protective golden light representing recovery from narcissist ex manipulation and self-protection" 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"

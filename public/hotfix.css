@@ -12,3 +12,10 @@ article,main{overflow:visible!important}
 .book-card img,.article-card img,.card img,img[loading=lazy]{opacity:1!important;visibility:visible!important;content-visibility:auto!important}
 /* Ensure footer links clickable above any overlay */
 footer a,footer button{pointer-events:auto!important;position:relative!important;z-index:2!important}
+
+/* Typography safety: enforce sane line-height and spacing in articles */
+.article-container,.prose{line-height:1.65!important;overflow-wrap:anywhere!important;word-break:normal!important;hyphens:auto!important}
+.article-container p,.prose p,.article-container li,.prose li{line-height:1.65!important;margin-top:0!important;margin-bottom:1rem!important}
+.article-container h1,.article-container h2,.article-container h3,.article-container h4{line-height:1.2!important;margin-top:2rem!important;margin-bottom:1rem!important}
+/* Neutralize aggressive containment within article text to avoid layout glitches */
+.article-container .flex,.article-container .grid{contain:initial!important}

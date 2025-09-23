@@ -84,7 +84,7 @@ const BlogPostToxicRelationship = () => {
 
             <div className="my-8">
               <img 
-                src="/images/woman-embracing-self-love-freedom-toxic-relationship-recovery-mountain-peak-sunrise-new-beginnings-personal-growth.jpg" 
+                src="/images/woman-embracing-self-love-freedom-toxic-relationship-recovery-mountain-peak-sunrise-new-beginnings-personal-growth.webp" 
                 alt="Woman embracing self-love and freedom after toxic relationship recovery, standing confidently on mountain peak at sunrise representing new beginnings and personal growth" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -243,7 +243,7 @@ const BlogPostToxicRelationship = () => {
 
             <div className="my-8">
               <img 
-                src="/images/woman-practicing-daily-self-care-meditation-mindfulness-exercises-healing-self-love-toxic-relationship.jpg" 
+                src="/images/woman-practicing-daily-self-care-meditation-mindfulness-exercises-healing-self-love-toxic-relationship.webp" 
                 alt="Woman practicing daily self-care meditation and mindfulness exercises for healing and self-love after ending toxic relationship" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -306,7 +306,7 @@ const BlogPostToxicRelationship = () => {
 
             <div className="my-8">
               <img 
-                src="/images/diverse-group-women-supportive-therapy-friendship-circle-toxic-relationship-recovery-healthy-support-networks-healing.jpg" 
+                src="/images/diverse-group-women-supportive-therapy-friendship-circle-toxic-relationship-recovery-healthy-support-networks-healing.webp" 
                 alt="Diverse group of women in supportive therapy or friendship circle discussing toxic relationship recovery and building healthy support networks for healing" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"

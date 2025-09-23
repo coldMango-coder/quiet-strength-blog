@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ensureNoSW } from './sw-control';
 
 // Safe SPA initialization with guards to prevent double initialization
 function startApp() {
@@ -14,6 +15,9 @@ function startApp() {
     return;
   }
   window.__APP_STARTED__ = true;
+
+  // Ensure no stale Service Workers/caches unless explicitly enabled
+  try { ensureNoSW(); } catch {}
 
   // Ensure root element exists
   const rootElement = document.getElementById('root');
@@ -34,19 +38,21 @@ function startApp() {
       </React.StrictMode>
     );
 
-    // Performance-optimized service worker for 100/100 scores
-    if ('serviceWorker' in navigator && process.env.NODE_ENV === 'production') {
+    // Optional Service Worker registration (opt-in only)
+    if (
+      'serviceWorker' in navigator &&
+      process.env.NODE_ENV === 'production' &&
+      process.env.REACT_APP_ENABLE_SW === 'true'
+    ) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js', { 
-          scope: '/',
-          updateViaCache: 'none'
-        })
-        .then((registration) => {
-          console.log('Performance SW registered successfully');
-        })
-        .catch((error) => {
-          console.warn('SW registration failed:', error);
-        });
+        navigator.serviceWorker
+          .register('/sw.js', { scope: '/', updateViaCache: 'none' })
+          .then(() => {
+            console.log('SW registered (opt-in)');
+          })
+          .catch((error) => {
+            console.warn('SW registration failed:', error);
+          });
       });
     }
 

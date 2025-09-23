@@ -25,12 +25,8 @@ export const useDynamicSEO = () => {
         trackingParams.forEach(param => url.searchParams.delete(param));
         
         // Create clean canonical URL - absolute URL matching current page exactly
+        // Do NOT force trailing slash to avoid server/client redirect loops
         let cleanUrl = url.origin + url.pathname;
-        
-        // Add trailing slash if not present (align with Vercel config)
-        if (!cleanUrl.endsWith('/')) {
-          cleanUrl += '/';
-        }
         
         if (url.search && !trackingParams.some(param => url.search.includes(param))) {
           cleanUrl += url.search;
@@ -71,12 +67,7 @@ export const useDynamicSEO = () => {
         const ogType = isArticle ? 'article' : 'website';
         setOrUpdateMeta('meta[property="og:type"]', 'property', 'og:type', ogType);
 
-        // Clean browser URL if tracking params were present
-        if (loc.href !== cleanUrl && window.history && window.history.replaceState) {
-          const urlObj = new URL(cleanUrl);
-          const newPath = urlObj.pathname + urlObj.search + urlObj.hash;
-          window.history.replaceState(null, '', newPath);
-        }
+        // Avoid manipulating history here to prevent possible redirect loops
 
         // Debug log for development
         if (process.env.NODE_ENV === 'development') {

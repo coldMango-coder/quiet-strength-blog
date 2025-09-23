@@ -47,7 +47,7 @@ export const blogPosts = [
     date: '2025-08-03',
     category: categories.RELATIONSHIPS_DATING,
     component: BlogPostNarcissistAttraction,
-    image: '/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.jpg',
+    image: '/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.webp',
     readTime: '8 min read',
   },
   {
@@ -57,7 +57,7 @@ export const blogPosts = [
     date: '2025-08-03',
     category: categories.RELATIONSHIPS_DATING,
     component: BlogPostEmotionallyUnavailableMen,
-    image: '/images/confident-woman-journaling-about-emotional-growth-and-learning-how-to-stop-attracting-emotionally-unavailable-men-in-bright-coffee-shop-setting.jpg',
+    image: '/images/confident-woman-journaling-about-emotional-growth-and-learning-how-to-stop-attracting-emotionally-unavailable-men-in-bright-coffee-shop-setting.webp',
     readTime: '8 min read',
   },
   {
@@ -67,7 +67,7 @@ export const blogPosts = [
     date: '2025-07-29',
     category: categories.CAREER_WORKPLACE,
     component: BlogPostNetworkingTips,
-    image: '/images/20250728_1647_Engaged Coffee Shop Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.jpg',
+    image: '/images/20250728_1647_Engaged Coffee Shop Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.webp',
     readTime: '10 min read',
   },
   {
@@ -77,7 +77,7 @@ export const blogPosts = [
     date: '2025-07-28',
     category: categories.INTROVERSION_PERSONALITY,
     component: BlogPostIntrovertConfidence,
-    image: '/images/confident-introvert-woman-sitting-thoughtfully-in-modern-office-space-demonstrating-quiet-strength-and-authentic-confidence-in-professional-setting.jpg',
+    image: '/images/confident-introvert-woman-sitting-thoughtfully-in-modern-office-space-demonstrating-quiet-strength-and-authentic-confidence-in-professional-setting.webp',
     readTime: '8 min read',
   },
   {
@@ -87,7 +87,7 @@ export const blogPosts = [
     date: '2025-07-28',
     category: categories.SELF_DEVELOPMENT,
     component: BlogPostBreakupGlowUp,
-    image: '/images/woman-showing-post-breakup-glow-up-transformation-before-and-after-in-mirror-reflection-demonstrating-confidence-and-style-improvement.jpg',
+    image: '/images/woman-showing-post-breakup-glow-up-transformation-before-and-after-in-mirror-reflection-demonstrating-confidence-and-style-improvement.webp',
     readTime: '8 min read',
   },
   {
@@ -97,7 +97,7 @@ export const blogPosts = [
     date: '2025-07-27',
     category: categories.RELATIONSHIPS_DATING,
     component: BlogPostNarcissistRecovery,
-    image: '/images/confident-woman-standing-triumphantly-at-sunrise-representing-emotional-recovery-and-healing-from-narcissistic-abuse-manipulation-tactics.jpg',
+    image: '/images/confident-woman-standing-triumphantly-at-sunrise-representing-emotional-recovery-and-healing-from-narcissistic-abuse-manipulation-tactics.webp',
     readTime: '8 min read',
   },
   {
@@ -107,7 +107,7 @@ export const blogPosts = [
     date: '2025-07-26',
     category: categories.INTROVERSION_PERSONALITY,
     component: BlogPostSocialMediaOverwhelm,
-    image: '/images/introvert-overwhelmed-by-social-media-sitting-alone-with-multiple-screens-showing-overwhelming-social-feeds.jpg',
+    image: '/images/introvert-overwhelmed-by-social-media-sitting-alone-with-multiple-screens-showing-overwhelming-social-feeds.webp',
     readTime: '6 min read',
   },
   {
@@ -117,7 +117,7 @@ export const blogPosts = [
     date: '2025-07-24',
     category: categories.RELATIONSHIPS_DATING,
     component: BlogPostToxicRelationship,
-    image: '/images/woman-embracing-self-love-freedom-toxic-relationship-recovery-mountain-peak-sunrise-new-beginnings-personal-growth.jpg',
+    image: '/images/woman-embracing-self-love-freedom-toxic-relationship-recovery-mountain-peak-sunrise-new-beginnings-personal-growth.webp',
     readTime: '8 min read',
   },
   {
@@ -127,7 +127,7 @@ export const blogPosts = [
     date: '2025-07-22',
     category: categories.CAREER_WORKPLACE,
     component: BlogPostMeetings,
-    image: '/images/confident-introvert-business-meeting.jpg',
+    image: '/images/confident-introvert-business-meeting.webp',
     readTime: '15 min read',
   },
   {
@@ -137,7 +137,7 @@ export const blogPosts = [
     date: '2025-07-21',
     category: categories.RELATIONSHIPS_DATING,
     component: BlogPostIntentionalDating,
-    image: '/images/intentional-dating-coffee-conversation.jpg',
+    image: '/images/intentional-dating-coffee-conversation.webp',
     readTime: '18 min read',
   },
   {
@@ -147,7 +147,7 @@ export const blogPosts = [
     date: '2025-07-20',
     category: categories.INTROVERSION_PERSONALITY,
     component: BlogPostSocialBattery,
-    image: '/images/introvert-social-battery-recovery-tea.jpg',
+    image: '/images/introvert-social-battery-recovery-tea.webp',
     readTime: '12 min read',
   },
   {
@@ -157,7 +157,7 @@ export const blogPosts = [
     date: '2025-07-19',
     category: categories.RELATIONSHIPS_DATING,
     component: BlogPostRelationshipSigns,
-    image: '/images/thoughtful-woman-relationship-reflection.jpg',
+    image: '/images/thoughtful-woman-relationship-reflection.webp',
     readTime: '7 min read',
   },
   {
@@ -167,7 +167,7 @@ export const blogPosts = [
     date: '2025-07-18',
     category: categories.RELATIONSHIPS_DATING,
     component: BlogPostSayingNoWithoutGuilt,
-    image: '/images/confident-boundary-setting-professional.png',
+    image: '/images/confident-boundary-setting-professional.webp',
     readTime: '12 min read',
   },
   {
@@ -177,7 +177,7 @@ export const blogPosts = [
     date: '2025-07-14',
     category: categories.SELF_DEVELOPMENT,
     component: BlogPostSayingNo,
-    image: '/images/stressed-woman-people-pleasing-burnout.png',
+    image: '/images/stressed-woman-people-pleasing-burnout.webp',
     readTime: '6 min read',
   },
   {
@@ -187,7 +187,7 @@ export const blogPosts = [
     date: '2025-07-12',
     category: categories.CAREER_WORKPLACE,
     component: BlogPostBurnout,
-    image: '/images/overwhelmed-introvert-burnout-signs.png',
+    image: '/images/overwhelmed-introvert-burnout-signs.webp',
     readTime: '8 min read',
   },
 ];

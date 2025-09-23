@@ -6,6 +6,7 @@ const Footer = () => {
   const commit = process.env.REACT_APP_COMMIT_SHA || 'dev';
   const shortCommit = commit ? commit.substring(0, 7) : 'dev';
   const buildEnv = process.env.NODE_ENV;
+  const buildTime = process.env.REACT_APP_BUILD_TIME;
 
   return (
     <footer id="contact" className="bg-slate-800 text-white pt-16 pb-8">
@@ -58,7 +59,7 @@ const Footer = () => {
         </div>
         <div className="mt-12 border-t border-slate-700 pt-8 text-center text-slate-200">
           <p>&copy; {currentYear} Quiet Strength. All Rights Reserved.</p>
-          <p className="mt-2 text-xs text-slate-400">Build: {buildEnv} · Commit: {shortCommit}</p>
+          <p className="mt-2 text-xs text-slate-400">Build: {buildEnv} · Commit: {shortCommit}{buildTime ? ` · Built: ${new Date(buildTime).toLocaleString()}` : ''}</p>
         </div>
       </div>
     </footer>

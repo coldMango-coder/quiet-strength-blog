@@ -23,7 +23,7 @@
     "clean": "rimraf node_modules .next dist build .turbo .cache",
     "predev": "node ./scripts/predev.js",
     "dev": "cross-env PORT=5173 npm run predev && react-scripts start",
-    "start": "react-scripts start", 
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "build:basic": "react-scripts build",
     "preview": "npx serve -s build",
@@ -53,7 +53,8 @@
     "seo:validate:dev": "npm run validate:canonicals:dev",
     "test:canonical-raw-html": "playwright test tests/canonical-raw-html.spec.js",
     "test:smoke": "playwright test",
-    "ci": "npm run clean && npm ci && npm run build && npm run test:smoke"
+    "ci": "npm run clean && npm ci && npm run build && npm run test:smoke",
+    "optimize-images": "node scripts/optimize-images.mjs"
   },
   "engines": {
     "node": ">=18 <21"
