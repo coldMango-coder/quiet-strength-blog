@@ -17,9 +17,10 @@ const BlogListPage = () => {
    ? sortedBlogPosts.filter(p => p.category === selectedCategory)
    : sortedBlogPosts;
 
+  const baseUrl = process.env.REACT_APP_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '');
   const canonicalUrl = selectedCategory
-    ? `https://www.trueallyguide.com/blog?category=${categorySlugMap[selectedCategory] || selectedCategory}`
-    : 'https://www.trueallyguide.com/blog';
+    ? `${baseUrl}/blog?category=${categorySlugMap[selectedCategory] || selectedCategory}`
+    : `${baseUrl}/blog`;
 
   return (
     <>

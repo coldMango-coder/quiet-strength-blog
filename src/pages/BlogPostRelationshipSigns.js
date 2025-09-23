@@ -89,7 +89,7 @@ const BlogPostRelationshipSigns = () => {
 
             <div className="my-8">
               <img 
-                src="/images/thoughtful-woman-relationship-reflection.jpg" 
+                src="/images/thoughtful-woman-relationship-reflection.webp" 
                 alt="Thoughtful introvert woman sitting by window with coffee cup contemplating whether she deserves better in her relationship, representing self-reflection and personal worth" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -250,7 +250,7 @@ const BlogPostRelationshipSigns = () => {
             
             <div className="my-8">
               <img 
-                src="/images/woman-journaling-self-reflection.png" 
+                src="/images/woman-journaling-self-reflection.webp" 
                 alt="Woman journaling and practicing self-reflection in cozy reading nook, symbolizing introvert woman understanding her relationship needs and personal worth" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -347,7 +347,7 @@ const BlogPostRelationshipSigns = () => {
             
             <div className="my-8">
               <img 
-                src="/images/confident-woman-future-empowerment.png" 
+                src="/images/confident-woman-future-empowerment.webp" 
                 alt="Confident introvert woman standing on balcony looking toward future horizons, representing empowerment to demand better relationships and recognize self-worth" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"

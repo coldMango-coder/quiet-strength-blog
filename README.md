@@ -10,8 +10,8 @@ A React-based blog focused on helping introverted women build confidence, preven
 # Install dependencies
 npm install
 
-# Start development server
-npm start
+# Start development server (fixed port 5173; auto-clears dev SW on localhost)
+npm run dev
 
 # Build for production
 npm run build
@@ -122,10 +122,13 @@ npm run prerender          # Run prerendering only
 ```
 
 ### Vercel Configuration
-The project includes optimized `vercel.json` configuration:
-- Routes prerendered HTML files first, falls back to SPA
-- Proper caching headers for static assets
-- Security headers and redirects
+The project includes optimized `vercel.json`:
+- Long-cache immutable headers for `css/js/fonts/images`
+- `no-store` for all HTML/document responses
+- SPA rewrites and clean URLs
+- Build env maps `REACT_APP_COMMIT_SHA` to `VERCEL_GIT_COMMIT_SHA`
+
+On production, the footer shows the short commit (first 7 chars).
 
 ### Asset Validation
 ```bash
@@ -133,6 +136,14 @@ npm run ci:validate-assets  # Validate all assets are accessible
 ```
 
 ## 🔧 Development
+### Environment
+- Node: LTS (>=18 <21). `.nvmrc` provided.
+- Base URL: set `REACT_APP_SITE_URL` in `.env.production` and `.env.local` as needed.
+- Avoid hard-coded absolute URLs; use `process.env.REACT_APP_SITE_URL` or relative links.
+
+### Dev Isolation
+- Fixed dev port: `5173` (override via `PORT` env)
+- Service workers are unregistered and caches cleared on localhost via `public/dev-sw-kill.js`
 
 ### Link Policy
 - **Internal Links**: Always use `NormalizedLink` component or ensure canonical format
@@ -170,7 +181,8 @@ After deployment, validate the implementation:
 ### Manual Validation Commands
 ```bash
 # Test canonical tags in raw HTML (no JS)
-curl -s https://trueallyguide.com/blog/my-post | grep canonical
+BASE_URL=https://your-domain.com
+curl -s $BASE_URL/blog/my-post | grep canonical
 
 # Validate prerendered content
 npm run test:prerender

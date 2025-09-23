@@ -4,6 +4,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Baseline CSS reset and layout guards */
+*,*::before,*::after{box-sizing:border-box}
+html{font-size:100%}
+body{margin:0;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg,video{max-width:100%;height:auto}
+.container{max-width:72rem;margin-inline:auto;padding-inline:1rem}
+h1{line-height:1.2;word-wrap:anywhere}
+.stack>*+*{margin-top:clamp(0.5rem,1.5vw,1.25rem)}
+
+/* Extra safety to prevent any production-only overflows/overlaps */
+html, body { text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
+body { font-kerning: normal; font-synthesis-weight: none; }
+.page-wrapper, .content-section, .article-container { overflow-wrap: anywhere; word-break: normal; hyphens: auto; }
+.page-wrapper, .content-section { max-width: 72rem; margin-inline: auto; padding-inline: 1rem; }
+h1, h2, h3, h4 { overflow-wrap: anywhere; word-break: break-word; hyphens: auto; }
+p, li { overflow-wrap: anywhere; }
+
 /* ─────────────────────────────────────────────
    1) GLOBAL VARIABLES – adjust colours once
    ───────────────────────────────────────────── */

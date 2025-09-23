@@ -4,6 +4,7 @@ import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Canonical from './components/Canonical';
 import { useDynamicSEO } from './hooks/useDynamicSEO';
 import { useDevCanonicalFallback } from './hooks/useDevCanonicalFallback';
 
@@ -24,6 +25,7 @@ function App() {
   
   return (
     <div className="bg-brand-light">
+      <Canonical />
       <Header />
       <main id="main-content" className="container mx-auto">
         <div className="lg:grid lg:grid-cols-12 lg:gap-24">

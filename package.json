@@ -2,7 +2,7 @@
   "name": "quiet-strength-blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.trueallyguide.com",
+  "homepage": "https://trueallyguide.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -20,12 +20,16 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "set BROWSER=1 && npx react-scripts start",
-    "dev:canonical": "node dev-server.js",
-    "build": "node build.js && node scripts/generate-static-pages.js",
-    "build:no-prerender": "node build.js",
-    "test": "npx react-scripts test",
-    "eject": "npx react-scripts eject",
+    "clean": "rimraf node_modules .next dist build .turbo .cache",
+    "predev": "node ./scripts/predev.js",
+    "dev": "npm run predev && react-scripts start",
+    "dev:express": "node dev-server.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build:basic": "react-scripts build",
+    "preview": "npx serve -s build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
     "lighthouse": "lhci autorun",
     "seo-check": "echo 'Running SEO analysis...' && npm run build",
@@ -48,7 +52,13 @@
     "validate:seo:enhanced": "node validate-enhanced-seo.js",
     "seo:validate": "npm run build && npm run validate:seo:enhanced",
     "seo:validate:dev": "npm run validate:canonicals:dev",
-    "test:canonical-raw-html": "playwright test tests/canonical-raw-html.spec.js"
+    "test:canonical-raw-html": "playwright test tests/canonical-raw-html.spec.js",
+    "test:smoke": "playwright test",
+    "ci": "npm run clean && npm ci && npm run build && npm run test:smoke",
+    "optimize-images": "node scripts/optimize-images.mjs"
+  },
+  "engines": {
+    "node": ">=18 <21"
   },
   "eslintConfig": {
     "extends": [
@@ -69,6 +79,8 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
+    "rimraf": "^5.0.5",
     "@playwright/test": "^1.54.2",
     "@tailwindcss/typography": "^0.5.16",
     "cheerio": "^1.1.2",
@@ -80,6 +92,7 @@
     "sharp": "^0.34.3",
     "tailwindcss": "^3.3.3",
     "webpack-bundle-analyzer": "^4.10.2",
-    "xml2js": "^0.6.2"
+    "xml2js": "^0.6.2",
+    "@lhci/cli": "^0.13.0"
   }
 }

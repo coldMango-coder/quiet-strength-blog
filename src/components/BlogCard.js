@@ -69,7 +69,7 @@ const BlogCard = ({ post, onReadMore, linkTo }) => {
           <span itemProp="author" itemScope itemType="https://schema.org/Person">
             <span itemProp="name">Marica Šinko</span>
           </span>
-          <meta itemProp="url" content={`https://www.trueallyguide.com/blog/${slug}`} />
+          <meta itemProp="url" content={`${(process.env.REACT_APP_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : ''))}/blog/${slug}`} />
         </div>
       </div>
     </article>

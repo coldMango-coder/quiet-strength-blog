@@ -93,8 +93,11 @@
       "Bash(DOM=trueallyguide.com SLUGS='[\"\"/blog/how-to-stop-attracting-narcissists-9-proven-strategies\"\", \"\"/blog/introvert-networking-tips-without-small-talk-guide\"\"]' node scripts/status-probe-after.js)",
       "Bash(DOM=quiet-strength-qixw1iw71-mangos-projects-e814ad8c.vercel.app SLUGS='[\"\"/blog/how-to-stop-attracting-narcissists-9-proven-strategies\"\", \"\"/blog/introvert-networking-tips-without-small-talk-guide\"\"]' node scripts/status-probe-after.js)",
       "Bash(DOM=https://trueallyguide.com SLUGS='[\"\"/blog/how-to-stop-attracting-narcissists-9-proven-strategies\"\", \"\"/blog/introvert-networking-tips-without-small-talk-guide\"\"]' node scripts/verify-live.js)",
-      "Bash(DOM=https://trueallyguide.com node scripts/verify-footer-links.js)"
+      "Bash(DOM=https://trueallyguide.com node scripts/verify-footer-links.js)",
+      "Bash(DOM=https://trueallyguide.com SLUGS='[\"\"/blog/how-to-stop-attracting-narcissists-9-proven-strategies\"\"]' node scripts/verify-live.js)",
+      "Bash(npm ci:*)"
     ],
-    "deny": []
+    "deny": [],
+    "defaultMode": "acceptEdits"
   }
 }

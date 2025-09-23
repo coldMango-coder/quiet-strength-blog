@@ -1,4 +1,5 @@
 import React from 'react';
+import OptimizedImage from '../components/OptimizedImage';
 import NormalizedLink from '../components/NormalizedLink';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
@@ -56,13 +57,15 @@ const BlogPostNarcissistAttraction = () => {
               In this comprehensive guide, you'll discover the exact psychological mechanisms that draw narcissists to specific individuals, plus nine evidence-based strategies to stop attracting narcissists permanently. Whether you're recovering from a narcissistic relationship or simply want to protect yourself moving forward, these proven techniques will help you build stronger boundaries and attract healthier relationships.
             </p>
 
-            <img 
-              src="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.jpg" 
-              alt="Confident woman learning how to stop attracting narcissists by walking away from toxic relationships toward healthy boundaries and self-empowerment" 
-              className="rounded-lg shadow-md my-8 w-full" 
-              loading="lazy"
-              width="600"
-              height="400"
+            
+            <OptimizedImage
+              src="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.webp"
+              alt="Confident woman learning how to stop attracting narcissists by walking away from toxic relationships toward healthy boundaries and self-empowerment"
+              className="rounded-lg shadow-md my-8 w-full"
+              width={960}
+              height={640}
+              sizes="(max-width: 768px) 100vw, 720px"
+              priority
             />
             <p className="text-sm text-gray-600 text-center italic mb-6">
               Confident woman learning how to stop attracting narcissists by walking away from toxic relationships toward healthy boundaries and self-empowerment
@@ -209,7 +212,7 @@ const BlogPostNarcissistAttraction = () => {
               ]} />
 
               <img 
-                src="/images/support-group-helping-individuals-develop-healthy-relationship-patterns-and-learn-effective-strategies-to-stop-attracting-narcissistic-partners.jpg" 
+                src="/images/support-group-helping-individuals-develop-healthy-relationship-patterns-and-learn-effective-strategies-to-stop-attracting-narcissistic-partners.webp" 
                 alt="Support group helping individuals develop healthy relationship patterns and learn effective strategies to stop attracting narcissistic partners" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
@@ -357,7 +360,7 @@ const BlogPostNarcissistAttraction = () => {
               </p>
 
               <img 
-                src="/images/person-practicing-self-reflection-and-boundary-setting-techniques-to-break-the-cycle-of-attracting-narcissists-and-build-healthier-relationships.jpg" 
+                src="/images/person-practicing-self-reflection-and-boundary-setting-techniques-to-break-the-cycle-of-attracting-narcissists-and-build-healthier-relationships.webp" 
                 alt="Person practicing self-reflection and boundary-setting techniques to break the cycle of attracting narcissists and build healthier relationships" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
