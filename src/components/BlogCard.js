@@ -9,11 +9,11 @@ const BlogCard = ({ post, onReadMore, linkTo }) => {
     <article className="w-full max-w-full rounded-lg border border-gray-200 shadow-md bg-white flex flex-col overflow-hidden transform hover:-translate-y-1 transition-transform duration-300" itemScope itemType="https://schema.org/BlogPosting">
       <div className="overflow-hidden">
         <OptimizedImage 
-          className="w-full h-48 transform hover:scale-105 transition-transform duration-300" 
+          className="w-full aspect-[16/9] object-cover transform hover:scale-105 transition-transform duration-300" 
           src={image} 
           alt={`${title} - Self-help article for introverted women`}
-          width={400}
-          height={192}
+          width={640}
+          height={360}
           loading="lazy"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
           itemProp="image"

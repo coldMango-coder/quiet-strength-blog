@@ -48,7 +48,8 @@
     "validate:seo:enhanced": "node validate-enhanced-seo.js",
     "seo:validate": "npm run build && npm run validate:seo:enhanced",
     "seo:validate:dev": "npm run validate:canonicals:dev",
-    "test:canonical-raw-html": "playwright test tests/canonical-raw-html.spec.js"
+    "test:canonical-raw-html": "playwright test tests/canonical-raw-html.spec.js",
+    "optimize-images": "node scripts/optimize-images.mjs"
   },
   "eslintConfig": {
     "extends": [

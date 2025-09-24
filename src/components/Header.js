@@ -71,9 +71,9 @@ const Header = () => {
           <NormalizedLink to="/" className="focus:outline-none">
             <div className={`modern-logo transition-all duration-300 ${isScrolled ? 'w-12 h-12' : 'w-16 h-16'} rounded-full overflow-hidden`}>
               <OptimizedImage 
-                src="/images/logo.png" 
+                src="/images/logo.webp?v=b008f571" 
                 alt="Quiet Strength Logo" 
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
                 width={64}
                 height={64}
                 priority={true}

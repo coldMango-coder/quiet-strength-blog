@@ -59,7 +59,7 @@ const BlogPostSocialBattery = () => {
             
             <div className="my-8">
               <img 
-                src="/images/introvert-social-battery-recovery-tea.jpg" 
+                src="/images/introvert-social-battery-recovery-tea.webp?v=b008f571" 
                 alt="Introvert recovering from social battery drain in peaceful home environment with tea and natural lighting" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -156,7 +156,7 @@ const BlogPostSocialBattery = () => {
             
             <div className="my-8">
               <img 
-                src="/images/social-battery-recharging-visual.jpg" 
+                src="/images/social-battery-recharging-visual.avif?v=b008f571" 
                 alt="Visual representation of social battery recharging for introverts with glowing energy meter in peaceful setting" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -330,7 +330,7 @@ const BlogPostSocialBattery = () => {
             
             <div className="my-8">
               <img 
-                src="/images/peaceful-reading-sanctuary-recovery.jpg" 
+                src="/images/peaceful-reading-sanctuary-recovery.webp?v=b008f571" 
                 alt="Introvert practicing solitude recovery method by reading with headphones in quiet natural setting" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"

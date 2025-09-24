@@ -57,7 +57,7 @@ const BlogPostNarcissistAttraction = () => {
             </p>
 
             <img 
-              src="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.jpg" 
+              src="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.webp?v=b008f571" 
               alt="Confident woman learning how to stop attracting narcissists by walking away from toxic relationships toward healthy boundaries and self-empowerment" 
               className="rounded-lg shadow-md my-8 w-full" 
               loading="lazy"
@@ -209,7 +209,7 @@ const BlogPostNarcissistAttraction = () => {
               ]} />
 
               <img 
-                src="/images/support-group-helping-individuals-develop-healthy-relationship-patterns-and-learn-effective-strategies-to-stop-attracting-narcissistic-partners.jpg" 
+                src="/images/support-group-helping-individuals-develop-healthy-relationship-patterns-and-learn-effective-strategies-to-stop-attracting-narcissistic-partners.webp?v=b008f571" 
                 alt="Support group helping individuals develop healthy relationship patterns and learn effective strategies to stop attracting narcissistic partners" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
@@ -357,7 +357,7 @@ const BlogPostNarcissistAttraction = () => {
               </p>
 
               <img 
-                src="/images/person-practicing-self-reflection-and-boundary-setting-techniques-to-break-the-cycle-of-attracting-narcissists-and-build-healthier-relationships.jpg" 
+                src="/images/person-practicing-self-reflection-and-boundary-setting-techniques-to-break-the-cycle-of-attracting-narcissists-and-build-healthier-relationships.webp?v=b008f571" 
                 alt="Person practicing self-reflection and boundary-setting techniques to break the cycle of attracting narcissists and build healthier relationships" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"

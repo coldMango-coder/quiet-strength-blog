@@ -6,7 +6,7 @@ export default function AuthorBio() {
     <section className="mt-16 border-t pt-12 flex flex-col md:flex-row items-start gap-8">
       {/* fixed‑size portrait box */}
       <div className="modern-logo w-[209px] h-[294px] lg:w-[260px] lg:h-[366px] overflow-hidden shrink-0 rounded-lg">
-        <img
+        <img loading="lazy" decoding="async"
           src={avatar}
           alt="Marica Šinko – Author"
           className="w-full h-full object-cover"

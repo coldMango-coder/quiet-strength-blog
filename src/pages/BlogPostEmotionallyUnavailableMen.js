@@ -69,7 +69,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </p>
 
             <img 
-              src="/images/confident-woman-journaling-about-emotional-growth-and-learning-how-to-stop-attracting-emotionally-unavailable-men-in-bright-coffee-shop-setting.jpg" 
+              src="/images/confident-woman-journaling-about-emotional-growth-and-learning-how-to-stop-attracting-emotionally-unavailable-men-in-bright-coffee-shop-setting.webp?v=b008f571" 
               alt="Confident woman journaling about emotional growth and learning how to stop attracting emotionally unavailable men in bright coffee shop setting" 
               className="rounded-lg shadow-md my-8 w-full" 
               loading="lazy"
@@ -208,7 +208,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
               </p>
 
               <img 
-                src="/images/woman-setting-emotional-boundaries-while-remaining-open-to-healthy-relationships-standing-by-peaceful-lake-representing-personal-growth-and-attachment-healing.jpg" 
+                src="/images/woman-setting-emotional-boundaries-while-remaining-open-to-healthy-relationships-standing-by-peaceful-lake-representing-personal-growth-and-attachment-healing.webp?v=b008f571" 
                 alt="Woman setting emotional boundaries while remaining open to healthy relationships, standing by peaceful lake representing personal growth and attachment healing" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
@@ -516,7 +516,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
               </p>
 
               <img 
-                src="/images/couple-demonstrating-emotionally-available-communication-and-healthy-relationship-dynamics-with-open-body-language-and-genuine-connection.jpg" 
+                src="/images/couple-demonstrating-emotionally-available-communication-and-healthy-relationship-dynamics-with-open-body-language-and-genuine-connection.webp?v=b008f571" 
                 alt="Couple demonstrating emotionally available communication and healthy relationship dynamics with open body language and genuine connection" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"

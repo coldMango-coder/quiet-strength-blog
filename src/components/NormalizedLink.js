@@ -42,12 +42,8 @@ const NormalizedLink = ({ to, href, children, ...props }) => {
     routerPath = normalizedHref.replace('https://www.trueallyguide.com', '') || '/';
   }
   
-  // Use React Router Link for internal navigation
-  return (
-    <Link to={routerPath} {...props}>
-      {children}
-    </Link>
-  );
+  // Use React Router Link for internal navigation (supports hash scrolling via App.js effect)
+  return <Link to={routerPath} {...props}>{children}</Link>;
 };
 
 export default NormalizedLink;

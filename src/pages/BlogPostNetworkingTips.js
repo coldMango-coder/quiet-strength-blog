@@ -65,7 +65,7 @@ const BlogPostNetworkingTips = () => {
               
               <div className="my-8">
                 <img 
-                  src="/images/20250728_1647_Engaged Coffee Shop Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.jpg" 
+                  src="/images/20250728_1647_Engaged Coffee Shop Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.webp?v=b008f571" 
                   alt="Two professionals having a meaningful one-on-one coffee meeting, demonstrating introvert networking tips without small talk in a comfortable setting" 
                   className="rounded-lg shadow-md" 
                   loading="eager"
@@ -114,7 +114,7 @@ const BlogPostNetworkingTips = () => {
               
               <div className="my-8">
                 <img 
-                  src="/images/20250728_1704_Focused Professional Workspace_simple_compose_01k18ryjaxejvaw4zbq46samh6.jpg" 
+                  src="/images/20250728_1704_Focused Professional Workspace_simple_compose_01k18ryjaxejvaw4zbq46samh6.webp?v=b008f571" 
                   alt="Professional introvert using written communication for networking, typing thoughtful content on laptop as an alternative to small talk networking" 
                   className="rounded-lg shadow-md" 
                   loading="lazy"
@@ -198,7 +198,7 @@ const BlogPostNetworkingTips = () => {
               
               <div className="my-8">
                 <img 
-                  src="/images/20250728_1706_Engaged Professional Workshop_simple_compose_01k18s27yxfaftwdx7snhfgjsv.jpg" 
+                  src="/images/20250728_1706_Engaged Professional Workshop_simple_compose_01k18s27yxfaftwdx7snhfgjsv.webp?v=b008f571" 
                   alt="Small professional workshop environment where introverts can network naturally through shared learning experiences without relying on small talk" 
                   className="rounded-lg shadow-md" 
                   loading="lazy"
