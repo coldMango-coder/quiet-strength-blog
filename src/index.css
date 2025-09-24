@@ -599,6 +599,26 @@ mark:focus,
   height: auto !important;
 }
 
+/* Generic callout styles for implementation notes, strategies, tips */
+.article-container .callout {
+  border-left: 4px solid #C05621 !important;
+  background: #FFF4EB !important;
+  padding: 1rem 1.25rem !important;
+  margin: 1.5rem 0 !important;
+  border-radius: 0.5rem !important;
+}
+.article-container .callout h3,
+.article-container .callout h4 {
+  margin-top: 0 !important;
+}
+.article-container .callout.tip { border-left-color: #16A34A !important; background: #ECFDF5 !important; }
+.article-container .callout.strategy { border-left-color: #2563EB !important; background: #EFF6FF !important; }
+.article-container .callout.warning { border-left-color: #DC2626 !important; background: #FEF2F2 !important; }
+
+/* Section spacing helpers */
+.content-section, .article-container section { margin-bottom: 2.5rem !important; }
+.content-section:last-child, .article-container section:last-child { margin-bottom: 0 !important; }
+
 /* Apply Medium-style typography to main page sections */
 
 /* Hero Section Typography */
