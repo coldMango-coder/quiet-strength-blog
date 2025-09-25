@@ -108,7 +108,12 @@ const Header = () => {
                 className={`relative ${link.hasDropdown ? '' : ''}`}
               >
                 {link.hasDropdown ? (
-                  <div className="relative" ref={catRef}>
+                  <div
+                    className="relative"
+                    ref={catRef}
+                    onMouseEnter={() => setIsCatOpen(true)}
+                    onMouseLeave={() => setIsCatOpen(false)}
+                  >
                     <button
                       onClick={() => setIsCatOpen((v) => !v)}
                       className={`relative text-white font-semibold hover:text-[#FFECD8] transition-all duration-200 ${isScrolled ? 'text-base py-2' : 'text-lg py-3'} flex items-center gap-1`}
@@ -126,6 +131,24 @@ const Header = () => {
                     {isCatOpen && (
                       <div className="absolute top-full left-0 mt-2 dropdown-panel z-50" role="menu" aria-label="Category menu">
                         <div className="py-2">
+                          {/* Static items */}
+                          <NormalizedLink
+                            to="/#blog"
+                            className="block w-full text-left px-4 py-3 text-gray-800 hover:bg-brand-secondary/60 hover:text-brand-emphasis transition-colors duration-150"
+                            role="menuitem"
+                            onClick={() => setIsCatOpen(false)}
+                          >
+                            From the Blog
+                          </NormalizedLink>
+                          <NormalizedLink
+                            to="/blog"
+                            className="block w-full text-left px-4 py-3 text-gray-800 hover:bg-brand-secondary/60 hover:text-brand-emphasis transition-colors duration-150"
+                            role="menuitem"
+                            onClick={() => setIsCatOpen(false)}
+                          >
+                            All Articles
+                          </NormalizedLink>
+                          <div className="h-px bg-gray-200 my-1" aria-hidden="true"></div>
                           {Object.values(categories).map((categoryName) => (
                             <button
                               key={categoryName}

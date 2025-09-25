@@ -37,6 +37,14 @@ function App() {
       return () => clearTimeout(t);
     }
   }, [location.pathname, location.hash]);
+
+  // Ensure we scroll to top when navigating between routes without hashes
+  useEffect(() => {
+    if (!location.hash) {
+      // Use instant/auto scroll to avoid jank when switching pages
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }
+  }, [location.pathname]);
   
   return (
     <div className="bg-brand-light">
