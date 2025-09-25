@@ -128,9 +128,9 @@ const Header = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                       </svg>
                     </button>
-                    {/* Always render the panel; control with state and CSS fallback */}
+                    {/* Always render the panel; show via CSS hover/focus for reliability */}
                     <div
-                      className={`absolute top-full left-0 mt-0 dropdown-panel z-50 ${isCatOpen ? 'block' : 'hidden'}`}
+                      className={`absolute top-full left-0 mt-0 dropdown-panel z-[200]`}
                       role="menu"
                       aria-label="Category menu"
                       tabIndex={-1}

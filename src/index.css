@@ -1662,10 +1662,20 @@ a:hover .nav-icon {
   border: 1px solid rgba(0,0,0,0.06);
 }
 
-/* Ensure dropdown opens on hover/focus even if JS state fails */
+/* Ensure dropdown opens on hover/focus with smooth transition */
+.nav-cat .dropdown-panel {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: opacity 150ms ease, transform 150ms ease, visibility 150ms ease;
+}
 .nav-cat:hover .dropdown-panel,
 .nav-cat:focus-within .dropdown-panel {
-  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
 }
 
 /* Medium-Style Professional Typography - Apply to all content sections */
