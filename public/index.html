@@ -40,9 +40,7 @@
     <link rel="preload" href="/fonts/charter-bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/fonts/fonts.css">
     
-    <!-- CRITICAL: Preload LCP images in modern formats -->
-    <link rel="preload" as="image" href="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.avif" type="image/avif" fetchpriority="high">
-    <link rel="preload" as="image" href="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.webp?v=b008f571" type="image/webp" fetchpriority="high">
+    <!-- Preload only essential UI images -->
     <link rel="preload" as="image" href="/images/logo.avif" type="image/avif" fetchpriority="high">
     <link rel="preload" as="image" href="/images/logo.webp?v=b008f571" type="image/webp" fetchpriority="high">
     
@@ -129,17 +127,14 @@ html{scroll-behavior:auto}
     <!-- Critical CSS inlined above for zero render blocking -->
     <!-- Non-critical CSS will be loaded async via React -->
     
-    <!-- Performance: Resource hints for 100/100 scores -->
-    <link rel="dns-prefetch" href="https://trueallyguide.com">
+    <!-- Performance: Resource hints -->
     <link rel="preconnect" href="https://trueallyguide.com" crossorigin>
     
     <!-- Prefetch key chunks for faster navigation -->
     <link rel="prefetch" href="/static/js/861.db59f714.chunk.js">
     <link rel="prefetch" href="/static/js/171.2a8e9e0b.chunk.js">
     
-    <!-- Preload critical above-the-fold images -->
-    <link rel="preload" as="image" href="/images/logo.webp?v=b008f571" type="image/webp" fetchpriority="high">
-    <link rel="preload" as="image" href="/images/logo.avif" type="image/avif" fetchpriority="high">
+    <!-- Keep head lean; avoid duplicate hints -->
     
     <!-- Disable DNS prefetch for maximum performance -->
     <meta http-equiv="x-dns-prefetch-control" content="off">
@@ -149,7 +144,6 @@ html{scroll-behavior:auto}
     <meta name="format-detection" content="telephone=no">
     
     <!-- Performance: Minimize parser blocking -->
-    <link rel="preconnect" href="https://trueallyguide.com" crossorigin>
     
     <!-- Remove analytics completely for maximum performance -->
   </head>

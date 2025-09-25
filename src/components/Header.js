@@ -85,7 +85,7 @@ const Header = () => {
   return (
     <>
       <div id="read-progress" style={{ width: `${progress}%` }} className="fixed top-0 left-0 h-1 bg-brand-emphasis z-[9999]"></div>
-      <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? 'h-[92px] bg-[#C65616] shadow-lg' : 'h-[128px] bg-[#B44416]'}`}>
+      <header className={`sticky top-0 z-50 transition-colors duration-300 h-[112px] ${isScrolled ? 'bg-[#C65616] shadow-lg' : 'bg-[#B44416]'}`}>
         <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
         <div className="container mx-auto px-6 flex justify-between items-center h-full">
           <NormalizedLink to="/" className="focus:outline-none">
@@ -101,11 +101,11 @@ const Header = () => {
               />
             </div>
           </NormalizedLink>
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8 overflow-visible">
             {navLinks.map(link => (
               <div
                 key={link.name}
-                className={`relative ${link.hasDropdown ? '' : ''}`}
+                className={`relative ${link.hasDropdown ? 'nav-cat' : ''}`}
               >
                 {link.hasDropdown ? (
                   <div
@@ -128,9 +128,14 @@ const Header = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                       </svg>
                     </button>
-                    {isCatOpen && (
-                      <div className="absolute top-full left-0 mt-2 dropdown-panel z-50" role="menu" aria-label="Category menu">
-                        <div className="py-2">
+                    {/* Always render the panel; show via CSS hover/focus for reliability */}
+                    <div
+                      className={`absolute top-full left-0 mt-2 dropdown-panel z-50 hidden`}
+                      role="menu"
+                      aria-label="Category menu"
+                      tabIndex={-1}
+                    >
+                      <div className="py-2">
                           {/* Static items */}
                           <NormalizedLink
                             to="/#blog"
@@ -161,9 +166,8 @@ const Header = () => {
                               {categoryName}
                             </button>
                           ))}
-                        </div>
                       </div>
-                    )}
+                    </div>
                   </div>
                 ) : (
                   <NormalizedLink

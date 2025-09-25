@@ -1662,6 +1662,12 @@ a:hover .nav-icon {
   border: 1px solid rgba(0,0,0,0.06);
 }
 
+/* Ensure dropdown opens on hover/focus even if JS state fails */
+.nav-cat:hover .dropdown-panel,
+.nav-cat:focus-within .dropdown-panel {
+  display: block !important;
+}
+
 /* Medium-Style Professional Typography - Apply to all content sections */
 .page-wrapper, .article-container, .content-section {
   scroll-margin-top: 128px !important;
