@@ -1,5 +1,4 @@
 import React from 'react';
-import OptimizedImage from '../components/OptimizedImage';
 import NormalizedLink from '../components/NormalizedLink';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
