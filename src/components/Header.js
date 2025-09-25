@@ -84,7 +84,7 @@ const Header = () => {
 
   return (
     <>
-      <div id="read-progress" style={{ width: `${progress}%` }} className="fixed top-0 left-0 h-1 bg-brand-emphasis z-[9999]"></div>
+      <div id="read-progress" style={{ width: `${progress}%`, pointerEvents: 'none' }} className="fixed top-0 left-0 h-1 bg-brand-emphasis z-[9999]"></div>
       <header className={`sticky top-0 z-50 transition-colors duration-300 h-[112px] ${isScrolled ? 'bg-[#C65616] shadow-lg' : 'bg-[#B44416]'}`}>
         <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
         <div className="container mx-auto px-6 flex justify-between items-center h-full">
@@ -105,7 +105,7 @@ const Header = () => {
             {navLinks.map(link => (
               <div
                 key={link.name}
-                className={`relative ${link.hasDropdown ? 'nav-cat pt-2' : ''}`}
+                className={`relative ${link.hasDropdown ? 'nav-cat pt-2 pb-2' : ''}`}
                 onMouseEnter={link.hasDropdown ? () => setIsCatOpen(true) : undefined}
                 onMouseLeave={link.hasDropdown ? () => setIsCatOpen(false) : undefined}
               >
@@ -130,7 +130,7 @@ const Header = () => {
                     </button>
                     {/* Always render the panel; show via CSS hover/focus for reliability */}
                     <div
-                      className={`absolute top-full left-0 mt-0 dropdown-panel z-[200]`}
+                      className={`absolute top-full left-0 mt-0 dropdown-panel z-[9998]`}
                       role="menu"
                       aria-label="Category menu"
                       tabIndex={-1}
