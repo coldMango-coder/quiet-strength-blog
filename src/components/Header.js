@@ -105,14 +105,14 @@ const Header = () => {
             {navLinks.map(link => (
               <div
                 key={link.name}
-                className={`relative ${link.hasDropdown ? 'nav-cat' : ''}`}
+                className={`relative ${link.hasDropdown ? 'nav-cat pt-2' : ''}`}
+                onMouseEnter={link.hasDropdown ? () => setIsCatOpen(true) : undefined}
+                onMouseLeave={link.hasDropdown ? () => setIsCatOpen(false) : undefined}
               >
                 {link.hasDropdown ? (
                   <div
                     className="relative"
                     ref={catRef}
-                    onMouseEnter={() => setIsCatOpen(true)}
-                    onMouseLeave={() => setIsCatOpen(false)}
                   >
                     <button
                       onClick={() => setIsCatOpen((v) => !v)}
@@ -128,9 +128,9 @@ const Header = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                       </svg>
                     </button>
-                    {/* Always render the panel; show via CSS hover/focus for reliability */}
+                    {/* Always render the panel; control with state and CSS fallback */}
                     <div
-                      className={`absolute top-full left-0 mt-2 dropdown-panel z-50 hidden`}
+                      className={`absolute top-full left-0 mt-0 dropdown-panel z-50 ${isCatOpen ? 'block' : 'hidden'}`}
                       role="menu"
                       aria-label="Category menu"
                       tabIndex={-1}
