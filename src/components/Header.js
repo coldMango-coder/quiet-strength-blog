@@ -79,7 +79,7 @@ const Header = () => {
     { name: 'About', page: 'about', icon: <svg className="nav-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> },
     { name: 'Category', page: 'category', icon: <svg className="nav-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg>, hasDropdown: true },
     { name: 'Blog', page: 'blog', icon: <svg className="nav-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> },
-    { name: 'Books', page: 'books', icon: <svg className="nav-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> },
+    { name: 'Books', page: 'books', href: '/book-quiet-confidence', icon: <svg className="nav-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> },
   ];
 
   return (
@@ -144,9 +144,9 @@ const Header = () => {
                   </div>
                 ) : (
                   <NormalizedLink
-                    to={link.page === 'blog' ? '/blog' : `/#${link.page}`}
+                    to={link.page === 'blog' ? '/blog' : (link.page === 'books' ? (link.href || '/book-quiet-confidence') : `/#${link.page}`)}
                     onClick={link.page !== 'blog' ? (e) => {
-                      if (location.pathname === '/') {
+                      if (link.page !== 'books' && location.pathname === '/') {
                         e.preventDefault();
                         const element = document.getElementById(link.page);
                         if (element) {
@@ -211,9 +211,9 @@ const Header = () => {
                   </div>
                 ) : (
                   <NormalizedLink
-                    to={link.page === 'blog' ? '/blog' : `/#${link.page}`}
+                    to={link.page === 'blog' ? '/blog' : (link.page === 'books' ? (link.href || '/book-quiet-confidence') : `/#${link.page}`)}
                     onClick={(e) => {
-                      if (link.page !== 'blog' && location.pathname === '/') {
+                      if (link.page !== 'blog' && link.page !== 'books' && location.pathname === '/') {
                         e.preventDefault();
                         const element = document.getElementById(link.page);
                         if (element) {
