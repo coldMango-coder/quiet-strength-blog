@@ -105,7 +105,7 @@ const Header = () => {
             {navLinks.map(link => (
               <div
                 key={link.name}
-                className={`relative ${link.hasDropdown ? 'nav-cat pt-2 pb-2' : ''}`}
+                className={`relative ${link.hasDropdown ? 'nav-cat pt-2 pb-2' : ''} ${link.hasDropdown && isCatOpen ? 'dropdown-open' : ''}`}
                 onMouseEnter={link.hasDropdown ? () => setIsCatOpen(true) : undefined}
                 onMouseLeave={link.hasDropdown ? () => setIsCatOpen(false) : undefined}
               >
