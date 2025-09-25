@@ -61,7 +61,7 @@ const BlogPostSocialMediaOverwhelm = () => {
             
             <div className="my-8">
               <img 
-                src="/images/introvert-overwhelmed-by-social-media-sitting-alone-with-multiple-screens-showing-overwhelming-social-feeds.webp" 
+                src="/images/introvert-overwhelmed-by-social-media-sitting-alone-with-multiple-screens-showing-overwhelming-social-feeds.webp?v=b008f571" 
                 alt="Introvert overwhelmed by social media sitting alone with multiple screens showing overwhelming social feeds" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -193,7 +193,7 @@ const BlogPostSocialMediaOverwhelm = () => {
             
             <div className="my-8">
               <img 
-                src="/images/person-practicing-healthy-social-media-boundaries-and-mindful-digital-wellness-strategies-for-introverts.webp" 
+                src="/images/person-practicing-healthy-social-media-boundaries-and-mindful-digital-wellness-strategies-for-introverts.webp?v=b008f571" 
                 alt="Person practicing healthy social media boundaries and mindful digital wellness strategies for introverts" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -351,7 +351,7 @@ const BlogPostSocialMediaOverwhelm = () => {
             
             <div className="my-8">
               <img 
-                src="/images/introvert-feeling-restored-and-peaceful-after-implementing-social-media-coping-strategies-and-digital-detox.webp" 
+                src="/images/introvert-feeling-restored-and-peaceful-after-implementing-social-media-coping-strategies-and-digital-detox.webp?v=b008f571" 
                 alt="Introvert feeling restored and peaceful after implementing social media coping strategies and digital detox" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"

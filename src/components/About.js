@@ -14,8 +14,8 @@ const About = () => {
           alternateName: "Quiet Strength Coach",
           jobTitle: "Mental Wellness Coach",
           knowsAbout: ["burnout recovery", "introvert confidence"],
-          url: (process.env.REACT_APP_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '')) + '/about',
-          image: "/images/logo.webp"
+          url: "https://quietstrength.com/about",
+          image: "/images/logo.webp?v=b008f571"
         }}
       />
       <div className="container mx-auto px-6">
@@ -23,7 +23,7 @@ const About = () => {
           <div className="md:w-1/3 text-center">
             <div className="modern-logo w-56 h-56 mx-auto shadow-2xl border-8 border-white rounded-full overflow-hidden">
               <img loading="lazy" decoding="async" 
-                src="/images/logo.webp" 
+                src="/images/logo.webp?v=b008f571" 
                 alt="Quiet Strength Logo" 
                 className="w-full h-full object-cover"
               />

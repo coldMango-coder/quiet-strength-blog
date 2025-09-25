@@ -1421,3 +1421,1438 @@ mark:focus,
     overflow-x: hidden;
   }
 }
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-brand-light;
+  color: #333333;
+  background-image: url('./images/paper-texture-background.png');
+  font-family: 'Charter', 'Georgia', 'Times New Roman', serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  letter-spacing: 0.003em;
+  font-display: swap;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, nav, button {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-top: 0;
+  color: #1a1a1a;
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.15;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+input, textarea {
+  font-size: 1rem;
+}
+
+/* Medium-Style Responsive Typography */
+@media (max-width: 768px) {
+  .article-container p {
+    font-size: 18px !important;
+    line-height: 1.58 !important;
+    margin-bottom: 24px !important;
+  }
+  
+  .article-container h1 {
+    font-size: 36px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 24px !important;
+  }
+  
+  .article-container h2 {
+    font-size: 28px !important;
+    line-height: 1.18 !important;
+    margin-top: 42px !important;
+    margin-bottom: 24px !important;
+  }
+  
+  .article-container h3 {
+    font-size: 22px !important;
+    line-height: 1.22 !important;
+    margin-top: 32px !important;
+    margin-bottom: 18px !important;
+  }
+  
+  .article-container ul, 
+  .article-container ol {
+    font-size: 18px !important;
+    line-height: 1.58 !important;
+    margin-bottom: 24px !important;
+    padding-left: 24px !important;
+  }
+
+  .article-container li {
+    font-size: 18px !important;
+    line-height: 1.58 !important;
+  }
+  
+  .article-container blockquote {
+    font-size: 20px !important;
+    line-height: 1.48 !important;
+    margin: 32px 0 !important;
+    padding-left: 18px !important;
+  }
+  
+  .article-container section {
+    margin-bottom: 42px !important;
+  }
+  
+  .article-container img {
+    margin: 32px 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-container p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .article-container h1 {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .article-container h2 {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+    margin-top: 32px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .article-container h3 {
+    font-size: 20px !important;
+    line-height: 1.25 !important;
+    margin-top: 28px !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .article-container ul, 
+  .article-container ol {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    margin-bottom: 20px !important;
+    padding-left: 20px !important;
+  }
+
+  .article-container li {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  .article-container blockquote {
+    font-size: 18px !important;
+    line-height: 1.5 !important;
+    margin: 24px 0 !important;
+    padding-left: 16px !important;
+  }
+  
+  .article-container section {
+    margin-bottom: 32px !important;
+  }
+  
+  .article-container img {
+    margin: 24px 0 !important;
+  }
+}
+
+.group:hover .group-hover\:scale-x-100 {
+  transform: scaleX(1);
+}
+
+.active .group-hover\:scale-x-100 {
+    transform: scaleX(1);
+}
+
+a:focus-visible {
+  outline: 3px solid #C05621;
+  outline-offset: 3px;
+}
+
+.dark body {
+  @apply bg-brand-dark text-brand-light;
+}
+
+.dark header.sticky {
+  background: #1F242E;
+}
+
+.dark header.sticky.scrolled {
+  background: #2E3644;
+}
+
+.dark nav.primary a {
+  color: #F7F9FC;
+}
+
+.dark nav.primary a:hover {
+  color: #FFECD8;
+}
+
+.dark .btn--nav {
+  background: #C65616;
+  color: #fff;
+}
+
+.nav-icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 6px;
+  opacity: 0.75;
+  transition: opacity .2s;
+}
+
+a:hover .nav-icon {
+  opacity: 1;
+}
+
+/* Medium-Style Professional Typography - Apply to all content sections */
+.page-wrapper, .article-container, .content-section {
+  scroll-margin-top: 128px !important;
+  color: #333333 !important;
+  font-family: Charter, 'Droid Serif', Georgia, serif !important;
+  font-feature-settings: "liga" 1, "kern" 1 !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+.article-container {
+  max-width: 42rem !important;
+  margin: 0 auto !important;
+  padding: 0 1rem !important;
+}
+
+/* Reset and normalize all typography */
+.article-container * {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Override any external margin/padding that might interfere */
+.article-container p,
+.article-container h1,
+.article-container h2,
+.article-container h3,
+.article-container h4,
+.article-container ul,
+.article-container ol,
+.article-container li,
+.article-container blockquote {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Paragraph styling - optimized for clean selection */
+.article-container p {
+  font-family: Charter, 'Droid Serif', Georgia, serif !important;
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.003em !important;
+  margin: 0 0 30px 0 !important;
+  color: var(--body-text) !important;
+  font-weight: 400 !important;
+  word-break: break-word !important;
+  word-wrap: break-word !important;
+}
+
+/* Heading styles - optimized line-height for clean selection */
+.article-container h1 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 42px !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 700 !important;
+  color: var(--heading-text) !important;
+  margin: 0 0 30px 0 !important;
+}
+
+.article-container h2 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 34px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 700 !important;
+  color: var(--heading-text) !important;
+  margin: 56px 0 30px 0 !important;
+}
+
+.article-container h3 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 26px !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.018em !important;
+  font-weight: 700 !important;
+  color: var(--heading-text) !important;
+  margin: 42px 0 24px 0 !important;
+}
+
+.article-container h4 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 22px !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.016em !important;
+  font-weight: 600 !important;
+  color: var(--heading-text) !important;
+  margin: 36px 0 20px 0 !important;
+}
+
+/* List styling - optimized line-height */
+.article-container ul, 
+.article-container ol {
+  font-family: Charter, 'Droid Serif', Georgia, serif !important;
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.003em !important;
+  color: var(--body-text) !important;
+  margin: 0 0 30px 0 !important;
+  padding: 0 0 0 30px !important;
+}
+
+.article-container li {
+  margin: 0 0 12px 0 !important;
+  padding: 0 !important;
+  line-height: 1.5 !important;
+  color: var(--body-text) !important;
+  font-size: 21px !important;
+}
+
+.article-container li:last-child {
+  margin: 0 !important;
+}
+
+/* Blockquote styling - optimized line-height */
+.article-container blockquote {
+  font-family: Charter, 'Droid Serif', Georgia, serif !important;
+  font-size: 24px !important;
+  line-height: 1.4 !important;
+  letter-spacing: -0.014em !important;
+  font-style: italic !important;
+  color: var(--body-text-light) !important;
+  border-left: 3px solid var(--border-accent) !important;
+  padding: 0 0 0 23px !important;
+  margin: 42px 0 42px 0 !important;
+  font-weight: 400 !important;
+}
+
+/* Section spacing */
+.article-container section {
+  margin: 0 0 56px 0 !important;
+  padding: 0 !important;
+}
+
+.article-container section:last-child {
+  margin: 0 !important;
+}
+
+/* Image spacing - consistent with Medium */
+.article-container img {
+  margin: 42px 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 6px !important;
+  display: block !important;
+}
+
+/* Link styling - fix for selection highlighting */
+.article-container a {
+  color: inherit !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--link-underline) !important;
+  text-underline-offset: 2px !important;
+  transition: text-decoration-color 0.15s ease !important;
+  border-bottom: none !important;
+  background: none !important;
+}
+
+.article-container a:hover {
+  text-decoration-color: var(--link-underline-hover) !important;
+  border-bottom: none !important;
+}
+
+/* Ensure selection doesn't affect underlines */
+.article-container a::selection {
+  text-decoration-color: var(--link-underline) !important;
+  background-color: var(--hl-bg) !important;
+}
+
+.article-container a::-moz-selection {
+  text-decoration-color: var(--link-underline) !important;
+  background-color: var(--hl-bg) !important;
+}
+
+/* Enhanced readability */
+.article-container em {
+  font-style: italic !important;
+  color: var(--body-text-light) !important;
+}
+
+.article-container code {
+  background-color: #F3F4F6 !important;
+  padding: 0.125rem 0.25rem !important;
+  border-radius: 0.25rem !important;
+  font-size: 0.875rem !important;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+}
+
+/* ─────────────────────────────────────────────
+   2) SEMANTIC HIGHLIGHTING - marker-style underline
+   – works with <mark> elements and custom .hl class
+   – clean inline highlighting without overlap
+   ───────────────────────────────────────────── */
+mark,
+.hl {
+  background: linear-gradient(transparent 60%, var(--hl-bg) 0);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0;       /* no vertical padding -> no line box inflation */
+  margin: 0;
+}
+
+mark:hover,
+mark:focus,
+.hl:hover,
+.hl:focus {
+  background: linear-gradient(transparent 60%, var(--hl-bg-hover) 0);
+  transition: background 0.15s ease;
+}
+
+/* ─────────────────────────────────────────────
+   3) PARAGRAPH-LEVEL HIGHLIGHTING
+   – for full paragraph background tints
+   – preserves line rhythm with no vertical padding
+   ───────────────────────────────────────────── */
+.p-hl {
+  background-color: var(--hl-bg);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 .125em; /* optional tiny horizontal breathing room */
+  margin: 0;         /* do NOT add vertical padding; preserves line rhythm */
+  line-height: inherit;
+  display: inline;   /* keep inline if applied to span fragments */
+}
+
+.p-hl:hover,
+.p-hl:focus {
+  background-color: var(--hl-bg-hover);
+  transition: background 0.15s ease;
+}
+
+/* Better text selection - only for body text, not headings */
+.article-container p::selection,
+.article-container li::selection,
+.article-container span::selection,
+.article-container em::selection,
+.article-container strong::selection,
+.article-container blockquote::selection,
+.article-container mark::selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+.article-container p::-moz-selection,
+.article-container li::-moz-selection,
+.article-container span::-moz-selection,
+.article-container em::-moz-selection,
+.article-container strong::-moz-selection,
+.article-container blockquote::-moz-selection,
+.article-container mark::-moz-selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+/* Enable text selection styling for headings */
+.article-container h1::selection,
+.article-container h2::selection,
+.article-container h3::selection,
+.article-container h4::selection,
+.article-container h5::selection,
+.article-container h6::selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+.article-container h1::-moz-selection,
+.article-container h2::-moz-selection,
+.article-container h3::-moz-selection,
+.article-container h4::-moz-selection,
+.article-container h5::-moz-selection,
+.article-container h6::-moz-selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+.toc-list a {
+  color: #2E3644;
+}
+
+/* Final override to ensure consistent spacing - prevent external CSS interference */
+.article-container p + p {
+  margin-top: 30px !important;
+}
+
+.article-container h1 + p,
+.article-container h2 + p,
+.article-container h3 + p,
+.article-container h4 + p {
+  margin-top: 0 !important;
+}
+
+.article-container img + p {
+  margin-top: 0 !important;
+  margin-bottom: 30px !important;
+}
+
+/* Ensure no external classes override our spacing */
+.article-container .space-y-3 > * + * {
+  margin-top: 0.75rem !important;
+}
+
+.article-container .mb-16 {
+  margin-bottom: 4rem !important;
+}
+
+.article-container .mb-8 {
+  margin-bottom: 2rem !important;
+}
+
+.article-container .my-8 {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Responsive tables inside articles */
+.article-container table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 1rem 0 !important;
+  font-size: 1rem !important;
+}
+.article-container table thead th {
+  background: #f7fafc !important;
+  color: #1a1a1a !important;
+}
+.article-container th, .article-container td {
+  padding: 0.75rem !important;
+  border: 1px solid #e5e7eb !important;
+  text-align: left !important;
+}
+.article-container .table-responsive {
+  width: 100% !important;
+  overflow-x: auto !important;
+}
+.article-container .table-responsive > table {
+  min-width: 640px !important;
+}
+
+/* Improve default image rendering to reduce layout shift */
+.article-container img {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Generic callout styles for implementation notes, strategies, tips */
+.article-container .callout {
+  border-left: 4px solid #C05621 !important;
+  background: #FFF4EB !important;
+  padding: 1rem 1.25rem !important;
+  margin: 1.5rem 0 !important;
+  border-radius: 0.5rem !important;
+}
+.article-container .callout h3,
+.article-container .callout h4 {
+  margin-top: 0 !important;
+}
+.article-container .callout.tip { border-left-color: #16A34A !important; background: #ECFDF5 !important; }
+.article-container .callout.strategy { border-left-color: #2563EB !important; background: #EFF6FF !important; }
+.article-container .callout.warning { border-left-color: #DC2626 !important; background: #FEF2F2 !important; }
+
+/* Section spacing helpers */
+.content-section, .article-container section { margin-bottom: 2.5rem !important; }
+.content-section:last-child, .article-container section:last-child { margin-bottom: 0 !important; }
+
+/* Apply Medium-style typography to main page sections */
+
+/* Hero Section Typography */
+#home h1 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.15 !important;
+  color: rgba(41, 41, 41, 1) !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+#home p {
+  font-family: Charter, 'Droid Serif', Georgia, serif !important;
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.003em !important;
+  color: rgba(41, 41, 41, 0.8) !important;
+  font-weight: 400 !important;
+  margin: 0 0 30px 0 !important;
+}
+
+/* About Section Typography */
+#about h2 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 34px !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 700 !important;
+  color: rgba(41, 41, 41, 1) !important;
+  margin: 0 0 30px 0 !important;
+}
+
+#about h3 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 26px !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.018em !important;
+  font-weight: 700 !important;
+  color: rgba(41, 41, 41, 1) !important;
+  margin: 42px 0 24px 0 !important;
+}
+
+#about p {
+  font-family: Charter, 'Droid Serif', Georgia, serif !important;
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.003em !important;
+  color: rgba(41, 41, 41, 1) !important;
+  font-weight: 400 !important;
+  margin: 0 0 30px 0 !important;
+}
+
+#about ol, #about ul {
+  font-family: Charter, 'Droid Serif', Georgia, serif !important;
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.003em !important;
+  color: rgba(41, 41, 41, 1) !important;
+  margin: 0 0 30px 0 !important;
+  padding: 0 0 0 30px !important;
+}
+
+#about li {
+  margin: 0 0 12px 0 !important;
+  line-height: 1.5 !important;
+  color: rgba(41, 41, 41, 1) !important;
+  font-size: 21px !important;
+}
+
+/* Blog Section Typography */
+#blog h2 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 34px !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 700 !important;
+  color: rgba(41, 41, 41, 1) !important;
+}
+
+#blog h3 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 26px !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.018em !important;
+  font-weight: 700 !important;
+  color: rgba(41, 41, 41, 1) !important;
+}
+
+#blog p {
+  font-family: Charter, 'Droid Serif', Georgia, serif !important;
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.003em !important;
+  color: rgba(41, 41, 41, 1) !important;
+  font-weight: 400 !important;
+}
+
+/* Testimonials Section Typography */
+#testimonials h2 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 34px !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 700 !important;
+  color: rgba(41, 41, 41, 1) !important;
+}
+
+#testimonials blockquote p {
+  font-family: Charter, 'Droid Serif', Georgia, serif !important;
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.003em !important;
+  color: rgba(41, 41, 41, 0.8) !important;
+  font-weight: 400 !important;
+  font-style: italic !important;
+}
+
+#testimonials cite {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: rgba(41, 41, 41, 1) !important;
+}
+
+/* Newsletter Section Typography */
+#newsletter h2 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.15 !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+#newsletter p {
+  font-family: Charter, 'Droid Serif', Georgia, serif !important;
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.003em !important;
+  font-weight: 400 !important;
+}
+
+/* Books Section Typography */
+#books h2 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 34px !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 700 !important;
+  color: rgba(41, 41, 41, 1) !important;
+}
+
+#books h3 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 26px !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.018em !important;
+  font-weight: 700 !important;
+  color: rgba(41, 41, 41, 1) !important;
+}
+
+#books p {
+  font-family: Charter, 'Droid Serif', Georgia, serif !important;
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.003em !important;
+  color: rgba(41, 41, 41, 1) !important;
+  font-weight: 400 !important;
+}
+
+/* Themes Section Typography */
+#themes h2 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 34px !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 700 !important;
+  color: rgba(41, 41, 41, 1) !important;
+}
+
+#themes h3 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 26px !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.018em !important;
+  font-weight: 700 !important;
+  color: rgba(41, 41, 41, 1) !important;
+}
+
+#themes p {
+  font-family: Charter, 'Droid Serif', Georgia, serif !important;
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.003em !important;
+  color: rgba(41, 41, 41, 1) !important;
+  font-weight: 400 !important;
+}
+
+/* Override Tailwind prose classes with optimized typography */
+.prose p, .prose-xl p {
+  font-family: Charter, 'Droid Serif', Georgia, serif !important;
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.003em !important;
+  color: rgba(41, 41, 41, 1) !important;
+  font-weight: 400 !important;
+  margin: 0 0 30px 0 !important;
+}
+
+.prose h1, .prose-xl h1 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 42px !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 700 !important;
+  color: rgba(41, 41, 41, 1) !important;
+  margin: 0 0 30px 0 !important;
+}
+
+.prose h2, .prose-xl h2 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 34px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 700 !important;
+  color: rgba(41, 41, 41, 1) !important;
+  margin: 56px 0 30px 0 !important;
+}
+
+.prose h3, .prose-xl h3 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 26px !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.018em !important;
+  font-weight: 700 !important;
+  color: rgba(41, 41, 41, 1) !important;
+  margin: 42px 0 24px 0 !important;
+}
+
+.prose ol, .prose ul, .prose-xl ol, .prose-xl ul {
+  font-family: Charter, 'Droid Serif', Georgia, serif !important;
+  font-size: 21px !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.003em !important;
+  color: rgba(41, 41, 41, 1) !important;
+  margin: 0 0 30px 0 !important;
+  padding: 0 0 0 30px !important;
+}
+
+.prose li, .prose-xl li {
+  margin: 0 0 12px 0 !important;
+  line-height: 1.5 !important;
+  color: rgba(41, 41, 41, 1) !important;
+  font-size: 21px !important;
+}
+
+/* ─────────────────────────────────────────────
+   MODERN LOGO STYLES
+   – clean, professional, scalable logo design
+   ───────────────────────────────────────────── */
+.modern-logo {
+  position: relative;
+  aspect-ratio: 1;
+  transition: all 0.3s ease;
+}
+
+.logo-icon {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.modern-logo:hover .logo-icon {
+  transform: scale(1.05);
+}
+
+.logo-text-main {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.logo-text-sub {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 6px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.logo-text-brand {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 5px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+/* Apply selective text selection to all page sections */
+
+/* Home page sections */
+#home p::selection,
+#home span::selection,
+#home em::selection,
+#home strong::selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#home p::-moz-selection,
+#home span::-moz-selection,
+#home em::-moz-selection,
+#home strong::-moz-selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#home h1::selection,
+#home h2::selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#home h1::-moz-selection,
+#home h2::-moz-selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+/* About page sections */
+#about p::selection,
+#about li::selection,
+#about span::selection,
+#about em::selection,
+#about strong::selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#about p::-moz-selection,
+#about li::-moz-selection,
+#about span::-moz-selection,
+#about em::-moz-selection,
+#about strong::-moz-selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#about h1::selection,
+#about h2::selection,
+#about h3::selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#about h1::-moz-selection,
+#about h2::-moz-selection,
+#about h3::-moz-selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+/* Blog section */
+#blog p::selection,
+#blog span::selection,
+#blog em::selection,
+#blog strong::selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#blog p::-moz-selection,
+#blog span::-moz-selection,
+#blog em::-moz-selection,
+#blog strong::-moz-selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#blog h1::selection,
+#blog h2::selection,
+#blog h3::selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#blog h1::-moz-selection,
+#blog h2::-moz-selection,
+#blog h3::-moz-selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+/* Testimonials section */
+#testimonials p::selection,
+#testimonials blockquote::selection,
+#testimonials cite::selection,
+#testimonials span::selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#testimonials p::-moz-selection,
+#testimonials blockquote::-moz-selection,
+#testimonials cite::-moz-selection,
+#testimonials span::-moz-selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#testimonials h1::selection,
+#testimonials h2::selection,
+#testimonials h3::selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#testimonials h1::-moz-selection,
+#testimonials h2::-moz-selection,
+#testimonials h3::-moz-selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+/* Newsletter section */
+#newsletter p::selection,
+#newsletter span::selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#newsletter p::-moz-selection,
+#newsletter span::-moz-selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#newsletter h1::selection,
+#newsletter h2::selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#newsletter h1::-moz-selection,
+#newsletter h2::-moz-selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+/* Books and Themes sections */
+#books p::selection,
+#books span::selection,
+#books em::selection,
+#books strong::selection,
+#themes p::selection,
+#themes span::selection,
+#themes em::selection,
+#themes strong::selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#books p::-moz-selection,
+#books span::-moz-selection,
+#books em::-moz-selection,
+#books strong::-moz-selection,
+#themes p::-moz-selection,
+#themes span::-moz-selection,
+#themes em::-moz-selection,
+#themes strong::-moz-selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#books h1::selection,
+#books h2::selection,
+#books h3::selection,
+#themes h1::selection,
+#themes h2::selection,
+#themes h3::selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+#books h1::-moz-selection,
+#books h2::-moz-selection,
+#books h3::-moz-selection,
+#themes h1::-moz-selection,
+#themes h2::-moz-selection,
+#themes h3::-moz-selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+/* Prose classes override */
+.prose p::selection,
+.prose li::selection,
+.prose span::selection,
+.prose em::selection,
+.prose strong::selection,
+.prose blockquote::selection,
+.prose-xl p::selection,
+.prose-xl li::selection,
+.prose-xl span::selection,
+.prose-xl em::selection,
+.prose-xl strong::selection,
+.prose-xl blockquote::selection {
+  background-color: rgba(192, 86, 33, 0.15) !important;
+  color: #1a1a1a !important;
+}
+
+.prose p::-moz-selection,
+.prose li::-moz-selection,
+.prose span::-moz-selection,
+.prose em::-moz-selection,
+.prose strong::-moz-selection,
+.prose blockquote::-moz-selection,
+.prose-xl p::-moz-selection,
+.prose-xl li::-moz-selection,
+.prose-xl span::-moz-selection,
+.prose-xl em::-moz-selection,
+.prose-xl strong::-moz-selection,
+.prose-xl blockquote::-moz-selection {
+  background-color: rgba(192, 86, 33, 0.15) !important;
+  color: #1a1a1a !important;
+}
+
+.prose h1::selection,
+.prose h2::selection,
+.prose h3::selection,
+.prose h4::selection,
+.prose h5::selection,
+.prose h6::selection,
+.prose-xl h1::selection,
+.prose-xl h2::selection,
+.prose-xl h3::selection,
+.prose-xl h4::selection,
+.prose-xl h5::selection,
+.prose-xl h6::selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+.prose h1::-moz-selection,
+.prose h2::-moz-selection,
+.prose h3::-moz-selection,
+.prose h4::-moz-selection,
+.prose h5::-moz-selection,
+.prose h6::-moz-selection,
+.prose-xl h1::-moz-selection,
+.prose-xl h2::-moz-selection,
+.prose-xl h3::-moz-selection,
+.prose-xl h4::-moz-selection,
+.prose-xl h5::-moz-selection,
+.prose-xl h6::-moz-selection {
+  background-color: var(--hl-bg) !important;
+  color: var(--hl-text) !important;
+}
+
+.text-safe {
+  color: #333333 !important;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  header.sticky, header.sticky.scrolled {
+    transition: none;
+  }
+}
+
+@media (min-width: 1536px) {
+  nav.primary ul {
+    gap: 2.5rem;
+  }
+  nav.primary a {
+    font-size: 1.125rem;
+  }
+}
+
+/* Line clamp utilities for text truncation */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Latest Insights mobile optimizations */
+@media (max-width: 768px) {
+  /* Latest Insights section - enhanced mobile typography */
+  #home .bg-white h4 {
+    font-size: 1.1rem !important;
+    line-height: 1.35 !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.75rem !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+  
+  #home .bg-white img {
+    width: 100px !important;
+    height: 75px !important;
+    border-radius: 10px !important;
+    object-fit: cover !important;
+    flex-shrink: 0 !important;
+  }
+  
+  #home .bg-white p {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    opacity: 0.85 !important;
+    margin-bottom: 0.75rem !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+  
+  #home .bg-white .space-y-6 {
+    gap: 1.75rem !important;
+  }
+  
+  #home .bg-white .space-y-8 {
+    gap: 2rem !important;
+  }
+  
+  /* Enhanced spacing for mobile */
+  #home .bg-white .flex.items-start {
+    padding: 1rem !important;
+    margin-bottom: 0.5rem !important;
+    gap: 1rem !important;
+  }
+  
+  /* Enhanced spacing for featured article */
+  #home .bg-white .flex.items-start:first-of-type {
+    padding: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* First article (latest) enhanced prominence - repositioned layout */
+  #home .bg-white .flex.items-start:first-of-type {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  
+  #home .bg-white .flex.items-start:first-of-type img {
+    width: 100% !important;
+    height: 120px !important;
+    max-width: 280px !important;
+    border-radius: 12px !important;
+    object-fit: cover !important;
+    margin-bottom: 1rem !important;
+    align-self: flex-start !important;
+  }
+  
+  #home .bg-white .flex.items-start:first-of-type h4 {
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+    font-weight: 800 !important;
+    margin-bottom: 0.875rem !important;
+    width: 100% !important;
+  }
+  
+  #home .bg-white .flex.items-start:first-of-type p {
+    font-size: 0.9rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 0.875rem !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Latest Insights section - extra small screens */
+  #home .bg-white h4 {
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.625rem !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+  
+  #home .bg-white img {
+    width: 85px !important;
+    height: 64px !important;
+    border-radius: 10px !important;
+    object-fit: cover !important;
+    flex-shrink: 0 !important;
+  }
+  
+  #home .bg-white p {
+    font-size: 0.8rem !important;
+    line-height: 1.35 !important;
+    opacity: 0.8 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    flex: 1 !important;
+    min-width: 0 !important;
+  }
+  
+  /* First article enhanced for smallest screens - maintain column layout */
+  #home .bg-white .flex.items-start:first-of-type {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  
+  #home .bg-white .flex.items-start:first-of-type img {
+    width: 100% !important;
+    height: 100px !important;
+    max-width: 240px !important;
+    border-radius: 10px !important;
+    object-fit: cover !important;
+    margin-bottom: 0.875rem !important;
+    align-self: flex-start !important;
+  }
+  
+  #home .bg-white .flex.items-start:first-of-type h4 {
+    font-size: 1.15rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 0.75rem !important;
+    width: 100% !important;
+  }
+  
+  #home .bg-white .flex.items-start:first-of-type p {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    width: 100% !important;
+  }
+  
+  /* Enhanced spacing */
+  #home .bg-white .flex.items-start {
+    padding: 0.875rem !important;
+    gap: 0.875rem !important;
+  }
+  
+  /* Enhanced spacing for featured article on small mobile */
+  #home .bg-white .flex.items-start:first-of-type {
+    padding: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  #home .bg-white .space-y-6 {
+    gap: 1.5rem !important;
+  }
+}
+
+/* Mobile overflow prevention */
+@media (max-width: 768px) {
+  .container {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
+  #blog .bg-white {
+    max-width: 100%;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  #blog article {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  #blog h3, #blog h2, #blog p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  #blog .bg-white {
+    padding: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  #blog h3 {
+    font-size: 1.125rem !important;
+    line-height: 1.3 !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  #blog p {
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Grid cards responsive */
+  .grid {
+    gap: 1rem;
+  }
+  
+  article {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}

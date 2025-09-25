@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import NormalizedLink from './NormalizedLink';
 import { categories, categorySlugMap } from '../blogData';
@@ -10,11 +10,10 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [progress, setProgress] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isCatOpen, setIsCatOpen] = useState(false);
+  const catRef = useRef(null);
 
   useEffect(() => {
-    // Only run on client-side
-    if (typeof window === 'undefined') return;
-    
     let ticking = false;
     
     const handleScroll = () => {
@@ -37,10 +36,25 @@ const Header = () => {
     };
   }, []);
 
+  // Close category dropdown on outside click / Esc
   useEffect(() => {
-    // Only run on client-side
-    if (typeof window === 'undefined' || typeof localStorage === 'undefined') return;
-    
+    const onClick = (e) => {
+      if (isCatOpen && catRef.current && !catRef.current.contains(e.target)) {
+        setIsCatOpen(false);
+      }
+    };
+    const onKey = (e) => {
+      if (e.key === 'Escape') setIsCatOpen(false);
+    };
+    document.addEventListener('click', onClick, true);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('click', onClick, true);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [isCatOpen]);
+
+  useEffect(() => {
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
       setIsDarkMode(true);
@@ -77,9 +91,9 @@ const Header = () => {
           <NormalizedLink to="/" className="focus:outline-none">
             <div className={`modern-logo transition-all duration-300 ${isScrolled ? 'w-12 h-12' : 'w-16 h-16'} rounded-full overflow-hidden`}>
               <OptimizedImage 
-                src="/images/logo.webp" 
+                src="/images/logo.webp?v=b008f571" 
                 alt="Quiet Strength Logo" 
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
                 width={64}
                 height={64}
                 priority={true}
@@ -87,42 +101,46 @@ const Header = () => {
               />
             </div>
           </NormalizedLink>
-          <nav className="hidden lg:flex items-center gap-11">
+          <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map(link => (
               <div
                 key={link.name}
-                className={`relative ${link.hasDropdown ? 'group' : ''}`}
+                className={`relative ${link.hasDropdown ? '' : ''}`}
               >
                 {link.hasDropdown ? (
-                  <div className="relative">
+                  <div className="relative" ref={catRef}>
                     <button
-                      className={`relative text-white font-semibold hover:text-[#FFECD8] transition-all duration-300 group transform hover:-translate-y-0.5 ${isScrolled ? 'text-xl py-3' : 'text-2xl py-4'} flex items-center gap-1`}
+                      onClick={() => setIsCatOpen((v) => !v)}
+                      className={`relative text-white font-semibold hover:text-[#FFECD8] transition-all duration-200 ${isScrolled ? 'text-base py-2' : 'text-lg py-3'} flex items-center gap-1`}
                       aria-label={`${link.name} menu - show categories`}
-                      aria-expanded="false"
+                      aria-expanded={isCatOpen}
                       aria-haspopup="true"
+                      type="button"
                     >
                       {link.icon}
                       <span>{link.name}</span>
                       <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                       </svg>
-                      <span className="absolute left-0 -bottom-2 w-full h-[3px] bg-[#FFECD8] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></span>
                     </button>
-                    <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50" role="menu" aria-label="Category menu">
-                      <div className="py-2">
-                        {Object.values(categories).map((categoryName) => (
-                          <button
-                            key={categoryName}
-                            onClick={() => window.location.href = `/category/${categorySlugMap[categoryName]}`}
-                            className="w-full text-left px-4 py-3 text-gray-700 hover:bg-brand-light hover:text-brand-emphasis transition-colors duration-200"
-                            role="menuitem"
-                            aria-label={`View ${categoryName} category`}
-                          >
-                            {categoryName}
-                          </button>
-                        ))}
+                    {isCatOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg z-50" role="menu" aria-label="Category menu">
+                        <div className="py-2">
+                          {Object.values(categories).map((categoryName) => (
+                            <button
+                              key={categoryName}
+                              onClick={() => { window.location.href = `/category/${categorySlugMap[categoryName]}`; setIsCatOpen(false); }}
+                              className="w-full text-left px-4 py-3 text-gray-800 hover:bg-brand-secondary/60 hover:text-brand-emphasis transition-colors duration-150"
+                              role="menuitem"
+                              aria-label={`View ${categoryName} category`}
+                              type="button"
+                            >
+                              {categoryName}
+                            </button>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 ) : (
                   <NormalizedLink
@@ -136,12 +154,11 @@ const Header = () => {
                         }
                       }
                     } : undefined}
-                    className={`relative text-white font-semibold hover:text-[#FFECD8] transition-all duration-300 group transform hover:-translate-y-0.5 ${isScrolled ? 'text-xl py-3' : 'text-2xl py-4'} ${location.pathname.includes(link.page) ? 'active' : ''}`}
+                    className={`relative text-white font-semibold hover:text-[#FFECD8] transition-all duration-200 ${isScrolled ? 'text-base py-2' : 'text-lg py-3'} ${location.pathname.includes(link.page) ? 'active' : ''}`}
                     aria-current={location.pathname.includes(link.page) ? 'page' : undefined}
                   >
                     {link.icon}
                     <span>{link.name}</span>
-                    <span className="absolute left-0 -bottom-2 w-full h-[3px] bg-[#FFECD8] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left group-[.active]:scale-x-100"></span>
                   </NormalizedLink>
                 )}
               </div>

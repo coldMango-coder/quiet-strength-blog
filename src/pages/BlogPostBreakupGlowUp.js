@@ -66,7 +66,7 @@ const BlogPostBreakupGlowUp = () => {
 
             <div className="my-8">
               <img 
-                src="/images/woman-showing-post-breakup-glow-up-transformation-before-and-after-in-mirror-reflection-demonstrating-confidence-and-style-improvement.webp" 
+                src="/images/woman-showing-post-breakup-glow-up-transformation-before-and-after-in-mirror-reflection-demonstrating-confidence-and-style-improvement.webp?v=b008f571" 
                 alt="Woman showing post breakup glow up transformation before and after in mirror reflection, demonstrating confidence and style improvement" 
                 className="rounded-lg shadow-md w-full" 
                 loading="lazy"
@@ -153,7 +153,7 @@ const BlogPostBreakupGlowUp = () => {
 
               <div className="my-8">
                 <img 
-                  src="/images/woman-practicing-yoga-outdoors-during-post-breakup-transformation-journey-focusing-on-physical-and-mental-wellness-for-glow-up.webp" 
+                  src="/images/woman-practicing-yoga-outdoors-during-post-breakup-transformation-journey-focusing-on-physical-and-mental-wellness-for-glow-up.webp?v=b008f571" 
                   alt="Woman practicing yoga outdoors during post breakup transformation journey, focusing on physical and mental wellness for glow up" 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"
@@ -252,7 +252,7 @@ const BlogPostBreakupGlowUp = () => {
 
               <div className="my-8">
                 <img 
-                  src="/images/confident-woman-journaling-at-café-during-breakup-recovery-representing-personal-growth-and-transformation-in-glow-up-guide.webp" 
+                  src="/images/confident-woman-journaling-at-café-during-breakup-recovery-representing-personal-growth-and-transformation-in-glow-up-guide.webp?v=b008f571" 
                   alt="Confident woman journaling at café during breakup recovery, representing personal growth and transformation in glow up guide" 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"

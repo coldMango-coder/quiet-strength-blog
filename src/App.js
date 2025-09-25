@@ -1,10 +1,9 @@
 // src/App.js
 
-import React, { Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { Suspense, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Canonical from './components/Canonical';
 import { useDynamicSEO } from './hooks/useDynamicSEO';
 import { useDevCanonicalFallback } from './hooks/useDevCanonicalFallback';
 
@@ -22,10 +21,25 @@ function App() {
   
   // DEV-ONLY: Ensure canonical tags exist before React hydration
   useDevCanonicalFallback();
+  const location = useLocation();
+
+  // Smoothly scroll to hash targets after route changes
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      // Delay until content mounts
+      const t = setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 50);
+      return () => clearTimeout(t);
+    }
+  }, [location.pathname, location.hash]);
   
   return (
     <div className="bg-brand-light">
-      <Canonical />
       <Header />
       <main id="main-content" className="container mx-auto">
         <div className="lg:grid lg:grid-cols-12 lg:gap-24">

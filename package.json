@@ -53,12 +53,7 @@
     "seo:validate": "npm run build && npm run validate:seo:enhanced",
     "seo:validate:dev": "npm run validate:canonicals:dev",
     "test:canonical-raw-html": "playwright test tests/canonical-raw-html.spec.js",
-    "test:smoke": "playwright test",
-    "ci": "npm run clean && npm ci && npm run build && npm run test:smoke",
     "optimize-images": "node scripts/optimize-images.mjs"
-  },
-  "engines": {
-    "node": ">=18 <21"
   },
   "eslintConfig": {
     "extends": [
