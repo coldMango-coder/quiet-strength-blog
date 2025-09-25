@@ -82,6 +82,24 @@ const Header = () => {
     { name: 'Books', page: 'books', href: '/book-quiet-confidence', icon: <svg className="nav-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg> },
   ];
 
+  // Robust category list (fallback if import ever fails in prod build)
+  const fallbackCategories = [
+    { name: 'Introversion & Personality', slug: 'introversion-and-personality' },
+    { name: 'Relationships & Dating', slug: 'relationships-and-dating' },
+    { name: 'Career & Workplace', slug: 'career-and-workplace' },
+    { name: 'Self-Development', slug: 'self-development' },
+    { name: "Women's Wellness", slug: 'womens-wellness' },
+  ];
+  const categoryItems = (() => {
+    try {
+      const entries = categorySlugMap && Object.entries(categorySlugMap);
+      if (entries && entries.length) {
+        return entries.map(([name, slug]) => ({ name, slug }));
+      }
+    } catch {}
+    return fallbackCategories;
+  })();
+
   return (
     <>
       <div id="read-progress" style={{ width: `${progress}%`, pointerEvents: 'none' }} className="fixed top-0 left-0 h-1 bg-brand-emphasis z-[9999]"></div>
@@ -154,16 +172,16 @@ const Header = () => {
                             All Articles
                           </NormalizedLink>
                           <div className="h-px bg-gray-200 my-1" aria-hidden="true"></div>
-                          {Object.values(categories).map((categoryName) => (
+                          {categoryItems.map(({ name, slug }) => (
                             <button
-                              key={categoryName}
-                              onClick={() => { window.location.href = `/category/${categorySlugMap[categoryName]}`; setIsCatOpen(false); }}
+                              key={slug}
+                              onClick={() => { window.location.href = `/category/${slug}`; setIsCatOpen(false); }}
                               className="w-full text-left px-4 py-3 text-gray-800 hover:bg-brand-secondary/60 hover:text-brand-emphasis transition-colors duration-150"
                               role="menuitem"
-                              aria-label={`View ${categoryName} category`}
+                              aria-label={`View ${name} category`}
                               type="button"
                             >
-                              {categoryName}
+                              {name}
                             </button>
                           ))}
                       </div>
@@ -221,17 +239,17 @@ const Header = () => {
                   <div className="space-y-4">
                     <span className="text-2xl text-brand-dark font-semibold">{link.name}</span>
                     <div className="space-y-2">
-                      {Object.values(categories).map((categoryName) => (
+                      {categoryItems.map(({ name, slug }) => (
                         <button
-                          key={categoryName}
+                          key={slug}
                           onClick={() => {
-                            window.location.href = `/category/${categorySlugMap[categoryName]}`;
+                            window.location.href = `/category/${slug}`;
                             setIsOpen(false);
                           }}
                           className="block text-lg text-brand-primary hover:text-brand-emphasis transition-colors duration-300"
-                          aria-label={`View ${categoryName} category`}
+                          aria-label={`View ${name} category`}
                         >
-                          {categoryName}
+                          {name}
                         </button>
                       ))}
                     </div>
