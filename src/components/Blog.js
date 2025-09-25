@@ -15,19 +15,26 @@ const Blog = () => {
         </div>
 
         {/* Featured Article */}
-        <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 mb-16 flex flex-col lg:flex-row items-stretch min-w-0 max-w-full overflow-hidden">
-          <div className="lg:w-2/5 xl:w-1/3 mb-6 lg:mb-0 lg:pr-6 xl:pr-12 flex-shrink-0 min-w-0">
-            <img 
-              src={latestPost.image} 
-              alt={`Featured article: ${latestPost.title} - self-help guide for introverted women`} 
-              width="400" 
-              height="250" 
-              loading="lazy"
-              className="rounded-lg shadow-md w-full h-auto object-cover max-w-full"
-              style={{ maxHeight: '300px' }}
-            />
+        <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8 mb-16 flex flex-col lg:flex-row items-stretch min-w-0 max-w-full overflow-hidden">
+          <div className="lg:w-1/2 xl:w-7/12 mb-6 lg:mb-0 lg:pr-6 xl:pr-12 flex-shrink-0 min-w-0">
+            <div className="w-full aspect-[16/9] rounded-xl overflow-hidden">
+              <picture>
+                <source srcSet={`${latestPost.image.replace(/\.[^/.]+$/, '')}.avif`} type="image/avif" />
+                <source srcSet={`${latestPost.image.replace(/\.[^/.]+$/, '')}.webp`} type="image/webp" />
+                <img
+                  src={latestPost.image}
+                  alt={`Featured article: ${latestPost.title} - self-help guide for introverted women`}
+                  width="960"
+                  height="540"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="sync"
+                  className="w-full h-full object-cover"
+                />
+              </picture>
+            </div>
           </div>
-          <div className="lg:w-3/5 xl:w-2/3 flex flex-col justify-center min-w-0 max-w-full">
+          <div className="lg:w-1/2 xl:w-5/12 flex flex-col justify-center min-w-0 max-w-full">
             <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-brand-dark mb-4 leading-tight break-words max-w-full">
               {latestPost.title}
             </h3>
@@ -52,7 +59,7 @@ const Blog = () => {
         </div>
 
         {/* Recent Posts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 mb-16">
           {recentPosts.map((post) => (
             <BlogCard
               key={post.slug}

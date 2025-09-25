@@ -1653,6 +1653,15 @@ a:hover .nav-icon {
   opacity: 1;
 }
 
+/* Dropdown panel standardization */
+.dropdown-panel {
+  min-width: 16rem;
+  background: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
 /* Medium-Style Professional Typography - Apply to all content sections */
 .page-wrapper, .article-container, .content-section {
   scroll-margin-top: 128px !important;

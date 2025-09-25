@@ -124,7 +124,7 @@ const Header = () => {
                       </svg>
                     </button>
                     {isCatOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg z-50" role="menu" aria-label="Category menu">
+                      <div className="absolute top-full left-0 mt-2 dropdown-panel z-50" role="menu" aria-label="Category menu">
                         <div className="py-2">
                           {Object.values(categories).map((categoryName) => (
                             <button
