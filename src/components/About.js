@@ -1,5 +1,6 @@
 import React from 'react';
 import Seo from './Seo';
+import avatar from '../assets/marica-sinko-author-photo.jpg';
 
 const About = () => {
   return (
@@ -22,9 +23,13 @@ const About = () => {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/3 text-center">
             <div className="modern-logo w-56 h-56 mx-auto shadow-2xl border-8 border-white rounded-full overflow-hidden">
-              <img loading="lazy" decoding="async" 
-                src="/images/logo.webp?v=b008f571" 
-                alt="Quiet Strength Logo" 
+              <img
+                loading="lazy"
+                decoding="async"
+                src={avatar}
+                alt="Marica Šinko – Author portrait"
+                width="224"
+                height="224"
                 className="w-full h-full object-cover"
               />
             </div>
