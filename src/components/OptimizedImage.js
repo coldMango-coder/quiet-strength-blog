@@ -14,19 +14,20 @@ const OptimizedImage = ({
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
 
-  // Generate responsive srcset for different formats
-  const generateResponsiveSrcSet = (originalSrc, format) => {
+  // Generate responsive srcset (webp only to avoid avif 404s when variant doesn't exist)
+  const generateResponsiveWebpSrcSet = (originalSrc) => {
     if (!originalSrc) return '';
-    const baseName = originalSrc.replace(/\.[^/.]+$/, '');
-    const extension = format === 'avif' ? '.avif' : format === 'webp' ? '.webp' : originalSrc.match(/\.[^/.]+$/)?.[0] || '.jpg';
-    
-    // Generate multiple sizes for responsive images
+    const [path, query] = originalSrc.split('?');
+    const baseName = path.replace(/\.[^/.]+$/, '');
+    const extension = '.webp';
+    const suffix = query ? `?${query}` : '';
+    const url = `${baseName}${extension}${suffix}`;
     if (width && height) {
       const w1x = Math.round(width);
       const w2x = Math.round(width * 2);
-      return `${baseName}${extension} ${w1x}w, ${baseName}${extension} ${w2x}w`;
+      return `${url} ${w1x}w, ${url} ${w2x}w`;
     }
-    return `${baseName}${extension}`;
+    return url;
   };
 
   const handleLoad = () => setLoaded(true);
@@ -70,12 +71,7 @@ const OptimizedImage = ({
       
       <picture>
         <source 
-          srcSet={generateResponsiveSrcSet(src, 'avif')} 
-          type="image/avif" 
-          sizes={sizes}
-        />
-        <source 
-          srcSet={generateResponsiveSrcSet(src, 'webp')} 
+          srcSet={generateResponsiveWebpSrcSet(src)} 
           type="image/webp" 
           sizes={sizes}
         />
