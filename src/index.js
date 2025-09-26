@@ -79,3 +79,14 @@ if (document.readyState === 'loading') {
   // DOM already loaded
   startApp();
 }
+
+// Global safety nets to avoid unhandled errors on crawlers/bots
+if (typeof window !== 'undefined') {
+  window.addEventListener('error', (e) => {
+    // Log non-fatal errors without breaking rendering
+    try { console.warn('Captured JS error:', e.message); } catch {}
+  });
+  window.addEventListener('unhandledrejection', (e) => {
+    try { console.warn('Captured unhandled promise:', e.reason); } catch {}
+  });
+}

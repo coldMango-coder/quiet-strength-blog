@@ -77,10 +77,19 @@ const Header = () => {
   }, [isCatOpen]);
 
   useEffect(() => {
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark');
-      setIsDarkMode(true);
-    } else {
+    try {
+      const prefersDark = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const stored = typeof localStorage !== 'undefined' ? localStorage.getItem('theme') : null;
+      const dark = stored === 'dark' || (!stored && prefersDark);
+      if (dark) {
+        document.documentElement.classList.add('dark');
+        setIsDarkMode(true);
+      } else {
+        document.documentElement.classList.remove('dark');
+        setIsDarkMode(false);
+      }
+    } catch (e) {
+      // Fail-safe: default to light mode without throwing
       document.documentElement.classList.remove('dark');
       setIsDarkMode(false);
     }
