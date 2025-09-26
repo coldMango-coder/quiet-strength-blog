@@ -13,7 +13,7 @@ const Hero = () => {
               Quiet Strength: Self-Help for Introverted Women
             </h1>
             <p className=\"text-lg md:text-xl lg:text-xl text-brand-primary max-w-2xl mb-8 mx-auto leading-relaxed\">
-              Your essential guide to building confidence, managing energy, finding purpose, and achieving financial freedom â€“ on your own terms.
+              Your essential guide to building confidence, managing energy, finding purpose, and achieving financial freedom — on your own terms.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 mb-12 justify-center">
               <a
