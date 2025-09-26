@@ -1805,6 +1805,8 @@ a:hover .nav-icon {
 @media (max-width: 768px) {
   .article-container { line-height: 1.8 !important; }
   .article-container [id] { scroll-margin-top: 96px !important; }
+  /* Slightly larger base size on small screens for readability */
+  .article-container { font-size: 1.06rem !important; }
 }
 
 /* Override any external margin/padding that might interfere */

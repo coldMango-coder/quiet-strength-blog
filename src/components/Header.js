@@ -257,15 +257,15 @@ const Header = () => {
           </div>
         </div>
         {/* Mobile Menu */}
-        <div className={`fixed top-0 right-0 h-full w-full bg-white z-40 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'} lg:hidden`}>
-          <div className="flex justify-end p-6">
+        <div className={`fixed top-0 right-0 h-full w-full bg-white z-[100] transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'} lg:hidden overflow-y-auto pt-24`}>
+          <div className="flex justify-end px-6 pb-4">
             <button onClick={() => setIsOpen(false)} className="text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-emphasis focus:ring-offset-2 p-2 rounded-md" aria-label="Close navigation menu" type="button">
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
-          <nav className="flex flex-col items-center justify-center h-full -mt-16 space-y-8">
+          <nav className="flex flex-col items-center justify-start space-y-8 pb-16">
             {navLinks.map(link => (
               <div key={link.name} className="text-center">
                 {link.hasDropdown ? (
@@ -279,7 +279,7 @@ const Header = () => {
                             window.location.href = `/category/${slug}`;
                             setIsOpen(false);
                           }}
-                          className="block text-lg text-brand-primary hover:text-brand-emphasis transition-colors duration-300"
+                          className="block text-lg text-brand-primary hover:text-brand-emphasis transition-colors duration-300 px-6 py-3"
                           aria-label={`View ${name} category`}
                         >
                           {name}
