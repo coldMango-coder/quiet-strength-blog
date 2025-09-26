@@ -147,7 +147,6 @@ const Header = () => {
                 key={link.name}
                 className={`relative ${link.hasDropdown ? 'nav-cat pt-2 pb-2' : ''} ${link.hasDropdown && isCatOpen ? 'dropdown-open' : ''}`}
                 onMouseEnter={link.hasDropdown ? () => setIsCatOpen(true) : undefined}
-                onMouseLeave={link.hasDropdown ? () => setIsCatOpen(false) : undefined}
               >
                 {link.hasDropdown ? (
                   <div
@@ -183,6 +182,8 @@ const Header = () => {
                           zIndex: 10050,
                         }}
                         className="dropdown-panel"
+                        onMouseEnter={() => setIsCatOpen(true)}
+                        onMouseLeave={() => setIsCatOpen(false)}
                       >
                         <div className="py-2">
                           <a
