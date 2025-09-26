@@ -18,7 +18,7 @@ const BlogPostMorningRoutine = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-brand-dark mb-6">
               How to Build a Morning Routine for Confidence and Productivity in 2025
             </h1>
-            <p className="text-brand-primary text-lg">By Marica Å61inko - Founder of Quiet Strength, Women's Empowerment Coach</p>
+            <p className="text-brand-primary text-lg">By Marica �inko - Founder of Quiet Strength, Women's Empowerment Coach</p>
             <div className="mt-4 text-sm text-brand-primary">
               <time dateTime="2025-09-26">Published: Sep 26, 2025</time>
               <span className="mx-2">•</span>
@@ -250,3 +250,4 @@ const BlogPostMorningRoutine = () => {
 };
 
 export default BlogPostMorningRoutine;
+
