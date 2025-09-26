@@ -48,7 +48,7 @@ export const blogPosts = [
     date: '2025-09-26',
     category: categories.SELF_DEVELOPMENT,
     component: BlogPostMorningRoutine,
-    image: '/images/Person stretching by a window during sunrise with water and journal on bedside table as part of a morning routine for confidence and productivity..webp',
+    image: '/images/person-stretching-by-a-window-during-sunrise-with-water-and-journal-on-bedside-table-as-part-of-a-morning-routine-for-confidence-and-productivity.webp',
     readTime: '16 min read',
   },
   {
@@ -204,6 +204,7 @@ export const blogPosts = [
 ];
 
 export const sortedBlogPosts = blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
 
 
 
