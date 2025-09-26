@@ -222,16 +222,16 @@ const Header = () => {
                   </div>
                 ) : (
                   <NormalizedLink
-                    to={link.page === 'blog' ? '/blog' : (link.page === 'books' ? (link.href || '/book-quiet-confidence') : `/#${link.page}`)}
-                    onClick={link.page !== 'blog' ? (e) => {
-                      if (link.page !== 'books' && location.pathname === '/') {
+                    to={link.page === 'blog' ? '/blog' : `/#${link.page}`}
+                    onClick={(e) => {
+                      if (location.pathname === '/') {
                         e.preventDefault();
                         const element = document.getElementById(link.page);
                         if (element) {
                           element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }
                       }
-                    } : undefined}
+                    }}
                     className={`relative text-white font-semibold hover:text-[#FFECD8] transition-all duration-200 ${isScrolled ? 'text-base py-2' : 'text-lg py-3'} ${location.pathname.includes(link.page) ? 'active' : ''}`}
                     aria-current={location.pathname.includes(link.page) ? 'page' : undefined}
                   >
@@ -289,9 +289,9 @@ const Header = () => {
                   </div>
                 ) : (
                   <NormalizedLink
-                    to={link.page === 'blog' ? '/blog' : (link.page === 'books' ? (link.href || '/book-quiet-confidence') : `/#${link.page}`)}
+                    to={link.page === 'blog' ? '/blog' : `/#${link.page}`}
                     onClick={(e) => {
-                      if (link.page !== 'blog' && link.page !== 'books' && location.pathname === '/') {
+                      if (location.pathname === '/') {
                         e.preventDefault();
                         const element = document.getElementById(link.page);
                         if (element) {

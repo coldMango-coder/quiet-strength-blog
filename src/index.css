@@ -1680,6 +1680,13 @@ a:hover .nav-icon {
   pointer-events: auto !important;
 }
 
+/* Ensure header logo is a perfect circle */
+.header-logo,
+.header-logo img {
+  border-radius: 9999px !important;
+  overflow: hidden;
+}
+
 /* Explicit styling for items inside dropdown for reliability */
 .dropdown-panel a,
 .dropdown-panel button {
