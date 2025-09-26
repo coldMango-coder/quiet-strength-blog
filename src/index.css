@@ -1727,6 +1727,86 @@ a:hover .nav-icon {
   box-sizing: border-box !important;
 }
 
+/* Modern readable type scale for articles */
+.article-container {
+  line-height: 1.75 !important;
+  font-size: clamp(1.02rem, 0.35vw + 1rem, 1.2rem) !important;
+}
+
+.article-container p { 
+  margin: 0 0 1rem 0 !important;
+}
+
+.article-container h1 { 
+  font-size: clamp(2rem, 2.8vw + 1rem, 3.25rem) !important; 
+  line-height: 1.15 !important; 
+  margin: 1.75rem 0 1rem 0 !important; 
+}
+.article-container h2 { 
+  font-size: clamp(1.6rem, 1.6vw + 1rem, 2.25rem) !important; 
+  line-height: 1.25 !important; 
+  margin: 1.6rem 0 0.8rem 0 !important; 
+}
+.article-container h3 { 
+  font-size: clamp(1.25rem, 1.1vw + 1rem, 1.75rem) !important; 
+  line-height: 1.35 !important; 
+  margin: 1.2rem 0 0.6rem 0 !important; 
+}
+
+.article-container ul,
+.article-container ol {
+  margin: 0.75rem 0 1rem 1.25rem !important;
+  padding-left: 1rem !important;
+}
+.article-container li { 
+  margin: 0.4rem 0 !important; 
+}
+
+/* Improve anchor readability */
+.article-container a { 
+  text-underline-offset: 3px; 
+  text-decoration-thickness: 0.08em; 
+}
+.article-container a:hover { 
+  text-decoration-thickness: 0.11em; 
+}
+
+/* Blockquote polish (component-safe fallback) */
+.article-container blockquote {
+  border-left: 4px solid #C65616; 
+  padding-left: 1rem; 
+  color: #374151;
+  margin: 1rem 0 !important; 
+}
+
+/* Image defaults if component styles are missing */
+.article-container img { 
+  border-radius: 0.5rem; 
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08); 
+}
+.article-container img + p { 
+  margin-top: 0.5rem !important; 
+}
+
+/* TOC readability */
+.article-container .toc-list li { 
+  display: list-item; 
+  list-style: decimal; 
+  margin-left: 1.25rem !important; 
+}
+.article-container .toc-list a { 
+  font-size: 0.98em; 
+}
+
+/* Anchor offset for in-article sections */
+.article-container [id] { 
+  scroll-margin-top: 128px !important; 
+}
+@media (max-width: 768px) {
+  .article-container { line-height: 1.8 !important; }
+  .article-container [id] { scroll-margin-top: 96px !important; }
+}
+
 /* Override any external margin/padding that might interfere */
 .article-container p,
 .article-container h1,
