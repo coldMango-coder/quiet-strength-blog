@@ -12,7 +12,7 @@ const Hero = () => {
             <h1 className="text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight leading-tight mb-6">
               Quiet Strength: Self-Help for Introverted Women
             </h1>
-            <p className=\"text-lg md:text-xl lg:text-xl text-brand-primary max-w-2xl mb-8 mx-auto leading-relaxed\">
+            <p className="text-lg md:text-xl lg:text-xl text-brand-primary max-w-2xl mb-8 mx-auto leading-relaxed">
               Your essential guide to building confidence, managing energy, finding purpose, and achieving financial freedom — on your own terms.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 mb-12 justify-center">
@@ -39,7 +39,7 @@ const Hero = () => {
                   to="/blog"
                   className="text-brand-emphasis text-xs sm:text-sm font-semibold hover:underline hover:text-brand-dark transition-colors flex-shrink-0 ml-2"
                 >
-                  View All â†’
+                  View All &rarr;
                 </NormalizedLink>
               </div>
               
