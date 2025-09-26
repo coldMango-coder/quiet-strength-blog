@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import ReactDOM from 'react-dom';
 import { useLocation } from 'react-router-dom';
 import NormalizedLink from './NormalizedLink';
 import { categories, categorySlugMap } from '../blogData';
@@ -11,7 +12,9 @@ const Header = () => {
   const [progress, setProgress] = useState(0);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isCatOpen, setIsCatOpen] = useState(false);
+  const [catPos, setCatPos] = useState({ left: 0, top: 0, width: 0 });
   const catRef = useRef(null);
+  const catBtnRef = useRef(null);
 
   useEffect(() => {
     let ticking = false;
@@ -52,6 +55,25 @@ const Header = () => {
       document.removeEventListener('click', onClick, true);
       document.removeEventListener('keydown', onKey);
     };
+  }, [isCatOpen]);
+
+  // Recompute dropdown absolute position (for portal) when opened or on resize/scroll
+  useEffect(() => {
+    const updatePos = () => {
+      const btn = catBtnRef.current;
+      if (!btn) return;
+      const r = btn.getBoundingClientRect();
+      setCatPos({ left: Math.round(r.left), top: Math.round(r.bottom + 8), width: Math.round(r.width) });
+    };
+    if (isCatOpen) {
+      updatePos();
+      window.addEventListener('resize', updatePos);
+      window.addEventListener('scroll', updatePos, { passive: true });
+      return () => {
+        window.removeEventListener('resize', updatePos);
+        window.removeEventListener('scroll', updatePos);
+      };
+    }
   }, [isCatOpen]);
 
   useEffect(() => {
@@ -133,6 +155,7 @@ const Header = () => {
                     ref={catRef}
                   >
                     <button
+                      ref={catBtnRef}
                       onClick={() => setIsCatOpen((v) => !v)}
                       className={`relative text-white font-semibold hover:text-[#FFECD8] transition-all duration-200 ${isScrolled ? 'text-base py-2' : 'text-lg py-3'} flex items-center gap-1`}
                       aria-label={`${link.name} menu - show categories`}
@@ -146,31 +169,38 @@ const Header = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                       </svg>
                     </button>
-                    {/* Always render the panel; show via CSS hover/focus for reliability */}
-                    <div
-                      className={`absolute top-full left-0 mt-0 dropdown-panel z-[9998]`}
-                      role="menu"
-                      aria-label="Category menu"
-                      tabIndex={-1}
-                    >
-                      <div className="py-2">
-                          {/* Static items */}
-                          <NormalizedLink
-                            to="/#blog"
+                    {isCatOpen && ReactDOM.createPortal(
+                      <div 
+                        ref={catRef}
+                        role="menu"
+                        aria-label="Category menu"
+                        tabIndex={-1}
+                        style={{
+                          position: 'fixed',
+                          left: `${catPos.left}px`,
+                          top: `${catPos.top}px`,
+                          minWidth: Math.max(catPos.width, 240),
+                          zIndex: 10050,
+                        }}
+                        className="dropdown-panel"
+                      >
+                        <div className="py-2">
+                          <a
+                            href="/#blog"
                             className="block w-full text-left px-4 py-3 text-gray-800 hover:bg-brand-secondary/60 hover:text-brand-emphasis transition-colors duration-150"
                             role="menuitem"
                             onClick={() => setIsCatOpen(false)}
                           >
                             From the Blog
-                          </NormalizedLink>
-                          <NormalizedLink
-                            to="/blog"
+                          </a>
+                          <a
+                            href="/blog"
                             className="block w-full text-left px-4 py-3 text-gray-800 hover:bg-brand-secondary/60 hover:text-brand-emphasis transition-colors duration-150"
                             role="menuitem"
                             onClick={() => setIsCatOpen(false)}
                           >
                             All Articles
-                          </NormalizedLink>
+                          </a>
                           <div className="h-px bg-gray-200 my-1" aria-hidden="true"></div>
                           {categoryItems.map(({ name, slug }) => (
                             <button
@@ -184,8 +214,10 @@ const Header = () => {
                               {name}
                             </button>
                           ))}
-                      </div>
-                    </div>
+                        </div>
+                      </div>,
+                      document.body
+                    )}
                   </div>
                 ) : (
                   <NormalizedLink
