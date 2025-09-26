@@ -187,6 +187,23 @@ const BlogPostMorningRoutine = () => {
             </StyledBlockquote>
           </section>
 
+          <section className="mb-16">
+            <h2>Expert Insights</h2>
+            <StyledBlockquote>
+              Strong morning light cues help anchor your circadian rhythm, which supports mood, alertness, and cognitive performance throughout the day. See guidance from the CDC and the Sleep Foundation for practical light habits.
+              {' '}(<a href="https://www.cdc.gov/sleep/about/index.html" className="text-brand-emphasis hover:underline">CDC</a>,{' '}
+              <a href="https://www.sleepfoundation.org/how-sleep-works/why-do-we-need-sleep" className="text-brand-emphasis hover:underline">Sleep Foundation</a>)
+            </StyledBlockquote>
+            <StyledBlockquote>
+              Brief, consistent movement in the morning is linked with better stress regulation and clearer thinking later in the day — even when sessions are short. Recent work in Frontiers in Psychology highlights these benefits.
+              {' '}(<a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1471084/full" className="text-brand-emphasis hover:underline">Frontiers in Psychology</a>)
+            </StyledBlockquote>
+            <StyledBlockquote>
+              Protecting attention early — delaying social feeds and email — can stabilize mood and reduce reactivity. The American Psychological Association summarizes research on how social platforms influence mental states.
+              {' '}(<a href="https://www.apa.org/members/content/social-media-research-series" className="text-brand-emphasis hover:underline">APA Social Media Research</a>)
+            </StyledBlockquote>
+          </section>
+
           <section id="faq" className="mb-16 scroll-mt-24">
             <h2>Frequently Asked Questions</h2>
             <h3 className="mt-4">What is a morning routine for confidence and productivity?</h3>

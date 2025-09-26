@@ -49,7 +49,7 @@ export const blogPosts = [
     category: categories.SELF_DEVELOPMENT,
     component: BlogPostMorningRoutine,
     image: '/images/woman-journaling-self-reflection.webp?v=b008f571',
-    readTime: '14 min read',
+    readTime: '16 min read',
   },
   {
     slug: 'how-to-stop-attracting-narcissists-9-proven-strategies',
@@ -79,7 +79,7 @@ export const blogPosts = [
     category: categories.CAREER_WORKPLACE,
     component: BlogPostNetworkingTips,
     image: '/images/20250728_1647_Engaged Coffee Shop Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.webp?v=b008f571',
-    readTime: '14 min read',
+    readTime: '16 min read',
   },
   {
     slug: 'how-to-be-confident-as-an-introvert-woman-guide',
@@ -204,4 +204,5 @@ export const blogPosts = [
 ];
 
 export const sortedBlogPosts = blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
 
