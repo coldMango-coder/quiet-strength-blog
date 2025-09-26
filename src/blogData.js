@@ -48,7 +48,7 @@ export const blogPosts = [
     date: '2025-09-26',
     category: categories.SELF_DEVELOPMENT,
     component: BlogPostMorningRoutine,
-    image: '/images/person-stretching-by-a-window-during-sunrise-with-water-and-journal-on-bedside-table-as-part-of-a-morning-routine-for-confidence-and-productivity.webp',
+    image: '/images/person-stretching-by-a-window-during-sunrise-with-water-and-journal-on-bedside-table-as-part-of-a-morning-routine-for-confidence-and-productivity.webp?v=b008f571',
     readTime: '16 min read',
   },
   {
