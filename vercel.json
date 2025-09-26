@@ -23,6 +23,18 @@
       "destination": "/index.html"
     }
   ],
+  "redirects": [
+    {
+      "source": "/static/js/main.d4704f7c.js",
+      "destination": "/static/js/main.4ddb9a20.js",
+      "permanent": true
+    },
+    {
+      "source": "/static/js/872.656d3240.chunk.js",
+      "destination": "/static/js/872.4eb48aed.chunk.js",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/fonts/fonts.css",
