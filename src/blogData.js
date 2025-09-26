@@ -16,6 +16,7 @@ const BlogPostIntrovertConfidence = React.lazy(() => import('./pages/BlogPostInt
 const BlogPostNetworkingTips = React.lazy(() => import('./pages/BlogPostNetworkingTips'));
 const BlogPostEmotionallyUnavailableMen = React.lazy(() => import('./pages/BlogPostEmotionallyUnavailableMen'));
 const BlogPostNarcissistAttraction = React.lazy(() => import('./pages/BlogPostNarcissistAttraction'));
+const BlogPostMorningRoutine = React.lazy(() => import('./pages/BlogPostMorningRoutine'));
 
 export const categories = {
   INTROVERSION_PERSONALITY: 'Introversion & Personality',
@@ -40,6 +41,16 @@ export const slugToCategoryMap = Object.fromEntries(
 );
 
 export const blogPosts = [
+  {
+    slug: 'morning-routine-for-confidence-and-productivity-2025',
+    title: 'How to Build a Morning Routine for Confidence and Productivity in 2025',
+    description: 'Build confidence and productivity with a science-backed morning routine. Learn the 5 pillars, a 45-minute template, and easy ways to customize it in 2025.',
+    date: '2025-09-26',
+    category: categories.SELF_DEVELOPMENT,
+    component: BlogPostMorningRoutine,
+    image: '/images/woman-journaling-self-reflection.webp?v=b008f571',
+    readTime: '10 min read',
+  },
   {
     slug: 'how-to-stop-attracting-narcissists-9-proven-strategies',
     title: 'How to Stop Attracting Narcissists: 9 Proven Strategies That Actually Work in 2025',
