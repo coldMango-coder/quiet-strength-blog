@@ -9,10 +9,10 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col gap-8 items-center max-w-4xl mx-auto">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold mb-8">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight leading-tight mb-6">
               Quiet Strength: Self-Help for Introverted Women
             </h1>
-            <p className="text-lg md:text-xl lg:text-xl text-brand-primary max-w-2xl mb-8 mx-auto">
+            <p className=\"text-lg md:text-xl lg:text-xl text-brand-primary max-w-2xl mb-8 mx-auto leading-relaxed\">
               Your essential guide to building confidence, managing energy, finding purpose, and achieving financial freedom – on your own terms.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 mb-12 justify-center">
@@ -93,3 +93,4 @@ const Hero = () => {
 };
 
 export default Hero;
+

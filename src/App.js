@@ -46,12 +46,14 @@ function App() {
     }
   }, [location.pathname]);
   
+  const isArticle = location.pathname.startsWith('/blog/') && location.pathname !== '/blog';
+
   return (
     <div className="bg-brand-light">
       <Header />
       <main id="main-content" className="container mx-auto">
-        <div className="lg:grid lg:grid-cols-12 lg:gap-24">
-          <div className="lg:col-span-8">
+        <div className={isArticle ? 'lg:grid lg:grid-cols-12 lg:gap-8' : 'lg:grid lg:grid-cols-12 lg:gap-24'}>
+          <div className={isArticle ? 'lg:col-start-3 lg:col-span-8' : 'lg:col-span-8'}>
             <Suspense fallback={
               <div className="flex justify-center items-center py-24">
                 <div className="flex flex-col items-center">
@@ -70,9 +72,11 @@ function App() {
               </Routes>
             </Suspense>
           </div>
-          <aside className="hidden lg:block lg:col-span-4 py-24">
-            {/* This is the intentional empty space for the asymmetrical layout */}
-          </aside>
+          {!isArticle && (
+            <aside className="hidden lg:block lg:col-span-4 py-24">
+              {/* Intentional empty space for asymmetrical layout on non-article pages */}
+            </aside>
+          )}
         </div>
       </main>
       <Footer />
