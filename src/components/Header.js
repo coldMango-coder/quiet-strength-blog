@@ -257,7 +257,7 @@ const Header = () => {
           </div>
         </div>
         {/* Mobile Menu */}
-        <div className={`fixed top-0 right-0 h-full w-full bg-white z-[100] transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'} lg:hidden overflow-y-auto pt-24`}>
+        <div className={`fixed inset-0 w-full h-full bg-white z-[1000] transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'} lg:hidden overflow-y-auto pt-24`}>
           <div className="flex justify-end px-6 pb-4">
             <button onClick={() => setIsOpen(false)} className="text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-emphasis focus:ring-offset-2 p-2 rounded-md" aria-label="Close navigation menu" type="button">
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
