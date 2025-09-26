@@ -97,6 +97,15 @@ const Header = () => {
     setIsDarkMode(!isDarkMode);
   };
 
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      const original = document.documentElement.style.overflow;
+      document.documentElement.style.overflow = 'hidden';
+      return () => { document.documentElement.style.overflow = original; };
+    }
+  }, [isOpen]);
+
   const navLinks = [
     { name: 'About', page: 'about', icon: <svg className="nav-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> },
     { name: 'Category', page: 'category', icon: <svg className="nav-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg>, hasDropdown: true },
@@ -257,59 +266,63 @@ const Header = () => {
           </div>
         </div>
         {/* Mobile Menu */}
-        <div className={`fixed inset-0 w-full h-full bg-white z-[1000] transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'} lg:hidden overflow-y-auto pt-24`}>
-          <div className="flex justify-end px-6 pb-4">
-            <button onClick={() => setIsOpen(false)} className="text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-emphasis focus:ring-offset-2 p-2 rounded-md" aria-label="Close navigation menu" type="button">
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <nav className="flex flex-col items-center justify-start space-y-8 pb-16">
-            {navLinks.map(link => (
-              <div key={link.name} className="text-center">
-                {link.hasDropdown ? (
-                  <div className="space-y-4">
-                    <span className="text-2xl text-brand-dark font-semibold">{link.name}</span>
-                    <div className="space-y-2">
-                      {categoryItems.map(({ name, slug }) => (
-                        <button
-                          key={slug}
-                          onClick={() => {
-                            window.location.href = `/category/${slug}`;
-                            setIsOpen(false);
-                          }}
-                          className="block text-lg text-brand-primary hover:text-brand-emphasis transition-colors duration-300 px-6 py-3"
-                          aria-label={`View ${name} category`}
-                        >
-                          {name}
-                        </button>
-                      ))}
+        {isOpen && ReactDOM.createPortal(
+          <div className={`fixed inset-0 w-full h-full bg-white z-[2000] overflow-y-auto pt-24 lg:hidden`}
+               role="dialog" aria-modal="true" aria-label="Mobile navigation">
+            <div className="flex justify-end px-6 pb-4">
+              <button onClick={() => setIsOpen(false)} className="text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-emphasis focus:ring-offset-2 p-2 rounded-md" aria-label="Close navigation menu" type="button">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <nav className="flex flex-col items-center justify-start space-y-8 pb-16">
+              {navLinks.map(link => (
+                <div key={link.name} className="text-center">
+                  {link.hasDropdown ? (
+                    <div className="space-y-4">
+                      <span className="text-2xl text-brand-dark font-semibold">{link.name}</span>
+                      <div className="space-y-2">
+                        {categoryItems.map(({ name, slug }) => (
+                          <button
+                            key={slug}
+                            onClick={() => {
+                              window.location.href = `/category/${slug}`;
+                              setIsOpen(false);
+                            }}
+                            className="block text-lg text-brand-primary hover:text-brand-emphasis transition-colors duration-300 px-6 py-3"
+                            aria-label={`View ${name} category`}
+                          >
+                            {name}
+                          </button>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                ) : (
-                  <NormalizedLink
-                    to={link.page === 'blog' ? '/blog' : `/#${link.page}`}
-                    onClick={(e) => {
-                      if (location.pathname === '/') {
-                        e.preventDefault();
-                        const element = document.getElementById(link.page);
-                        if (element) {
-                          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  ) : (
+                    <NormalizedLink
+                      to={link.page === 'blog' ? '/blog' : `/#${link.page}`}
+                      onClick={(e) => {
+                        if (location.pathname === '/') {
+                          e.preventDefault();
+                          const element = document.getElementById(link.page);
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          }
                         }
-                      }
-                      setIsOpen(false);
-                    }}
-                    className="text-2xl text-brand-dark font-semibold hover:text-brand-emphasis transition-colors duration-300"
-                  >
-                    {link.name}
-                  </NormalizedLink>
-                )}
-              </div>
-            ))}
-            <a href="/newsletter" className="mt-8 bg-brand-emphasis text-white font-semibold py-3 px-8 rounded-full">Join</a>
-          </nav>
-        </div>
+                        setIsOpen(false);
+                      }}
+                      className="text-2xl text-brand-dark font-semibold hover:text-brand-emphasis transition-colors duration-300"
+                    >
+                      {link.name}
+                    </NormalizedLink>
+                  )}
+                </div>
+              ))}
+              <a href="/newsletter" className="mt-8 bg-brand-emphasis text-white font-semibold py-3 px-8 rounded-full">Join</a>
+            </nav>
+          </div>,
+          document.body
+        )}
       </header>
     </>
   );
