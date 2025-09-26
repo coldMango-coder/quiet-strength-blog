@@ -50,14 +50,14 @@ const BlogPostMorningRoutine = () => {
           {/* Hero image (with placeholder via OptimizedImage) */}
           <div className="my-8">
             <img
-              src="/images/woman-journaling-self-reflection.webp?v=b008f571"
-              alt="woman-journaling-self-reflection"
+              src="/images/Person stretching by a window during sunrise with water and journal on bedside table as part of a morning routine for confidence and productivity..webp"
+              alt="Person stretching by a window during sunrise with water and journal on bedside table as part of a morning routine for confidence and productivity."
               className="rounded-lg shadow-md w-full h-auto"
               loading="lazy"
               width="1200"
               height="800"
             />
-            <p className="text-sm text-gray-600 mt-3 text-center italic">woman-journaling-self-reflection</p>
+            <p className="text-sm text-gray-600 mt-3 text-center italic">Person stretching by a window during sunrise with water and journal on bedside table as part of a morning routine for confidence and productivity.</p>
           </div>
 
           <section id="why-mornings" className="mb-16 scroll-mt-24">
@@ -100,14 +100,14 @@ const BlogPostMorningRoutine = () => {
             </p>
             <div className="my-8">
               <img
-                src="/images/woman-exercising-yoga-meditation-fitness-routine-physical-transformation-wellness-journey-peaceful-natural-setting.webp?v=b008f571"
-                alt="woman-exercising-yoga-meditation-fitness-routine-physical-transformation-wellness-journey-peaceful-natural-setting"
+                src="/images/Young professional doing yoga in a sunlit living room, yoga mat on floor, laptop closed on desk in background, warm morning light, calm yet energized mood, modern cozy interior..webp"
+                alt="Young professional doing yoga in a sunlit living room, yoga mat on floor, laptop closed on desk in background, warm morning light, calm yet energized mood, modern cozy interior."
                 className="rounded-lg shadow-md w-full h-auto"
                 loading="lazy"
                 width="1200"
                 height="800"
               />
-              <p className="text-sm text-gray-600 mt-3 text-center italic">woman-exercising-yoga-meditation-fitness-routine-physical-transformation-wellness-journey-peaceful-natural-setting</p>
+              <p className="text-sm text-gray-600 mt-3 text-center italic">Young professional doing yoga in a sunlit living room, yoga mat on floor, laptop closed on desk in background, warm morning light, calm yet energized mood, modern cozy interior.</p>
             </div>
             <h3 className="mt-6">4) Mindset and Self‑Talk</h3>
             <StyledList items={[
