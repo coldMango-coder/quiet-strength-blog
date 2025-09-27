@@ -11,6 +11,7 @@ const publicImagesRoot = resolve(repoRoot, 'public', 'images');
 const srcImagesRoot = resolve(repoRoot, 'src', 'images');
 
 const WRITE = process.env.WRITE === '1' || process.argv.includes('--write');
+const REFS_ONLY = process.argv.includes('--refs-only');
 const TARGET_BYTES = 300 * 1024; // 300KB
 const VERSION = process.env.IMG_VERSION || process.env.VERCEL_GIT_COMMIT_SHA || String(Date.now());
 
@@ -146,13 +147,15 @@ async function updateReferences(existingFormats) {
 
 async function run() {
   const imageFiles = await globby(['public/images/**/*.{jpg,jpeg,png}','src/images/**/*.{jpg,jpeg,png}'], { cwd: repoRoot, absolute: true });
-  console.log(`Found ${imageFiles.length} images to process${WRITE ? '' : ' (dry-run: skipping compression)'}`);
+  console.log(`Found ${imageFiles.length} images to process${WRITE ? '' : ' (dry-run: skipping compression)'}${REFS_ONLY ? ' [refs-only]' : ''}`);
   const results = [];
-  if (WRITE) {
+  if (WRITE && !REFS_ONLY) {
     for (const img of imageFiles) {
       const r = await optimizeOne(img);
       if (r) results.push(r);
     }
+  } else if (WRITE && REFS_ONLY) {
+    console.log('Skipping binary compression (refs-only mode)');
   }
   const existingFormats = await buildExistingFormatsMap();
   const changes = await updateReferences(existingFormats);
