@@ -13,6 +13,31 @@ img,svg,video{max-width:100%;height:auto}
 h1{line-height:1.2;word-wrap:anywhere}
 .stack>*+*{margin-top:clamp(0.5rem,1.5vw,1.25rem)}
 
+/* CLS guards for media inside article content */
+.article-container img,
+.prose img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Provide a stable placeholder ratio before intrinsic size is known */
+  aspect-ratio: 3 / 2;
+  /* Prevent offscreen media from affecting layout; reserve space */
+  content-visibility: auto;
+  contain-intrinsic-size: 800px 533px;
+}
+
+.article-container picture { display: block; }
+
+.article-container iframe,
+.article-container video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  content-visibility: auto;
+  contain-intrinsic-size: 960px 540px;
+}
+
 /* Extra safety to prevent any production-only overflows/overlaps */
 html, body { text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 body { font-kerning: normal; font-synthesis-weight: none; }

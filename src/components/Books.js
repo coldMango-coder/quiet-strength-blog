@@ -3,7 +3,15 @@ import React from 'react';
 const BookCard = ({ imgSrc, title, description, price, ctaText, slug, isExternal, externalLink }) => (
   <div className="bg-white rounded-lg shadow-md flex flex-col hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 w-full max-w-md mx-auto">
     <div>
-      <img src={imgSrc} alt={`Book cover for ${title}`} className="w-full h-[500px] object-contain" loading="lazy" decoding="async" />
+      <img
+        src={imgSrc}
+        alt={`Book cover for ${title}`}
+        className="w-full h-[500px] object-contain"
+        loading="lazy"
+        decoding="async"
+        width="800"
+        height="1200"
+      />
       <p className="text-sm text-gray-600 mt-3 text-center italic px-4">Book cover for {title}</p>
     </div>
     <div className="flex flex-col flex-grow p-8">

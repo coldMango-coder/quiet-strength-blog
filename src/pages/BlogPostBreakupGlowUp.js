@@ -70,6 +70,10 @@ const BlogPostBreakupGlowUp = () => {
                 alt="Woman showing post breakup glow up transformation before and after in mirror reflection, demonstrating confidence and style improvement" 
                 className="rounded-lg shadow-md w-full" 
                 loading="lazy"
+                decoding="async"
+                width="1200"
+                height="800"
+                sizes="(max-width: 768px) 100vw, 720px"
               />
               <p className="text-sm text-gray-600 italic text-center mt-2">Woman showing post breakup glow up transformation before and after in mirror reflection, demonstrating confidence and style improvement</p>
             </div>
@@ -157,6 +161,10 @@ const BlogPostBreakupGlowUp = () => {
                   alt="Woman practicing yoga outdoors during post breakup transformation journey, focusing on physical and mental wellness for glow up" 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"
+                  decoding="async"
+                  width="1200"
+                  height="800"
+                  sizes="(max-width: 768px) 100vw, 720px"
                 />
                 <p className="text-sm text-gray-600 italic text-center mt-2">Woman practicing yoga outdoors during post breakup transformation journey, focusing on physical and mental wellness for glow up</p>
               </div>
@@ -256,6 +264,10 @@ const BlogPostBreakupGlowUp = () => {
                   alt="Confident woman journaling at café during breakup recovery, representing personal growth and transformation in glow up guide" 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"
+                  decoding="async"
+                  width="1200"
+                  height="800"
+                  sizes="(max-width: 768px) 100vw, 720px"
                 />
                 <p className="text-sm text-gray-600 italic text-center mt-2">Confident woman journaling at café during breakup recovery, representing personal growth and transformation in glow up guide</p>
               </div>

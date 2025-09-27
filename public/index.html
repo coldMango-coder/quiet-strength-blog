@@ -38,7 +38,9 @@
     <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/charter-regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/charter-bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/fonts/fonts.css">
+    <!-- Load font-face CSS without render-blocking -->
+    <link rel="preload" as="style" href="/fonts/fonts.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
     
     <!-- Preload only essential UI images -->
     <link rel="preload" as="image" href="/images/logo.avif" type="image/avif" fetchpriority="high">

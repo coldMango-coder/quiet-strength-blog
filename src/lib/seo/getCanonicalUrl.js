@@ -5,23 +5,24 @@
  * @returns {string} - The canonical URL that exactly matches the live URL
  */
 export function getCanonicalUrl(pathname) {
-  // Use environment variable for base URL, with fallback to current origin
-  const baseUrl = process.env.REACT_APP_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : 'http://localhost:5173');
-  
+  // Use production domain by default to avoid leaking localhost into canonicals
+  const defaultBase = 'https://trueallyguide.com';
+  const baseUrl = process.env.REACT_APP_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : defaultBase);
+
   // Normalize pathname with strict rules
   let normalizedPath = pathname || '/';
-  
-  // Remove query parameters and hash
+
+  // Strip query and hash for canonical
   normalizedPath = normalizedPath.split('?')[0].split('#')[0];
-  
-  // Convert to lowercase for consistency
+
+  // Lowercase for consistency
   normalizedPath = normalizedPath.toLowerCase();
-  
-  // Remove trailing slash except for root
-  if (normalizedPath !== '/' && normalizedPath.endsWith('/')) {
-    normalizedPath = normalizedPath.slice(0, -1);
+
+  // Ensure trailing slash policy consistent with pre-renderer: always slash
+  if (!normalizedPath.endsWith('/')) {
+    normalizedPath = normalizedPath === '' ? '/' : `${normalizedPath}/`;
   }
-  
+
   // Construct canonical URL
   return `${baseUrl}${normalizedPath}`;
 }

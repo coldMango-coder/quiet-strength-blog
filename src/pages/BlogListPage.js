@@ -17,16 +17,8 @@ const BlogListPage = () => {
    ? sortedBlogPosts.filter(p => p.category === selectedCategory)
    : sortedBlogPosts;
 
-  const baseUrl = process.env.REACT_APP_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '');
-  const canonicalUrl = selectedCategory
-    ? `${baseUrl}/blog?category=${categorySlugMap[selectedCategory] || selectedCategory}`
-    : `${baseUrl}/blog`;
-
   return (
     <>
-      <Helmet>
-        <link rel="canonical" href={canonicalUrl} />
-      </Helmet>
       <div className="bg-white">
         <Seo
           title={selectedCategory ? `${selectedCategory} Articles` : 'Blog'}
