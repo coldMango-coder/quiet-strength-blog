@@ -1,7 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-const BUILD_DIR = path.join(__dirname, '../build');
+const BUILD_DIR = path.join(__dirname, '..', 'build');
 
 function listHtmlFiles(dir) {
   const out = [];
@@ -23,7 +23,7 @@ async function optimizePerformance() {
   try {
     const htmlFiles = listHtmlFiles(BUILD_DIR);
 
-    // Minify HTML
+    // Minify HTML only (safe)
     for (const file of htmlFiles) {
       const filePath = path.join(BUILD_DIR, file);
       const content = await fs.readFile(filePath, 'utf8');
@@ -31,36 +31,17 @@ async function optimizePerformance() {
       await fs.writeFile(filePath, minified);
     }
 
-    // Preload + deblock main resources
-    const assetManifest = await fs.readJson(path.join(BUILD_DIR, 'asset-manifest.json'));
-    const preloadHints = `\n<!-- Performance: Critical resource preloads -->\n<link rel="preload" href="${assetManifest.files['main.css']}" as="style">\n<link rel="preload" href="${assetManifest.files['main.js']}" as="script">\n<link rel="modulepreload" href="${assetManifest.files['main.js']}">`;
-
-    for (const file of htmlFiles) {
-      const filePath = path.join(BUILD_DIR, file);
-      let content = await fs.readFile(filePath, 'utf8');
-      content = content.replace(/<meta name="theme-color"[^>]*>/, (m) => m + preloadHints);
-      if (!/onload=\"this\.onload=null;this\.rel='stylesheet'\"/.test(content)) {
-        content = content.replace(
-          /<link[^>]+rel=["']stylesheet["'][^>]*href=["']([^"']*main[^"']*\.css)["'][^>]*>/i,
-          (m, href) => `<link rel="preload" as="style" href="${href}" onload=\"this.onload=null;this.rel='stylesheet'\"><noscript><link rel=\"stylesheet\" href=\"${href}\"></noscript>`
-        );
-      }
-      await fs.writeFile(filePath, content);
-    }
-
-    // Optional: annotate sitemap if present
+    // Optional: annotate sitemap
     const sitemapPath = path.join(BUILD_DIR, 'sitemap.xml');
     if (await fs.pathExists(sitemapPath)) {
       let sitemap = await fs.readFile(sitemapPath, 'utf8');
-      sitemap = sitemap.replace(/<sitemap>/, `<sitemap>\n<!-- Generated with performance optimizations -->`);
+      sitemap = sitemap.replace(/<sitemap>/, '<sitemap>\n<!-- Generated with performance optimizations -->');
       await fs.writeFile(sitemapPath, sitemap);
     }
 
-    // Report
     const report = {
       timestamp: new Date().toISOString(),
-      htmlFilesOptimized: htmlFiles.length,
-      staticAssets: Object.keys(assetManifest.files).length,
+      htmlFilesOptimized: htmlFiles.length
     };
     await fs.writeJson(path.join(BUILD_DIR, 'performance-report.json'), report, { spaces: 2 });
     console.log('Performance optimization complete.');
@@ -71,3 +52,4 @@ async function optimizePerformance() {
 }
 
 optimizePerformance();
+
