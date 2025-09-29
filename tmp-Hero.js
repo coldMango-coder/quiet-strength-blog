@@ -5,19 +5,15 @@ import OptimizedImage from './OptimizedImage';
 
 const Hero = () => {
   return (
-    <section
-      id="home"
-      className="relative bg-brand-light text-brand-dark py-32 md:py-48 text-center"
-      style={{ minHeight: '600px', contain: 'layout style paint' }}
-    >
+    <section id="home" className="relative bg-brand-light text-brand-dark py-32 md:py-48">
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col gap-8 items-center max-w-4xl mx-auto">
-          <div className="text-center hero-copy">
+          <div className="text-center">
             <h1 className="text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight leading-tight mb-6">
               Quiet Strength: Self-Help for Introverted Women
             </h1>
             <p className="text-lg md:text-xl lg:text-xl text-brand-primary max-w-2xl mb-8 mx-auto leading-relaxed">
-              Your essential guide to building confidence, managing energy, finding purpose, and achieving financial freedom - on your own terms.
+              Your essential guide to building confidence, managing energy, finding purpose, and achieving financial freedom — on your own terms.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 mb-12 justify-center">
               <a
@@ -28,8 +24,7 @@ const Hero = () => {
               </a>
               <a
                 href="#blog"
-                className="font-bold py-4 px-10 rounded-full bg-white text-[#B44416] border-2 border-[#B44416] hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105 text-center"
-                aria-label="Read the Blog"
+                className="text-brand-emphasis font-bold py-4 px-10 rounded-full hover:bg-brand-secondary transition duration-300 ease-in-out transform hover:scale-105 text-center"
               >
                 Read the Blog
               </a>
@@ -37,7 +32,7 @@ const Hero = () => {
           </div>
           <div className="w-full max-w-2xl min-w-0">
             {/* Latest Insights & Articles Section */}
-            <div className="insights bg-white rounded-xl shadow-xl p-4 sm:p-6 lg:p-8 border border-gray-100 min-h-fit min-w-0">
+            <div className="bg-white rounded-xl shadow-xl p-4 sm:p-6 lg:p-8 border border-gray-100 min-h-fit min-w-0">
               <div className="flex items-center justify-between mb-4 sm:mb-6 min-w-0">
                 <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-brand-dark flex-shrink-0">Latest Insights</h2>
                 <NormalizedLink 
@@ -54,10 +49,11 @@ const Hero = () => {
                     <OptimizedImage 
                       src={post.image} 
                       alt={post.title}
-                      className={`rounded-lg flex-shrink-0 shadow-sm ${index === 0 ? 'w-48 sm:w-56 md:w-64 lg:w-72' : 'w-40 sm:w-48 md:w-56 lg:w-64'}`}
-                      sizes={index === 0 ? '(max-width: 640px) 12rem, (max-width: 768px) 14rem, (max-width: 1024px) 16rem, 18rem' : '(max-width: 640px) 10rem, (max-width: 768px) 12rem, (max-width: 1024px) 14rem, 16rem'}
-                      imgClassName="object-contain"
-                      priority={index === 0}
+                      className={`rounded-lg flex-shrink-0 shadow-sm ${index === 0 ? 'w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48' : 'w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40'}`}
+                      width={index === 0 ? 192 : 160}
+                      height={index === 0 ? 192 : 160}
+                      sizes={index === 0 ? '(max-width: 640px) 96px, (max-width: 768px) 128px, (max-width: 1024px) 160px, 192px' : '(max-width: 640px) 80px, (max-width: 768px) 96px, (max-width: 1024px) 128px, 160px'}
+                      priority={index === 0} // First image should load immediately
                     />
                     <div className={`flex-1 min-w-0 ${index === 0 ? 'ml-3 sm:ml-4 md:ml-6 lg:ml-8' : 'ml-2 sm:ml-3 md:ml-4 lg:ml-6'}`}>
                       {index === 0 && (
@@ -97,3 +93,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
+

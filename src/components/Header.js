@@ -18,24 +18,47 @@ const Header = () => {
 
   useEffect(() => {
     let ticking = false;
-    
+    const totalHeightRef = { current: 1 };
+
+    const computeTotalHeight = () => {
+      // Measure once per resize/frame; not on every scroll
+      totalHeightRef.current = Math.max(
+        1,
+        document.documentElement.scrollHeight - document.documentElement.clientHeight
+      );
+    };
+
+    // Initial measure after paint
+    requestAnimationFrame(computeTotalHeight);
+
+    // Recompute on resize only
+    let resizeTick = false;
+    const onResize = () => {
+      if (resizeTick) return;
+      resizeTick = true;
+      requestAnimationFrame(() => {
+        computeTotalHeight();
+        resizeTick = false;
+      });
+    };
+    window.addEventListener('resize', onResize, { passive: true });
+
     const handleScroll = () => {
       if (!ticking) {
+        ticking = true;
         requestAnimationFrame(() => {
-          const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
           const scrollPosition = window.scrollY;
-          setProgress((scrollPosition / totalHeight) * 100);
+          setProgress((scrollPosition / totalHeightRef.current) * 100);
           setIsScrolled(scrollPosition > 120);
           ticking = false;
         });
-        ticking = true;
       }
     };
     
-    // Throttle scroll events using passive listeners
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll, { passive: true });
+      window.removeEventListener('resize', onResize);
     };
   }, []);
 
@@ -59,19 +82,26 @@ const Header = () => {
 
   // Recompute dropdown absolute position (for portal) when opened or on resize/scroll
   useEffect(() => {
-    const updatePos = () => {
-      const btn = catBtnRef.current;
-      if (!btn) return;
-      const r = btn.getBoundingClientRect();
-      setCatPos({ left: Math.round(r.left), top: Math.round(r.bottom + 8), width: Math.round(r.width) });
+    let measuring = false;
+    const schedulePos = () => {
+      if (measuring) return;
+      measuring = true;
+      requestAnimationFrame(() => {
+        measuring = false;
+        const btn = catBtnRef.current;
+        if (!btn) return;
+        const r = btn.getBoundingClientRect();
+        setCatPos({ left: Math.round(r.left), top: Math.round(r.bottom + 8), width: Math.round(r.width) });
+      });
     };
     if (isCatOpen) {
-      updatePos();
-      window.addEventListener('resize', updatePos);
-      window.addEventListener('scroll', updatePos, { passive: true });
+      // Measure once next frame to avoid sync reflow
+      schedulePos();
+      window.addEventListener('resize', schedulePos, { passive: true });
+      window.addEventListener('scroll', schedulePos, { passive: true });
       return () => {
-        window.removeEventListener('resize', updatePos);
-        window.removeEventListener('scroll', updatePos);
+        window.removeEventListener('resize', schedulePos);
+        window.removeEventListener('scroll', schedulePos);
       };
     }
   }, [isCatOpen]);
@@ -143,11 +173,11 @@ const Header = () => {
   return (
     <>
       <div id="read-progress" style={{ width: `${progress}%`, pointerEvents: 'none' }} className="fixed top-0 left-0 h-1 bg-brand-emphasis z-[9999]"></div>
-      <header className={`sticky top-0 z-50 transition-colors duration-300 h-[112px] ${isScrolled ? 'bg-[#C65616] shadow-lg' : 'bg-[#B44416]'}`}>
+      <header className={`sticky top-0 z-50 transition-colors duration-300 h-[112px] ${isScrolled ? 'bg-[#C65616] shadow-lg' : 'bg-[#B44416]'}`} data-scrolled={isScrolled ? 'true' : 'false'}>
         <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
         <div className="container mx-auto px-6 flex justify-between items-center h-full">
           <NormalizedLink to="/" className="focus:outline-none">
-            <div className={`modern-logo transition-all duration-300 ${isScrolled ? 'w-12 h-12' : 'w-16 h-16'} rounded-full overflow-hidden`}>
+            <div className={`modern-logo w-16 h-16 rounded-full overflow-hidden transition-transform duration-300 ${isScrolled ? 'scale-90' : 'scale-100'}`}>
               <OptimizedImage 
                 src="/images/logo.webp?v=b008f571" 
                 alt="Quiet Strength Logo" 
@@ -174,7 +204,7 @@ const Header = () => {
                     <button
                       ref={catBtnRef}
                       onClick={() => setIsCatOpen((v) => !v)}
-                      className={`relative text-white font-semibold hover:text-[#FFECD8] transition-all duration-200 ${isScrolled ? 'text-base py-2' : 'text-lg py-3'} flex items-center gap-1`}
+                      className={`relative text-white font-semibold hover:text-[#FFECD8] transition-transform duration-200 text-lg py-3 flex items-center gap-1 ${isScrolled ? 'scale-95' : 'scale-100'}`}
                       aria-label={`${link.name} menu - show categories`}
                       aria-expanded={isCatOpen}
                       aria-haspopup="true"
@@ -250,7 +280,7 @@ const Header = () => {
                         }
                       }
                     }}
-                    className={`relative text-white font-semibold hover:text-[#FFECD8] transition-all duration-200 ${isScrolled ? 'text-base py-2' : 'text-lg py-3'} ${location.pathname.includes(link.page) ? 'active' : ''}`}
+                    className={`relative text-white font-semibold hover:text-[#FFECD8] transition-transform duration-200 text-lg py-3 ${location.pathname.includes(link.page) ? 'active' : ''} ${isScrolled ? 'scale-95' : 'scale-100'}`}
                     aria-current={location.pathname.includes(link.page) ? 'page' : undefined}
                   >
                     {link.icon}

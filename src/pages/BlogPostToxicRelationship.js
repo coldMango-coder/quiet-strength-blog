@@ -5,6 +5,7 @@ import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
+import OptimizedImage from '../components/OptimizedImage';
 
 const BlogPostToxicRelationship = () => {
   // eslint-disable-next-line no-unused-vars
@@ -242,13 +243,15 @@ const BlogPostToxicRelationship = () => {
             ]} />
 
             <div className="my-8">
-              <img 
-                src="/images/woman-practicing-daily-self-care-meditation-mindfulness-exercises-healing-self-love-toxic-relationship.webp?v=b008f571" 
-                alt="Woman practicing daily self-care meditation and mindfulness exercises for healing and self-love after ending toxic relationship" 
-                className="rounded-lg shadow-md" 
+              <OptimizedImage
+                src="/images/woman-practicing-daily-self-care-meditation-mindfulness-exercises-healing-self-love-toxic-relationship.webp?v=b008f571"
+                alt="Woman practicing daily self-care meditation and mindfulness exercises for healing and self-love after ending toxic relationship"
+                className="rounded-lg shadow-md w-full h-auto"
                 loading="lazy"
-                width="600" 
-                height="400"
+                width={1200}
+                height={800}
+                sizes="(max-width: 768px) 100vw, 720px"
+                responsiveWidths={[360,720,1200]}
               />
               <p className="text-sm text-gray-600 mt-3 text-center italic">Woman practicing daily self-care meditation and mindfulness exercises for healing and self-love after ending toxic relationship</p>
             </div>

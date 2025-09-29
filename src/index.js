@@ -19,6 +19,23 @@ function startApp() {
   // Ensure no stale Service Workers/caches unless explicitly enabled
   try { ensureNoSW(); } catch {}
 
+  // Proactively handle stale chunk errors by forcing a one-time reload
+  try {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('error', (e) => {
+        const el = e?.target;
+        if (el && el.tagName === 'SCRIPT') {
+          const src = el.getAttribute('src') || '';
+          if (/\/static\/js\/\d+\./.test(src) && !sessionStorage.getItem('reloadedForChunks')) {
+            try { sessionStorage.setItem('reloadedForChunks', '1'); } catch {}
+            // Force reload to fetch fresh HTML/asset manifest
+            window.location.reload(true);
+          }
+        }
+      }, true);
+    }
+  } catch {}
+
   // Ensure root element exists
   const rootElement = document.getElementById('root');
   if (!rootElement) {

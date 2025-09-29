@@ -1,6 +1,5 @@
 import React from 'react';
 import NormalizedLink from './NormalizedLink';
-import { motion } from 'framer-motion';
 import { categories, categorySlugMap } from '../blogData';
 
 const themeIcons = {
@@ -35,24 +34,18 @@ const themeDescriptions = {
 }
 
 
+// Replaced framer-motion with lightweight CSS transitions to reduce unused JS and main-thread work
 const ThemeCard = ({ icon, title, description, categoryName }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5 }}
-    whileHover={{ y: -5, scale: 1.05 }}
-    className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col text-center items-center"
+  <div
+    className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 ease-out transform hover:-translate-y-1 hover:scale-[1.02] flex flex-col text-center items-center"
   >
-    <motion.div
-      whileHover={{ scale: 1.1, rotate: 5 }}
-      className="mb-6 text-brand-emphasis bg-brand-secondary/20 p-4 rounded-full"
-    >
+    <div className="mb-6 text-brand-emphasis bg-brand-secondary/20 p-4 rounded-full transition-transform duration-300 ease-out group-hover:rotate-3 group-hover:scale-105">
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">{icon}</svg>
-    </motion.div>
+    </div>
     <h3 className="text-xl font-bold text-brand-dark mb-2" aria-label={title}>{title}</h3>
     <p className="text-slate-600 flex-grow">{description}</p>
     <NormalizedLink to={`/category/${categorySlugMap[categoryName]}`} className="mt-4 text-brand-emphasis hover:underline font-semibold">Explore More &rarr;</NormalizedLink>
-  </motion.div>
+  </div>
 );
 
 const Themes = () => {

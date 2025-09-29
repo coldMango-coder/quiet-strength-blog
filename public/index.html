@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <!-- Use lightweight PNG favicon to avoid large ICO download impacting performance -->
+    <link rel="icon" type="image/png" href="/images/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#C05621" />
     <meta name="author" content="Marica Šinko" />
@@ -46,10 +47,7 @@
     <link rel="preload" as="image" href="/images/logo.avif" type="image/avif" fetchpriority="high">
     <link rel="preload" as="image" href="/images/logo.webp?v=b008f571" type="image/webp" fetchpriority="high">
     
-    <!-- Preconnect to own domain for faster resource loading -->
-    <link rel="preconnect" href="https://trueallyguide.com" crossorigin>
-    <!-- Resource hints to reduce network dependency depth -->
-    <link rel="dns-prefetch" href="https://trueallyguide.com">
+    <!-- Removed third-party preconnect/dns-prefetch to avoid mixed-origin canonicals and unnecessary work -->
     <!-- Inline Critical CSS for above-the-fold content -->
     <style>
 /* Self-hosted fonts with optimized fallbacks */
@@ -129,56 +127,15 @@ html{scroll-behavior:auto}
     <!-- Critical CSS inlined above for zero render blocking -->
     <!-- Non-critical CSS will be loaded async via React -->
     
-    <!-- Performance: Resource hints -->
-    <link rel="preconnect" href="https://trueallyguide.com" crossorigin>
-    
-    <!-- Prefetch key chunks for faster navigation -->
-    <link rel="prefetch" href="/static/js/861.db59f714.chunk.js">
-    <link rel="prefetch" href="/static/js/171.2a8e9e0b.chunk.js">
-    
-    <!-- Keep head lean; avoid duplicate hints -->
-    
-    <!-- Disable DNS prefetch for maximum performance -->
-    <meta http-equiv="x-dns-prefetch-control" content="off">
-    
-    <!-- Performance: Advanced optimization for 100/100 desktop -->
-    <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
+    <!-- Keep head lean; removed hardcoded prefetch to avoid 404s on hashed chunk files -->
     <meta name="format-detection" content="telephone=no">
-    
-    <!-- Performance: Minimize parser blocking -->
-    
-    <!-- Remove analytics completely for maximum performance -->
+    <!-- Security headers are set via server config (vercel.json) -->
   </head>
   <body>
+    <!-- Single root for React; removed stray markup to reduce DOM size and CLS -->
     <div id="root"></div>
-          </div>
-        </div>
-      </header>
-      
-      <section class="bg-brand-light py-32 md:py-48 text-center" style="min-height:600px;contain:layout style paint">
-        <div class="container mx-auto px-6">
-          <h1 class="text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-brand-primary mb-8" style="contain:layout style">
-            Quiet Strength
-          </h1>
-          <p class="text-lg md:text-xl lg:text-xl text-brand-primary mb-8 max-w-2xl mx-auto" style="contain:layout style">
-            Your essential guide to building confidence, managing energy, finding purpose, and achieving financial freedom – on your own terms.
-          </p>
-          <!-- Ultra-fast LCP optimized placeholder with fixed dimensions -->
-          <div class="hero-image mx-auto rounded-xl shadow-xl loading-skeleton" 
-               style="width:400px;height:267px;max-width:100%;aspect-ratio:1.5/1;contain:layout style paint;background:linear-gradient(135deg,#f3f4f6 0%,#e5e7eb 100%);display:flex;align-items:center;justify-content:center">
-            <div style="display:flex;align-items:center;color:#9ca3af">
-              <svg style="width:3rem;height:3rem;fill:currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
-              </svg>
-              <span style="margin-left:.75rem;font-size:.875rem;font-weight:500">Loading content...</span>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-    
-    <!-- Dev-only SW cleanup on localhost to prevent stale assets -->
-
-    <!-- Performance: Load resources only after LCP is measured -->
+    <noscript>
+      <strong>JavaScript is required to run this app.</strong>
+    </noscript>
   </body>
 </html>

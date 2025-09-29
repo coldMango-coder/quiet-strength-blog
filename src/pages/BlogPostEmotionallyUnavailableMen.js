@@ -5,6 +5,7 @@ import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import { sortedBlogPosts } from '../blogData';
 import AuthorBio from '../components/AuthorBio';
+import OptimizedImage from '../components/OptimizedImage';
 
 const BlogPostEmotionallyUnavailableMen = () => {
   // eslint-disable-next-line no-unused-vars
@@ -68,13 +69,14 @@ const BlogPostEmotionallyUnavailableMen = () => {
               By implementing these research-backed techniques, you can transform your dating life and build the meaningful, emotionally fulfilling relationship you deserve. This isn't about changing who you are—it's about understanding your patterns and making intentional choices that align with your relationship goals.
             </p>
 
-            <img 
-              src="/images/confident-woman-journaling-about-emotional-growth-and-learning-how-to-stop-attracting-emotionally-unavailable-men-in-bright-coffee-shop-setting.webp?v=b008f571" 
-              alt="Confident woman journaling about emotional growth and learning how to stop attracting emotionally unavailable men in bright coffee shop setting" 
-              className="rounded-lg shadow-md my-8 w-full" 
+            <OptimizedImage
+              src="/images/confident-woman-journaling-about-emotional-growth-and-learning-how-to-stop-attracting-emotionally-unavailable-men-in-bright-coffee-shop-setting.webp?v=b008f571"
+              alt="Confident woman journaling about emotional growth and learning how to stop attracting emotionally unavailable men in bright coffee shop setting"
+              className="rounded-lg shadow-md my-8 w-full"
               loading="lazy"
-              width="600"
-              height="400"
+              width={600}
+              height={400}
+              sizes="(max-width: 768px) 100vw, 720px"
             />
             <p className="text-sm text-gray-600 text-center italic mb-6">
               Confident woman journaling about emotional growth and learning how to stop attracting emotionally unavailable men in bright coffee shop setting

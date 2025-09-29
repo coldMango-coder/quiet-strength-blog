@@ -3,6 +3,7 @@ import NormalizedLink from '../components/NormalizedLink';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import AuthorBio from '../components/AuthorBio';
+import OptimizedImage from '../components/OptimizedImage';
 
 const BlogPostNarcissistAttraction = () => {
   return (
@@ -56,13 +57,14 @@ const BlogPostNarcissistAttraction = () => {
               In this comprehensive guide, you'll discover the exact psychological mechanisms that draw narcissists to specific individuals, plus nine evidence-based strategies to stop attracting narcissists permanently. Whether you're recovering from a narcissistic relationship or simply want to protect yourself moving forward, these proven techniques will help you build stronger boundaries and attract healthier relationships.
             </p>
 
-            <img 
-              src="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.webp?v=b008f571" 
-              alt="Confident woman learning how to stop attracting narcissists by walking away from toxic relationships toward healthy boundaries and self-empowerment" 
-              className="rounded-lg shadow-md my-8 w-full" 
+            <OptimizedImage
+              src="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.webp?v=b008f571"
+              alt="Confident woman learning how to stop attracting narcissists by walking away from toxic relationships toward healthy boundaries and self-empowerment"
+              className="rounded-lg shadow-md my-8 w-full"
               loading="lazy"
-              width="600"
-              height="400"
+              width={600}
+              height={400}
+              sizes="(max-width: 768px) 100vw, 720px"
             />
             <p className="text-sm text-gray-600 text-center italic mb-6">
               Confident woman learning how to stop attracting narcissists by walking away from toxic relationships toward healthy boundaries and self-empowerment

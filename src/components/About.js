@@ -1,6 +1,7 @@
 import React from 'react';
 import Seo from './Seo';
 import avatar from '../assets/marica-sinko-author-photo.jpg';
+import OptimizedImage from './OptimizedImage';
 
 const About = () => {
   return (
@@ -11,26 +12,27 @@ const About = () => {
         description="Marica Šinko is an introvert-women burnout coach who helps high-achieving introverts rebuild confidence."
         path="/about"
         person={{
-          name: "Marica Šinko",
-          alternateName: "Quiet Strength Coach",
-          jobTitle: "Mental Wellness Coach",
-          knowsAbout: ["burnout recovery", "introvert confidence"],
-          url: "https://quietstrength.com/about",
-          image: "/images/logo.webp?v=b008f571"
+          name: 'Marica Šinko',
+          alternateName: 'Quiet Strength Coach',
+          jobTitle: 'Mental Wellness Coach',
+          knowsAbout: ['burnout recovery', 'introvert confidence'],
+          url: 'https://quietstrength.com/about',
+          image: '/images/logo.webp?v=b008f571',
         }}
       />
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/3 text-center">
             <div className="modern-logo w-56 h-56 mx-auto shadow-2xl border-8 border-white rounded-full overflow-hidden">
-              <img
-                loading="lazy"
-                decoding="async"
+              <OptimizedImage
                 src={avatar}
-                alt="Marica Šinko – Author portrait"
-                width="224"
-                height="224"
+                alt="Marica Šinko — Author portrait"
+                width={224}
+                height={224}
+                loading="lazy"
+                sizes="(max-width: 768px) 224px, 224px"
                 className="w-full h-full object-cover"
+                formats={[]}
               />
             </div>
           </div>
@@ -61,3 +63,4 @@ const About = () => {
 };
 
 export default About;
+
