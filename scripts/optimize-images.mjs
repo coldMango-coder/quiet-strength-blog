@@ -49,7 +49,7 @@ async function compressBinarySearch(inputPath, outPath, format) {
 
 async function optimizeOne(inputPath) {
   const ext = extname(inputPath).toLowerCase();
-  if (!['.jpg', '.jpeg', '.png'].includes(ext)) return null;
+  if (!['.jpg', '.jpeg', '.png', '.webp', '.avif'].includes(ext)) return null;
   const base = inputPath.slice(0, -ext.length);
   const outAvif = base + '.avif';
   const outWebp = base + '.webp';
@@ -146,7 +146,7 @@ async function updateReferences(existingFormats) {
 }
 
 async function run() {
-  const imageFiles = await globby(['public/images/**/*.{jpg,jpeg,png}','src/images/**/*.{jpg,jpeg,png}'], { cwd: repoRoot, absolute: true });
+  const imageFiles = await globby(['public/images/**/*.{jpg,jpeg,png,webp,avif}','src/images/**/*.{jpg,jpeg,png,webp,avif}'], { cwd: repoRoot, absolute: true });
   console.log(`Found ${imageFiles.length} images to process${WRITE ? '' : ' (dry-run: skipping compression)'}${REFS_ONLY ? ' [refs-only]' : ''}`);
   const results = [];
   if (WRITE && !REFS_ONLY) {

@@ -22,13 +22,18 @@ const OptimizedImage = ({
     const baseName = path.replace(/\.[^/.]+$/, '');
     const extension = '.webp';
     const suffix = query ? `?${query}` : '';
-    const url = `${baseName}${extension}${suffix}`;
     if (width && height) {
-      const w1x = Math.round(width);
-      const w2x = Math.round(width * 2);
-      return `${url} ${w1x}w, ${url} ${w2x}w`;
+      // Create width-based variants: w, 1.5w, 2w
+      const w1 = Math.max(120, Math.round(width));
+      const w15 = Math.round(w1 * 1.5);
+      const w2 = Math.round(w1 * 2);
+      const entries = [w1, w15, w2]
+        .filter((v, i, arr) => arr.indexOf(v) === i)
+        .map((w) => `${baseName}-${w}w${extension}${suffix} ${w}w`);
+      return entries.join(', ');
     }
-    return url;
+    // Fallback to base URL
+    return `${baseName}${extension}${suffix}`;
   };
 
   const handleLoad = () => setLoaded(true);
@@ -72,6 +77,8 @@ const OptimizedImage = ({
 
       {usePicture ? (
         <picture>
+          {/* Prefer AVIF when available (same basename) */}
+          <source srcSet={generateResponsiveWebpSrcSet(src).replace(/\.webp/g, '.avif')} type="image/avif" sizes={sizes} />
           <source srcSet={generateResponsiveWebpSrcSet(src)} type="image/webp" sizes={sizes} />
           <img
             src={src}

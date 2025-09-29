@@ -1,4 +1,4 @@
-const fs = require('fs-extra');
+﻿const fs = require('fs-extra');
 const path = require('path');
 
 const BUILD_DIR = path.join(__dirname, '..', 'build');
@@ -30,39 +30,6 @@ async function optimizePerformance() {
       const minified = content.replace(/>\s+</g, '><').replace(/\s+/g, ' ').trim();
       await fs.writeFile(filePath, minified);
     }
-
-    // Add safe resource hints and non-blocking CSS for main bundle
-    try {
-      const manifest = await fs.readJson(path.join(BUILD_DIR, 'asset-manifest.json'));
-      const mainCss = manifest.files && manifest.files['main.css'];
-      const mainJs = manifest.files && manifest.files['main.js'];
-      if (mainCss || mainJs) {
-        for (const file of htmlFiles) {
-          const filePath = path.join(BUILD_DIR, file);
-          let content = await fs.readFile(filePath, 'utf8');
-
-          // Insert preload hints after theme-color meta
-          const hints = [
-            mainCss ? `<link rel="preload" href="${mainCss}" as="style">` : '',
-            mainJs ? `<link rel="preload" href="${mainJs}" as="script">` : '',
-            mainJs ? `<link rel="modulepreload" href="${mainJs}">` : ''
-          ].filter(Boolean).join('');
-          content = content.replace(/<meta name="theme-color"[^>]*>/, (m) => m + hints);
-
-          // Transform blocking main.css link to non-blocking (idempotent)
-          if (!/onload=\"this\.onload=null;this\.rel='stylesheet'\"/.test(content)) {
-            content = content.replace(
-              /<link[^>]+rel=["']stylesheet["'][^>]*href=["']([^"']*main[^"']*\.css)["'][^>]*>/i,
-              (m, href) =>
-                `<link rel="preload" as="style" href="${href}" onload=\"this.onload=null;this.rel='stylesheet'\">` +
-                `<noscript><link rel="stylesheet" href="${href}"></noscript>`
-            );
-          }
-
-          await fs.writeFile(filePath, content);
-        }
-      }
-    } catch {}
 
     // Optional: annotate sitemap
     const sitemapPath = path.join(BUILD_DIR, 'sitemap.xml');
