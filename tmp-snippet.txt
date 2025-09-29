@@ -1,5 +1,0 @@
-                alt="Woman journaling and practicing self-reflection in cozy reading nook, symbolizing introvert woman understanding her relationship needs and personal worth" 
-                className="rounded-lg shadow-md" 
-                loading="lazy"
-                width="600"
-                height="400"

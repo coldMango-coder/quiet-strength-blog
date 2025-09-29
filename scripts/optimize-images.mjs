@@ -13,7 +13,6 @@ const srcImagesRoot = resolve(repoRoot, 'src', 'images');
 const WRITE = process.env.WRITE === '1' || process.argv.includes('--write');
 const REFS_ONLY = process.argv.includes('--refs-only');
 const TARGET_BYTES = 300 * 1024; // 300KB
-const TARGET_WIDTHS = [360, 720, 1200, 1600];
 const VERSION = process.env.IMG_VERSION || process.env.VERCEL_GIT_COMMIT_SHA || String(Date.now());
 
 async function ensureDir(p) { await fs.mkdir(dirname(p), { recursive: true }); }
@@ -54,10 +53,8 @@ async function optimizeOne(inputPath) {
   const base = inputPath.slice(0, -ext.length);
   const outAvif = base + '.avif';
   const outWebp = base + '.webp';
-  const results = { inputPath, outAvif: null, outWebp: null, variants: [] };
+  const results = { inputPath, outAvif: null, outWebp: null };
   const stIn = await statOrNull(inputPath); if (!stIn) return null;
-  let meta = null;
-  try { meta = await sharp(inputPath).metadata(); } catch {}
   try {
     await ensureDir(outAvif);
     const existingA = await statOrNull(outAvif);
@@ -70,27 +67,6 @@ async function optimizeOne(inputPath) {
     if (!existingW || existingW.size > TARGET_BYTES) await compressBinarySearch(inputPath, outWebp, 'webp');
     const stW = await statOrNull(outWebp); if (stW) results.outWebp = { path: outWebp, size: stW.size };
   } catch {}
-
-  // Generate width-based variants for srcset
-  if (meta && meta.width) {
-    const maxW = meta.width;
-    for (const w of TARGET_WIDTHS) {
-      if (w > maxW) continue;
-      for (const fmt of ['avif','webp']) {
-        const outPath = `${base}-${w}w.${fmt}`;
-        const exists = await statOrNull(outPath);
-        if (exists) { results.variants.push({ path: outPath, size: exists.size }); continue; }
-        try {
-          await ensureDir(outPath);
-          const pipeline = sharp(inputPath).resize({ width: w, withoutEnlargement: true });
-          if (fmt === 'avif') await pipeline.avif({ quality: 48, effort: 4 }).toFile(outPath);
-          else await pipeline.webp({ quality: 60 }).toFile(outPath);
-          const vst = await statOrNull(outPath);
-          if (vst) results.variants.push({ path: outPath, size: vst.size });
-        } catch {}
-      }
-    }
-  }
   return results;
 }
 
@@ -190,7 +166,6 @@ async function run() {
       const parts = [];
       if (r.outAvif) parts.push(`AVIF=${Math.round(r.outAvif.size/1024)}KB`);
       if (r.outWebp) parts.push(`WebP=${Math.round(r.outWebp.size/1024)}KB`);
-      if (r.variants?.length) parts.push(`variants=${r.variants.length}`);
       console.log(` - ${rel} => ${parts.join(', ')}`);
     }
   }

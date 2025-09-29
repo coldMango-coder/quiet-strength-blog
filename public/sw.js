@@ -1,5 +1,5 @@
 // Performance-optimized Service Worker for 100/100 Lighthouse scores
-const CACHE_NAME = 'quiet-strength-performance-v3';
+const CACHE_NAME = 'quiet-strength-performance-v2';
 const STATIC_CACHE_URLS = [
   '/',
   '/images/logo.avif',

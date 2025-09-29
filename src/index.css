@@ -13,38 +13,6 @@ img,svg,video{max-width:100%;height:auto}
 h1{line-height:1.2;word-wrap:anywhere}
 .stack>*+*{margin-top:clamp(0.5rem,1.5vw,1.25rem)}
 
-/* Hero CLS guard and centering: reserve viewport-based height to kill CLS */
-#home { min-height: 56svh; contain: layout style paint; text-align: center; }
-@media (min-width: 768px) { #home { min-height: 64svh; } }
-/* Reserve space for Latest Insights panel to avoid shift */
-#home .bg-white.rounded-xl.shadow-xl { min-height: 360px; }
-@media (min-width: 1024px) { #home .bg-white.rounded-xl.shadow-xl { min-height: 420px; } }
-/* Stabilize hero copy (H1 + paragraph) to avoid font/line-wrap reflow */
-#home .hero-copy { min-height: 220px; contain: layout style; }
-/* Make insights card self-contained and lazily rendered without janking layout */
-#home .insights { content-visibility: auto; contain-intrinsic-size: 560px 480px; contain: layout style paint; }
-
-/* Sticky Table of Contents on desktop; collapsible feel on mobile via max-height */
-.toc-list { list-style: none; padding-left: 1rem; }
-@media (min-width: 1024px) {
-  .toc-list { position: sticky; top: 6rem; }
-}
-
-/* Improve contrast for secondary hero button */
-#home a[href="#blog"] {
-  background: #FFFFFF; /* white background */
-  color: #B44416;      /* brand emphasis */
-  border: 2px solid #B44416;
-}
-#home a[href="#blog"]:hover {
-  background: #F3F4F6; /* brand-secondary */
-}
-
-/* Performance guards for newsletter section */
-#newsletter { content-visibility: auto; contain-intrinsic-size: 800px 480px; contain: layout style paint; }
-/* Reserve stable space for newsletter heading + intro paragraph */
-#newsletter .newsletter-copy { min-height: 200px; contain: layout style; }
-
 /* CLS guards for media inside article content */
 .article-container img,
 .prose img {
@@ -1671,16 +1639,6 @@ input, textarea {
 a:focus-visible {
   outline: 3px solid #C05621;
   outline-offset: 3px;
-}
-
-/* Accessibility: ensure high contrast for secondary hero button without editing JSX */
-#home .flex a:not(.bg-brand-emphasis) {
-  color: #1a1a1a;
-  border: 2px solid #C05621;
-}
-
-#home .flex a:not(.bg-brand-emphasis):hover {
-  background-color: #e2e8f0; /* brand-secondary */
 }
 
 .dark body {

@@ -1,20 +1,6 @@
 const fs = require('fs-extra');
 const path = require('path');
-
-function listHtmlFiles(dir) {
-  const out = [];
-  const stack = [dir];
-  while (stack.length) {
-    const current = stack.pop();
-    const entries = fs.readdirSync(current, { withFileTypes: true });
-    for (const e of entries) {
-      const p = path.join(current, e.name);
-      if (e.isDirectory()) stack.push(p);
-      else if (e.isFile() && p.endsWith('.html')) out.push(path.relative(dir, p));
-    }
-  }
-  return out;
-}
+const { execSync } = require('child_process');
 
 const BUILD_DIR = path.join(__dirname, '../build');
 
@@ -24,7 +10,7 @@ async function optimizePerformance() {
   try {
     // 1. Minify HTML files for better compression
     console.log('📝 Optimizing HTML files...');
-    const htmlFiles = listHtmlFiles(BUILD_DIR);
+    const htmlFiles = await fs.glob('**/*.html', { cwd: BUILD_DIR });
     
     for (const file of htmlFiles) {
       const filePath = path.join(BUILD_DIR, file);
@@ -50,27 +36,17 @@ async function optimizePerformance() {
 <link rel="preload" href="${assetManifest.files['main.js']}" as="script">
 <link rel="modulepreload" href="${assetManifest.files['main.js']}">`;
 
-    // Add preload hints and deblock main.css in all HTML files
+    // Add preload hints to all HTML files
     for (const file of htmlFiles) {
       const filePath = path.join(BUILD_DIR, file);
       let content = await fs.readFile(filePath, 'utf8');
-
+      
       // Insert preload hints after <meta name="theme-color">
       content = content.replace(
         /<meta name="theme-color"[^>]*>/,
         (match) => match + preloadHints
       );
-
-      // Transform blocking main.css link to non-blocking preload+onload with noscript fallback (idempotent)
-      if (!/onload=\"this\.onload=null;this\.rel='stylesheet'\"/.test(content)) {
-        content = content.replace(
-          /<link[^>]+rel=["']stylesheet["'][^>]*href=["']([^"']*main[^"']*\.css)["'][^>]*>/i,
-          (m, href) =>
-            `<link rel="preload" as="style" href="${href}" onload="this.onload=null;this.rel='stylesheet'">` +
-            `<noscript><link rel="stylesheet" href="${href}"></noscript>`
-        );
-      }
-
+      
       await fs.writeFile(filePath, content);
     }
 

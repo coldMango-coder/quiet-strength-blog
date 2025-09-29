@@ -17,8 +17,7 @@ const {
   generateBlogListingSchema
 } = require('./enhanced-metadata-extractor');
 
-// Canonical base URL must match the environment (prevents localhost vs prod conflicts)
-const BASE_URL = process.env.SITE_URL || process.env.PUBLIC_URL || 'https://trueallyguide.com';
+const BASE_URL = 'https://trueallyguide.com';
 const BUILD_DIR = path.join(__dirname, '../build');
 const SITEMAP_PATH = path.join(__dirname, '../public/sitemap.xml');
 const ASSET_MANIFEST_PATH = path.join(BUILD_DIR, 'asset-manifest.json');
@@ -188,9 +187,7 @@ function generateHTMLWithMetadata(url, pageType, routeData, assets) {
   <meta name="application-name" content="Quiet Strength" />
   
   <title>${metadata.title}</title>
-  <!-- Non-blocking stylesheet load -->
-  <link rel="preload" href="${cssFile}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="${cssFile}"></noscript>
+  <link href="${cssFile}" rel="stylesheet">
   
   <!-- Schema.org structured data for rich snippets -->
   ${jsonLdScript}
@@ -203,10 +200,12 @@ function generateHTMLWithMetadata(url, pageType, routeData, assets) {
   
   <link rel="preload" as="image" href="/images/logo.avif" type="image/avif" fetchpriority="high">
   <link rel="preload" as="image" href="/images/logo.webp" type="image/webp" fetchpriority="high">
-  <!-- Already preloaded above with onload-swap -->
+  <link rel="preload" href="${cssFile}" as="style">
   <link rel="preload" href="${jsFile}" as="script" fetchpriority="low">
   
-  <!-- Resource hints kept minimal to avoid unnecessary connections; self-hosted assets only -->
+  <!-- Performance: Resource hints for faster loading -->
+  <link rel="preconnect" href="https://www.trueallyguide.com" crossorigin>
+  <link rel="dns-prefetch" href="//trueallyguide.com">
   
   <!-- Critical LCP image preloading for homepage only -->
   ${pageType === 'homepage' ? `
@@ -282,9 +281,37 @@ function generateHTMLWithMetadata(url, pageType, routeData, assets) {
   </style>
   
   <!-- Performance: Ultra-fast immediate rendering with skeleton -->
-  <!-- Clean URL handled by SPA; avoid inline scripts for CSP compatibility -->
-  </head>
-  <body>
+  <script>
+    // Instant content display for perfect LCP
+    (function() {
+      try {
+        // Remove tracking parameters immediately
+        var href = window.location.href;
+        var url = new URL(href);
+        var changed = false;
+        var trackingParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'ref', 'gclid', 'fbclid', 'spa'];
+        trackingParams.forEach(function(param) {
+          if (url.searchParams.has(param)) {
+            url.searchParams.delete(param);
+            changed = true;
+          }
+        });
+        if (changed && window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', url.pathname + (url.search || '') + (url.hash || ''));
+        }
+        
+        // Preload critical resources immediately
+        var link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'script';
+        link.href = '${jsFile}';
+        document.head.appendChild(link);
+        
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   
   <!-- Instant critical above-the-fold content for perfect LCP -->
@@ -318,8 +345,61 @@ function generateHTMLWithMetadata(url, pageType, routeData, assets) {
     </main>
   </div>
   
-  <!-- Load main bundle without inline scripts (CSP friendly) -->
-  <script src="${jsFile}" defer></script>
+  <!-- Ultra-fast React bundle loading with zero TBT -->
+  <script>
+    (function() {
+      // Measure critical timing
+      var startTime = performance.now();
+      
+      // Load React asynchronously after critical rendering is complete
+      function loadReactApp() {
+        try {
+          var script = document.createElement('script');
+          script.src = '${jsFile}';
+          script.async = true;
+          script.defer = true;
+          
+          script.onload = function() {
+            // React will hydrate the server-rendered content
+            if (typeof window !== 'undefined' && window.console) {
+              console.log('React hydrated in', Math.round(performance.now() - startTime), 'ms');
+            }
+          };
+          
+          script.onerror = function() {
+            // Graceful fallback - site remains functional without JavaScript
+            if (typeof window !== 'undefined' && window.console) {
+              console.warn('React failed to load - site remains functional');
+            }
+          };
+          
+          document.head.appendChild(script);
+        } catch (e) {
+          // Silent fail - site works without JavaScript
+        }
+      }
+      
+      // Load React after initial paint to minimize TBT
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          // Use requestIdleCallback to load React during idle time
+          if (window.requestIdleCallback) {
+            requestIdleCallback(loadReactApp, { timeout: 1000 });
+          } else {
+            // Fallback for browsers without requestIdleCallback
+            setTimeout(loadReactApp, 50);
+          }
+        });
+      } else {
+        // DOM already ready
+        if (window.requestIdleCallback) {
+          requestIdleCallback(loadReactApp, { timeout: 1000 });
+        } else {
+          setTimeout(loadReactApp, 50);
+        }
+      }
+    })();
+  </script>
 </body>
 </html>`;
 }
@@ -376,10 +456,7 @@ function getBlogPostMetadata(slug) {
 
 // Determine page type and route data for enhanced metadata generation
 function getPageTypeAndData(url) {
-  // Normalize to pathname only (strip protocol/host/query/hash)
-  let path;
-  try { path = new URL(url).pathname || '/'; }
-  catch { path = url.replace(BASE_URL, '') || '/'; }
+  const path = url.replace(BASE_URL, '') || '/';
   
   if (path === '/') {
     return { pageType: 'homepage', routeData: {} };
@@ -430,21 +507,16 @@ async function generateStaticPages() {
     
     // Generate static HTML for each route with comprehensive SEO and schema.org
     for (const url of urls) {
-      // Always derive pathname from URL to avoid host variations (www/non-www)
-      let routePath;
-      try { routePath = new URL(url).pathname || '/'; }
-      catch { routePath = url.replace(BASE_URL, '') || '/'; }
+      const routePath = url.replace(BASE_URL, '') || '/';
       const { pageType, routeData } = getPageTypeAndData(url);
       const html = generateHTMLWithMetadata(url, pageType, routeData, assets);
       
       // Determine output file path
       let outputPath;
-      // Normalize route path to avoid absolute joins on Windows (strip leading slashes)
-      const safeRoutePath = routePath.replace(/^\/+/, '');
-      if (routePath === '/' || safeRoutePath === '') {
+      if (routePath === '/') {
         outputPath = path.join(BUILD_DIR, 'index.html');
       } else {
-        const routeDir = path.join(BUILD_DIR, safeRoutePath);
+        const routeDir = path.join(BUILD_DIR, routePath);
         await fs.promises.mkdir(routeDir, { recursive: true });
         outputPath = path.join(routeDir, 'index.html');
       }

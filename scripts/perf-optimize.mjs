@@ -16,18 +16,6 @@ function addLcpPreloads(htmlContent, filePath) {
       const imgSrc = imgMatch[1];
       const preloadLink = `<link rel="preload" as="image" fetchpriority="high" href="${imgSrc}"/>`;
       optimized = optimized.replace(/<\/head>/i, `${preloadLink}\n</head>`);
-
-      // Also upgrade that first <img> to fetchpriority=high + eager decode if not already set
-      optimized = optimized.replace(
-        /<img(\s+[^>]*?)src=(["'])[^\2>]+\2([^>]*?)>/i,
-        (m) => {
-          let updated = m;
-          if (!/fetchpriority=/i.test(updated)) updated = updated.replace(/<img/i, '<img fetchpriority="high"');
-          if (!/loading=/i.test(updated)) updated = updated.replace(/<img/i, '<img loading="eager"');
-          if (!/decoding=/i.test(updated)) updated = updated.replace(/<img/i, '<img decoding="sync"');
-          return updated;
-        }
-      );
     }
   }
   

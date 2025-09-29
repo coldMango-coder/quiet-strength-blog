@@ -23,18 +23,19 @@
       "destination": "/index.html"
     }
   ],
-  "headers": [
+  "redirects": [
     {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=(), accelerometer=(), autoplay=(), encrypted-media=(), fullscreen=(self)" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests;" }
-      ]
+      "source": "/static/js/main.d4704f7c.js",
+      "destination": "/static/js/main.4ddb9a20.js",
+      "permanent": true
     },
+    {
+      "source": "/static/js/872.656d3240.chunk.js",
+      "destination": "/static/js/872.4eb48aed.chunk.js",
+      "permanent": true
+    }
+  ],
+  "headers": [
     {
       "source": "/fonts/fonts.css",
       "headers": [

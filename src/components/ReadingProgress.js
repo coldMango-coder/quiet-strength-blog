@@ -1,45 +1,25 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const ReadingProgress = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    // Only run on client-side
     if (typeof window === 'undefined') return;
-
-    const totalHeightRef = { current: 1 };
-    const measureTotal = () => {
-      totalHeightRef.current = Math.max(1, document.documentElement.scrollHeight - document.documentElement.clientHeight);
+    
+    const updateScrollProgress = () => {
+      const currentProgress = window.scrollY;
+      const scrollHeight = document.body.scrollHeight - window.innerHeight;
+      
+      if (scrollHeight) {
+        setProgress(Number((currentProgress / scrollHeight).toFixed(2)) * 100);
+      }
     };
-
-    // Initial measure after paint
-    requestAnimationFrame(measureTotal);
-
-    let resizeTick = false;
-    const onResize = () => {
-      if (resizeTick) return;
-      resizeTick = true;
-      requestAnimationFrame(() => {
-        measureTotal();
-        resizeTick = false;
-      });
-    };
-    window.addEventListener('resize', onResize, { passive: true });
-
-    let ticking = false;
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const y = window.scrollY;
-        setProgress(Number(((y / totalHeightRef.current) * 100).toFixed(2)));
-        ticking = false;
-      });
-    };
-
-    window.addEventListener('scroll', onScroll, { passive: true });
+    
+    window.addEventListener('scroll', updateScrollProgress);
+    
     return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onResize);
+      window.removeEventListener('scroll', updateScrollProgress);
     };
   }, []);
 
