@@ -28,15 +28,19 @@ function startApp() {
 
   try {
     const root = ReactDOM.createRoot(rootElement);
-    root.render(
-      <React.StrictMode>
-        <BrowserRouter>
-          <HelmetProvider>       
-            <App />
-          </HelmetProvider>   
-        </BrowserRouter>
-      </React.StrictMode>
+    const appTree = (
+      <BrowserRouter>
+        <HelmetProvider>
+          <App />
+        </HelmetProvider>
+      </BrowserRouter>
     );
+    // Avoid StrictMode double-invocation in production to reduce main-thread work
+    if (process.env.NODE_ENV === 'development') {
+      root.render(<React.StrictMode>{appTree}</React.StrictMode>);
+    } else {
+      root.render(appTree);
+    }
 
     // Optional Service Worker registration (opt-in only)
     if (
