@@ -24,7 +24,7 @@
     "dev": "npm run predev && react-scripts start",
     "dev:express": "node dev-server.js",
     "start": "react-scripts start",
-    "build": "react-scripts build && npm run postbuild",
+    "build": "react-scripts build",
     "build:basic": "react-scripts build",
     "postbuild": "node scripts/optimize-performance.js && node scripts/perf-optimize.mjs && node scripts/optimize-images.mjs --refs-only",
     "preview": "npx serve -s build",
