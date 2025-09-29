@@ -9,7 +9,7 @@ const Header = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(0); const isArticle = location.pathname.startsWith("/blog/") && location.pathname !== "/blog";
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isCatOpen, setIsCatOpen] = useState(false);
   const [catPos, setCatPos] = useState({ left: 0, top: 0, width: 0 });
@@ -142,7 +142,7 @@ const Header = () => {
 
   return (
     <>
-      <div id="read-progress" style={{ width: `${progress}%`, pointerEvents: 'none' }} className="fixed top-0 left-0 h-1 bg-brand-emphasis z-[9999]"></div>
+      {isArticle && (<div id="read-progress" style={{ width: `${progress}%`, pointerEvents: "none" }} className="fixed top-0 left-0 h-1 bg-brand-emphasis z-[9999]"></div>)}
       <header className={`sticky top-0 z-50 transition-colors duration-300 h-[112px] ${isScrolled ? 'bg-[#C65616] shadow-lg' : 'bg-[#B44416]'}`}>
         <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
         <div className="container mx-auto px-6 flex justify-between items-center h-full">

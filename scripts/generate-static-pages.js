@@ -17,7 +17,7 @@ const {
   generateBlogListingSchema
 } = require('./enhanced-metadata-extractor');
 
-const BASE_URL = 'https://trueallyguide.com';
+const BASE_URL = process.env.SITE_URL || process.env.PUBLIC_URL || 'https://trueallyguide.com';
 const BUILD_DIR = path.join(__dirname, '../build');
 const SITEMAP_PATH = path.join(__dirname, '../public/sitemap.xml');
 const ASSET_MANIFEST_PATH = path.join(BUILD_DIR, 'asset-manifest.json');
@@ -30,7 +30,7 @@ function getAssetManifest() {
       return manifest;
     }
   } catch (error) {
-    console.warn('⚠️  Could not read asset manifest, using fallback bundles');
+    console.warn('ÃƒÂ¢Ã…Â¡Ã‚Â ÃƒÂ¯Ã‚Â¸Ã‚Â  Could not read asset manifest, using fallback bundles');
   }
   return {
     'main.css': '/static/css/main.43dd6ae1.css',
@@ -48,8 +48,8 @@ function generateHTMLWithMetadata(url, pageType, routeData, assets) {
     // All other pages: add trailing slash to match Vercel live URLs
     canonicalUrl = url.endsWith('/') ? url : `${url}/`;
   }
-  const cssFile = assets.files['main.css'] || '/static/css/main.43dd6ae1.css';
-  const jsFile = assets.files['main.js'] || '/static/js/main.32b1b242.js';
+  const cssFile = assets.files && assets.files['main.css'] ? assets.files['main.css'] : '/static/css/main.css';
+  const jsFile = assets.files && assets.files['main.js'] ? assets.files['main.js'] : '/static/js/main.js';
   
   let metadata, schema;
   
@@ -57,7 +57,7 @@ function generateHTMLWithMetadata(url, pageType, routeData, assets) {
   switch (pageType) {
     case 'homepage':
       metadata = {
-        title: 'Quiet Strength – Self-Help & Productivity for Introverted Women',
+        title: 'Quiet Strength ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ Self-Help & Productivity for Introverted Women',
         description: 'Actionable articles, e-books, and courses that help introverted women build confidence, prevent burnout, and thrive on their own terms.',
         image: `${BASE_URL}/images/logo.png`,
         ogType: 'website',
@@ -147,7 +147,7 @@ function generateHTMLWithMetadata(url, pageType, routeData, assets) {
   <link rel="icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#C05621" />
-  <meta name="author" content="Marica Šinko" />
+  <meta name="author" content="Marica Ãƒâ€¦Ã‚Â inko" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="description" content="${metadata.description}" />
   ${keywordsTag}
@@ -440,7 +440,7 @@ function getBlogPostMetadata(slug) {
       }
     }
   } catch (error) {
-    console.warn(`⚠️  Could not read metadata for blog post: ${slug}`);
+    console.warn(`ÃƒÂ¢Ã…Â¡Ã‚Â ÃƒÂ¯Ã‚Â¸Ã‚Â  Could not read metadata for blog post: ${slug}`);
   }
   
   // Final fallback
@@ -456,7 +456,7 @@ function getBlogPostMetadata(slug) {
 
 // Determine page type and route data for enhanced metadata generation
 function getPageTypeAndData(url) {
-  const path = url.replace(BASE_URL, '') || '/';
+  let path; try { path = new URL(url).pathname || '/'; } catch { path = url.replace(BASE_URL, '') || '/'; }
   
   if (path === '/') {
     return { pageType: 'homepage', routeData: {} };
@@ -480,16 +480,16 @@ function getPageTypeAndData(url) {
 }
 
 async function generateStaticPages() {
-  console.log('📝 Generating static pages with server-side canonical tags...');
+  console.log('ÃƒÂ°Ã…Â¸Ã¢â‚¬Å“Ã‚Â Generating static pages with server-side canonical tags...');
   
   try {
     // Get asset manifest for correct bundle filenames
     const assets = getAssetManifest();
-    console.log('📦 Using bundles:', assets.files ? Object.keys(assets.files).filter(k => k.includes('main')) : 'fallback');
+    console.log('ÃƒÂ°Ã…Â¸Ã¢â‚¬Å“Ã‚Â¦ Using bundles:', assets.files ? Object.keys(assets.files).filter(k => k.includes('main')) : 'fallback');
     
     // Read sitemap to get all routes
     if (!fs.existsSync(SITEMAP_PATH)) {
-      console.log('⚠️  No sitemap found, creating basic static pages...');
+      console.log('ÃƒÂ¢Ã…Â¡Ã‚Â ÃƒÂ¯Ã‚Â¸Ã‚Â  No sitemap found, creating basic static pages...');
       return;
     }
     
@@ -499,15 +499,15 @@ async function generateStaticPages() {
     const urls = sitemapXmlMatch ? sitemapXmlMatch.map(match => match.replace(/<\/?loc>/g, '')) : [];
     
     if (urls.length === 0) {
-      console.log('⚠️  No URLs found in sitemap');
+      console.log('ÃƒÂ¢Ã…Â¡Ã‚Â ÃƒÂ¯Ã‚Â¸Ã‚Â  No URLs found in sitemap');
       return;
     }
     
-    console.log(`📋 Found ${urls.length} URLs in sitemap`);
+    console.log(`ÃƒÂ°Ã…Â¸Ã¢â‚¬Å“Ã¢â‚¬Â¹ Found ${urls.length} URLs in sitemap`);
     
     // Generate static HTML for each route with comprehensive SEO and schema.org
     for (const url of urls) {
-      const routePath = url.replace(BASE_URL, '') || '/';
+      let routePath; try { routePath = new URL(url).pathname || '/'; } catch { routePath = url.replace(BASE_URL, '') || '/'; }
       const { pageType, routeData } = getPageTypeAndData(url);
       const html = generateHTMLWithMetadata(url, pageType, routeData, assets);
       
@@ -516,7 +516,7 @@ async function generateStaticPages() {
       if (routePath === '/') {
         outputPath = path.join(BUILD_DIR, 'index.html');
       } else {
-        const routeDir = path.join(BUILD_DIR, routePath);
+        const safeRoutePath = routePath.replace(/^\\/+/, ''); const routeDir = path.join(BUILD_DIR, safeRoutePath);
         await fs.promises.mkdir(routeDir, { recursive: true });
         outputPath = path.join(routeDir, 'index.html');
       }
@@ -524,13 +524,13 @@ async function generateStaticPages() {
       // Write the static HTML file
       await fs.promises.writeFile(outputPath, html, 'utf8');
       
-      console.log(`✅ Generated ${routePath} (${pageType}) → ${path.relative(BUILD_DIR, outputPath)}`);
+      console.log(`ÃƒÂ¢Ã…â€œÃ¢â‚¬Â¦ Generated ${routePath} (${pageType}) ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ ${path.relative(BUILD_DIR, outputPath)}`);
     }
     
-    console.log(`🎉 Successfully generated ${urls.length} static pages with server-side canonical URLs`);
+    console.log(`ÃƒÂ°Ã…Â¸Ã…Â½Ã¢â‚¬Â° Successfully generated ${urls.length} static pages with server-side canonical URLs`);
     
   } catch (error) {
-    console.error('❌ Error generating static pages:', error.message);
+    console.error('ÃƒÂ¢Ã‚ÂÃ…â€™ Error generating static pages:', error.message);
     process.exit(1);
   }
 }
