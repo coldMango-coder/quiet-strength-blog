@@ -21,7 +21,7 @@ const BlogPostMorningRoutine = () => {
             <p className="text-brand-primary text-lg">By Marica Šinko - Founder of Quiet Strength, Women's Empowerment Coach</p>
             <div className="mt-4 text-sm text-brand-primary">
               <time dateTime="2025-09-26">Published: Sep 26, 2025</time>
-              <span className="mx-2">â€¢</span>
+              <span className="mx-2" aria-hidden="true">&middot;</span>
               <span>{post?.readTime || '10 min read'}</span>
             </div>
           </header>

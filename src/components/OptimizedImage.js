@@ -9,6 +9,7 @@ const OptimizedImage = ({
   loading = 'lazy',
   sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
   priority = false,
+  usePicture = true,
   ...props 
 }) => {
   const [loaded, setLoaded] = useState(false);
@@ -68,13 +69,27 @@ const OptimizedImage = ({
           </svg>
         </div>
       )}
-      
-      <picture>
-        <source 
-          srcSet={generateResponsiveWebpSrcSet(src)} 
-          type="image/webp" 
-          sizes={sizes}
-        />
+
+      {usePicture ? (
+        <picture>
+          <source srcSet={generateResponsiveWebpSrcSet(src)} type="image/webp" sizes={sizes} />
+          <img
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            loading={priority ? 'eager' : loading}
+            fetchPriority={priority ? 'high' : 'auto'}
+            decoding={priority ? 'sync' : 'async'}
+            sizes={sizes}
+            onLoad={handleLoad}
+            onError={handleError}
+            className={`w-full h-full object-cover transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+            style={{ aspectRatio: width && height ? `${width}/${height}` : undefined }}
+            {...props}
+          />
+        </picture>
+      ) : (
         <img
           src={src}
           alt={alt}
@@ -90,7 +105,7 @@ const OptimizedImage = ({
           style={{ aspectRatio: width && height ? `${width}/${height}` : undefined }}
           {...props}
         />
-      </picture>
+      )}
     </div>
   );
 
