@@ -19,11 +19,7 @@ h1{line-height:1.2;word-wrap:anywhere}
   display: block;
   width: 100%;
   height: auto;
-  /* Provide a stable placeholder ratio before intrinsic size is known */
-  aspect-ratio: 3 / 2;
-  /* Prevent offscreen media from affecting layout; reserve space */
-  content-visibility: auto;
-  contain-intrinsic-size: 800px 533px;
+  /* Use intrinsic aspect ratio from the source image to avoid distortion */
 }
 
 .article-container picture { display: block; }

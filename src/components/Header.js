@@ -147,11 +147,11 @@ const Header = () => {
         <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
         <div className="container mx-auto px-6 flex justify-between items-center h-full">
           <NormalizedLink to="/" className="focus:outline-none">
-            <div className={`modern-logo transition-all duration-300 ${isScrolled ? 'w-12 h-12' : 'w-16 h-16'} rounded-full overflow-hidden`}>
+            <div className={`modern-logo transition-all duration-300 ${isScrolled ? 'w-12 h-12' : 'w-16 h-16'} rounded-full overflow-hidden bg-white p-1`}>
               <OptimizedImage 
                 src="/images/logo.webp?v=b008f571" 
                 alt="Quiet Strength Logo" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 width={64}
                 height={64}
                 priority={true}
