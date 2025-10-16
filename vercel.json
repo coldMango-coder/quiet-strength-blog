@@ -8,7 +8,7 @@
       "REACT_APP_BUILD_TIME": "${VERCEL_GIT_COMMIT_TIMESTAMP}"
     }
   },
-  "redirects": [],
+  
   "rewrites": [
     {
       "source": "/robots.txt",
@@ -25,15 +25,15 @@
   ],
   "redirects": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "www.trueallyguide.com" }],
-      "destination": "https://trueallyguide.com/:1",
+      "destination": "https://trueallyguide.com/:path*",
       "permanent": true
     },
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "trueallyguide.com" }],
-      "destination": "https://trueallyguide.com/:1",
+      "destination": "https://trueallyguide.com/:path*",
       "permanent": true
     },
     {
