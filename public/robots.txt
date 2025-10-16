@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap reference with correct domain
-Sitemap: https://www.trueallyguide.com/sitemap.xml
+Sitemap: https://trueallyguide.com/sitemap.xml
 
 # Block non-public areas
 Disallow: /admin/

@@ -51,6 +51,25 @@ build.on('close', (code) => {
                 console.error('Error copying sitemap to build:', err);
             }
             
+            // Post-process SPA index.html: remove preconnect and apply print-swap CSS
+            try {
+                const fs2 = require('fs');
+                const buildIndex2 = path.join(__dirname, 'build', 'index.html');
+                if (fs2.existsSync(buildIndex2)) {
+                    let html2 = fs2.readFileSync(buildIndex2, 'utf8');
+                    html2 = html2.replace(/<link rel=\"preconnect\"[^>]*>/g, '');
+                    html2 = html2.replace(/<link rel=\"dns-prefetch\"[^>]*>/g, '');
+                    html2 = html2.replace(
+                      /<link href=\"(\\/static\\/css\\/[^\\"]+\\.css)\" rel=\"stylesheet\">/,
+                      '<link rel="preload" href="$1" as="style"><link rel="stylesheet" href="$1" media="print" onload="this.media=\'all\'"><noscript><link rel="stylesheet" href="$1"></noscript>'
+                    );
+                    fs2.writeFileSync(buildIndex2, html2, 'utf8');
+                    console.log('Post-processed build/index.html: removed preconnect and applied print-swap CSS.');
+                }
+            } catch (err) {
+                console.warn('Post-processing build/index.html failed:', err.message);
+            }
+
             // CRITICAL: Run enhanced static page generation for canonical URLs
             console.log('Running enhanced static page generation with canonical URLs...');
             const staticPages = spawn('node', [

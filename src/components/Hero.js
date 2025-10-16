@@ -5,7 +5,7 @@ import OptimizedImage from './OptimizedImage';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative bg-brand-light text-brand-dark py-32 md:py-48">
+    <section id="home" className="relative bg-brand-light text-brand-dark py-32 md:py-48" style={{ minHeight: '50vh' }}>
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col gap-8 items-center max-w-4xl mx-auto">
           <div className="text-center">

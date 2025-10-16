@@ -187,7 +187,9 @@ function generateHTMLWithMetadata(url, pageType, routeData, assets) {
   <meta name="application-name" content="Quiet Strength" />
   
   <title>${metadata.title}</title>
-  <link href="${cssFile}" rel="stylesheet">
+  <link rel="preload" href="${cssFile}" as="style">
+  <link rel="stylesheet" href="${cssFile}" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="${cssFile}"></noscript>
   
   <!-- Schema.org structured data for rich snippets -->
   ${jsonLdScript}
@@ -200,12 +202,10 @@ function generateHTMLWithMetadata(url, pageType, routeData, assets) {
   
   <link rel="preload" as="image" href="/images/logo.avif" type="image/avif" fetchpriority="high">
   <link rel="preload" as="image" href="/images/logo.webp" type="image/webp" fetchpriority="high">
-  <link rel="preload" href="${cssFile}" as="style">
   <link rel="preload" href="${jsFile}" as="script" fetchpriority="low">
   
   <!-- Performance: Resource hints for faster loading -->
-  <link rel="preconnect" href="https://www.trueallyguide.com" crossorigin>
-  <link rel="dns-prefetch" href="//trueallyguide.com">
+  
   
   <!-- Critical LCP image preloading for homepage only -->
   ${pageType === 'homepage' ? `
@@ -214,7 +214,7 @@ function generateHTMLWithMetadata(url, pageType, routeData, assets) {
   <link rel="preload" as="image" href="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.jpg" fetchpriority="high">` : ''}
   
   <!-- Performance: Advanced optimizations -->
-  <meta http-equiv="x-dns-prefetch-control" content="on">
+  
   <link rel="modulepreload" href="${jsFile}">
   
   <!-- Performance: Critical CSS for instant rendering -->

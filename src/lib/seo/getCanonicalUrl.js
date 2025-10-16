@@ -5,9 +5,8 @@
  * @returns {string} - The canonical URL that exactly matches the live URL
  */
 export function getCanonicalUrl(pathname) {
-  // Use production domain by default to avoid leaking localhost into canonicals
-  const defaultBase = 'https://trueallyguide.com';
-  const baseUrl = process.env.REACT_APP_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : defaultBase);
+  // Always use the non-www HTTPS canonical host
+  const baseUrl = 'https://trueallyguide.com';
 
   // Normalize pathname with strict rules
   let normalizedPath = pathname || '/';
@@ -23,6 +22,6 @@ export function getCanonicalUrl(pathname) {
     normalizedPath = normalizedPath === '' ? '/' : `${normalizedPath}/`;
   }
 
-  // Construct canonical URL
+  // Construct canonical URL (path only appended to canonical host)
   return `${baseUrl}${normalizedPath}`;
 }

@@ -39,11 +39,11 @@ body{margin:0;line-height:inherit}
 
 /* Color Variables */
 :root{
-  --brand-emphasis: #C44416;
-  --brand-light: #FEF2E3;
-  --brand-dark: #1F2937;
+  --brand-emphasis: #0B1220;
+  --brand-light: #F8FAFC;
+  --brand-dark: #0B1220;
   --brand-primary: #6B7280;
-  --brand-secondary: #F3F4F6;
+  --brand-secondary: #E6EEF8;
 }
 
 /* Modern Logo */

@@ -10,10 +10,10 @@ module.exports = {
     extend: {
       colors: {
         'brand-primary': '#4a5568', // Muted Grey
-        'brand-secondary': '#e2e8f0', // Light Grey
-        'brand-light': '#f7fafc', // Off-white
-        'brand-dark': '#2d3748', // Near Black
-        'brand-emphasis': '#c05621', // Rich Terracotta
+        'brand-secondary': '#E6EEF8', // Adjusted for contrast scenarios
+        'brand-light': '#F8FAFC', // Light background with strong contrast
+        'brand-dark': '#0B1220', // Deep dark for 7:1 contrast on light
+        'brand-emphasis': '#0B1220', // Emphasis with strong contrast on light
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

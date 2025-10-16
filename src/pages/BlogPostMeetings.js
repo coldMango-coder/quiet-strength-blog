@@ -70,7 +70,7 @@ const BlogPostMeetings = () => {
               Before diving into solutions, it's crucial to understand why meetings can be particularly challenging for introverts. This isn't about being shy or lacking confidence – it's about fundamental differences in how introverts process information and communicate.
             </p>
             <div className="my-8">
-              <img loading="lazy" decoding="async" src="/images/confident-introvert-business-meeting.webp?v=b008f571" alt="Confident introvert woman speaking up during business meeting with diverse colleagues listening attentively around conference table" className="rounded-lg shadow-md" />
+              <img loading="lazy" decoding="async" src="/images/confident-introvert-business-meeting.webp?v=b008f571" alt="Confident introvert woman speaking up during business meeting with diverse colleagues listening attentively around conference table" className="rounded-lg shadow-md" width="1200" height="800" />
               <p className="text-sm text-gray-600 mt-3 text-center italic">Confident introvert woman speaking up during business meeting with diverse colleagues listening attentively around conference table</p>
             </div>
             
@@ -109,7 +109,7 @@ const BlogPostMeetings = () => {
             </p>
             
             <div className="my-8">
-              <img loading="lazy" decoding="async" src="/images/meeting-preparation-strategies-desk.webp?v=b008f571" alt="Professional preparing meeting notes and agenda on desk with laptop showing introvert meeting preparation strategies and planning techniques" className="rounded-lg shadow-md" />
+              <img loading="lazy" decoding="async" src="/images/meeting-preparation-strategies-desk.webp?v=b008f571" alt="Professional preparing meeting notes and agenda on desk with laptop showing introvert meeting preparation strategies and planning techniques" className="rounded-lg shadow-md" width="1200" height="800" />
               <p className="text-sm text-gray-600 mt-3 text-center italic">Professional preparing meeting notes and agenda on desk with laptop showing introvert meeting preparation strategies and planning techniques</p>
             </div>
             
@@ -178,7 +178,7 @@ const BlogPostMeetings = () => {
             </p>
             
             <div className="my-8">
-              <img loading="lazy" decoding="async" src="/images/strategic-questions.png" alt="An introvert asking thoughtful questions in a meeting setting" className="rounded-lg shadow-md" />
+              <img loading="lazy" decoding="async" src="/images/strategic-questions.png" alt="An introvert asking thoughtful questions in a meeting setting" className="rounded-lg shadow-md" width="1200" height="800" />
               <p className="text-sm text-gray-600 mt-3 text-center italic">An introvert asking thoughtful questions in a meeting setting</p>
             </div>
             

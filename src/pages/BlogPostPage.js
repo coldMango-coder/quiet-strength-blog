@@ -13,11 +13,22 @@ const BlogPostPage = () => {
   }
 
   const PostComponent = post.component;
+  // Short SEO titles for <title> only (keep H1 content unchanged)
+  const seoTitleMap = {
+    'how-to-know-if-you-deserve-better-relationship-introvert-woman-guide': 'Do You Deserve Better? 7 Clear Signs for Introvert Women',
+    'how-to-stop-attracting-narcissists-9-proven-strategies': 'How to Stop Attracting Narcissists: 9 Proven Strategies',
+    'how-to-be-confident-as-an-introvert-woman-guide': 'How to Be Confident as an Introvert Woman',
+    'how-to-speak-up-in-meetings-introvert-strategies-2025': 'How to Speak Up in Meetings as an Introvert',
+    'introvert-social-battery-drained-recovery-methods': 'Introvert Social Battery Drained? 9 Ways to Recharge',
+    'morning-routine-for-confidence-and-productivity-2025': 'Morning Routine for Confidence and Productivity',
+    'post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025': 'Post-Breakup Glow Up: 10 Steps',
+  };
+  const seoTitle = seoTitleMap[post.slug] || post.title;
 
   return (
     <>
       <Seo
-        title={post.title}
+        title={seoTitle}
         description={post.description}
         type="article"
         article={{

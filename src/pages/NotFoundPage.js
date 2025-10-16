@@ -8,7 +8,7 @@ const NotFoundPage = () => {
       <Helmet>
         <title>Page Not Found - Quiet Strength</title>
         <meta name="description" content="The page you're looking for doesn't exist." />
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="noindex, follow" />
       </Helmet>
       <div className="bg-white min-h-screen flex items-center justify-center">
         <div className="text-center">

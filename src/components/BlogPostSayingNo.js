@@ -56,7 +56,7 @@ const BlogPostSayingNo = () => {
             <p>In the bustling world of professional ambition, there's a silent struggle that many, <mark>especially women</mark>, face daily: the deeply ingrained need to be agreeable, helpful, and to put others' needs before their own. You might know this person well—perhaps she's a colleague, a friend, or even the face staring back at you in the mirror. She's the one who always says <mark>"yes" to another project</mark>, stays late to help a coworker, and shoulders extra responsibilities without complaint. On the surface, she is the epitome of a team player. Beneath the surface, however, she is likely on a <mark>direct path to burnout</mark>.</p>
             <p>This article is for <mark>the people-pleasers, the "yes-women,"</mark> the individuals who have been conditioned to believe that their value is intrinsically tied to their agreeableness. It's a guide to understanding <mark>the profound art of saying "no"</mark> – not as an act of defiance, but as <mark>a radical act of self-preservation</mark> and a critical tool for sustainable success.</p>
             <div className="my-8">
-              <img loading="lazy" decoding="async" src="/images/stressed-woman-people-pleasing-burnout.webp?v=b008f571" alt="An introverted woman looking stressed at her desk, illustrating the people-pleasing cycle that leads to burnout." className="rounded-lg shadow-md" />
+              <img loading="lazy" decoding="async" src="/images/stressed-woman-people-pleasing-burnout.webp?v=b008f571" alt="An introverted woman looking stressed at her desk, illustrating the people-pleasing cycle that leads to burnout." className="rounded-lg shadow-md" width="1200" height="800" />
               <p className="text-sm text-gray-600 mt-3 text-center italic">An introverted woman looking stressed at her desk, illustrating the people-pleasing cycle that leads to burnout.</p>
             </div>
           </section>
@@ -93,7 +93,7 @@ const BlogPostSayingNo = () => {
               "Emotional and Physical Exhaustion: The final stage is full-blown burnout, where you feel depleted, cynical about your job, and detached from your accomplishments.",
             ]} />
             <div className="my-8">
-              <img loading="lazy" decoding="async" src="/images/people-pleasing-cycle-diagram.webp?v=b008f571" alt="A visual diagram illustrating the vicious cycle of people-pleasing and how it leads to burnout." className="rounded-lg shadow-md" />
+              <img loading="lazy" decoding="async" src="/images/people-pleasing-cycle-diagram.webp?v=b008f571" alt="A visual diagram illustrating the vicious cycle of people-pleasing and how it leads to burnout." className="rounded-lg shadow-md" width="1200" height="800" />
               <p className="text-sm text-gray-600 mt-3 text-center italic">A visual diagram illustrating the vicious cycle of people-pleasing and how it leads to burnout.</p>
             </div>
           </section>
@@ -115,7 +115,7 @@ const BlogPostSayingNo = () => {
             <h2>The Empowering Art of Saying 'No': Your Practical Toolkit</h2>
             <p>Learning to say "no" can feel daunting, especially when you're used to being the ever-reliable one. The key is to be clear, kind, and firm. Here are some practical strategies and phrases you can start implementing today:</p>
             <div className="my-8">
-              <img loading="lazy" decoding="async" src="/images/woman-practicing-assertiveness-saying-no.webp?v=b008f571" alt="A woman practicing saying no, representing the practical toolkit for assertiveness." className="rounded-lg shadow-md" />
+              <img loading="lazy" decoding="async" src="/images/woman-practicing-assertiveness-saying-no.webp?v=b008f571" alt="A woman practicing saying no, representing the practical toolkit for assertiveness." className="rounded-lg shadow-md" width="1200" height="800" />
               <p className="text-sm text-gray-600 mt-3 text-center italic">A woman practicing saying no, representing the practical toolkit for assertiveness.</p>
             </div>
             <h3>1. The Gracious Decline:</h3>

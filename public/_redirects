@@ -5,3 +5,12 @@
 /category/* /category/:splat/index.html 200\!
 /blog /blog/index.html 200\!
 /* /index.html 200
+# Canonical host + HTTPS (single-hop)
+http://trueallyguide.com/*  https://trueallyguide.com/:splat  301!
+http://www.trueallyguide.com/*  https://trueallyguide.com/:splat  301!
+https://www.trueallyguide.com/*  https://trueallyguide.com/:splat  301!
+
+# Legacy encoded category slugs → normalized hyphenated versions (single-hop 301)
+/category/Introversion%20%26%20Personality  https://trueallyguide.com/category/introversion-and-personality  301!
+/category/Relationships%20%26%20Dating      https://trueallyguide.com/category/relationships-and-dating      301!
+/category/Career%20%26%20Workplace          https://trueallyguide.com/category/career-and-workplace          301!

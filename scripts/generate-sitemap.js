@@ -7,7 +7,16 @@ const categories = {
   RELATIONSHIPS_DATING: 'Relationships & Dating',
   CAREER_WORKPLACE: 'Career & Workplace',
   SELF_DEVELOPMENT: 'Self-Development',
-  WOMENS_WELLNESS: 'Women\'s Wellness',
+  WOMENS_WELLNESS: "Women's Wellness",
+};
+
+// Normalized category slugs (no %26 etc.)
+const categorySlugMap = {
+  'Introversion & Personality': 'introversion-and-personality',
+  'Relationships & Dating': 'relationships-and-dating',
+  'Career & Workplace': 'career-and-workplace',
+  'Self-Development': 'self-development',
+  "Women's Wellness": 'womens-wellness',
 };
 
 const blogPosts = [
@@ -93,7 +102,7 @@ function generateSitemap() {
     },
     // Category pages
     ...Object.values(categories).map(category => ({
-      loc: `${baseUrl}/category/${encodeURIComponent(category)}`,
+      loc: `${baseUrl}/category/${categorySlugMap[category] || encodeURIComponent(category)}`,
       lastmod: formatDate(new Date()),
       changefreq: 'weekly',
       priority: '0.8'
