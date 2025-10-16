@@ -9,31 +9,22 @@ const OptimizedImage = ({
   loading = 'lazy',
   sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
   priority = false,
-  usePicture = true,
+  // Default to plain <img> to avoid broken variants when resized assets don't exist
+  usePicture = false,
   ...props 
 }) => {
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
 
-  // Generate responsive srcset (webp only to avoid avif 404s when variant doesn't exist)
+  // Generate responsive srcset (return base image only when variants are not available)
   const generateResponsiveWebpSrcSet = (originalSrc) => {
     if (!originalSrc) return '';
     const [path, query] = originalSrc.split('?');
     const baseName = path.replace(/\.[^/.]+$/, '');
     const extension = '.webp';
     const suffix = query ? `?${query}` : '';
-    if (width && height) {
-      // Create width-based variants: w, 1.5w, 2w
-      const w1 = Math.max(120, Math.round(width));
-      const w15 = Math.round(w1 * 1.5);
-      const w2 = Math.round(w1 * 2);
-      const entries = [w1, w15, w2]
-        .filter((v, i, arr) => arr.indexOf(v) === i)
-        .map((w) => `${baseName}-${w}w${extension}${suffix} ${w}w`);
-      return entries.join(', ');
-    }
-    // Fallback to base URL
-    return `${baseName}${extension}${suffix}`;
+    // Return base image only to avoid 404s for non-existent variants
+    return `${baseName}${extension}${suffix} 1x`;
   };
 
   const handleLoad = () => setLoaded(true);
@@ -77,7 +68,7 @@ const OptimizedImage = ({
 
       {usePicture ? (
         <picture>
-          {/* Prefer AVIF when available (same basename) */}
+          {/* Prefer AVIF/WebP when available. Using base image only in srcset to avoid 404s. */}
           <source srcSet={generateResponsiveWebpSrcSet(src).replace(/\.webp/g, '.avif')} type="image/avif" sizes={sizes} />
           <source srcSet={generateResponsiveWebpSrcSet(src)} type="image/webp" sizes={sizes} />
           <img
