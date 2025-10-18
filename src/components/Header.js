@@ -149,7 +149,7 @@ const Header = () => {
           <NormalizedLink to="/">
             <div className={`modern-logo transition-all duration-300 ${isScrolled ? 'w-12 h-12' : 'w-16 h-16'} rounded-full overflow-hidden bg-white p-0`}>
               <OptimizedImage 
-                src="/images/logo.webp?v=b008f571" 
+                src="/images/logo.avif" 
                 alt="Quiet Strength Logo" 
                 className="w-full h-full object-cover"
                 width={64}
