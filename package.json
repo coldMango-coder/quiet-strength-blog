@@ -24,7 +24,7 @@
     "dev": "npm run predev && react-scripts start",
     "dev:express": "node dev-server.js",
     "start": "react-scripts start",
-    "build": "node build.js",
+    "build": "react-scripts build",
     "build:basic": "react-scripts build",
     "postbuild": "cross-env WRITE=1 node scripts/optimize-images.mjs",
     "preview": "npx serve -s build",
