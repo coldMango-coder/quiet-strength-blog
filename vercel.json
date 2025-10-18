@@ -10,18 +10,13 @@
   },
   
   "rewrites": [
-    {
-      "source": "/robots.txt",
-      "destination": "/robots.txt"
-    },
-    {
-      "source": "/sitemap.xml",
-      "destination": "/sitemap.xml"
-    },
-    {
-      "source": "/((?!static/|assets/|images/|robots.txt|sitemap.xml|hotfix.css|refresh.html).*)",
-      "destination": "/index.html"
-    }
+    { "source": "/robots.txt", "destination": "/robots.txt" },
+    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/blog", "destination": "/index.html" },
+    { "source": "/blog/:slug", "destination": "/index.html" },
+    { "source": "/category/:categoryName", "destination": "/index.html" },
+    { "source": "/book-quiet-confidence", "destination": "/index.html" }
   ],
   "redirects": [
     {
@@ -87,15 +82,6 @@
       ]
     },
     {
-      "source": "/(.*)\\.(css|js|mjs|woff2|png|jpg|jpeg|svg|webp|avif)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
       "source": "/static/(.*)",
       "headers": [
         {
@@ -122,14 +108,7 @@
         }
       ]
     },
-    {
-      "source": "/(index.html|)$",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=0, must-revalidate"
-        }
-      ]
-    }
+    { "source": "/index.html", "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }] },
+    { "source": "/", "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }] }
   ]
 }
