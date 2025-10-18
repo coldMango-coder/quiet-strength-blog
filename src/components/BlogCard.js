@@ -2,7 +2,7 @@ import React from 'react';
 import NormalizedLink from './NormalizedLink';
 import OptimizedImage from './OptimizedImage';
 
-const BlogCard = ({ post, onReadMore, linkTo }) => {
+const BlogCard = ({ post, onReadMore, linkTo, priority = false }) => {
   const { title, description, category, image, datePublished, readingTime, slug } = post;
 
   return (
@@ -14,7 +14,9 @@ const BlogCard = ({ post, onReadMore, linkTo }) => {
           alt={`${title} - Self-help article for introverted women`}
           width={360}
           height={240}
-          loading="lazy"
+          loading={priority ? 'eager' : 'lazy'}
+          fetchPriority={priority ? 'high' : 'auto'}
+          decoding={priority ? 'sync' : 'async'}
           sizes="(max-width: 640px) 92vw, (max-width: 1024px) 45vw, 360px"
           itemProp="image"
         />

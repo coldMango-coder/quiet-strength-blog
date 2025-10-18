@@ -8,7 +8,8 @@ import { useDynamicSEO } from './hooks/useDynamicSEO';
 import { useDevCanonicalFallback } from './hooks/useDevCanonicalFallback';
 
 // Lazy load all page components
-const HomePage = React.lazy(() => import('./pages/HomePage'));
+// Load the homepage eagerly to avoid CLS from Suspense fallback on first paint
+import HomePage from './pages/HomePage';
 const BlogListPage = React.lazy(() => import('./pages/BlogListPage'));
 const BlogPostPage = React.lazy(() => import('./pages/BlogPostPage'));
 const CategoryPage = React.lazy(() => import('./pages/CategoryPage'));
@@ -56,14 +57,7 @@ function App() {
       <main id="main-content" className="container mx-auto">
         <div className={isArticle ? 'lg:grid lg:grid-cols-12 lg:gap-8' : 'lg:grid lg:grid-cols-12 lg:gap-24'}>
           <div className={isArticle ? 'lg:col-start-3 lg:col-span-8' : 'lg:col-span-8'}>
-            <Suspense fallback={
-              <div className="flex justify-center items-center py-24">
-                <div className="flex flex-col items-center">
-                  <div className="w-8 h-8 border-4 border-brand-primary border-t-transparent rounded-full animate-spin mb-4"></div>
-                  <div className="text-brand-primary font-medium">Loading content...</div>
-                </div>
-              </div>
-            }>
+            <Suspense fallback={null}>
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/blog" element={<BlogListPage />} />
