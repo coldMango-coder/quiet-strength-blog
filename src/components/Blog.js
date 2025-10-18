@@ -18,20 +18,26 @@ const Blog = () => {
         <div className="bg-white rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8 mb-16 flex flex-col lg:flex-row items-stretch min-w-0 max-w-full overflow-hidden">
           <div className="lg:w-1/2 xl:w-7/12 mb-6 lg:mb-0 lg:pr-6 xl:pr-12 flex-shrink-0 min-w-0">
             <div className="w-full aspect-[16/9] rounded-xl overflow-hidden">
-              <picture>
-                <source srcSet={`${latestPost.image.replace(/\.[^/.]+$/, '')}.avif`} type="image/avif" />
-                <source srcSet={`${latestPost.image.replace(/\.[^/.]+$/, '')}.webp`} type="image/webp" />
-                <img
-                  src={latestPost.image}
-                  alt={`Featured article: ${latestPost.title} - self-help guide for introverted women`}
-                  width="960"
-                  height="540"
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="sync"
-                  className="w-full h-full object-cover"
-                />
-              </picture>
+              {(() => {
+                const base = latestPost.image.split('?')[0].replace(/\.[^/.]+$/, '');
+                return (
+                  <picture>
+                    <source srcSet={`${base}.avif`} type="image/avif" />
+                    <source srcSet={`${base}.webp`} type="image/webp" />
+                    <img
+                      src={`${base}.avif`}
+                      alt={`Featured article: ${latestPost.title}`}
+                      width="960"
+                      height="540"
+                      sizes="(max-width: 1024px) 92vw, 720px"
+                      loading="eager"
+                      fetchPriority="high"
+                      decoding="sync"
+                      className="w-full h-full object-cover"
+                    />
+                  </picture>
+                );
+              })()}
             </div>
           </div>
           <div className="lg:w-1/2 xl:w-5/12 flex flex-col justify-center min-w-0 max-w-full">
