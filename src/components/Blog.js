@@ -66,12 +66,11 @@ const Blog = () => {
 
         {/* Recent Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 mb-16">
-          {recentPosts.map((post, idx) => (
+          {recentPosts.map((post) => (
             <BlogCard
               key={post.slug}
               post={post}
               linkTo={`/blog/${post.slug}`}
-              priority={idx === 0}
             />
           ))}
         </div>

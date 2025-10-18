@@ -54,7 +54,7 @@ const Hero = () => {
                       height={index === 0 ? 192 : 160}
                       sizes={index === 0 ? '(max-width: 640px) 96px, (max-width: 768px) 128px, (max-width: 1024px) 160px, 192px' : '(max-width: 640px) 80px, (max-width: 768px) 96px, (max-width: 1024px) 128px, 160px'}
                       usePicture={true}
-                      priority={index === 0}
+                      priority={false}
                     />
                     <div className={`flex-1 min-w-0 ${index === 0 ? 'ml-3 sm:ml-4 md:ml-6 lg:ml-8' : 'ml-2 sm:ml-3 md:ml-4 lg:ml-6'}`}>
                       {index === 0 && (
