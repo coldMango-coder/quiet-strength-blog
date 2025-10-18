@@ -27,7 +27,8 @@
         cleanPath = cleanPath.slice(0, -1);
       }
       
-      const cleanUrl = `${BASE_URL}${cleanPath}${url.search}${url.hash}`;
+      // Canonical should not include query or hash
+      const cleanUrl = `${BASE_URL}${cleanPath}`;
       
       // Helper functions
       const setOrUpdateLink = (rel, href) => {
@@ -64,11 +65,7 @@
       setOrUpdateMeta('meta[property="og:type"]', 'property', 'og:type', ogType);
 
       // Update history state if URL was cleaned
-      if (loc.href !== cleanUrl && window.history && window.history.replaceState) {
-        const cleanUrlObj = new URL(cleanUrl);
-        const newPath = cleanUrlObj.pathname + cleanUrlObj.search + cleanUrlObj.hash;
-        window.history.replaceState(null, '', newPath);
-      }
+      // Do not mutate history for canonical normalization to avoid confusing users
 
       console.log('SEO updated:', { canonicalUrl: cleanUrl, ogType });
 

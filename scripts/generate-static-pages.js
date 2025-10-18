@@ -40,13 +40,19 @@ function getAssetManifest() {
 
 // Enhanced template for generating static HTML with comprehensive SEO and schema.org structured data
 function generateHTMLWithMetadata(url, pageType, routeData, assets) {
-  // Fix canonical URL to match exact Vercel live URL patterns
+  // Build canonical URL: https://trueallyguide.com{pathname}
+  // Normalize to no trailing slash except for root
   let canonicalUrl;
-  if (url === BASE_URL || url === `${BASE_URL}/`) {
-    canonicalUrl = `${BASE_URL}/`; // Homepage always has trailing slash
-  } else {
-    // All other pages: add trailing slash to match Vercel live URLs
-    canonicalUrl = url.endsWith('/') ? url : `${url}/`;
+  try {
+    const u = new URL(url);
+    let p = u.pathname || '/';
+    if (p !== '/' && p.endsWith('/')) p = p.slice(0, -1);
+    canonicalUrl = `${BASE_URL}${p}`;
+  } catch (e) {
+    // Fallback: trust input url but strip trailing slash (except root)
+    const p = url.replace(BASE_URL, '') || '/';
+    const norm = p !== '/' && p.endsWith('/') ? p.slice(0, -1) : p;
+    canonicalUrl = `${BASE_URL}${norm}`;
   }
   const cssFile = assets.files && assets.files['main.css'] ? assets.files['main.css'] : '/static/css/main.css';
   const jsFile = assets.files && assets.files['main.js'] ? assets.files['main.js'] : '/static/js/main.js';

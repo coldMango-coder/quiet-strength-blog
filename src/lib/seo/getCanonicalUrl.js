@@ -17,9 +17,9 @@ export function getCanonicalUrl(pathname) {
   // Lowercase for consistency
   normalizedPath = normalizedPath.toLowerCase();
 
-  // Ensure trailing slash policy consistent with pre-renderer: always slash
-  if (!normalizedPath.endsWith('/')) {
-    normalizedPath = normalizedPath === '' ? '/' : `${normalizedPath}/`;
+  // Trailing slash policy: no trailing slash except for root
+  if (normalizedPath !== '/' && normalizedPath.endsWith('/')) {
+    normalizedPath = normalizedPath.slice(0, -1);
   }
 
   // Construct canonical URL (path only appended to canonical host)

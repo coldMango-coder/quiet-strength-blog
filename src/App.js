@@ -16,6 +16,8 @@ const QuietConfidenceBook = React.lazy(() => import('./pages/books/QuietConfiden
 const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 
 function App() {
+  // No-op build tag to change main bundle hash when needed
+  const __BUILD_TAG = '2025-10-18T12:45:00Z';
   // Initialize dynamic SEO updates for client-side navigation
   useDynamicSEO();
   

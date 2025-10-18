@@ -26,13 +26,19 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.trueallyguide.com" }],
+      "has": [
+        { "type": "host", "value": "www.trueallyguide.com" }
+      ],
       "destination": "https://trueallyguide.com/:path*",
       "permanent": true
     },
     {
+      // Enforce HTTPS on apex domain without causing redirect loops
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "trueallyguide.com" }],
+      "has": [
+        { "type": "host", "value": "trueallyguide.com" },
+        { "type": "header", "key": "x-forwarded-proto", "value": "http" }
+      ],
       "destination": "https://trueallyguide.com/:path*",
       "permanent": true
     },
