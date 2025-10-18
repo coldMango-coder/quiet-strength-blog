@@ -33,7 +33,6 @@
       "permanent": true
     },
     {
-      // Enforce HTTPS on apex domain without causing redirect loops
       "source": "/:path*",
       "has": [
         { "type": "host", "value": "trueallyguide.com" },
