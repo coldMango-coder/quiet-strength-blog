@@ -26,7 +26,7 @@ const About = () => {
               <img
                 loading="lazy"
                 decoding="async"
-                src="/images/marica-sinko-author-photo.jpg"
+                src="/images/marica-sinko-author-photo.avif"
                 alt="Marica Šinko — Author portrait"
                 width="224"
                 height="224"\n                  sizes="224px"
@@ -61,6 +61,7 @@ const About = () => {
 };
 
 export default About;
+
 
 
 
