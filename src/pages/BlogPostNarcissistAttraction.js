@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import NormalizedLink from '../components/NormalizedLink';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
@@ -19,10 +19,10 @@ const BlogPostNarcissistAttraction = () => {
               How to Stop Attracting Narcissists: 9 Proven Strategies That Actually Work in 2025
             </h1>
             <div className="flex items-center gap-4 text-brand-primary text-lg">
-              <span>By <strong>Marica Šinko</strong></span>
-              <span className="text-gray-400">•</span>
+              <span>By <strong>Marica Å inko</strong></span>
+              <span className="text-gray-400">â€¢</span>
               <span>August 03, 2025</span>
-              <span className="text-gray-400">•</span>
+              <span className="text-gray-400">â€¢</span>
               <span>8 min read</span>
             </div>
             <p className="text-brand-primary text-sm mt-2">
@@ -57,7 +57,7 @@ const BlogPostNarcissistAttraction = () => {
             </p>
 
             <img 
-              src="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.webp?v=b008f571" 
+              src="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.webp" 
               alt="Confident woman learning how to stop attracting narcissists by walking away from toxic relationships toward healthy boundaries and self-empowerment" 
               className="rounded-lg shadow-md my-8 w-full" 
               loading="lazy"
@@ -106,7 +106,7 @@ const BlogPostNarcissistAttraction = () => {
               <h2 className="text-3xl font-bold text-brand-dark mb-6">The Narcissist-Magnet Personality Profile</h2>
 
               <p className="mb-6">
-                If you're wondering "why do I attract narcissists," you likely possess several traits that narcissists find irresistible. Recognizing these traits isn't about self-blame—it's about empowerment and transformation.
+                If you're wondering "why do I attract narcissists," you likely possess several traits that narcissists find irresistible. Recognizing these traits isn't about self-blameâ€”it's about empowerment and transformation.
               </p>
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">High-Risk Traits That Attract Narcissists:</h3>
@@ -146,7 +146,7 @@ const BlogPostNarcissistAttraction = () => {
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">Strategy 1: Develop Healthy Selfishness</h3>
               <p className="mb-4">
-                <strong>What This Means:</strong> Prioritizing your own needs isn't selfish—it's essential for healthy relationships.
+                <strong>What This Means:</strong> Prioritizing your own needs isn't selfishâ€”it's essential for healthy relationships.
               </p>
 
               <p className="mb-4"><strong>How to Implement:</strong></p>
@@ -209,7 +209,7 @@ const BlogPostNarcissistAttraction = () => {
               ]} />
 
               <img 
-                src="/images/support-group-helping-individuals-develop-healthy-relationship-patterns-and-learn-effective-strategies-to-stop-attracting-narcissistic-partners.webp?v=b008f571" 
+                src="/images/support-group-helping-individuals-develop-healthy-relationship-patterns-and-learn-effective-strategies-to-stop-attracting-narcissistic-partners.webp" 
                 alt="Support group helping individuals develop healthy relationship patterns and learn effective strategies to stop attracting narcissistic partners" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
@@ -357,7 +357,7 @@ const BlogPostNarcissistAttraction = () => {
               </p>
 
               <img 
-                src="/images/person-practicing-self-reflection-and-boundary-setting-techniques-to-break-the-cycle-of-attracting-narcissists-and-build-healthier-relationships.webp?v=b008f571" 
+                src="/images/person-practicing-self-reflection-and-boundary-setting-techniques-to-break-the-cycle-of-attracting-narcissists-and-build-healthier-relationships.webp" 
                 alt="Person practicing self-reflection and boundary-setting techniques to break the cycle of attracting narcissists and build healthier relationships" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
@@ -540,7 +540,7 @@ const BlogPostNarcissistAttraction = () => {
                   </h3>
                   <div className="ml-11">
                     <p className="text-brand-primary leading-relaxed">
-                      No. Narcissistic Personality Disorder is a deeply ingrained pattern that rarely changes, even with professional treatment. Setting boundaries isn't about changing the narcissist—it's about protecting yourself and becoming unappealing to manipulative individuals.
+                      No. Narcissistic Personality Disorder is a deeply ingrained pattern that rarely changes, even with professional treatment. Setting boundaries isn't about changing the narcissistâ€”it's about protecting yourself and becoming unappealing to manipulative individuals.
                     </p>
                   </div>
                 </div>
@@ -610,7 +610,7 @@ const BlogPostNarcissistAttraction = () => {
                   </h3>
                   <div className="ml-11">
                     <p className="text-brand-primary leading-relaxed">
-                      Genuine friendship requires mutual respect, empathy, and care—qualities narcissists cannot provide consistently. Any relationship with a narcissist will eventually become one-sided and draining. It's healthier to invest your energy in reciprocal relationships.
+                      Genuine friendship requires mutual respect, empathy, and careâ€”qualities narcissists cannot provide consistently. Any relationship with a narcissist will eventually become one-sided and draining. It's healthier to invest your energy in reciprocal relationships.
                     </p>
                   </div>
                 </div>
@@ -662,3 +662,4 @@ const BlogPostNarcissistAttraction = () => {
 };
 
 export default BlogPostNarcissistAttraction;
+

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import NormalizedLink from '../components/NormalizedLink';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
@@ -24,10 +24,10 @@ const BlogPostNetworkingTips = () => {
                 7 Powerful Introvert Networking Tips Without Small Talk That Actually Work
               </h1>
               <div className="flex items-center gap-4 text-brand-primary text-lg">
-                <span>By <strong>Marica Šinko</strong></span>
-                <span className="text-gray-400">•</span>
+                <span>By <strong>Marica Å inko</strong></span>
+                <span className="text-gray-400">â€¢</span>
                 <span>{postData?.readTime}</span>
-                <span className="text-gray-400">•</span>
+                <span className="text-gray-400">â€¢</span>
                 <span>{new Date(postData?.date).toLocaleDateString('en-US', { 
                   year: 'numeric', 
                   month: 'long', 
@@ -65,7 +65,7 @@ const BlogPostNetworkingTips = () => {
               
               <div className="my-8">
                 <img 
-                  src="/images/20250728_1647_Engaged Coffee Shop Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.webp?v=b008f571" 
+                  src="/images/20250728_1647_Engaged Coffee Shop Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.webp" 
                   alt="Two professionals having a meaningful one-on-one coffee meeting, demonstrating introvert networking tips without small talk in a comfortable setting" 
                   className="rounded-lg shadow-md" 
                   loading="eager"
@@ -114,7 +114,7 @@ const BlogPostNetworkingTips = () => {
               
               <div className="my-8">
                 <img 
-                  src="/images/20250728_1704_Focused Professional Workspace_simple_compose_01k18ryjaxejvaw4zbq46samh6.webp?v=b008f571" 
+                  src="/images/20250728_1704_Focused Professional Workspace_simple_compose_01k18ryjaxejvaw4zbq46samh6.webp" 
                   alt="Professional introvert using written communication for networking, typing thoughtful content on laptop as an alternative to small talk networking" 
                   className="rounded-lg shadow-md" 
                   loading="lazy"
@@ -198,7 +198,7 @@ const BlogPostNetworkingTips = () => {
               
               <div className="my-8">
                 <img 
-                  src="/images/20250728_1706_Engaged Professional Workshop_simple_compose_01k18s27yxfaftwdx7snhfgjsv.webp?v=b008f571" 
+                  src="/images/20250728_1706_Engaged Professional Workshop_simple_compose_01k18s27yxfaftwdx7snhfgjsv.webp" 
                   alt="Small professional workshop environment where introverts can network naturally through shared learning experiences without relying on small talk" 
                   className="rounded-lg shadow-md" 
                   loading="lazy"
@@ -308,7 +308,7 @@ const BlogPostNetworkingTips = () => {
                 These introvert networking tips without small talk allow you to build a professional network that energizes rather than drains you, creating opportunities for career advancement while staying true to your authentic self. The key is recognizing that your introvert qualities aren't obstacles to overcome but strengths to leverage in building meaningful professional relationships.
               </p>
               <p>
-                Start implementing one or two of these strategies this week. Remember, the goal isn't to become an extrovert—it's to network in a way that works with your natural personality and preferences. Your thoughtful, authentic approach to relationship building is exactly what the professional world needs.
+                Start implementing one or two of these strategies this week. Remember, the goal isn't to become an extrovertâ€”it's to network in a way that works with your natural personality and preferences. Your thoughtful, authentic approach to relationship building is exactly what the professional world needs.
               </p>
             </section>
 

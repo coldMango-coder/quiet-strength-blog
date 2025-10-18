@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import NormalizedLink from '../components/NormalizedLink';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
@@ -25,10 +25,10 @@ const BlogPostIntrovertConfidence = () => {
               How to Be Confident as an Introvert Woman: 9 Proven Strategies That Actually Work in 2025
             </h1>
             <div className="flex items-center gap-4 text-brand-primary text-lg">
-              <span>By <strong>Marica Šinko</strong></span>
-              <span className="text-gray-400">•</span>
+              <span>By <strong>Marica Å inko</strong></span>
+              <span className="text-gray-400">â€¢</span>
               <span>July 28, 2025</span>
-              <span className="text-gray-400">•</span>
+              <span className="text-gray-400">â€¢</span>
               <span>8 min read</span>
             </div>
             <p className="text-brand-primary text-sm mt-2">
@@ -61,18 +61,18 @@ const BlogPostIntrovertConfidence = () => {
             </p>
 
             <p className="mb-8">
-              The problem isn't that you lack confidence—it's that you've been measuring your confidence against extroverted standards that don't align with your natural temperament. In this comprehensive guide, you'll discover research-backed strategies specifically designed for introvert women to build genuine, lasting confidence that honors your authentic self.
+              The problem isn't that you lack confidenceâ€”it's that you've been measuring your confidence against extroverted standards that don't align with your natural temperament. In this comprehensive guide, you'll discover research-backed strategies specifically designed for introvert women to build genuine, lasting confidence that honors your authentic self.
             </p>
 
             <p className="mb-16">
-              You'll learn how to leverage your natural strengths, overcome common confidence challenges, and develop a personal confidence toolkit that works with your introverted nature, not against it. By the end of this article, you'll have a clear roadmap to becoming the confident, empowered woman you're meant to be—without changing your core personality.
+              You'll learn how to leverage your natural strengths, overcome common confidence challenges, and develop a personal confidence toolkit that works with your introverted nature, not against it. By the end of this article, you'll have a clear roadmap to becoming the confident, empowered woman you're meant to beâ€”without changing your core personality.
             </p>
 
             <section id="understanding-confidence" className="mb-16 scroll-mt-24">
               <h2 className="text-3xl font-bold text-brand-dark mb-6">Understanding Introvert Confidence vs. Extrovert Confidence</h2>
               
               <img 
-                src="/images/confident-introvert-woman-sitting-thoughtfully-in-modern-office-space-demonstrating-quiet-strength-and-authentic-confidence-in-professional-setting.webp?v=b008f571" 
+                src="/images/confident-introvert-woman-sitting-thoughtfully-in-modern-office-space-demonstrating-quiet-strength-and-authentic-confidence-in-professional-setting.webp" 
                 alt="confident-introvert-woman-sitting-thoughtfully-in-modern-office-space-demonstrating-quiet-strength-and-authentic-confidence-in-professional-setting" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
@@ -130,7 +130,7 @@ const BlogPostIntrovertConfidence = () => {
               </KeyTakeawayBox>
 
               <p className="mt-6">
-                Understanding why generic advice doesn't work for you isn't a limitation—it's liberation. It means you can stop trying to fit into an extroverted mold and start building confidence in alignment with your natural temperament.
+                Understanding why generic advice doesn't work for you isn't a limitationâ€”it's liberation. It means you can stop trying to fit into an extroverted mold and start building confidence in alignment with your natural temperament.
               </p>
             </section>
 
@@ -147,11 +147,11 @@ const BlogPostIntrovertConfidence = () => {
                 "Enhanced Pattern Recognition: Introverts excel at noticing subtle patterns and connections others miss. A 2023 study published in the Journal of Personality Psychology found that introverts scored 23% higher on pattern recognition tests compared to extroverts.",
                 "Superior Listening Skills: Research from Harvard Business School shows that introverted managers often outperform extroverted ones because they're more likely to listen to employee suggestions and implement valuable ideas.",
                 "Deep Focus Abilities: Introverts can maintain concentration for longer periods, leading to higher quality work output. Microsoft's productivity research indicates that introverted employees show 31% better sustained attention during complex tasks.",
-                "Emotional Intelligence: Studies consistently show that introverts score higher on emotional intelligence assessments, particularly in self-awareness and empathy—two crucial components of authentic confidence."
+                "Emotional Intelligence: Studies consistently show that introverts score higher on emotional intelligence assessments, particularly in self-awareness and empathyâ€”two crucial components of authentic confidence."
               ]} />
 
               <StyledBlockquote>
-                "These aren't consolation prizes or 'lesser' strengths—they're powerful advantages that, when properly leveraged, create a unique and valuable form of confidence."
+                "These aren't consolation prizes or 'lesser' strengthsâ€”they're powerful advantages that, when properly leveraged, create a unique and valuable form of confidence."
               </StyledBlockquote>
             </section>
 
@@ -159,7 +159,7 @@ const BlogPostIntrovertConfidence = () => {
               <h2 className="text-3xl font-bold text-brand-dark mb-6">9 Proven Strategies to Build Authentic Confidence</h2>
 
               <img 
-                src="/images/introvert-woman-confidently-engaging-in-meaningful-one-on-one-conversation-at-coffee-meeting-demonstrating-authentic-networking-strategies-for-introverts.webp?v=b008f571" 
+                src="/images/introvert-woman-confidently-engaging-in-meaningful-one-on-one-conversation-at-coffee-meeting-demonstrating-authentic-networking-strategies-for-introverts.webp" 
                 alt="introvert-woman-confidently-engaging-in-meaningful-one-on-one-conversation-at-coffee-meeting-demonstrating-authentic-networking-strategies-for-introverts" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
@@ -174,7 +174,7 @@ const BlogPostIntrovertConfidence = () => {
                 <div>
                   <h3 className="text-2xl font-bold text-brand-dark mb-4">Strategy 1: Master Your Energy Management</h3>
                   <p className="mb-4">
-                    As an introvert woman, your confidence is directly linked to your energy levels. When you're overstimulated or emotionally drained, your natural confidence diminishes. Effective energy management isn't selfish—it's essential for maintaining your confidence baseline.
+                    As an introvert woman, your confidence is directly linked to your energy levels. When you're overstimulated or emotionally drained, your natural confidence diminishes. Effective energy management isn't selfishâ€”it's essential for maintaining your confidence baseline.
                   </p>
                   
                   <KeyTakeawayBox title="Implementation Steps">
@@ -318,7 +318,7 @@ const BlogPostIntrovertConfidence = () => {
                   <StyledList items={[
                     "Maintain steady eye contact during conversations (this shows engagement, not aggression)",
                     "Use open postures with uncrossed arms and legs",
-                    "Take up appropriate space—don't make yourself smaller",
+                    "Take up appropriate spaceâ€”don't make yourself smaller",
                     "Practice a genuine smile that reaches your eyes",
                     "Use purposeful gestures that support your words",
                     "Stand or sit with good posture that conveys self-respect"
@@ -466,7 +466,7 @@ const BlogPostIntrovertConfidence = () => {
               <h2 className="text-3xl font-bold text-brand-dark mb-6">Practical Daily Habits for Introvert Confidence</h2>
 
               <p className="mb-8">
-                Confidence isn't built overnight—it's developed through consistent daily practices that honor your introverted nature while building your self-assurance.
+                Confidence isn't built overnightâ€”it's developed through consistent daily practices that honor your introverted nature while building your self-assurance.
               </p>
 
               <div className="space-y-8">
@@ -523,7 +523,7 @@ const BlogPostIntrovertConfidence = () => {
                 <div className="bg-white p-6 rounded-lg shadow-md">
                   <h3 className="text-xl font-bold text-brand-dark mb-4">What is the difference between being confident and being an introvert?</h3>
                   <p>
-                    Confidence and introversion are completely independent traits. Confidence refers to your belief in your abilities and worth, while introversion describes how you process information and recharge your energy. You can absolutely be both highly confident and deeply introverted—they enhance rather than contradict each other.
+                    Confidence and introversion are completely independent traits. Confidence refers to your belief in your abilities and worth, while introversion describes how you process information and recharge your energy. You can absolutely be both highly confident and deeply introvertedâ€”they enhance rather than contradict each other.
                   </p>
                 </div>
 
@@ -582,7 +582,7 @@ const BlogPostIntrovertConfidence = () => {
               <h2 className="text-3xl font-bold text-brand-dark mb-6">Your Next Steps to Confident Living</h2>
 
               <p className="mb-8">
-                Learning how to be confident as an introvert woman is a journey of self-acceptance, strategic development, and authentic expression. You don't need to become more extroverted to become more confident—you need to become more authentically yourself.
+                Learning how to be confident as an introvert woman is a journey of self-acceptance, strategic development, and authentic expression. You don't need to become more extroverted to become more confidentâ€”you need to become more authentically yourself.
               </p>
 
               <div className="space-y-8">
@@ -618,7 +618,7 @@ const BlogPostIntrovertConfidence = () => {
               </div>
 
               <img 
-                src="/images/empowered-introvert-woman-standing-confidently-in-peaceful-natural-setting-representing-authentic-confidence-journey-and-quiet-strength-development.webp?v=b008f571" 
+                src="/images/empowered-introvert-woman-standing-confidently-in-peaceful-natural-setting-representing-authentic-confidence-journey-and-quiet-strength-development.webp" 
                 alt="empowered-introvert-woman-standing-confidently-in-peaceful-natural-setting-representing-authentic-confidence-journey-and-quiet-strength-development" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
@@ -630,7 +630,7 @@ const BlogPostIntrovertConfidence = () => {
               </p>
 
               <StyledBlockquote>
-                "Remember, confidence isn't about becoming someone different—it's about becoming more fully who you already are. Your introverted nature isn't something to overcome; it's something to leverage. The world needs your thoughtful perspective, your careful analysis, and your authentic way of connecting with others."
+                "Remember, confidence isn't about becoming someone differentâ€”it's about becoming more fully who you already are. Your introverted nature isn't something to overcome; it's something to leverage. The world needs your thoughtful perspective, your careful analysis, and your authentic way of connecting with others."
               </StyledBlockquote>
 
               <p className="mb-6">
@@ -638,7 +638,7 @@ const BlogPostIntrovertConfidence = () => {
               </p>
 
               <p className="text-xl font-semibold text-brand-dark">
-                Your quiet strength is not a limitation—it's your superpower. Trust it, develop it, and watch as your authentic confidence transforms not just your own life, but the lives of everyone fortunate enough to experience your thoughtful, genuine presence.
+                Your quiet strength is not a limitationâ€”it's your superpower. Trust it, develop it, and watch as your authentic confidence transforms not just your own life, but the lives of everyone fortunate enough to experience your thoughtful, genuine presence.
               </p>
             </section>
 

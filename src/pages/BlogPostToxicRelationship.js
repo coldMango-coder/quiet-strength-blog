@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import NormalizedLink from '../components/NormalizedLink';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
@@ -25,10 +25,10 @@ const BlogPostToxicRelationship = () => {
               How to Love Yourself After a Toxic Relationship: 8 Proven Steps That Actually Work in 2025
             </h1>
             <div className="flex items-center gap-4 text-brand-primary text-lg">
-              <span>By <strong>Marica Šinko</strong></span>
-              <span className="text-gray-400">•</span>
+              <span>By <strong>Marica Å inko</strong></span>
+              <span className="text-gray-400">â€¢</span>
               <span>July 24, 2025</span>
-              <span className="text-gray-400">•</span>
+              <span className="text-gray-400">â€¢</span>
               <span>8 min read</span>
             </div>
             <p className="text-brand-primary text-sm mt-2">
@@ -63,7 +63,7 @@ const BlogPostToxicRelationship = () => {
             </p>
 
             <p className="text-lg text-brand-dark mb-8">
-              But here's what you need to know: you can absolutely learn to love yourself again. Recovery from toxic relationships is not just possible—it's a journey that millions of people have successfully navigated. In this comprehensive guide, you'll discover eight evidence-based steps that will help you rebuild your self-worth, reclaim your identity, and develop the deep self-love you deserve.
+              But here's what you need to know: you can absolutely learn to love yourself again. Recovery from toxic relationships is not just possibleâ€”it's a journey that millions of people have successfully navigated. In this comprehensive guide, you'll discover eight evidence-based steps that will help you rebuild your self-worth, reclaim your identity, and develop the deep self-love you deserve.
             </p>
 
             <p className="text-lg text-brand-dark mb-12">
@@ -84,7 +84,7 @@ const BlogPostToxicRelationship = () => {
 
             <div className="my-8">
               <img 
-                src="/images/woman-embracing-self-love-freedom-toxic-relationship-recovery-mountain-peak-sunrise-new-beginnings-personal-growth.webp?v=b008f571" 
+                src="/images/woman-embracing-self-love-freedom-toxic-relationship-recovery-mountain-peak-sunrise-new-beginnings-personal-growth.webp" 
                 alt="Woman embracing self-love and freedom after toxic relationship recovery, standing confidently on mountain peak at sunrise representing new beginnings and personal growth" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -97,7 +97,7 @@ const BlogPostToxicRelationship = () => {
             <h2 id="understanding-impact" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Understanding the Impact of Toxic Relationships</h2>
             
             <p className="text-lg text-brand-dark mb-6">
-              Before diving into how to love yourself after a toxic relationship, it's crucial to understand what you've been through. Toxic relationships don't just end—they leave lasting psychological impacts that can affect every aspect of your life.
+              Before diving into how to love yourself after a toxic relationship, it's crucial to understand what you've been through. Toxic relationships don't just endâ€”they leave lasting psychological impacts that can affect every aspect of your life.
             </p>
 
             <h3 className="text-2xl font-bold text-brand-dark mt-12 mb-6">The Psychological Aftermath</h3>
@@ -123,7 +123,7 @@ const BlogPostToxicRelationship = () => {
             <h2 id="importance-self-love" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Why Self-Love is Critical for Recovery</h2>
             
             <p className="text-lg text-brand-dark mb-6">
-              Learning how to love yourself after a toxic relationship isn't just about feeling better—it's about breaking the cycle that may have led you into the toxic relationship in the first place. Self-love acts as your internal compass, helping you recognize red flags, maintain boundaries, and make choices that honor your worth.
+              Learning how to love yourself after a toxic relationship isn't just about feeling betterâ€”it's about breaking the cycle that may have led you into the toxic relationship in the first place. Self-love acts as your internal compass, helping you recognize red flags, maintain boundaries, and make choices that honor your worth.
             </p>
 
             <h3 className="text-2xl font-bold text-brand-dark mt-12 mb-6">What Self-Love Actually Means</h3>
@@ -159,7 +159,7 @@ const BlogPostToxicRelationship = () => {
             <h3 className="text-2xl font-bold text-brand-dark mt-12 mb-6">Release Self-Blame</h3>
             
             <p className="text-lg text-brand-dark mb-6">
-              According to the <a href="https://www.ptsd.va.gov/understand/types/domestic_violence.asp" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">National Center for PTSD</a>, self-blame is one of the most common obstacles to recovery from relationship trauma. Remember that toxic behavior is about the perpetrator's issues, not your shortcomings. You cannot love someone into treating you well, and staying in a toxic relationship doesn't make you weak—it makes you human.
+              According to the <a href="https://www.ptsd.va.gov/understand/types/domestic_violence.asp" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">National Center for PTSD</a>, self-blame is one of the most common obstacles to recovery from relationship trauma. Remember that toxic behavior is about the perpetrator's issues, not your shortcomings. You cannot love someone into treating you well, and staying in a toxic relationship doesn't make you weakâ€”it makes you human.
             </p>
 
             <h2 id="step-2-self-compassion" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Step 2: Practice Self-Compassion Daily</h2>
@@ -203,7 +203,7 @@ const BlogPostToxicRelationship = () => {
             <h2 id="step-4-boundaries" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Step 4: Set Healthy Boundaries</h2>
             
             <p className="text-lg text-brand-dark mb-6">
-              Learning to set and maintain healthy boundaries is crucial for self-love and preventing future toxic relationships. Boundaries aren't walls—they're guidelines that help you honor your needs and values.
+              Learning to set and maintain healthy boundaries is crucial for self-love and preventing future toxic relationships. Boundaries aren't wallsâ€”they're guidelines that help you honor your needs and values.
             </p>
 
             <h3 className="text-2xl font-bold text-brand-dark mt-12 mb-6">Types of Boundaries to Establish</h3>
@@ -222,7 +222,7 @@ const BlogPostToxicRelationship = () => {
             <h2 id="step-5-self-care" className="text-3xl font-bold text-brand-dark mt-16 mb-8 scroll-mt-24">Step 5: Develop New Self-Care Routines</h2>
             
             <p className="text-lg text-brand-dark mb-6">
-              Self-care isn't selfish—it's essential for learning how to love yourself after a toxic relationship. During toxic relationships, your needs likely took a backseat to managing someone else's emotions and demands.
+              Self-care isn't selfishâ€”it's essential for learning how to love yourself after a toxic relationship. During toxic relationships, your needs likely took a backseat to managing someone else's emotions and demands.
             </p>
 
             <h3 className="text-2xl font-bold text-brand-dark mt-12 mb-6">Physical Self-Care</h3>
@@ -243,7 +243,7 @@ const BlogPostToxicRelationship = () => {
 
             <div className="my-8">
               <img 
-                src="/images/woman-practicing-daily-self-care-meditation-mindfulness-exercises-healing-self-love-toxic-relationship.webp?v=b008f571" 
+                src="/images/woman-practicing-daily-self-care-meditation-mindfulness-exercises-healing-self-love-toxic-relationship.webp" 
                 alt="Woman practicing daily self-care meditation and mindfulness exercises for healing and self-love after ending toxic relationship" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -306,7 +306,7 @@ const BlogPostToxicRelationship = () => {
 
             <div className="my-8">
               <img 
-                src="/images/diverse-group-women-supportive-therapy-friendship-circle-toxic-relationship-recovery-healthy-support-networks-healing.webp?v=b008f571" 
+                src="/images/diverse-group-women-supportive-therapy-friendship-circle-toxic-relationship-recovery-healthy-support-networks-healing.webp" 
                 alt="Diverse group of women in supportive therapy or friendship circle discussing toxic relationship recovery and building healthy support networks for healing" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -329,7 +329,7 @@ const BlogPostToxicRelationship = () => {
             <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8">Your Journey to Self-Love Starts Today</h2>
             
             <p className="text-lg text-brand-dark mb-6">
-              Learning how to love yourself after a toxic relationship is one of the most important investments you can make in your future happiness and well-being. Remember that healing isn't about forgetting what happened or pretending it didn't affect you—it's about integrating the experience in a way that makes you stronger, wiser, and more compassionate toward yourself and others.
+              Learning how to love yourself after a toxic relationship is one of the most important investments you can make in your future happiness and well-being. Remember that healing isn't about forgetting what happened or pretending it didn't affect youâ€”it's about integrating the experience in a way that makes you stronger, wiser, and more compassionate toward yourself and others.
             </p>
 
             <p className="text-lg text-brand-dark mb-6">

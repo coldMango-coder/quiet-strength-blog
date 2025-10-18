@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import NormalizedLink from '../components/NormalizedLink';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
@@ -25,10 +25,10 @@ const BlogPostEmotionallyUnavailableMen = () => {
               How to Stop Attracting Emotionally Unavailable Men: 7 Proven Steps That Actually Work in 2025
             </h1>
             <div className="flex items-center gap-4 text-brand-primary text-lg">
-              <span>By <strong>Marica Šinko</strong></span>
-              <span className="text-gray-400">•</span>
+              <span>By <strong>Marica Å inko</strong></span>
+              <span className="text-gray-400">â€¢</span>
               <span>August 03, 2025</span>
-              <span className="text-gray-400">•</span>
+              <span className="text-gray-400">â€¢</span>
               <span>8 min read</span>
             </div>
             <p className="text-brand-primary text-sm mt-2">
@@ -65,7 +65,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </p>
 
             <p className="mb-8">
-              By implementing these research-backed techniques, you can transform your dating life and build the meaningful, emotionally fulfilling relationship you deserve. This isn't about changing who you are—it's about understanding your patterns and making intentional choices that align with your relationship goals.
+              By implementing these research-backed techniques, you can transform your dating life and build the meaningful, emotionally fulfilling relationship you deserve. This isn't about changing who you areâ€”it's about understanding your patterns and making intentional choices that align with your relationship goals.
             </p>
 
             <picture className="block rounded-lg shadow-md my-8 w-full overflow-hidden">
@@ -120,12 +120,12 @@ const BlogPostEmotionallyUnavailableMen = () => {
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">The Familiarity Trap</h3>
               <p className="mb-6">
-                Your brain is wired to seek familiar patterns, even when they're unhealthy. If you grew up with emotionally distant caregivers, your nervous system might interpret emotional unavailability as "normal" or even "exciting." This creates what psychologists call "repetition compulsion"—the unconscious tendency to recreate familiar relationship dynamics.
+                Your brain is wired to seek familiar patterns, even when they're unhealthy. If you grew up with emotionally distant caregivers, your nervous system might interpret emotional unavailability as "normal" or even "exciting." This creates what psychologists call "repetition compulsion"â€”the unconscious tendency to recreate familiar relationship dynamics.
               </p>
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">The Chemistry of Intermittent Reinforcement</h3>
               <p className="mb-6">
-                Emotionally unavailable men often provide intermittent reinforcement—occasional moments of connection followed by withdrawal. This pattern triggers the same neurochemical response as gambling addiction, releasing dopamine in unpredictable bursts that create powerful psychological bonds.
+                Emotionally unavailable men often provide intermittent reinforcementâ€”occasional moments of connection followed by withdrawal. This pattern triggers the same neurochemical response as gambling addiction, releasing dopamine in unpredictable bursts that create powerful psychological bonds.
               </p>
 
               <p className="mb-6">
@@ -213,7 +213,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
               </p>
 
               <img 
-                src="/images/woman-setting-emotional-boundaries-while-remaining-open-to-healthy-relationships-standing-by-peaceful-lake-representing-personal-growth-and-attachment-healing.webp?v=b008f571" 
+                src="/images/woman-setting-emotional-boundaries-while-remaining-open-to-healthy-relationships-standing-by-peaceful-lake-representing-personal-growth-and-attachment-healing.webp" 
                 alt="Woman setting emotional boundaries while remaining open to healthy relationships, standing by peaceful lake representing personal growth and attachment healing" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
@@ -245,7 +245,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
 
               <h4 className="text-xl font-bold text-brand-dark mb-3">Develop Earned Security</h4>
               <p className="mb-6">
-                Through consistent self-care and healthy relationships, you can develop what researchers call "earned security"—the ability to form secure attachments despite early childhood experiences.
+                Through consistent self-care and healthy relationships, you can develop what researchers call "earned security"â€”the ability to form secure attachments despite early childhood experiences.
               </p>
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">Practical Attachment Healing Exercises</h3>
@@ -517,11 +517,11 @@ const BlogPostEmotionallyUnavailableMen = () => {
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">The Potential Trap</h3>
               <p className="mb-6">
-                Many emotionally intelligent women fall into the "potential trap"—seeing who someone could become rather than who they currently are. This often stems from optimism and the ability to see the best in people, but it can lead to relationships with incompatible partners.
+                Many emotionally intelligent women fall into the "potential trap"â€”seeing who someone could become rather than who they currently are. This often stems from optimism and the ability to see the best in people, but it can lead to relationships with incompatible partners.
               </p>
 
               <img 
-                src="/images/couple-demonstrating-emotionally-available-communication-and-healthy-relationship-dynamics-with-open-body-language-and-genuine-connection.webp?v=b008f571" 
+                src="/images/couple-demonstrating-emotionally-available-communication-and-healthy-relationship-dynamics-with-open-body-language-and-genuine-connection.webp" 
                 alt="Couple demonstrating emotionally available communication and healthy relationship dynamics with open body language and genuine connection" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
@@ -808,7 +808,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                   </h3>
                   <div className="ml-11">
                     <p className="text-brand-primary leading-relaxed">
-                      Yes, but only if they recognize the issue and actively commit to change. This typically requires therapy, self-reflection, and consistent effort over time. You cannot change someone else—they must choose to change themselves.
+                      Yes, but only if they recognize the issue and actively commit to change. This typically requires therapy, self-reflection, and consistent effort over time. You cannot change someone elseâ€”they must choose to change themselves.
                     </p>
                   </div>
                 </div>
@@ -889,7 +889,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
               <h2 className="text-3xl font-bold text-brand-dark mb-6">Take Action Today: Your Path to Emotional Freedom</h2>
 
               <p className="mb-6">
-                Learning how to stop attracting emotionally unavailable men isn't about changing who you are—it's about understanding your patterns and making intentional choices that align with your relationship goals. By implementing these seven proven steps, you can break free from cycles of frustration and disappointment to build the secure, fulfilling relationship you deserve.
+                Learning how to stop attracting emotionally unavailable men isn't about changing who you areâ€”it's about understanding your patterns and making intentional choices that align with your relationship goals. By implementing these seven proven steps, you can break free from cycles of frustration and disappointment to build the secure, fulfilling relationship you deserve.
               </p>
 
               <p className="mb-6">
@@ -901,7 +901,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
               </p>
 
               <p className="text-xl font-semibold text-brand-dark">
-                Ready to transform your dating life? Consider working with a qualified therapist who specializes in attachment and relationship patterns. The journey to emotional freedom begins with a single step—and that step starts today.
+                Ready to transform your dating life? Consider working with a qualified therapist who specializes in attachment and relationship patterns. The journey to emotional freedom begins with a single stepâ€”and that step starts today.
               </p>
             </section>
 
@@ -921,3 +921,4 @@ const BlogPostEmotionallyUnavailableMen = () => {
 };
 
 export default BlogPostEmotionallyUnavailableMen;
+

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import NormalizedLink from '../components/NormalizedLink';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
@@ -20,10 +20,10 @@ const BlogPostSocialBattery = () => {
               Introvert Social Battery Drained: 9 Proven Recovery Methods That Actually Work in 2025
             </h1>
             <div className="flex items-center gap-4 text-brand-primary text-lg">
-              <span>By <strong>Marica Šinko</strong></span>
-              <span className="text-gray-400">•</span>
+              <span>By <strong>Marica Å inko</strong></span>
+              <span className="text-gray-400">â€¢</span>
               <span>{postData?.readTime}</span>
-              <span className="text-gray-400">•</span>
+              <span className="text-gray-400">â€¢</span>
               <span>{new Date(postData?.date).toLocaleDateString('en-US', { 
                 year: 'numeric', 
                 month: 'long', 
@@ -54,12 +54,12 @@ const BlogPostSocialBattery = () => {
           <section className="mb-16">
             <h2>Introduction: You're Not Broken, You're Just Different</h2>
             <p>
-              Do you feel completely exhausted after a day of meetings, social events, or even casual conversations? If you're an introvert whose social battery is drained, you're experiencing one of the most common challenges faced by 25-40% of the population. That overwhelming feeling of mental fatigue isn't weakness—it's your brain's natural response to overstimulation.
+              Do you feel completely exhausted after a day of meetings, social events, or even casual conversations? If you're an introvert whose social battery is drained, you're experiencing one of the most common challenges faced by 25-40% of the population. That overwhelming feeling of mental fatigue isn't weaknessâ€”it's your brain's natural response to overstimulation.
             </p>
             
             <div className="my-8">
               <img 
-                src="/images/introvert-social-battery-recovery-tea.webp?v=b008f571" 
+                src="/images/introvert-social-battery-recovery-tea.webp" 
                 alt="Introvert recovering from social battery drain in peaceful home environment with tea and natural lighting" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -84,7 +84,7 @@ const BlogPostSocialBattery = () => {
               When your social battery is drained as an introvert, specific neurological processes are at work. Research published in the Journal of Personality and Social Psychology in 2024 shows that introverts have higher baseline arousal in their nervous systems, meaning they reach overstimulation faster than extroverts.
             </p>
             <StyledBlockquote>
-              "Introverts process information more thoroughly, which requires additional cognitive resources during social interactions. This isn't a flaw—it's a different way of engaging with the world that has many advantages." - Dr. Michael Chen, personality psychology researcher
+              "Introverts process information more thoroughly, which requires additional cognitive resources during social interactions. This isn't a flawâ€”it's a different way of engaging with the world that has many advantages." - Dr. Michael Chen, personality psychology researcher
             </StyledBlockquote>
             <p>The symptoms of a drained social battery include:</p>
             <StyledList items={[
@@ -112,7 +112,7 @@ const BlogPostSocialBattery = () => {
             </p>
             <h3>Step 1: Create a Sensory Sanctuary (5 minutes)</h3>
             <p>
-              Find the quietest space available—your car, a bathroom, or even a supply closet. Dim the lights or close your eyes. Remove or reduce any sensory input: turn off notifications, remove tight clothing, and eliminate background noise.
+              Find the quietest space availableâ€”your car, a bathroom, or even a supply closet. Dim the lights or close your eyes. Remove or reduce any sensory input: turn off notifications, remove tight clothing, and eliminate background noise.
             </p>
             <h3>Step 2: Implement the 4-7-8 Breathing Technique (10 minutes)</h3>
             <p>This method activates your parasympathetic nervous system:</p>
@@ -124,7 +124,7 @@ const BlogPostSocialBattery = () => {
             ]} />
             <h3>Step 3: Mental Decluttering (5 minutes)</h3>
             <p>
-              Write down three things causing you stress or overwhelming thoughts. Don't analyze—just dump them onto paper or into your phone's notes app. This practice, called "cognitive offloading," frees up mental bandwidth.
+              Write down three things causing you stress or overwhelming thoughts. Don't analyzeâ€”just dump them onto paper or into your phone's notes app. This practice, called "cognitive offloading," frees up mental bandwidth.
             </p>
             <KeyTakeawayBox title="Quiet Strength Tip">
               <p>
@@ -137,7 +137,7 @@ const BlogPostSocialBattery = () => {
             <h2>3. Strategic Solitude Planning</h2>
             <h3>How to Schedule Recovery Time Like a Pro</h3>
             <p>
-              The most successful introverts don't wait until their social battery is drained—they proactively schedule recovery time. Strategic solitude planning involves treating alone time as seriously as you would any important appointment.
+              The most successful introverts don't wait until their social battery is drainedâ€”they proactively schedule recovery time. Strategic solitude planning involves treating alone time as seriously as you would any important appointment.
             </p>
             <h3>Daily Solitude Minimums:</h3>
             <StyledList items={[
@@ -156,7 +156,7 @@ const BlogPostSocialBattery = () => {
             
             <div className="my-8">
               <img 
-                src="/images/social-battery-recharging-visual.avif?v=b008f571" 
+                src="/images/social-battery-recharging-visual.avif" 
                 alt="Visual representation of social battery recharging for introverts with glowing energy meter in peaceful setting" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -170,7 +170,7 @@ const BlogPostSocialBattery = () => {
             <p>Your recovery space should engage your parasympathetic nervous system. Research indicates that certain environmental factors accelerate social battery recharging:</p>
             <StyledList items={[
               "Soft, warm lighting (avoid fluorescent bulbs)",
-              "Temperature between 68-72°F",
+              "Temperature between 68-72Â°F",
               "Minimal visual clutter",
               "Natural elements (plants, water sounds, wood textures)",
               "Comfortable seating that supports good posture",
@@ -214,7 +214,7 @@ const BlogPostSocialBattery = () => {
             <h2>5. Setting Healthy Social Boundaries</h2>
             <h3>Protecting Your Energy Before It's Drained</h3>
             <p>
-              Prevention is always more effective than recovery. Setting boundaries isn't selfish—it's essential for maintaining your mental health and being your best self in social situations.
+              Prevention is always more effective than recovery. Setting boundaries isn't selfishâ€”it's essential for maintaining your mental health and being your best self in social situations.
             </p>
             <h3>The Energy Budget Conversation</h3>
             <p>Many introverts struggle with explaining their needs to friends, family, and colleagues. Use this framework:</p>
@@ -261,7 +261,7 @@ const BlogPostSocialBattery = () => {
             <h2>7. Long-term Prevention Strategies</h2>
             <h3>Building Sustainable Social Energy Management</h3>
             <p>
-              The goal isn't just recovering from social exhaustion—it's preventing severe depletion in the first place. These long-term strategies help you maintain consistent energy levels.
+              The goal isn't just recovering from social exhaustionâ€”it's preventing severe depletion in the first place. These long-term strategies help you maintain consistent energy levels.
             </p>
             <h3>Energy Awareness Training:</h3>
             <p>Develop the skill of monitoring your social battery in real-time:</p>
@@ -330,7 +330,7 @@ const BlogPostSocialBattery = () => {
             
             <div className="my-8">
               <img 
-                src="/images/peaceful-reading-sanctuary-recovery.webp?v=b008f571" 
+                src="/images/peaceful-reading-sanctuary-recovery.webp" 
                 alt="Introvert practicing solitude recovery method by reading with headphones in quiet natural setting" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -398,13 +398,13 @@ const BlogPostSocialBattery = () => {
           <section className="border-t pt-12 mt-16">
             <h2>Conclusion: Embracing Your Introvert Superpower</h2>
             <p>
-              Learning to manage a drained social battery isn't about fixing something wrong with you—it's about optimizing your natural introvert strengths. When you honor your energy patterns and implement strategic recovery methods, you'll find that you can engage more authentically and effectively in social situations.
+              Learning to manage a drained social battery isn't about fixing something wrong with youâ€”it's about optimizing your natural introvert strengths. When you honor your energy patterns and implement strategic recovery methods, you'll find that you can engage more authentically and effectively in social situations.
             </p>
             <p>
               Remember these key takeaways: Social battery depletion is a normal part of being an introvert. Prevention through energy budgeting is more effective than crisis recovery. Micro-recovery techniques can sustain you through demanding days. Setting boundaries protects your ability to show up as your best self.
             </p>
             <p>
-              Your introvert traits—deep thinking, authentic connections, careful observation, and thoughtful communication—are valuable contributions to the world. By managing your social energy wisely, you're not just taking care of yourself; you're ensuring that you can share these gifts effectively with others.
+              Your introvert traitsâ€”deep thinking, authentic connections, careful observation, and thoughtful communicationâ€”are valuable contributions to the world. By managing your social energy wisely, you're not just taking care of yourself; you're ensuring that you can share these gifts effectively with others.
             </p>
             <KeyTakeawayBox title="Take Action Today">
               <p>

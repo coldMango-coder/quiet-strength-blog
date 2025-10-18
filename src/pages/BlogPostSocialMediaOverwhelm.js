@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import NormalizedLink from '../components/NormalizedLink';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
@@ -24,10 +24,10 @@ const BlogPostSocialMediaOverwhelm = () => {
               Introvert Overwhelmed by Social Media: 8 Proven Coping Strategies That Actually Work in 2025
             </h1>
             <div className="flex items-center gap-4 text-brand-primary text-lg">
-              <span>By <strong>Marica Šinko</strong></span>
-              <span className="text-gray-400">•</span>
+              <span>By <strong>Marica Å inko</strong></span>
+              <span className="text-gray-400">â€¢</span>
               <span>{postData?.readTime}</span>
-              <span className="text-gray-400">•</span>
+              <span className="text-gray-400">â€¢</span>
               <span>{new Date(postData?.date).toLocaleDateString('en-US', { 
                 year: 'numeric', 
                 month: 'long', 
@@ -61,7 +61,7 @@ const BlogPostSocialMediaOverwhelm = () => {
             
             <div className="my-8">
               <img 
-                src="/images/introvert-overwhelmed-by-social-media-sitting-alone-with-multiple-screens-showing-overwhelming-social-feeds.webp?v=b008f571" 
+                src="/images/introvert-overwhelmed-by-social-media-sitting-alone-with-multiple-screens-showing-overwhelming-social-feeds.webp" 
                 alt="Introvert overwhelmed by social media sitting alone with multiple screens showing overwhelming social feeds" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -75,7 +75,7 @@ const BlogPostSocialMediaOverwhelm = () => {
               If you're an introvert overwhelmed by social media, this comprehensive guide will provide you with scientifically-backed strategies to help you cope while still maintaining your digital connections. You'll discover practical techniques to set healthy boundaries, reduce digital overwhelm, and create a social media experience that actually energizes rather than drains you.
             </p>
             <p>
-              The solution isn't to completely disconnect from social media—it's to learn how to navigate it in a way that honors your introverted nature and protects your mental energy.
+              The solution isn't to completely disconnect from social mediaâ€”it's to learn how to navigate it in a way that honors your introverted nature and protects your mental energy.
             </p>
           </section>
 
@@ -193,7 +193,7 @@ const BlogPostSocialMediaOverwhelm = () => {
             
             <div className="my-8">
               <img 
-                src="/images/person-practicing-healthy-social-media-boundaries-and-mindful-digital-wellness-strategies-for-introverts.webp?v=b008f571" 
+                src="/images/person-practicing-healthy-social-media-boundaries-and-mindful-digital-wellness-strategies-for-introverts.webp" 
                 alt="Person practicing healthy social media boundaries and mindful digital wellness strategies for introverts" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -331,7 +331,7 @@ const BlogPostSocialMediaOverwhelm = () => {
               <div>
                 <h3>How can I explain my social media boundaries to extroverted friends?</h3>
                 <p>
-                  Be honest and direct: "I need to limit my social media time to protect my mental energy. This isn't about you personally—it's about managing my introversion in a healthy way."
+                  Be honest and direct: "I need to limit my social media time to protect my mental energy. This isn't about you personallyâ€”it's about managing my introversion in a healthy way."
                 </p>
               </div>
               <div>
@@ -346,12 +346,12 @@ const BlogPostSocialMediaOverwhelm = () => {
           <section id="final-thoughts" className="border-t pt-12 mt-16">
             <h2>8. Final Thoughts and Action Steps</h2>
             <p>
-              Being an introvert overwhelmed by social media is not a character flaw—it's a natural response to overstimulation. The key is developing personalized strategies that honor your introverted nature while still allowing you to benefit from digital connections.
+              Being an introvert overwhelmed by social media is not a character flawâ€”it's a natural response to overstimulation. The key is developing personalized strategies that honor your introverted nature while still allowing you to benefit from digital connections.
             </p>
             
             <div className="my-8">
               <img 
-                src="/images/introvert-feeling-restored-and-peaceful-after-implementing-social-media-coping-strategies-and-digital-detox.webp?v=b008f571" 
+                src="/images/introvert-feeling-restored-and-peaceful-after-implementing-social-media-coping-strategies-and-digital-detox.webp" 
                 alt="Introvert feeling restored and peaceful after implementing social media coping strategies and digital detox" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -374,7 +374,7 @@ const BlogPostSocialMediaOverwhelm = () => {
               Developing healthy social media habits as an introvert is a journey, not a destination. Be patient with yourself as you experiment with different strategies and find what works best for your unique situation.
             </p>
             <p>
-              The goal isn't to eliminate social media entirely—it's to create a relationship with technology that supports rather than depletes your well-being. By implementing these evidence-based strategies, you can transform social media from a source of overwhelm into a tool that genuinely enriches your life.
+              The goal isn't to eliminate social media entirelyâ€”it's to create a relationship with technology that supports rather than depletes your well-being. By implementing these evidence-based strategies, you can transform social media from a source of overwhelm into a tool that genuinely enriches your life.
             </p>
             
             <KeyTakeawayBox title="Take Action Today">

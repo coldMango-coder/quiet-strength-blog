@@ -50,7 +50,7 @@ const BlogPostMorningRoutine = () => {
           {/* Hero image (with placeholder via OptimizedImage) */}
           <div className="my-8">
             <img
-              src="/images/person-stretching-by-a-window-during-sunrise-with-water-and-journal-on-bedside-table-as-part-of-a-morning-routine-for-confidence-and-productivity.webp?v=b008f571"
+              src="/images/person-stretching-by-a-window-during-sunrise-with-water-and-journal-on-bedside-table-as-part-of-a-morning-routine-for-confidence-and-productivity.webp"
               alt="Person stretching by a window during sunrise with water and journal on bedside table as part of a morning routine for confidence and productivity."
               className="rounded-lg shadow-md w-full h-auto"
               loading="lazy"
@@ -100,7 +100,7 @@ const BlogPostMorningRoutine = () => {
             </p>
             <div className="my-8">
               <img
-                src="/images/young-professional-doing-yoga-in-a-sunlit-living-room-yoga-mat-on-floor-laptop-closed-on-desk-in-background-warm-morning-light-calm-yet-energized-mood-modern-cozy-interior.webp?v=b008f571"
+                src="/images/young-professional-doing-yoga-in-a-sunlit-living-room-yoga-mat-on-floor-laptop-closed-on-desk-in-background-warm-morning-light-calm-yet-energized-mood-modern-cozy-interior.webp"
                 alt="Young professional doing yoga in a sunlit living room, yoga mat on floor, laptop closed on desk in background, warm morning light, calm yet energized mood, modern cozy interior."
                 className="rounded-lg shadow-md w-full h-auto"
                 loading="lazy"
@@ -144,7 +144,7 @@ const BlogPostMorningRoutine = () => {
             </KeyTakeawayBox>
             <div className="my-8">
               <img
-                src="/images/social-battery-recharging-visual.webp?v=b008f571"
+                src="/images/social-battery-recharging-visual.webp"
                 alt="social-battery-recharging-visual"
                 className="rounded-lg shadow-md w-full h-auto"
                 loading="lazy"
@@ -250,4 +250,5 @@ const BlogPostMorningRoutine = () => {
 };
 
 export default BlogPostMorningRoutine;
+
 

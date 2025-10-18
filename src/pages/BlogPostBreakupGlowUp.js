@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import NormalizedLink from '../components/NormalizedLink';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
@@ -25,10 +25,10 @@ const BlogPostBreakupGlowUp = () => {
               Post Breakup Glow Up Transformation Guide: 10 Proven Steps to Become Your Best Self in 2025
             </h1>
             <div className="flex items-center gap-4 text-brand-primary text-lg">
-              <span>By <strong>Marica Šinko</strong></span>
-              <span className="text-gray-400">•</span>
+              <span>By <strong>Marica Å inko</strong></span>
+              <span className="text-gray-400">â€¢</span>
               <span>July 28, 2025</span>
-              <span className="text-gray-400">•</span>
+              <span className="text-gray-400">â€¢</span>
               <span>8 min read</span>
             </div>
             <p className="text-brand-primary text-sm mt-2">
@@ -53,7 +53,7 @@ const BlogPostBreakupGlowUp = () => {
 
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-brand-dark mb-8">
-              Going through a breakup can feel like your world is falling apart, but what if I told you that this painful moment could become the catalyst for the most incredible transformation of your life? A post breakup glow up transformation guide isn't just about looking better—it's about becoming the strongest, most confident version of yourself you've ever been.
+              Going through a breakup can feel like your world is falling apart, but what if I told you that this painful moment could become the catalyst for the most incredible transformation of your life? A post breakup glow up transformation guide isn't just about looking betterâ€”it's about becoming the strongest, most confident version of yourself you've ever been.
             </p>
 
             <p className="text-lg text-brand-dark mb-8">
@@ -66,7 +66,7 @@ const BlogPostBreakupGlowUp = () => {
 
             <div className="my-8">
               <img 
-                src="/images/woman-showing-post-breakup-glow-up-transformation-before-and-after-in-mirror-reflection-demonstrating-confidence-and-style-improvement.webp?v=b008f571" 
+                src="/images/woman-showing-post-breakup-glow-up-transformation-before-and-after-in-mirror-reflection-demonstrating-confidence-and-style-improvement.webp" 
                 alt="Woman showing post breakup glow up transformation before and after in mirror reflection, demonstrating confidence and style improvement" 
                 className="rounded-lg shadow-md w-full" 
                 loading="lazy"
@@ -117,7 +117,7 @@ const BlogPostBreakupGlowUp = () => {
               
               <h3 className="text-2xl font-bold text-brand-dark mb-4">Step 1: Process Your Emotions Healthily</h3>
               <p className="text-lg text-brand-dark mb-6">
-                Before any external transformation can stick, you need to address your emotional foundation. This isn't about "getting over it" quickly—it's about processing your feelings in a way that empowers your growth.
+                Before any external transformation can stick, you need to address your emotional foundation. This isn't about "getting over it" quicklyâ€”it's about processing your feelings in a way that empowers your growth.
               </p>
 
               <h4 className="text-xl font-semibold text-brand-dark mb-3">Journaling for Emotional Clarity:</h4>
@@ -133,7 +133,7 @@ const BlogPostBreakupGlowUp = () => {
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">Step 2: Establish Healthy Boundaries</h3>
               <p className="text-lg text-brand-dark mb-6">
-                Part of your emotional glow up involves setting clear boundaries—with your ex, with mutual friends, and with yourself.
+                Part of your emotional glow up involves setting clear boundariesâ€”with your ex, with mutual friends, and with yourself.
               </p>
 
               <h4 className="text-xl font-semibold text-brand-dark mb-3">Digital and Personal Boundaries:</h4>
@@ -157,7 +157,7 @@ const BlogPostBreakupGlowUp = () => {
 
               <div className="my-8">
                 <img 
-                  src="/images/woman-practicing-yoga-outdoors-during-post-breakup-transformation-journey-focusing-on-physical-and-mental-wellness-for-glow-up.webp?v=b008f571" 
+                  src="/images/woman-practicing-yoga-outdoors-during-post-breakup-transformation-journey-focusing-on-physical-and-mental-wellness-for-glow-up.webp" 
                   alt="Woman practicing yoga outdoors during post breakup transformation journey, focusing on physical and mental wellness for glow up" 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"
@@ -172,7 +172,7 @@ const BlogPostBreakupGlowUp = () => {
               <h4 className="text-xl font-semibold text-brand-dark mb-3">Creating Your Fitness Plan:</h4>
               <StyledList items={[
                 "Start with 20-30 minutes of activity you enjoy (dancing, hiking, yoga, weightlifting)",
-                "Focus on consistency over intensity—3-4 days per week is more sustainable than daily burnout",
+                "Focus on consistency over intensityâ€”3-4 days per week is more sustainable than daily burnout",
                 "Track your progress with photos and measurements, not just weight",
                 "Consider group fitness classes to combine exercise with social connection"
               ]} />
@@ -242,7 +242,7 @@ const BlogPostBreakupGlowUp = () => {
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">Step 8: Practice Healthy Relationship Skills</h3>
               <p className="text-lg text-brand-dark mb-6">
-                Your post breakup glow up transformation guide should include developing better relationship skills for the future—both romantic and platonic.
+                Your post breakup glow up transformation guide should include developing better relationship skills for the futureâ€”both romantic and platonic.
               </p>
 
               <StyledBlockquote>
@@ -260,8 +260,8 @@ const BlogPostBreakupGlowUp = () => {
 
               <div className="my-8">
                 <img 
-                  src="/images/confident-woman-journaling-at-café-during-breakup-recovery-representing-personal-growth-and-transformation-in-glow-up-guide.webp?v=b008f571" 
-                  alt="Confident woman journaling at café during breakup recovery, representing personal growth and transformation in glow up guide" 
+                  src="/images/confident-woman-journaling-at-cafÃ©-during-breakup-recovery-representing-personal-growth-and-transformation-in-glow-up-guide.webp" 
+                  alt="Confident woman journaling at cafÃ© during breakup recovery, representing personal growth and transformation in glow up guide" 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"
                   decoding="async"
@@ -269,7 +269,7 @@ const BlogPostBreakupGlowUp = () => {
                   height="800"
                   sizes="(max-width: 768px) 100vw, 720px"
                 />
-                <p className="text-sm text-gray-600 italic text-center mt-2">Confident woman journaling at café during breakup recovery, representing personal growth and transformation in glow up guide</p>
+                <p className="text-sm text-gray-600 italic text-center mt-2">Confident woman journaling at cafÃ© during breakup recovery, representing personal growth and transformation in glow up guide</p>
               </div>
 
               <h4 className="text-xl font-semibold text-brand-dark mb-3">Career Development Strategies:</h4>
@@ -303,7 +303,7 @@ const BlogPostBreakupGlowUp = () => {
               
               <h3 className="text-2xl font-bold text-brand-dark mb-4">Step 10: Refresh Your Personal Style</h3>
               <p className="text-lg text-brand-dark mb-6">
-                The final phase of your post breakup glow up transformation guide involves updating your external appearance to reflect your internal growth. This isn't about conforming to trends—it's about expressing your authentic self confidently.
+                The final phase of your post breakup glow up transformation guide involves updating your external appearance to reflect your internal growth. This isn't about conforming to trendsâ€”it's about expressing your authentic self confidently.
               </p>
 
               <h4 className="text-xl font-semibold text-brand-dark mb-3">Wardrobe and Self-Care Refresh:</h4>
@@ -347,7 +347,7 @@ const BlogPostBreakupGlowUp = () => {
               <KeyTakeawayBox>
                 <h3 className="text-xl font-bold text-brand-dark mb-4">Maintaining Your Glow Up Long-Term:</h3>
                 <p className="text-lg text-brand-dark">
-                  Your post breakup glow up transformation guide doesn't end after 90 days—it's the beginning of a lifelong commitment to personal growth. Focus on building sustainable habits rather than relying on motivation alone.
+                  Your post breakup glow up transformation guide doesn't end after 90 daysâ€”it's the beginning of a lifelong commitment to personal growth. Focus on building sustainable habits rather than relying on motivation alone.
                 </p>
               </KeyTakeawayBox>
             </section>
@@ -404,11 +404,11 @@ const BlogPostBreakupGlowUp = () => {
               <h2 className="text-3xl font-bold text-brand-dark mb-6">Conclusion: Your Best Life Starts Now</h2>
               
               <p className="text-lg text-brand-dark mb-6">
-                Your post breakup glow up transformation guide journey isn't just about recovering from a relationship—it's about discovering capabilities, strength, and joy you never knew you had. The person you become through this process will be more resilient, self-aware, and confident than ever before.
+                Your post breakup glow up transformation guide journey isn't just about recovering from a relationshipâ€”it's about discovering capabilities, strength, and joy you never knew you had. The person you become through this process will be more resilient, self-aware, and confident than ever before.
               </p>
 
               <p className="text-lg text-brand-dark mb-6">
-                Remember that transformation is not a destination but a continuous journey of growth and self-discovery. The skills you develop during this challenging time—emotional resilience, self-care habits, boundary setting, and personal goal achievement—will serve you for the rest of your life.
+                Remember that transformation is not a destination but a continuous journey of growth and self-discovery. The skills you develop during this challenging timeâ€”emotional resilience, self-care habits, boundary setting, and personal goal achievementâ€”will serve you for the rest of your life.
               </p>
 
               <KeyTakeawayBox>
@@ -424,7 +424,7 @@ const BlogPostBreakupGlowUp = () => {
               </KeyTakeawayBox>
 
               <p className="text-lg text-brand-dark mb-8">
-                You have everything within you to not just recover from this breakup, but to create a life that's more authentic, fulfilling, and joyful than you ever imagined possible. Your glow up starts now—and the best version of yourself is waiting.
+                You have everything within you to not just recover from this breakup, but to create a life that's more authentic, fulfilling, and joyful than you ever imagined possible. Your glow up starts nowâ€”and the best version of yourself is waiting.
               </p>
 
               <StyledBlockquote>
@@ -442,3 +442,4 @@ const BlogPostBreakupGlowUp = () => {
 };
 
 export default BlogPostBreakupGlowUp;
+

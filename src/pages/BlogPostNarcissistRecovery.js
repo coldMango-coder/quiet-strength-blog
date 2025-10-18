@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import NormalizedLink from '../components/NormalizedLink';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
@@ -25,10 +25,10 @@ const BlogPostNarcissistRecovery = () => {
               Emotional Manipulation Tactics Narcissist Ex Recovery: 12 Proven Steps to Reclaim Your Life in 2025
             </h1>
             <div className="flex items-center gap-4 text-brand-primary text-lg">
-              <span>By <strong>Marica Šinko</strong></span>
-              <span className="text-gray-400">•</span>
+              <span>By <strong>Marica Å inko</strong></span>
+              <span className="text-gray-400">â€¢</span>
               <span>July 27, 2025</span>
-              <span className="text-gray-400">•</span>
+              <span className="text-gray-400">â€¢</span>
               <span>8 min read</span>
             </div>
             <p className="text-brand-primary text-sm mt-2">
@@ -51,7 +51,7 @@ const BlogPostNarcissistRecovery = () => {
 
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-brand-dark mb-8">
-              Did you know that 1 in 6 people have experienced narcissistic abuse in intimate relationships? If you're reading this, you've likely endured emotional manipulation tactics from a narcissist ex and are now searching for a path to recovery. The invisible wounds left by psychological manipulation can feel overwhelming, but healing is not only possible—it's inevitable with the right guidance.
+              Did you know that 1 in 6 people have experienced narcissistic abuse in intimate relationships? If you're reading this, you've likely endured emotional manipulation tactics from a narcissist ex and are now searching for a path to recovery. The invisible wounds left by psychological manipulation can feel overwhelming, but healing is not only possibleâ€”it's inevitable with the right guidance.
             </p>
 
             <p className="text-lg text-brand-dark mb-8">
@@ -89,7 +89,7 @@ const BlogPostNarcissistRecovery = () => {
 
               <div className="my-8">
                 <img 
-                  src="/images/confident-woman-standing-triumphantly-at-sunrise-representing-emotional-recovery-and-healing-from-narcissistic-abuse-manipulation-tactics.webp?v=b008f571" 
+                  src="/images/confident-woman-standing-triumphantly-at-sunrise-representing-emotional-recovery-and-healing-from-narcissistic-abuse-manipulation-tactics.webp" 
                   alt="Confident woman standing triumphantly at sunrise representing emotional recovery and healing from narcissistic abuse manipulation tactics" 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"
@@ -98,7 +98,7 @@ const BlogPostNarcissistRecovery = () => {
               </div>
 
               <p className="text-lg text-brand-dark mb-6">
-                <strong>Love bombing followed by devaluation</strong> creates an addictive cycle. The intense affection, gifts, and attention at the beginning weren't genuine love—they were calculated moves to secure your attachment. Once hooked, the devaluation phase began with criticism, withdrawal, and emotional punishment.
+                <strong>Love bombing followed by devaluation</strong> creates an addictive cycle. The intense affection, gifts, and attention at the beginning weren't genuine loveâ€”they were calculated moves to secure your attachment. Once hooked, the devaluation phase began with criticism, withdrawal, and emotional punishment.
               </p>
 
               <StyledList items={[
@@ -119,17 +119,17 @@ const BlogPostNarcissistRecovery = () => {
               <h2 className="text-3xl font-bold text-brand-dark mb-6">The Science Behind Narcissistic Manipulation and Trauma Bonding</h2>
               
               <p className="text-lg text-brand-dark mb-6">
-                Trauma bonding explains why leaving felt impossible and why you might still feel attached to your narcissistic ex despite the abuse. This psychological phenomenon occurs when intermittent reinforcement—cycles of punishment and reward—creates powerful biochemical addiction.
+                Trauma bonding explains why leaving felt impossible and why you might still feel attached to your narcissistic ex despite the abuse. This psychological phenomenon occurs when intermittent reinforcementâ€”cycles of punishment and rewardâ€”creates powerful biochemical addiction.
               </p>
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">How Your Brain Responds to Manipulation</h3>
               
               <p className="text-lg text-brand-dark mb-6">
-                During love bombing, your brain releases dopamine, oxytocin, and serotonin—the same chemicals involved in addiction. When your ex withdrew affection, your brain craved these chemicals, creating withdrawal-like symptoms that made you work harder for their approval.
+                During love bombing, your brain releases dopamine, oxytocin, and serotoninâ€”the same chemicals involved in addiction. When your ex withdrew affection, your brain craved these chemicals, creating withdrawal-like symptoms that made you work harder for their approval.
               </p>
 
               <StyledBlockquote>
-                "Research on trauma bonding reveals that the unpredictable nature of narcissistic behavior actually strengthens attachment through what psychologists call 'intermittent reinforcement'—the most addictive reward schedule known to behavioral science." - Dr. Patrick Carnes, Trauma Bonding Expert
+                "Research on trauma bonding reveals that the unpredictable nature of narcissistic behavior actually strengthens attachment through what psychologists call 'intermittent reinforcement'â€”the most addictive reward schedule known to behavioral science." - Dr. Patrick Carnes, Trauma Bonding Expert
               </StyledBlockquote>
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">Breaking Free from Biochemical Bondage</h3>
@@ -149,7 +149,7 @@ const BlogPostNarcissistRecovery = () => {
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">Step 2: Implement Complete No Contact (When Possible)</h3>
               <p className="text-lg text-brand-dark mb-6">
-                No contact means zero communication—no texts, calls, emails, or social media stalking. Block them on all platforms and resist the urge to check their updates. If you share children, limit communication to essential parenting matters only, preferably through a co-parenting app.
+                No contact means zero communicationâ€”no texts, calls, emails, or social media stalking. Block them on all platforms and resist the urge to check their updates. If you share children, limit communication to essential parenting matters only, preferably through a co-parenting app.
               </p>
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">Step 3: Educate Yourself About Narcissistic Personality Disorder</h3>
@@ -159,7 +159,7 @@ const BlogPostNarcissistRecovery = () => {
 
               <div className="my-8">
                 <img 
-                  src="/images/open-journal-with-a-pen-cup-of-tea-and-small-potted-plant-on-a-white-desk-in-soft-natural-light-evoking-calm-and-reflection.webp?v=b008f571" 
+                  src="/images/open-journal-with-a-pen-cup-of-tea-and-small-potted-plant-on-a-white-desk-in-soft-natural-light-evoking-calm-and-reflection.webp" 
                   alt="Open journal with a pen, cup of tea, and small potted plant on a white desk in soft natural light, evoking calm and reflection." 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"
@@ -169,7 +169,7 @@ const BlogPostNarcissistRecovery = () => {
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">Step 4: Rebuild Your Support Network</h3>
               <p className="text-lg text-brand-dark mb-6">
-                Narcissistic manipulation often involves isolating you from friends and family. Reach out to people who knew you before the relationship. Explain what happened—true friends will understand and support your recovery.
+                Narcissistic manipulation often involves isolating you from friends and family. Reach out to people who knew you before the relationship. Explain what happenedâ€”true friends will understand and support your recovery.
               </p>
 
               <StyledList items={[
@@ -200,12 +200,12 @@ const BlogPostNarcissistRecovery = () => {
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">Reclaiming Your Voice and Opinions</h3>
               <p className="text-lg text-brand-dark mb-6">
-                Start expressing preferences again, even in small matters. Choose the restaurant, pick the movie, or voice your political opinions. Your narcissistic ex likely made you feel like your thoughts didn't matter—prove them wrong by honoring your perspectives.
+                Start expressing preferences again, even in small matters. Choose the restaurant, pick the movie, or voice your political opinions. Your narcissistic ex likely made you feel like your thoughts didn't matterâ€”prove them wrong by honoring your perspectives.
               </p>
 
               <h3 className="text-2xl font-bold text-brand-dark mb-4">Building Self-Compassion and Self-Worth</h3>
               <p className="text-lg text-brand-dark mb-6">
-                Replace the harsh inner critic your ex installed with a compassionate inner voice. Treat yourself with the same kindness you'd show a dear friend facing similar struggles. Self-worth isn't earned through perfection—it's your birthright.
+                Replace the harsh inner critic your ex installed with a compassionate inner voice. Treat yourself with the same kindness you'd show a dear friend facing similar struggles. Self-worth isn't earned through perfectionâ€”it's your birthright.
               </p>
             </section>
 
@@ -223,7 +223,7 @@ const BlogPostNarcissistRecovery = () => {
 
               <div className="my-8">
                 <img 
-                  src="/images/person-setting-healthy-emotional-boundaries-with-protective-golden-light-representing-recovery-from-narcissist-ex-manipulation-and-self-protection.webp?v=b008f571" 
+                  src="/images/person-setting-healthy-emotional-boundaries-with-protective-golden-light-representing-recovery-from-narcissist-ex-manipulation-and-self-protection.webp" 
                   alt="Person setting healthy emotional boundaries with protective golden light representing recovery from narcissist ex manipulation and self-protection" 
                   className="rounded-lg shadow-md w-full" 
                   loading="lazy"
@@ -315,14 +315,14 @@ const BlogPostNarcissistRecovery = () => {
                 <div>
                   <h3 className="text-xl font-bold text-brand-dark mb-3">Why do I still miss my narcissistic ex despite the abuse?</h3>
                   <p className="text-lg text-brand-dark">
-                    Trauma bonding creates powerful psychological attachment that can persist long after abuse ends. Missing them doesn't mean you want them back—it means your brain is healing from manufactured addiction.
+                    Trauma bonding creates powerful psychological attachment that can persist long after abuse ends. Missing them doesn't mean you want them backâ€”it means your brain is healing from manufactured addiction.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-bold text-brand-dark mb-3">What if my narcissistic ex tries to come back?</h3>
                   <p className="text-lg text-brand-dark">
-                    Expect hoovering attempts (efforts to suck you back in). Maintain no contact and remember that any contact resets your healing timeline. Their return attempts aren't love—they're control tactics.
+                    Expect hoovering attempts (efforts to suck you back in). Maintain no contact and remember that any contact resets your healing timeline. Their return attempts aren't loveâ€”they're control tactics.
                   </p>
                 </div>
               </div>
@@ -332,7 +332,7 @@ const BlogPostNarcissistRecovery = () => {
               <h2 className="text-3xl font-bold text-brand-dark mb-6">Conclusion: Your Journey to Freedom Starts Now</h2>
               
               <p className="text-lg text-brand-dark mb-6">
-                Recovering from emotional manipulation tactics narcissist ex partners used isn't just about healing from abuse—it's about becoming the most authentic, empowered version of yourself. Every step you take toward recovery is an act of courage and self-love.
+                Recovering from emotional manipulation tactics narcissist ex partners used isn't just about healing from abuseâ€”it's about becoming the most authentic, empowered version of yourself. Every step you take toward recovery is an act of courage and self-love.
               </p>
 
               <KeyTakeawayBox>
