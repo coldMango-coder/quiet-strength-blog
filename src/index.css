@@ -3146,3 +3146,10 @@ mark:focus,
 
 /* Balanced headings for category cards */
 .cat-title { text-wrap: balance; }
+
+/* Prevent card overlap under grid compression */
+@media (min-width: 768px) {
+  .grid > div {
+    flex: 1 1 0;
+  }
+}

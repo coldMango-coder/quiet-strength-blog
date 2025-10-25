@@ -36,7 +36,7 @@ const themeDescriptions = {
 
 const ThemeCard = ({ icon, title, description, categoryName }) => (
   <div
-    className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-1 hover:scale-[1.02] sm:min-w-[280px] lg:min-w-[360px]"
+    className="flex flex-col justify-between bg-white p-8 rounded-lg shadow-md ring-1 ring-neutral-200 hover:shadow-xl transition-all duration-300 text-center items-center transform hover:-translate-y-1 hover:scale-[1.02] min-w-[280px] sm:min-w-[300px] md:min-w-[320px] lg:min-w-[340px] h-full"
   >
     <div className="mb-6 text-brand-emphasis bg-brand-secondary/20 p-4 rounded-full transition-transform duration-300">
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">{icon}</svg>
@@ -60,7 +60,7 @@ const Themes = () => {
         <div className="text-left mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-dark">Our Core Self-Help Themes for Introverted Women</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 place-items-stretch auto-rows-fr w-full">
           {Object.values(categories).map((category, index) => (
             <ThemeCard
               key={index}
