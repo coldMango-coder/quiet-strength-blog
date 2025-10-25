@@ -1,0 +1,115 @@
+{
+  "url": "http://localhost:5400/",
+  "requests": [
+    {
+      "url": "http://localhost:5400/",
+      "method": "GET",
+      "resourceType": "document"
+    },
+    {
+      "url": "http://localhost:5400/fonts/inter-var.woff2",
+      "method": "GET",
+      "resourceType": "font"
+    },
+    {
+      "url": "http://localhost:5400/fonts/charter-regular.woff2",
+      "method": "GET",
+      "resourceType": "font"
+    },
+    {
+      "url": "http://localhost:5400/fonts/charter-bold.woff2",
+      "method": "GET",
+      "resourceType": "font"
+    },
+    {
+      "url": "http://localhost:5400/fonts/fonts.css",
+      "method": "GET",
+      "resourceType": "stylesheet"
+    },
+    {
+      "url": "http://localhost:5400/images/logo.avif",
+      "method": "GET",
+      "resourceType": "image"
+    },
+    {
+      "url": "http://localhost:5400/static/js/main.a6d5fc17.js",
+      "method": "GET",
+      "resourceType": "script"
+    },
+    {
+      "url": "http://localhost:5400/static/css/main.c610d45a.css",
+      "method": "GET",
+      "resourceType": "stylesheet"
+    },
+    {
+      "url": "http://localhost:5400/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.avif?v=b008f571",
+      "method": "GET",
+      "resourceType": "image"
+    },
+    {
+      "url": "http://localhost:5400/images/confident-woman-journaling-about-emotional-growth-and-learning-how-to-stop-attracting-emotionally-unavailable-men-in-bright-coffee-shop-setting.avif?v=b008f571",
+      "method": "GET",
+      "resourceType": "image"
+    },
+    {
+      "url": "http://localhost:5400/images/20250728_1647_Engaged%20Coffee%20Shop%20Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.webp?v=b008f571",
+      "method": "GET",
+      "resourceType": "image"
+    },
+    {
+      "url": "http://localhost:5400/images/marica-sinko-author-photo.avif",
+      "method": "GET",
+      "resourceType": "image"
+    }
+  ],
+  "responses": [
+    {
+      "url": "http://localhost:5400/",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:5400/static/css/main.c610d45a.css",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:5400/fonts/fonts.css",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:5400/fonts/charter-regular.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:5400/fonts/inter-var.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:5400/images/logo.avif",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:5400/fonts/charter-bold.woff2",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:5400/static/js/main.a6d5fc17.js",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:5400/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.avif?v=b008f571",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:5400/images/20250728_1647_Engaged%20Coffee%20Shop%20Meeting_simple_compose_01k18r0c9neffsbqp5aehdjf59.webp?v=b008f571",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:5400/images/marica-sinko-author-photo.avif",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:5400/images/confident-woman-journaling-about-emotional-growth-and-learning-how-to-stop-attracting-emotionally-unavailable-men-in-bright-coffee-shop-setting.avif?v=b008f571",
+      "status": 200
+    }
+  ]
+}

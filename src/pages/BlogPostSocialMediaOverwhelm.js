@@ -1,10 +1,11 @@
-﻿import React from 'react';
+import React from 'react';
 import NormalizedLink from '../components/NormalizedLink';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import { sortedBlogPosts } from '../blogData';
-import AuthorBio from '../components/AuthorBio';
+import AuthorBio from '../components/AuthorBio.jsx';
+import TableOfContents from '../components/TableOfContents';
 
 const BlogPostSocialMediaOverwhelm = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'introvert-overwhelmed-by-social-media-8-proven-coping-strategies-that-actually-work-in-2025');
@@ -18,16 +19,14 @@ const BlogPostSocialMediaOverwhelm = () => {
           &larr; Back to Home
         </NormalizedLink>
         
-        <article className="article-container mx-auto max-w-[720px]">
+        <article className="article-container mx-auto">
           <header className="mb-16 text-left">
-            <h1 className="text-4xl md:text-6xl font-bold text-brand-dark mb-6">
-              Introvert Overwhelmed by Social Media: 8 Proven Coping Strategies That Actually Work in 2025
-            </h1>
+            <h1 className="font-bold mb-6">Introvert Overwhelmed by Social Media: 8 Proven Coping Strategies That Actually Work in 2025</h1>
             <div className="flex items-center gap-4 text-brand-primary text-lg">
-              <span>By <strong>Marica Å inko</strong></span>
-              <span className="text-gray-400">â€¢</span>
+              <span>By <strong>Marica �inko</strong></span>
+              <span className="text-gray-400">•</span>
               <span>{postData?.readTime}</span>
-              <span className="text-gray-400">â€¢</span>
+              <span className="text-gray-400">•</span>
               <span>{new Date(postData?.date).toLocaleDateString('en-US', { 
                 year: 'numeric', 
                 month: 'long', 
@@ -39,29 +38,19 @@ const BlogPostSocialMediaOverwhelm = () => {
             </p>
           </header>
 
-          <section className="bg-white p-8 rounded-lg mb-16 shadow-md text-base">
-            <h3 className="text-2xl font-bold text-brand-dark mb-4">Table of Contents</h3>
-            <ul className="space-y-3 toc-list">
-              <li><a href="#why-social-media-overwhelms-introverts" className="text-brand-emphasis hover:underline">1. Why Social Media Overwhelms Introverts More Than Extroverts</a></li>
-              <li><a href="#8-evidence-based-coping-strategies" className="text-brand-emphasis hover:underline">2. 8 Evidence-Based Coping Strategies</a></li>
-              <li><a href="#creating-healthy-digital-boundaries" className="text-brand-emphasis hover:underline">3. Creating Healthy Digital Boundaries</a></li>
-              <li><a href="#mindful-social-media-use" className="text-brand-emphasis hover:underline">4. The Power of Mindful Social Media Use</a></li>
-              <li><a href="#when-to-take-break" className="text-brand-emphasis hover:underline">5. When to Take a Complete Break</a></li>
-              <li><a href="#building-support-system" className="text-brand-emphasis hover:underline">6. Building a Support System</a></li>
-              <li><a href="#faq" className="text-brand-emphasis hover:underline">7. Frequently Asked Questions</a></li>
-              <li><a href="#final-thoughts" className="text-brand-emphasis hover:underline">8. Final Thoughts and Action Steps</a></li>
-            </ul>
-          </section>
+          <div id="toc-anchor" className="mb-8" />
+
+          {/* TOC rendered globally via BlogPostPage; remove inline duplicate */}
 
           <section className="mb-16">
-            <h2>Introduction: You're Not Alone in This Struggle</h2>
+            <h2 className="font-bold mb-4">Introduction: You're Not Alone in This Struggle</h2>
             <p>
               Are you an introvert who feels completely drained after just 10 minutes of scrolling through Instagram or LinkedIn? You're not alone. Recent studies show that 78% of introverts report feeling emotionally exhausted after engaging with social media for more than 30 minutes daily. The constant stream of notifications, the pressure to engage, and the overwhelming amount of social interaction can leave introverts feeling mentally depleted and anxious.
             </p>
             
             <div className="my-8">
               <img 
-                src="/images/introvert-overwhelmed-by-social-media-sitting-alone-with-multiple-screens-showing-overwhelming-social-feeds.webp" 
+                src="/images/introvert-overwhelmed-by-social-media-sitting-alone-with-multiple-screens-showing-overwhelming-social-feeds.webp?v=1760798229914" 
                 alt="Introvert overwhelmed by social media sitting alone with multiple screens showing overwhelming social feeds" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -75,7 +64,7 @@ const BlogPostSocialMediaOverwhelm = () => {
               If you're an introvert overwhelmed by social media, this comprehensive guide will provide you with scientifically-backed strategies to help you cope while still maintaining your digital connections. You'll discover practical techniques to set healthy boundaries, reduce digital overwhelm, and create a social media experience that actually energizes rather than drains you.
             </p>
             <p>
-              The solution isn't to completely disconnect from social mediaâ€”it's to learn how to navigate it in a way that honors your introverted nature and protects your mental energy.
+              The solution isn't to completely disconnect from social media—it's to learn how to navigate it in a way that honors your introverted nature and protects your mental energy.
             </p>
           </section>
 
@@ -83,7 +72,7 @@ const BlogPostSocialMediaOverwhelm = () => {
             <h2>1. Why Social Media Overwhelms Introverts More Than Extroverts</h2>
             <h3>The Science Behind Introvert Social Media Overwhelm</h3>
             <p>
-              Understanding why you feel overwhelmed is the first step toward finding effective solutions. Research from <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2020.590748/full" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Frontiers in Psychology</a> reveals that introverts process social engagement differently than extroverts, with studies showing that introverts can feel overwhelmed by social interactions and need time alone to recharge. Additional research from <a href="https://www.simplypsychology.org/introvert-extrovert.html" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Simply Psychology</a> confirms that introverts and extroverts have fundamental differences in how they process social stimuli and manage energy, supporting neurological differences in social processing between personality types.
+              Understanding why you feel overwhelmed is the first step toward finding effective solutions. Research from <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2020.590748/full" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Frontiers in Psychology</a> reveals that introverts process social engagement differently than extroverts, with studies showing that introverts can feel overwhelmed by social interactions and need time alone to recharge. Additional research from <a href="https://www.simplypsychology.org/introvert-extrovert.html" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Simply Psychology</a> confirms that introverts and extroverts have fundamental differences in how they process social stimuli and manage energy, supporting neurological differences in social processing between personality types.
             </p>
             <p>
               Introverts have a more sensitive nervous system that becomes overstimulated more quickly. When you're scrolling through social media, your brain is processing:
@@ -193,7 +182,7 @@ const BlogPostSocialMediaOverwhelm = () => {
             
             <div className="my-8">
               <img 
-                src="/images/person-practicing-healthy-social-media-boundaries-and-mindful-digital-wellness-strategies-for-introverts.webp" 
+                src="/images/person-practicing-healthy-social-media-boundaries-and-mindful-digital-wellness-strategies-for-introverts.webp?v=1760798229914" 
                 alt="Person practicing healthy social media boundaries and mindful digital wellness strategies for introverts" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -331,7 +320,7 @@ const BlogPostSocialMediaOverwhelm = () => {
               <div>
                 <h3>How can I explain my social media boundaries to extroverted friends?</h3>
                 <p>
-                  Be honest and direct: "I need to limit my social media time to protect my mental energy. This isn't about you personallyâ€”it's about managing my introversion in a healthy way."
+                  Be honest and direct: "I need to limit my social media time to protect my mental energy. This isn't about you personally—it's about managing my introversion in a healthy way."
                 </p>
               </div>
               <div>
@@ -346,12 +335,12 @@ const BlogPostSocialMediaOverwhelm = () => {
           <section id="final-thoughts" className="border-t pt-12 mt-16">
             <h2>8. Final Thoughts and Action Steps</h2>
             <p>
-              Being an introvert overwhelmed by social media is not a character flawâ€”it's a natural response to overstimulation. The key is developing personalized strategies that honor your introverted nature while still allowing you to benefit from digital connections.
+              Being an introvert overwhelmed by social media is not a character flaw—it's a natural response to overstimulation. The key is developing personalized strategies that honor your introverted nature while still allowing you to benefit from digital connections.
             </p>
             
             <div className="my-8">
               <img 
-                src="/images/introvert-feeling-restored-and-peaceful-after-implementing-social-media-coping-strategies-and-digital-detox.webp" 
+                src="/images/introvert-feeling-restored-and-peaceful-after-implementing-social-media-coping-strategies-and-digital-detox.webp?v=1760798229914" 
                 alt="Introvert feeling restored and peaceful after implementing social media coping strategies and digital detox" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -374,7 +363,7 @@ const BlogPostSocialMediaOverwhelm = () => {
               Developing healthy social media habits as an introvert is a journey, not a destination. Be patient with yourself as you experiment with different strategies and find what works best for your unique situation.
             </p>
             <p>
-              The goal isn't to eliminate social media entirelyâ€”it's to create a relationship with technology that supports rather than depletes your well-being. By implementing these evidence-based strategies, you can transform social media from a source of overwhelm into a tool that genuinely enriches your life.
+              The goal isn't to eliminate social media entirely—it's to create a relationship with technology that supports rather than depletes your well-being. By implementing these evidence-based strategies, you can transform social media from a source of overwhelm into a tool that genuinely enriches your life.
             </p>
             
             <KeyTakeawayBox title="Take Action Today">
@@ -401,3 +390,5 @@ const BlogPostSocialMediaOverwhelm = () => {
 };
 
 export default BlogPostSocialMediaOverwhelm;
+
+

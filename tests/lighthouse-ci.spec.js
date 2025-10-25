@@ -5,7 +5,7 @@
 
 const { test, expect } = require('@playwright/test');
 
-const BASE_URL = 'https://www.trueallyguide.com';
+const BASE_URL = 'https://trueallyguide.com';
 const LIGHTHOUSE_TARGETS = {
   performance: 1.0,
   accessibility: 1.0,

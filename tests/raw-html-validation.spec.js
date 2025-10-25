@@ -5,7 +5,7 @@
 
 const { test, expect } = require('@playwright/test');
 
-const BASE_URL = 'https://www.trueallyguide.com';
+const BASE_URL = 'https://trueallyguide.com';
 
 test.describe('Raw HTML Validation', () => {
   
@@ -15,8 +15,8 @@ test.describe('Raw HTML Validation', () => {
     
     const html = await response.text();
     
-    // Check canonical tag exists and is correct
-    expect(html).toMatch(/<link rel="canonical" href="https:\/\/www\.trueallyguide\.com\/" \/>/);
+    // Check canonical tag exists and is correct (non-www canonical host)
+    expect(html).toMatch(/<link rel="canonical" href="https:\/\/trueallyguide\.com\/" \/>/);
     
     // Should have only one canonical tag
     const canonicalMatches = html.match(/rel="canonical"/g);
@@ -25,7 +25,7 @@ test.describe('Raw HTML Validation', () => {
     // Check essential meta tags
     expect(html).toMatch(/<meta name="description" content=".+"/);
     expect(html).toMatch(/<title>.+<\/title>/);
-    expect(html).toMatch(/<meta property="og:url" content="https:\/\/www\.trueallyguide\.com\/" \/>/);
+    expect(html).toMatch(/<meta property="og:url" content="https:\/\/trueallyguide\.com\/" \/>/);
     
     // Check structured data exists
     expect(html).toMatch(/<script type="application\/ld\+json">/);
@@ -39,8 +39,8 @@ test.describe('Raw HTML Validation', () => {
     
     const html = await response.text();
     
-    // Check canonical tag
-    expect(html).toMatch(/<link rel="canonical" href="https:\/\/www\.trueallyguide\.com\/blog\/" \/>/);
+    // Check canonical tag (no trailing slash on path canonical)
+    expect(html).toMatch(/<link rel="canonical" href="https:\/\/trueallyguide\.com\/blog" \/>/);
     
     // Should have only one canonical tag
     const canonicalMatches = html.match(/rel="canonical"/g);
@@ -59,7 +59,7 @@ test.describe('Raw HTML Validation', () => {
     ];
     
     for (const slug of testArticles) {
-      const url = `${BASE_URL}/blog/${slug}/`;
+      const url = `${BASE_URL}/blog/${slug}`;
       const response = await request.get(url);
       expect(response.status()).toBe(200);
       
@@ -94,7 +94,7 @@ test.describe('Raw HTML Validation', () => {
     ];
     
     for (const category of categories) {
-      const url = `${BASE_URL}/category/${category}/`;
+      const url = `${BASE_URL}/category/${category}`;
       const response = await request.get(url);
       expect(response.status()).toBe(200);
       

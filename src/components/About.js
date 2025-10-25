@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Seo from './Seo';
 // avatar import removed (using optimized public/images variants)
 
@@ -7,11 +7,11 @@ const About = () => {
     <section id="about" className="py-32 bg-white">
       <Seo
         type="person"
-        title="About Marica Å inko"
-        description="Marica Å inko is an introvert-women burnout coach who helps high-achieving introverts rebuild confidence."
+        title="About Marica �inko"
+        description="Marica �inko is an introvert-women burnout coach who helps high-achieving introverts rebuild confidence."
         path="/about"
         person={{
-          name: "Marica Å inko",
+          name: "Marica �inko",
           alternateName: "Quiet Strength Coach",
           jobTitle: "Mental Wellness Coach",
           knowsAbout: ["burnout recovery", "introvert confidence"],
@@ -27,9 +27,10 @@ const About = () => {
                 loading="lazy"
                 decoding="async"
                 src="/images/marica-sinko-author-photo.avif"
-                alt="Marica Šinko — Author portrait"
+                alt="Marica �inko � Author portrait"
                 width="224"
-                height="224"\n                  sizes="224px"
+                height="224"
+                sizes="224px"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -38,10 +39,10 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-brand-dark mb-6">My Story: From Burnout to Quiet Strength</h2>
             <div className="prose prose-xl max-w-none text-brand-primary">
               <p className="mb-6">
-                Iâ€™m an <strong>introvert-women burnout coach</strong> who helps high-achieving introverts rebuild confidence. For years, I tried to be someone I wasn't. I chased the extroverted ideal of success, believing that to be seen, I had to be loud. The result? I was left feeling drained, inauthentic, and completely burnt out.
+                I’m an <strong>introvert-women burnout coach</strong> who helps high-achieving introverts rebuild confidence. For years, I tried to be someone I wasn't. I chased the extroverted ideal of success, believing that to be seen, I had to be loud. The result? I was left feeling drained, inauthentic, and completely burnt out.
               </p>
               <p className="mb-6">
-                It was in hitting that wall that I discovered my true strength wasn't in changing who I am, but in embracing my introversion. I created Quiet Strength to be the resource I wish I'd hadâ€”a place that honors our need for depth, reflection, and a calmer path to success.
+                It was in hitting that wall that I discovered my true strength wasn't in changing who I am, but in embracing my introversion. I created Quiet Strength to be the resource I wish I'd had—a place that honors our need for depth, reflection, and a calmer path to success.
               </p>
               <p className="mb-6">
                 My mission is to give you the tools to stop fighting your nature and start using it as your greatest asset. I'm a Certified Mental Wellness Coach (ICF) dedicated to helping introverted women build sustainable success.

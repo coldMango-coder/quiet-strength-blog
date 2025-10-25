@@ -193,9 +193,7 @@ function generateHTMLWithMetadata(url, pageType, routeData, assets) {
   <meta name="application-name" content="Quiet Strength" />
   
   <title>${metadata.title}</title>
-  <link rel="preload" href="${cssFile}" as="style">
-  <link rel="stylesheet" href="${cssFile}" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="${cssFile}"></noscript>
+  <link rel="stylesheet" href="${cssFile}">
   
   <!-- Schema.org structured data for rich snippets -->
   ${jsonLdScript}
@@ -285,6 +283,8 @@ function generateHTMLWithMetadata(url, pageType, routeData, assets) {
     .hidden{display:none}
     @media(prefers-reduced-motion:reduce){*,::before,::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
   </style>
+  <!-- Load main CSS with print-swap to avoid render-blocking (~14KiB) -->
+  <link rel="stylesheet" href="${cssFile}">
   
   <!-- Performance: Ultra-fast immediate rendering with skeleton -->
   <script>

@@ -1,16 +1,14 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { sortedBlogPosts } from '../blogData';
 import Seo from '../components/Seo';
+import TableOfContents from '../components/TableOfContents';
 import NotFoundPage from './NotFoundPage';
+import sanitizeArticleStart from '../lib/sanitizeArticleStart';
 
 const BlogPostPage = () => {
   const { slug } = useParams();
   const post = sortedBlogPosts.find(p => p.slug === slug);
-
-  if (!post) {
-    return <NotFoundPage />;
-  }
 
   const PostComponent = post.component;
   // Short SEO titles for <title> only (keep H1 content unchanged)
@@ -24,6 +22,24 @@ const BlogPostPage = () => {
     'post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025': 'Post-Breakup Glow Up: 10 Steps',
   };
   const seoTitle = seoTitleMap[post.slug] || post.title;
+
+  // Sanitize odd leading characters at article start without blocking paint
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if ('requestIdleCallback' in window) {
+        // @ts-ignore - TS may not know requestIdleCallback
+        const id = window.requestIdleCallback(() => sanitizeArticleStart('article'), { timeout: 1200 });
+        return () => window.cancelIdleCallback && window.cancelIdleCallback(id);
+      } else {
+        const t = setTimeout(() => sanitizeArticleStart('article'), 0);
+        return () => clearTimeout(t);
+      }
+    }
+  }, []);
+
+  if (!post) {
+    return <NotFoundPage />;
+  }
 
   return (
     <>
@@ -46,6 +62,8 @@ const BlogPostPage = () => {
         }
       >
         <PostComponent />
+        {/* Auto-TOC mounts into explicit anchor to ensure consistent placement */}
+        <TableOfContents rootSelector="article" anchorSelector="#toc-anchor" />
       </Suspense>
     </>
   );

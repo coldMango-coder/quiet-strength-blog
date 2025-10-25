@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { getCanonicalUrl } from '../lib/seo/getCanonicalUrl';
 
 /**
  * Custom hook for dynamic SEO meta tag updates during SPA navigation
@@ -16,21 +17,9 @@ export const useDynamicSEO = () => {
       if (typeof window === 'undefined') return;
       
       try {
-        const loc = window.location;
-        
-        // Build clean canonical URL by removing tracking parameters
-        const url = new URL(loc.href);
-        const trackingParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'ref', 'gclid', 'fbclid', 'spa'];
-        
-        trackingParams.forEach(param => url.searchParams.delete(param));
-        
-        // Create clean canonical URL - absolute URL matching current page exactly
-        // Do NOT force trailing slash to avoid server/client redirect loops
-        let cleanUrl = url.origin + url.pathname;
-        
-        if (url.search && !trackingParams.some(param => url.search.includes(param))) {
-          cleanUrl += url.search;
-        }
+        // Always pin canonical to the production host with path-only policy
+        // Strip query/hash and enforce non-www HTTPS domain
+        const cleanUrl = getCanonicalUrl(location.pathname || '/');
 
         // Helper functions to update/create tags
         const setOrUpdateLink = (rel, href) => {
@@ -59,7 +48,7 @@ export const useDynamicSEO = () => {
         // Update Open Graph URL to match canonical
         setOrUpdateMeta('meta[property="og:url"]', 'property', 'og:url', cleanUrl);
 
-        // Update Twitter URL to match canonical  
+        // Update Twitter URL to match canonical
         setOrUpdateMeta('meta[name="twitter:url"]', 'name', 'twitter:url', cleanUrl);
 
         // Update Open Graph type based on path

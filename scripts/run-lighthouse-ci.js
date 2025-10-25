@@ -9,7 +9,7 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const BASE_URL = 'https://www.trueallyguide.com';
+const BASE_URL = 'https://trueallyguide.com';
 const LIGHTHOUSE_CONFIG = {
   ci: {
     collect: {

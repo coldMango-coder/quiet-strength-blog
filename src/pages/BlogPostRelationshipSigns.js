@@ -1,10 +1,11 @@
-﻿import React from 'react';
+import React from 'react';
 import NormalizedLink from '../components/NormalizedLink';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import { sortedBlogPosts } from '../blogData';
-import AuthorBio from '../components/AuthorBio';
+import AuthorBio from '../components/AuthorBio.jsx';
+import TableOfContents from '../components/TableOfContents';
 
 const BlogPostRelationshipSigns = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'how-to-know-if-you-deserve-better-relationship-introvert-woman-guide');
@@ -17,16 +18,14 @@ const BlogPostRelationshipSigns = () => {
           &larr; Back to Home
         </NormalizedLink>
         
-        <article className="article-container mx-auto max-w-[720px]">
+        <article className="article-container mx-auto">
           <header className="mb-16 text-left">
-            <h1 className="text-4xl md:text-6xl font-bold text-brand-dark mb-6">
-              How to Know if You Deserve Better in Your Relationship: 7 Clear Signs Every Introvert Woman Must Recognize in 2025
-            </h1>
+            <h1 className="font-bold mb-6">How to Know if You Deserve Better in Your Relationship: 7 Clear Signs Every Introvert Woman Must Recognize in 2025</h1>
             <div className="flex items-center gap-4 text-brand-primary text-lg">
-              <span>By <strong>Marica Å inko</strong></span>
-              <span className="text-gray-400">â€¢</span>
+              <span>By <strong>Marica �inko</strong></span>
+              <span className="text-gray-400">•</span>
               <span>{postData?.readTime}</span>
-              <span className="text-gray-400">â€¢</span>
+              <span className="text-gray-400">•</span>
               <span>{new Date(postData?.date).toLocaleDateString('en-US', { 
                 year: 'numeric', 
                 month: 'long', 
@@ -38,22 +37,12 @@ const BlogPostRelationshipSigns = () => {
             </p>
           </header>
 
-          <section className="bg-white p-8 rounded-lg mb-16 shadow-md text-base">
-            <h2 className="text-2xl font-bold text-brand-dark mb-4">Table of Contents</h2>
-            <ul className="space-y-3 toc-list">
-              <li><a href="#understanding-worth" className="text-brand-emphasis hover:underline">Understanding Your Worth as an Introvert Woman</a></li>
-              <li><a href="#seven-signs" className="text-brand-emphasis hover:underline">7 Clear Signs You Deserve Better in Your Relationship</a></li>
-              <li><a href="#red-flags" className="text-brand-emphasis hover:underline">Red Flags That Introverted Women Often Overlook</a></li>
-              <li><a href="#communicate-needs" className="text-brand-emphasis hover:underline">How to Communicate Your Needs Effectively</a></li>
-              <li><a href="#work-or-leave" className="text-brand-emphasis hover:underline">When to Work on Your Relationship vs. When to Leave</a></li>
-              <li><a href="#building-confidence" className="text-brand-emphasis hover:underline">Building Confidence to Demand Better</a></li>
-              <li><a href="#relationship-standards" className="text-brand-emphasis hover:underline">Creating Your Relationship Standards</a></li>
-              <li><a href="#faq" className="text-brand-emphasis hover:underline">Frequently Asked Questions</a></li>
-            </ul>
-          </section>
+          <div id="toc-anchor" className="mb-8" />
+
+          {/* TOC rendered globally via BlogPostPage; remove inline duplicate */}
 
           <section className="mb-16">
-            <h2>Introduction</h2>
+            <h2 className="font-bold mb-4">Introduction</h2>
             <p>
               Are you constantly questioning whether you're asking for too much in your relationship? As an introvert woman, do you find yourself wondering if your need for alone time, deep conversations, and emotional connection makes you "too demanding" or "high maintenance"?
             </p>
@@ -69,9 +58,9 @@ const BlogPostRelationshipSigns = () => {
           </section>
 
           <section id="understanding-worth" className="mb-16 scroll-mt-24">
-            <h2>Understanding Your Worth as an Introvert Woman</h2>
+            <h2 className="font-bold mb-4">Understanding Your Worth as an Introvert Woman</h2>
             
-            <h3>The Unique Challenges Introverted Women Face in Relationships</h3>
+            <h3 className="font-semibold mb-3">The Unique Challenges Introverted Women Face in Relationships</h3>
             <p>
               As an introvert woman, you possess qualities that make you an incredible partner: deep empathy, thoughtful communication, loyalty, and the ability to create meaningful connections. However, society often misunderstands these traits, leading many introvert women to undervalue themselves in relationships.
             </p>
@@ -89,7 +78,7 @@ const BlogPostRelationshipSigns = () => {
 
             <div className="my-8">
               <img 
-                src="/images/thoughtful-woman-relationship-reflection.webp" 
+                src="/images/thoughtful-woman-relationship-reflection.webp?v=1760798229914" 
                 alt="Thoughtful introvert woman sitting by window with coffee cup contemplating whether she deserves better in her relationship, representing self-reflection and personal worth" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -101,7 +90,7 @@ const BlogPostRelationshipSigns = () => {
 
             <h3>Why Your Introvert Needs Are Valid and Important</h3>
             <p>
-              Your relationship needs aren't excessiveâ€”they're essential for your well-being and happiness. Studies from the American Psychological Association show that introvert women who have their core needs met in relationships report 43% higher satisfaction and significantly lower stress levels.
+              Your relationship needs aren't excessive—they're essential for your well-being and happiness. Studies from the American Psychological Association show that introvert women who have their core needs met in relationships report 43% higher satisfaction and significantly lower stress levels.
             </p>
             <p>Your needs likely include:</p>
             
@@ -113,7 +102,7 @@ const BlogPostRelationshipSigns = () => {
               "Emotional safety to express your authentic self"
             ]} />
 
-            <p>These aren't "asks"â€”they're requirements for a healthy relationship.</p>
+            <p>These aren't "asks"—they're requirements for a healthy relationship.</p>
           </section>
 
           <section id="seven-signs" className="mb-16 scroll-mt-24">
@@ -121,14 +110,14 @@ const BlogPostRelationshipSigns = () => {
             
             <h3>1. Your Partner Dismisses Your Need for Alone Time</h3>
             <p><strong>The Sign:</strong> Your partner makes you feel guilty for needing time alone, calls you antisocial, or takes your need for solitude personally.</p>
-            <p><strong>Why It Matters:</strong> Alone time isn't a luxury for introvertsâ€”it's how you recharge and maintain your mental health. A partner who doesn't respect this fundamental need doesn't respect who you are at your core.</p>
+            <p><strong>Why It Matters:</strong> Alone time isn't a luxury for introverts—it's how you recharge and maintain your mental health. A partner who doesn't respect this fundamental need doesn't respect who you are at your core.</p>
             
             <StyledBlockquote>
               "My ex would guilt-trip me every time I wanted to spend an evening reading instead of going out. He'd say things like 'You care more about your books than me.' I thought I was being selfish until I realized I was losing myself trying to be who he wanted." - Sarah, 29-year-old marketing professional
             </StyledBlockquote>
 
             <h3>2. Conversations Stay Shallow Despite Your Efforts</h3>
-            <p><strong>The Sign:</strong> When you try to discuss deeper topicsâ€”your dreams, fears, philosophical thoughts, or emotional experiencesâ€”your partner changes the subject, seems bored, or gives superficial responses.</p>
+            <p><strong>The Sign:</strong> When you try to discuss deeper topics—your dreams, fears, philosophical thoughts, or emotional experiences—your partner changes the subject, seems bored, or gives superficial responses.</p>
             <p><strong>Why It Matters:</strong> Deep conversation is how introvert women connect and feel understood. If your partner consistently avoids meaningful dialogue, you're missing a crucial component of emotional intimacy.</p>
             <p><strong>The Reality Check:</strong> A study published in Psychological Science found that people who engage in more substantive conversations report greater life satisfaction. For introvert women, this correlation is even stronger.</p>
 
@@ -185,7 +174,7 @@ const BlogPostRelationshipSigns = () => {
             <h3>Sample Scripts for Common Conversations</h3>
             
             <KeyTakeawayBox title="For Alone Time">
-              <p>"I need about two hours alone when I get home from work to recharge. This isn't about youâ€”it's about taking care of my mental health so I can be fully present when we spend time together."</p>
+              <p>"I need about two hours alone when I get home from work to recharge. This isn't about you—it's about taking care of my mental health so I can be fully present when we spend time together."</p>
             </KeyTakeawayBox>
 
             <KeyTakeawayBox title="For Deep Conversations">
@@ -250,7 +239,7 @@ const BlogPostRelationshipSigns = () => {
             
             <div className="my-8">
               <img 
-                src="/images/woman-journaling-self-reflection.webp" 
+                src="/images/woman-journaling-self-reflection.webp?v=1760798229914" 
                 alt="Woman journaling and practicing self-reflection in cozy reading nook, symbolizing introvert woman understanding her relationship needs and personal worth" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -301,11 +290,11 @@ const BlogPostRelationshipSigns = () => {
               </div>
               <div>
                 <h3>How long should I wait for my partner to understand my introvert needs?</h3>
-                <p>After clearly communicating your needs, give your partner time to learn and adjustâ€”typically 2-3 months. However, they should show immediate willingness to understand and respect your needs, even if the changes take time to implement.</p>
+                <p>After clearly communicating your needs, give your partner time to learn and adjust—typically 2-3 months. However, they should show immediate willingness to understand and respect your needs, even if the changes take time to implement.</p>
               </div>
               <div>
                 <h3>Is it normal to feel guilty about having introvert needs?</h3>
-                <p>Unfortunately, yesâ€”many introvert women experience guilt due to societal messages that extroversion is preferred. However, these feelings of guilt don't mean your needs are wrong; they mean you need to work on self-acceptance and potentially find more supportive relationships.</p>
+                <p>Unfortunately, yes—many introvert women experience guilt due to societal messages that extroversion is preferred. However, these feelings of guilt don't mean your needs are wrong; they mean you need to work on self-acceptance and potentially find more supportive relationships.</p>
               </div>
               <div>
                 <h3>What if I'm afraid I'll never find someone who understands me?</h3>
@@ -330,24 +319,24 @@ const BlogPostRelationshipSigns = () => {
               "Feel understood and appreciated for your introvert qualities"
             ]} />
             <p>
-              If this article resonated with you, trust those feelings. Your intuition as an introvert woman is one of your greatest assetsâ€”use it to guide you toward relationships that honor your worth.
+              If this article resonated with you, trust those feelings. Your intuition as an introvert woman is one of your greatest assets—use it to guide you toward relationships that honor your worth.
             </p>
             <p>
               You deserve a partner who sees your introversion not as something to fix, but as something to celebrate. You deserve conversations that feed your soul, alone time that's respected, and emotional depth that's welcomed.
             </p>
             <p>
-              The question isn't whether you deserve betterâ€”you absolutely do. The question is: what are you going to do about it?
+              The question isn't whether you deserve better—you absolutely do. The question is: what are you going to do about it?
             </p>
             <p>
               <strong>Take Action Today:</strong> Write down three specific needs that aren't being met in your current relationship. Then, decide whether you're going to communicate these needs clearly or recognize that it's time to find someone who naturally understands and appreciates who you are.
             </p>
             <p>
-              Remember: You're not asking for too much. You're asking for what every person deservesâ€”love, understanding, and respect for who they truly are.
+              Remember: You're not asking for too much. You're asking for what every person deserves—love, understanding, and respect for who they truly are.
             </p>
             
             <div className="my-8">
               <img 
-                src="/images/confident-woman-future-empowerment.webp" 
+                src="/images/confident-woman-future-empowerment.webp?v=1760798229914" 
                 alt="Confident introvert woman standing on balcony looking toward future horizons, representing empowerment to demand better relationships and recognize self-worth" 
                 className="rounded-lg shadow-md" 
                 loading="lazy"
@@ -376,3 +365,4 @@ const BlogPostRelationshipSigns = () => {
 };
 
 export default BlogPostRelationshipSigns;
+

@@ -4,7 +4,8 @@ import StyledBlockquote from './StyledBlockquote';
 import KeyTakeawayBox from './KeyTakeawayBox';
 import StyledList from './StyledList';
 import Seo from './Seo';
-import AuthorBio from './AuthorBio';
+import AuthorBio from './AuthorBio.jsx';
+import TableOfContents from './TableOfContents';
 
 const BlogPostSayingNoWithoutGuilt = () => {
   return (
@@ -48,6 +49,8 @@ const BlogPostSayingNoWithoutGuilt = () => {
             </div>
           </header>
 
+          <div id="toc-anchor" className="mb-8" />
+
           {/* TL;DR BOX */}
           <section className="bg-white p-8 rounded-lg mb-16 shadow-md border-l-4 border-brand-emphasis">
             <h2 className="text-2xl font-bold text-brand-dark mb-4">TL;DR - Quick Takeaways</h2>
@@ -61,23 +64,8 @@ const BlogPostSayingNoWithoutGuilt = () => {
             ]} />
           </section>
 
-          {/* TABLE OF CONTENTS - SEO BOOST */}
-          <section className="bg-white p-8 rounded-lg mb-16 shadow-md text-base">
-            <h2 className="text-2xl font-bold text-brand-dark mb-4">Table of Contents</h2>
-            <ul className="space-y-3 toc-list">
-              <li><a href="#quick-start" className="text-brand-emphasis hover:underline">1. Quick Start: Say This When You're Put on the Spot</a></li>
-              <li><a href="#why-hard" className="text-brand-emphasis hover:underline">2. Why Saying No Is So Hard (Guilt & Conditioning)</a></li>
-              <li><a href="#five-rules" className="text-brand-emphasis hover:underline">3. 5 Rules for a Guilt-Free No</a></li>
-              <li><a href="#work-scripts" className="text-brand-emphasis hover:underline">4. Script Bank – Work & Career</a></li>
-              <li><a href="#family-scripts" className="text-brand-emphasis hover:underline">5. Script Bank – Family & Relatives</a></li>
-              <li><a href="#friends-scripts" className="text-brand-emphasis hover:underline">6. Script Bank – Friends & Social Life</a></li>
-              <li><a href="#parenting-scripts" className="text-brand-emphasis hover:underline">7. Script Bank – Parenting / School Requests</a></li>
-              <li><a href="#pushback" className="text-brand-emphasis hover:underline">8. What to Say When They Push Back</a></li>
-              <li><a href="#emotional-aftercare" className="text-brand-emphasis hover:underline">9. Emotional Aftercare: Dealing With Guilt & Anxiety</a></li>
-              <li><a href="#adaptations" className="text-brand-emphasis hover:underline">10. Introvert & ADHD Friendly Adaptations</a></li>
-              <li><a href="#faq" className="text-brand-emphasis hover:underline">11. Frequently Asked Questions</a></li>
-            </ul>
-          </section>
+          {/* TABLE OF CONTENTS - Auto-generated */}
+          {/* TOC rendered globally via BlogPostPage; remove inline duplicate */}
 
           {/* MAIN ARTICLE IMAGE */}
           <section className="mb-16">

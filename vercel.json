@@ -1,5 +1,7 @@
 {
   "version": 2,
+  "name": "quiet-strength-blog-plbo",
+  "project": "quiet-strength-blog-plbo",
   "cleanUrls": false,
   "trailingSlash": false,
   "build": {
@@ -13,9 +15,6 @@
     { "source": "/robots.txt", "destination": "/robots.txt" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/", "destination": "/index.html" },
-    { "source": "/blog", "destination": "/index.html" },
-    { "source": "/blog/:slug", "destination": "/index.html" },
-    { "source": "/category/:categoryName", "destination": "/index.html" },
     { "source": "/book-quiet-confidence", "destination": "/index.html" }
   ],
   "redirects": [

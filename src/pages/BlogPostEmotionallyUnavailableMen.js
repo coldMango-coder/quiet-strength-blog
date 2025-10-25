@@ -1,10 +1,11 @@
-﻿import React from 'react';
+import React from 'react';
 import NormalizedLink from '../components/NormalizedLink';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import { sortedBlogPosts } from '../blogData';
-import AuthorBio from '../components/AuthorBio';
+import AuthorBio from '../components/AuthorBio.jsx';
+import TableOfContents from '../components/TableOfContents';
 
 const BlogPostEmotionallyUnavailableMen = () => {
   // eslint-disable-next-line no-unused-vars
@@ -19,16 +20,14 @@ const BlogPostEmotionallyUnavailableMen = () => {
           &larr; Back to Home
         </NormalizedLink>
         
-        <article className="article-container mx-auto max-w-[720px]">
+        <article className="article-container mx-auto">
           <header className="mb-16 text-left">
-            <h1 className="text-4xl md:text-6xl font-bold text-brand-dark mb-6">
-              How to Stop Attracting Emotionally Unavailable Men: 7 Proven Steps That Actually Work in 2025
-            </h1>
+            <h1 className="font-bold mb-6">How to Stop Attracting Emotionally Unavailable Men: 7 Proven Steps That Actually Work in 2025</h1>
             <div className="flex items-center gap-4 text-brand-primary text-lg">
-              <span>By <strong>Marica Å inko</strong></span>
-              <span className="text-gray-400">â€¢</span>
+              <span>By <strong>Marica �inko</strong></span>
+              <span className="text-gray-400">•</span>
               <span>August 03, 2025</span>
-              <span className="text-gray-400">â€¢</span>
+              <span className="text-gray-400">•</span>
               <span>8 min read</span>
             </div>
             <p className="text-brand-primary text-sm mt-2">
@@ -36,24 +35,9 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </p>
           </header>
 
-          <section className="bg-white p-8 rounded-lg mb-16 shadow-md text-base">
-            <h3 className="text-2xl font-bold text-brand-dark mb-4">Table of Contents</h3>
-            <ul className="space-y-3 toc-list">
-              <li><a href="#understanding-emotional-unavailability" className="text-brand-emphasis hover:underline">Understanding Emotional Unavailability</a></li>
-              <li><a href="#why-you-keep-attracting-same-type" className="text-brand-emphasis hover:underline">Why You Keep Attracting the Same Type</a></li>
-              <li><a href="#signs-drawn-to-unavailable-men" className="text-brand-emphasis hover:underline">The 7 Psychology-Backed Signs You're Drawn to Unavailable Men</a></li>
-              <li><a href="#heal-attachment-patterns" className="text-brand-emphasis hover:underline">Step 1: Heal Your Attachment Patterns</a></li>
-              <li><a href="#challenge-core-beliefs" className="text-brand-emphasis hover:underline">Step 2: Recognize and Challenge Your Core Beliefs</a></li>
-              <li><a href="#set-emotional-boundaries" className="text-brand-emphasis hover:underline">Step 3: Set Clear Emotional Boundaries</a></li>
-              <li><a href="#develop-emotional-intelligence" className="text-brand-emphasis hover:underline">Step 4: Develop Your Emotional Intelligence</a></li>
-              <li><a href="#practice-secure-communication" className="text-brand-emphasis hover:underline">Step 5: Practice Secure Communication</a></li>
-              <li><a href="#choose-based-on-actions" className="text-brand-emphasis hover:underline">Step 6: Choose Partners Based on Actions, Not Potential</a></li>
-              <li><a href="#build-support-system" className="text-brand-emphasis hover:underline">Step 7: Build a Support System for Accountability</a></li>
-              <li><a href="#common-mistakes" className="text-brand-emphasis hover:underline">Common Mistakes to Avoid</a></li>
-              <li><a href="#seek-professional-help" className="text-brand-emphasis hover:underline">When to Seek Professional Help</a></li>
-              <li><a href="#faq" className="text-brand-emphasis hover:underline">Frequently Asked Questions</a></li>
-            </ul>
-          </section>
+          <div id="toc-anchor" className="mb-8" />
+
+          {/* TOC rendered globally via BlogPostPage; remove inline duplicate */}
 
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-brand-dark mb-8">
@@ -65,17 +49,17 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </p>
 
             <p className="mb-8">
-              By implementing these research-backed techniques, you can transform your dating life and build the meaningful, emotionally fulfilling relationship you deserve. This isn't about changing who you areâ€”it's about understanding your patterns and making intentional choices that align with your relationship goals.
+              By implementing these research-backed techniques, you can transform your dating life and build the meaningful, emotionally fulfilling relationship you deserve. This isn't about changing who you are—it's about understanding your patterns and making intentional choices that align with your relationship goals.
             </p>
 
             <picture className="block rounded-lg shadow-md my-8 w-full overflow-hidden">
               <source srcSet="/images/confident-woman-journaling-about-emotional-growth-and-learning-how-to-stop-attracting-emotionally-unavailable-men-in-bright-coffee-shop-setting.avif" type="image/avif" />
-              <source srcSet="/images/confident-woman-journaling-about-emotional-growth-and-learning-how-to-stop-attracting-emotionally-unavailable-men-in-bright-coffee-shop-setting.webp" type="image/webp" />
+              <source srcSet="/images/confident-woman-journaling-about-emotional-growth-and-learning-how-to-stop-attracting-emotionally-unavailable-men-in-bright-coffee-shop-setting.webp?v=1760798229914" type="image/webp" />
               <img 
-                src="/images/confident-woman-journaling-about-emotional-growth-and-learning-how-to-stop-attracting-emotionally-unavailable-men-in-bright-coffee-shop-setting.jpg" 
+                src="/images/confident-woman-journaling-about-emotional-growth-and-learning-how-to-stop-attracting-emotionally-unavailable-men-in-bright-coffee-shop-setting.webp?v=1760798229914" 
                 alt="Confident woman journaling about emotional growth and learning how to stop attracting emotionally unavailable men in bright coffee shop setting" 
                 className="w-full h-auto object-cover" 
-                loading="lazy"
+                loading="eager" fetchpriority="high" decoding="sync"
                 width="600"
                 height="400"
                 sizes="(max-width: 768px) 92vw, 720px"
@@ -86,9 +70,9 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </p>
 
             <section id="understanding-emotional-unavailability" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Understanding Emotional Unavailability</h2>
+              <h2 className="font-bold mb-4">Understanding Emotional Unavailability</h2>
               
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">What Makes Someone Emotionally Unavailable?</h3>
+              <h3 className="font-semibold mb-3">What Makes Someone Emotionally Unavailable?</h3>
               <p className="mb-6">
                 Emotional unavailability refers to a person's inability or unwillingness to connect on a deep emotional level. According to relationship psychology research, emotionally unavailable men often struggle with vulnerability, intimacy, and consistent emotional expression. They may appear charming and engaging initially but struggle to maintain emotional depth as relationships progress.
               </p>
@@ -97,7 +81,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 Dr. Sarah Johnson, a licensed relationship therapist with over 15 years of experience, explains: "Emotionally unavailable individuals often learned early in life that emotional expression was unsafe, unwelcome, or ineffective. They develop protective mechanisms that prioritize self-preservation over authentic connection."
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">The Hidden Psychology Behind the Pattern</h3>
+              <h3 className="font-semibold mb-3">The Hidden Psychology Behind the Pattern</h3>
               <p className="mb-6">
                 Research published in the <a href="https://journals.sagepub.com/home/spr" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Journal of Social and Personal Relationships</a> found that individuals who repeatedly attract emotionally unavailable partners often share specific psychological patterns:
               </p>
@@ -116,30 +100,30 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </section>
 
             <section id="why-you-keep-attracting-same-type" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Why You Keep Attracting the Same Type</h2>
+              <h2 className="font-bold mb-4">Why You Keep Attracting the Same Type</h2>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">The Familiarity Trap</h3>
+              <h3 className="font-semibold mb-3">The Familiarity Trap</h3>
               <p className="mb-6">
-                Your brain is wired to seek familiar patterns, even when they're unhealthy. If you grew up with emotionally distant caregivers, your nervous system might interpret emotional unavailability as "normal" or even "exciting." This creates what psychologists call "repetition compulsion"â€”the unconscious tendency to recreate familiar relationship dynamics.
+                Your brain is wired to seek familiar patterns, even when they're unhealthy. If you grew up with emotionally distant caregivers, your nervous system might interpret emotional unavailability as "normal" or even "exciting." This creates what psychologists call "repetition compulsion"—the unconscious tendency to recreate familiar relationship dynamics.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">The Chemistry of Intermittent Reinforcement</h3>
+              <h3 className="font-semibold mb-3">The Chemistry of Intermittent Reinforcement</h3>
               <p className="mb-6">
-                Emotionally unavailable men often provide intermittent reinforcementâ€”occasional moments of connection followed by withdrawal. This pattern triggers the same neurochemical response as gambling addiction, releasing dopamine in unpredictable bursts that create powerful psychological bonds.
+                Emotionally unavailable men often provide intermittent reinforcement—occasional moments of connection followed by withdrawal. This pattern triggers the same neurochemical response as gambling addiction, releasing dopamine in unpredictable bursts that create powerful psychological bonds.
               </p>
 
               <p className="mb-6">
                 A 2023 study by the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8462781/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">University of California published in NCBI</a> found that women who experienced inconsistent attention from partners showed increased activity in the brain's reward centers, similar to addiction patterns. This explains why the "hot and cold" behavior of emotionally unavailable men can feel so compelling.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Cultural and Social Conditioning</h3>
+              <h3 className="font-semibold mb-3">Cultural and Social Conditioning</h3>
               <p className="mb-6">
                 Society often romanticizes the "strong, silent type" or the "mysterious man who needs to be saved." These cultural narratives can unconsciously influence your attraction patterns, making emotional unavailability seem desirable rather than problematic.
               </p>
             </section>
 
             <section id="signs-drawn-to-unavailable-men" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">The 7 Psychology-Backed Signs You're Drawn to Unavailable Men</h2>
+              <h2 className="font-bold mb-4">The 7 Psychology-Backed Signs You're Drawn to Unavailable Men</h2>
 
               <div className="space-y-8">
                 <div>
@@ -194,9 +178,9 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </section>
 
             <section id="heal-attachment-patterns" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Step 1: Heal Your Attachment Patterns</h2>
+              <h2 className="font-bold mb-4">Step 1: Heal Your Attachment Patterns</h2>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Understanding Your Attachment Style</h3>
+              <h3 className="font-semibold mb-3">Understanding Your Attachment Style</h3>
               <p className="mb-6">
                 Attachment theory, developed by John Bowlby and Mary Ainsworth, identifies four primary attachment styles formed in early childhood:
               </p>
@@ -213,7 +197,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
               </p>
 
               <img 
-                src="/images/woman-setting-emotional-boundaries-while-remaining-open-to-healthy-relationships-standing-by-peaceful-lake-representing-personal-growth-and-attachment-healing.webp" 
+                src="/images/woman-setting-emotional-boundaries-while-remaining-open-to-healthy-relationships-standing-by-peaceful-lake-representing-personal-growth-and-attachment-healing.webp?v=1760798229914" 
                 alt="Woman setting emotional boundaries while remaining open to healthy relationships, standing by peaceful lake representing personal growth and attachment healing" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
@@ -224,7 +208,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 Woman setting emotional boundaries while remaining open to healthy relationships, standing by peaceful lake representing personal growth and attachment healing
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Healing Anxious Attachment</h3>
+              <h3 className="font-semibold mb-3">Healing Anxious Attachment</h3>
               
               <h4 className="text-xl font-bold text-brand-dark mb-3">Practice Self-Soothing</h4>
               <p className="mb-4">
@@ -245,10 +229,10 @@ const BlogPostEmotionallyUnavailableMen = () => {
 
               <h4 className="text-xl font-bold text-brand-dark mb-3">Develop Earned Security</h4>
               <p className="mb-6">
-                Through consistent self-care and healthy relationships, you can develop what researchers call "earned security"â€”the ability to form secure attachments despite early childhood experiences.
+                Through consistent self-care and healthy relationships, you can develop what researchers call "earned security"—the ability to form secure attachments despite early childhood experiences.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Practical Attachment Healing Exercises</h3>
+              <h3 className="font-semibold mb-3">Practical Attachment Healing Exercises</h3>
 
               <StyledList items={[
                 "Daily Self-Check-ins: Ask yourself three times daily: \"What am I feeling right now? What do I need? How can I provide this for myself?\"",
@@ -258,9 +242,9 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </section>
 
             <section id="challenge-core-beliefs" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Step 2: Recognize and Challenge Your Core Beliefs</h2>
+              <h2 className="font-bold mb-4">Step 2: Recognize and Challenge Your Core Beliefs</h2>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Identifying Limiting Beliefs About Love</h3>
+              <h3 className="font-semibold mb-3">Identifying Limiting Beliefs About Love</h3>
               <p className="mb-6">
                 Many women who attract emotionally unavailable men carry unconscious beliefs that sabotage their relationships:
               </p>
@@ -273,7 +257,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 "\"Good men aren't interested in women like me\""
               ]} />
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">The Belief Transformation Process</h3>
+              <h3 className="font-semibold mb-3">The Belief Transformation Process</h3>
               
               <h4 className="text-xl font-bold text-brand-dark mb-3">Step 1: Awareness</h4>
               <p className="mb-4">
@@ -304,7 +288,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 "\"I can trust my intuition about partners\""
               ]} />
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Cognitive Behavioral Techniques</h3>
+              <h3 className="font-semibold mb-3">Cognitive Behavioral Techniques</h3>
               <p className="mb-4">
                 Use thought records to track and challenge negative beliefs:
               </p>
@@ -323,14 +307,14 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </section>
 
             <section id="set-emotional-boundaries" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Step 3: Set Clear Emotional Boundaries</h2>
+              <h2 className="font-bold mb-4">Step 3: Set Clear Emotional Boundaries</h2>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">What Are Emotional Boundaries?</h3>
+              <h3 className="font-semibold mb-3">What Are Emotional Boundaries?</h3>
               <p className="mb-6">
                 Emotional boundaries are guidelines you create to protect your emotional well-being. They help you distinguish between your feelings and others' feelings, and they determine how much emotional energy you invest in relationships.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Types of Boundaries You Need</h3>
+              <h3 className="font-semibold mb-3">Types of Boundaries You Need</h3>
 
               <h4 className="text-xl font-bold text-brand-dark mb-3">Time Boundaries</h4>
               <p className="mb-4">
@@ -352,7 +336,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 Comfort levels with physical affection, sexual boundaries, personal space requirements.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">The Boundary-Setting Process</h3>
+              <h3 className="font-semibold mb-3">The Boundary-Setting Process</h3>
 
               <StyledList items={[
                 "Identify Your Limits: Reflect on past relationships to understand what behaviors drain your energy or make you uncomfortable.",
@@ -361,7 +345,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 "Self-Compassion: Remember that boundary-setting is a skill that improves with practice. Be patient with yourself as you learn."
               ]} />
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Common Boundary Challenges</h3>
+              <h3 className="font-semibold mb-3">Common Boundary Challenges</h3>
 
               <h4 className="text-xl font-bold text-brand-dark mb-3">Guilt</h4>
               <p className="mb-4">
@@ -380,11 +364,11 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </section>
 
             <section id="develop-emotional-intelligence" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Step 4: Develop Your Emotional Intelligence</h2>
+              <h2 className="font-bold mb-4">Step 4: Develop Your Emotional Intelligence</h2>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">The Four Components of Emotional Intelligence</h3>
+              <h3 className="font-semibold mb-3">The Four Components of Emotional Intelligence</h3>
               <p className="mb-6">
-                According to psychologist <a href="https://www.danielgoleman.info/topics/emotional-intelligence/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Daniel Goleman</a>, emotional intelligence consists of four key abilities:
+                According to psychologist <a href="https://www.danielgoleman.info/books/emotional-intelligence/" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Daniel Goleman</a>, emotional intelligence consists of four key abilities:
               </p>
 
               <StyledList items={[
@@ -394,7 +378,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 "Relationship Management: Using emotional information to guide interactions"
               ]} />
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Building Self-Awareness</h3>
+              <h3 className="font-semibold mb-3">Building Self-Awareness</h3>
 
               <h4 className="text-xl font-bold text-brand-dark mb-3">Emotion Labeling</h4>
               <p className="mb-4">
@@ -411,7 +395,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 Keep a journal of situations that provoke strong emotional responses. Look for patterns in timing, people, or circumstances.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Developing Social Awareness</h3>
+              <h3 className="font-semibold mb-3">Developing Social Awareness</h3>
 
               <h4 className="text-xl font-bold text-brand-dark mb-3">Active Listening</h4>
               <p className="mb-4">
@@ -428,7 +412,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 Learn the difference between understanding someone's emotions (empathy) and taking them on as your own (sympathy).
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Practical Emotional Intelligence Exercises</h3>
+              <h3 className="font-semibold mb-3">Practical Emotional Intelligence Exercises</h3>
 
               <h4 className="text-xl font-bold text-brand-dark mb-3">Daily Emotion Check-ins</h4>
               <p className="mb-4">
@@ -457,14 +441,14 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </section>
 
             <section id="practice-secure-communication" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Step 5: Practice Secure Communication</h2>
+              <h2 className="font-bold mb-4">Step 5: Practice Secure Communication</h2>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">The Characteristics of Secure Communication</h3>
+              <h3 className="font-semibold mb-3">The Characteristics of Secure Communication</h3>
               <p className="mb-6">
                 Secure communicators express their needs clearly, listen without defensiveness, and maintain respect even during conflict. They can tolerate uncomfortable emotions without trying to fix or avoid them immediately.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">The DEAR Method for Difficult Conversations</h3>
+              <h3 className="font-semibold mb-3">The DEAR Method for Difficult Conversations</h3>
               <StyledList items={[
                 "Describe: State the facts without interpretation",
                 "Express: Share your feelings using \"I\" statements",
@@ -476,7 +460,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 Example: "When our date plans change at the last minute (Describe), I feel anxious and unimportant (Express). I'd like us to agree to confirm plans at least 24 hours in advance (Assert). This would help me feel more secure and allow us both to plan our time effectively (Reinforce)."
               </StyledBlockquote>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Managing Conflict Constructively</h3>
+              <h3 className="font-semibold mb-3">Managing Conflict Constructively</h3>
 
               <h4 className="text-xl font-bold text-brand-dark mb-3">Stay Present</h4>
               <p className="mb-4">
@@ -498,7 +482,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 The goal isn't to win but to understand each other's perspectives and find solutions that work for both partners.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Red Flags in Communication</h3>
+              <h3 className="font-semibold mb-3">Red Flags in Communication</h3>
               <p className="mb-4">
                 Be aware of these communication patterns that suggest emotional unavailability:
               </p>
@@ -513,15 +497,15 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </section>
 
             <section id="choose-based-on-actions" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Step 6: Choose Partners Based on Actions, Not Potential</h2>
+              <h2 className="font-bold mb-4">Step 6: Choose Partners Based on Actions, Not Potential</h2>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">The Potential Trap</h3>
+              <h3 className="font-semibold mb-3">The Potential Trap</h3>
               <p className="mb-6">
-                Many emotionally intelligent women fall into the "potential trap"â€”seeing who someone could become rather than who they currently are. This often stems from optimism and the ability to see the best in people, but it can lead to relationships with incompatible partners.
+                Many emotionally intelligent women fall into the "potential trap"—seeing who someone could become rather than who they currently are. This often stems from optimism and the ability to see the best in people, but it can lead to relationships with incompatible partners.
               </p>
 
               <img 
-                src="/images/couple-demonstrating-emotionally-available-communication-and-healthy-relationship-dynamics-with-open-body-language-and-genuine-connection.webp" 
+                src="/images/couple-demonstrating-emotionally-available-communication-and-healthy-relationship-dynamics-with-open-body-language-and-genuine-connection.webp?v=1760798229914" 
                 alt="Couple demonstrating emotionally available communication and healthy relationship dynamics with open body language and genuine connection" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
@@ -532,7 +516,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 Couple demonstrating emotionally available communication and healthy relationship dynamics with open body language and genuine connection
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">How to Evaluate Emotional Availability</h3>
+              <h3 className="font-semibold mb-3">How to Evaluate Emotional Availability</h3>
 
               <h4 className="text-xl font-bold text-brand-dark mb-3">Consistency</h4>
               <p className="mb-4">
@@ -559,7 +543,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 When you're struggling, does he offer comfort and understanding? Emotionally available partners can provide support without trying to fix or minimize your experiences.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">The 90-Day Observation Period</h3>
+              <h3 className="font-semibold mb-3">The 90-Day Observation Period</h3>
               <p className="mb-4">
                 Give new relationships at least 90 days to reveal patterns. During this time:
               </p>
@@ -570,7 +554,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 "Month 3: Evaluate his emotional availability based on observed patterns rather than potential or promises."
               ]} />
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Creating Your Non-Negotiables List</h3>
+              <h3 className="font-semibold mb-3">Creating Your Non-Negotiables List</h3>
               <p className="mb-4">
                 Identify 5-7 qualities that are essential for your emotional well-being:
               </p>
@@ -587,14 +571,14 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </section>
 
             <section id="build-support-system" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Step 7: Build a Support System for Accountability</h2>
+              <h2 className="font-bold mb-4">Step 7: Build a Support System for Accountability</h2>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">The Importance of External Perspective</h3>
+              <h3 className="font-semibold mb-3">The Importance of External Perspective</h3>
               <p className="mb-6">
                 When you're emotionally invested in someone, it can be difficult to see red flags objectively. A strong support system provides outside perspective and accountability for your relationship choices.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Types of Support You Need</h3>
+              <h3 className="font-semibold mb-3">Types of Support You Need</h3>
 
               <h4 className="text-xl font-bold text-brand-dark mb-3">Emotional Support</h4>
               <p className="mb-4">
@@ -616,7 +600,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 Trusted friends who will lovingly challenge you when you're making choices that don't align with your stated goals.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Building Your Support Network</h3>
+              <h3 className="font-semibold mb-3">Building Your Support Network</h3>
 
               <h4 className="text-xl font-bold text-brand-dark mb-3">Friendship Audit</h4>
               <p className="mb-4">
@@ -638,7 +622,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 Seek guidance from women who have healthy, long-term relationships.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">How to Use Your Support System Effectively</h3>
+              <h3 className="font-semibold mb-3">How to Use Your Support System Effectively</h3>
 
               <h4 className="text-xl font-bold text-brand-dark mb-3">Regular Check-ins</h4>
               <p className="mb-4">
@@ -662,7 +646,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </section>
 
             <section id="common-mistakes" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Common Mistakes to Avoid</h2>
+              <h2 className="font-bold mb-4">Common Mistakes to Avoid</h2>
 
               <div className="space-y-8">
                 <div>
@@ -710,9 +694,9 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </section>
 
             <section id="seek-professional-help" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">When to Seek Professional Help</h2>
+              <h2 className="font-bold mb-4">When to Seek Professional Help</h2>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Signs You Might Benefit from Therapy</h3>
+              <h3 className="font-semibold mb-3">Signs You Might Benefit from Therapy</h3>
 
               <StyledList items={[
                 "You've tried multiple approaches but continue attracting unavailable partners",
@@ -723,7 +707,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 "You want to explore childhood experiences that may influence your adult relationships"
               ]} />
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Types of Therapy That Help</h3>
+              <h3 className="font-semibold mb-3">Types of Therapy That Help</h3>
 
               <h4 className="text-xl font-bold text-brand-dark mb-3">Attachment-Based Therapy</h4>
               <p className="mb-4">
@@ -750,7 +734,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                 Addresses how trauma and emotions are stored in the body.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Finding the Right Therapist</h3>
+              <h3 className="font-semibold mb-3">Finding the Right Therapist</h3>
               <p className="mb-4">
                 Look for licensed professionals who specialize in:
               </p>
@@ -768,7 +752,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </section>
 
             <section id="faq" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Frequently Asked Questions</h2>
+              <h2 className="font-bold mb-4">Frequently Asked Questions</h2>
 
               <div className="space-y-6">
                 <div className="bg-gradient-to-r from-brand-light to-white border-l-4 border-brand-emphasis p-6 rounded-r-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -808,7 +792,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
                   </h3>
                   <div className="ml-11">
                     <p className="text-brand-primary leading-relaxed">
-                      Yes, but only if they recognize the issue and actively commit to change. This typically requires therapy, self-reflection, and consistent effort over time. You cannot change someone elseâ€”they must choose to change themselves.
+                      Yes, but only if they recognize the issue and actively commit to change. This typically requires therapy, self-reflection, and consistent effort over time. You cannot change someone else—they must choose to change themselves.
                     </p>
                   </div>
                 </div>
@@ -886,10 +870,10 @@ const BlogPostEmotionallyUnavailableMen = () => {
             </section>
 
             <section className="mb-16">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Take Action Today: Your Path to Emotional Freedom</h2>
+              <h2 className="font-bold mb-4">Take Action Today: Your Path to Emotional Freedom</h2>
 
               <p className="mb-6">
-                Learning how to stop attracting emotionally unavailable men isn't about changing who you areâ€”it's about understanding your patterns and making intentional choices that align with your relationship goals. By implementing these seven proven steps, you can break free from cycles of frustration and disappointment to build the secure, fulfilling relationship you deserve.
+                Learning how to stop attracting emotionally unavailable men isn't about changing who you are—it's about understanding your patterns and making intentional choices that align with your relationship goals. By implementing these seven proven steps, you can break free from cycles of frustration and disappointment to build the secure, fulfilling relationship you deserve.
               </p>
 
               <p className="mb-6">
@@ -901,7 +885,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
               </p>
 
               <p className="text-xl font-semibold text-brand-dark">
-                Ready to transform your dating life? Consider working with a qualified therapist who specializes in attachment and relationship patterns. The journey to emotional freedom begins with a single stepâ€”and that step starts today.
+                Ready to transform your dating life? Consider working with a qualified therapist who specializes in attachment and relationship patterns. The journey to emotional freedom begins with a single step—and that step starts today.
               </p>
             </section>
 
@@ -921,4 +905,7 @@ const BlogPostEmotionallyUnavailableMen = () => {
 };
 
 export default BlogPostEmotionallyUnavailableMen;
+
+
+
 

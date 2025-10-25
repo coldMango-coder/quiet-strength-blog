@@ -121,15 +121,26 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
 
   // Let React Helmet handle deduplication automatically
 
+  // Cap overly long meta descriptions to ~160 chars (word-safe)
+  const getMetaDescription = (text) => {
+    const MAX = 160;
+    if (!text || text.length <= MAX) return text || '';
+    const truncated = text.slice(0, MAX + 1);
+    const cut = truncated.lastIndexOf(' ');
+    return (cut > 0 ? truncated.slice(0, cut) : truncated.slice(0, MAX)).trim();
+  };
+
+  const metaDescription = getMetaDescription(description);
+
   return (
     <Helmet>
       <title>{title ? `${title} | ${siteName}` : siteName}</title>
-      <meta name="description" content={description} />
+      <meta name="description" content={metaDescription} />
       <link rel="canonical" href={canonicalUrl} />
 
       {/* Open Graph */}
       <meta property="og:title" content={article?.ogTitle || `${title} | ${siteName}`} />
-      <meta property="og:description" content={article?.ogDescription || description} />
+      <meta property="og:description" content={article?.ogDescription || metaDescription} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={siteName} />
@@ -159,7 +170,7 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
       <meta name="twitter:site" content="@QuietStrengthGuide" />
       <meta name="twitter:creator" content="@MaricaSinko" />
       <meta name="twitter:title" content={article?.twitterTitle || article?.ogTitle || `${title} | ${siteName}`} />
-      <meta name="twitter:description" content={article?.twitterDescription || article?.ogDescription || description} />
+      <meta name="twitter:description" content={article?.twitterDescription || article?.ogDescription || metaDescription} />
       <meta name="twitter:url" content={url} />
       {(article?.twitterImage || article?.ogImage || article?.image) && (
         <>

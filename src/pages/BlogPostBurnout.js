@@ -1,10 +1,12 @@
-﻿import React from 'react';
+import React from 'react';
 import NormalizedLink from '../components/NormalizedLink';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import { sortedBlogPosts } from '../blogData';
-import AuthorBio from '../components/AuthorBio';
+import AuthorBio from '../components/AuthorBio.jsx';
+import TableOfContents from '../components/TableOfContents';
+import OptimizedImage from '../components/OptimizedImage';
 
 const BlogPostBurnout = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'prevent-professional-burnout');
@@ -14,16 +16,14 @@ const BlogPostBurnout = () => {
       <div className="container mx-auto px-6 py-16">
         <NormalizedLink to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">&larr; Back to Home</NormalizedLink>
         
-        <article className="article-container mx-auto max-w-[720px]">
+        <article className="article-container mx-auto">
           <header className="mb-16 text-left">
-            <h1 className="text-4xl md:text-6xl font-bold text-brand-dark mb-6">
-              How to Prevent Professional Burnout: A Woman's Essential Guide to Sustainable Success & Well-being
-            </h1>
+            <h1 className="font-bold mb-6">How to Prevent Professional Burnout: A Woman's Essential Guide to Sustainable Success & Well-being</h1>
             <div className="flex items-center gap-4 text-brand-primary text-lg">
-              <span>By <strong>Marica Å inko</strong></span>
-              <span className="text-gray-400">â€¢</span>
+              <span>By <strong>Marica �inko</strong></span>
+              <span className="text-gray-400">•</span>
               <span>{postData?.readTime}</span>
-              <span className="text-gray-400">â€¢</span>
+              <span className="text-gray-400">•</span>
               <span>{new Date(postData?.date).toLocaleDateString('en-US', { 
                 year: 'numeric', 
                 month: 'long', 
@@ -35,18 +35,12 @@ const BlogPostBurnout = () => {
             </p>
           </header>
 
-          <section className="bg-white p-8 rounded-lg mb-16 shadow-md text-base">
-            <h3 className="text-2xl font-bold text-brand-dark mb-4">Table of Contents</h3>
-            <ul className="space-y-3 toc-list">
-              <li><a href="#section-1" className="text-brand-emphasis hover:underline">1. Recognizing the Early Warning Signs of Burnout</a></li>
-              <li><a href="#section-2" className="text-brand-emphasis hover:underline">2. Proactive Prevention Strategies: Your Burnout Shield</a></li>
-              <li><a href="#section-3" className="text-brand-emphasis hover:underline">3. Long-Term Strategies for a Sustainable Career</a></li>
-              <li><a href="#faq" className="text-brand-emphasis hover:underline">4. Frequently Asked Questions</a></li>
-            </ul>
-          </section>
+          <div id="toc-anchor" className="mb-8" />
+
+          {/* TOC rendered globally via BlogPostPage; remove inline duplicate */}
 
           <section id="section-1" className="mb-16 scroll-mt-24">
-            <h2>Introduction: The Invisible Load â€“ Why Burnout Hits Professional Women Hard</h2>
+            <h2 className="font-bold mb-4">Introduction: The Invisible Load – Why Burnout Hits Professional Women Hard</h2>
             <p>
               For ambitious, <mark>high-achieving women</mark>, professional burnout isn't just a buzzword; it's a looming shadow. As someone who has personally navigated the depths of professional exhaustion early in my career, I understand this intimately. Juggling a demanding career with societal expectations and the <mark>"invisible load" of emotional labor</mark>, many of us find ourselves on the edge. The World Health Organization defines burnout as a syndrome from <mark>chronic, unmanaged workplace stress</mark>, leading to exhaustion, cynicism, and reduced efficacy.
             </p>
@@ -56,12 +50,21 @@ const BlogPostBurnout = () => {
           </section>
 
           <section id="section-1" className="mb-16 scroll-mt-24">
-            <h2>1. Recognizing the Early Warning Signs of Burnout in Professional Women</h2>
+            <h2 className="font-bold mb-4">1. Recognizing the Early Warning Signs of Burnout in Professional Women</h2>
             <p>
               Before you can prevent burnout, you must recognize its precursors. For professional women, these signs often manifest uniquely due to the pressure to maintain composure.
             </p>
             <div className="my-8">
-              <img loading="lazy" decoding="async" src="/images/overwhelmed-introvert-burnout-signs.webp" alt="An introverted woman feeling overwhelmed, illustrating the signs of burnout." className="rounded-lg shadow-md" width="1200" height="800" />
+              <OptimizedImage
+                src="/images/overwhelmed-introvert-burnout-signs.webp?v=1760798229914"
+                alt="An introverted woman feeling overwhelmed, illustrating the signs of burnout."
+                width={1200}
+                height={800}
+                usePicture={true}
+                priority={true}
+                sizes="(max-width: 768px) 100vw, 720px"
+                className="rounded-lg shadow-md"
+              />
               <p className="text-sm text-gray-600 mt-3 text-center italic">An introverted woman feeling overwhelmed, illustrating the signs of burnout.</p>
             </div>
             <StyledList items={[
@@ -81,7 +84,16 @@ const BlogPostBurnout = () => {
             <h2>2. Proactive Prevention Strategies: Building Your Burnout Shield</h2>
             <p>Prevention is always better than cure. These strategies are powerful buffers against the pressures of professional life.</p>
             <div className="my-8">
-              <img loading="lazy" decoding="async" src="/images/woman-mindfulness-burnout-prevention.webp" alt="A woman practicing mindfulness, a key strategy for burnout prevention." className="rounded-lg shadow-md" width="1200" height="800" />
+              <OptimizedImage
+                src="/images/woman-mindfulness-burnout-prevention.webp?v=1760798229914"
+                alt="A woman practicing mindfulness, a key strategy for burnout prevention."
+                width={1200}
+                height={800}
+                usePicture={true}
+                priority={false}
+                sizes="(max-width: 768px) 100vw, 720px"
+                className="rounded-lg shadow-md"
+              />
               <p className="text-sm text-gray-600 mt-3 text-center italic">A woman practicing mindfulness, a key strategy for burnout prevention.</p>
             </div>
             <h3>2.1. Mastering Boundaries: Your Non-Negotiable Peace Treaty</h3>
@@ -102,7 +114,7 @@ const BlogPostBurnout = () => {
             <h2>3. Long-Term Strategies for an Unbreakable Career & Well-being</h2>
             <p>To build a truly sustainable career, consider these deeper, systemic shifts.</p>
             <div className="my-8">
-              <img loading="lazy" decoding="async" src="/images/supportive-women-community-collaboration.webp" alt="A supportive group of women collaborating, demonstrating the importance of community in preventing burnout." className="rounded-lg shadow-md" width="1200" height="800" />
+              <img loading="lazy" decoding="async" src="/images/supportive-women-community-collaboration.webp?v=1760798229914" alt="A supportive group of women collaborating, demonstrating the importance of community in preventing burnout." className="rounded-lg shadow-md" width="1200" height="800" />
               <p className="text-sm text-gray-600 mt-3 text-center italic">A supportive group of women collaborating, demonstrating the importance of community in preventing burnout.</p>
             </div>
             <p>Continuously learning new skills can reignite passion. Advocating for systemic change, like fairer workload distribution and a culture of psychological safety, is also crucial. Finally, never hesitate to seek professional support through therapy, coaching, or mentorship. Reputable organizations like the American Psychological Association (APA) offer excellent resources.</p>
@@ -148,4 +160,5 @@ const BlogPostBurnout = () => {
 };
 
 export default BlogPostBurnout;
+
 

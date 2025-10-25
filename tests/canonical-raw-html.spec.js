@@ -11,7 +11,7 @@
 
 const { test, expect } = require('@playwright/test');
 
-const BASE_URL = 'https://www.trueallyguide.com';
+const BASE_URL = 'https://trueallyguide.com';
 
 // Helper function to fetch raw HTML without JavaScript execution
 async function fetchRawHTML(url) {

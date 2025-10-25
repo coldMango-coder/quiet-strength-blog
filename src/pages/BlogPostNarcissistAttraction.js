@@ -1,8 +1,10 @@
-﻿import React from 'react';
+import React from 'react';
+import OptimizedImage from '../components/OptimizedImage';
 import NormalizedLink from '../components/NormalizedLink';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
-import AuthorBio from '../components/AuthorBio';
+import AuthorBio from '../components/AuthorBio.jsx';
+import TableOfContents from '../components/TableOfContents';
 
 const BlogPostNarcissistAttraction = () => {
   return (
@@ -13,16 +15,16 @@ const BlogPostNarcissistAttraction = () => {
           &larr; Back to Home
         </NormalizedLink>
         
-        <article className="article-container mx-auto max-w-[720px]">
+        <article className="article-container mx-auto">
           <header className="mb-16 text-left">
-            <h1 className="text-4xl md:text-6xl font-bold text-brand-dark mb-6">
+            <h1 className="font-bold mb-6">
               How to Stop Attracting Narcissists: 9 Proven Strategies That Actually Work in 2025
             </h1>
             <div className="flex items-center gap-4 text-brand-primary text-lg">
-              <span>By <strong>Marica Å inko</strong></span>
-              <span className="text-gray-400">â€¢</span>
+              <span>By <strong>Marica Šinko</strong></span>
+              <span className="text-gray-400">•</span>
               <span>August 03, 2025</span>
-              <span className="text-gray-400">â€¢</span>
+              <span className="text-gray-400">•</span>
               <span>8 min read</span>
             </div>
             <p className="text-brand-primary text-sm mt-2">
@@ -30,18 +32,9 @@ const BlogPostNarcissistAttraction = () => {
             </p>
           </header>
 
-          <section className="bg-white p-8 rounded-lg mb-16 shadow-md text-base">
-            <h3 className="text-2xl font-bold text-brand-dark mb-4">Table of Contents</h3>
-            <ul className="space-y-3 toc-list">
-              <li><a href="#why-attract" className="text-brand-emphasis hover:underline">Why Do Some People Keep Attracting Narcissists?</a></li>
-              <li><a href="#personality-profile" className="text-brand-emphasis hover:underline">The Narcissist-Magnet Personality Profile</a></li>
-              <li><a href="#strategies" className="text-brand-emphasis hover:underline">9 Proven Strategies to Stop Attracting Narcissists</a></li>
-              <li><a href="#red-flags" className="text-brand-emphasis hover:underline">How to Recognize Narcissistic Red Flags Early</a></li>
-              <li><a href="#healthy-patterns" className="text-brand-emphasis hover:underline">Building Healthy Relationship Patterns</a></li>
-              <li><a href="#professional-help" className="text-brand-emphasis hover:underline">When to Seek Professional Help</a></li>
-              <li><a href="#faq" className="text-brand-emphasis hover:underline">Frequently Asked Questions</a></li>
-            </ul>
-          </section>
+          <div id="toc-anchor" className="mb-8" />
+
+          {/* TOC rendered globally via BlogPostPage; remove inline duplicate */}
 
           <div className="prose prose-lg max-w-none">
             <p className="text-xl text-brand-dark mb-8">
@@ -56,22 +49,24 @@ const BlogPostNarcissistAttraction = () => {
               In this comprehensive guide, you'll discover the exact psychological mechanisms that draw narcissists to specific individuals, plus nine evidence-based strategies to stop attracting narcissists permanently. Whether you're recovering from a narcissistic relationship or simply want to protect yourself moving forward, these proven techniques will help you build stronger boundaries and attract healthier relationships.
             </p>
 
-            <img 
-              src="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.webp" 
-              alt="Confident woman learning how to stop attracting narcissists by walking away from toxic relationships toward healthy boundaries and self-empowerment" 
-              className="rounded-lg shadow-md my-8 w-full" 
-              loading="lazy"
-              width="600"
-              height="400"
+            <OptimizedImage
+              src="/images/confident-woman-learning-how-to-stop-attracting-narcissists-by-walking-away-from-toxic-relationships-toward-healthy-boundaries-and-self-empowerment.webp?v=1760798229914"
+              alt="Confident woman learning how to stop attracting narcissists by walking away from toxic relationships toward healthy boundaries and self-empowerment"
+              className="rounded-lg shadow-md my-8 w-full"
+              width={1200}
+              height={800}
+              usePicture={true}
+              priority={true}
+              sizes="(max-width: 768px) 100vw, 720px"
             />
             <p className="text-sm text-gray-600 text-center italic mb-6">
               Confident woman learning how to stop attracting narcissists by walking away from toxic relationships toward healthy boundaries and self-empowerment
             </p>
 
             <section id="why-attract" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Why Do Some People Keep Attracting Narcissists?</h2>
+            <h2 className="font-bold mb-4">Why Do Some People Keep Attracting Narcissists?</h2>
               
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">The Psychological Attraction Pattern</h3>
+              <h3 className="font-semibold mb-3">The Psychological Attraction Pattern</h3>
               <p className="mb-6">
                 Understanding how to stop attracting narcissists starts with recognizing why this pattern develops in the first place. Narcissists are skilled at identifying specific personality traits that make someone an ideal target for their manipulation tactics.
               </p>
@@ -92,7 +87,7 @@ const BlogPostNarcissistAttraction = () => {
                 Dr. Ramani Durvasula, a leading narcissism expert, explains that this attraction isn't random: "Narcissists have an almost supernatural ability to identify people who will tolerate their behavior while providing the constant admiration they crave."
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">The Trauma Bond Connection</h3>
+              <h3 className="font-semibold mb-3">The Trauma Bond Connection</h3>
               <p className="mb-6">
                 Many people who repeatedly attract narcissists experienced inconsistent caregiving in childhood. This creates what psychologists call an "anxious attachment style," where unpredictable love feels familiar and comfortable, even though it's unhealthy.
               </p>
@@ -103,13 +98,13 @@ const BlogPostNarcissistAttraction = () => {
             </section>
 
             <section id="personality-profile" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">The Narcissist-Magnet Personality Profile</h2>
+              <h2 className="font-bold mb-4">The Narcissist-Magnet Personality Profile</h2>
 
               <p className="mb-6">
-                If you're wondering "why do I attract narcissists," you likely possess several traits that narcissists find irresistible. Recognizing these traits isn't about self-blameâ€”it's about empowerment and transformation.
+                If you're wondering "why do I attract narcissists," you likely possess several traits that narcissists find irresistible. Recognizing these traits isn't about self-blame—it's about empowerment and transformation.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">High-Risk Traits That Attract Narcissists:</h3>
+              <h3 className="font-semibold mb-3">High-Risk Traits That Attract Narcissists:</h3>
 
               <h4 className="text-xl font-bold text-brand-dark mb-3">1. Excessive Empathy and Emotional Availability</h4>
               <p className="mb-4">
@@ -138,15 +133,15 @@ const BlogPostNarcissistAttraction = () => {
             </section>
 
             <section id="strategies" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">9 Proven Strategies to Stop Attracting Narcissists</h2>
+              <h2 className="font-bold mb-4">9 Proven Strategies to Stop Attracting Narcissists</h2>
 
               <p className="mb-8">
                 Learning how to stop attracting narcissists requires intentional changes to your mindset, behaviors, and relationship patterns. These evidence-based strategies will help you break the cycle permanently.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Strategy 1: Develop Healthy Selfishness</h3>
+              <h3 className="font-semibold mb-3">Strategy 1: Develop Healthy Selfishness</h3>
               <p className="mb-4">
-                <strong>What This Means:</strong> Prioritizing your own needs isn't selfishâ€”it's essential for healthy relationships.
+                <strong>What This Means:</strong> Prioritizing your own needs isn't selfish—it's essential for healthy relationships.
               </p>
 
               <p className="mb-4"><strong>How to Implement:</strong></p>
@@ -161,7 +156,7 @@ const BlogPostNarcissistAttraction = () => {
                 <strong>Why This Works:</strong> Narcissists avoid people who prioritize themselves because they can't easily exploit someone with strong self-regard.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Strategy 2: Master the Art of Healthy Boundaries</h3>
+              <h3 className="font-semibold mb-3">Strategy 2: Master the Art of Healthy Boundaries</h3>
               <p className="mb-4">
                 <strong>What This Means:</strong> Creating clear limits about what behavior you will and won't accept in relationships.
               </p>
@@ -183,10 +178,10 @@ const BlogPostNarcissistAttraction = () => {
               ]} />
 
               <p className="mb-6">
-                Research from <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2020.590748/full" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Stanford University's psychology research</a> shows that people with strong boundaries are 78% less likely to attract manipulative partners.
+                Research from <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2020.590748/full" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Stanford University's psychology research</a> shows that people with strong boundaries are 78% less likely to attract manipulative partners.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Strategy 3: Develop Narcissistic Immunity Through Education</h3>
+              <h3 className="font-semibold mb-3">Strategy 3: Develop Narcissistic Immunity Through Education</h3>
               <p className="mb-4">
                 <strong>What This Means:</strong> Learning to spot narcissistic tactics makes you an unappealing target.
               </p>
@@ -209,7 +204,7 @@ const BlogPostNarcissistAttraction = () => {
               ]} />
 
               <img 
-                src="/images/support-group-helping-individuals-develop-healthy-relationship-patterns-and-learn-effective-strategies-to-stop-attracting-narcissistic-partners.webp" 
+                src="/images/support-group-helping-individuals-develop-healthy-relationship-patterns-and-learn-effective-strategies-to-stop-attracting-narcissistic-partners.webp?v=1760798229914" 
                 alt="Support group helping individuals develop healthy relationship patterns and learn effective strategies to stop attracting narcissistic partners" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
@@ -220,7 +215,7 @@ const BlogPostNarcissistAttraction = () => {
                 Support group helping individuals develop healthy relationship patterns and learn effective strategies to stop attracting narcissistic partners
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Strategy 4: Heal Your Attachment Style</h3>
+              <h3 className="font-semibold mb-3">Strategy 4: Heal Your Attachment Style</h3>
               <p className="mb-4">
                 <strong>What This Means:</strong> Addressing childhood trauma patterns that make inconsistent love feel normal.
               </p>
@@ -245,7 +240,7 @@ const BlogPostNarcissistAttraction = () => {
                 Studies from the <a href="https://www.nimh.nih.gov/health/find-help" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">National Institute of Mental Health</a> indicate that secure attachment patterns can be developed at any age with consistent practice.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Strategy 5: Build Authentic Self-Esteem</h3>
+              <h3 className="font-semibold mb-3">Strategy 5: Build Authentic Self-Esteem</h3>
               <p className="mb-4">
                 <strong>What This Means:</strong> Developing genuine self-worth that doesn't depend on external validation.
               </p>
@@ -267,7 +262,7 @@ const BlogPostNarcissistAttraction = () => {
                 "Seeking validation through achievement alone"
               ]} />
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Strategy 6: Practice Emotional Independence</h3>
+              <h3 className="font-semibold mb-3">Strategy 6: Practice Emotional Independence</h3>
               <p className="mb-4">
                 <strong>What This Means:</strong> Taking responsibility for your own emotions while supporting others appropriately.
               </p>
@@ -284,7 +279,7 @@ const BlogPostNarcissistAttraction = () => {
                 <strong>Practical Exercise:</strong> When someone shares a problem, ask "Are you looking for advice or just someone to listen?" This prevents you from automatically jumping into caregiver mode.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Strategy 7: Trust Your Gut Instincts</h3>
+              <h3 className="font-semibold mb-3">Strategy 7: Trust Your Gut Instincts</h3>
               <p className="mb-4">
                 <strong>What This Means:</strong> Learning to value your intuitive feelings about people and situations.
               </p>
@@ -309,7 +304,7 @@ const BlogPostNarcissistAttraction = () => {
                 Research from <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2024.1471084/full" target="_blank" rel="noopener noreferrer" className="text-brand-emphasis hover:underline">Harvard Business School</a> shows that people who trust their intuition make better relationship decisions 84% of the time.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Strategy 8: Cultivate Secure Relationships as Models</h3>
+              <h3 className="font-semibold mb-3">Strategy 8: Cultivate Secure Relationships as Models</h3>
               <p className="mb-4">
                 <strong>What This Means:</strong> Surrounding yourself with emotionally healthy people to reset your relationship template.
               </p>
@@ -331,7 +326,7 @@ const BlogPostNarcissistAttraction = () => {
                 "Use secure relationships as your new standard"
               ]} />
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Strategy 9: Implement the "Slow Building" Approach</h3>
+              <h3 className="font-semibold mb-3">Strategy 9: Implement the "Slow Building" Approach</h3>
               <p className="mb-4">
                 <strong>What This Means:</strong> Taking time to really know someone before becoming emotionally invested.
               </p>
@@ -357,7 +352,7 @@ const BlogPostNarcissistAttraction = () => {
               </p>
 
               <img 
-                src="/images/person-practicing-self-reflection-and-boundary-setting-techniques-to-break-the-cycle-of-attracting-narcissists-and-build-healthier-relationships.webp" 
+                src="/images/person-practicing-self-reflection-and-boundary-setting-techniques-to-break-the-cycle-of-attracting-narcissists-and-build-healthier-relationships.webp?v=1760798229914" 
                 alt="Person practicing self-reflection and boundary-setting techniques to break the cycle of attracting narcissists and build healthier relationships" 
                 className="rounded-lg shadow-md my-8 w-full" 
                 loading="lazy"
@@ -370,13 +365,13 @@ const BlogPostNarcissistAttraction = () => {
             </section>
 
             <section id="red-flags" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">How to Recognize Narcissistic Red Flags Early</h2>
+              <h2 className="font-bold mb-4">How to Recognize Narcissistic Red Flags Early</h2>
 
               <p className="mb-6">
                 Learning how to stop attracting narcissists includes developing the ability to spot concerning behaviors before you become emotionally invested.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Early Warning Signs (First 1-3 Interactions):</h3>
+              <h3 className="font-semibold mb-3">Early Warning Signs (First 1-3 Interactions):</h3>
               <StyledList items={[
                 "Excessive Compliments: \"You're not like anyone I've ever met\" or \"You're perfect\"",
                 "Rushed Intimacy: Saying \"I love you\" within weeks or pushing for exclusivity quickly",
@@ -385,7 +380,7 @@ const BlogPostNarcissistAttraction = () => {
                 "Victim Stories: Sharing dramatic tales about how everyone has wronged them"
               ]} />
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Mid-Stage Red Flags (1-6 months):</h3>
+              <h3 className="font-semibold mb-3">Mid-Stage Red Flags (1-6 months):</h3>
               <StyledList items={[
                 "Isolation Attempts: Criticizing your friends, family, or independent activities",
                 "Gaslighting: Making you question your memory or perception of events",
@@ -394,7 +389,7 @@ const BlogPostNarcissistAttraction = () => {
                 "Control Behaviors: Monitoring your phone, showing up unexpectedly, or demanding detailed schedules"
               ]} />
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Advanced Warning Signs (6+ months):</h3>
+              <h3 className="font-semibold mb-3">Advanced Warning Signs (6+ months):</h3>
               <StyledList items={[
                 "Financial Control: Restricting access to money or making financial decisions without consulting you",
                 "Emotional Abuse: Name-calling, silent treatment, or public humiliation",
@@ -404,13 +399,13 @@ const BlogPostNarcissistAttraction = () => {
             </section>
 
             <section id="healthy-patterns" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Building Healthy Relationship Patterns</h2>
+              <h2 className="font-bold mb-4">Building Healthy Relationship Patterns</h2>
 
               <p className="mb-6">
                 Understanding how to stop attracting narcissists also means learning what healthy relationships actually look like.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Characteristics of Emotionally Healthy Partners:</h3>
+              <h3 className="font-semibold mb-3">Characteristics of Emotionally Healthy Partners:</h3>
 
               <h4 className="text-xl font-bold text-brand-dark mb-3">Communication Style</h4>
               <StyledList items={[
@@ -436,7 +431,7 @@ const BlogPostNarcissistAttraction = () => {
                 "They encourage your personal growth and independence"
               ]} />
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Building Your Relationship Skills:</h3>
+              <h3 className="font-semibold mb-3">Building Your Relationship Skills:</h3>
               <StyledList items={[
                 "Practice Reciprocity: Healthy relationships involve equal give and take",
                 "Develop Conflict Resolution Skills: Learn to disagree respectfully",
@@ -447,13 +442,13 @@ const BlogPostNarcissistAttraction = () => {
             </section>
 
             <section id="professional-help" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">When to Seek Professional Help</h2>
+              <h2 className="font-bold mb-4">When to Seek Professional Help</h2>
 
               <p className="mb-6">
                 Sometimes learning how to stop attracting narcissists requires professional support, especially if you've experienced severe narcissistic abuse or have deep-rooted trauma patterns.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Signs You Should Consider Therapy:</h3>
+              <h3 className="font-semibold mb-3">Signs You Should Consider Therapy:</h3>
               <StyledList items={[
                 "You've been in multiple abusive relationships",
                 "You struggle with severe anxiety or depression",
@@ -463,7 +458,7 @@ const BlogPostNarcissistAttraction = () => {
                 "You feel unable to trust your own judgment about people"
               ]} />
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Types of Helpful Therapy:</h3>
+              <h3 className="font-semibold mb-3">Types of Helpful Therapy:</h3>
 
               <h4 className="text-xl font-bold text-brand-dark mb-3">Trauma-Informed Therapy</h4>
               <p className="mb-4">
@@ -485,7 +480,7 @@ const BlogPostNarcissistAttraction = () => {
                 Processes traumatic memories that may be influencing current relationship patterns.
               </p>
 
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">Finding the Right Therapist:</h3>
+              <h3 className="font-semibold mb-3">Finding the Right Therapist:</h3>
               <StyledList items={[
                 "Look for specialists in narcissistic abuse recovery",
                 "Ask about their experience with attachment trauma",
@@ -500,7 +495,7 @@ const BlogPostNarcissistAttraction = () => {
             </section>
 
             <section id="faq" className="mb-16 scroll-mt-24">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Frequently Asked Questions</h2>
+              <h2 className="font-bold mb-4">Frequently Asked Questions</h2>
 
               <div className="space-y-6">
                 <div className="bg-gradient-to-r from-brand-light to-white border-l-4 border-brand-emphasis p-6 rounded-r-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
@@ -540,7 +535,7 @@ const BlogPostNarcissistAttraction = () => {
                   </h3>
                   <div className="ml-11">
                     <p className="text-brand-primary leading-relaxed">
-                      No. Narcissistic Personality Disorder is a deeply ingrained pattern that rarely changes, even with professional treatment. Setting boundaries isn't about changing the narcissistâ€”it's about protecting yourself and becoming unappealing to manipulative individuals.
+                      No. Narcissistic Personality Disorder is a deeply ingrained pattern that rarely changes, even with professional treatment. Setting boundaries isn't about changing the narcissist—it's about protecting yourself and becoming unappealing to manipulative individuals.
                     </p>
                   </div>
                 </div>
@@ -610,7 +605,7 @@ const BlogPostNarcissistAttraction = () => {
                   </h3>
                   <div className="ml-11">
                     <p className="text-brand-primary leading-relaxed">
-                      Genuine friendship requires mutual respect, empathy, and careâ€”qualities narcissists cannot provide consistently. Any relationship with a narcissist will eventually become one-sided and draining. It's healthier to invest your energy in reciprocal relationships.
+                      Genuine friendship requires mutual respect, empathy, and care—qualities narcissists cannot provide consistently. Any relationship with a narcissist will eventually become one-sided and draining. It's healthier to invest your energy in reciprocal relationships.
                     </p>
                   </div>
                 </div>
@@ -618,7 +613,7 @@ const BlogPostNarcissistAttraction = () => {
             </section>
 
             <section className="mb-16">
-              <h2 className="text-3xl font-bold text-brand-dark mb-6">Final Thoughts: Your Journey to Healthier Relationships</h2>
+              <h2 className="font-bold mb-4">Final Thoughts: Your Journey to Healthier Relationships</h2>
 
               <p className="mb-6">
                 Learning how to stop attracting narcissists is ultimately about developing a strong, authentic relationship with yourself. When you know your worth, trust your instincts, and maintain healthy boundaries, you naturally repel manipulative individuals and attract people who value genuine connection.
@@ -662,4 +657,7 @@ const BlogPostNarcissistAttraction = () => {
 };
 
 export default BlogPostNarcissistAttraction;
+
+
+
 

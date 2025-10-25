@@ -78,9 +78,8 @@ const Header = () => {
 
   useEffect(() => {
     try {
-      const prefersDark = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
       const stored = typeof localStorage !== 'undefined' ? localStorage.getItem('theme') : null;
-      const dark = stored === 'dark' || (!stored && prefersDark);
+      const dark = stored === 'dark'; // Only enable dark if explicitly chosen by user
       if (dark) {
         document.documentElement.classList.add('dark');
         setIsDarkMode(true);
@@ -144,7 +143,7 @@ const Header = () => {
     <>
       {isArticle && (<div id="read-progress" style={{ width: `${progress}%`, pointerEvents: "none" }} className="fixed top-0 left-0 h-1 bg-brand-emphasis z-[9999]"></div>)}
       <header className={`sticky top-0 z-50 transition-colors duration-300 h-[112px] ${isScrolled ? 'bg-[#C65616] shadow-lg' : 'bg-[#B44416]'}`}>
-        <a href="#main-content" className="sr-only focus:not-sr-only">Skip to main content</a>
+        <a href="#main" className="sr-only focus:not-sr-only">Skip to main content</a>
         <div className="container mx-auto px-6 flex justify-between items-center h-full">
           <NormalizedLink to="/">
             <div className={`modern-logo transition-all duration-300 ${isScrolled ? 'w-12 h-12' : 'w-16 h-16'} rounded-full overflow-hidden bg-white p-0`}>
@@ -154,7 +153,7 @@ const Header = () => {
                 className="w-full h-full object-cover"
                 width={64}
                 height={64}
-                priority={true}
+                priority={false}
                 sizes="64px"
               />
             </div>

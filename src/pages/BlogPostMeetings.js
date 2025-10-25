@@ -1,10 +1,12 @@
-﻿import React from 'react';
+import React from 'react';
 import NormalizedLink from '../components/NormalizedLink';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
 import StyledList from '../components/StyledList';
 import { sortedBlogPosts } from '../blogData';
-import AuthorBio from '../components/AuthorBio';
+import AuthorBio from '../components/AuthorBio.jsx';
+import TableOfContents from '../components/TableOfContents';
+import OptimizedImage from '../components/OptimizedImage';
 
 const BlogPostMeetings = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'how-to-speak-up-in-meetings-introvert-strategies-2025');
@@ -14,16 +16,16 @@ const BlogPostMeetings = () => {
       <div className="container mx-auto px-6 py-16">
         <NormalizedLink to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">&larr; Back to Home</NormalizedLink>
         
-        <article className="article-container mx-auto max-w-[720px]">
+        <article className="article-container mx-auto">
           <header className="mb-16 text-left">
-            <h1 className="text-4xl md:text-6xl font-bold text-brand-dark mb-6">
+            <h1 className="font-bold mb-6">
               How to Speak Up in Meetings as an Introvert: 9 Proven Strategies That Actually Work in 2025
             </h1>
             <div className="flex items-center gap-4 text-brand-primary text-lg">
-              <span>By <strong>Marica Å inko</strong></span>
-              <span className="text-gray-400">â€¢</span>
+              <span>By <strong>Marica �inko</strong></span>
+              <span className="text-gray-400">•</span>
               <span>{postData?.readTime}</span>
-              <span className="text-gray-400">â€¢</span>
+              <span className="text-gray-400">•</span>
               <span>{new Date(postData?.date).toLocaleDateString('en-US', { 
                 year: 'numeric', 
                 month: 'long', 
@@ -35,24 +37,12 @@ const BlogPostMeetings = () => {
             </p>
           </header>
 
-          <section className="bg-white p-8 rounded-lg mb-16 shadow-md text-base">
-            <h3 className="text-2xl font-bold text-brand-dark mb-4">Table of Contents</h3>
-            <ul className="space-y-3 toc-list">
-              <li><a href="#understanding-why-introverts-struggle" className="text-brand-emphasis hover:underline">1. Understanding Why Introverts Struggle in Meetings</a></li>
-              <li><a href="#pre-meeting-preparation" className="text-brand-emphasis hover:underline">2. The Pre-Meeting Preparation System</a></li>
-              <li><a href="#strategic-timing" className="text-brand-emphasis hover:underline">3. Strategic Timing: When and How to Jump In</a></li>
-              <li><a href="#power-of-questions" className="text-brand-emphasis hover:underline">4. The Power of Questions: Your Introvert Superpower</a></li>
-              <li><a href="#body-language" className="text-brand-emphasis hover:underline">5. Body Language That Commands Attention</a></li>
-              <li><a href="#leveraging-technology" className="text-brand-emphasis hover:underline">6. Leveraging Technology and Written Communication</a></li>
-              <li><a href="#building-alliances" className="text-brand-emphasis hover:underline">7. Building Alliances Before the Meeting</a></li>
-              <li><a href="#recovery-strategies" className="text-brand-emphasis hover:underline">8. Recovery Strategies When Things Go Wrong</a></li>
-              <li><a href="#confidence-building" className="text-brand-emphasis hover:underline">9. Progressive Confidence Building Techniques</a></li>
-              <li><a href="#faq" className="text-brand-emphasis hover:underline">10. Frequently Asked Questions</a></li>
-            </ul>
-          </section>
+          <div id="toc-anchor" className="mb-8" />
+
+          {/* TOC rendered globally via BlogPostPage; remove inline duplicate */}
 
           <section className="mb-16">
-            <h2>Introduction: Your Voice Matters in Every Meeting</h2>
+            <h2 className="font-bold mb-4">Introduction: Your Voice Matters in Every Meeting</h2>
             <p>
               Do you feel your heart racing when you know you should contribute to a meeting discussion? You're not alone. Research shows that 25-40% of the population identifies as introverted, yet 73% of introverts report feeling overlooked in meetings despite having valuable insights to share.
             </p>
@@ -60,21 +50,30 @@ const BlogPostMeetings = () => {
               If you're an introvert who struggles to speak up in meetings, you've likely experienced the frustration of watching great ideas go unshared, opportunities slip by, and your professional growth stagnate. But here's the truth: being introverted doesn't mean you're destined to be invisible in meetings. You can learn how to speak up in meetings as an introvert while staying authentic to your natural communication style.
             </p>
             <p>
-              In this comprehensive guide, you'll discover nine evidence-based strategies that thousands of introverted professionals have used to transform their meeting presence, build confidence, and advance their careers. These aren't about changing your personality â€“ they're about leveraging your introvert strengths while developing practical skills that work.
+              In this comprehensive guide, you'll discover nine evidence-based strategies that thousands of introverted professionals have used to transform their meeting presence, build confidence, and advance their careers. These aren't about changing your personality – they're about leveraging your introvert strengths while developing practical skills that work.
             </p>
           </section>
 
           <section id="understanding-why-introverts-struggle" className="mb-16 scroll-mt-24">
-            <h2>1. Understanding Why Introverts Struggle in Meetings</h2>
+            <h2 className="font-bold mb-4">1. Understanding Why Introverts Struggle in Meetings</h2>
             <p>
-              Before diving into solutions, it's crucial to understand why meetings can be particularly challenging for introverts. This isn't about being shy or lacking confidence â€“ it's about fundamental differences in how introverts process information and communicate.
+              Before diving into solutions, it's crucial to understand why meetings can be particularly challenging for introverts. This isn't about being shy or lacking confidence – it's about fundamental differences in how introverts process information and communicate.
             </p>
             <div className="my-8">
-              <img loading="lazy" decoding="async" src="/images/confident-introvert-business-meeting.webp" alt="Confident introvert woman speaking up during business meeting with diverse colleagues listening attentively around conference table" className="rounded-lg shadow-md" width="1200" height="800" />
+              <OptimizedImage
+                src="/images/confident-introvert-business-meeting.webp?v=1760798229914"
+                alt="Confident introvert woman speaking up during business meeting with diverse colleagues listening attentively around conference table"
+                width={1200}
+                height={800}
+                usePicture={true}
+                priority={true}
+                sizes="(max-width: 768px) 100vw, 720px"
+                className="rounded-lg shadow-md"
+              />
               <p className="text-sm text-gray-600 mt-3 text-center italic">Confident introvert woman speaking up during business meeting with diverse colleagues listening attentively around conference table</p>
             </div>
             
-            <h3>The Introvert Brain in Meetings</h3>
+            <h3 className="font-semibold mb-3">The Introvert Brain in Meetings</h3>
             <p>
               Neuroscience research by Dr. Marti Olsen Laney reveals that introverts process information through their prefrontal cortex, which requires more time and mental energy than the anterior temporal lobe pathway that extroverts typically use. This means introverts often need more processing time to formulate thoughtful responses.
             </p>
@@ -92,7 +91,7 @@ const BlogPostMeetings = () => {
             
             <KeyTakeawayBox title="The Cost of Silence">
               <p>
-                A 2024 study by the Harvard Business Review found that professionals who speak up regularly in meetings receive promotions 35% faster than their quieter counterparts. However, this doesn't mean introverts should become extroverts â€“ it means they need strategies that work with their natural tendencies.
+                A 2024 study by the Harvard Business Review found that professionals who speak up regularly in meetings receive promotions 35% faster than their quieter counterparts. However, this doesn't mean introverts should become extroverts – it means they need strategies that work with their natural tendencies.
               </p>
             </KeyTakeawayBox>
           </section>
@@ -109,7 +108,7 @@ const BlogPostMeetings = () => {
             </p>
             
             <div className="my-8">
-              <img loading="lazy" decoding="async" src="/images/meeting-preparation-strategies-desk.webp" alt="Professional preparing meeting notes and agenda on desk with laptop showing introvert meeting preparation strategies and planning techniques" className="rounded-lg shadow-md" width="1200" height="800" />
+              <img loading="lazy" decoding="async" src="/images/meeting-preparation-strategies-desk.webp?v=1760798229914" alt="Professional preparing meeting notes and agenda on desk with laptop showing introvert meeting preparation strategies and planning techniques" className="rounded-lg shadow-md" width="1200" height="800" />
               <p className="text-sm text-gray-600 mt-3 text-center italic">Professional preparing meeting notes and agenda on desk with laptop showing introvert meeting preparation strategies and planning techniques</p>
             </div>
             
@@ -327,7 +326,7 @@ const BlogPostMeetings = () => {
             ]} />
             
             <h3>The Champion Approach</h3>
-            <p>Identify one person in each meeting who can serve as your "champion" â€“ someone who values your input and might amplify your contributions.</p>
+            <p>Identify one person in each meeting who can serve as your "champion" – someone who values your input and might amplify your contributions.</p>
             
             <StyledBlockquote>
               "Mark, an introverted financial analyst, built relationships with department heads by sending weekly market insights via email. When budget meetings arrived, these relationships made it natural for him to contribute his analysis, leading to his promotion to senior analyst."
@@ -428,13 +427,13 @@ const BlogPostMeetings = () => {
               <div>
                 <h3>What if I freeze up when everyone looks at me during meetings?</h3>
                 <p>
-                  This is completely normal for introverts. Start with the preparation strategies in this guide â€“ having your points written down gives you something to fall back on. Practice the power pause technique: take a breath, look at your notes if needed, and begin with a transition phrase like "That's an interesting point, and it makes me think about..." This gives you time to collect yourself while still contributing meaningfully.
+                  This is completely normal for introverts. Start with the preparation strategies in this guide – having your points written down gives you something to fall back on. Practice the power pause technique: take a breath, look at your notes if needed, and begin with a transition phrase like "That's an interesting point, and it makes me think about..." This gives you time to collect yourself while still contributing meaningfully.
                 </p>
               </div>
               <div>
                 <h3>How can I overcome the fear that my ideas aren't good enough?</h3>
                 <p>
-                  Remember that your introvert brain processes information differently, often leading to more thoughtful insights. Start by sharing questions rather than statements â€“ they feel less vulnerable but are equally valuable. Keep a "wins journal" where you track positive responses to your contributions. Most importantly, remember that diversity of thought improves decision-making, and your perspective adds value precisely because it's different.
+                  Remember that your introvert brain processes information differently, often leading to more thoughtful insights. Start by sharing questions rather than statements – they feel less vulnerable but are equally valuable. Keep a "wins journal" where you track positive responses to your contributions. Most importantly, remember that diversity of thought improves decision-making, and your perspective adds value precisely because it's different.
                 </p>
               </div>
               <div>
@@ -452,7 +451,7 @@ const BlogPostMeetings = () => {
               <div>
                 <h3>How long should I expect it to take to feel comfortable speaking up in meetings?</h3>
                 <p>
-                  Most introverts see improvement within 2-3 months of consistently applying these strategies, with significant confidence gains by 6 months. However, this varies based on your starting point, workplace culture, and how frequently you practice. Focus on progress, not perfection â€“ even small improvements in your meeting participation can have significant career benefits over time.
+                  Most introverts see improvement within 2-3 months of consistently applying these strategies, with significant confidence gains by 6 months. However, this varies based on your starting point, workplace culture, and how frequently you practice. Focus on progress, not perfection – even small improvements in your meeting participation can have significant career benefits over time.
                 </p>
               </div>
             </div>
@@ -461,7 +460,7 @@ const BlogPostMeetings = () => {
           <section className="border-t pt-12 mt-16">
             <h2>Conclusion: Your Introvert Advantage in Meetings</h2>
             <p>
-              Learning how to speak up in meetings as an introvert isn't about changing your fundamental nature â€“ it's about leveraging your natural strengths while developing complementary skills. Your tendency toward thoughtful preparation, deep listening, and strategic thinking are actually significant advantages in today's meeting-heavy business environment.
+              Learning how to speak up in meetings as an introvert isn't about changing your fundamental nature – it's about leveraging your natural strengths while developing complementary skills. Your tendency toward thoughtful preparation, deep listening, and strategic thinking are actually significant advantages in today's meeting-heavy business environment.
             </p>
             <StyledList 
               title="Key Takeaways:"
@@ -474,7 +473,7 @@ const BlogPostMeetings = () => {
               ]} 
             />
             <p>
-              Remember, the business world needs the thoughtful perspective, careful analysis, and strategic thinking that introverts bring to meetings. The goal isn't to become more extroverted â€“ it's to become more confidently introverted.
+              Remember, the business world needs the thoughtful perspective, careful analysis, and strategic thinking that introverts bring to meetings. The goal isn't to become more extroverted – it's to become more confidently introverted.
             </p>
             <p>
               Your introvert voice matters. The strategies in this guide have helped thousands of introverted professionals transform their careers while staying true to their authentic selves. Your unique perspective, when shared effectively, can drive better decisions, inspire innovative solutions, and create more inclusive workplace cultures.
@@ -497,4 +496,5 @@ const BlogPostMeetings = () => {
 };
 
 export default BlogPostMeetings;
+
 

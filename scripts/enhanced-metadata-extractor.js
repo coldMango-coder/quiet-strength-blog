@@ -74,8 +74,19 @@ function getBlogPostMetadata(slug) {
       const category = categoryMatch ? categoryMap[categoryMatch[1]] || categoryMatch[1] : 'Self-Development';
       const keywords = keywordsMatch ? keywordsMatch[1].split(',').map(k => k.replace(/['"]/g, '').trim()) : [];
       
+      // Short SEO titles map
+      const shortTitleBySlug = {
+        'how-to-know-if-you-deserve-better-relationship-introvert-woman-guide': 'Do You Deserve Better? 7 Clear Signs for Introvert Women',
+        'how-to-stop-attracting-narcissists-9-proven-strategies': 'How to Stop Attracting Narcissists: 9 Proven Strategies',
+        'how-to-be-confident-as-an-introvert-woman-guide': 'How to Be Confident as an Introvert Woman',
+        'how-to-speak-up-in-meetings-introvert-strategies-2025': 'How to Speak Up in Meetings as an Introvert',
+        'introvert-social-battery-drained-recovery-methods': 'Introvert Social Battery Drained? 9 Ways to Recharge',
+        'morning-routine-for-confidence-and-productivity-2025': 'Morning Routine for Confidence and Productivity',
+        'post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025': 'Post-Breakup Glow Up: 10 Steps',
+      };
+      const resolvedTitle = shortTitleBySlug[slug] || (titleMatch ? titleMatch[1] : formatTitle(slug));
       return {
-        title: titleMatch ? titleMatch[1] : formatTitle(slug),
+        title: resolvedTitle,
         description: descriptionMatch ? descriptionMatch[1] : `Learn about ${formatTitle(slug).toLowerCase()} and build quiet confidence.`,
         datePublished: dateMatch ? `${dateMatch[1]}T09:00:00-05:00` : new Date().toISOString(),
         dateModified: dateMatch ? `${dateMatch[1]}T09:00:00-05:00` : new Date().toISOString(),
@@ -128,27 +139,27 @@ function getCategoryMetadata(categorySlug) {
   const categoryMap = {
     'relationships-and-dating': {
       name: 'Relationships & Dating',
-      description: 'Expert advice on building healthy relationships, setting boundaries, and navigating dating as an introverted woman.',
+      description: 'Explore articles on relationships and dating with confidence—boundaries, healthy communication, and intentional choices for introverted women.',
       image: `${BASE_URL}/images/couple-authentic-connection-walk.jpg`
     },
     'career-and-workplace': {
       name: 'Career & Workplace',
-      description: 'Professional development tips, networking strategies, and workplace confidence for introverted women.',
+      description: 'Advance your career without burnout. Practical advice for introverted women on boundaries, focus, and sustainable success.',
       image: `${BASE_URL}/images/confident-office-meeting-scene.jpg`
     },
     'introversion-and-personality': {
       name: 'Introversion & Personality',
-      description: 'Understanding and embracing your introverted personality while building authentic confidence.',
+      description: 'Insights on introversion and personality types with practical ways to leverage your strengths as an introverted woman.',
       image: `${BASE_URL}/images/empowered-introvert-woman-standing-confidently-in-peaceful-natural-setting-representing-authentic-confidence-journey-and-quiet-strength-development.jpg`
     },
     'self-development': {
       name: 'Self-Development',
-      description: 'Personal growth strategies, mindfulness practices, and self-improvement tips for introverted women.',
+      description: 'Personal growth strategies and practical self-improvement for introverted women — build confidence and momentum with small steps.',
       image: `${BASE_URL}/images/woman-journaling-self-reflection.jpg`
     },
     'womens-wellness': {
       name: 'Women\'s Wellness',
-      description: 'Holistic wellness approaches focused on mental health, energy management, and self-care.',
+      description: 'Holistic wellness focused on mental health, energy management, and self-care for introverted women.',
       image: `${BASE_URL}/images/woman-mindfulness-burnout-prevention.jpg`
     }
   };

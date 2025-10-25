@@ -1,0 +1,133 @@
+:root{
+  /* Exact WP-like scale (mobile → desktop) */
+  --fs-base: clamp(1.031rem, 0.98rem + 0.5vw, 1.125rem);  /* 16.5 → 18 */
+  --fs-para: clamp(1.06rem, 1.0rem + 0.7vw, 1.20rem);     /* body+ paragraphs */
+
+  --fs-h1: clamp(2.0rem, 1.5rem + 2.5vw, 2.75rem);        /* 32 → 44 */
+  --fs-h2: clamp(1.5rem, 1.2rem + 1.6vw, 2.0rem);         /* 24 → 32 */
+  --fs-h3: clamp(1.25rem, 1.05rem + 1.0vw, 1.5rem);       /* 20 → 24 */
+
+  --lh-body: 1.75;
+  --lh-heading: 1.25;
+
+  --measure: 72ch;
+  --space-1: 0.5rem;
+  --space-2: 0.9rem;    /* para spacing */
+  --space-3: 1.25rem;
+  --space-4: 2rem;
+
+  --text: #0f172a;      /* slate-900 fallback */
+  --muted: #475569;     /* slate-600 */
+  --link: #0ea5e9;      /* brand-ish blue */
+  --border: #e2e8f0;
+  --bg-quote: #f8fafc;
+}
+
+html { font-size: 16px; }
+body {
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+  color: var(--text);
+  letter-spacing: 0.005em;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Accessible focus style for logo/links */
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+
+.article-container {
+  max-width: var(--measure);
+}
+
+.article-container h1,
+.article-container h2,
+.article-container h3 {
+  line-height: var(--lh-heading);
+  font-weight: 800;
+  color: var(--text);
+  margin: 1.6em 0 0.6em;
+}
+
+.article-container h1 { font-size: var(--fs-h1); margin-top: 0; }
+.article-container h2 { font-size: var(--fs-h2); }
+.article-container h3 { font-size: var(--fs-h3); }
+
+.article-container p,
+.article-container li { font-size: var(--fs-para); }
+
+.article-container p { margin: var(--space-2) 0; }
+
+.article-container ul,
+.article-container ol {
+  margin: var(--space-3) 0 var(--space-3) 1.2rem;
+  padding-left: 0.4rem;
+}
+
+.article-container a {
+  color: var(--link);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.25px;
+}
+.article-container a:hover { text-decoration: underline; }
+
+.article-container blockquote {
+  margin: var(--space-4) 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--border);
+  background: var(--bg-quote);
+}
+
+.article-container figure { margin: 1.5rem 0; }
+.article-container figcaption {
+  color: var(--muted);
+  font-size: clamp(0.94rem, 0.9rem + 0.2vw, 1.0rem);
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.article-container code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;
+  background: #f8fafc;
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+}
+
+.article-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: var(--fs-base);
+}
+.article-container th, .article-container td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.6rem 0.4rem;
+  text-align: left;
+}
+.article-container thead th { font-weight: 700; }
+
+.article-container img { display:block; height:auto; max-width:100%; }
+
+/* Mobile padding so text doesn't look oversized */
+@media (max-width: 640px){
+  .article-container { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .article-container blockquote { margin-left: 0; margin-right: 0; }
+}
+
+/* Compact TOC typography */
+[data-toc] { font-size: 6.5px; line-height: 1.5; }
+@media (min-width: 768px){ [data-toc] { font-size: 7px; } }
+[data-toc] ol { padding-left: 1.25rem; }
+[data-toc] li { padding-left: 0.1rem; }
+[data-toc] a { color: #C05621; }
+[data-toc] a:hover { text-decoration: underline; color: #9a431a; }
+
+/* TOC compact text sizes */
+[data-toc] { font-size: 13px; line-height: 1.55; }
+@media (min-width: 768px){ [data-toc] { font-size: 14px; } }
+
+/* Keep numbers aligned and tidy */
+[data-toc] ol { padding-left: 1.25rem; }
+[data-toc] li { padding-left: 0.1rem; }

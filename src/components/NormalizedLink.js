@@ -14,7 +14,7 @@ const NormalizedLink = ({ to, href, children, ...props }) => {
     return <a {...props}>{children}</a>;
   }
   
-  const normalizedHref = normalizeHref(originalHref);
+  let normalizedHref = normalizeHref(originalHref);
   
   // Handle null/undefined normalized href
   if (!normalizedHref || typeof normalizedHref !== 'string') {
@@ -23,7 +23,18 @@ const NormalizedLink = ({ to, href, children, ...props }) => {
   
   // Check if this is an external link or special link type
   const BASE = (process.env.REACT_APP_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : ''));
-  const isExternal = normalizedHref.startsWith('http') && !normalizedHref.startsWith(BASE);
+  const isOurDomainAbsolute = /^https?:\/\/(www\.)?trueallyguide\.com/i.test(normalizedHref);
+  // Ensure URI encoding for any diacritics or spaces in internal hrefs
+  if (typeof normalizedHref === 'string') {
+    try {
+      // Preserve hash/query while encoding path safely
+      const [pathPart, rest = ''] = normalizedHref.split(/([?#].*)/);
+      const encodedPath = encodeURI(pathPart);
+      normalizedHref = `${encodedPath}${rest || ''}`;
+    } catch {}
+  }
+
+  const isExternal = normalizedHref.startsWith('http') && !isOurDomainAbsolute;
   const isSpecial = normalizedHref.startsWith('mailto:') || 
                    normalizedHref.startsWith('tel:') || 
                    normalizedHref.startsWith('#');
@@ -39,7 +50,9 @@ const NormalizedLink = ({ to, href, children, ...props }) => {
   
   // Convert full URLs back to relative paths for React Router
   let routerPath = normalizedHref;
-  if (BASE && normalizedHref.startsWith(BASE)) {
+  if (isOurDomainAbsolute) {
+    routerPath = normalizedHref.replace(/^https?:\/\/(www\.)?trueallyguide\.com/i, '') || '/';
+  } else if (BASE && normalizedHref.startsWith(BASE)) {
     routerPath = normalizedHref.replace(BASE, '') || '/';
   }
   

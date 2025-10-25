@@ -13,11 +13,11 @@ const CategoryPage = () => {
 
   const getCategoryDescription = (category) => {
     const descriptions = {
-      'Introversion & Personality': 'Discover insights about introversion, personality types, and how to leverage your natural strengths as an introverted woman.',
-      'Relationships & Dating': 'Navigate relationships and dating with confidence, from setting boundaries to communicating effectively.',
-      'Career & Workplace': 'Advance your career while staying true to your introverted nature, prevent burnout, and create workplace success.',
-      'Self-Development': 'Build confidence, develop new skills, and create the life you want through intentional self-improvement.',
-      'Women\'s Wellness': 'Prioritize your mental, physical, and emotional well-being with practical wellness strategies for women.'
+      'Introversion & Personality': 'Insights on introversion and personality types with practical ways to leverage your strengths as an introverted woman.',
+      'Relationships & Dating': 'Explore articles on relationships and dating with confidence—boundaries, healthy communication, and intentional choices for introverted women.',
+      'Career & Workplace': 'Advance your career without burnout. Practical advice for introverted women on boundaries, focus, and sustainable success.',
+      'Self-Development': 'Personal growth strategies and practical self-improvement for introverted women—build confidence with small steps.',
+      'Women\'s Wellness': 'Holistic wellness focused on mental health, energy management, and self-care for introverted women.'
     };
     return descriptions[category] || 'Explore articles in this category to enhance your personal growth journey.';
   };
@@ -60,7 +60,7 @@ const CategoryPage = () => {
         {/* Articles Grid */}
         {filteredPosts.length > 0 ? (
           <section>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredPosts.map((post) => (
                 <BlogCard
                   key={post.slug}
@@ -89,7 +89,7 @@ const CategoryPage = () => {
 
         {/* Other Categories */}
         <div className="mt-20 pt-12 border-t border-gray-200">
-          <h3 className="text-2xl font-bold text-brand-dark mb-8 text-center">Explore Other Categories</h3>
+          <h3 className="text-2xl font-bold text-brand-dark mb-8 text-center text-balance">Explore Other Categories</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {Object.values(categories).filter(cat => cat !== displayName).map((otherCategory) => (
               <NormalizedLink

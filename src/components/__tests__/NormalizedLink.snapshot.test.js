@@ -141,7 +141,7 @@ describe('NormalizedLink Internal Links Test', () => {
       const canonicalUrl = getCanonicalUrl(pathPart);
       
       // The canonical URL should match the normalized href when both are converted to the same format
-      const expectedCanonical = canonicalUrl.replace('https://www.trueallyguide.com', '') || '/';
+      const expectedCanonical = canonicalUrl.replace('https://trueallyguide.com', '') || '/';
       
       expect(pathPart).toBe(expectedCanonical);
     });

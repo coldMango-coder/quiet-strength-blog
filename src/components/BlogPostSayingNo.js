@@ -4,7 +4,8 @@ import StyledBlockquote from './StyledBlockquote';
 import KeyTakeawayBox from './KeyTakeawayBox';
 import StyledList from './StyledList';
 import { sortedBlogPosts } from '../blogData';
-import AuthorBio from './AuthorBio';
+import AuthorBio from './AuthorBio.jsx';
+import TableOfContents from './TableOfContents';
 
 const BlogPostSayingNo = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'art-of-saying-no');
@@ -34,22 +35,9 @@ const BlogPostSayingNo = () => {
             </p>
           </header>
 
-          <section className="bg-white p-8 rounded-lg mb-16 shadow-md">
-            <h3 className="text-2xl font-bold text-brand-dark mb-4">Table of Contents</h3>
-            <ul className="space-y-3 toc-list">
-              <li><a href="#section-1" className="text-brand-emphasis hover:underline">The Silent Struggle of the People-Pleaser</a></li>
-              <li><a href="#section-2" className="text-brand-emphasis hover:underline">My Own Brush with Burnout: A Personal Journey</a></li>
-              <li><a href="#section-3" className="text-brand-emphasis hover:underline">What is People-Pleasing, Really? A Look at the Psychology</a></li>
-              <li><a href="#section-4" className="text-brand-emphasis hover:underline">The Slippery Slope to Burnout: A Vicious Cycle</a></li>
-              <li><a href="#section-5" className="text-brand-emphasis hover:underline">The Official Definition of Burnout (And Why You Should Care)</a></li>
-              <li><a href="#section-6" className="text-brand-emphasis hover:underline">The Empowering Art of Saying 'No': Your Practical Toolkit</a></li>
-              <li><a href="#section-7" className="text-brand-emphasis hover:underline">Building a Foundation of Self-Worth Beyond the 'Yes'</a></li>
-              <li><a href="#faq" className="text-brand-emphasis hover:underline">Frequently Asked Questions (FAQ)</a></li>
-              <li><a href="#section-9" className="text-brand-emphasis hover:underline">Your Next Chapter: From People-Pleaser to Empowered Professional</a></li>
-              <li><a href="#about-author" className="text-brand-emphasis hover:underline">About the Author</a></li>
-              <li><a href="#disclaimer" className="text-brand-emphasis hover:underline">Disclaimer</a></li>
-            </ul>
-          </section>
+          <div id="toc-anchor" className="mb-8" />
+
+          {/* TOC rendered globally via BlogPostPage; remove inline duplicate */}
 
           <section id="section-1" className="mb-16 scroll-mt-24">
             <h2>The Silent Struggle of the People-Pleaser</h2>

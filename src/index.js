@@ -6,6 +6,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ensureNoSW } from './sw-control';
+import RootErrorBoundary from './components/RootErrorBoundary';
 
 // Safe SPA initialization with guards to prevent double initialization
 function startApp() {
@@ -31,7 +32,9 @@ function startApp() {
     const appTree = (
       <BrowserRouter>
         <HelmetProvider>
-          <App />
+          <RootErrorBoundary>
+            <App />
+          </RootErrorBoundary>
         </HelmetProvider>
       </BrowserRouter>
     );

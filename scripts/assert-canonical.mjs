@@ -6,7 +6,7 @@ const routes = (process.env.ROUTES || '/blog/how-to-stop-attracting-narcissists-
 const data = JSON.parse(fs.readFileSync('reports/scan-prod.json', 'utf8')); 
 
 const bad = data.filter(x => {
-  const expectedCanonical = `https://www.trueallyguide.com${x.route}`;
+  const expectedCanonical = `https://trueallyguide.com${x.route}`;
   return x.canonical !== expectedCanonical;
 }); 
 

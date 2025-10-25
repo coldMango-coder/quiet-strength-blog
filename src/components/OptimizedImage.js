@@ -9,7 +9,7 @@ const OptimizedImage = ({
   loading = 'lazy',
   sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
   priority = false,
-  // Default to plain <img> to avoid broken variants when resized assets don't exist
+  // Default to plain <img loading="lazy" decoding="async"> to avoid broken variants when resized assets don't exist
   usePicture = false,
   ...props 
 }) => {

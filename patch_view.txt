@@ -1,0 +1,16 @@
+};
+#!/usr/bin/env node
+
+/**
+ * Enhanced metadata extraction for rich meta tags and schema.org structured data
+ * Extracts comprehensive metadata from blogData.js for each route
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const BASE_URL = 'https://trueallyguide.com';
+
+// Import blog data safely
+function getBlogData() {
+  const blogDataPath = path.join(__dirname, '../src/blogData.js');
