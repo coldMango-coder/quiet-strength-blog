@@ -3134,3 +3134,7 @@ mark:focus,
 /* ToC isolation: avoid global .prose and anchor/list overrides bleeding in */
 .qs-toc *, .not-prose .qs-toc * { position: static !important; }
 .qs-toc a { display: block !important; }
+/* Hard ToC isolation reset to neutralize prose/floats and enforce block anchors */
+.qs-toc, .qs-toc * { position: static !important; float: none !important; }
+.qs-toc a { display: block !important; }
+.prose .qs-toc, .prose .qs-toc * { margin: 0 !important; padding: 0 !important; }

@@ -1,3 +1,4 @@
+// Hard ToC isolation: render outside .prose and isolate styles to prevent bleed/overlap.
 import React, { useEffect, useMemo, useState } from 'react';
 
 // Premium Table of Contents component
@@ -42,7 +43,10 @@ export default function ArticleTOC({ items = [], title = 'Table of Contents', ac
     : 'text-orange-700 border-orange-600';
 
   return (
-    <aside aria-label={title} className="qs-toc not-prose relative isolate w-full rounded-xl bg-white shadow-sm ring-1 ring-neutral-200 z-10">
+    <aside
+      aria-label={title}
+      className="qs-toc not-prose relative isolate z-20 clear-both overflow-hidden w-full rounded-xl bg-white shadow-sm ring-1 ring-neutral-200 sm:sticky sm:top-24 sm:max-h-[70vh] sm:overflow-y-auto"
+    >
       {/* Mobile toggle */}
       <div className="md:hidden">
         <button
@@ -64,8 +68,8 @@ export default function ArticleTOC({ items = [], title = 'Table of Contents', ac
       </div>
 
       {/* Desktop sticky card */}
-      <div className="hidden md:block md:sticky top-24" style={{ maxHeight: '70vh' }}>
-        <div className="p-4 text-sm leading-6 overflow-y-auto">
+      <div className="hidden sm:block">
+        <div className="p-4 text-sm leading-6">
           <h2 className="text-slate-800 font-semibold mb-3 text-base">{title}</h2>
           <TOCList items={flatItems} current={current} accentBase={accentBase} />
         </div>
