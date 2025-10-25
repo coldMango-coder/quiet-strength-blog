@@ -3131,3 +3131,6 @@ mark:focus,
 
 
 
+/* ToC isolation: avoid global .prose and anchor/list overrides bleeding in */
+.qs-toc *, .not-prose .qs-toc * { position: static !important; }
+.qs-toc a { display: block !important; }

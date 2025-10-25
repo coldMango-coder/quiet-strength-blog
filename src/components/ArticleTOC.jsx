@@ -5,6 +5,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 // - items: Array<{ id: string; text: string; level?: 1|2|3 }>
 // - title?: string (default "Table of Contents")
 // - accent?: 'orange'|'blue' (default 'orange')
+// Isolated ToC; avoids .prose and global list/anchor overrides.
 export default function ArticleTOC({ items = [], title = 'Table of Contents', accent = 'orange', activeId = null }) {
   const [open, setOpen] = useState(false); // collapsed by default on mobile
 
@@ -41,7 +42,7 @@ export default function ArticleTOC({ items = [], title = 'Table of Contents', ac
     : 'text-orange-700 border-orange-600';
 
   return (
-    <aside aria-label={title} className="w-full rounded-xl bg-white shadow-sm border border-neutral-200">
+    <aside aria-label={title} className="qs-toc not-prose relative isolate w-full rounded-xl bg-white shadow-sm ring-1 ring-neutral-200 z-10">
       {/* Mobile toggle */}
       <div className="md:hidden">
         <button
