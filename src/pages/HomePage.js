@@ -1,6 +1,6 @@
 ﻿import React from "react";
 import Hero from "../components/Hero";
-import About from "../components/About";
+import About from "../components/About.jsx";
 import Themes from "../components/Themes";
 import Books from "../components/Books";
 import Newsletter from "../components/Newsletter";
