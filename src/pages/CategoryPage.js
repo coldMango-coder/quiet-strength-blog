@@ -44,7 +44,7 @@ const CategoryPage = () => {
         
         {/* Category Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-dark mb-6">{displayName}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-brand-dark mb-6 text-balance whitespace-normal break-words hyphens-none tracking-tight leading-tight">{displayName}</h1>
           <p className="text-xl text-brand-primary max-w-3xl mx-auto leading-relaxed">
             {getCategoryDescription(displayName)}
           </p>

@@ -1,8 +1,8 @@
 import React from 'react';
 import Avatar from './Avatar';
-import sanitizeText from '../lib/content/sanitizeText';
+import normalizeDisplayText from '../lib/content/normalizeDisplayText';
 
-// Clean UTF-8 AuthorBio component consuming Avatar + sanitizer
+// Fix: preserve diacritics and remove mojibake in author info
 export default function AuthorBio({
   name = 'Marica Šinko',
   title = 'Founder of Quiet Strength',
@@ -11,9 +11,9 @@ export default function AuthorBio({
   avatarAlt = 'Portrait of Marica Šinko',
   size = 112,
 }) {
-  const safeName = sanitizeText(name);
-  const safeTitle = sanitizeText(title);
-  const safeBio = sanitizeText(bio);
+  const safeName = normalizeDisplayText(name);
+  const safeTitle = normalizeDisplayText(title);
+  const safeBio = normalizeDisplayText(bio);
 
   return (
     <aside
