@@ -22,12 +22,12 @@ const Hero = () => {
               >
                 Join the Community
               </a>
-              <a
-                href="#blog"
+              <NormalizedLink
+                to="/blog"
                 className="text-brand-emphasis font-bold py-4 px-10 rounded-full hover:bg-brand-secondary transition duration-300 ease-in-out transform hover:scale-105 text-center"
               >
                 Read the Blog
-              </a>
+              </NormalizedLink>
             </div>
           </div>
           <div className="w-full max-w-2xl min-w-0">

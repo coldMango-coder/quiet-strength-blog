@@ -204,7 +204,7 @@ const Header = () => {
                       >
                         <div className="py-2">
                           <a
-                            href="/#blog"
+                            href="/blog"
                             className="block w-full text-left px-4 py-3 text-gray-800 hover:bg-brand-secondary/60 hover:text-brand-emphasis transition-colors duration-150"
                             role="menuitem"
                             onClick={() => setIsCatOpen(false)}

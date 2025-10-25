@@ -36,12 +36,18 @@ const themeDescriptions = {
 
 const ThemeCard = ({ icon, title, description, categoryName }) => (
   <div
-    className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-1 hover:scale-[1.02]"
+    className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col text-center items-center transform hover:-translate-y-1 hover:scale-[1.02] sm:min-w-[280px] lg:min-w-[360px]"
   >
     <div className="mb-6 text-brand-emphasis bg-brand-secondary/20 p-4 rounded-full transition-transform duration-300">
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">{icon}</svg>
     </div>
-    <h3 className="text-xl font-bold text-brand-dark mb-2" aria-label={title}>{title}</h3>
+    <h3
+      className="text-lg md:text-xl font-semibold tracking-tight leading-tight whitespace-normal md:whitespace-nowrap overflow-hidden text-ellipsis text-brand-dark mb-2"
+      aria-label={title}
+      title={title}
+    >
+      {title}
+    </h3>
     <p className="text-slate-600 flex-grow">{description}</p>
     <NormalizedLink to={`/category/${categorySlugMap[categoryName]}`} className="mt-4 text-brand-emphasis hover:underline font-semibold">Explore More &rarr;</NormalizedLink>
   </div>
@@ -54,7 +60,7 @@ const Themes = () => {
         <div className="text-left mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-dark">Our Core Self-Help Themes for Introverted Women</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {Object.values(categories).map((category, index) => (
             <ThemeCard
               key={index}

@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { getCanonicalUrl } from '../lib/seo/getCanonicalUrl';
+import normalizeDisplayText from '../lib/content/normalizeDisplayText';
 import { useDynamicSEO } from '../hooks/useDynamicSEO';
 
 const Seo = ({ title, description, type = 'website', path, article, book, person, breadcrumbs }) => {
@@ -132,15 +133,20 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
 
   const metaDescription = getMetaDescription(description);
 
+  const displayTitleBase = title ? normalizeDisplayText(title) : siteName;
+  const fullTitle = title ? `${displayTitleBase} | ${siteName}` : siteName;
+  const displayAuthor = normalizeDisplayText(article?.authorName || 'Marica Šinko');
+
   return (
     <Helmet>
       <meta charSet="utf-8" />
-      <title>{title ? `${title} | ${siteName}` : siteName}</title>
+      <title>{fullTitle}</title>
       <meta name="description" content={metaDescription} />
       <link rel="canonical" href={canonicalUrl} />
+      <meta name="author" content={displayAuthor} />
 
       {/* Open Graph */}
-      <meta property="og:title" content={article?.ogTitle || `${title} | ${siteName}`} />
+      <meta property="og:title" content={article?.ogTitle || fullTitle} />
       <meta property="og:description" content={article?.ogDescription || metaDescription} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content={type} />
@@ -170,7 +176,7 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@QuietStrengthGuide" />
       <meta name="twitter:creator" content="@MaricaSinko" />
-      <meta name="twitter:title" content={article?.twitterTitle || article?.ogTitle || `${title} | ${siteName}`} />
+      <meta name="twitter:title" content={article?.twitterTitle || article?.ogTitle || fullTitle} />
       <meta name="twitter:description" content={article?.twitterDescription || article?.ogDescription || metaDescription} />
       <meta name="twitter:url" content={url} />
       {(article?.twitterImage || article?.ogImage || article?.image) && (
