@@ -1,5 +1,21 @@
-// Hard ToC isolation: render outside .prose and isolate styles to prevent bleed/overlap.
+// ArticleTOC.jsx — Mobile/Desktop parity; hard isolation; no inner scroll; dark-orange links.
+// Keeps anchors/ids unchanged for SEO; avoids .prose bleed and prevents overlap with media.
 import React, { useEffect, useMemo, useState } from 'react';
+
+function groupByHierarchy(items = []) {
+  const out = [];
+  let cur = null;
+  items.forEach((it) => {
+    const lvl = it.level ?? 1; // 1 = H2, 2 = H3
+    if (lvl <= 1) {
+      cur = { ...it, children: [] };
+      out.push(cur);
+    } else if (lvl === 2) {
+      (cur ? cur.children : out).push(it);
+    }
+  });
+  return out;
+}
 
 // Premium Table of Contents component
 // Props:
@@ -38,14 +54,15 @@ export default function ArticleTOC({ items = [], title = 'Table of Contents', ac
   }, [activeId]);
 
   const current = activeId || localActive;
-  const accentBase = accent === 'blue'
-    ? 'text-blue-700 border-blue-600'
-    : 'text-orange-700 border-orange-600';
+  const cTxt = accent === 'blue'
+    ? 'text-blue-700 hover:text-blue-800'
+    : 'text-orange-700 hover:text-orange-800';
+  const cActive = accent === 'blue' ? 'text-blue-800 border-blue-600' : 'text-orange-800 border-orange-600';
 
   return (
     <aside
       aria-label={title}
-      className="qs-toc not-prose relative isolate z-20 clear-both overflow-hidden w-full rounded-xl bg-white shadow-sm ring-1 ring-neutral-200 sm:sticky sm:top-24 sm:max-h-[70vh] sm:overflow-y-auto"
+      className="qs-toc not-prose relative isolate z-30 clear-both w-full rounded-xl bg-white shadow-sm ring-1 ring-neutral-200 sm:sticky sm:top-24 mb-6"
     >
       {/* Mobile toggle */}
       <div className="md:hidden">
@@ -63,7 +80,7 @@ export default function ArticleTOC({ items = [], title = 'Table of Contents', ac
           <span className="sr-only">{title}</span>
         </button>
         <div id="toc-panel" className={`${open ? 'block' : 'hidden'}`}>
-          <TOCList items={flatItems} current={current} accentBase={accentBase} />
+          <TOCList items={flatItems} current={current} cTxt={cTxt} cActive={cActive} />
         </div>
       </div>
 
@@ -71,35 +88,55 @@ export default function ArticleTOC({ items = [], title = 'Table of Contents', ac
       <div className="hidden sm:block">
         <div className="p-4 text-sm leading-6">
           <h2 className="text-slate-800 font-semibold mb-3 text-base">{title}</h2>
-          <TOCList items={flatItems} current={current} accentBase={accentBase} />
+          <TOCList items={flatItems} current={current} cTxt={cTxt} cActive={cActive} />
         </div>
       </div>
     </aside>
   );
 }
 
-function TOCList({ items, current, accentBase }) {
+function TOCList({ items, current, cTxt, cActive }) {
+  const grouped = useMemo(() => groupByHierarchy(items), [items]);
   return (
     <nav aria-label="Table of contents" data-toc>
-      <ol className="list-decimal pl-6 pr-4 pb-4 space-y-2">
-        {items.map((it) => {
-          const level = it.level ?? 1;
-          const pad = level === 1 ? 'pl-3 border-l-2' : level === 2 ? 'pl-5 border-l' : 'pl-7 border-l';
-          const isActive = current === it.id;
-          const linkColor = isActive ? `${accentBase} font-semibold` : accentBase;
+      <ol className="list-decimal pl-6 pr-5 pb-5 space-y-3">
+        {grouped.map((h2, i) => {
+          const h2Active = current === h2.id;
           return (
-            <li key={it.id}>
+            <li key={h2.id || i} className="marker:font-medium">
               <a
-                href={`#${encodeURIComponent(it.id)}`}
-                aria-current={isActive ? 'true' : undefined}
+                href={`#${encodeURIComponent(h2.id)}`}
+                aria-current={h2Active ? 'true' : undefined}
                 className={[
-                  'block whitespace-normal break-words break-normal hyphens-none leading-snug hover:underline focus:outline-none focus-visible:ring',
-                  pad,
-                  linkColor,
+                  'block leading-snug whitespace-normal break-words hyphens-none border-l-2 pl-3 hover:underline',
+                  cTxt,
+                  h2Active ? `font-semibold ${cActive}` : 'border-transparent',
                 ].join(' ')}
               >
-                {it.text}
+                {h2.text}
               </a>
+              {h2.children?.length > 0 && (
+                <ul className="mt-2 ml-2 list-disc pl-5 space-y-2">
+                  {h2.children.map((h3, j) => {
+                    const h3Active = current === h3.id;
+                    return (
+                      <li key={(h3.id || j) + '-sub'}>
+                        <a
+                          href={`#${encodeURIComponent(h3.id)}`}
+                          aria-current={h3Active ? 'true' : undefined}
+                          className={[
+                            'block leading-snug whitespace-normal break-words hyphens-none border-l pl-3 hover:underline',
+                            cTxt,
+                            h3Active ? `font-semibold ${cActive}` : 'border-transparent',
+                          ].join(' ')}
+                        >
+                          {h3.text}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
             </li>
           );
         })}
