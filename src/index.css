@@ -3138,3 +3138,11 @@ mark:focus,
 .qs-toc, .qs-toc * { position: static !important; float: none !important; }
 .qs-toc a { display: block !important; }
 .prose .qs-toc, .prose .qs-toc * { margin: 0 !important; padding: 0 !important; }
+
+/* Tiny-screen avatar safety: show full face by containing image */
+@media (max-width: 360px) {
+  .avatar--contain img { object-fit: contain !important; background: #fff; }
+}
+
+/* Balanced headings for category cards */
+.cat-title { text-wrap: balance; }

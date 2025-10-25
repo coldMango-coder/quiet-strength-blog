@@ -23,8 +23,14 @@ function groupByHierarchy(items = []) {
 // - title?: string (default "Table of Contents")
 // - accent?: 'orange'|'blue' (default 'orange')
 // Isolated ToC; avoids .prose and global list/anchor overrides.
-export default function ArticleTOC({ items = [], title = 'Table of Contents', accent = 'orange', activeId = null }) {
-  const [open, setOpen] = useState(false); // collapsed by default on mobile
+export default function ArticleTOC({ items = [], title = 'Table of Contents', accent = 'orange', activeId = null, collapsibleMobile = true }) {
+  // Default: open on desktop (>=640px), collapsed on mobile
+  const [open, setOpen] = useState(() => (typeof window !== 'undefined' && window.matchMedia('(min-width: 640px)').matches));
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.matchMedia('(min-width: 640px)').matches) {
+      setOpen(true);
+    }
+  }, []);
 
   // Normalize items and ensure level defaults to 1 (H1)
   const flatItems = useMemo(() => {
@@ -65,31 +71,23 @@ export default function ArticleTOC({ items = [], title = 'Table of Contents', ac
       className="qs-toc not-prose relative isolate z-30 clear-both w-full rounded-xl bg-white shadow-sm ring-1 ring-neutral-200 sm:sticky sm:top-24 mb-6"
     >
       {/* Mobile toggle */}
-      <div className="md:hidden">
+      <div className="flex items-center justify-between p-4">
+        <h2 className="text-slate-800 font-semibold text-base">{title}</h2>
         <button
           type="button"
           aria-expanded={open}
           aria-controls="toc-panel"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex items-center gap-2 m-4 px-4 py-2 rounded-lg border border-slate-300 bg-white text-slate-800 text-sm font-semibold shadow-sm hover:bg-slate-50 focus:outline-none focus-visible:ring"
+          className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-white px-4 py-1.5 text-sm font-medium text-orange-700 shadow-sm hover:bg-orange-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
         >
-          {open ? 'Hide' : 'Show'}
+          {open ? 'Hide ToC' : 'Show ToC'}
           <svg className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" />
           </svg>
-          <span className="sr-only">{title}</span>
         </button>
-        <div id="toc-panel" className={`${open ? 'block' : 'hidden'}`}>
-          <TOCList items={flatItems} current={current} cTxt={cTxt} cActive={cActive} />
-        </div>
       </div>
-
-      {/* Desktop sticky card */}
-      <div className="hidden sm:block">
-        <div className="p-4 text-sm leading-6">
-          <h2 className="text-slate-800 font-semibold mb-3 text-base">{title}</h2>
-          <TOCList items={flatItems} current={current} cTxt={cTxt} cActive={cActive} />
-        </div>
+      <div id="toc-panel" className={open ? 'block' : 'hidden'}>
+        <TOCList items={flatItems} current={current} cTxt={cTxt} cActive={cActive} />
       </div>
     </aside>
   );
