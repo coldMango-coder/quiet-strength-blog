@@ -55,14 +55,14 @@ function App() {
   // Sanitize any mis-encoded characters in prerendered content (defensive fix)
   useEffect(() => {
     const fixText = (s) => s
-      .replace(/â€¢/g, '•')
-      .replace(/��/g, '•')
-      .replace(/�/g, '•')
-      .replace(/�/g, '•')
-      .replace(/�/g, '•')
-      .replace(/�/g, '•')
-      .replace(/Å /g, 'Š')
-      .replace(/Marica Sinko/g, 'Marica Šinko');
+      .replace(/Ã¢â‚¬Â¢/g, 'â€¢')
+      .replace(/ï¿½ï¿½/g, 'â€¢')
+      .replace(/ï¿½/g, 'â€¢')
+      .replace(/ï¿½/g, 'â€¢')
+      .replace(/ï¿½/g, 'â€¢')
+      .replace(/ï¿½/g, 'â€¢')
+      .replace(/Ã…Â /g, 'Å ')
+      .replace(/Marica Šinko/g, 'Marica Å inko');
 
     try {
       const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
