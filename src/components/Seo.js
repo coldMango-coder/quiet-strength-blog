@@ -134,6 +134,7 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
 
   return (
     <Helmet>
+      <meta charSet="utf-8" />
       <title>{title ? `${title} | ${siteName}` : siteName}</title>
       <meta name="description" content={metaDescription} />
       <link rel="canonical" href={canonicalUrl} />
