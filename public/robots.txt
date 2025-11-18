@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
 # Sitemap reference with correct domain
@@ -24,3 +24,5 @@ Allow: /blog/
 Allow: /category/
 Allow: /images/
 Allow: /static/
+
+

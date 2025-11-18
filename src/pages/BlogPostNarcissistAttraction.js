@@ -20,7 +20,7 @@ const BlogPostNarcissistAttraction = () => {
             <h1 className="font-bold mb-6">
               How to Stop Attracting Narcissists: 9 Proven Strategies That Actually Work in 2025
             </h1>
-            <div className="flex items-center gap-4 text-brand-primary text-lg">
+            <div className="post-meta flex items-center gap-4 text-brand-primary text-lg">
               <span>By <strong>Marica Šinko</strong></span>
               <span className="text-gray-400">•</span>
               <span>August 03, 2025</span>

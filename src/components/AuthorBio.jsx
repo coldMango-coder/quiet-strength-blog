@@ -1,31 +1,26 @@
-import React from 'react';
-import Avatar from './Avatar';
-import normalizeDisplayText from '../lib/content/normalizeDisplayText';
+import React from "react";
+import Avatar from "./Avatar";
 
-// Fix: preserve diacritics and remove mojibake in author info
-export default function AuthorBio({
-  name = 'Marica Šinko',
-  title = 'Founder of Quiet Strength',
-  bio = 'Empowering introverted women to build quiet confidence without burnout.',
-  avatarSrc = '/images/marica-sinko-author-photo.avif',
-  avatarAlt = 'Portrait of Marica Šinko',
-  size = 112,
-}) {
-  const safeName = normalizeDisplayText(name);
-  const safeTitle = normalizeDisplayText(title);
-  const safeBio = normalizeDisplayText(bio);
-
+export default function AuthorBio() {
+  const authorImageSrc = "/images/marica-sinko-author-photo.webp?v=1762037948136";
   return (
-    <aside
-      className="mt-10 flex items-center gap-4 rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm"
-    >
-      <Avatar src={avatarSrc} alt={avatarAlt} size={size} />
-      <div className="min-w-0">
-        <h3 className="text-lg font-semibold leading-tight text-balance">{safeName}</h3>
-        <p className="text-sm text-neutral-600">{safeTitle}</p>
-        <p className="mt-2 text-sm leading-6 text-neutral-700">{safeBio}</p>
+    <section className="article-author fancy responsive" aria-labelledby="author-name">
+      <Avatar
+        src={authorImageSrc}
+        alt={"Marica \\u0160inko"}
+        size={64}
+        className="author-avatar"
+      />
+      <div className="bio">
+        <h3 id="author-name" className="name">{"Marica \u0160inko"}</h3>
+        <p className="role">Founder of Quiet Strength</p>
+        <p className="copy">
+          I am an introvert-women burnout coach dedicated to helping
+          introverted women build quiet confidence without burnout.
+        </p>
+        <a className="bio-link" href="/#about">See full bio</a>
       </div>
-    </aside>
+    </section>
   );
 }
 

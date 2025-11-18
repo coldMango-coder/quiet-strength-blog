@@ -1,0 +1,28 @@
+import React from "react";
+
+export default function AuthorBio() {
+  return (
+    <section className="article-author" aria-labelledby="author-title">
+      <img
+        className="author-avatar"
+        src="/images/marica-sinko-author-photo.webp?v=1762037948136"
+        alt="Marica Šinko"
+        width="80"
+        height="80"
+        loading="lazy"
+        decoding="async"
+      />
+      <div className="author-bio">
+        <h3 id="author-title" className="author-name">Marica Šinko</h3>
+        <p className="author-role">Founder of Quiet Strength</p>
+        <p className="author-text">
+          <strong>I am</strong> an introvert-women burnout coach dedicated to helping
+          introverted women build quiet confidence without burnout. <a className="author-link" href="/#about">See full bio</a>
+        </p>
+      </div>
+    </section>
+  );
+}
+
+
+

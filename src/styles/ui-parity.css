@@ -1,0 +1,94 @@
+:root {
+  --site-max: 80rem; /* 1280px, match the rest of the site */
+}
+
+/* Footer full-bleed background with constrained inner container */
+footer {
+  width: 100%;
+  background-color: var(--footer-bg, #0d1622);
+}
+
+footer .container {
+  max-width: var(--site-max);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Ensure hero-embedded latest can render; do not hide */
+
+/* Shared container parity across key sections */
+.category-wrap,
+#latest,
+main .container,
+footer .container {
+  max-width: var(--site-max);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Avatar normalization: clean circular crop, fully filled, CLS-safe */
+.qs-avatar {
+  border-radius: 9999px; /* ensure perfect circle */
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .qs-avatar {
+    inline-size: 112px; /* visual size; intrinsic dims prevent CLS */
+    block-size: 112px;
+  }
+}
+
+/* AUTHOR CARD  minimal, safe layout normalization */
+.author-card {
+  writing-mode: horizontal-tb !important;
+}
+
+.author-card .qs-avatar {
+  width: 96px !important;
+  height: 96px !important;
+  border-radius: 9999px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .author-card .qs-avatar {
+    width: 112px !important;
+    height: 112px !important;
+  }
+}
+
+.author-card .flex-1 { min-width: 0; }
+.author-card img { max-width: none; }
+
+/* AUTHOR AVATAR FACE ALIGNMENT
+   Keep the circular crop, just lift the focal point so the eyes/upper face are visible.
+   This does not change size, layout, or loading behavior. */
+.author-card .qs-avatar {
+  object-position: 50% 18% !important; /* center horizontally, lift vertically */
+}
+
+@media (min-width: 768px) {
+  .author-card .qs-avatar {
+    object-position: 50% 15% !important; /* tiny extra lift on larger screens */
+  }
+}
+
+/* Home page author card avatar focus (scoped only to home) */
+.home-author .qs-avatar,
+.home-author img[alt*="Marica"] {
+  object-fit: cover;      /* keep square crop */
+  object-position: 50% 22% !important;  /* lift face */
+  aspect-ratio: 1 / 1;    /* preserve square, avoid CLS */
+  border-radius: 9999px;  /* round */
+}
+
+@media (min-width: 768px) {
+  .home-author .qs-avatar,
+  .home-author img[alt*="Marica"] {
+    object-position: 50% 15% !important; /* subtle extra lift on md+ */
+  }
+}

@@ -26,7 +26,7 @@ const BlogPostBreakupGlowUp = () => {
             <h1 className="font-bold mb-6">
               Post Breakup Glow Up Transformation Guide: 10 Proven Steps to Become Your Best Self in 2025
             </h1>
-            <div className="flex items-center gap-4 text-brand-primary text-lg">
+            <div className="post-meta flex items-center gap-4 text-brand-primary text-lg">
               <span>By <strong>Marica Šinko</strong></span>
               <span className="text-gray-400">•</span>
               <span>July 28, 2025</span>

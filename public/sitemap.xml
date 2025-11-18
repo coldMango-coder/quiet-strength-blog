@@ -109,12 +109,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://trueallyguide.com/blog/how-to-say-no-without-guilt</loc>
-    <lastmod>2025-07-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://trueallyguide.com/blog/art-of-saying-no</loc>
     <lastmod>2025-07-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -139,4 +133,6 @@
     <priority>0.4</priority>
   </url>
 </urlset>
+
+
 

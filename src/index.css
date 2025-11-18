@@ -5,13 +5,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Blog TOC/hero layout safety (prevents TOC overlaying the hero) */
+@import "./styles/toc.css";
+@import "./styles/lead-figure-overrides.css";
+
 /* Baseline CSS reset and layout guards */
 *,*::before,*::after{box-sizing:border-box}
 html{font-size:100%}
 body{margin:0;line-height:1.6;-webkit-font-smoothing:antialiased;background-image:radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),radial-gradient(rgba(0,0,0,0.015) 1px, transparent 1px);background-position:0 0, 8px 8px;background-size:16px 16px}
 img,svg,video{max-width:100%;height:auto}
 img{display:block}
-.container{max-width:72rem;margin-inline:auto;padding-inline:1rem}
+/* Removed narrow container cap to allow parity CSS to govern width */
+/* Shared page container matching footer width */
+.container-wide{ margin-left:auto; margin-right:auto; max-width:80rem; padding-left:1rem; padding-right:1rem; }
+@media (min-width:640px){ .container-wide{ padding-left:1.5rem; padding-right:1.5rem; } }
+@media (min-width:1024px){ .container-wide{ padding-left:2rem; padding-right:2rem; } }
 h1{line-height:1.2;word-wrap:anywhere}
 .stack>*+*{margin-top:clamp(0.5rem,1.5vw,1.25rem)}
 
@@ -65,6 +73,10 @@ p, li { overflow-wrap: anywhere; }
   --border-accent: rgba(41, 41, 41, 0.84); /* blockquote border */
   --content-max-width: 65ch;
   --lh-base: 1.6;
+  --toc-bg: #ffffff;
+  --toc-text: #1a1a1a;
+  --toc-link: #2E3644;
+  --toc-accent: #B44416;
 }
 
 html {
@@ -85,6 +97,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* parity + latest */
+@import "./styles/ui-parity.css";
+@import "./styles/latest.css";
 
 /* Defer background texture until idle to avoid offscreen image cost */
 .bg-texture-enabled body {
@@ -1509,6 +1525,23 @@ h2 {
   font-weight: 700;
 }
 
+/* Modern TOC theme tokens */
+:root{
+  --toc-bg: color-mix(in oklab, Canvas, var(--wp--preset--color--primary, #4f46e5) 6%);
+  --toc-accent: var(--wp--preset--color--primary, #4f46e5);
+  --toc-text: var(--wp--preset--color--foreground, #0b1020);
+  --toc-link: color-mix(in oklab, var(--toc-text), var(--toc-accent) 35%);
+  --toc-link-muted: color-mix(in oklab, var(--toc-text), var(--toc-accent) 20%);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --toc-bg: color-mix(in oklab, Canvas, var(--wp--preset--color--primary, #818cf8) 14%); --toc-text: var(--wp--preset--color--foreground, #e5e7eb); --toc-link: color-mix(in oklab, var(--toc-text), var(--toc-accent) 45%); --toc-link-muted: color-mix(in oklab, var(--toc-text), var(--toc-accent) 30%); }
+}
+.modern-toc a[data-active="true"]{ font-weight:600; border-left:2px solid var(--toc-accent); padding-left:.25rem; color: var(--toc-accent); }
+/* Ensure no inner scrollbars on the nav */
+.modern-toc{ overflow: visible; }
+/* Collapsed bar subtle effect */
+.modern-toc-collapsed{ backdrop-filter:saturate(1.1); }
+
 h3 {
   font-size: 1.5rem;
   line-height: 1.3;
@@ -1883,6 +1916,62 @@ a:hover .nav-icon {
 .article-container .toc-list a { 
   font-size: 0.98em; 
 }
+
+/* TOC shell consistency and mobile safety */
+.toc-shell { overflow: visible; position: relative; margin-bottom: 0.25rem; }
+.toc-head { line-height: 1; }
+.toc-title { font-family: inherit; }
+.toc-list { margin: 0; padding: 0; list-style: decimal; }
+.toc-link { word-break: normal; overflow-wrap: anywhere; }
+@media (max-width: 1023.98px){ .toc-shell { position: static !important; } }
+.modern-toc a[data-active="true"],
+.toc-shell a[data-active="true"]{
+  font-weight: 600;
+  border-left: 2px solid var(--toc-accent);
+  padding-left: .25rem;
+  color: var(--toc-accent);
+}
+
+/* --- TOC conflict guard (ensures our shell always wins) --- */
+.qs-toc .toc, .qs-toc .toc-container, .qs-toc #toc_container,
+.qs-toc .ez-toc-container, .qs-toc .lwptoc, .qs-toc .aioseo-table-of-contents {
+  all: unset;
+  display: initial;
+}
+
+/* Common safe base used by both expanded & collapsed states */
+.toc-shell {
+  overflow: visible !important;
+  position: relative;
+  background: var(--toc-bg);
+  color: var(--toc-text);
+  border-radius: 1rem;
+  border: 1px solid rgba(0,0,0,.05);
+  padding: .75rem 1rem;
+  margin-bottom: .5rem; /* closer proximity to article content */
+  font: inherit;
+}
+
+/* Expanded/collapsed titles share identical typography */
+.toc-title { font-size: .875rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+
+/* Links: wrap safely; no clipping */
+.toc-list { margin: 0; padding: 0; list-style: decimal; }
+.toc-link { display:block; padding:.25rem .5rem; text-decoration:none; color: var(--toc-link); overflow-wrap: anywhere; }
+.toc-link:hover { text-decoration: underline; }
+.toc-shell a[data-active="true"]{ font-weight:600; border-left:2px solid var(--toc-accent); padding-left:.25rem; color:var(--toc-accent); }
+
+/* Sticky only >= lg; below lg it's normal flow so it cannot overlap */
+@media (max-width:1023.98px){
+  .toc-shell { position: static !important; top: auto !important; }
+}
+
+/* Themes grid fallback to ensure non-overlapping cards */
+.themes-grid{ display:grid; grid-template-columns:repeat(1,minmax(0,1fr)); gap:1.5rem; }
+@media (min-width:640px){ .themes-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (min-width:1024px){ .themes-grid{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
+.theme-card{ display:flex; flex-direction:column; height:100%; position:static; margin:0; }
+.theme-card *{ max-width:100%; }
 
 /* Anchor offset for in-article sections */
 .article-container [id] { 
@@ -2543,6 +2632,18 @@ mark:focus,
   letter-spacing: 0.15em;
 }
 
+/* Author avatar: used in sidebar/about blocks on all posts */
+/* Author avatar: used in sidebar/about blocks on all posts */
+.author-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;      /* make it circular */
+  object-fit: cover;          /* keep aspect-ratio, fill the frame */
+  object-position: center 20%;/* nudge focus slightly upward so face is fully visible */
+  flex-shrink: 0;
+  display: block;
+}
+
 /* Apply selective text selection to all page sections */
 
 /* Home page sections */
@@ -3037,7 +3138,8 @@ mark:focus,
 
 /* Responsive grids for category/listing pages */
 .category-grid,
-.posts-grid {
+.posts-grid,
+.archive-grid {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -3045,17 +3147,46 @@ mark:focus,
 
 @media (min-width: 768px) {
   .category-grid,
-  .posts-grid {
+  .posts-grid,
+  .archive-grid {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   }
 }
 
 @media (min-width: 1280px) {
   .category-grid,
-  .posts-grid {
+  .posts-grid,
+  .archive-grid {
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     gap: 2rem;
   }
+}
+
+/* Ensure cards are static and non-overlapping in grids */
+.post-card { position: static; margin: 0; display: flex; flex-direction: column; height: 100%; }
+.post-card img { display: block; width: 100%; height: auto; object-fit: cover; }
+
+/* Article content images full-width with safe styling */
+.post-content img{
+  width:100% !important;
+  height:auto !important;
+  display:block;
+  border-radius:12px;
+  object-fit:cover;
+}
+.post-content figure{ margin:1.25rem 0; }
+.post-content figure > img{ aspect-ratio:auto; }
+@media (max-width:640px){ .post-content img{ border-radius:10px; } }
+.post-content figcaption{ font-size:.9rem; color:rgba(0,0,0,.65); text-align:center; margin-top:.5rem; }
+
+/* ARTICLE MEDIA — mirror rules for .article-container */
+.article-container img,
+.article-container figure > img { width: 100% !important; height: auto !important; display: block; object-fit: cover; border-radius: 12px; }
+.article-container figure { margin: 1.25rem 0; }
+.article-container figcaption { font-size: .9rem; color: rgba(0,0,0,.65); text-align: center; margin-top: .5rem; }
+@media (max-width: 640px) {
+  .article-container { padding-left: 1rem; padding-right: 1rem; }
+  .article-container img, .article-container figure > img { border-radius: 10px; }
 }
 
 /* Card layout polish */
@@ -3081,6 +3212,24 @@ mark:focus,
   font-size: clamp(0.95rem, 0.9rem + 0.5vw, 1.05rem);
   line-height: 1.6;
   max-width: 65ch;
+}
+
+/* TOC look matches open/closed; no sticky; no overlay */
+.toc-shell { background: var(--toc-bg); color: var(--toc-text); border-radius: 1rem; border: 1px solid rgba(0,0,0,.05); padding: .75rem 1rem; margin: 0.25rem 0; position: relative; overflow: visible; }
+.toc-title { font-size:.875rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; }
+.toc-list { margin:0; padding:0 0 0 1rem; list-style:decimal; }
+.toc-link { display:block; padding:.25rem .5rem; color:var(--toc-link); text-decoration:none; overflow-wrap:anywhere; }
+.toc-link:hover { text-decoration:underline; }
+.toc-shell a[data-active="true"]{ font-weight:600; border-left:2px solid var(--toc-accent); padding-left:.25rem; color:var(--toc-accent); }
+
+/* META / BYLINE — tighter on small screens */
+@media (max-width: 640px){
+  .post-meta{
+    display:flex; flex-wrap:wrap; align-items:center; gap:.5rem .75rem;
+    margin: .5rem 0 1rem 0;
+    line-height:1.2;
+  }
+  .post-meta > * { margin:0 !important; }
 }
 
 @media (max-width: 480px) {
@@ -3135,7 +3284,7 @@ mark:focus,
 .qs-toc *, .not-prose .qs-toc * { position: static !important; }
 .qs-toc a { display: block !important; }
 /* Hard ToC isolation reset to neutralize prose/floats and enforce block anchors */
-.qs-toc, .qs-toc * { position: static !important; float: none !important; }
+.qs-toc * { position: static !important; float: none !important; }
 .qs-toc a { display: block !important; }
 .prose .qs-toc, .prose .qs-toc * { margin: 0 !important; padding: 0 !important; }
 
@@ -3143,6 +3292,9 @@ mark:focus,
 @media (max-width: 360px) {
   .avatar--contain img { object-fit: contain !important; background: #fff; }
 }
+
+/* Avatar/Author card additions: ensure upward focal point wins over old rules */
+.article-author .qs-avatar { object-position: center 15% !important; }
 
 /* Balanced headings for category cards */
 .cat-title { text-wrap: balance; }
@@ -3153,3 +3305,116 @@ mark:focus,
     flex: 1 1 0;
   }
 }
+/* Import width enforcer (bundled, non-blocking) */
+@import './styles/width-enforcer.css';
+@import './styles/width-enforcer-v2.css';
+
+@import './styles/width-parity.css';
+@import "./styles/lead-figure-overrides.css";
+@import "./styles/theme-additions.css";
+
+/* Fix-4 additions: spacing & aside */
+/* Pull the body text closer to the ToC */
+#toc, .toc-shell, .table-of-contents { margin-bottom: .25rem !important; }
+#toc + *:not(script):not(style),
+.toc-shell + *:not(script):not(style),
+.table-of-contents + *:not(script):not(style) { margin-top: 0 !important; }
+
+/* Lead figure spacing (keeps CLS flat) */
+.lead-figure { margin: 1rem 0 .5rem; }
+
+/* Home “My Story” avatar: perfect circle + face centered */
+.about-avatar {
+  width: min(144px, 12vw) !important;
+  height: min(144px, 12vw) !important;
+  border-radius: 9999px !important;
+  object-fit: cover !important;
+  object-position: 50% 28% !important; /* lift eyes into frame */
+  display: block;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+@media (max-width: 640px) {
+  .about-avatar { width: 112px !important; height: 112px !important; }
+}
+
+/* Latest Insights right column readability */
+.latest-insights-aside li { padding: .5rem 0; }
+.latest-insights-aside img { width: 80px; height: 80px; border-radius: .75rem; object-fit: cover; }
+@media (max-width: 640px) { .latest-insights-aside img { width: 64px; height: 64px; } }
+
+/* vanilla clamp when Tailwind plugin isn't active */
+.latest-insights-aside .clamp-2, .latest-insights-aside .clamp-3 {
+  display:-webkit-box; -webkit-box-orient:vertical; overflow:hidden;
+}
+.latest-insights-aside .clamp-3 { -webkit-line-clamp:3; }
+.latest-insights-aside .clamp-2 { -webkit-line-clamp:2; }
+
+/* lead image & ToC spacing */
+.lead-figure { margin: 1rem 0 .6rem; }
+#toc, .toc-shell { margin-bottom: .25rem !important; }
+#toc + *:not(script):not(style),
+.toc-shell + *:not(script):not(style) { margin-top: 0 !important; }
+
+/* --- Home: circular author avatar --- */
+.about-avatar {
+  width: min(144px, 20vw);
+  height: min(144px, 20vw);
+  border-radius: 9999px;
+  object-fit: cover;
+  object-position: 50% 28%;
+  display: block;
+  box-shadow: 0 1px 3px rgba(15,23,42,.08), 0 6px 20px rgba(15,23,42,.06);
+}
+
+/* --- Latest Insights aside --- */
+.latest-aside .latest-aside-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .latest-aside .latest-aside-title { -webkit-line-clamp: 2; }
+}
+.latest-aside .latest-aside-excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Lead image spacing and compact ToC gap (details support) */
+.lead-figure { margin: 1rem 0 .6rem; }
+#toc, .toc-shell, details[id*='toc'], details.toc { margin-bottom: .25rem !important; }
+#toc + *:not(script):not(style),
+.toc-shell + *:not(script):not(style),
+details[id*='toc'] + *:not(script):not(style),
+details.toc + *:not(script):not(style) { margin-top: 0 !important; }
+
+/* Home About avatar — enforce circle, center face */
+.about-avatar {
+  width: min(144px, 20vw);
+  height: min(144px, 20vw);
+  border-radius: 9999px !important;
+  object-fit: cover;
+  object-position: 50% 28%;
+}
+
+/* v2: author-photo wrapper to ensure circular placeholder as well */
+.author-photo,
+.author-photo img {
+  width: 144px;
+  height: 144px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+}
+/* Do NOT override the fine-tuned face centering on .about-avatar */
+.author-photo img:not(.about-avatar) {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Trim TOC margins for proximity */
+.qs-toc { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+

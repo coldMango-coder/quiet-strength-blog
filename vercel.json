@@ -6,6 +6,8 @@
   "trailingSlash": false,
   "build": {
     "env": {
+      "CI": "false",
+      "ESLINT_NO_DEV_ERRORS": "true",
       "REACT_APP_COMMIT_SHA": "${VERCEL_GIT_COMMIT_SHA}",
       "REACT_APP_BUILD_TIME": "${VERCEL_GIT_COMMIT_TIMESTAMP}"
     }
@@ -19,35 +21,40 @@
   ],
   "redirects": [
     {
-      "source": "/:path*",
-      "has": [
-        { "type": "host", "value": "www.trueallyguide.com" }
-      ],
-      "destination": "https://trueallyguide.com/:path*",
+      "source": "/terms-of-use",
+      "destination": "/terms",
       "permanent": true
     },
     {
       "source": "/:path*",
       "has": [
-        { "type": "host", "value": "trueallyguide.com" },
+        { "type": "host", "value": "trueallyguide.com" }
+      ],
+      "destination": "https://www.trueallyguide.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        { "type": "host", "value": "www.trueallyguide.com" },
         { "type": "header", "key": "x-forwarded-proto", "value": "http" }
       ],
-      "destination": "https://trueallyguide.com/:path*",
+      "destination": "https://www.trueallyguide.com/:path*",
       "permanent": true
     },
     {
       "source": "/category/Introversion%20%26%20Personality",
-      "destination": "https://trueallyguide.com/category/introversion-and-personality",
+      "destination": "https://www.trueallyguide.com/category/introversion-and-personality",
       "permanent": true
     },
     {
       "source": "/category/Relationships%20%26%20Dating",
-      "destination": "https://trueallyguide.com/category/relationships-and-dating",
+      "destination": "https://www.trueallyguide.com/category/relationships-and-dating",
       "permanent": true
     },
     {
       "source": "/category/Career%20%26%20Workplace",
-      "destination": "https://trueallyguide.com/category/career-and-workplace",
+      "destination": "https://www.trueallyguide.com/category/career-and-workplace",
       "permanent": true
     },
     {

@@ -1,0 +1,110 @@
+.lead-figure { margin: 1rem 0 0.25rem; }
+
+/* Caption styling directly under lead image */
+.lead-figure figcaption,
+.lead-figure .wp-element-caption,
+.lead-figure .image-caption,
+.lead-figure .caption {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #6b7280; /* neutral-500 */
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+/* Post-hero margin to ensure tight spacing without CLS */
+.post-hero { margin: 0.5rem 0 0.25rem; }
+
+/* Ensure hero sits below overlays by default and creates a proper stacking context */
+figure.post-hero { display:block; position:relative; z-index:0; margin: 0 0 12px; }
+/* Make sure the image itself isn't absolutely positioned above everything */
+figure.post-hero img { display: block; position: relative; z-index: 0; }
+figure.post-hero .image-caption,
+figure.post-hero figcaption {
+  display:block;
+  margin-top:.4rem;
+  margin-bottom:.75rem;  /* pushes body down */
+  font-style: italic;
+  color:#444;
+  line-height:1.45;
+  clear:both;
+}
+
+/* Make the gap from ToC to text tighter */
+#toc, .toc-shell, .table-of-contents {
+  margin-bottom: 0.25rem !important;
+}
+
+/* Remove the top margin on the first block after the ToC */
+#toc + p,
+.toc-shell + p,
+#toc + .post-content > :first-child,
+.toc-shell + .post-content > :first-child,
+.table-of-contents + .post-content > :first-child,
+#toc + *:not(script):not(style),
+.toc-shell + *:not(script):not(style),
+.table-of-contents + *:not(script):not(style) {
+  margin-top: 0 !important;
+}
+
+/* If prose rhythm is used, also zero the very first child following ToC */
+#toc + .prose > *:first-child,
+.toc-shell + .prose > *:first-child,
+.table-of-contents + .prose > *:first-child { margin-top: 0 !important; }
+
+/* Latest Insights aside: larger thumbs & readable titles */
+.latest-insights-aside li { padding-top: .5rem; padding-bottom: .5rem; }
+.latest-insights-aside img { width: 80px; height: 80px; border-radius: .75rem; object-fit: cover; }
+@media (max-width: 640px) {
+  .latest-insights-aside img { width: 64px; height: 64px; }
+}
+.latest-insights-aside .clamp-2, .latest-insights-aside .clamp-3 {
+  display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden;
+}
+.latest-insights-aside .clamp-2 { -webkit-line-clamp: 2; }
+.latest-insights-aside .clamp-3 { -webkit-line-clamp: 3; }
+
+/* Line-clamp polyfill for Latest Insights */
+.latest .line-clamp-2,
+.latest .line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.latest .line-clamp-2 { -webkit-line-clamp: 2; }
+.latest .line-clamp-3 { -webkit-line-clamp: 3; }
+
+/* About avatar circle with face centered */
+.about-avatar {
+  width: min(144px, 12vw);
+  height: min(144px, 12vw);
+  border-radius: 9999px;
+  object-fit: cover;
+  object-position: 50% 28%;
+  display: block;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+@media (max-width: 640px) {
+  .about-avatar { width: 112px; height: 112px; }
+}
+/* Ensure the simple tightening selector variant also exists and wins */
+#toc + *:not(script):not(style),
+.toc-shell + *:not(script):not(style) {
+  margin-top: 0 !important;
+}
+
+
+#intro-media { display:block; clear:both; margin: 0 0 1.25rem; }
+/* Prevents first-paint flash in the wrong spot */
+#intro-media[data-pending="1"] {
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+}
+
+/* Normal layout once placed */
+#intro-media {
+  display: block;
+  clear: both;
+  margin: 0 0 1.25rem;
+}

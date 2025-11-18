@@ -1,184 +1,269 @@
-🧩 CODEX FINAL FIX — Category Overlap + Persistent “Marica Å inko” Encoding Bug
+🔧 HOTFIX (LOCKED): Stop home cards overlapping + force “Marica Šinko” everywhere
 
-(NO SEO / CWV regressions allowed)
+Do NOT regress Core Web Vitals or SEO.
 
-⚙️ Baseline rules
+Keep/improve: LCP ≤1.8s (mobile), CLS ≤0.05, TBT/INP ≤50ms.
 
-Do not reduce Core Web Vitals numbers. Only equal or better.
-Keep all schema, canonical, OG/Twitter/JSON-LD intact.
-No render-blocking scripts. No layout shifts introduced (CLS ≤ 0.05).
+Do not change canonical/OG/Twitter/JSON-LD counts (one Article schema per post).
 
-🧱 1. FIX CATEGORY CARD OVERLAP (Homepage grid)
+No render-blocking CSS/JS additions.
 
-Goal: Cards must align cleanly in a responsive grid, never overlap, even on zoomed/ultrawide screens. Titles should fit on one line where possible.
+After edits run:
 
-✅ Steps
-1.1 Update container CSS / JSX
+npm run mini
+npm run fast
+node scripts/verify-overlap-author.mjs
 
-Locate the section wrapper in your Home page (often src/sections/HomeCategories.jsx or similar).
-Replace the grid container with:
+A) HOME — “Our Core Self-Help Themes for Introverted Women”
+A1) Replace the grid wrapper (safe grid; no arbitrary utilities)
 
-<div className="
-  grid 
-  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
-  gap-6 lg:gap-8
-  place-items-stretch
-  auto-rows-fr
-  w-full
-">
-
-1.2 Update each card wrapper
-
-Inside that grid, make sure each card div is:
+Find the component that renders that section (Home / Themes). Replace the cards wrapper with:
 
 <div
+  id="home-categories-grid"
   className="
-    flex flex-col justify-between
-    rounded-2xl bg-white p-6 shadow-sm ring-1 ring-neutral-200
-    transition-transform hover:-translate-y-1 hover:shadow-md
-    min-w-[280px] sm:min-w-[300px] md:min-w-[320px] lg:min-w-[340px]
-    h-full
+    grid w-full
+    grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
+    gap-6 lg:gap-8
+    auto-rows-fr
+    relative isolate overflow-visible
   "
 >
+  {/* cards */}
+</div>
 
-1.3 Prevent cards from overlapping on small screens
 
-Add this rule to your main stylesheet (e.g., globals.css or Home.css):
+isolate starts a new stacking context so children can’t bleed onto neighbors.
 
-/* Prevent card overlap under grid compression */
-@media (min-width: 768px) {
-  .grid > div {
-    flex: 1 1 0;
-  }
+A2) Global, section-scoped CSS override (kills transforms/neg-margins that cause overlap)
+
+Add (or append) to src/styles/global.css (or your main Tailwind css import).
+If you don’t have that file, create it and ensure it’s imported once (e.g., in src/index.js or App.js).
+
+/* ===== HOME THEMES – OVERLAP KILL SWITCH (scoped) ===== */
+#home-categories-grid .category-card,
+#home-categories-grid .category-card * {
+  transform: none !important;
 }
 
-1.4 Improve card title readability
+#home-categories-grid .category-card {
+  position: relative !important;
+  margin: 0 !important;
+  overflow: hidden;
+  z-index: 0;
+  contain: layout paint size;
+  /* Avoid hover lifts that escape grid cells */
+  transition: box-shadow .2s ease;
+}
 
-Inside each card:
+#home-categories-grid .category-card:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+}
 
-<h3
-  className="
-    text-lg md:text-xl font-semibold tracking-tight leading-tight
-    text-center
-    whitespace-normal md:whitespace-nowrap
-    overflow-hidden text-ellipsis
-  "
-  title={title}
->
-  {title}
-</h3>
+/* Images must never escape the card */
+#home-categories-grid .category-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
 
 
-✅ Expected Result:
+This hard-resets any previously defined hover:-translate-y, scale-*, negative margins, or transforms that were causing cards to cover each other.
 
-Cards stay in tidy grid, never overlapping or floating on each other.
+A3) Card markup (stable, transform-free)
 
-Each card maintains its own white background and shadow.
+Ensure each card root has class category-card and no inline transform/negative margin:
 
-Titles are in one readable row (or gracefully truncated).
+<div className="category-card flex h-full flex-col justify-between rounded-2xl bg-white p-6 shadow-sm ring-1 ring-neutral-200">
+  {/* icon */}
+  <h3 className="text-lg md:text-xl font-semibold tracking-tight leading-tight text-center whitespace-normal md:whitespace-nowrap overflow-hidden text-ellipsis break-normal hyphens-none">
+    {title}
+  </h3>
+  <p className="mt-3 text-center text-sm leading-6">{description}</p>
+  {/* link */}
+</div>
 
-🧑‍💻 2. FIX ENCODING BUG “Marica Å inko” → “Marica Šinko” EVERYWHERE
+B) Author must render exactly “Marica Šinko” (UI + meta + build output)
 
-You already added a normalizer — but some articles are likely fetched or rendered before normalization (or from MD/MDX front-matter with Latin-1 encoding). Let’s make the fix bulletproof.
+You still have “Marica Å inko/�inko” on some pages. We’ll fix at 3 layers and add a runtime safety net (non-blocking, idle).
 
-✅ Steps
-2.1 Strengthen normalizer
+B1) Strong normalizer (keeps diacritics)
 
-Replace the existing src/lib/content/normalizeDisplayText.js with this exact code:
+Create/replace src/lib/content/normalizeDisplayText.js:
 
-// normalizeDisplayText.js — fixes mojibake (Å→Š), keeps diacritics, NFC normalization
 export default function normalizeDisplayText(input) {
   if (typeof input !== 'string') return input;
-  let s = input.normalize('NFC').replace(/\u00A0/g, ' ').replace(/[€¢]/g, '');
 
-  // Explicit replacements for mojibake patterns:
-  s = s
-    // common UTF-8→Latin1 corruption of Š
-    .replace(/Marica\s*Å\s*inko/gi, 'Marica Šinko')
-    .replace(/Å\s*inko/gi, 'Šinko')
-    // double spaces or artifacts
-    .replace(/\s{2,}/g, ' ')
-    .trim();
+  let s = input
+    .normalize('NFC')         // compose diacritics
+    .replace(/\u00A0/g, ' ')  // nbsp -> space
+    .replace(/[€¢]/g, '');    // stray currency symbols
 
-  return s;
+  // Mojibake fixes for Š
+  s = s.replace(/Marica\s*A[\u030A\s]*inko/gi, 'Marica Šinko'); // "Marica Å inko", "Marica Å inko"
+  s = s.replace(/Å\s*(?=inko)/g, 'Š');                          // "Å inko" -> "Šinko"
+  s = s.replace(/�(?=inko)/g, 'Š');                             // "�inko" -> "Šinko"
+
+  return s.replace(/\s{2,}/g, ' ').trim();
 }
 
-2.2 Apply normalization before render and meta generation
+B2) Use normalizer in UI & Helmet everywhere
 
-In every component that shows or feeds author data (PostMeta.jsx, ArticleHeader.jsx, Seo.js, etc.), import and use:
+Wherever author/title render (post header, author card, Seo.js), wrap values:
 
 import normalizeDisplayText from '@/lib/content/normalizeDisplayText';
 
-const authorRaw = post?.author?.name ?? authorName ?? 'Marica Šinko';
-const author = normalizeDisplayText(authorRaw);
+const rawAuthor = post?.author?.name ?? authorName ?? 'Marica Šinko';
+const author    = normalizeDisplayText(rawAuthor);
+
+const displayTitle = normalizeDisplayText(title);
+
+<span>By {author}</span>
+
+<Helmet>
+  <meta charSet="utf-8" />
+  <title>{displayTitle}</title>
+  <meta name="author" content={author} />
+  <meta property="og:title" content={displayTitle} />
+  <meta name="twitter:title" content={displayTitle} />
+</Helmet>
 
 
-Use {author} everywhere you display it — in UI and Helmet/SEO tags.
+Also ensure the first meta in public/index.html is:
 
-2.3 Sanitize MD/MDX and JSON data
+<meta charset="utf-8" />
 
-Search your entire repo for these patterns and replace with the exact UTF-8 form Marica Šinko:
+B3) Post-build fixer (guarantee prerendered HTML is correct)
 
-Marica Å inko
-Marica Åinko
-Marica �inko
-Marica ?inko
-
-
-Then ensure all files are saved as UTF-8 (no BOM).
-
-🧩 3. VERIFY FIX
-
-Create or update script: scripts/verify-encoding-and-layout.mjs
+Create scripts/postbuild-fix-author.mjs:
 
 import fs from 'node:fs';
 import path from 'node:path';
 
-const pages = ['build/index.html', 'build/blog'];
-const bad = [/Marica\s+[Å�\?]/, /Å\s*inko/, /�inko/];
-let badFound = false;
+const ROOT = 'build';
+const FIXES = [
+  { rx: /Marica\s+Å\s*inko/gi, to: 'Marica Šinko' },
+  { rx: /Marica\s+�inko/gi,    to: 'Marica Šinko' },
+  { rx: /Marica\s+\?inko/gi,   to: 'Marica Šinko' }
+];
 
-for (const p of pages) {
-  if (!fs.existsSync(p)) continue;
-  const data = fs.readFileSync(p, 'utf8');
-  bad.forEach(rx => {
-    if (rx.test(data)) {
-      console.error(`❌ Encoding error found in: ${p}`);
-      badFound = true;
-    }
-  });
+function walk(d){return fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>{const p=path.join(d,e.name);return e.isDirectory()?walk(p):p;});}
+
+if (fs.existsSync(ROOT)) {
+  for (const f of walk(ROOT)) {
+    if (!/\.(html|json)$/i.test(f)) continue;
+    let s = fs.readFileSync(f, 'utf8'), o = s;
+    for (const {rx,to} of FIXES) s = s.replace(rx, to);
+    if (s !== o) fs.writeFileSync(f, s, 'utf8');
+  }
+  console.log('postbuild-fix-author: done');
 }
 
-if (!badFound) console.log('✅ All author names correctly show "Marica Šinko" everywhere.');
+
+Update package.json (append, don’t remove existing scripts):
+
+{
+  "scripts": {
+    "postbuild:fix": "node scripts/postbuild-fix-author.mjs",
+    "mini": "npm run build && npm run postbuild:fix && node scripts/quick-validate-seo.mjs",
+    "fast": "npm run build && npm run postbuild:fix && npm run test -- --watchAll=false && npm run fast:playwright && npm run fast:seo"
+  }
+}
+
+B4) Ultra-light runtime guard (runs on idle; no CWV impact)
+
+Create src/lib/runtime/fixAuthorMojibake.js:
+
+export function fixAuthorMojibakeRuntime() {
+  const apply = () => {
+    const targets = [
+      ...document.querySelectorAll('meta[name="author"]'),
+      ...document.querySelectorAll('meta[property="article:author"]'),
+    ];
+    targets.forEach(m => {
+      if (!m.content) return;
+      m.content = m.content
+        .replace(/Marica\s+Å\s*inko/gi, 'Marica Šinko')
+        .replace(/Marica\s+�inko/gi, 'Marica Šinko')
+        .replace(/Marica\s+\?inko/gi, 'Marica Šinko');
+    });
+
+    // visible text nodes (author lines)
+    document.querySelectorAll('body').forEach(root => {
+      root.innerHTML = root.innerHTML
+        .replace(/Marica\s+Å\s*inko/gi, 'Marica Šinko')
+        .replace(/Marica\s+�inko/gi, 'Marica Šinko')
+        .replace(/Marica\s+\?inko/gi, 'Marica Šinko');
+    });
+
+    // fix browser tab if needed
+    if (document.title) {
+      document.title = document.title
+        .replace(/Marica\s+Å\s*inko/gi, 'Marica Šinko')
+        .replace(/Marica\s+�inko/gi, 'Marica Šinko')
+        .replace(/Marica\s+\?inko/gi, 'Marica Šinko');
+    }
+  };
+
+  if ('requestIdleCallback' in window) requestIdleCallback(apply, { timeout: 800 });
+  else setTimeout(apply, 0);
+}
 
 
+Call it once in App.js (or root layout) after mount:
 
-Then run:
+import { useEffect } from 'react';
+import { fixAuthorMojibakeRuntime } from '@/lib/runtime/fixAuthorMojibake';
 
+useEffect(() => {
+  fixAuthorMojibakeRuntime();
+}, []);
+
+
+This is a last-resort safety that runs after paint (idle), so it doesn’t affect LCP/TBT and guarantees visible/meta text shows Šinko even if a stray source slipped through.
+
+C) Verification script
+
+Create scripts/verify-overlap-author.mjs:
+
+import fs from 'node:fs';
+import path from 'node:path';
+
+const roots = ['build'];
+const BAD = [/Marica\s+Å\s*inko/i, /Marica\s+�inko/i, /Marica\s+\?inko/i];
+
+function walk(d){return fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>{const p=path.join(d,e.name);return e.isDirectory()?walk(p):p;});}
+
+let bad = [];
+for (const root of roots) {
+  if (!fs.existsSync(root)) continue;
+  for (const f of walk(root)) {
+    if (!/\.(html|json)$/i.test(f)) continue;
+    const s = fs.readFileSync(f, 'utf8');
+    BAD.forEach(rx => { if (rx.test(s)) bad.push(`${f} :: ${rx}`); });
+  }
+}
+
+if (bad.length) {
+  console.error('❌ Mojibake still present:\n' + bad.join('\n'));
+  process.exit(1);
+} else {
+  console.log('✅ All built files show “Marica Šinko”.');
+}
+
+D) Run & accept only when:
 npm run mini
 npm run fast
-node scripts/verify-encoding-and-layout.mjs
+node scripts/verify-overlap-author.mjs
 
-🧾 Acceptance checklist
 
-✅ Category cards:
+Home “Themes” cards do not overlap on hover or scroll (they stay in their own cells).
 
-Perfect grid alignment, no overlap on any screen size.
+Those titles are readable (desktop ≈ single line with ellipsis; mobile wraps sanely).
 
-Titles render in one clean row on desktop.
+All pages show “Marica Šinko” in UI, tab title, and meta; no Å/� anywhere.
 
-✅ Author name:
-
-Every “By Marica Šinko” shows correctly (no Å, no question marks).
-
-Browser tab, meta, and visible text all use the correct diacritic Š.
-
-✅ Performance:
-
-CLS ≤ 0.05
-
-LCP ≤ 1.8 s
-
-No new blocking JS/CSS
-
-All schema and meta intact
+Tests/validators pass; no CWV/SEO regressions.

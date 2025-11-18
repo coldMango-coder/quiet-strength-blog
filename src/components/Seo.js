@@ -8,7 +8,7 @@ import { useDynamicSEO } from '../hooks/useDynamicSEO';
 const Seo = ({ title, description, type = 'website', path, article, book, person, breadcrumbs }) => {
   const location = useLocation();
   const siteName = 'Quiet Strength';
-  const baseUrl = process.env.REACT_APP_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '');
+  const baseUrl = (process.env.REACT_APP_SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://trueallyguide.com');
   
   // Use dynamic SEO hook for client-side updates
   useDynamicSEO();
@@ -134,7 +134,12 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
   const metaDescription = getMetaDescription(description);
 
   const displayTitleBase = title ? normalizeDisplayText(title) : siteName;
-  const fullTitle = title ? `${displayTitleBase} | ${siteName}` : siteName;
+  // Keep titles pixel-safe: drop suffix if it would push beyond ~65 chars
+  let fullTitle = siteName;
+  if (title) {
+    const candidate = `${displayTitleBase} | ${siteName}`;
+    fullTitle = candidate.length <= 65 ? candidate : displayTitleBase;
+  }
   const displayAuthor = normalizeDisplayText(article?.authorName || 'Marica Šinko');
 
   return (
@@ -175,7 +180,7 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@QuietStrengthGuide" />
-      <meta name="twitter:creator" content="@MaricaSinko" />
+      <meta name="twitter:creator" content="@Marica Šinko" />
       <meta name="twitter:title" content={article?.twitterTitle || article?.ogTitle || fullTitle} />
       <meta name="twitter:description" content={article?.twitterDescription || article?.ogDescription || metaDescription} />
       <meta name="twitter:url" content={url} />

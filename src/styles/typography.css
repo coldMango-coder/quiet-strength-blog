@@ -38,15 +38,23 @@ body {
 a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 
 .article-container {
-  max-width: var(--measure);
+  /* Container Width Control */
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
+
+/* Typography (global for article content) */
+.article-container { line-height: 1.75; font-size: 17.5px; letter-spacing: 0.01em; color: var(--text-color, #111827); }
 
 .article-container h1,
 .article-container h2,
 .article-container h3 {
-  line-height: var(--lh-heading);
+  line-height: 1.3;
   font-weight: 800;
-  color: var(--text);
+  color: var(--text-color, #111827);
   margin: 1.6em 0 0.6em;
 }
 
@@ -57,13 +65,17 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 .article-container p,
 .article-container li { font-size: var(--fs-para); }
 
-.article-container p { margin: var(--space-2) 0; }
+.article-container p { margin-bottom: 1.25em; }
 
 .article-container ul,
 .article-container ol {
-  margin: var(--space-3) 0 var(--space-3) 1.2rem;
-  padding-left: 0.4rem;
+  margin-top: 0.75em;
+  margin-bottom: 1.25em;
+  padding-left: 1.5rem;
 }
+
+.article-container ul li,
+.article-container ol li { margin-bottom: 0.5em; line-height: 1.7; }
 
 .article-container a {
   color: var(--link);
@@ -73,11 +85,20 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 .article-container a:hover { text-decoration: underline; }
 
 .article-container blockquote {
-  margin: var(--space-4) 0;
+  margin: 1.5em 0;
   padding: 1rem 1.25rem;
-  border-left: 4px solid var(--border);
-  background: var(--bg-quote);
+  border-left: 4px solid var(--accent-color, #d97706);
+  background: rgba(249, 250, 251, 0.7);
+  border-radius: 0.5rem;
 }
+
+/* Heading spacing and weight adjustments */
+.article-container h2 { margin-top: 2.25em; margin-bottom: 0.75em; line-height: 1.3; font-weight: 600; }
+.article-container h3 { margin-top: 1.5em; margin-bottom: 0.5em; font-weight: 500; }
+
+/* Responsive container padding to match editorial feel */
+@media (min-width: 640px){ .article-container { padding-left: 1.5rem; padding-right: 1.5rem; } }
+@media (min-width: 1024px){ .article-container { padding-left: 2rem; padding-right: 2rem; } }
 
 .article-container figure { margin: 1.5rem 0; }
 .article-container figcaption {
@@ -131,3 +152,29 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 /* Keep numbers aligned and tidy */
 [data-toc] ol { padding-left: 1.25rem; }
 [data-toc] li { padding-left: 0.1rem; }
+
+/* --- H2: keep strong section anchors --- */
+.prose h2 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* --- H3: soften + add rhythm --- */
+.prose h3 {
+  font-size: 1.05rem; /* ~16.8px */
+  font-weight: 600;
+  line-height: 1.45;
+  margin-top: 1.25rem;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.005em;
+}
+
+@media (max-width: 640.98px){
+  .prose h3 { font-size: 1rem; }
+}
+
+/* Bold inline labels to replace micro H3s */
+.prose .h3-inline-label { font-weight: 700; display: inline; }
+.prose .h3-inline-label::after { content: ": "; }

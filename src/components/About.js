@@ -7,16 +7,16 @@ const About = () => {
     <section id="about" className="py-32 bg-white">
       <Seo
         type="person"
-        title="About Marica Šinko"
-        description="Marica Šinko is an introvert-women burnout coach who helps high-achieving introverts rebuild confidence."
+        title="About Marica Å inko"
+        description="Marica Å inko is an introvert-women burnout coach who helps high-achieving introverts rebuild confidence."
         path="/about"
         person={{
-          name: "Marica Šinko",
-          alternateName: "Quiet Strength Coach",
-          jobTitle: "Mental Wellness Coach",
-          knowsAbout: ["burnout recovery", "introvert confidence"],
-          url: "https://quietstrength.com/about",
-          image: "/images/logo.webp?v=b008f571"
+          name: 'Marica Å inko',
+          alternateName: 'Quiet Strength Coach',
+          jobTitle: 'Mental Wellness Coach',
+          knowsAbout: ['burnout recovery', 'introvert confidence'],
+          url: 'https://quietstrength.com/about',
+          image: '/images/logo.webp?v=b008f571',
         }}
       />
       <div className="container mx-auto px-6">
@@ -27,7 +27,7 @@ const About = () => {
                 loading="lazy"
                 decoding="async"
                 src="/images/marica-sinko-author-photo.avif"
-                alt="Marica Šinko — Author portrait"
+                alt="Marica Å inko â€” Author portrait"
                 width="224"
                 height="224"
                 sizes="224px"
@@ -62,7 +62,4 @@ const About = () => {
 };
 
 export default About;
-
-
-
 

@@ -35,32 +35,32 @@ const themeDescriptions = {
 
 
 const ThemeCard = ({ icon, title, description, categoryName }) => (
-  <div
-    className="flex flex-col justify-between bg-white p-8 rounded-lg shadow-md ring-1 ring-neutral-200 hover:shadow-xl transition-all duration-300 text-center items-center transform hover:-translate-y-1 hover:scale-[1.02] min-w-[280px] sm:min-w-[300px] md:min-w-[320px] lg:min-w-[340px] h-full"
+  <article
+    className="theme-card h-full min-h-[260px] md:min-h-[300px] flex flex-col rounded-2xl ring-1 ring-black/5 bg-white/90 p-6 shadow-sm transition-transform duration-150 hover:-translate-y-0.5 text-center items-center"
   >
-    <div className="mb-6 text-brand-emphasis bg-brand-secondary/20 p-4 rounded-full transition-transform duration-300">
+    <div className="mb-4 md:mb-6 text-brand-emphasis bg-brand-secondary/20 p-4 rounded-full transition-transform duration-300">
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">{icon}</svg>
     </div>
     <h3
-      className="text-lg md:text-xl font-semibold tracking-tight leading-tight whitespace-normal md:whitespace-nowrap overflow-hidden text-ellipsis text-brand-dark mb-2"
+      className="text-lg md:text-xl font-semibold tracking-tight leading-snug whitespace-normal md:whitespace-nowrap overflow-hidden text-ellipsis text-brand-dark mb-2"
       aria-label={title}
       title={title}
     >
       {title}
     </h3>
-    <p className="text-slate-600 flex-grow">{description}</p>
+    <p className="text-slate-600 text-sm md:text-[15px] flex-grow">{description}</p>
     <NormalizedLink to={`/category/${categorySlugMap[categoryName]}`} className="mt-4 text-brand-emphasis hover:underline font-semibold">Explore More &rarr;</NormalizedLink>
-  </div>
+  </article>
 );
 
 const Themes = () => {
   return (
     <section id="themes" className="py-24 bg-brand-light">
-      <div className="container mx-auto px-6">
+      <div className="themes-grid-wrap container-wide">
         <div className="text-left mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-dark">Our Core Self-Help Themes for Introverted Women</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 place-items-stretch auto-rows-fr w-full">
+        <div className="themes-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
           {Object.values(categories).map((category, index) => (
             <ThemeCard
               key={index}

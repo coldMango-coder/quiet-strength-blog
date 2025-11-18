@@ -1,6 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
+  safelist: [
+    // Arbitrary object-position utility used for avatar focal point
+    'object-[center_15%]',
+    'object-[center_20%]',
+    'object-[center_35%]',
+    // Also allow underscore variant used in content (compat)
+    'object-center_15%',
+    'object-center_20%',
+    'object-center_35%'
+  ],
   content: [
     "./public/index.html",
     "./src/**/*.{js,jsx,ts,tsx,md,mdx}",

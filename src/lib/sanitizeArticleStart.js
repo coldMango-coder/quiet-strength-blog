@@ -14,7 +14,7 @@ export default function sanitizeArticleStart(rootSelector = 'article') {
         .replace(/^\s*[Ã¢ï¿½]+/g, '') // leading weird bytes
         .replace(/Ã¢â‚¬Â¢/g, 'â€¢')
         .replace(/Ã…Â /g, 'Å ')
-        .replace(/Marica Šinko/g, 'Marica Å inko');
+        .replace(/Marica Šinko/g, 'Marica Šinko');
     targets.forEach((node) => {
       const v = node.nodeValue || '';
       const f = fix(v);

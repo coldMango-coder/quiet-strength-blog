@@ -1,0 +1,90 @@
+/* --- WIDTH ENFORCER: forces content blocks to match footer width --- */
+/* 80rem ~= 1280px (Tailwind's max-w-7xl). Adjust only here if needed. */
+:root { --page-max: 80rem; --page-pad-sm: 1rem; --page-pad-md: 1.5rem; --page-pad-lg: 2rem; }
+
+/* Any “container” we have gets widened. Use attribute/role/semantic selectors for safety. */
+main > .container, main .container, .container-wide,
+.section, section[aria-labelledby], section[id],
+.page, .page-wrap, .content-wrap, .content, .wrapper,
+.archive-wrap, .archive, .category-wrap, .category,
+#latest, .latest, .themes-grid-wrap, .testimonials-wrap {
+  max-width: var(--page-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--page-pad-sm) !important;
+  padding-right: var(--page-pad-sm) !important;
+}
+
+@media (min-width: 640px){
+  main > .container, main .container, .container-wide,
+  .section, section[aria-labelledby], section[id],
+  .page, .page-wrap, .content-wrap, .content, .wrapper,
+  .archive-wrap, .archive, .category-wrap, .category,
+  #latest, .latest, .themes-grid-wrap, .testimonials-wrap {
+    padding-left: var(--page-pad-md) !important;
+    padding-right: var(--page-pad-md) !important;
+  }
+}
+@media (min-width: 1024px){
+  main > .container, main .container, .container-wide,
+  .section, section[aria-labelledby], section[id],
+  .page, .page-wrap, .content-wrap, .content, .wrapper,
+  .archive-wrap, .archive, .category-wrap, .category,
+  #latest, .latest, .themes-grid-wrap, .testimonials-wrap {
+    padding-left: var(--page-pad-lg) !important;
+    padding-right: var(--page-pad-lg) !important;
+  }
+}
+
+/* Nuke narrow max-width utilities that keep sneaking in (tailwind/legacy) */
+[class*="max-w-3xl"], [class*="max-w-4xl"], [class*="max-w-5xl"], [class*="max-w-6xl"] {
+  max-width: var(--page-max) !important;
+}
+
+/* --- GRIDS --- */
+.archive-grid, .themes-grid {
+  display: grid !important;
+  grid-template-columns: repeat(1, minmax(0,1fr));
+  gap: 1.5rem !important;
+}
+@media (min-width: 768px){
+  .archive-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (min-width: 1024px){
+  .archive-grid, .themes-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+
+/* Cards are readable and never overlap */
+.post-card, .theme-card {
+  display: flex; flex-direction: column; height: 100%; position: static;
+  border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+.theme-card { min-height: 300px; }
+.post-card h3 { font-size: 1.125rem; line-height: 1.3; }
+@media (min-width: 1024px){ .post-card h3 { font-size: 1.25rem; } }
+
+/* Line clamps to stop 6+ line disasters in lists */
+.line-clamp-2{ display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.line-clamp-3{ display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+
+/* Images always have a safe aspect and fill */
+.post-card img, .theme-card img {
+  width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover; display: block;
+}
+
+/* --- HOME: Latest Insights layout --- */
+#latest .latest-grid { display:grid; grid-template-columns: 1fr; gap: 1.5rem; }
+@media (min-width: 1024px){
+  #latest .latest-grid { grid-template-columns: minmax(0,2fr) minmax(0,1fr); }
+}
+#latest .featured-card h3 { font-weight: 800; font-size: 1.25rem; line-height: 1.2; }
+@media (min-width: 768px){ #latest .featured-card h3 { font-size: 1.5rem; } }
+
+/* Right column list items */
+#latest .mini-list li { display:flex; gap:.75rem; }
+#latest .mini-list img { width: 100px; height: 100px; border-radius: .75rem; object-fit: cover; }
+#latest .mini-list a.title { font-weight: 600; line-height: 1.25; }
+
+/* Testimonials block shares full width */
+.testimonials-wrap { max-width: var(--page-max) !important; }
+

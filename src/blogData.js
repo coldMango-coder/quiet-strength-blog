@@ -3,7 +3,6 @@ import React from 'react';
 // Lazy load blog post components to reduce initial bundle size
 const BlogPostBurnout = React.lazy(() => import('./pages/BlogPostBurnout'));
 const BlogPostSayingNo = React.lazy(() => import('./components/BlogPostSayingNo'));
-const BlogPostSayingNoWithoutGuilt = React.lazy(() => import('./components/BlogPostSayingNoWithoutGuilt'));
 const BlogPostRelationshipSigns = React.lazy(() => import('./pages/BlogPostRelationshipSigns'));
 const BlogPostSocialBattery = React.lazy(() => import('./pages/BlogPostSocialBattery'));
 const BlogPostIntentionalDating = React.lazy(() => import('./pages/BlogPostIntentionalDating'));
@@ -39,9 +38,9 @@ export const slugToCategoryMap = Object.fromEntries(
 );
 
 export const blogPosts = [
-    {
+  {
     slug: 'how-to-stop-attracting-narcissists-9-proven-strategies',
-    title: 'How to Stop Attracting Narcissists: 9 Proven Strategies That Actually Work in 2025',
+    title: 'How to Stop Attracting Narcissists: 9 Proven Strategies',
     description: 'Learn how to stop attracting narcissists with 9 proven strategies. Discover the psychology behind these patterns and build healthier relationships in 2025.',
     date: '2025-08-03',
     category: categories.RELATIONSHIPS_DATING,
@@ -71,7 +70,7 @@ export const blogPosts = [
   },
   {
     slug: 'how-to-be-confident-as-an-introvert-woman-guide',
-    title: 'How to Be Confident as an Introvert Woman: 9 Proven Strategies That Actually Work in 2025',
+    title: 'How to Be Confident as an Introvert Woman',
     description: 'Discover how to be confident as an introvert woman with 9 proven strategies. Learn to embrace your quiet strength and build authentic confidence in 2025. Expert-backed tips inside.',
     date: '2025-07-28',
     category: categories.INTROVERSION_PERSONALITY,
@@ -81,7 +80,7 @@ export const blogPosts = [
   },
   {
     slug: 'post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025',
-    title: 'Post Breakup Glow Up Transformation Guide: 10 Proven Steps to Become Your Best Self in 2025',
+    title: 'Post-Breakup Glow Up: 10 Steps',
     description: 'Discover the ultimate post breakup glow up transformation guide with 10 proven steps to heal, grow, and become your best self. Transform pain into power in 2025.',
     date: '2025-07-28',
     category: categories.SELF_DEVELOPMENT,
@@ -121,7 +120,7 @@ export const blogPosts = [
   },
   {
     slug: 'how-to-speak-up-in-meetings-introvert-strategies-2025',
-    title: 'How to Speak Up in Meetings as an Introvert: 9 Proven Strategies That Actually Work in 2025',
+    title: 'How to Speak Up in Meetings as an Introvert',
     description: 'Learn how to speak up in meetings as introvert with 9 proven strategies. Discover confidence-building techniques, preparation methods, and communication tips that help introverted professionals thrive in workplace meetings without changing who you are.',
     date: '2025-07-22',
     category: categories.CAREER_WORKPLACE,
@@ -141,7 +140,7 @@ export const blogPosts = [
   },
   {
     slug: 'introvert-social-battery-drained-recovery-methods',
-    title: 'Introvert Social Battery Drained: 9 Proven Recovery Methods That Actually Work in 2025',
+    title: 'Introvert Social Battery Drained? 9 Ways to Recharge',
     description: 'Discover 9 proven ways to recharge when your social battery is drained. Expert-backed recovery methods for introverts in 2025. Learn effective strategies now.',
     date: '2025-07-20',
     category: categories.INTROVERSION_PERSONALITY,
@@ -151,23 +150,13 @@ export const blogPosts = [
   },
   {
     slug: 'how-to-know-if-you-deserve-better-relationship-introvert-woman-guide',
-    title: 'How to Know if You Deserve Better in Your Relationship: 7 Clear Signs Every Introvert Woman Must Recognize in 2025',
+    title: 'Do You Deserve Better? 7 Clear Signs for Introvert Women',
     description: 'Discover 7 proven signs that show you deserve better in your relationship as an introvert woman. Learn to recognize your worth and make empowered decisions in 2025.',
     date: '2025-07-19',
     category: categories.RELATIONSHIPS_DATING,
     component: BlogPostRelationshipSigns,
     image: '/images/thoughtful-woman-relationship-reflection.webp?v=b008f571',
     readTime: '7 min read',
-  },
-  {
-    slug: 'how-to-say-no-without-guilt',
-    title: 'How to Say No Without Guilt: Real-Life Scripts for Work, Family & Friends',
-    description: 'Learn how to say no without guilt. Real scripts for work, family & friends + emotional aftercare. Free 20 Script PDF.',
-    date: '2025-07-18',
-    category: categories.RELATIONSHIPS_DATING,
-    component: BlogPostSayingNoWithoutGuilt,
-    image: '/images/confident-boundary-setting-professional.webp?v=b008f571',
-    readTime: '12 min read',
   },
   {
     slug: 'art-of-saying-no',

@@ -178,7 +178,7 @@ function generateHTMLWithMetadata(url, pageType, routeData, assets) {
   <!-- Enhanced Twitter Card tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@QuietStrengthGuide" />
-  <meta name="twitter:creator" content="@MaricaSinko" />
+  <meta name="twitter:creator" content="@Marica Šinko" />
   <meta name="twitter:title" content="${metadata.title}" />
   <meta name="twitter:description" content="${metadata.description}" />
   <meta name="twitter:url" content="${canonicalUrl}" />

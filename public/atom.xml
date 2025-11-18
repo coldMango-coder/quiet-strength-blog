@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Quiet Strength Blog</title>
   <link href="https://trueallyguide.com"/>
@@ -58,18 +58,7 @@
       <name>Marica Šinko</name>
     </author>
   </entry>
-  <entry>
-    <title type="html"><![CDATA[How to Say No Without Guilt]]></title>
-    <link href="https://trueallyguide.com/blog/how-to-say-no-without-guilt"/>
-    <id>https://trueallyguide.com/blog/how-to-say-no-without-guilt</id>
-    <published>2025-07-18T00:00:00.000Z</published>
-    <updated>2025-07-18T00:00:00.000Z</updated>
-    <summary type="html"><![CDATA[Learn to say no without guilt using proven strategies, practical scripts, and boundary-setting techniques for work, family, and personal situations.]]></summary>
-    <category term="Self-Development"/>
-    <author>
-      <name>Marica Šinko</name>
-    </author>
-  </entry>  <entry>
+    <entry>
     <title type="html"><![CDATA[How to Love Yourself After a Toxic Relationship: 8 Proven Steps That Actually Work in 2025]]></title>
     <link href="https://trueallyguide.com/blog/how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025"/>
     <id>https://trueallyguide.com/blog/how-to-love-yourself-after-a-toxic-relationship-8-proven-steps-that-actually-work-in-2025</id>
@@ -83,3 +72,4 @@
   </entry>
 
 </feed>
+

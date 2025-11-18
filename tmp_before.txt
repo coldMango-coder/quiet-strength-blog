@@ -1,0 +1,35 @@
+import React from "react";
+// Using a plain img per spec for explicit intrinsic sizing
+import normalizeDisplayText from "../lib/content/normalizeDisplayText";
+
+export default function AuthorBio(author = {}) {
+  const name = normalizeDisplayText(author.name || "Marica Šinko");
+  const title = normalizeDisplayText(author.title || "Founder of Quiet Strength");
+  const tagline = normalizeDisplayText(
+    author.tagline || "Empowering introverted women to build quiet confidence without burnout."
+  );
+  const photo = author.photo || "/images/marica-sinko-author-photo.avif";
+
+  return (
+    <section className="article-author" aria-labelledby="author-heading">
+      <img
+        className="avatar"
+        src={photo}
+        alt={name}
+        width="84"
+        height="84"
+        loading="lazy"
+        decoding="async"
+      />
+      <div className="bio">
+        <h3 id="author-heading" className="name">{name}</h3>
+        <p className="role">{title}</p>
+        <p>
+          {tagline}
+          <a className="bio-link" href="/#about">See full bio</a>
+        </p>
+      </div>
+    </section>
+  );
+}
+

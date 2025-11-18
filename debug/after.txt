@@ -1,0 +1,201 @@
+import React, { Suspense, useEffect, useLayoutEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { sortedBlogPosts } from '../blogData';
+import Seo from '../components/Seo';
+import ModernTOC from '../components/ModernTOC';
+import NotFoundPage from './NotFoundPage';
+import sanitizeArticleStart from '../lib/sanitizeArticleStart';
+
+// --- Ultra-reliable TOC/Hero shim (CWV-safe) ---
+function ensureHeroAndTOCOrderAndMeta(postImageSrc) {
+  try {
+    const article =
+      document.querySelector('article.single, article.post, article') ||
+      document.querySelector('.single-post, .post');
+    if (!article) return;
+
+    const header = article.querySelector('.post-header, header');
+    const heroFig =
+      article.querySelector('figure.post-hero') ||
+      (header &&
+        header.nextElementSibling &&
+        header.nextElementSibling.id === 'hero-slot' &&
+        header.nextElementSibling.firstElementChild) ||
+      null;
+    if (!heroFig) return;
+
+    // 1) Ensure #toc-anchor exists and sits immediately after hero (never in a figure)
+    let anchor = document.querySelector('#toc-anchor');
+    if (!anchor) {
+      anchor = document.createElement('div');
+      anchor.id = 'toc-anchor';
+    }
+    heroFig.insertAdjacentElement('afterend', anchor);
+    if (anchor.closest('figure')) anchor.closest('figure').insertAdjacentElement('afterend', anchor);
+
+    // Normal flow (no overlay)
+    Object.assign(heroFig.style, { display: 'block', clear: 'both', position: 'relative', zIndex: 0, marginBottom: '0.5rem' });
+    Object.assign(anchor.style, { display: 'block', clear: 'both', position: 'relative', zIndex: 1, minHeight: '1px', margin: '0.25rem 0' });
+
+    // 2) If the hero has no figcaption, adopt the adjacent caption/meta of the first duplicate image
+    const heroImg = heroFig.querySelector('img');
+    const heroSrc = (heroImg && (heroImg.getAttribute('src') || heroImg.src)) || postImageSrc || '';
+    let adoptedCaption = !!heroFig.querySelector('figcaption');
+    let removedOneDuplicate = false;
+
+    const imgs = Array.from(article.querySelectorAll('img')).slice(0, 12);
+    for (const img of imgs) {
+      const s = (img.getAttribute('src') || img.src || '').toString();
+      if (!s || s !== heroSrc) continue;
+      if (heroFig.contains(img)) continue; // skip the real hero
+
+      const container = img.closest('figure') || img.parentElement;
+
+      if (!adoptedCaption && container) {
+        const next = container.nextElementSibling;
+        const isFigcap = next && (next.tagName || '').toLowerCase() === 'figcaption';
+        const looksMeta = next && /(\bimage-meta\b|\bfigure-meta\b|caption|meta)/i.test(next.className || '');
+        if (isFigcap || looksMeta) {
+          const cap = document.createElement('figcaption');
+          cap.className = 'image-caption';
+          cap.innerHTML = next.innerHTML || next.textContent || '';
+          heroFig.appendChild(cap);
+          next.remove();
+          adoptedCaption = true;
+        }
+      }
+
+      // Remove only ONE duplicate; leave later images and their meta alone
+      if (!removedOneDuplicate) {
+        if (container && container.parentElement) container.remove(); else img.remove();
+        removedOneDuplicate = true;
+      }
+    }
+
+    // 3) If a legacy TOC exists elsewhere, move it into the anchor to enforce order visually
+    const legacyToc = article.querySelector('[data-toc-mount], .toc-shell, #toc');
+    if (legacyToc && legacyToc !== anchor) {
+      anchor.innerHTML = '';
+      anchor.appendChild(legacyToc);
+    }
+  } catch {}
+}
+
+// NOTE: no RegEx helpers required; hero is rendered or promoted via effects below.
+
+const BlogPostPage = () => {
+  const { slug } = useParams();
+  const post = sortedBlogPosts.find((p) => p.slug === slug);
+  const heroImageSrc = post?.image || '';
+
+  // Sanitize odd leading characters at article start without blocking paint
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if ('requestIdleCallback' in window) {
+        // @ts-ignore requestIdleCallback type
+        const id = window.requestIdleCallback(() => sanitizeArticleStart('article'), { timeout: 1200 });
+        return () => window.cancelIdleCallback && window.cancelIdleCallback(id);
+      } else {
+        const t = setTimeout(() => sanitizeArticleStart('article'), 0);
+        return () => clearTimeout(t);
+      }
+    }
+  }, []);
+
+  // Preload the hero image source to double-lock instant LCP on first navigation
+  useEffect(() => {
+    if (!heroImageSrc) return;
+    try {
+      let link = document.querySelector('link[data-hero-preload]');
+      if (!link) {
+        link = document.createElement('link');
+        link.setAttribute('data-hero-preload', '1');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = heroImageSrc;
+        document.head.appendChild(link);
+      }
+    } catch {}
+  }, [heroImageSrc]);
+
+  // Outline implementation: adopt caption from duplicates and remove their containers; ensure TOC anchor follows hero
+  useLayoutEffect(() => {
+    try {
+      const article =
+        document.querySelector('article.single, article.post, article') ||
+        document.querySelector('.single-post, .post');
+      if (!article) return;
+
+      const heroFig = article.querySelector('figure.post-hero');
+      const heroImg = heroFig?.querySelector('img');
+      if (!heroFig || !heroImg) return;
+
+      const heroSrc = (heroImg.src || '').split('?')[0].split('#')[0];
+
+      // Find all duplicate hero containers (figures/captions) excluding the real hero
+      const containers = Array.from(article.querySelectorAll('figure, .wp-block-image, .wp-caption'))
+        .filter((el) => el !== heroFig && el.querySelector('img')?.src?.includes(heroSrc));
+
+      let adoptedCaption = heroFig.querySelector('figcaption');
+      for (const el of containers) {
+        const capEl = el.querySelector('figcaption, .wp-caption-text');
+        if (!adoptedCaption && capEl) {
+          const figCap = document.createElement('figcaption');
+          figCap.className = 'image-caption';
+          figCap.textContent = (capEl.textContent || '').trim();
+          heroFig.appendChild(figCap);
+          adoptedCaption = figCap;
+        }
+        el.remove();
+      }
+
+      // Ensure TOC anchor is after hero
+      const toc = document.getElementById('toc-anchor');
+      if (toc && heroFig.nextElementSibling !== toc) {
+        heroFig.insertAdjacentElement('afterend', toc);
+      }
+    } catch {}
+  }, [heroImageSrc]);
+
+  // Create the title-after slot after .post-header and a TOC anchor right after it (CWV-safe)
+  useLayoutEffect(() => {
+    try {
+      const article =
+        document.querySelector('article.single, article.post, article') ||
+        document.querySelector('.single-post, .post');
+      if (!article) return;
+      const header = article.querySelector('.post-header, header');
+      if (!header) return;
+
+      let slot = header.nextElementSibling && (header.nextElementSibling).id === 'title-after-slot'
+        ? header.nextElementSibling
+        : null;
+      if (!slot) {
+        slot = document.createElement('div');
+        slot.id = 'title-after-slot';
+        slot.style.aspectRatio = '1200 / 630';
+        slot.style.minHeight = '1px';
+        slot.style.display = 'block';
+        slot.style.margin = '0.5rem 0 0.25rem';
+        header.parentNode && header.parentNode.insertBefore(slot, header.nextSibling);
+      }
+
+      let anchor = slot.nextElementSibling && (slot.nextElementSibling).id === 'toc-anchor'
+        ? slot.nextElementSibling
+        : null;
+      if (!anchor) {
+        anchor = document.createElement('div');
+        anchor.id = 'toc-anchor';
+        anchor.style.display = 'block';
+        anchor.style.clear = 'both';
+        anchor.style.position = 'relative';
+        anchor.style.zIndex = '1';
+        anchor.style.minHeight = '1px';
+        anchor.style.margin = '0.25rem 0';
+        slot.insertAdjacentElement('afterend', anchor);
+      }
+    } catch {}
+  }, []);
+
+  // Static anchors are rendered in JSX; no dynamic creation needed.
+

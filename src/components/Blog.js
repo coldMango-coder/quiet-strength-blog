@@ -1,7 +1,7 @@
 import React from 'react';
 import NormalizedLink from './NormalizedLink';
 import { sortedBlogPosts } from '../blogData';
-import BlogCard from './BlogCard';
+import BlogCard from './BlogCardFixed.jsx';
 
 const Blog = () => {
   const latestPost = sortedBlogPosts[0];

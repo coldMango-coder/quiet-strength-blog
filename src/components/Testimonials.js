@@ -31,7 +31,7 @@ const TestimonialCard = ({ quote, author, title }) => (
 const Testimonials = () => {
   return (
     <section id="testimonials" className="py-24 bg-brand-light">
-      <div className="container mx-auto px-6">
+      <div className="testimonials-wrap container-wide">
         <div className="text-left mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-brand-dark">What Our Readers Say</h2>
         </div>

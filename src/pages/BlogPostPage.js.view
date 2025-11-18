@@ -1,0 +1,277 @@
+﻿import React, { Suspense, useEffect, useLayoutEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { sortedBlogPosts } from '../blogData';
+import Seo from '../components/Seo';
+import ModernTOC from '../components/ModernTOC';
+import NotFoundPage from './NotFoundPage';
+import sanitizeArticleStart from '../lib/sanitizeArticleStart';
+
+// Normalize to just the lowercase filename (no hash/query)
+function normalize(src) {
+  const s = (src || '').toString();
+  const noHash = s.split('#')[0];
+  const noQuery = noHash.split('?')[0];
+  return noQuery.split('/').pop().toLowerCase();
+}
+
+// Remove the first duplicate of the hero image (and its wrapper/caption) from raw HTML
+function stripFirstDuplicate(html, heroSrc) {
+  if (!html || !heroSrc) return html;
+  const heroKey = normalize(heroSrc);
+  if (!heroKey) return html;
+
+  const tpl = document.createElement('template');
+  tpl.innerHTML = html;
+
+  const imgs = Array.from(tpl.content.querySelectorAll('img'));
+  const dup = imgs.find(
+    (img) => normalize(img.getAttribute('src') || img.currentSrc || img.src) === heroKey
+  );
+  if (!dup) return html;
+
+  const WRAPPER_SEL = [
+    'figure',
+    '.wp-block-image',
+    '.wp-caption',
+    '.image',
+    '.figure',
+    '.relative.overflow-hidden.rounded-lg.shadow-md.my-8.w-full',
+  ].join(',');
+
+  const outer = dup.closest(WRAPPER_SEL) || dup.parentElement;
+  const wrapper = (outer && outer.closest && outer.closest(WRAPPER_SEL)) || outer || dup;
+
+  const isCap = (el) =>
+    !!el &&
+    (el.matches?.('figcaption, .wp-caption-text, .image-meta, .figure-meta, .caption, [data-caption], em, i, p') ||
+      (el.tagName && el.tagName.toLowerCase() === 'figcaption'));
+
+  const innerCap = wrapper.querySelector?.(
+    'figcaption, .wp-caption-text, .image-meta, .figure-meta, .caption, [data-caption], em, i, p'
+  );
+  if (innerCap) innerCap.remove();
+
+  const next = wrapper.nextElementSibling;
+  const prev = wrapper.previousElementSibling;
+  if (isCap(next)) next.remove();
+  if (isCap(prev)) prev.remove();
+
+  if (wrapper && wrapper.parentElement) wrapper.remove();
+  else dup.remove();
+
+  return tpl.innerHTML;
+}
+
+const BlogPostPage = () => {
+  const { slug } = useParams();
+  const post = sortedBlogPosts.find((p) => p.slug === slug);
+  const heroImageSrc = post?.image || post?.hero || '';
+
+  // We already know the hero from the post data — no DOM lookups
+  const heroFile = normalize(heroImageSrc);
+
+  // Sanitize odd leading characters at article start without blocking paint
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if ('requestIdleCallback' in window) {
+        // @ts-ignore requestIdleCallback type
+        const id = window.requestIdleCallback(() => sanitizeArticleStart('article'), { timeout: 1200 });
+        return () => window.cancelIdleCallback && window.cancelIdleCallback(id);
+      } else {
+        const t = setTimeout(() => sanitizeArticleStart('article'), 0);
+        return () => clearTimeout(t);
+      }
+    }
+  }, []);
+
+  const fallbackCaption =
+    'Confident woman learning how to stop attracting narcissists by walking away from toxic relationships toward healthy boundaries and self-empowerment';
+
+  const Hero = heroImageSrc ? (
+    <figure className="lead-figure post-hero" id="post-hero">
+      <img
+        src={heroImageSrc}
+        alt={post?.title || ''}
+        width={1200}
+        height={630}
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        data-hero="1"
+        className="w-full h-auto object-cover rounded-lg"
+      />
+      <figcaption className="image-caption">{post?.imageCaption || fallbackCaption}</figcaption>
+    </figure>
+  ) : null;
+
+  // Keep the intro-media block directly after the header if anything injected nodes
+  useLayoutEffect(() => {
+    const intro = document.getElementById('intro-media');
+    if (!intro) return;
+
+    let mo;
+
+    const place = () => {
+      try {
+        const article =
+          document.querySelector('article.single, article.post, article') ||
+          document.querySelector('.single-post, .post');
+        const header = article?.querySelector('.post-header, header');
+        if (!article || !header) return false;
+        if (header.nextElementSibling !== intro) {
+          header.insertAdjacentElement('afterend', intro);
+        }
+        intro.removeAttribute('data-pending');
+        if (mo) mo.disconnect();
+        return true;
+      } catch {
+        return false;
+      }
+    };
+
+    if (place()) return;
+
+    mo = new MutationObserver(place);
+    mo.observe(document.body, { childList: true, subtree: true, attributes: true });
+    const t = setTimeout(place, 1200);
+
+    return () => {
+      try { if (mo) mo.disconnect(); } catch {}
+      clearTimeout(t);
+    };
+  }, []);
+
+  // Remove only the first duplicate after the intro (never the hero). Tiny pre-paint cleanup (BODY only)
+  useLayoutEffect(() => {
+    const getFile = (s) => (((s || '') + '').split('#')[0].split('?')[0].split('/').pop().toLowerCase());
+    const key = getFile(heroImageSrc);
+    if (!key) return;
+
+    const intro = document.getElementById('intro-media');
+    const heroFig = document.getElementById('post-hero');
+
+    const tryRemoveOnce = () => {
+      const body = document.querySelector('.post-body');
+      if (!body) return false;
+
+      const imgs = Array.from(body.querySelectorAll('img')).filter((img) => {
+        if (img.hasAttribute('data-hero')) return false;
+        if (heroFig && heroFig.contains(img)) return false;
+        if (!intro) return true;
+        return !!(intro.compareDocumentPosition(img) & Node.DOCUMENT_POSITION_FOLLOWING);
+      });
+
+      const dup = imgs.find((img) => getFile(img.getAttribute('src') || img.currentSrc || img.src) === key);
+      if (!dup) return false;
+
+      const wrapper = dup.closest('figure, .wp-block-image, .wp-caption, .image, .figure, .relative.overflow-hidden.rounded-lg.shadow-md.my-8.w-full') || dup.parentElement || dup;
+
+      // remove stray captions next to the duplicate
+      const isCap = (el) =>
+        !!el && (el.matches?.('figcaption, .wp-caption-text, .image-meta, .figure-meta, .caption, [data-caption]') ||
+                 (el.tagName && el.tagName.toLowerCase() === 'figcaption'));
+      const innerCap = wrapper.querySelector?.('figcaption, .wp-caption-text, .image-meta, .figure-meta, .caption, [data-caption]');
+      if (innerCap) innerCap.remove();
+      const next = wrapper.nextElementSibling, prev = wrapper.previousElementSibling;
+      if (isCap(next)) next.remove();
+      if (isCap(prev)) prev.remove();
+
+      if (wrapper && wrapper.parentElement) wrapper.remove(); else dup.remove();
+      return true;
+    };
+
+    if (tryRemoveOnce()) return;
+    const mo = new MutationObserver(() => { if (tryRemoveOnce()) mo.disconnect(); });
+    mo.observe(document.documentElement, { childList: true, subtree: true });
+    return () => mo.disconnect();
+  }, [heroImageSrc]);
+
+  if (!post) return <NotFoundPage />;
+
+  // Build the body HTML synchronously (for raw HTML posts)
+  let bodyHtml = '';
+  if (post?.html) {
+    bodyHtml = stripFirstDuplicate(post.html, heroImageSrc);
+  }
+
+  return (
+    <>
+      <Seo
+        title={post.title}
+        description={post.description}
+        type="article"
+        article={{
+          title: post.title,
+          authorName: 'Marica Sinko',
+          datePublished: `${post.date}T00:00:00+00:00`,
+          image: post.image,
+        }}
+      />
+
+      <article className="single">
+        {/* Intro media block (hero + caption + TOC) */}
+        <section id="intro-media" className="intro-media" data-pending="1">
+          {Hero}
+          <aside id="toc" className="qs-toc-container">
+            <ModernTOC rootSelector=".post-body" />
+          </aside>
+        </section>
+
+        {/* Scoped guard (no :has): hide duplicate image and nearby captions in BODY only */}
+        {heroImageSrc && (
+          <style id="dup-guard">{(() => {
+            const f = (heroImageSrc || '').toString().split('#')[0].split('?')[0].split('/').pop().toLowerCase();
+            return `
+              /* 1) Hide the duplicate image inside the BODY */
+              .post-body img[src*="${f}"] { display: none !important; }
+
+              /* 2) Hide captions adjacent to that image (no :has required) */
+              .post-body img[src*="${f}"] + figcaption,
+              .post-body figure > img[src*="${f}"] + figcaption,
+              .post-body .wp-caption img[src*="${f}"] + .wp-caption-text,
+              .post-body .image img[src*="${f}"] + .caption,
+              .post-body .figure img[src*="${f}"] + .caption { display: none !important; }
+
+              /* 3) Generic same-parent figcaption fallback */
+              .post-body img[src*="${f}"] ~ figcaption { display: none !important; }
+            `; })()}
+          </style>
+        )}
+
+        {/* Scoped guard: hide any BODY wrapper containing an img with the hero filename */}
+        {heroImageSrc && (
+          <style id="dup-guard">{`
+            .post-body :is(figure,.wp-block-image,.wp-caption,.image,.figure,.relative.overflow-hidden.rounded-lg.shadow-md.my-8.w-full):has(img[src*="${(heroImageSrc || '').toString().split('#')[0].split('?')[0].split('/').pop().toLowerCase()}"]) { display: none !important; }
+            /* Fallback for browsers without :has — hide the image itself (BODY only) */
+            .post-body img[src*="${(heroImageSrc || '').toString().split('#')[0].split('?')[0].split('/').pop().toLowerCase()}"] { display: none !important; }
+          `}</style>
+        )}
+
+        {/* Inject the already-cleaned HTML so no duplicate can ever appear */}
+        <div className="post-body" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+
+        {/* Fallback render if HTML not provided (MDX/component posts) */}
+        {!bodyHtml && post?.component ? (
+          <Suspense fallback={
+            <div className="flex justify-center items-center py-24">
+              <div className="text-brand-primary animate-pulse">Loading article...</div>
+            </div>
+          }>
+            <div className="post-body">
+              <post.component />
+            </div>
+          </Suspense>
+        ) : null}
+      </article>
+    </>
+  );
+};
+
+export default BlogPostPage;
+
+
+
+
+
+
+

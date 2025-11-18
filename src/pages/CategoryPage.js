@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import NormalizedLink from '../components/NormalizedLink';
 import { sortedBlogPosts, categories, slugToCategoryMap, categorySlugMap } from '../blogData';
-import BlogCard from '../components/BlogCard';
+import BlogCard from '../components/BlogCardFixed.jsx';
 import Seo from '../components/Seo';
 
 const CategoryPage = () => {
@@ -34,7 +34,7 @@ const CategoryPage = () => {
         ]}
       />
       
-      <div className="container mx-auto px-6 py-12">
+      <div className="qs-container container-wide category-wrap py-12">
         <NormalizedLink to="/" className="text-brand-emphasis hover:text-brand-dark font-semibold mb-8 flex items-center gap-2">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
@@ -45,7 +45,7 @@ const CategoryPage = () => {
         {/* Category Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-brand-dark mb-6 text-balance whitespace-normal break-words hyphens-none tracking-tight leading-tight">{displayName}</h1>
-          <p className="text-xl text-brand-primary max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-brand-primary leading-relaxed">
             {getCategoryDescription(displayName)}
           </p>
           <div className="mt-8 flex justify-center">
@@ -60,7 +60,7 @@ const CategoryPage = () => {
         {/* Articles Grid */}
         {filteredPosts.length > 0 ? (
           <section>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="archive-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
               {filteredPosts.map((post) => (
                 <BlogCard
                   key={post.slug}

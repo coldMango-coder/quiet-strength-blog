@@ -7,8 +7,8 @@ const BlogCard = ({ post, onReadMore, linkTo, priority = false }) => {
   const { title, description, category, image, datePublished, readingTime, slug } = post;
 
   return (
-    <article className="w-full max-w-full sm:min-w-[260px] lg:min-w-[280px] rounded-2xl border border-gray-200 shadow-md hover:shadow-lg bg-white flex flex-col overflow-hidden transform hover:-translate-y-0.5 transition-transform duration-200" itemScope itemType="https://schema.org/BlogPosting">
-      <div className="card-thumb">
+    <article className=\"post-card h-full flex flex-col rounded-2xl border border-neutral-200/60 bg-white shadow-sm hover:shadow-md transition-shadow w-full max-w-full sm:min-w-[300px] md:min-w-[320px] lg:min-w-[340px] overflow-hidden" itemScope itemType="https://schema.org/BlogPosting">
+      <div className="card-thumb aspect-[16/9] overflow-hidden">
         <OptimizedImage 
           className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300" 
           src={image} 
@@ -23,7 +23,7 @@ const BlogCard = ({ post, onReadMore, linkTo, priority = false }) => {
           itemProp="image"
         />
       </div>
-      <div className="p-6 sm:p-8 flex flex-col flex-grow min-w-0 max-w-full">
+      <div className="flex-1 p-6 sm:p-8 flex flex-col min-w-0 max-w-full">
         <span className="text-sm font-semibold text-brand-emphasis mb-2 break-normal hyphens-none" itemProp="articleSection">{sanitizeText(category)}</span>
         <h3 className="card-title cat-title text-brand-dark mb-3 max-w-full leading-snug text-lg sm:text-xl md:text-2xl clamp-3 md:clamp-4 lg:clamp-5 text-balance whitespace-normal break-words hyphens-none" itemProp="headline">
           {title}

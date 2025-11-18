@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import NormalizedLink from '../components/NormalizedLink';
 import { Helmet } from 'react-helmet-async';
 import { sortedBlogPosts, categories, categorySlugMap } from '../blogData';
-import BlogCard from '../components/BlogCard';
+import BlogCard from '../components/BlogCardFixed.jsx';
 import Seo from '../components/Seo';
 
 const BlogListPage = () => {

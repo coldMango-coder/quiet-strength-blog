@@ -24,8 +24,8 @@ const BlogPostNetworkingTips = () => {
               <h1 className="font-bold mb-6">
                 7 Powerful Introvert Networking Tips Without Small Talk That Actually Work
               </h1>
-              <div className="flex items-center gap-4 text-brand-primary text-lg">
-                <span>By <strong>Marica �inko</strong></span>
+              <div className="post-meta flex items-center gap-4 text-brand-primary text-lg">
+                <span>By <strong>Marica Šinko</strong></span>
                 <span className="text-gray-400">•</span>
                 <span>{postData?.readTime}</span>
                 <span className="text-gray-400">•</span>

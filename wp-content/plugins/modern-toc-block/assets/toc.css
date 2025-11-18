@@ -1,0 +1,34 @@
+/* Minimal CSS to avoid reliance on global Tailwind; only what's needed */
+:root{
+  --toc-bg: color-mix(in oklab, Canvas, var(--wp--preset--color--primary, #4f46e5) 6%);
+  --toc-accent: var(--wp--preset--color--primary, #4f46e5);
+  --toc-text: var(--wp--preset--color--foreground, #0b1020);
+}
+@media (prefers-color-scheme: dark){
+  :root{ --toc-bg: color-mix(in oklab, Canvas, var(--wp--preset--color--primary, #818cf8) 14%); --toc-text: var(--wp--preset--color--foreground, #e5e7eb); }
+}
+.toc{ background:var(--toc-bg); color:var(--toc-text); border-radius:1rem; box-shadow:0 1px 2px rgba(0,0,0,.06); box-sizing:border-box; }
+.toc .ring-black\/5{ box-shadow:inset 0 0 0 1px rgba(0,0,0,.05); }
+.toc a{ color:inherit; text-decoration:none; }
+.toc a:hover{ text-decoration:underline; }
+.toc ol{ list-style:decimal; margin:0; padding:0; }
+.toc li{ margin:0; padding:0; }
+.toc .border-l{ border-left:1px solid rgba(0,0,0,.12); }
+.toc .space-y-1 > * + *{ margin-top:.25rem; }
+.toc .text-sm{ font-size:.875rem; line-height:1.25rem; }
+.toc .font-semibold{ font-weight:600; }
+.toc .uppercase{ text-transform:uppercase; letter-spacing:.06em; }
+.toc .rounded{ border-radius:.375rem; }
+.toc .rounded-2xl{ border-radius:1rem; }
+.toc .px-2{ padding-left:.5rem; padding-right:.5rem; }
+.toc .py-1{ padding-top:.25rem; padding-bottom:.25rem; }
+.toc .pl-1{ padding-left:.25rem; }
+.toc .pl-3{ padding-left:.75rem; }
+.toc .ml-4{ margin-left:1rem; }
+.toc .mb-3{ margin-bottom:.75rem; }
+.toc .leading-6{ line-height:1.5rem; }
+.toc .opacity-90{ opacity:.9; }
+.toc .opacity-80{ opacity:.8; }
+.toc [data-active="true"]{ font-weight:600; border-left:2px solid var(--toc-accent); padding-left:.25rem; }
+@media (min-width:768px){ .toc .md\:p-5{ padding:1.25rem; } .md\:block{ display:block; } .md\:hidden{ display:none; } }
+

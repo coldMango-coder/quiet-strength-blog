@@ -62,7 +62,7 @@ function App() {
       .replace(/ï¿½/g, 'â€¢')
       .replace(/ï¿½/g, 'â€¢')
       .replace(/Ã…Â /g, 'Å ')
-      .replace(/Marica Šinko/g, 'Marica Å inko');
+      .replace(/Marica Šinko/g, 'Marica Šinko');
 
     try {
       const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);

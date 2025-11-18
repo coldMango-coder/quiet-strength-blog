@@ -1,0 +1,97 @@
+.details.toc-shell .toc-list {
+  padding-left: 1.25rem;
+  margin: 0;
+  list-style-position: outside;
+  font-variant-numeric: tabular-nums;
+}
+
+.details.toc-shell .toc-list li {
+  padding: .125rem 0;
+  margin: 0;
+}
+
+/* Blend the TOC with the article background; keep spacing */
+.toc-shell {
+  background: transparent !important;
+  border-radius: 1rem;
+  box-shadow: none !important;
+}
+
+.toc-shell, .toc-shell .ring, .toc-shell .outer {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.toc-shell {
+  background: transparent !important;
+  border-radius: 1rem;
+  box-shadow: none !important;
+}
+
+.toc-shell, .toc-shell .ring, .toc-shell .outer {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Keep list readability consistent */
+.toc-shell .toc-list {
+  padding-left: 1.25rem;
+  margin: 0;
+  list-style-position: outside;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Table of Contents: link color only, no layout changes */
+:root {
+  --toc-link: #d97706;        /* amber-600 */
+  --toc-link-hover: #b45309;  /* amber-700 */
+  --toc-link-focus: #f59e0b;  /* amber-500 for focus ring */
+}
+
+.toc-shell .toc-list a { color: var(--toc-link); text-decoration: none; }
+.toc-shell .toc-list a:hover { color: var(--toc-link-hover); text-decoration: underline; }
+.toc-shell .toc-list a:focus-visible { outline: 2px solid var(--toc-link-focus); outline-offset: 2px; border-radius: 4px; }
+.toc-shell { background: transparent !important; }
+
+/* High-specificity, paint-only override for link colors */
+details.toc-shell .toc-list a { color: var(--toc-link) !important; text-decoration: none; }
+details.toc-shell .toc-list a:hover { color: var(--toc-link-hover) !important; text-decoration: underline; }
+details.toc-shell .toc-list a:focus-visible { outline: 2px solid var(--toc-link-focus); outline-offset: 2px; border-radius: 4px; }
+/* Ensure proximity: keep bottom margin tight */
+.toc-shell { margin-bottom: 0.25rem !important; }
+
+/* Also trim margins for the .qs-toc wrapper used by the React TOC */
+.qs-toc { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+
+/* Hide any premature render if someone mounts TOC elsewhere by accident */
+#toc-anchor:not([data-toc-ready="1"]) .qs-toc { display: none !important; }
+
+/* TOC always below the hero/caption, in normal flow */
+.qs-toc-container { display: block; clear: both; margin: 0 0 1rem; }
+.qs-toc { position: static !important; transform: none !important; z-index: auto !important; }
+.qs-toc nav { border: 1px solid rgba(0,0,0,.08); background: rgba(255,255,255,.7); border-radius: .75rem; padding: 1rem; }
+.qs-toc .toc-list { margin-top: .25rem; }
+.qs-toc .toc-list a { display: block; line-height: 1.45; }
+
+/* Make absolutely sure the anchor establishes normal block flow and clears the hero */
+#toc-anchor {
+  display: block;
+  clear: both;
+  position: relative;
+  z-index: 1;
+  margin: 12px 0 0; /* comfortable spacing below hero */
+  min-height: 1px;
+  /* defensive: make sure nothing collapses through it */
+  contain: layout;
+}
+
+/* Never overlay the hero */
+.qs-toc {
+  display: block;
+  position: static !important;
+  z-index: auto !important;
+  clear: both;
+  transform: none !important;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}

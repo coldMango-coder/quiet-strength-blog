@@ -1,0 +1,301 @@
+import React, { Suspense, useEffect, useLayoutEffect } from 'react';
+import ReactDOM from 'react-dom';
+import { useParams } from 'react-router-dom';
+import { sortedBlogPosts } from '../blogData';
+import Seo from '../components/Seo';
+import TableOfContents from '../components/TableOfContents';
+import NotFoundPage from './NotFoundPage';
+import sanitizeArticleStart from '../lib/sanitizeArticleStart';
+
+// NOTE: no RegEx helpers required; hero is rendered or promoted via effects below.
+
+const BlogPostPage = () => {
+  const { slug } = useParams();
+  const post = sortedBlogPosts.find((p) => p.slug === slug);
+
+  // Sanitize odd leading characters at article start without blocking paint
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if ('requestIdleCallback' in window) {
+        // @ts-ignore requestIdleCallback type
+        const id = window.requestIdleCallback(() => sanitizeArticleStart('article'), { timeout: 1200 });
+        return () => window.cancelIdleCallback && window.cancelIdleCallback(id);
+      } else {
+        const t = setTimeout(() => sanitizeArticleStart('article'), 0);
+        return () => clearTimeout(t);
+      }
+    }
+  }, []);
+
+  // Pre-reserve a hero slot under the header to avoid CLS, and a TOC anchor right after it.
+  useLayoutEffect(() => {
+    try {
+      const article =
+        document.querySelector('article.single, article.post, article') ||
+        document.querySelector('.single-post, .post');
+      if (!article) return;
+      const header = article.querySelector('.post-header') || article.querySelector('header');
+      if (!header) return;
+      let slot = header.nextElementSibling && (header.nextElementSibling).id === 'hero-slot'
+        ? header.nextElementSibling
+        : null;
+      if (!slot) {
+        slot = document.createElement('div');
+        slot.id = 'hero-slot';
+        // Stable reservation to prevent CLS (approx 1200x630)
+        slot.style.aspectRatio = '1200 / 630';
+        slot.style.minHeight = '1px';
+        slot.style.width = '100%';
+        slot.style.margin = '0 0 0.5rem 0';
+        header.parentNode && header.parentNode.insertBefore(slot, header.nextSibling);
+      }
+      const isAnchor = slot.nextElementSibling && (slot.nextElementSibling).id === 'toc-anchor';
+      if (!isAnchor) {
+        const anchor = document.createElement('div');
+        anchor.id = 'toc-anchor';
+        // Make sure nothing can overlap it and it participates in normal flow
+        anchor.style.display = 'block';
+        anchor.style.clear = 'both';
+        anchor.style.position = 'relative';
+        anchor.style.zIndex = '1';
+        anchor.style.minHeight = '1px';
+        anchor.style.margin = '0.25rem 0';
+        slot.insertAdjacentElement('afterend', anchor);
+      }
+      window.__heroSlotReady = true;
+    } catch {}
+  }, []);
+
+  // Render-time hero (when post.image exists) — portal it before Suspense so it appears on first paint.
+  const Hero = post?.image ? (
+    <figure className="lead-figure post-hero">
+      <img
+        src={post.image}
+        alt={post.title || ''}
+        width={1200}
+        height={630}
+        loading="eager"
+        decoding="async"
+        className="w-full h-auto object-cover rounded-lg"
+      />
+      {post.imageCaption && (
+        <figcaption className="image-caption">{post.imageCaption}</figcaption>
+      )}
+    </figure>
+  ) : null;
+
+  const PortalInto = ({ selector, children }) => {
+    const [target, setTarget] = React.useState(null);
+    useLayoutEffect(() => {
+      setTarget(document.querySelector(selector));
+    }, [selector]);
+    return target ? ReactDOM.createPortal(children, target) : null;
+  };
+
+  // If we rendered a cover, also proactively remove any duplicates of the same src near the top.
+  useLayoutEffect(() => {
+    if (!post || !post.image) return;
+    try {
+      const article = document.querySelector('article.single, article.post, article') || document.querySelector('.single-post, .post');
+      if (!article) return;
+      const heroFig = article.querySelector('figure.post-hero');
+      const heroImg = heroFig ? heroFig.querySelector('img') : null;
+      const heroSrc = heroImg ? (heroImg.getAttribute('src') || heroImg.src) : post.image;
+      article.querySelectorAll('img').forEach((img) => {
+        const s = img.getAttribute('src') || img.src;
+        if (s === heroSrc && (!heroFig || !heroFig.contains(img))) {
+          const container = img.closest('figure') || img.parentElement;
+          if (container && container.parentElement) container.remove(); else img.remove();
+        }
+      });
+    } catch {}
+  }, [post]);
+
+  // === Fallback: Lead image promotion by moving the first in-body image (when no cover provided) ===
+  useLayoutEffect(() => {
+    if (post && post.image) return; // skip when we already render a cover
+    try {
+      if (window.__leadImagePatched || window.__coverInjected) return;
+
+      const article = document.querySelector('article.single, article.post, article') ||
+                      document.querySelector('.single-post, .post');
+      if (!article) return;
+      const contentRoot = article;
+
+      // Ensure TOC anchor exists
+      const header = article.querySelector('.post-header') || document.querySelector('header');
+      const heroSlot = header && header.nextElementSibling && header.nextElementSibling.id === 'hero-slot' ? header.nextElementSibling : null;
+      if (heroSlot && !(heroSlot.nextElementSibling && heroSlot.nextElementSibling.id === 'toc-anchor')) {
+        const anchor = document.createElement('div');
+        anchor.id = 'toc-anchor';
+        anchor.style.display = 'block';
+        anchor.style.clear = 'both';
+        anchor.style.position = 'relative';
+        anchor.style.zIndex = '1';
+        anchor.style.minHeight = '1px';
+        anchor.style.margin = '0.25rem 0';
+        heroSlot.insertAdjacentElement('afterend', anchor);
+      }
+
+      const toc = document.querySelector('#toc-anchor') || document.querySelector('[data-toc-mount]');
+
+      // Find the first in-body image
+      const candidates = [
+        'article .post-content img',
+        'article img',
+        '.post img',
+        '.entry-content img',
+      ];
+      let firstImg = null;
+      for (const sel of candidates) {
+        const candidate = document.querySelector(sel);
+        if (candidate && (candidate.getAttribute('src') || candidate.src)) { firstImg = candidate; break; }
+      }
+
+      if (firstImg && contentRoot) {
+        // Wrap or use existing figure
+        let block = firstImg.closest('figure');
+        const originalParent = firstImg.parentElement;
+        const originalContainer = block || originalParent;
+        const createdNow = !block;
+        if (!block) {
+          block = document.createElement('figure');
+          originalParent && originalParent.insertBefore(block, firstImg);
+          block.appendChild(firstImg);
+        }
+
+        // Mark classes and ensure img attributes
+        block.classList.add('lead-figure', 'post-hero');
+        const img = block.querySelector('img');
+        if (img) {
+          const w = img.getAttribute('width') || img.naturalWidth;
+          const h = img.getAttribute('height') || img.naturalHeight;
+          if (w && !img.getAttribute('width')) img.setAttribute('width', String(w));
+          if (h && !img.getAttribute('height')) img.setAttribute('height', String(h));
+          img.setAttribute('loading', 'eager');
+          img.setAttribute('decoding', 'async');
+          img.style.objectFit = 'cover';
+          if (!img.style.aspectRatio && w && h) { img.style.aspectRatio = `${w}/${h}`; }
+        }
+
+        // Move adjacent caption/meta when we created a new figure
+        if (createdNow) {
+          const candidate = block.nextElementSibling;
+          if (candidate) {
+            const t = (candidate.tagName || '').toLowerCase();
+            const cls = candidate.className || '';
+            if (t === 'figcaption') {
+              block.appendChild(candidate);
+            } else if (t === 'p' || /(\bimage-meta\b|\bfigure-meta\b)/.test(cls) || /caption|meta/i.test(cls)) {
+              const cap = document.createElement('figcaption');
+              cap.className = 'image-caption';
+              cap.innerHTML = candidate.innerHTML || candidate.textContent || '';
+              block.appendChild(cap);
+              candidate.remove();
+            }
+          }
+        }
+
+        // Normalize/ensure caption class
+        const fc = block.querySelector('figcaption');
+        if (fc && !fc.classList.contains('image-caption')) fc.classList.add('image-caption');
+
+        // Insert into hero slot when available, else before ToC / after header
+        const header2 = (article && article.querySelector('.post-header')) || document.querySelector('.post-header') || document.querySelector('header');
+        const heroSlot2 = header2 && header2.nextElementSibling && header2.nextElementSibling.id === 'hero-slot' ? header2.nextElementSibling : null;
+        if (heroSlot2) {
+          heroSlot2.innerHTML = '';
+          heroSlot2.appendChild(block);
+          heroSlot2.style.minHeight = '0px';
+        } else {
+          const anchor = (document.querySelector('#toc-anchor')) || (toc && toc.parentNode ? toc : (header2 && header2.nextSibling ? header2.nextSibling : header2));
+          if (anchor && anchor.parentNode) {
+            anchor.parentNode.insertBefore(block, anchor);
+          } else if (header2 && header2.parentNode) {
+            header2.parentNode.insertBefore(block, header2.nextSibling);
+          }
+        }
+
+        // Cleanup: remove leftover empty containers/placeholders in body
+        const isTrulyEmpty = (el) => el && el.children.length === 0 && ((el.textContent || '').trim() === '');
+        if (originalContainer && originalContainer !== block && isTrulyEmpty(originalContainer)) {
+          originalContainer.remove();
+        }
+        // Remove adjacent meta/figcaption next to the old container if present
+        if (originalContainer && originalContainer !== block) {
+          const next = originalContainer.nextElementSibling;
+          if (next) {
+            const t = (next.tagName || '').toLowerCase();
+            const cls = next.className || '';
+            if (t === 'figcaption' || /(\bimage-meta\b|\bfigure-meta\b)/.test(cls) || (t === 'p' && /metadescription/i.test(cls))) {
+              next.remove();
+            }
+          }
+        }
+        // Remove orphan figures without images
+        contentRoot.querySelectorAll('figure').forEach(fig => { if (!fig.querySelector('img')) fig.remove(); });
+        // Remove duplicates of SAME src near the top
+        if (img && (img.getAttribute('src') || img.src)) {
+          const targetSrc = img.getAttribute('src') || img.src;
+          contentRoot.querySelectorAll('img').forEach(d => {
+            const s = d.getAttribute('src') || d.src;
+            if (s === targetSrc && !block.contains(d)) {
+              const p = d.closest('figure') || d.parentElement;
+              if (p && p.parentElement) p.remove(); else d.remove();
+            }
+          });
+        }
+      }
+
+      window.__leadImagePatched = true;
+    } catch (e) {
+      console.warn('lead-image move non-fatal:', e);
+    }
+  }, [post]);
+
+  if (!post) {
+    return <NotFoundPage />;
+  }
+
+  const PostComponent = post.component;
+  const seoTitleMap = {
+    'how-to-know-if-you-deserve-better-relationship-introvert-woman-guide': 'Do You Deserve Better? 7 Clear Signs for Introvert Women',
+    'how-to-stop-attracting-narcissists-9-proven-strategies': 'How to Stop Attracting Narcissists: 9 Proven Strategies',
+    'how-to-be-confident-as-an-introvert-woman-guide': 'How to Be Confident as an Introvert Woman',
+    'how-to-speak-up-in-meetings-introvert-strategies-2025': 'How to Speak Up in Meetings as an Introvert',
+    'introvert-social-battery-drained-recovery-methods': 'Introvert Social Battery Drained? 9 Ways to Recharge',
+    'morning-routine-for-confidence-and-productivity-2025': 'Morning Routine for Confidence and Productivity',
+    'post-breakup-glow-up-transformation-guide-10-proven-steps-to-become-your-best-self-in-2025': 'Post-Breakup Glow Up: 10 Steps',
+  };
+  const seoTitle = seoTitleMap[post.slug] || post.title;
+
+  return (
+    <>
+      <Seo
+        title={seoTitle}
+        description={post.description}
+        type="article"
+        article={{
+          title: post.title,
+          authorName: 'Marica Šinko',
+          datePublished: `${post.date}T00:00:00+00:00`,
+          image: post.image,
+        }}
+      />
+      {Hero && <PortalInto selector="#hero-slot">{Hero}</PortalInto>}
+      <Suspense
+        fallback={
+          <div className="flex justify-center items-center py-24">
+            <div className="text-brand-primary animate-pulse">Loading article...</div>
+          </div>
+        }
+      >
+        <PostComponent />
+        <TableOfContents rootSelector="article" anchorSelector="#toc-anchor" />
+      </Suspense>
+    </>
+  );
+};
+
+export default BlogPostPage;
+

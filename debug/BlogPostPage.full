@@ -1,0 +1,33 @@
+import React, { Suspense, useEffect, useLayoutEffect } from 'react';
+export default BlogPostPage;
+
+      const WRAPPER_SEL = [
+        'figure',
+        '.wp-block-image',
+        '.wp-caption',
+        '.image',
+        '.figure',
+        '.relative.overflow-hidden.rounded-lg.shadow-md.my-8.w-full',
+      ].join(',');
+      const wrappers = Array.from(article.querySelectorAll(WRAPPER_SEL)).slice(0, 20).filter((el) => el !== heroFig);
+      const capNode = heroFig ? heroFig.querySelector('figcaption') : null;
+      const hasCaption = !!(capNode && capNode.textContent && capNode.textContent.trim().length > 0);
+      for (const w of wrappers) {
+        const img = w.querySelector('img');
+        if (!img) continue;
+        const isDup = norm(img.getAttribute('src') || img.src) === key;
+        if (isDup && !hasCaption) {
+          const capEl = w.querySelector('figcaption, .wp-caption-text, .image-meta, .figure-meta, .caption, [data-caption]') || w.nextElementSibling || w.previousElementSibling;
+          const txt = (capEl && capEl.textContent && capEl.textContent.trim()) || '';
+          if (txt && heroFig) {
+            const existing = heroFig.querySelector('figcaption');
+            const cap = existing || document.createElement('figcaption');
+            cap.className = 'image-caption';
+            cap.textContent = txt;
+            if (!existing) heroFig.appendChild(cap);
+            if (capEl && capEl.parentElement && !heroFig.contains(capEl)) capEl.remove();
+          }
+        }
+        if (isDup && w.parentElement) { w.remove(); break; }
+      }
+

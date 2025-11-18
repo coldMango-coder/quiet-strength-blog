@@ -146,7 +146,12 @@ const Header = () => {
         <a href="#main" className="sr-only focus:not-sr-only">Skip to main content</a>
         <div className="container mx-auto px-6 flex justify-between items-center h-full">
           <NormalizedLink to="/">
-            <div className={`modern-logo transition-all duration-300 ${isScrolled ? 'w-12 h-12' : 'w-16 h-16'} rounded-full overflow-hidden bg-white p-0`}>
+            <a
+              href="/"
+              aria-label="Home"
+              className={`modern-logo transition-all duration-300 ${isScrolled ? 'w-12 h-12' : 'w-16 h-16'} rounded-full overflow-hidden bg-white p-0 block`}
+              onClick={(e) => { try { if (window.location.pathname === '/') { e.preventDefault(); window.location.reload(); } } catch {} }}
+            >
               <OptimizedImage 
                 src="/images/logo.avif" 
                 alt="Quiet Strength Logo" 
@@ -156,7 +161,7 @@ const Header = () => {
                 priority={false}
                 sizes="64px"
               />
-            </div>
+            </a>
           </NormalizedLink>
           <nav className="hidden lg:flex items-center gap-8 overflow-visible">
             {navLinks.map(link => (
@@ -308,7 +313,7 @@ const Header = () => {
                     </div>
                   ) : (
                     <NormalizedLink
-                      to={link.page === 'blog' ? '/blog' : `/#${link.page}`}
+                      to={`/#${link.page}`}
                       onClick={(e) => {
                         if (location.pathname === '/') {
                           e.preventDefault();

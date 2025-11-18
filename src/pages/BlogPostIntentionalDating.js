@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import NormalizedLink from '../components/NormalizedLink';
 import StyledBlockquote from '../components/StyledBlockquote';
 import KeyTakeawayBox from '../components/KeyTakeawayBox';
@@ -20,11 +20,11 @@ const BlogPostIntentionalDating = () => {
           <header className="mb-16 text-left">
             <h1 className="font-bold mb-6">Intentional Dating 2025: How to Date Purposefully (7 Proven Steps)</h1>
             <p className="text-brand-primary text-lg">
-              By Marica �inko - Founder of Quiet Strength, Women's Empowerment Coach
+              By Marica Šinko - Founder of Quiet Strength, Women's Empowerment Coach
             </p>
             <div className="mt-4 text-sm text-brand-primary">
               <time dateTime="2025-07-21">Published: July 21, 2025</time>
-              <span className="mx-2">•</span>
+              <span className="mx-2">â€¢</span>
               <span>{postData?.readTime}</span>
             </div>
           </header>
@@ -36,7 +36,7 @@ const BlogPostIntentionalDating = () => {
           <section className="mb-16">
             <h2 className="font-bold mb-4">Introduction: Transform Your Dating Life with Purpose</h2>
             <p>
-              Are you tired of endless swiping, meaningless dates, and relationships that go nowhere? In 2025, more singles are discovering the power of intentional dating – a revolutionary approach that transforms your dating life from chaotic to purposeful.
+              Are you tired of endless swiping, meaningless dates, and relationships that go nowhere? In 2025, more singles are discovering the power of intentional dating â€“ a revolutionary approach that transforms your dating life from chaotic to purposeful.
             </p>
             
             <div className="my-8">
@@ -73,7 +73,7 @@ const BlogPostIntentionalDating = () => {
               "Regular self-reflection on what you truly want in a partner"
             ]} />
             <StyledBlockquote>
-              "Intentional daters don't just hope for the best – they actively create the conditions for meaningful relationships by being clear about their values, boundaries, and goals." - Dr. Sarah Martinez, relationship psychologist at Columbia University
+              "Intentional daters don't just hope for the best â€“ they actively create the conditions for meaningful relationships by being clear about their values, boundaries, and goals." - Dr. Sarah Martinez, relationship psychologist at Columbia University
             </StyledBlockquote>
             <p>
               The intentional dating movement has grown by 340% since 2023, with more people recognizing that random dating often leads to disappointment, emotional exhaustion, and wasted time. In contrast, purposeful dating creates a clear path toward compatible, lasting relationships.
@@ -87,7 +87,7 @@ const BlogPostIntentionalDating = () => {
               "71% better communication with partners",
               "52% higher long-term relationship success rates"
             ]} />
-            <p>These statistics demonstrate that learning how to date purposefully isn't just a trendy concept – it's a proven approach backed by scientific research.</p>
+            <p>These statistics demonstrate that learning how to date purposefully isn't just a trendy concept â€“ it's a proven approach backed by scientific research.</p>
           </section>
 
           <section id="why-traditional-dating-fails" className="mb-16 scroll-mt-24">
@@ -183,7 +183,7 @@ const BlogPostIntentionalDating = () => {
             ]} />
             <KeyTakeawayBox title="Pro Tip">
               <p>
-                Use the 80/20 rule – your partner should meet 80% of your important criteria, but expecting 100% compatibility is unrealistic and limiting.
+                Use the 80/20 rule â€“ your partner should meet 80% of your important criteria, but expecting 100% compatibility is unrealistic and limiting.
               </p>
             </KeyTakeawayBox>
           </section>
@@ -571,17 +571,17 @@ const BlogPostIntentionalDating = () => {
           <section className="border-t pt-12 mt-16">
             <h2>Conclusion: Your Intentional Dating Journey Starts Now</h2>
             <p>
-              Learning how to date purposefully in 2025 isn't about finding someone faster – it's about finding someone better. When you approach dating with clear intentions, self-awareness, and strategic thinking, you create the conditions for meaningful, lasting relationships.
+              Learning how to date purposefully in 2025 isn't about finding someone faster â€“ it's about finding someone better. When you approach dating with clear intentions, self-awareness, and strategic thinking, you create the conditions for meaningful, lasting relationships.
             </p>
             <p>
               The seven steps outlined in this guide provide a roadmap for transforming your dating life: conduct thorough self-assessment, define your relationship vision, create your ideal partner profile, choose platforms strategically, master mindful communication, practice conscious dating behaviors, and build authentic connections through gradual intimacy and trust.
             </p>
             <p>
-              Remember that intentional dating in 2025 requires patience, self-discipline, and commitment to your long-term happiness over short-term gratification. The process may take longer than random dating, but the results – deeper connections, better relationships, and less emotional exhaustion – make the investment worthwhile.
+              Remember that intentional dating in 2025 requires patience, self-discipline, and commitment to your long-term happiness over short-term gratification. The process may take longer than random dating, but the results â€“ deeper connections, better relationships, and less emotional exhaustion â€“ make the investment worthwhile.
             </p>
             <KeyTakeawayBox title="Take Action Today">
               <p>
-                Your perfect partner is out there, and they're also looking for someone exactly like you. By implementing these strategies consistently, you're not just improving your chances of finding love – you're ensuring that when you do find it, you'll be ready to build something extraordinary together.
+                Your perfect partner is out there, and they're also looking for someone exactly like you. By implementing these strategies consistently, you're not just improving your chances of finding love â€“ you're ensuring that when you do find it, you'll be ready to build something extraordinary together.
               </p>
             </KeyTakeawayBox>
           </section>
@@ -599,4 +599,5 @@ const BlogPostIntentionalDating = () => {
 };
 
 export default BlogPostIntentionalDating;
+
 

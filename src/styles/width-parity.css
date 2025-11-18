@@ -1,0 +1,245 @@
+:root{
+  --page-max: 80rem;           /* ~1280px, footer width */
+  --pad-sm: 1rem; --pad-md: 1.5rem; --pad-lg: 2rem;
+  /* === Unified container parity (footer == main == category) === */
+  --qs-max: 72rem;       /* 1152px default; tune to your footer width */
+  --qs-pad: 1rem;
+  --qs-pad-md: 1.25rem;
+  --qs-pad-lg: 2rem;
+}
+
+/* Shared container width used by Home + Category */
+.qs-container,
+.container-wide,
+#latest, .latest,
+.archive-wrap, .category-wrap,
+footer .container {
+  max-width: var(--page-max) !important;
+  margin-inline: auto !important;
+  padding-inline: var(--pad-sm) !important;
+}
+@media (min-width:640px){ .qs-container, .container-wide, #latest, .latest, .archive-wrap, .category-wrap, footer .container { padding-inline: var(--pad-md) !important; } }
+@media (min-width:1024px){ .qs-container, .container-wide, #latest, .latest, .archive-wrap, .category-wrap, footer .container { padding-inline: var(--pad-lg) !important; } }
+
+/* Kill narrower cap utilities that keep sneaking in */
+[class*="max-w-3xl"], [class*="max-w-4xl"], [class*="max-w-5xl"], [class*="max-w-6xl"] {
+  max-width: var(--page-max) !important;
+}
+
+/* Reset any old floats/overflow that cramp lists */
+#latest * { float:none !important; }
+
+/* Latest grid fallback (if Tailwind classes unavailable) */
+.latest-grid{ display:grid; grid-template-columns:1fr; gap:1.5rem; }
+@media (min-width:1024px){ .latest-grid{ grid-template-columns:minmax(0,2fr) minmax(0,1fr); } }
+
+/* line clamps for titles/excerpts */
+.one-line{ display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden; }
+.two-lines{ display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+
+/* Featured title scale mobile vs desktop */
+@media (max-width:639.98px){ .featured-card h3{ font-size:1.375rem; line-height:1.2; } }
+
+/* Image aspect safety (prevents CLS) */
+.featured-card img{ aspect-ratio: 16/9; object-fit: cover; }
+@media (max-width:639.98px){
+  .featured-card img{ aspect-ratio: 16/9; }
+  /* Mobile featured image: force big hero above the title */
+  #latest .featured-card img:first-of-type{
+    display:block;
+    width:100% !important;
+    height:auto !important;
+    aspect-ratio:16/9;
+    object-fit:cover;
+    border-radius:.875rem;
+    margin:0 0 .75rem 0;
+  }
+  /* In case a tiny thumb wrapper is used */
+  #latest .featured-card .thumb,
+  #latest .featured-card .thumb img{
+    width:100% !important;
+    height:auto !important;
+    aspect-ratio:16/9;
+    object-fit:cover;
+  }
+  /* Prevent any grid/inline sizes from shrinking the hero */
+  #latest .featured-card [style*="width: 64px"],
+  #latest .featured-card [width="64"],
+  #latest .featured-card [height="64"]{
+    width:100% !important;
+    height:auto !important;
+  }
+}
+.featured-card h3{ font-size: 1.375rem; line-height: 1.2; }
+.mini-list img{ aspect-ratio: 1/1; object-fit: cover; }
+
+/* ToC numeric alignment (all items, including last) */
+.toc-shell .toc-list {
+  margin:0;
+  padding-left:1.5rem;            /* marker column */
+  list-style-type:decimal;
+  list-style-position:outside;    /* markers outside, aligned */
+  font-variant-numeric:tabular-nums;
+}
+.toc-shell .toc-list > li{
+  margin:0 !important;
+  padding:.125rem 0 .125rem 0 !important;
+  text-indent:0 !important;
+}
+.toc-shell .toc-list > li::marker{ font-variant-numeric:tabular-nums; }
+/* Removed last-child special casing to keep list item alignment uniform */
+
+/* === Unified container parity (footer == main == category) === */
+/* All primary wrappers share the exact same rules */
+.qs-container,
+#latest,
+.latest,
+.archive-wrap,
+.category-wrap,
+main .content-wrap,
+footer .container {
+  max-width: var(--qs-max) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--qs-pad) !important;
+  padding-right: var(--qs-pad) !important;
+  width: auto !important;            /* neutralize stray fixed widths */
+}
+
+/* Responsive padding parity (matches footer) */
+@media (min-width: 640px){
+  .qs-container,
+  #latest, .latest,
+  .archive-wrap, .category-wrap,
+  main .content-wrap,
+  footer .container{
+    padding-left: var(--qs-pad-md) !important;
+    padding-right: var(--qs-pad-md) !important;
+  }
+}
+@media (min-width: 1024px){
+  .qs-container,
+  #latest, .latest,
+  .archive-wrap, .category-wrap,
+  main .content-wrap,
+  footer .container{
+    padding-left: var(--qs-pad-lg) !important;
+    padding-right: var(--qs-pad-lg) !important;
+  }
+}
+
+/* Nuke common offenders that cause left/right shift or narrow columns */
+#latest[style*="max-width"],
+.archive-wrap[style*="max-width"],
+.category-wrap[style*="max-width"],
+main .content-wrap[style*="max-width"]{
+  max-width: var(--qs-max) !important;
+}
+
+#latest,
+.archive-wrap,
+.category-wrap{
+  float: none !important;
+  position: static !important;
+}
+
+/* Ensure the category listing white holder sits centered under the footer width */
+.category-wrap{ background: var(--qs-category-bg, transparent); display:block; }
+
+/* === SITE WIDTH PARITY (single source of truth) === */
+:root{
+  --site-width: 72rem;        /* set to EXACT same width as footer .container */
+  --site-pad: 1rem;
+  --site-pad-md: 1.25rem;
+  --site-pad-lg: 2rem;
+}
+
+/* All main wrappers and the footer share identical width + centering */
+.qs-container,
+#latest, .latest,
+.archive-wrap, .category-wrap,
+main .content-wrap,
+footer .container{
+  max-width: var(--site-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: auto !important;
+  padding-left: var(--site-pad) !important;
+  padding-right: var(--site-pad) !important;
+}
+
+/* Responsive padding parity */
+@media (min-width:640px){
+  .qs-container,
+  #latest, .latest,
+  .archive-wrap, .category-wrap,
+  main .content-wrap,
+  footer .container{
+    padding-left: var(--site-pad-md) !important;
+    padding-right: var(--site-pad-md) !important;
+  }
+}
+
+@media (min-width:1024px){
+  .qs-container,
+  #latest, .latest,
+  .archive-wrap, .category-wrap,
+  main .content-wrap,
+  footer .container{
+    padding-left: var(--site-pad-lg) !important;
+    padding-right: var(--site-pad-lg) !important;
+  }
+}
+
+/* Kill any stray fixed widths/offsets that de-center content */
+#latest[style*="max-width"],
+.archive-wrap[style*="max-width"],
+.category-wrap[style*="max-width"],
+main .content-wrap[style*="max-width"]{
+  max-width: var(--site-width) !important;
+}
+
+#latest, .archive-wrap, .category-wrap{
+  float: none !important;
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+}
+
+/* === Latest Insights  Featured card image on mobile === */
+#latest .featured-card .thumb,
+#latest .featured-card img{
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16/9 !important;
+  object-fit: cover !important;
+  border-radius: 0.75rem; /* keeps current rounded aesthetic */
+}
+
+/* Ensure the featured card uses column layout on small screens */
+@media (max-width: 767.98px){
+  #latest .featured-card{
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+  }
+}
+
+/* === ToC number column alignment (consistent markers) === */
+details.toc-shell .toc-list{
+  list-style-type: decimal;
+  list-style-position: outside !important;   /* numbers sit outside text block */
+  padding-left: 1.25rem !important;          /* single column for numbers */
+  margin: 0 !important;
+  font-variant-numeric: tabular-nums !important; /* equal digit widths */
+}
+details.toc-shell .toc-list li{
+  margin: 0 !important;
+  padding: .125rem 0 !important;
+}
+
+/* Normalize marker font & width so the last item matches the column */
+details.toc-shell .toc-list li::marker{
+  font-variant-numeric: tabular-nums !important;
+}

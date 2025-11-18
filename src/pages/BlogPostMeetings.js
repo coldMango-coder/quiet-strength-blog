@@ -21,8 +21,8 @@ const BlogPostMeetings = () => {
             <h1 className="font-bold mb-6">
               How to Speak Up in Meetings as an Introvert: 9 Proven Strategies That Actually Work in 2025
             </h1>
-            <div className="flex items-center gap-4 text-brand-primary text-lg">
-              <span>By <strong>Marica �inko</strong></span>
+            <div className="post-meta flex items-center gap-4 text-brand-primary text-lg">
+              <span>By <strong>Marica Šinko</strong></span>
               <span className="text-gray-400">•</span>
               <span>{postData?.readTime}</span>
               <span className="text-gray-400">•</span>
@@ -496,5 +496,6 @@ const BlogPostMeetings = () => {
 };
 
 export default BlogPostMeetings;
+
 
 

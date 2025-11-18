@@ -18,8 +18,8 @@ const BlogPostSocialBattery = () => {
         <article className="article-container mx-auto">
           <header className="mb-16 text-left">
             <h1 className="font-bold mb-6">Introvert Social Battery Drained: 9 Proven Recovery Methods That Actually Work in 2025</h1>
-            <div className="flex items-center gap-4 text-brand-primary text-lg">
-              <span>By <strong>Marica �inko</strong></span>
+            <div className="post-meta flex items-center gap-4 text-brand-primary text-lg">
+              <span>By <strong>Marica Šinko</strong></span>
               <span className="text-gray-400">•</span>
               <span>{postData?.readTime}</span>
               <span className="text-gray-400">•</span>

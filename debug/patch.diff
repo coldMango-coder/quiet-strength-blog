@@ -1,0 +1,330 @@
+diff --git a/public/index.html b/public/index.html
+index e2045630..f990b227 100644
+--- a/public/index.html
++++ b/public/index.html
+@@ -5,7 +5,7 @@
+     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <meta name="theme-color" content="#C05621" />
+-    <meta name="author" content="Marica èinko" />
++    <meta name="author" content="Marica &#352;inko" />
+     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+     <meta name="keywords" content="Self-Help for Introverted Women, Burnout Prevention, Quiet Confidence, Financial Freedom for Introverts, Introvert Success, Personal Development, Women Empowerment, Confidence Building, Energy Management" />
+     <!-- Note: SEO meta tags (canonical, OG, Twitter) are dynamically generated server-side per route -->
+@@ -15,7 +15,7 @@
+     <meta property="og:locale" content="en_US" />
+     <meta name="twitter:card" content="summary_large_image" />
+     <meta name="twitter:site" content="@QuietStrengthGuide" />
+-    <meta name="twitter:creator" content="@MaricaSinko" />
++    <meta name="twitter:creator" content="@QuietStrengthGuide" />
+     
+     <!-- Additional SEO enhancements -->
+     <meta name="language" content="English" />
+@@ -28,49 +28,49 @@
+     <meta name="msapplication-config" content="/browserconfig.xml" />
+     <link rel="apple-touch-icon" href="%PUBLIC_URL%/images/logo.png" />
+     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+-    
+     
+-    <!-- Preload critical fonts for zero CLS -->
+-    <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+-    <link rel="preload" href="/fonts/charter-regular.woff2" as="font" type="font/woff2" crossorigin>
+-    <link rel="preload" href="/fonts/charter-bold.woff2" as="font" type="font/woff2" crossorigin>
+-    <!-- Load font-face CSS without render-blocking -->
+-    <link rel="preload" as="style" href="/fonts/fonts.css" onload="this.onload=null;this.rel='stylesheet'">
+-    <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
+-    
+-    <!-- Preload only essential UI images -->
+-    <link rel="preload" as="image" href="/images/logo.avif" type="image/avif" fetchpriority="high">
+-    
+-    
+-    
+-    
+-    <!-- Critical CSS inlined above for zero render blocking -->
+-    <!-- Non-critical CSS will be loaded async via React -->
+-    
+-    <!-- Performance: Resource hints -->
+-    
+-    <!-- Prefetch key chunks for faster navigation -->
+-    <!-- prefetch removed -->
+-    
+-    <!-- Keep head lean; avoid duplicate hints -->
+-    
+-    <!-- Disable DNS prefetch for maximum performance -->
+-    <meta http-equiv="x-dns-prefetch-control" content="off">
+-    
+-    <!-- Performance: Advanced optimization for 100/100 desktop -->
+-    <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
+-    <meta name="format-detection" content="telephone=no">
+-    
+-    <!-- Performance: Minimize parser blocking -->
+-    
+-    <!-- Remove analytics completely for maximum performance -->
+-  </head>
+-  <body>
+-    <noscript>
+-      This app requires JavaScript to run properly.
+-    </noscript>
+-    <div id="root"></div>
+-  </body>
+-</html>
++    
++    <!-- Preload critical fonts for zero CLS -->
++    <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
++    <link rel="preload" href="/fonts/charter-regular.woff2" as="font" type="font/woff2" crossorigin>
++    <link rel="preload" href="/fonts/charter-bold.woff2" as="font" type="font/woff2" crossorigin>
++    <!-- Load font-face CSS without render-blocking -->
++    <link rel="preload" as="style" href="/fonts/fonts.css" onload="this.onload=null;this.rel='stylesheet'">
++    <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
++    
++    <!-- Preload only essential UI images -->
++    <link rel="preload" as="image" href="/images/logo.avif" type="image/avif" fetchpriority="high">
++    
++    
++    
++    
++    <!-- Critical CSS inlined above for zero render blocking -->
++    <!-- Non-critical CSS will be loaded async via React -->
++    
++    <!-- Performance: Resource hints -->
++    
++    <!-- Prefetch key chunks for faster navigation -->
++    <!-- prefetch removed -->
++    
++    <!-- Keep head lean; avoid duplicate hints -->
++    
++    <!-- Disable DNS prefetch for maximum performance -->
++    <meta http-equiv="x-dns-prefetch-control" content="off">
++    
++    <!-- Performance: Advanced optimization for 100/100 desktop -->
++    <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
++    <meta name="format-detection" content="telephone=no">
++    
++    <!-- Performance: Minimize parser blocking -->
++    
++    <!-- Remove analytics completely for maximum performance -->
++  </head>
++  <body>
++    <noscript>
++      This app requires JavaScript to run properly.
++    </noscript>
++    <div id="root"></div>
++  </body>
++</html>
+ 
+ 
+diff --git a/src/components/TableOfContents.js b/src/components/TableOfContents.js
+index 3db3601c..0212b829 100644
+--- a/src/components/TableOfContents.js
++++ b/src/components/TableOfContents.js
+@@ -1,7 +1,6 @@
+ import React, { useEffect, useRef, useState } from 'react';
+ import ReactDOM from 'react-dom';
+-import TocToggle from './TocToggle';
+-import ArticleTOC from './ArticleTOC';
++import ModernTOC from './ModernTOC';
+ 
+ const slugify = (str) =>
+   str.toLowerCase().replace(/[^\w\s-]/g, '').trim().replace(/\s+/g, '-');
+@@ -9,18 +8,13 @@ const slugify = (str) =>
+ export default function TableOfContents({
+   rootSelector = 'article',
+   anchorSelector = null,
+-  maxDepth = 3,
+ }) {
+-  const [items, setItems] = useState([]);
+-  const [activeId, setActiveId] = useState(null);
+   const [mountEl, setMountEl] = useState(null);
+   const createdMountRef = useRef(null);
+ 
+   useEffect(() => {
+     const root = document.querySelector(rootSelector);
+     if (!root) return;
+-
+-    // Remove any manually coded TOC blocks to avoid duplicates
+     try {
+       const manualTocBlocks = root.querySelectorAll('h3, h2');
+       manualTocBlocks.forEach((h) => {
+@@ -32,57 +26,7 @@ export default function TableOfContents({
+       });
+       root.querySelectorAll('.toc-list').forEach((el) => el.closest('section')?.remove?.());
+     } catch {}
+-
+-    // Ignore headings inside the TOC and literal 'Table of Contents'
+-    const selector = maxDepth >= 3 ? 'h2, h3' : 'h2';
+-    const headings = [...root.querySelectorAll(selector)].filter((h) => {
+-      if (h.closest('[data-toc]')) return false;
+-      const t = (h.textContent || '').trim().toLowerCase();
+-      return t !== 'table of contents';
+-    });
+-
+-    const nodes = headings.map((h) => {
+-      if (!h.id) h.id = slugify(h.textContent || '');
+-      return { id: h.id, text: h.textContent, level: h.tagName === 'H2' ? 2 : 3 };
+-    });
+-
+-    const out = [];
+-    let current = null;
+-    nodes.forEach((n) => {
+-      if (n.level === 2) {
+-        current = { ...n, children: [] };
+-        out.push(current);
+-      } else if (n.level === 3 && current) {
+-        current.children.push(n);
+-      }
+-    });
+-
+-    setItems(out);
+-  }, [rootSelector, maxDepth]);
+-
+-  // Idle scroll-spy to protect LCP
+-  useEffect(() => {
+-    const start = () => {
+-      const observer = new IntersectionObserver(
+-        (entries) => {
+-          const vis = entries
+-            .filter((e) => e.isIntersecting)
+-            .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+-          if (vis) setActiveId(vis.target.id);
+-        },
+-        { rootMargin: '0px 0px -70% 0px', threshold: [0, 0.2, 1] }
+-      );
+-      document.querySelectorAll('article h2, article h3').forEach((el) =>
+-        observer.observe(el)
+-      );
+-      return () => observer.disconnect();
+-    };
+-    if ('requestIdleCallback' in window) {
+-      const id = window.requestIdleCallback(start, { timeout: 1500 });
+-      return () => window.cancelIdleCallback && window.cancelIdleCallback(id);
+-    }
+-    return start();
+-  }, []);
++  }, [rootSelector]);
+ 
+   // Find or create a mount point inside the article after header/hero
+   useEffect(() => {
+@@ -124,29 +68,10 @@ export default function TableOfContents({
+     };
+   }, [rootSelector, anchorSelector]);
+ 
+-  // Ensure anchor reserves space to avoid CLS
+-  useEffect(() => {
+-    if (!anchorSelector) return;
+-    const mount = document.querySelector(anchorSelector);
+-    if (mount) mount.style.minHeight = '120px';
+-  }, [anchorSelector]);
+-
+-  // Flatten items to the ArticleTOC format
+-  const flatItems = React.useMemo(() => {
+-    const out = [];
+-    items.forEach((h2) => {
+-      out.push({ id: h2.id, text: h2.text, level: 2 });
+-      (h2.children || []).forEach((h3) => out.push({ id: h3.id, text: h3.text, level: 3 }));
+-    });
+-    return out;
+-  }, [items]);
+-
+-  // Wrap in a sticky container on desktop to reserve space and avoid CLS
+   const content = (
+-    <div className="md:sticky" style={{ top: '96px', maxHeight: '70vh' }}>
+-      {/* Mobile collapsible via ArticleTOC; keep our toggle wrapper to preserve mount space if needed */}
+-      <ArticleTOC items={flatItems} title="Table of Contents" accent="orange" activeId={activeId} />
+-    </div>
++    <aside className="qs-toc">
++      <ModernTOC stickyOffset={96} collapsibleMobile />
++    </aside>
+   );
+ 
+   if (mountEl) {
+diff --git a/src/index.css b/src/index.css
+index 3aaae391..293eb133 100644
+--- a/src/index.css
++++ b/src/index.css
+@@ -1509,6 +1509,23 @@ h2 {
+   font-weight: 700;
+ }
+ 
++/* Modern TOC theme tokens */
++:root{
++  --toc-bg: color-mix(in oklab, Canvas, var(--wp--preset--color--primary, #4f46e5) 6%);
++  --toc-accent: var(--wp--preset--color--primary, #4f46e5);
++  --toc-text: var(--wp--preset--color--foreground, #0b1020);
++  --toc-link: color-mix(in oklab, var(--toc-text), var(--toc-accent) 35%);
++  --toc-link-muted: color-mix(in oklab, var(--toc-text), var(--toc-accent) 20%);
++}
++@media (prefers-color-scheme: dark){
++  :root{ --toc-bg: color-mix(in oklab, Canvas, var(--wp--preset--color--primary, #818cf8) 14%); --toc-text: var(--wp--preset--color--foreground, #e5e7eb); --toc-link: color-mix(in oklab, var(--toc-text), var(--toc-accent) 45%); --toc-link-muted: color-mix(in oklab, var(--toc-text), var(--toc-accent) 30%); }
++}
++.modern-toc a[data-active="true"]{ font-weight:600; border-left:2px solid var(--toc-accent); padding-left:.25rem; color: var(--toc-accent); }
++/* Ensure no inner scrollbars on the nav */
++.modern-toc{ overflow: visible; }
++/* Collapsed bar subtle effect */
++.modern-toc-collapsed{ backdrop-filter:saturate(1.1); }
++
+ h3 {
+   font-size: 1.5rem;
+   line-height: 1.3;
+@@ -1884,6 +1901,28 @@ a:hover .nav-icon {
+   font-size: 0.98em; 
+ }
+ 
++/* TOC shell consistency and mobile safety */
++.toc-shell { overflow: visible; position: relative; margin-bottom: 1rem; }
++.toc-head { line-height: 1; }
++.toc-title { font-family: inherit; }
++.toc-list { margin: 0; padding: 0; list-style: decimal; }
++.toc-link { word-break: normal; overflow-wrap: anywhere; }
++@media (max-width: 1023.98px){ .toc-shell { position: static !important; } }
++.modern-toc a[data-active="true"],
++.toc-shell a[data-active="true"]{
++  font-weight: 600;
++  border-left: 2px solid var(--toc-accent);
++  padding-left: .25rem;
++  color: var(--toc-accent);
++}
++
++/* Themes grid fallback to ensure non-overlapping cards */
++.themes-grid{ display:grid; grid-template-columns:repeat(1,minmax(0,1fr)); gap:1.5rem; }
++@media (min-width:640px){ .themes-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
++@media (min-width:1024px){ .themes-grid{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
++.theme-card{ display:flex; flex-direction:column; height:100%; position:static; margin:0; }
++.theme-card *{ max-width:100%; }
++
+ /* Anchor offset for in-article sections */
+ .article-container [id] { 
+   scroll-margin-top: 128px !important; 
+diff --git a/src/pages/BlogPostPage.js b/src/pages/BlogPostPage.js
+index 95aa4726..8b4ddf9d 100644
+--- a/src/pages/BlogPostPage.js
++++ b/src/pages/BlogPostPage.js
+@@ -5,6 +5,7 @@ import Seo from '../components/Seo';
+ import TableOfContents from '../components/TableOfContents';
+ import NotFoundPage from './NotFoundPage';
+ import sanitizeArticleStart from '../lib/sanitizeArticleStart';
++import { normalizeAuthorInDOM } from '../lib/content/normalizeAuthor';
+ 
+ const BlogPostPage = () => {
+   const { slug } = useParams();
+@@ -28,10 +29,10 @@ const BlogPostPage = () => {
+     if (typeof window !== 'undefined') {
+       if ('requestIdleCallback' in window) {
+         // @ts-ignore - TS may not know requestIdleCallback
+-        const id = window.requestIdleCallback(() => sanitizeArticleStart('article'), { timeout: 1200 });
++        const id = window.requestIdleCallback(() => { sanitizeArticleStart('article'); normalizeAuthorInDOM('article'); }, { timeout: 1200 });
+         return () => window.cancelIdleCallback && window.cancelIdleCallback(id);
+       } else {
+-        const t = setTimeout(() => sanitizeArticleStart('article'), 0);
++        const t = setTimeout(() => { sanitizeArticleStart('article'); normalizeAuthorInDOM('article'); }, 0);
+         return () => clearTimeout(t);
+       }
+     }
+@@ -49,7 +50,7 @@ const BlogPostPage = () => {
+         type="article"
+         article={{
+           title: post.title,
+-          authorName: 'Marica +áinko',
++          authorName: 'Marica \\u0160inko',
+           datePublished: `${post.date}T00:00:00+00:00`,
+           image: post.image,
+         }}
