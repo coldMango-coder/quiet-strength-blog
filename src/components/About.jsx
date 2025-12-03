@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import Seo from './Seo';
-import Avatar from './Avatar';
+// import Avatar from './Avatar'; // Removed unused import
 
 // Fix: About page uses correct diacritic in title and person name; About photo centers face with zero CLS
 const About = () => {
@@ -29,8 +29,6 @@ const About = () => {
                 className="author-avatar"
                 src={authorImageSrc}
                 alt={"Marica \u0160inko"}
-                width="144"
-                height="144"
                 loading="lazy"
                 decoding="async"
               />
@@ -43,7 +41,7 @@ const About = () => {
                 I am an <strong>introvert-women burnout coach</strong> who helps high-achieving introverts rebuild confidence. For years, I tried to be someone I wasn't. I chased the extroverted ideal of success, believing that to be seen, I had to be loud. The result? I was left feeling drained, inauthentic, and completely burnt out.
               </p>
               <p className="mb-6">
-                It was in hitting that wall that I discovered my true strength wasn't in changing who I am, but in embracing my introversion. I created Quiet Strength to be the resource I wish I'd hadâ€”a place that honors our need for depth, reflection, and a calmer path to success.
+                It was in hitting that wall that I discovered my true strength wasn't in changing who I am, but in embracing my introversion. I created Quiet Strength to be the resource I wish I'd had—a place that honors our need for depth, reflection, and a calmer path to success.
               </p>
               <p className="mb-6">
                 My mission is to give you the tools to stop fighting your nature and start using it as your greatest asset. I'm a Certified Mental Wellness Coach (ICF) dedicated to helping introverted women build sustainable success.
@@ -58,19 +56,3 @@ const About = () => {
 };
 
 export default About;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -111,8 +111,15 @@ function App() {
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white px-3 py-2 rounded shadow">Skip to content</a>
       <Header />
       <main id="main" className="container mx-auto">
-        <div className={isArticle ? 'lg:grid lg:grid-cols-12 lg:gap-8' : 'lg:grid lg:grid-cols-12 lg:gap-24'}>
-          <div className={isArticle ? 'lg:col-start-3 lg:col-span-8' : 'lg:col-span-8'}>
+        <div className={isArticle ? 'lg:grid lg:grid-cols-12 lg:gap-8' : 'lg:grid lg:grid-cols-12 lg:gap-10'}>
+          {/* On non-article pages we deliberately remove the empty sidebar so the Latest Insights section can use the full width.
+              Previously this was rendered as:
+              !isArticle && (
+                <aside className="hidden lg:block lg:col-span-3 py-24">
+                  Intentional empty space (no longer used)
+                </aside>
+              ) */}
+          <div className={isArticle ? 'lg:col-start-3 lg:col-span-8' : 'lg:col-span-12'}>
             <Suspense fallback={null}>
               <Routes>
                 <Route path="/" element={<HomePage />} />
@@ -126,11 +133,6 @@ function App() {
               </Routes>
             </Suspense>
           </div>
-          {!isArticle && (
-            <aside className="hidden lg:block lg:col-span-4 py-24">
-              {/* Intentional empty space for asymmetrical layout on non-article pages */}
-            </aside>
-          )}
         </div>
       </main>
       <Footer />

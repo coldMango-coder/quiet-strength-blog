@@ -8,7 +8,7 @@ export default function AuthorBio() {
       <Avatar
         src={authorImageSrc}
         alt={"Marica \\u0160inko"}
-        size={64}
+        size={160}
         className="author-avatar"
       />
       <div className="bio">

@@ -30,8 +30,8 @@ footer .container {
 #latest * { float:none !important; }
 
 /* Latest grid fallback (if Tailwind classes unavailable) */
-.latest-grid{ display:grid; grid-template-columns:1fr; gap:1.5rem; }
-@media (min-width:1024px){ .latest-grid{ grid-template-columns:minmax(0,2fr) minmax(0,1fr); } }
+.latest-grid{ display:grid; grid-template-columns:1fr; gap:1.75rem; }
+@media (min-width:1024px){ .latest-grid{ grid-template-columns:minmax(0,3fr) minmax(0,1.25fr); } }
 
 /* line clamps for titles/excerpts */
 .one-line{ display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden; }
@@ -70,7 +70,7 @@ footer .container {
     height:auto !important;
   }
 }
-.featured-card h3{ font-size: 1.375rem; line-height: 1.2; }
+.featured-card h3{ font-size: 1.5rem; line-height: 1.2; }
 .mini-list img{ aspect-ratio: 1/1; object-fit: cover; }
 
 /* ToC numeric alignment (all items, including last) */

@@ -68,7 +68,7 @@ export default function ArticleTOC({ items = [], title = 'Table of Contents', ac
   return (
     <aside
       aria-label={title}
-      className="qs-toc not-prose relative isolate z-30 clear-both w-full rounded-xl bg-white shadow-sm ring-1 ring-neutral-200 sm:sticky sm:top-24 mb-6"
+      className="qs-toc not-prose relative isolate z-30 clear-both w-full rounded-xl bg-white shadow-sm ring-1 ring-neutral-200 sm:sticky sm:top-24 mb-2"
     >
       {/* Mobile toggle */}
       <div className="flex items-center justify-between p-4">

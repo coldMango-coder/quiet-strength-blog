@@ -5,7 +5,7 @@ import KeyTakeawayBox from './KeyTakeawayBox';
 import StyledList from './StyledList';
 import { sortedBlogPosts } from '../blogData';
 import AuthorBio from './AuthorBio.jsx';
-import TableOfContents from './TableOfContents';
+// import TableOfContents from './TableOfContents'; // Removed unused import
 
 const BlogPostSayingNo = () => {
   const postData = sortedBlogPosts.find(post => post.slug === 'art-of-saying-no');
@@ -13,7 +13,7 @@ const BlogPostSayingNo = () => {
     <div className="bg-brand-light">
       <div className="container mx-auto px-6 py-16">
         <NormalizedLink to="/" className="text-brand-emphasis hover:underline font-semibold mb-12">&larr; Back to Home</NormalizedLink>
-        
+
         <article className="article-container mx-auto max-w-[720px]">
           <header className="mb-16 text-left">
             <h1 className="text-4xl md:text-6xl font-bold text-brand-dark mb-6">
@@ -24,10 +24,10 @@ const BlogPostSayingNo = () => {
               <span className="text-gray-400">•</span>
               <span>{postData?.readTime}</span>
               <span className="text-gray-400">•</span>
-              <span>{new Date(postData?.date).toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
+              <span>{new Date(postData?.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
               })}</span>
             </div>
             <p className="text-brand-primary text-sm mt-2">
@@ -35,7 +35,7 @@ const BlogPostSayingNo = () => {
             </p>
           </header>
 
-          <div id="toc-anchor" className="mb-8" />
+          <div id="toc-anchor" className="mb-0" />
 
           {/* TOC rendered globally via BlogPostPage; remove inline duplicate */}
 
@@ -45,7 +45,7 @@ const BlogPostSayingNo = () => {
             <p>This article is for <mark>the people-pleasers, the "yes-women,"</mark> the individuals who have been conditioned to believe that their value is intrinsically tied to their agreeableness. It's a guide to understanding <mark>the profound art of saying "no"</mark> – not as an act of defiance, but as <mark>a radical act of self-preservation</mark> and a critical tool for sustainable success.</p>
             <div className="my-8">
               <img loading="lazy" decoding="async" src="/images/stressed-woman-people-pleasing-burnout.webp?v=b008f571" alt="An introverted woman looking stressed at her desk, illustrating the people-pleasing cycle that leads to burnout." className="rounded-lg shadow-md" width="1200" height="800" />
-              <p className="text-sm text-gray-600 mt-3 text-center italic">An introverted woman looking stressed at her desk, illustrating the people-pleasing cycle that leads to burnout.</p>
+              <p className="image-caption">An introverted woman looking stressed at her desk, illustrating the people-pleasing cycle that leads to burnout.</p>
             </div>
           </section>
 
@@ -82,7 +82,7 @@ const BlogPostSayingNo = () => {
             ]} />
             <div className="my-8">
               <img loading="lazy" decoding="async" src="/images/people-pleasing-cycle-diagram.webp?v=b008f571" alt="A visual diagram illustrating the vicious cycle of people-pleasing and how it leads to burnout." className="rounded-lg shadow-md" width="1200" height="800" />
-              <p className="text-sm text-gray-600 mt-3 text-center italic">A visual diagram illustrating the vicious cycle of people-pleasing and how it leads to burnout.</p>
+              <p className="image-caption">A visual diagram illustrating the vicious cycle of people-pleasing and how it leads to burnout.</p>
             </div>
           </section>
 
@@ -104,7 +104,7 @@ const BlogPostSayingNo = () => {
             <p>Learning to say "no" can feel daunting, especially when you're used to being the ever-reliable one. The key is to be clear, kind, and firm. Here are some practical strategies and phrases you can start implementing today:</p>
             <div className="my-8">
               <img loading="lazy" decoding="async" src="/images/woman-practicing-assertiveness-saying-no.webp?v=b008f571" alt="A woman practicing saying no, representing the practical toolkit for assertiveness." className="rounded-lg shadow-md" width="1200" height="800" />
-              <p className="text-sm text-gray-600 mt-3 text-center italic">A woman practicing saying no, representing the practical toolkit for assertiveness.</p>
+              <p className="image-caption">A woman practicing saying no, representing the practical toolkit for assertiveness.</p>
             </div>
             <h3>1. The Gracious Decline:</h3>
             <StyledList items={[

@@ -73,18 +73,38 @@ main > .container, main .container, .container-wide,
 }
 
 /* --- HOME: Latest Insights layout --- */
-#latest .latest-grid { display:grid; grid-template-columns: 1fr; gap: 1.5rem; }
+#latest .latest-grid { display:grid; grid-template-columns: 1fr; gap: 1.75rem; }
 @media (min-width: 1024px){
-  #latest .latest-grid { grid-template-columns: minmax(0,2fr) minmax(0,1fr); }
+  #latest .latest-grid { grid-template-columns: minmax(0,3fr) minmax(0,1.25fr); }
 }
-#latest .featured-card h3 { font-weight: 800; font-size: 1.25rem; line-height: 1.2; }
-@media (min-width: 768px){ #latest .featured-card h3 { font-size: 1.5rem; } }
+/* Featured card title slightly larger on desktop for stronger hierarchy */
+#latest .featured-card h3 { font-weight: 800; font-size: 1.5rem; line-height: 1.2; }
+@media (min-width: 768px){
+  #latest .featured-card h3 { font-size: 1.75rem; }
+}
+@media (min-width: 1024px){
+  #latest .featured-card h3 { font-size: 2rem; }
+}
 
-/* Right column list items */
-#latest .mini-list li { display:flex; gap:.75rem; }
-#latest .mini-list img { width: 100px; height: 100px; border-radius: .75rem; object-fit: cover; }
-#latest .mini-list a.title { font-weight: 600; line-height: 1.25; }
+/* Right column list items: slightly larger thumbs + titles */
+#latest .mini-list li { display:flex; gap:.85rem; }
+#latest .mini-list img {
+  width: 108px;
+  height: 108px;
+  border-radius: .75rem;
+  object-fit: cover;
+}
+@media (min-width: 1024px){
+  #latest .mini-list img {
+    width: 124px;
+    height: 124px;
+  }
+}
+#latest .mini-list a.title {
+  font-weight: 600;
+  line-height: 1.25;
+  font-size: 1.05rem;
+}
 
 /* Testimonials block shares full width */
 .testimonials-wrap { max-width: var(--page-max) !important; }
-

@@ -3401,20 +3401,36 @@ details.toc + *:not(script):not(style) { margin-top: 0 !important; }
 }
 
 /* v2: author-photo wrapper to ensure circular placeholder as well */
-.author-photo,
-.author-photo img {
+.author-photo {
   width: 144px;
   height: 144px;
   border-radius: 50%;
   overflow: hidden;
   display: block;
 }
-/* Do NOT override the fine-tuned face centering on .about-avatar */
-.author-photo img:not(.about-avatar) {
+.author-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* Do NOT override the fine-tuned face centering on .about-avatar;
+   keep other author-photo images as cover-cropped, but let .author-avatar opt out */
+.author-photo img:not(.about-avatar):not(.author-avatar) {
   object-fit: cover;
   object-position: center;
 }
 
 /* Trim TOC margins for proximity */
 .qs-toc { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+
+/* Home About section: ensure author avatar shows full face inside circle */
+#about .hero-about-card .author-avatar {
+  display: block;
+  width: 144px;
+  height: 144px;
+  border-radius: 9999px;
+  object-fit: contain;       /* show the whole image inside the circle */
+  object-position: 50% 50%;  /* center the image */
+  background-color: transparent;
+}
 

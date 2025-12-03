@@ -9,10 +9,10 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
   const location = useLocation();
   const siteName = 'Quiet Strength';
   const baseUrl = (process.env.REACT_APP_SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://trueallyguide.com');
-  
+
   // Use dynamic SEO hook for client-side updates
   useDynamicSEO();
-  
+
   // Use the provided path or automatically detect from current location
   const currentPath = path || location.pathname + location.search;
   const canonicalUrl = getCanonicalUrl(currentPath);
@@ -87,7 +87,7 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
         'query-input': 'required name=search_term_string'
       }
     });
-    
+
     // Add Organization schema for homepage
     if (currentPath === '/') {
       schema.push({
@@ -157,13 +157,15 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content="en_US" />
-      {(article?.ogImage || article?.image) && (
+      {(article?.ogImage || article?.image) ? (
         <>
           <meta property="og:image" content={`${baseUrl}${article.ogImage || article.image}`} />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
           <meta property="og:image:alt" content={article?.ogTitle || title} />
         </>
+      ) : (
+        <meta property="og:image" content={`${baseUrl}/images/logo.png`} />
       )}
       {type === 'article' && article && (
         <>
@@ -171,7 +173,7 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
           {article.dateModified && <meta property="article:modified_time" content={article.dateModified} />}
           <meta property="article:author" content={article.authorName || 'Marica Šinko'} />
           {article.category && <meta property="article:section" content={article.category} />}
-          {article.keywords && article.keywords.map((tag, index) => 
+          {article.keywords && article.keywords.map((tag, index) =>
             <meta key={index} property="article:tag" content={tag.trim()} />
           )}
         </>
@@ -184,16 +186,18 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
       <meta name="twitter:title" content={article?.twitterTitle || article?.ogTitle || fullTitle} />
       <meta name="twitter:description" content={article?.twitterDescription || article?.ogDescription || metaDescription} />
       <meta name="twitter:url" content={url} />
-      {(article?.twitterImage || article?.ogImage || article?.image) && (
+      {(article?.twitterImage || article?.ogImage || article?.image) ? (
         <>
           <meta name="twitter:image" content={`${baseUrl}${article.twitterImage || article.ogImage || article.image}`} />
           <meta name="twitter:image:alt" content={article?.twitterTitle || article?.ogTitle || title} />
         </>
+      ) : (
+        <meta name="twitter:image" content={`${baseUrl}/images/logo.png`} />
       )}
 
       {/* JSON-LD Schema */}
       <script type="application/ld+json">{JSON.stringify(schema.length > 1 ? schema : schema[0])}</script>
-    
+
       {type === 'article' && article?.image && (
         <link rel="preload" as="image" href={`${baseUrl}${article.image}`} fetchpriority="high" data-preload-article-image />
       )}
