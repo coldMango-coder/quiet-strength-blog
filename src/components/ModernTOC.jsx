@@ -1,81 +1,111 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-const slugify = (s) =>
-  (s || "section")
-    .toLowerCase()
-    .normalize("NFKD")
-    .replace(/[^\w\s-]/g, "")
-    .trim()
-    .replace(/[\s_-]+/g, "-")
-    .replace(/^-+|-+$/g, "") || "section";
+function groupByHierarchy(items = []) {
+  const out = [];
+  let cur = null;
+  items.forEach((it) => {
+    const lvl = it.level ?? 1; // 1 = H2, 2 = H3
+    if (lvl <= 1) {
+      cur = { ...it, children: [] };
+      out.push(cur);
+    } else if (lvl === 2) {
+      (cur ? cur.children : out).push(it);
+    }
+  });
+  return out;
+}
 
-export default function ModernTOC({ rootSelector = ".post-body" }) {
+export default function ModernTOC({ rootSelector = '.post-body', collapsibleMobile = false }) {
   const [items, setItems] = useState([]);
+  const [activeId, setActiveId] = useState(null);
+  const [isOpen, setIsOpen] = useState(!collapsibleMobile);
 
   useEffect(() => {
-    if (typeof document === "undefined") return;
+    const root = document.querySelector(rootSelector);
+    if (!root) return;
 
-    const resolveRoot = () => document.querySelector(rootSelector) || document;
+    const headers = Array.from(root.querySelectorAll('h2, h3'));
+    const list = headers.map((h) => {
+      if (!h.id) h.id = h.innerText.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+      return {
+        id: h.id,
+        text: h.innerText,
+        level: h.tagName === 'H2' ? 1 : 2,
+      };
+    });
+    setItems(list);
 
-    const collect = () => {
-      const root = resolveRoot();
-      const hs = Array.from(root.querySelectorAll("h2"));
-      const list = hs.map((h, i) => {
-        if (!h.id) {
-          const base = slugify(h.textContent || "");
-          let id = base, n = 2;
-          while (document.getElementById(id)) id = `${base}-${n++}`;
-          h.id = id;
-        }
-        return { id: h.id, text: (h.textContent || "").trim(), number: String(i + 1) };
-      });
-      setItems(list);
-    };
-
-    // Initial collection (in case headings are already rendered)
-    collect();
-
-    // Observe the root for added headings (covers lazy-loaded article bodies)
-    const root = resolveRoot();
-    let mo;
-    try {
-      mo = new MutationObserver((mutations) => {
-        for (const m of mutations) {
-          for (const node of m.addedNodes) {
-            if (node.nodeType !== 1) continue;
-            if (node.matches?.("h2") || node.querySelector?.("h2")) {
-              collect();
-              return;
-            }
-          }
-        }
-      });
-      mo.observe(root, { childList: true, subtree: true });
-    } catch {
-      // If MutationObserver fails for any reason, we still keep the initial snapshot.
-    }
-
-    return () => {
-      try {
-        mo && mo.disconnect();
-      } catch {}
-    };
+    const obs = new IntersectionObserver(
+      (entries) => {
+        const vis = entries.filter((e) => e.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (vis) setActiveId(vis.target.id);
+      },
+      { rootMargin: '0px 0px -70% 0px', threshold: [0, 0.15, 1] }
+    );
+    headers.forEach((h) => obs.observe(h));
+    return () => obs.disconnect();
   }, [rootSelector]);
 
-  if (!items.length) return null;
+  if (items.length === 0) return null;
 
   return (
-    <details className="toc-shell block">
-      <summary className="toc-title cursor-pointer select-none">Table of Contents</summary>
-      <ol className="toc-list mt-2 space-y-1 text-[0.95rem] leading-6">
-        {items.map((h2) => (
-          <li key={h2.id}>
-            <a className="toc-link" href={`#${h2.id}`} data-active="false">
-              {h2.number} {h2.text}
-            </a>
-          </li>
-        ))}
-      </ol>
-    </details>
+    <nav className={`toc-nav text-sm ${collapsibleMobile ? 'lg:block' : ''}`}>
+      {collapsibleMobile && (
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="lg:hidden w-full flex items-center justify-between p-4 bg-gray-50 rounded-lg border border-gray-200 mb-4 font-semibold text-brand-dark"
+        >
+          <span>Table of Contents</span>
+          <svg className={`w-5 h-5 transition-transform ${isOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+      )}
+
+      <div className={`${collapsibleMobile && !isOpen ? 'hidden lg:block' : 'block'}`}>
+        <ul className="space-y-3 border-l-2 border-gray-100 pl-4">
+          {groupByHierarchy(items).map((h2, i) => {
+            const isActive = activeId === h2.id;
+            return (
+              <li key={h2.id || i}>
+                <a
+                  href={`#${encodeURIComponent(h2.id)}`}
+                  className={`block transition-colors duration-200 ${isActive ? 'text-brand-primary font-bold -ml-[18px] border-l-2 border-brand-primary pl-4' : 'text-gray-500 hover:text-brand-dark'}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById(h2.id)?.scrollIntoView({ behavior: 'smooth' });
+                    if (collapsibleMobile) setIsOpen(false);
+                  }}
+                >
+                  {h2.text}
+                </a>
+                {h2.children?.length > 0 && (
+                  <ul className="mt-2 ml-1 space-y-2 pl-3 border-l border-gray-100">
+                    {h2.children.map((h3, j) => {
+                      const isSubActive = activeId === h3.id;
+                      return (
+                        <li key={(h3.id || j) + '-sub'}>
+                          <a
+                            href={`#${encodeURIComponent(h3.id)}`}
+                            className={`block transition-colors duration-200 ${isSubActive ? 'text-brand-primary font-medium' : 'text-gray-400 hover:text-brand-dark'}`}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              document.getElementById(h3.id)?.scrollIntoView({ behavior: 'smooth' });
+                              if (collapsibleMobile) setIsOpen(false);
+                            }}
+                          >
+                            {h3.text}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </nav>
   );
 }
