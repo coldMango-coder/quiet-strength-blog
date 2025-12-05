@@ -3,11 +3,11 @@ export function normalizeAuthor(name) {
   if (!name || typeof name !== 'string') return name;
   let n = name.normalize('NFC');
   n = n
-    .replace(/A\u030A\s*inko/gi, 'Šinko')
-    .replace(/A.(?:\s|\u00A0)Šinko/gi, 'Šinko')
-    .replace(/A\.\s*inko/gi, 'Šinko')
-    .replace(/\bSinko\b/gi, 'Šinko');
-  n = n.replace(/Marica\s+Šinko/i, 'Marica Šinko');
+    .replace(/A\u030A\s*inko/gi, 'Å inko')
+    .replace(/A.(?:\s|\u00A0)Å inko/gi, 'Å inko')
+    .replace(/A\.\s*inko/gi, 'Å inko')
+    .replace(/\bSinko\b/gi, 'Å inko');
+  n = n.replace(/Marica\s+Å inko/i, 'Marica Å inko');
   return n;
 }
 
@@ -21,7 +21,7 @@ export function normalizeAuthorInDOM(rootSelector = 'article') {
       while (walker.nextNode()) nodes.push(walker.currentNode);
       nodes.forEach((node) => {
         const v = String(node.nodeValue || '');
-        if (/Marica|Šinko|inko/i.test(v)) {
+        if (/Marica|Å inko|inko/i.test(v)) {
           const fixed = normalizeAuthor(v);
           if (fixed !== v) node.nodeValue = fixed;
         }

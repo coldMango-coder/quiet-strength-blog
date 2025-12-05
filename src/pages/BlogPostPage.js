@@ -1,4 +1,4 @@
-﻿import React, { Suspense, useEffect, useRef } from 'react';
+import React, { Suspense, useEffect, useRef } from 'react';
 import useHeroImageDeduper from '../hooks/useHeroImageDeduper';
 import { useParams } from 'react-router-dom';
 import { sortedBlogPosts } from '../blogData';
@@ -32,35 +32,27 @@ const BlogPostPage = () => {
   useEffect(() => {
     if (!postBodyRef.current) return;
 
-    // Attempt to find and remove legacy author sections
-    // Strategy 1: Look for specific classes
     const legacySelectors = ['.author-bio', '.about-author', '.post-author', '.author-box'];
     legacySelectors.forEach(selector => {
       const els = postBodyRef.current.querySelectorAll(selector);
       els.forEach(el => el.remove());
     });
 
-    // Strategy 2: Look for the specific "About Marica Sinko" heading at the end
-    // This is a heuristic: if the last few elements contain "About", remove them.
     const headings = Array.from(postBodyRef.current.querySelectorAll('h3, h4, h5'));
-    headings.forEach(h => {
-      if (h.innerText.includes('About Marica') || h.innerText.includes('About the Author')) {
-        // Remove the heading and potentially the following sibling (the bio text/image)
-        let next = h.nextElementSibling;
-        h.remove();
-        // Remove up to 3 siblings if they look like bio content (p, div, figure)
-        let count = 0;
-        while (next && count < 3) {
-          const toRemove = next;
-          next = next.nextElementSibling;
-          toRemove.remove();
-          count++;
-        }
-      }
-    });
+    const lastAboutHeading = headings.reverse().find(h =>
+      h.innerText.includes('About Marica') || h.innerText.includes('About the Author')
+    );
 
-    // Strategy 3: Remove any image at the very end if it looks like an author photo (small, centered)
-    // This is risky, so we'll be conservative.
+    if (lastAboutHeading) {
+      let current = lastAboutHeading.nextElementSibling;
+      lastAboutHeading.remove();
+      while (current) {
+        const next = current.nextElementSibling;
+        if (['H2', 'H3', 'H4', 'H5'].includes(current.tagName)) break;
+        current.remove();
+        current = next;
+      }
+    }
   }, [slug, bodyHtml]);
 
   useHeroImageDeduper(heroRef, postBodyRef, post?.slug || slug);
@@ -81,79 +73,72 @@ const BlogPostPage = () => {
         }}
       />
 
-      <article className="single pb-24">
-        {/* Header Section */}
-        <header className="bg-brand-secondary/30 pt-12 pb-12 lg:pt-20 lg:pb-16 mb-8">
-          <div className="container-wide max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 text-sm font-bold text-brand-primary uppercase tracking-widest mb-6">
-              <span>{post.category || 'Blog Article'}</span>
-            </div>
-
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-emphasis mb-6 leading-tight">
-              {post.title}
-            </h1>
-
-            <div className="flex items-center justify-center gap-4 text-gray-600 text-sm md:text-base">
-              <span className="font-medium text-brand-dark">Marica Sinko</span>
-              <span className="w-1 h-1 rounded-full bg-gray-300"></span>
-              <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
-              <span className="w-1 h-1 rounded-full bg-gray-300"></span>
-              <span>{post.readTime} read</span>
-            </div>
-          </div>
-        </header>
-
+      <article className="single pb-20 md:pb-32 bg-white">
         <div className="container-wide">
-          <div className="lg:grid lg:grid-cols-12 lg:gap-12">
-            {/* Sidebar / TOC */}
-            <aside className="hidden lg:block lg:col-span-3">
-              <div className="sticky top-32">
-                <div className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Table of Contents</div>
-                <ModernTOC rootSelector=".post-body" />
-              </div>
-            </aside>
-
-            {/* Main Content */}
-            <div className="lg:col-span-8 lg:col-start-4">
-              {/* Hero Image - Moved below header, before content */}
-              <figure className="mb-12 rounded-2xl overflow-hidden shadow-lg" ref={heroRef} id="post-hero">
-                <OptimizedImage
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-auto object-cover"
-                  width={1000}
-                  height={600}
-                  priority={true}
-                />
-                {post.imageCaption && (
-                  <figcaption className="image-caption mt-4 text-center text-gray-500 text-sm italic">
-                    {post.imageCaption}
-                  </figcaption>
-                )}
-              </figure>
-
-              {/* Mobile TOC */}
-              <div className="lg:hidden mb-12">
-                <ModernTOC rootSelector=".post-body" collapsibleMobile={true} />
+          {/* Main Content Column - Strictly enforced 750px max width */}
+          <div className="max-w-[750px] mx-auto pt-10 md:pt-16">
+            {/* Consolidated Header Block */}
+            <header className="text-center mb-8 md:mb-10">
+              <div className="inline-flex items-center gap-2 text-xs md:text-sm font-bold text-brand-primary uppercase tracking-widest mb-4">
+                <span className="bg-brand-secondary/10 px-3 py-1 rounded-full">{post.category || 'Blog Article'}</span>
               </div>
 
-              {/* Article Body */}
-              <div className="prose prose-lg prose-slate max-w-3xl mx-auto post-body" ref={postBodyRef}>
-                {bodyHtml ? (
-                  <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
-                ) : (
-                  post.component && (
-                    <Suspense fallback={<div className="py-12 text-center">Loading...</div>}>
-                      <post.component />
-                    </Suspense>
-                  )
-                )}
-              </div>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-emphasis mb-6 leading-tight tracking-tight">
+                {post.title}
+              </h1>
 
-              {/* Author Bio - The ONE and ONLY bio (legacy ones removed by JS above) */}
-              <div className="mt-16 pt-12 border-t border-gray-100">
-                <AuthorBio />
+              {/* Metadata */}
+              <div className="flex flex-wrap items-center justify-center gap-3 md:gap-6 text-gray-600 text-sm font-medium">
+                <div className="flex items-center gap-2">
+                  <span className="text-brand-dark">Marica Sinko</span>
+                </div>
+                <span className="hidden md:inline w-1 h-1 rounded-full bg-gray-300"></span>
+                <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+                <span className="hidden md:inline w-1 h-1 rounded-full bg-gray-300"></span>
+                <span className="flex items-center gap-1">
+                  <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  {post.readTime}
+                </span>
               </div>
+            </header>
+
+            {/* Hero Image - Tightly coupled with header */}
+            <figure className="mb-4 rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5" ref={heroRef} id="post-hero">
+              <OptimizedImage
+                src={post.image}
+                alt={post.title}
+                className="w-full h-auto object-cover max-h-[600px]"
+                width={1200}
+                height={675}
+                priority={true}
+                sizes="(max-width: 768px) 100vw, 750px"
+              />
+              {post.imageCaption && (
+                <figcaption className="mt-2 text-center text-gray-400 text-[9px] italic">
+                  {post.imageCaption}
+                </figcaption>
+              )}
+            </figure>
+
+            {/* Modern Table of Contents - Prominent & Tightly Spaced */}
+            <ModernTOC rootSelector=".post-body" />
+
+            {/* Article Body - Optimized Typography */}
+            <div className="prose prose-lg prose-slate max-w-none post-body prose-headings:font-bold prose-headings:tracking-tight prose-a:text-brand-primary prose-img:rounded-xl prose-img:shadow-md" ref={postBodyRef}>
+              {bodyHtml ? (
+                <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+              ) : (
+                post.component && (
+                  <Suspense fallback={<div className="py-12 text-center">Loading...</div>}>
+                    <post.component />
+                  </Suspense>
+                )
+              )}
+            </div>
+
+            {/* Author Bio */}
+            <div className="mt-16 pt-10 border-t border-gray-100">
+              <AuthorBio />
             </div>
           </div>
         </div>

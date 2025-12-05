@@ -198,6 +198,54 @@ body {
 @import "./styles/ui-parity.css";
 @import "./styles/latest.css";
 
+/* Final Design Pass - Prose Spacing & Captions */
+.prose :where(p):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.15em;
+  margin-bottom: 1.15em;
+}
+
+.prose :where(h2):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.75em;
+  margin-bottom: 0.75em;
+}
+
+.prose :where(h3):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.5em;
+  margin-bottom: 0.6em;
+}
+
+.prose :where(ul):not(:where([class~="not-prose"] *)) {
+  margin-top: 1.15em;
+  margin-bottom: 1.15em;
+}
+
+.prose :where(li):not(:where([class~="not-prose"] *)) {
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+.prose figcaption {
+  margin-top: 0.5em;
+  font-size: 9px;
+  line-height: 1.4;
+  text-align: center;
+  font-style: italic;
+  color: #94a3b8;
+  /* slate-400 */
+}
+
+/* Ensure no double margins on images */
+.prose img {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+/* Mobile Author Image Fix - Ensure aspect ratio */
+.author-avatar {
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
 /* Defer background texture until idle to avoid offscreen image cost */
 .bg-texture-enabled body {
   background-image: url('./images/paper-texture-background.png');
@@ -3952,6 +4000,50 @@ details.toc+*:not(script):not(style) {
 figcaption {
   @apply text-sm text-gray-500 italic text-center mt-3 mb-8 font-medium;
   font-family: 'Inter', sans-serif;
+}
+
+/* Global Typography Refinements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply tracking-tight text-brand-emphasis;
+}
+
+p {
+  @apply mb-6 leading-relaxed text-gray-600;
+}
+
+/* Prose Typography Overrides for Professional Readability */
+.prose {
+  @apply text-base md:text-[1.0625rem] leading-[1.75] text-gray-700;
+  font-size: 1.0625rem !important;
+  /* Force readable size */
+  line-height: 1.75 !important;
+}
+
+.prose p {
+  margin-bottom: 1.5em;
+}
+
+.prose h2 {
+  @apply text-2xl md:text-3xl font-bold mt-12 mb-6 text-brand-emphasis;
+}
+
+.prose h3 {
+  @apply text-xl md:text-2xl font-bold mt-10 mb-4 text-brand-emphasis;
+}
+
+.prose strong {
+  @apply font-bold text-brand-dark;
+}
+
+/* Reduce excessive gaps in prose */
+.prose>*+* {
+  margin-top: 0;
+  /* Let individual elements handle margins */
 }
 
 /* Hide legacy author bio inside post body if present */

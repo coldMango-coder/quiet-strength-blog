@@ -1,5 +1,3 @@
-// src/App.js
-
 import React, { Suspense, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
@@ -24,7 +22,7 @@ function App() {
   const __BUILD_TAG = '2025-10-18T12:45:00Z';
   // Initialize dynamic SEO updates for client-side navigation
   useDynamicSEO();
-  
+
   // DEV-ONLY: Ensure canonical tags exist before React hydration
   useDevCanonicalFallback();
   const location = useLocation();
@@ -52,57 +50,28 @@ function App() {
     }
   }, [location.pathname]);
 
-  // Sanitize any mis-encoded characters in prerendered content (defensive fix)
-  useEffect(() => {
-    const fixText = (s) => s
-      .replace(/Ã¢â‚¬Â¢/g, 'â€¢')
-      .replace(/ï¿½ï¿½/g, 'â€¢')
-      .replace(/ï¿½/g, 'â€¢')
-      .replace(/ï¿½/g, 'â€¢')
-      .replace(/ï¿½/g, 'â€¢')
-      .replace(/ï¿½/g, 'â€¢')
-      .replace(/Ã…Â /g, 'Å ')
-      .replace(/Marica Šinko/g, 'Marica Šinko');
-
-    try {
-      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
-      const texts = [];
-      while (walker.nextNode()) texts.push(walker.currentNode);
-      texts.forEach(node => {
-        const fixed = fixText(node.nodeValue || '');
-        if (fixed !== node.nodeValue) node.nodeValue = fixed;
-      });
-      // Also fix alt attributes on images
-      document.querySelectorAll('img[alt]').forEach(img => {
-        const alt = img.getAttribute('alt') || '';
-        const fixedAlt = fixText(alt);
-        if (fixedAlt !== alt) img.setAttribute('alt', fixedAlt);
-      });
-    } catch {}
-  }, [location.pathname]);
-  
   const isArticle = location.pathname.startsWith('/blog/') && location.pathname !== '/blog';
 
   // Defer decorative background texture until idle to avoid offscreen image load
   useEffect(() => {
-    let cancel = () => {};
+    let cancel = () => { };
     try {
       if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
         // Use proper IdleRequestOptions shape to avoid runtime TypeError
         const idleId = window.requestIdleCallback(
           () => {
-            try { document.documentElement.classList.add('bg-texture-enabled'); } catch {}
+            try { document.documentElement.classList.add('bg-texture-enabled'); } catch { }
           },
           { timeout: 2000 }
         );
-        cancel = () => { try { window.cancelIdleCallback && window.cancelIdleCallback(idleId); } catch {} };
+        cancel = () => { try { window.cancelIdleCallback && window.cancelIdleCallback(idleId); } catch { } };
       } else {
         const t = window.setTimeout(() => {
-          try { document.documentElement.classList.add('bg-texture-enabled'); } catch {}
+          try { document.documentElement.classList.add('bg-texture-enabled'); } catch { }
         }, 2000);
-        cancel = () => { try { clearTimeout(t); } catch {} };
+        cancel = () => { try { clearTimeout(t); } catch { } };
       }
-    } catch {}
+    } catch { }
     return () => cancel();
   }, []);
 
@@ -112,13 +81,6 @@ function App() {
       <Header />
       <main id="main" className="container mx-auto">
         <div className={isArticle ? 'lg:grid lg:grid-cols-12 lg:gap-8' : 'lg:grid lg:grid-cols-12 lg:gap-10'}>
-          {/* On non-article pages we deliberately remove the empty sidebar so the Latest Insights section can use the full width.
-              Previously this was rendered as:
-              !isArticle && (
-                <aside className="hidden lg:block lg:col-span-3 py-24">
-                  Intentional empty space (no longer used)
-                </aside>
-              ) */}
           <div className={isArticle ? 'lg:col-start-3 lg:col-span-8' : 'lg:col-span-12'}>
             <Suspense fallback={null}>
               <Routes>

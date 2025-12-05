@@ -9,7 +9,7 @@ export default function PrivacyPolicy(){
       <p>Last updated: {new Date().toISOString().slice(0,10)}</p>
 
       <h2>Overview</h2>
-      <p>Quiet Strength ("we", "us", "our") operates this website to provide educational content for women’s personal and professional growth.</p>
+      <p>Quiet Strength ("we", "us", "our") operates this website to provide educational content for womenâ€™s personal and professional growth.</p>
 
       <h2>Information We Collect</h2>
       <h3>Voluntary Information</h3>

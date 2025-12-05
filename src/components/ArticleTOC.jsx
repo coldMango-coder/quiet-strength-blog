@@ -67,7 +67,7 @@ export default function ArticleTOC({ items = [], title = 'Table of Contents', ac
                       <li key={(h3.id || j) + '-sub'}>
                         <a
                           href={`#${encodeURIComponent(h3.id)}`}
-                          className={`block transition-colors duration-200 ${isSubActive ? 'text-brand-primary font-medium' : 'text-gray-400 hover:text-brand-dark'}`}
+                          className={`block transition-colors duration-200 pl-2 ${isSubActive ? 'text-brand-primary font-medium' : 'text-gray-400 hover:text-brand-dark'}`}
                         >
                           {h3.text}
                         </a>

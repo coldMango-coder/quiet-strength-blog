@@ -33,18 +33,18 @@ export function useDevCanonicalFallback() {
           existingCanonical = document.createElement('link');
           existingCanonical.setAttribute('rel', 'canonical');
           document.head.appendChild(existingCanonical);
-          console.log('🔧 DEV: Created canonical fallback');
+          console.log('ðŸ”§ DEV: Created canonical fallback');
         }
         
         // Update canonical URL if it's different
         if (existingCanonical.getAttribute('href') !== canonicalUrl) {
           existingCanonical.setAttribute('href', canonicalUrl);
-          console.log(`🔧 DEV: Updated canonical to ${canonicalUrl}`);
+          console.log(`ðŸ”§ DEV: Updated canonical to ${canonicalUrl}`);
         }
         
       } catch (error) {
         // Silent fallback - don't break the app
-        console.warn('⚠️ DEV: Canonical fallback error:', error.message);
+        console.warn('âš ï¸ DEV: Canonical fallback error:', error.message);
       }
     };
 

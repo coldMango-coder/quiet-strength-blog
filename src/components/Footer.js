@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 
 function year() { return new Date().getFullYear(); }
 function shortSha() {
@@ -32,7 +32,7 @@ export default function Footer() {
             className="block hover:underline text-white/90 hover:text-white"
           >Books</a>
           <a href="/privacy-policy" className="block hover:underline text-white/90 hover:text-white">Privacy Policy</a>
-          <a href="/terms-of-use" className="block hover:underline text-white/90 hover:text-white">Terms of Use</a>
+          <a href="/terms" className="block hover:underline text-white/90 hover:text-white">Terms of Use</a>
         </nav>
         <div className="text-sm md:text-right">
           <div>&copy; {year()} Quiet Strength — Empowering introverted women to thrive.</div>

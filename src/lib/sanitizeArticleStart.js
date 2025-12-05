@@ -11,10 +11,10 @@ export default function sanitizeArticleStart(rootSelector = 'article') {
     }
     const fix = (s) =>
       s
-        .replace(/^\s*[Ã¢ï¿½]+/g, '') // leading weird bytes
-        .replace(/Ã¢â‚¬Â¢/g, 'â€¢')
-        .replace(/Ã…Â /g, 'Å ')
-        .replace(/Marica Šinko/g, 'Marica Šinko');
+        .replace(/^\s*[ÃƒÂ¢Ã¯Â¿Â½]+/g, '') // leading weird bytes
+        .replace(/ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢/g, 'Ã¢â‚¬Â¢')
+        .replace(/Ãƒâ€¦Ã‚Â /g, 'Ã…Â ')
+        .replace(/Marica Å inko/g, 'Marica Å inko');
     targets.forEach((node) => {
       const v = node.nodeValue || '';
       const f = fix(v);

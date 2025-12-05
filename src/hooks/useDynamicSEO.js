@@ -60,7 +60,7 @@ export const useDynamicSEO = () => {
 
         // Debug log for development
         if (process.env.NODE_ENV === 'development') {
-          console.log('📍 SEO updated:', { 
+          console.log('ðŸ“ SEO updated:', { 
             canonical: cleanUrl, 
             type: ogType,
             route: location.pathname 
@@ -73,7 +73,7 @@ export const useDynamicSEO = () => {
         }));
 
       } catch (error) {
-        console.error('❌ SEO update error:', error);
+        console.error('âŒ SEO update error:', error);
       }
     };
 

@@ -14,9 +14,9 @@ const CategoryPage = () => {
   const getCategoryDescription = (category) => {
     const descriptions = {
       'Introversion & Personality': 'Insights on introversion and personality types with practical ways to leverage your strengths as an introverted woman.',
-      'Relationships & Dating': 'Explore articles on relationships and dating with confidence—boundaries, healthy communication, and intentional choices for introverted women.',
+      'Relationships & Dating': 'Explore articles on relationships and dating with confidenceâ€”boundaries, healthy communication, and intentional choices for introverted women.',
       'Career & Workplace': 'Advance your career without burnout. Practical advice for introverted women on boundaries, focus, and sustainable success.',
-      'Self-Development': 'Personal growth strategies and practical self-improvement for introverted women—build confidence with small steps.',
+      'Self-Development': 'Personal growth strategies and practical self-improvement for introverted womenâ€”build confidence with small steps.',
       'Women\'s Wellness': 'Holistic wellness focused on mental health, energy management, and self-care for introverted women.'
     };
     return descriptions[category] || 'Explore articles in this category to enhance your personal growth journey.';

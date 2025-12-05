@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Seo from './Seo';
 // import Avatar from './Avatar'; // Removed unused import
 
@@ -24,15 +24,17 @@ const About = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/3 text-center">
-            <div className="mx-auto hero-about-card author-photo">
-              <img
-                className="author-avatar"
-                src={authorImageSrc}
-                alt={"Marica \u0160inko"}
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
+            <div
+              className="mx-auto w-[70vw] max-w-[280px] md:w-full aspect-square rounded-full shadow-lg ring-4 ring-brand-light/50 flex-shrink-0 bg-gray-100"
+              style={{
+                backgroundImage: `url(${authorImageSrc})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center 25%',
+                backgroundRepeat: 'no-repeat'
+              }}
+              role="img"
+              aria-label="Marica Šinko"
+            />
           </div>
           <div className="md:w-2/3 text-left">
             <h2 className="text-4xl md:text-5xl font-bold text-brand-dark mb-6">My Story: From Burnout to Quiet Strength</h2>

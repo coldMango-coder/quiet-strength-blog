@@ -71,7 +71,7 @@ const BlogCard = ({ post, onReadMore, linkTo, priority = false }) => {
         {/* Hidden schema markup */}
         <div className="sr-only">
           <span itemProp="author" itemScope itemType="https://schema.org/Person">
-            <span itemProp="name">Marica Šinko</span>
+            <span itemProp="name">Marica Å inko</span>
           </span>
           <meta itemProp="url" content={`https://trueallyguide.com/blog/${slug}`} />
         </div>

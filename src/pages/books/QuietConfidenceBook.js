@@ -11,7 +11,7 @@ const QuietConfidenceBook = () => {
         type="book"
         book={{
           title: "Quiet Confidence: The Book",
-          authorName: "Marica Šinko",
+          authorName: "Marica Å inko",
         }}
       />
       <div className="bg-white">

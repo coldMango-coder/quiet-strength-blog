@@ -1,120 +1,56 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import NormalizedLink from './NormalizedLink';
-import { sortedBlogPosts } from '../blogData';
-import OptimizedImage from './OptimizedImage';
+import LatestInsights from './LatestInsights';
 
 const Hero = () => {
-  const subtitleRef = useRef(null);
-
-  // Fallback sanitizer for stray U+FFFD and spacing around em dash
-  useEffect(() => {
-    try {
-      const el = subtitleRef.current;
-      if (!el) return;
-      el.innerHTML = el.innerHTML
-        .replace(/\uFFFD/g, ' ')
-        .replace(/\s+—\s+/, ' — ');
-    } catch {}
-  }, []);
-
   return (
-    <section id="home" className="relative bg-brand-light text-brand-dark py-32 md:py-48" style={{ minHeight: '50vh' }}>
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col gap-8 items-center ">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-extrabold tracking-tight leading-tight mb-6">
-              Quiet Strength: Self-Help for Introverted Women
-            </h1>
-            <p ref={subtitleRef} className="text-lg md:text-xl lg:text-xl text-brand-primary max-w-2xl mb-8 mx-auto leading-relaxed">
-              Your essential guide to building confidence, managing energy, finding purpose, and achieving financial freedom — on your own terms.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 mb-12 justify-center">
-              <a
-                href="#newsletter"
-                className="bg-brand-emphasis text-white font-bold py-4 px-10 rounded-full hover:bg-opacity-90 transition duration-300 ease-in-out transform hover:scale-105 shadow-lg text-center"
-              >
-                Join the Community
-              </a>
-              <NormalizedLink
-                to="/blog"
-                className="text-brand-emphasis font-bold py-4 px-10 rounded-full hover:bg-brand-secondary transition duration-300 ease-in-out transform hover:scale-105 text-center"
-              >
-                Read the Blog
-              </NormalizedLink>
-            </div>
-          </div>
-          {/* Latest Insights under hero, exactly 5 posts */}            <div id="blog"></div>
-          <section id="latest" className="latest latest-holder qs-container container-wide w-full">
-            <div className="flex items-center justify-between mb-4 sm:mb-6 min-w-0">
-              <h2 className="text-xl md:text-2xl font-bold text-brand-dark flex-shrink-0">Latest Insights</h2>
-              <NormalizedLink 
-                to="/blog"
-                className="text-brand-emphasis text-sm font-medium opacity-80 hover:opacity-100 hover:underline hover:text-brand-dark transition-colors flex-shrink-0 ml-2"
-              >
-                View All &rarr;
-              </NormalizedLink>
-            </div>
-            {(() => {
-              const [featured, ...restAll] = sortedBlogPosts;
-              const rest = restAll.slice(0, 4); // total 5 items
-              return (
-                <div className="latest-grid grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6">
-                  {/* Featured */}
-                  <article className="featured-card rounded-2xl ring-1 ring-black/5 bg-white p-5 shadow-sm">
-                    <NormalizedLink to={`/blog/${featured.slug}`} className="block mb-4 rounded-xl overflow-hidden" aria-label={featured.title}>
-                      <OptimizedImage
-                        src={featured.image}
-                        alt={featured.title}
-                        className="w-full h-auto aspect-[16/9] object-cover"
-                        width={1200}
-                        height={630}
-                        sizes="(max-width: 1024px) 100vw, 66vw"
-                        usePicture={true}
-                        priority={false}
-                      />
-                    </NormalizedLink>
-                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight mb-2">
-                      <NormalizedLink to={`/blog/${featured.slug}`} aria-label={featured.title} className="hover:underline focus:underline">
-                        {featured.title}
-                      </NormalizedLink>
-                    </h3>
-                    <p className="text-[15px] md:text-base text-black/70 line-clamp-3">{featured.description}</p>
-                  </article>
+    <section className="relative py-16 md:py-24 overflow-hidden bg-white">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute -top-[10%] -right-[5%] w-[40%] h-[40%] bg-orange-50 rounded-full blur-3xl opacity-60"></div>
+        <div className="absolute top-[20%] -left-[10%] w-[30%] h-[30%] bg-brand-secondary/30 rounded-full blur-3xl opacity-60"></div>
+      </div>
 
-                  {/* Side list */}
-                  <ul className="mini-list space-y-4 min-w-0">
-                    {rest.map((p) => (
-                      <li key={p.slug} className="flex gap-3">
-                        <NormalizedLink to={`/blog/${p.slug}`} className="shrink-0 rounded-lg overflow-hidden" aria-label={p.title}>
-                          <OptimizedImage
-                            src={p.image}
-                            alt={p.title}
-                            className="w-[104px] h-[104px] md:w-[110px] md:h-[110px] object-cover rounded-lg"
-                            width={110}
-                            height={110}
-                            sizes="(max-width: 768px) 96px, 110px"
-                            usePicture={true}
-                            priority={false}
-                          />
-                        </NormalizedLink>
-                        <div className="min-w-0">
-                          <NormalizedLink to={`/blog/${p.slug}`} className="title block font-semibold leading-snug text-base md:text-[17px] two-lines" aria-label={p.title}>{p.title}</NormalizedLink>
-                          <p className="mt-1 text-sm text-black/70 two-lines">{p.description}</p>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })()}
-          </section>
+      <div className="container-wide relative z-10">
+        <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
+          <span className="inline-block py-1 px-3 rounded-full bg-orange-50 text-brand-primary text-xs md:text-sm font-bold uppercase tracking-widest mb-6">
+            Quiet Strength Coaching
+          </span>
+
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-emphasis tracking-tight leading-[1.1] mb-4">
+            Success Without the <span className="text-brand-primary relative inline-block">
+              Burnout
+              <svg className="absolute w-full h-3 -bottom-1 left-0 text-orange-200 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
+              </svg>
+            </span>
+          </h1>
+
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">
+            Empowering introverted women to build sustainable careers and authentic confidence. Stop fighting your natureâ€”start using it.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <NormalizedLink
+              to="/blog"
+              className="w-full sm:w-auto px-8 py-4 bg-brand-primary text-white font-bold rounded-full shadow-lg hover:bg-brand-emphasis hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+            >
+              Start Reading
+            </NormalizedLink>
+            <a
+              href="/#about"
+              className="w-full sm:w-auto px-8 py-4 bg-white text-brand-emphasis font-bold rounded-full border border-gray-200 hover:border-brand-primary hover:text-brand-primary transition-all duration-300"
+            >
+              About Marica
+            </a>
+          </div>
         </div>
+
+        {/* Latest Insights Preview */}
+        <LatestInsights />
       </div>
     </section>
   );
 };
 
 export default Hero;
-
-
-

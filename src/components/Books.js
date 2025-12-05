@@ -48,7 +48,7 @@ const Books = () => {
     {
       imgSrc: "/images/art-of-saying-no-book-cover.webp?v=b008f571",
       title: "The Art of Saying No: A Guide for People-Pleasers on the Brink of Burnout",
-      description: "\"The Art of Saying No\" is more than just a guide—it's a compassionate and practical roadmap to reclaiming your life. For too long, the compulsive need for approval has dictated your decisions, drained your energy, and left you feeling resentful and depleted. This book provides the tools to break free from the \"disease to please\" and build a life based on your own terms.",
+      description: "\"The Art of Saying No\" is more than just a guideâ€”it's a compassionate and practical roadmap to reclaiming your life. For too long, the compulsive need for approval has dictated your decisions, drained your energy, and left you feeling resentful and depleted. This book provides the tools to break free from the \"disease to please\" and build a life based on your own terms.",
       price: "$7",
       slug: "art-of-saying-no",
       externalLink: "https://www.amazon.com/dp/B0FHZL4Q5G",

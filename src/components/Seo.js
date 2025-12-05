@@ -37,7 +37,7 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
       image: article.image ? [`${baseUrl}${article.image}`] : [`${baseUrl}/images/logo.png`],
       author: {
         '@type': 'Person',
-        name: article.authorName || 'Marica Šinko',
+        name: article.authorName || 'Marica Å inko',
         url: `${baseUrl}/author/marica-sinko`,
       },
       publisher: {
@@ -140,7 +140,7 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
     const candidate = `${displayTitleBase} | ${siteName}`;
     fullTitle = candidate.length <= 65 ? candidate : displayTitleBase;
   }
-  const displayAuthor = normalizeDisplayText(article?.authorName || 'Marica Šinko');
+  const displayAuthor = normalizeDisplayText(article?.authorName || 'Marica Å inko');
 
   return (
     <Helmet>
@@ -171,7 +171,7 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
         <>
           <meta property="article:published_time" content={article.datePublished} />
           {article.dateModified && <meta property="article:modified_time" content={article.dateModified} />}
-          <meta property="article:author" content={article.authorName || 'Marica Šinko'} />
+          <meta property="article:author" content={article.authorName || 'Marica Å inko'} />
           {article.category && <meta property="article:section" content={article.category} />}
           {article.keywords && article.keywords.map((tag, index) =>
             <meta key={index} property="article:tag" content={tag.trim()} />
@@ -182,7 +182,7 @@ const Seo = ({ title, description, type = 'website', path, article, book, person
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@QuietStrengthGuide" />
-      <meta name="twitter:creator" content="@Marica Šinko" />
+      <meta name="twitter:creator" content="@Marica Å inko" />
       <meta name="twitter:title" content={article?.twitterTitle || article?.ogTitle || fullTitle} />
       <meta name="twitter:description" content={article?.twitterDescription || article?.ogDescription || metaDescription} />
       <meta name="twitter:url" content={url} />
